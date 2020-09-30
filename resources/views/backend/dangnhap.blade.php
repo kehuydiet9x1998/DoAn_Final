@@ -114,27 +114,20 @@
   <script type="text/javascript" src="{{asset('assets/js/jquery.slimscroll.js')}}"></script>
   <script type="text/javascript" src="{{asset('assets/js/jquery.flot.js')}}"></script>
   <script type="text/javascript" src="{{asset('assets/js/jquery.flot.categories.js')}}"></script>
-  <script type="text/javascript" src="{{asset('assets/js/curvedlines.js')}}"></script>
+  {{-- <script type="text/javascript" src="{{asset('assets/js/curvedlines.js')}}"></script> --}}
   <script type="text/javascript" src="{{asset('assets/js/jquery.flot.tooltip.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('assets/js/chartist.js')}}"></script>
-  <script type="text/javascript" src="{{asset('assets/js/amcharts.js')}}"></script>
-  <script type="text/javascript" src="{{asset('assets/js/serial.js')}}"></script>
-  <script type="text/javascript" src="{{asset('assets/js/light.js')}}"></script>
+  {{-- <script type="text/javascript" src="{{asset('assets/js/chartist.js')}}"></script> --}}
+  {{-- <script type="text/javascript" src="{{asset('assets/js/amcharts.js')}}"></script> --}}
+  {{-- <script type="text/javascript" src="{{asset('assets/js/serial.js')}}"></script> --}}
+  {{-- <script type="text/javascript" src="{{asset('assets/js/light.js')}}"></script> --}}
   <script type="text/javascript" src="{{asset('assets/js/pcoded.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('assets/js/vertical-layout.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('assets/js/custom-dashboard.min.js')}}"></script>
+  {{-- <script type="text/javascript" src="{{asset('assets/js/vertical-layout.min.js')}}"></script> --}}
+  {{-- <script type="text/javascript" src="{{asset('assets/js/custom-dashboard.min.js')}}"></script> --}}
   <script type="text/javascript" src="{{asset('assets/js/script.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('assets/js/modernizr.js')}}"></script>
-  <script type="text/javascript" src="{{asset('assets/js/css-scrollbars.js')}}"></script>
-  <script type="text/javascript" src="{{asset('assets/js/common-pages.js')}}"></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="text/javascript"></script>
-  <script type="text/javascript">
-    window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  {{-- <script type="text/javascript" src="{{asset('assets/js/modernizr.js')}}"></script> --}}
+  {{-- <script type="text/javascript" src="{{asset('assets/js/css-scrollbars.js')}}"></script> --}}
+  {{-- <script type="text/javascript" src="{{asset('assets/js/common-pages.js')}}"></script> --}}
 
-  gtag('config', 'UA-23581568-13');
-  </script>
   <script src="{{asset('assets/js/rocket-loader.min.js')}}" data-cf-settings="d2d1d6e2f87cbebdf4013b26-|49" defer="">
   </script>
 </body>
