@@ -23,6 +23,7 @@
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/chartist.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/widget.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
   <style>
     .width-logo {
       width: 160px;
@@ -62,7 +63,6 @@
     </div>
 
 
-
     <script data-cfasync="false" src="{{asset('assets/js/email-decode.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/jquery.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/jquery-ui.min.js')}}"></script>
@@ -82,6 +82,7 @@
     <script type="text/javascript" src="{{asset('assets/js/vertical-layout.min.js')}}"></script>
     {{-- <script type="text/javascript" src="{{asset('assets/js/custom-dashboard.min.js')}}"></script> --}}
     <script type="text/javascript" src="{{asset('assets/js/script.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/app.js')}}"></script>
 
     <script src="{{asset('assets/js/rocket-loader.min.js')}}" data-cf-settings="d2d1d6e2f87cbebdf4013b26-|49" defer="">
     </script>
