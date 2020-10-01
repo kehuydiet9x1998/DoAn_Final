@@ -16,7 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/dangnhap', function () {
   return view('backend.dangnhap');
 });
-Route::get('/dashboard', function () {
-  return view('backend.dashboard');
-});
-// Route::view('/admin/home', 'dashboard.home.index');
+Route::get('/dashboard/{phanquyen}', 'PhanQuyenController@watchView');

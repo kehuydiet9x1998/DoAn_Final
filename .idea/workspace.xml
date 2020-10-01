@@ -6,7 +6,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfeacd01-f2c3-4401-a83c-21a86b8aa657" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PhanQuyenController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/layout/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layout/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/home/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -144,6 +149,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../LaravelDemo" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -162,6 +168,8 @@
       <updated>1601472233209</updated>
       <workItem from="1601472234287" duration="263000" />
       <workItem from="1601475478616" duration="1921000" />
+      <workItem from="1601521106793" duration="1491000" />
+      <workItem from="1601533305922" duration="6467000" />
     </task>
     <servers />
   </component>
@@ -178,11 +186,20 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1601476408887">
+    <state x="445" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601522283306">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601476408887" />
+    <state x="445" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1601522283305" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1601533396646">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601533396646" />
+    <state x="184" y="9" key="SettingsEditor" timestamp="1601537461773">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1601537461773" />
   </component>
 </project>
