@@ -1,5 +1,6 @@
 @extends('backend.layout.index')
 @section('content')
-BANTIN
+<div id="bantin">
 
+</div>
 @endsection

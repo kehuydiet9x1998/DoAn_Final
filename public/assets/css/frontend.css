@@ -454,7 +454,7 @@ ul {
 /* -------------------------------------------------------------------------- */
 
 .ss1bottom {
-  background: url("/resource/wave.png");
+  background: url("/assets/wave.png");
   min-height: 100px;
   margin-top: -75px;
   position: relative;
@@ -883,13 +883,13 @@ button::-moz-focus-inner {
 }
 
 #ss10 {
-  background: url("/resource/images/repeat-ss9.png") repeat-x;
+  background: url("/assets/images/repeat-ss9.png") repeat-x;
   min-height: 600px;
   position: relative;
   z-index: 2;
 }
 .bottom2 {
-  background: url("/resource/images/nentrang.png") bottom center repeat-x;
+  background: url("/assets/images/nentrang.png") bottom center repeat-x;
   transform: rotate(180deg);
   min-height: 92px;
 }

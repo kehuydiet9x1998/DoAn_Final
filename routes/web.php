@@ -12,8 +12,25 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+  return view('frontend.trangchu');
+});
 
 Route::get('/dangnhap', function () {
   return view('backend.dangnhap');
 });
+
 Route::get('/dashboard/{phanquyen}', 'PhanQuyenController@watchView');
+
+Route::get('/dashboard', function () {
+  return view('backend.dashboard');
+});
+
+Route::get('/news-feed', function () {
+  return view('backend.bantin');
+});
+
+Route::get('/test', function () {
+  return view('backend.test');
+});
+
