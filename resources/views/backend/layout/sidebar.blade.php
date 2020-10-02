@@ -34,7 +34,7 @@
         ],
         ],
         ],];
-  $phanquyen = 'contact';
+  $phanquyen = 'administrators';
     if($phanquyen == 'contact') {
       $menu = [
         [
@@ -127,9 +127,9 @@
       "title" => "Giảng Dạy",
       "items" => [
       [
-      "link" => "/khoa-hoc",
+      "link" => "/teachers/calendar",
       "type" => "link",
-      "icon" => "far fa-calendar-alt",
+      "icon" => "fa fa-calendar-check-o",
       "text" => "Xem lịch dạy",
       ],
       [
@@ -145,7 +145,7 @@
       "text" => "Chấm bài tập",
       ],
       [
-      "link" => "/khoa-hoc",
+      "link" => "/teachers/items",
       "type" => "link",
       "icon" => "fa fa-tasks",
       "text" => "Sản phẩm cuối khóa",
@@ -160,13 +160,13 @@
       "title" => "Khóa học",
       "items" => [
       [
-      "link" => "/khoa-hoc",
+      "link" => "/administrators/courses",
       "type" => "link",
       "icon" => "fa fa-institution",
       "text" => "Thông tin khóa học",
       ],
       [
-      "link" => "/lop-hoc",
+      "link" => "/administrators/classes",
       "type" => "link",
       "icon" => "fa fa-graduation-cap",
       "text" => "Lớp học ",
@@ -177,25 +177,25 @@
       "title" => "Quản Lý Nhân Sự",
       "items" => [
       [
-      "link" => "/khoa-hoc",
+      "link" => "/administrators/staffs",
       "type" => "link",
       "icon" => "fa fa-users",
       "text" => "Nhân viên",
       ],
       [
-      "link" => "/lop-hoc",
+      "link" => "/administrators/contracts",
       "type" => "link",
       "icon" => "fa fa-file-text-o",
       "text" => "Hợp đồng ",
       ],
       [
-      "link" => "/khoa-hoc",
+      "link" => "/administrators/timesheets",
       "type" => "link",
       "icon" => "fa fa-check-square-o",
       "text" => "Bảng chấm công",
       ],
       [
-      "link" => "/khoa-hoc",
+      "link" => "/administrators/payroll",
       "type" => "link",
       "icon" => "fa fa-usd",
       "text" => "Bảng lương",

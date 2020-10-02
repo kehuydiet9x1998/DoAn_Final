@@ -32,6 +32,12 @@ Route::prefix('administrators')->group(function () {
   Route::get('contracts',function (){
     return view('backend.administrators.contracts');
   });
+  Route::get('payroll',function (){
+    return view('backend.administrators.payroll');
+  });
+  Route::get('timesheets',function (){
+    return view('backend.administrators.timesheets');
+  });
 });
 
 Route::prefix('teachers')->group(function (){
