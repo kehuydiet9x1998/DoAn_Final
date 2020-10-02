@@ -712,26 +712,7 @@
       </div>
     </div>
   </div>
-  <div class="page-error">
-    <div class="card text-center">
-      <div class="card-block">
-        <div class="m-t-10">
-          <i class="icofont icofont-warning text-white bg-c-yellow"></i>
-          <h4 class="f-w-600 m-t-25">Not supported</h4>
-          <p class="text-muted m-b-0">Full Calendar not supported in this device</p>
-        </div>
-      </div>
-    </div>
-  </div>
+
 </div>
-<script type="5abfe82e91da83887fe68972-text/javascript">
-  window.dataLayer = window.dataLayer || [];
 
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23581568-13');
-</script>
 @endsection
