@@ -17,7 +17,7 @@
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome-n.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{asset('css/app.css') }}">
 
   <title>TEKY EDU</title>
 </head>
@@ -32,7 +32,6 @@
   <script type="text/javascript" src="{{asset('assets/js/jquery.min.js')}}"></script>
   <script type="text/javascript" src="{{asset('assets/js/jquery-ui.min.js')}}"></script>
   <script type="text/javascript" src="{{asset('assets/js/bootstrap.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
 
 </body>
 

@@ -34,7 +34,7 @@
         ],
         ],
         ],];
-  $phanquyen = 'giangvien';
+  $phanquyen = 'contact';
     if($phanquyen == 'contact') {
       $menu = [
         [
@@ -43,13 +43,13 @@
         [
         "type" => "link",
         "icon" => "fa fa-user",
-        "link" => "/admin/khoa-hoc/abc",
+        "link" => "/admin/hocsinh",
         "text" => "Học sinh",
         ],
         [
         "type" => "link",
         "icon" => "fa fa-dollar",
-        "link" => "/lop-hoc",
+        "link" => "/admin/hocphi",
         "text" => "Học phí",
         ],
         [
@@ -61,13 +61,13 @@
         [
         "type" => "link",
         "icon" => "fa fa-history",
-        "link" => "/lop-hoc",
+        "link" => "/admin/lich-trai-nghiem",
         "text" => "Lịch trải nghiệm",
         ],
         [
         "type"=> "link",
         "icon"=> "feather icon-home",
-        "link"=> "/lop-hoc",
+        "link"=> "/admin/nhan-xet",
         "text"=> "Nhận xét",
         ],
         ],
@@ -113,7 +113,7 @@
         "text" => "Theo dõi lớp học",
         ],
         [
-        "link" => "/khoa-hoc",
+        "link" => "/admin/thoi-khoa-bieu",
         "type" => "link",
         "icon" => "far fa-calendar-alt",
         "text" => "Thời khóa biểu",
@@ -127,7 +127,7 @@
       "title" => "Giảng Dạy",
       "items" => [
       [
-      "link" => "/teachers/calendar",
+      "link" => "/khoa-hoc",
       "type" => "link",
       "icon" => "far fa-calendar-alt",
       "text" => "Xem lịch dạy",
@@ -145,7 +145,7 @@
       "text" => "Chấm bài tập",
       ],
       [
-      "link" => "/teachers/items",
+      "link" => "/khoa-hoc",
       "type" => "link",
       "icon" => "fa fa-tasks",
       "text" => "Sản phẩm cuối khóa",
@@ -160,16 +160,16 @@
       "title" => "Khóa học",
       "items" => [
       [
-      "link" => "/administrators/courses",
+      "link" => "/khoa-hoc",
       "type" => "link",
       "icon" => "fa fa-institution",
-      "text" => "Danh sách khóa học",
+      "text" => "Thông tin khóa học",
       ],
       [
-      "link" => "/administrators/classes",
+      "link" => "/lop-hoc",
       "type" => "link",
       "icon" => "fa fa-graduation-cap",
-      "text" => "Danh sách lớp học ",
+      "text" => "Lớp học ",
       ],
       ],
       ],
@@ -177,13 +177,13 @@
       "title" => "Quản Lý Nhân Sự",
       "items" => [
       [
-      "link" => "/administrators/staffs",
+      "link" => "/khoa-hoc",
       "type" => "link",
       "icon" => "fa fa-users",
       "text" => "Nhân viên",
       ],
       [
-      "link" => "/administrators/contracts",
+      "link" => "/lop-hoc",
       "type" => "link",
       "icon" => "fa fa-file-text-o",
       "text" => "Hợp đồng ",
