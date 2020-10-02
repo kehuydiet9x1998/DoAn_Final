@@ -34,7 +34,7 @@
         ],
         ],
         ],];
-  $phanquyen = 'administrators';
+  $phanquyen = 'contact';
     if($phanquyen == 'contact') {
       $menu = [
         [
@@ -43,13 +43,13 @@
         [
         "type" => "link",
         "icon" => "fa fa-user",
-        "link" => "/admin/khoa-hoc/abc",
+        "link" => "/admin/hocsinh",
         "text" => "Học sinh",
         ],
         [
         "type" => "link",
         "icon" => "fa fa-dollar",
-        "link" => "/lop-hoc",
+        "link" => "/admin/hocphi",
         "text" => "Học phí",
         ],
         [
@@ -61,13 +61,13 @@
         [
         "type" => "link",
         "icon" => "fa fa-history",
-        "link" => "/lop-hoc",
+        "link" => "/admin/lich-trai-nghiem",
         "text" => "Lịch trải nghiệm",
         ],
         [
         "type"=> "link",
         "icon"=> "feather icon-home",
-        "link"=> "/lop-hoc",
+        "link"=> "/admin/nhan-xet",
         "text"=> "Nhận xét",
         ],
         ],
@@ -113,7 +113,7 @@
         "text" => "Theo dõi lớp học",
         ],
         [
-        "link" => "/khoa-hoc",
+        "link" => "admin/thoi-khoa-bieu",
         "type" => "link",
         "icon" => "far fa-calendar-alt",
         "text" => "Thời khóa biểu",
