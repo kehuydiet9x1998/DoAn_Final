@@ -24,6 +24,11 @@
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/widget.css')}}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/fullcalendar.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/icofont.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/themify-icons.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/pages.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/fullcalendar.print.css')}}" media='print'>
   <style>
     .width-logo {
       width: 160px;
@@ -62,7 +67,7 @@
       </div>
     </div>
 
-
+    @yield('script')
     <script data-cfasync="false" src="{{asset('assets/js/email-decode.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/jquery.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/jquery-ui.min.js')}}"></script>
@@ -84,8 +89,8 @@
     <script type="text/javascript" src="{{asset('assets/js/script.min.js')}}"></script>
     <script type="text/javascript" src="{{ asset('js/app.js')}}"></script>
 
-    <script src="{{asset('assets/js/rocket-loader.min.js')}}" data-cf-settings="d2d1d6e2f87cbebdf4013b26-|49" defer="">
-    </script>
+    <script src="{{asset('assets/js/rocket-loader.min.js')}}" data-cf-settings="d2d1d6e2f87cbebdf4013b26-|49" defer=""></script>
+  </div>
 </body>
 
 </html>

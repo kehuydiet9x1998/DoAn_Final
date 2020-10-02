@@ -34,7 +34,7 @@
         ],
         ],
         ],];
-  $phanquyen = 'administrators';
+  $phanquyen = 'giangvien';
     if($phanquyen == 'contact') {
       $menu = [
         [
@@ -127,7 +127,7 @@
       "title" => "Giảng Dạy",
       "items" => [
       [
-      "link" => "/khoa-hoc",
+      "link" => "/teachers/calendar",
       "type" => "link",
       "icon" => "far fa-calendar-alt",
       "text" => "Xem lịch dạy",
@@ -145,7 +145,7 @@
       "text" => "Chấm bài tập",
       ],
       [
-      "link" => "/khoa-hoc",
+      "link" => "/teachers/items",
       "type" => "link",
       "icon" => "fa fa-tasks",
       "text" => "Sản phẩm cuối khóa",
@@ -160,16 +160,16 @@
       "title" => "Khóa học",
       "items" => [
       [
-      "link" => "/khoa-hoc",
+      "link" => "/administrators/courses",
       "type" => "link",
       "icon" => "fa fa-institution",
-      "text" => "Thông tin khóa học",
+      "text" => "Danh sách khóa học",
       ],
       [
-      "link" => "/lop-hoc",
+      "link" => "/administrators/classes",
       "type" => "link",
       "icon" => "fa fa-graduation-cap",
-      "text" => "Lớp học ",
+      "text" => "Danh sách lớp học ",
       ],
       ],
       ],
@@ -177,13 +177,13 @@
       "title" => "Quản Lý Nhân Sự",
       "items" => [
       [
-      "link" => "/khoa-hoc",
+      "link" => "/administrators/staffs",
       "type" => "link",
       "icon" => "fa fa-users",
       "text" => "Nhân viên",
       ],
       [
-      "link" => "/lop-hoc",
+      "link" => "/administrators/contracts",
       "type" => "link",
       "icon" => "fa fa-file-text-o",
       "text" => "Hợp đồng ",

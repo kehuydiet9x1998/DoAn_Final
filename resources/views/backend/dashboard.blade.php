@@ -95,8 +95,6 @@
               </div>
             </div>
           </div>
-
-
           <div class="col-xl-6 col-md-12">
             <div class="card latest-update-card">
               <div class="card-header">
