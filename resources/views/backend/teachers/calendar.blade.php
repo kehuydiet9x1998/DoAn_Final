@@ -1,85 +1,285 @@
 @extends('backend.layout.index')
 @section('content')
-  <div class="pcoded-content">
-    <div class="page-header card">
-      <div class="row align-items-end">
-        <div class="col-lg-8">
-          <div class="page-header-title">
-            <i class="feather icon-calendar bg-c-blue"></i>
-            <div class="d-inline">
-              <h5>Full Calendar</h5>
-              <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
-            </div>
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Calendar</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Calendar</li>
+            </ol>
           </div>
         </div>
-        <div class="col-lg-4">
-          <div class="page-header-breadcrumb">
-            <ul class=" breadcrumb breadcrumb-title">
-              <li class="breadcrumb-item">
-                <a href="file:///C:/Users/Administrator/Downloads/admindek-master/web/index.html"><i class="feather icon-home"></i></a>
-              </li>
-              <li class="breadcrumb-item"><a href="file:///C:/Users/Administrator/Downloads/admindek-master/web/event-full-calender.html#!">Event Calendar</a>
-              </li>
-              <li class="breadcrumb-item"><a href="file:///C:/Users/Administrator/Downloads/admindek-master/web/event-full-calender.html#!">Full Calendar</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pcoded-inner-content full-calender">
-      <div class="main-body">
-        <div class="page-wrapper">
-          <div class="page-body">
-            <div class="card">
-              <div class="card-header">
-                <h5>Full Calendar</h5>
-              </div>
-              <div class="card-block">
-                <div class="row">
-                  <div class="col-xl-2 col-md-12">
-                    <div id="external-events">
-                      <h6 class="m-b-30 m-t-20">Events</h6>
-                      <div class="fc-event ui-draggable ui-draggable-handle">My Event 1</div>
-                      <div class="fc-event ui-draggable ui-draggable-handle">My Event 2</div>
-                      <div class="fc-event ui-draggable ui-draggable-handle">My Event 3</div>
-                      <div class="fc-event ui-draggable ui-draggable-handle">My Event 4</div>
-                      <div class="fc-event ui-draggable ui-draggable-handle">My Event 5</div>
-                      <div class="checkbox-fade fade-in-primary m-t-10">
-                        <label>
-                          <input type="checkbox" value="">
-                          <span class="cr">
-<i class="cr-icon icofont icofont-ui-check txt-primary"></i>
-</span>
-                          <span>Remove After Drop</span>
-                        </label>
-                      </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="sticky-top mb-3">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title">Draggable Events</h4>
+                </div>
+                <div class="card-body">
+                  <!-- the events -->
+                  <div id="external-events">
+                    <div class="external-event bg-success">Lunch</div>
+                    <div class="external-event bg-warning">Go home</div>
+                    <div class="external-event bg-info">Do homework</div>
+                    <div class="external-event bg-primary">Work on UI design</div>
+                    <div class="external-event bg-danger">Sleep tight</div>
+                    <div class="checkbox">
+                      <label for="drop-remove">
+                        <input type="checkbox" id="drop-remove">
+                        remove after drop
+                      </label>
                     </div>
                   </div>
-                  <div class="col-xl-10 col-md-12">
-                    <div id="calendar" class="fc fc-unthemed fc-ltr"><div class="fc-toolbar fc-header-toolbar"><div class="fc-left"><div class="fc-button-group"><button type="button" class="fc-prev-button fc-button fc-state-default fc-corner-left"><span class="fc-icon fc-icon-left-single-arrow"></span></button><button type="button" class="fc-next-button fc-button fc-state-default fc-corner-right"><span class="fc-icon fc-icon-right-single-arrow"></span></button></div><button type="button" class="fc-today-button fc-button fc-state-default fc-corner-left fc-corner-right">today</button></div><div class="fc-right"><div class="fc-button-group"><button type="button" class="fc-month-button fc-button fc-state-default fc-corner-left fc-state-active">month</button><button type="button" class="fc-agendaWeek-button fc-button fc-state-default">week</button><button type="button" class="fc-agendaDay-button fc-button fc-state-default">day</button><button type="button" class="fc-listMonth-button fc-button fc-state-default fc-corner-right">list</button></div></div><div class="fc-center"><h2>September 2018</h2></div><div class="fc-clear"></div></div><div class="fc-view-container" style=""><div class="fc-view fc-month-view fc-basic-view" style=""><table><thead class="fc-head"><tr><td class="fc-head-container fc-widget-header"><div class="fc-row fc-widget-header"><table><thead><tr><th class="fc-day-header fc-widget-header fc-sun"><span>Sun</span></th><th class="fc-day-header fc-widget-header fc-mon"><span>Mon</span></th><th class="fc-day-header fc-widget-header fc-tue"><span>Tue</span></th><th class="fc-day-header fc-widget-header fc-wed"><span>Wed</span></th><th class="fc-day-header fc-widget-header fc-thu"><span>Thu</span></th><th class="fc-day-header fc-widget-header fc-fri"><span>Fri</span></th><th class="fc-day-header fc-widget-header fc-sat"><span>Sat</span></th></tr></thead></table></div></td></tr></thead><tbody class="fc-body"><tr><td class="fc-widget-content"><div class="fc-scroller fc-day-grid-container" style="overflow: hidden; height: 568px;"><div class="fc-day-grid fc-unselectable"><div class="fc-row fc-week fc-widget-content" style="height: 94px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-other-month fc-past" data-date="2018-08-26"></td><td class="fc-day fc-widget-content fc-mon fc-other-month fc-past" data-date="2018-08-27"></td><td class="fc-day fc-widget-content fc-tue fc-other-month fc-past" data-date="2018-08-28"></td><td class="fc-day fc-widget-content fc-wed fc-other-month fc-past" data-date="2018-08-29"></td><td class="fc-day fc-widget-content fc-thu fc-other-month fc-past" data-date="2018-08-30"></td><td class="fc-day fc-widget-content fc-fri fc-other-month fc-past" data-date="2018-08-31"></td><td class="fc-day fc-widget-content fc-sat fc-past" data-date="2018-09-01"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-top fc-sun fc-other-month fc-past" data-date="2018-08-26"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-08-26&quot;,&quot;type&quot;:&quot;day&quot;}">26</a></td><td class="fc-day-top fc-mon fc-other-month fc-past" data-date="2018-08-27"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-08-27&quot;,&quot;type&quot;:&quot;day&quot;}">27</a></td><td class="fc-day-top fc-tue fc-other-month fc-past" data-date="2018-08-28"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-08-28&quot;,&quot;type&quot;:&quot;day&quot;}">28</a></td><td class="fc-day-top fc-wed fc-other-month fc-past" data-date="2018-08-29"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-08-29&quot;,&quot;type&quot;:&quot;day&quot;}">29</a></td><td class="fc-day-top fc-thu fc-other-month fc-past" data-date="2018-08-30"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-08-30&quot;,&quot;type&quot;:&quot;day&quot;}">30</a></td><td class="fc-day-top fc-fri fc-other-month fc-past" data-date="2018-08-31"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-08-31&quot;,&quot;type&quot;:&quot;day&quot;}">31</a></td><td class="fc-day-top fc-sat fc-past" data-date="2018-09-01"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-01&quot;,&quot;type&quot;:&quot;day&quot;}">1</a></td></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div><div class="fc-bgevent-skeleton"><table><tbody><tr><td class="fc-nonbusiness fc-bgevent" colspan="1"></td><td colspan="6"></td></tr></tbody></table></div><div class="fc-bgevent-skeleton"><table><tbody><tr><td colspan="6"></td><td class="fc-nonbusiness fc-bgevent" colspan="1"></td></tr></tbody></table></div></div><div class="fc-row fc-week fc-widget-content" style="height: 94px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-past" data-date="2018-09-02"></td><td class="fc-day fc-widget-content fc-mon fc-past" data-date="2018-09-03"></td><td class="fc-day fc-widget-content fc-tue fc-past" data-date="2018-09-04"></td><td class="fc-day fc-widget-content fc-wed fc-past" data-date="2018-09-05"></td><td class="fc-day fc-widget-content fc-thu fc-past" data-date="2018-09-06"></td><td class="fc-day fc-widget-content fc-fri fc-past" data-date="2018-09-07"></td><td class="fc-day fc-widget-content fc-sat fc-past" data-date="2018-09-08"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-top fc-sun fc-past" data-date="2018-09-02"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-02&quot;,&quot;type&quot;:&quot;day&quot;}">2</a></td><td class="fc-day-top fc-mon fc-past" data-date="2018-09-03"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-03&quot;,&quot;type&quot;:&quot;day&quot;}">3</a></td><td class="fc-day-top fc-tue fc-past" data-date="2018-09-04"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-04&quot;,&quot;type&quot;:&quot;day&quot;}">4</a></td><td class="fc-day-top fc-wed fc-past" data-date="2018-09-05"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-05&quot;,&quot;type&quot;:&quot;day&quot;}">5</a></td><td class="fc-day-top fc-thu fc-past" data-date="2018-09-06"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-06&quot;,&quot;type&quot;:&quot;day&quot;}">6</a></td><td class="fc-day-top fc-fri fc-past" data-date="2018-09-07"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-07&quot;,&quot;type&quot;:&quot;day&quot;}">7</a></td><td class="fc-day-top fc-sat fc-past" data-date="2018-09-08"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-08&quot;,&quot;type&quot;:&quot;day&quot;}">8</a></td></tr></thead><tbody><tr><td></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end fc-draggable" style="background-color:#ff5252;border-color:#ff5252;color:#fff"><div class="fc-content"><span class="fc-time">1p</span> <span class="fc-title">Business Lunch</span></div></a></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div><div class="fc-bgevent-skeleton"><table><tbody><tr><td class="fc-nonbusiness fc-bgevent" colspan="1"></td><td colspan="6"></td></tr></tbody></table></div><div class="fc-bgevent-skeleton"><table><tbody><tr><td colspan="6"></td><td class="fc-nonbusiness fc-bgevent" colspan="1"></td></tr></tbody></table></div><div class="fc-bgevent-skeleton"><table><tbody><tr><td colspan="4"></td><td class="fc-bgevent" style="background-color:#ab7967" colspan="2"></td><td colspan="1"></td></tr></tbody></table></div></div><div class="fc-row fc-week fc-widget-content" style="height: 94px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-past" data-date="2018-09-09"></td><td class="fc-day fc-widget-content fc-mon fc-past" data-date="2018-09-10"></td><td class="fc-day fc-widget-content fc-tue fc-past" data-date="2018-09-11"></td><td class="fc-day fc-widget-content fc-wed fc-past" data-date="2018-09-12"></td><td class="fc-day fc-widget-content fc-thu fc-past" data-date="2018-09-13"></td><td class="fc-day fc-widget-content fc-fri fc-past" data-date="2018-09-14"></td><td class="fc-day fc-widget-content fc-sat fc-past" data-date="2018-09-15"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-top fc-sun fc-past" data-date="2018-09-09"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-09&quot;,&quot;type&quot;:&quot;day&quot;}">9</a></td><td class="fc-day-top fc-mon fc-past" data-date="2018-09-10"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-10&quot;,&quot;type&quot;:&quot;day&quot;}">10</a></td><td class="fc-day-top fc-tue fc-past" data-date="2018-09-11"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-11&quot;,&quot;type&quot;:&quot;day&quot;}">11</a></td><td class="fc-day-top fc-wed fc-past" data-date="2018-09-12"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-12&quot;,&quot;type&quot;:&quot;day&quot;}">12</a></td><td class="fc-day-top fc-thu fc-past" data-date="2018-09-13"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-13&quot;,&quot;type&quot;:&quot;day&quot;}">13</a></td><td class="fc-day-top fc-fri fc-past" data-date="2018-09-14"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-14&quot;,&quot;type&quot;:&quot;day&quot;}">14</a></td><td class="fc-day-top fc-sat fc-past" data-date="2018-09-15"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-15&quot;,&quot;type&quot;:&quot;day&quot;}">15</a></td></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end fc-draggable" style="background-color:#448aff;border-color:#448aff;color:#fff"><div class="fc-content"><span class="fc-time">11a</span> <span class="fc-title">Meeting</span></div></a></td><td></td><td></td></tr></tbody></table></div><div class="fc-bgevent-skeleton"><table><tbody><tr><td class="fc-nonbusiness fc-bgevent" colspan="1"></td><td colspan="6"></td></tr></tbody></table></div><div class="fc-bgevent-skeleton"><table><tbody><tr><td colspan="6"></td><td class="fc-nonbusiness fc-bgevent" colspan="1"></td></tr></tbody></table></div></div><div class="fc-row fc-week fc-widget-content" style="height: 94px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-past" data-date="2018-09-16"></td><td class="fc-day fc-widget-content fc-mon fc-past" data-date="2018-09-17"></td><td class="fc-day fc-widget-content fc-tue fc-past" data-date="2018-09-18"></td><td class="fc-day fc-widget-content fc-wed fc-past" data-date="2018-09-19"></td><td class="fc-day fc-widget-content fc-thu fc-past" data-date="2018-09-20"></td><td class="fc-day fc-widget-content fc-fri fc-past" data-date="2018-09-21"></td><td class="fc-day fc-widget-content fc-sat fc-past" data-date="2018-09-22"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-top fc-sun fc-past" data-date="2018-09-16"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-16&quot;,&quot;type&quot;:&quot;day&quot;}">16</a></td><td class="fc-day-top fc-mon fc-past" data-date="2018-09-17"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-17&quot;,&quot;type&quot;:&quot;day&quot;}">17</a></td><td class="fc-day-top fc-tue fc-past" data-date="2018-09-18"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-18&quot;,&quot;type&quot;:&quot;day&quot;}">18</a></td><td class="fc-day-top fc-wed fc-past" data-date="2018-09-19"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-19&quot;,&quot;type&quot;:&quot;day&quot;}">19</a></td><td class="fc-day-top fc-thu fc-past" data-date="2018-09-20"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-20&quot;,&quot;type&quot;:&quot;day&quot;}">20</a></td><td class="fc-day-top fc-fri fc-past" data-date="2018-09-21"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-21&quot;,&quot;type&quot;:&quot;day&quot;}">21</a></td><td class="fc-day-top fc-sat fc-past" data-date="2018-09-22"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-22&quot;,&quot;type&quot;:&quot;day&quot;}">22</a></td></tr></thead><tbody><tr><td></td><td></td><td class="fc-event-container" colspan="2"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end fc-draggable fc-resizable" style="background-color:#9ccc65;border-color:#9ccc65;color:#fff"><div class="fc-content"> <span class="fc-title">Conference</span></div><div class="fc-resizer fc-end-resizer"></div></a></td><td></td><td></td><td></td></tr></tbody></table></div><div class="fc-bgevent-skeleton"><table><tbody><tr><td class="fc-nonbusiness fc-bgevent" colspan="1"></td><td colspan="6"></td></tr></tbody></table></div><div class="fc-bgevent-skeleton"><table><tbody><tr><td colspan="6"></td><td class="fc-nonbusiness fc-bgevent" colspan="1"></td></tr></tbody></table></div></div><div class="fc-row fc-week fc-widget-content" style="height: 94px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-past" data-date="2018-09-23"></td><td class="fc-day fc-widget-content fc-mon fc-past" data-date="2018-09-24"></td><td class="fc-day fc-widget-content fc-tue fc-past" data-date="2018-09-25"></td><td class="fc-day fc-widget-content fc-wed fc-past" data-date="2018-09-26"></td><td class="fc-day fc-widget-content fc-thu fc-past" data-date="2018-09-27"></td><td class="fc-day fc-widget-content fc-fri fc-past" data-date="2018-09-28"></td><td class="fc-day fc-widget-content fc-sat fc-past" data-date="2018-09-29"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-top fc-sun fc-past" data-date="2018-09-23"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-23&quot;,&quot;type&quot;:&quot;day&quot;}">23</a></td><td class="fc-day-top fc-mon fc-past" data-date="2018-09-24"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-24&quot;,&quot;type&quot;:&quot;day&quot;}">24</a></td><td class="fc-day-top fc-tue fc-past" data-date="2018-09-25"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-25&quot;,&quot;type&quot;:&quot;day&quot;}">25</a></td><td class="fc-day-top fc-wed fc-past" data-date="2018-09-26"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-26&quot;,&quot;type&quot;:&quot;day&quot;}">26</a></td><td class="fc-day-top fc-thu fc-past" data-date="2018-09-27"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-27&quot;,&quot;type&quot;:&quot;day&quot;}">27</a></td><td class="fc-day-top fc-fri fc-past" data-date="2018-09-28"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-28&quot;,&quot;type&quot;:&quot;day&quot;}">28</a></td><td class="fc-day-top fc-sat fc-past" data-date="2018-09-29"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-29&quot;,&quot;type&quot;:&quot;day&quot;}">29</a></td></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end fc-draggable" style="background-color:#FFB64D;border-color:#FFB64D;color:#fff"><div class="fc-content"><span class="fc-time">8p</span> <span class="fc-title">Party</span></div></a></td></tr></tbody></table></div><div class="fc-bgevent-skeleton"><table><tbody><tr><td class="fc-nonbusiness fc-bgevent" colspan="1"></td><td colspan="6"></td></tr></tbody></table></div><div class="fc-bgevent-skeleton"><table><tbody><tr><td colspan="6"></td><td class="fc-nonbusiness fc-bgevent" colspan="1"></td></tr></tbody></table></div><div class="fc-bgevent-skeleton"><table><tbody><tr><td colspan="1"></td><td class="fc-bgevent" style="background-color:#FFB64D" colspan="4"></td><td colspan="2"></td></tr></tbody></table></div></div><div class="fc-row fc-week fc-widget-content" style="height: 98px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-past" data-date="2018-09-30"></td><td class="fc-day fc-widget-content fc-mon fc-other-month fc-past" data-date="2018-10-01"></td><td class="fc-day fc-widget-content fc-tue fc-other-month fc-past" data-date="2018-10-02"></td><td class="fc-day fc-widget-content fc-wed fc-other-month fc-past" data-date="2018-10-03"></td><td class="fc-day fc-widget-content fc-thu fc-other-month fc-past" data-date="2018-10-04"></td><td class="fc-day fc-widget-content fc-fri fc-other-month fc-past" data-date="2018-10-05"></td><td class="fc-day fc-widget-content fc-sat fc-other-month fc-past" data-date="2018-10-06"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-top fc-sun fc-past" data-date="2018-09-30"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-09-30&quot;,&quot;type&quot;:&quot;day&quot;}">30</a></td><td class="fc-day-top fc-mon fc-other-month fc-past" data-date="2018-10-01"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-10-01&quot;,&quot;type&quot;:&quot;day&quot;}">1</a></td><td class="fc-day-top fc-tue fc-other-month fc-past" data-date="2018-10-02"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-10-02&quot;,&quot;type&quot;:&quot;day&quot;}">2</a></td><td class="fc-day-top fc-wed fc-other-month fc-past" data-date="2018-10-03"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-10-03&quot;,&quot;type&quot;:&quot;day&quot;}">3</a></td><td class="fc-day-top fc-thu fc-other-month fc-past" data-date="2018-10-04"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-10-04&quot;,&quot;type&quot;:&quot;day&quot;}">4</a></td><td class="fc-day-top fc-fri fc-other-month fc-past" data-date="2018-10-05"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-10-05&quot;,&quot;type&quot;:&quot;day&quot;}">5</a></td><td class="fc-day-top fc-sat fc-other-month fc-past" data-date="2018-10-06"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2018-10-06&quot;,&quot;type&quot;:&quot;day&quot;}">6</a></td></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div><div class="fc-bgevent-skeleton"><table><tbody><tr><td class="fc-nonbusiness fc-bgevent" colspan="1"></td><td colspan="6"></td></tr></tbody></table></div><div class="fc-bgevent-skeleton"><table><tbody><tr><td colspan="6"></td><td class="fc-nonbusiness fc-bgevent" colspan="1"></td></tr></tbody></table></div></div></div></div></td></tr></tbody></table></div></div></div>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Create Event</h3>
+                </div>
+                <div class="card-body">
+                  <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+                    <!--<button type="button" id="color-chooser-btn" class="btn btn-info btn-block dropdown-toggle" data-toggle="dropdown">Color <span class="caret"></span></button>-->
+                    <ul class="fc-color-picker" id="color-chooser">
+                      <li><a class="text-primary" href="#"><i class="fas fa-square"></i></a></li>
+                      <li><a class="text-warning" href="#"><i class="fas fa-square"></i></a></li>
+                      <li><a class="text-success" href="#"><i class="fas fa-square"></i></a></li>
+                      <li><a class="text-danger" href="#"><i class="fas fa-square"></i></a></li>
+                      <li><a class="text-muted" href="#"><i class="fas fa-square"></i></a></li>
+                    </ul>
                   </div>
+                  <!-- /btn-group -->
+                  <div class="input-group">
+                    <input id="new-event" type="text" class="form-control" placeholder="Event Title">
+
+                    <div class="input-group-append">
+                      <button id="add-new-event" type="button" class="btn btn-primary">Add</button>
+                    </div>
+                    <!-- /btn-group -->
+                  </div>
+                  <!-- /input-group -->
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="page-error">
-        <div class="card text-center">
-          <div class="card-block">
-            <div class="m-t-10">
-              <i class="icofont icofont-warning text-white bg-c-yellow"></i>
-              <h4 class="f-w-600 m-t-25">Not supported</h4>
-              <p class="text-muted m-b-0">Full Calendar not supported in this device</p>
+          <!-- /.col -->
+          <div class="col-md-9">
+            <div class="card card-primary">
+              <div class="card-body p-0">
+                <!-- THE CALENDAR -->
+                <div id="calendar"></div>
+              </div>
+              <!-- /.card-body -->
             </div>
+            <!-- /.card -->
           </div>
+          <!-- /.col -->
         </div>
-      </div>
-    </div>
-    <div id="styleSelector">
-    </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
   </div>
+  <script src="../plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- jQuery UI -->
+  <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="../dist/js/adminlte.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="../dist/js/demo.js"></script>
+  <!-- fullCalendar 2.2.5 -->
+  <script src="../plugins/moment/moment.min.js"></script>
+  <script src="../plugins/fullcalendar/main.min.js"></script>
+  <script src="../plugins/fullcalendar-daygrid/main.min.js"></script>
+  <script src="../plugins/fullcalendar-timegrid/main.min.js"></script>
+  <script src="../plugins/fullcalendar-interaction/main.min.js"></script>
+  <script src="../plugins/fullcalendar-bootstrap/main.min.js"></script>
+  <script>
+    $(function () {
+
+      /* initialize the external events
+       -----------------------------------------------------------------*/
+      function ini_events(ele) {
+        ele.each(function () {
+
+          // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+          // it doesn't need to have a start or end
+          var eventObject = {
+            title: $.trim($(this).text()) // use the element's text as the event title
+          }
+
+          // store the Event Object in the DOM element so we can get to it later
+          $(this).data('eventObject', eventObject)
+
+          // make the event draggable using jQuery UI
+          $(this).draggable({
+            zIndex        : 1070,
+            revert        : true, // will cause the event to go back to its
+            revertDuration: 0  //  original position after the drag
+          })
+
+        })
+      }
+
+      ini_events($('#external-events div.external-event'))
+
+      /* initialize the calendar
+       -----------------------------------------------------------------*/
+      //Date for the calendar events (dummy data)
+      var date = new Date()
+      var d    = date.getDate(),
+        m    = date.getMonth(),
+        y    = date.getFullYear()
+
+      var Calendar = FullCalendar.Calendar;
+      var Draggable = FullCalendarInteraction.Draggable;
+
+      var containerEl = document.getElementById('external-events');
+      var checkbox = document.getElementById('drop-remove');
+      var calendarEl = document.getElementById('calendar');
+
+      // initialize the external events
+      // -----------------------------------------------------------------
+
+      new Draggable(containerEl, {
+        itemSelector: '.external-event',
+        eventData: function(eventEl) {
+          console.log(eventEl);
+          return {
+            title: eventEl.innerText,
+            backgroundColor: window.getComputedStyle( eventEl ,null).getPropertyValue('background-color'),
+            borderColor: window.getComputedStyle( eventEl ,null).getPropertyValue('background-color'),
+            textColor: window.getComputedStyle( eventEl ,null).getPropertyValue('color'),
+          };
+        }
+      });
+
+      var calendar = new Calendar(calendarEl, {
+        plugins: [ 'bootstrap', 'interaction', 'dayGrid', 'timeGrid' ],
+        header    : {
+          left  : 'prev,next today',
+          center: 'title',
+          right : 'dayGridMonth,timeGridWeek,timeGridDay'
+        },
+        'themeSystem': 'bootstrap',
+        //Random default events
+        events    : [
+          {
+            title          : 'All Day Event',
+            start          : new Date(y, m, 1),
+            backgroundColor: '#f56954', //red
+            borderColor    : '#f56954', //red
+            allDay         : true
+          },
+          {
+            title          : 'Long Event',
+            start          : new Date(y, m, d - 5),
+            end            : new Date(y, m, d - 2),
+            backgroundColor: '#f39c12', //yellow
+            borderColor    : '#f39c12' //yellow
+          },
+          {
+            title          : 'Meeting',
+            start          : new Date(y, m, d, 10, 30),
+            allDay         : false,
+            backgroundColor: '#0073b7', //Blue
+            borderColor    : '#0073b7' //Blue
+          },
+          {
+            title          : 'Lunch',
+            start          : new Date(y, m, d, 12, 0),
+            end            : new Date(y, m, d, 14, 0),
+            allDay         : false,
+            backgroundColor: '#00c0ef', //Info (aqua)
+            borderColor    : '#00c0ef' //Info (aqua)
+          },
+          {
+            title          : 'Birthday Party',
+            start          : new Date(y, m, d + 1, 19, 0),
+            end            : new Date(y, m, d + 1, 22, 30),
+            allDay         : false,
+            backgroundColor: '#00a65a', //Success (green)
+            borderColor    : '#00a65a' //Success (green)
+          },
+          {
+            title          : 'Click for Google',
+            start          : new Date(y, m, 28),
+            end            : new Date(y, m, 29),
+            url            : 'http://google.com/',
+            backgroundColor: '#3c8dbc', //Primary (light-blue)
+            borderColor    : '#3c8dbc' //Primary (light-blue)
+          }
+        ],
+        editable  : true,
+        droppable : true, // this allows things to be dropped onto the calendar !!!
+        drop      : function(info) {
+          // is the "remove after drop" checkbox checked?
+          if (checkbox.checked) {
+            // if so, remove the element from the "Draggable Events" list
+            info.draggedEl.parentNode.removeChild(info.draggedEl);
+          }
+        }
+      });
+
+      calendar.render();
+      // $('#calendar').fullCalendar()
+
+      /* ADDING EVENTS */
+      var currColor = '#3c8dbc' //Red by default
+      //Color chooser button
+      var colorChooser = $('#color-chooser-btn')
+      $('#color-chooser > li > a').click(function (e) {
+        e.preventDefault()
+        //Save color
+        currColor = $(this).css('color')
+        //Add color effect to button
+        $('#add-new-event').css({
+          'background-color': currColor,
+          'border-color'    : currColor
+        })
+      })
+      $('#add-new-event').click(function (e) {
+        e.preventDefault()
+        //Get value and make sure it is not null
+        var val = $('#new-event').val()
+        if (val.length == 0) {
+          return
+        }
+
+        //Create events
+        var event = $('<div />')
+        event.css({
+          'background-color': currColor,
+          'border-color'    : currColor,
+          'color'           : '#fff'
+        }).addClass('external-event')
+        event.html(val)
+        $('#external-events').prepend(event)
+
+        //Add draggable funtionality
+        ini_events(event)
+
+        //Remove event from text input
+        $('#new-event').val('')
+      })
+    })
+  </script>
 @endsection
 
 
