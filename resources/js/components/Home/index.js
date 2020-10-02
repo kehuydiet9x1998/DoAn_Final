@@ -28,5 +28,6 @@ class Home extends Component {
 export default Home;
 
 if (document.getElementById("home")) {
+  console.log("render");
   ReactDOM.render(<Home />, document.getElementById("home"));
 }

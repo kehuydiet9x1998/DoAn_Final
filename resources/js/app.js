@@ -5,6 +5,5 @@
  */
 require("./bootstrap");
 
-// Register React components
-require("./components/BanTin");
-require("./components/Home/index");
+require("./components/BanTin/index");
+require("./components/Home");

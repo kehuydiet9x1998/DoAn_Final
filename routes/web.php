@@ -19,8 +19,29 @@ Route::get('/', function () {
 Route::get('/dangnhap', function () {
   return view('backend.dangnhap');
 });
+Route::prefix('administrators')->group(function () {
+  Route::get('courses', function () {
+    return view('backend.administrators.courses');
+  });
+  Route::get('classes',function (){
+    return view('backend.administrators.classes');
+  });
+  Route::get('staffs',function (){
+    return view('backend.administrators.staffs');
+  });
+  Route::get('contracts',function (){
+    return view('backend.administrators.contracts');
+  });
+});
 
-Route::get('/dashboard/{phanquyen}', 'PhanQuyenController@watchView');
+Route::prefix('teachers')->group(function (){
+  Route::get('calendar',function (){
+    return view('backend.teachers.calendar');
+  });
+  Route::get('items',function (){
+    return view('backend.teachers.items');
+  });
+});
 
 Route::get('/dashboard', function () {
   return view('backend.dashboard');

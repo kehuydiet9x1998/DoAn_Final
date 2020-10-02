@@ -1,0 +1,167 @@
+.bantin {
+  background: #f1f2f5;
+  height: 100vh;
+}
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.story {
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 120px;
+  height: 200px;
+  box-shadow: 0px 5px 17px -7px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  margin-right: 10px;
+  transition: transform 100ms ease-in;
+  cursor: pointer;
+}
+
+.story:hover {
+  transform: scale(1.07);
+}
+
+.story__avatar {
+  margin: 10px;
+  border: 5px solid #2e81f4;
+}
+
+.story > h4 {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  color: white;
+}
+
+.story__reel {
+  display: flex;
+  justify-content: center;
+}
+
+.messagesender {
+  display: flex;
+  margin-top: 30px;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 0.75);
+  width: 780px;
+}
+
+.messagesender__top {
+  display: flex;
+  border-bottom: 1px solid #eff2f5;
+  padding: 15px;
+}
+
+.messagesender__top > form {
+  display: flex;
+  flex: 1;
+}
+
+.messagesender__top > form > input {
+  outline-width: 0;
+  border: none;
+  padding: 5px 20px;
+  margin: 0 10px;
+  border-radius: 999px;
+  background: #eff2f5;
+}
+
+.messagesender__top > form > button {
+  display: none;
+}
+
+.messagesender__bottom {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.messagesender_option {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  color: gray;
+  margin: 5px;
+  cursor: pointer;
+}
+.messagesender_option > h3 {
+  font-size: medium;
+  margin-left: 10px;
+}
+
+.messagesender_option:hover {
+  background: #eff2f5;
+  border-radius: 20px;
+}
+
+.my_post {
+  width: 780px;
+  margin-top: 15px;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 0.75);
+}
+
+.my_post__top {
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 15px;
+}
+
+.my_post__avatar {
+  margin-right: 10px;
+}
+
+.my_post__topinfo > h3 {
+  font-size: medium;
+}
+
+.my_post__topinfo > p {
+  font-size: small;
+  color: gray;
+}
+
+.my_post__image > img {
+  width: 100%;
+}
+
+.my_post__bottom {
+  /* margin-bottom: 10px; */
+  padding: 10px 10px 10px 15px;
+}
+
+.my_post__options {
+  /* padding-top: 10px; */
+  border-top: 1px solid lightgray;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: medium;
+  color: gray;
+  cursor: pointer;
+  /* padding: 15px; */
+}
+.my_post__option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  flex: 1;
+}
+
+.my_post__option p {
+  padding: 20px 0 0 20px;
+}
+
+.my_post__option:hover {
+  background: #eff2f5;
+  border-radius: 10px;
+}
