@@ -40,7 +40,7 @@ export default function Bantin() {
 }
 
 const bantin = document.getElementById("bantin");
-const props = Object.assign({}, bantin.dataset);
+const props = Object.assign({}, bantin?.dataset);
 if (bantin) {
   ReactDOM.render(
     <StateProvider initialState={initialState} reducer={reducer}>

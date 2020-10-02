@@ -6,4 +6,4 @@
 require("./bootstrap");
 
 require("./components/BanTin/index");
-require("./components/Home/index");
+require("./components/Home");
