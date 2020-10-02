@@ -113,7 +113,7 @@
         "text" => "Theo dõi lớp học",
         ],
         [
-        "link" => "/khoa-hoc",
+        "link" => "/admin/thoi-khoa-bieu",
         "type" => "link",
         "icon" => "far fa-calendar-alt",
         "text" => "Thời khóa biểu",

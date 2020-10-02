@@ -118,7 +118,7 @@
                                                         <script type="text/javascript" src="{{ asset('assets/js/moment.min-2.js')}}"></script>
                                                         <script type="text/javascript" src="{{ asset('assets/js/fullcalendar.min.js')}}"></script>
                                                     
-                                                    <script type="text/javascript" src="{{ asset('assets/js/calendar.js')}}"></script>
+                                                    {{-- <script type="text/javascript" src="{{ asset('assets/js/calendar.js')}}"></script> --}}
                                                
                                             <script src="{{ asset('assets/js/jquery.mcustomscrollbar.concat.min.js')}}"
                                               type="text/javascript"></script>
