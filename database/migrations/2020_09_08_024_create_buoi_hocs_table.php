@@ -36,7 +36,7 @@ class CreateBuoiHocsTable extends Migration
       $table
         ->foreign('giao_vien_id')
         ->references('id')
-        ->on('nhan_vien');
+        ->on('giao_vien');
       $table->unsignedBigInteger('bai_giang_id');
       $table
         ->foreign('bai_giang_id')

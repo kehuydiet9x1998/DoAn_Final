@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ChucVu extends Model
 {
-    use HasFactory;
-    use SoftDeletes;
-    protected $table = 'chuc_vu';
-    protected $dates = ['deleted_at'];
-    protected $fillable = ['ten', 'mota', 'hesoluong'];
+  use HasFactory;
+  use SoftDeletes;
+  protected $table = 'chuc_vu';
+  protected $dates = ['deleted_at'];
+  protected $fillable = ['ten', 'mota', 'hesoluong'];
 
-    public function dsNhanVien()
-    {
-        return $this->hasMany(NhanVien::class);
-    }
+  public function dsNhanVien()
+  {
+    return $this->hasMany(NhanVien::class);
+  }
 }

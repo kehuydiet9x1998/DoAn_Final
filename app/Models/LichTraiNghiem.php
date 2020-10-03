@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class LichTraiNghiem extends Model
 {
-    use HasFactory;
-    use SoftDeletes;
-    protected $table = 'lich_trai_nghiem';
-    protected $dates = ['deleted_at'];
-    protected $fillable = ['thoigian', 'trangthai', 'ghichu', 'hoc_sinh_id'];
+  use HasFactory;
+  use SoftDeletes;
+  protected $table = 'lich_trai_nghiem';
+  protected $dates = ['deleted_at'];
+  protected $fillable = ['thoigian', 'trangthai', 'ghichu', 'hoc_sinh_id'];
 
-    public function hocSinh()
-    {
-        return $this->belongsTo(HocSinh::class);
-    }
+  public function hocSinh()
+  {
+    return $this->belongsTo(HocSinh::class);
+  }
 }

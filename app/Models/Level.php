@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Level extends Model
 {
-    use HasFactory;
-    use SoftDeletes;
-    protected $table = 'level';
-    protected $fillable = ['tenlevel', 'mota'];
-    protected $dates = ['deleted_at'];
+  use HasFactory;
+  use SoftDeletes;
+  protected $table = 'level';
+  protected $fillable = ['tenlevel', 'mota'];
+  protected $dates = ['deleted_at'];
 
-    public function dsKhoaHoc()
-    {
-        return $this->hasMany(KhoaHoc::class);
-    }
+  public function dsKhoaHoc()
+  {
+    return $this->hasMany(KhoaHoc::class);
+  }
 }

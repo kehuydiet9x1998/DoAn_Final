@@ -30,9 +30,9 @@ class CreateHocSinhsTable extends Migration
         ->references('id')
         ->on('phu_huynh');
 
-      $table->unsignedBigInteger('user_hoc_sinh_id')->nullable();
+      $table->unsignedBigInteger('user_id')->nullable();
       $table
-        ->foreign('user_hoc_sinh_id')
+        ->foreign('user_id')
         ->references('id')
         ->on('users');
       $table->timestamps();

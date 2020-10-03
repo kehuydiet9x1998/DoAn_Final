@@ -23,9 +23,9 @@ class CreatePhuHuynhsTable extends Migration
       $table->dateTime('ngaysinh');
       $table->string('gioitinh');
       $table->string('diachi');
-      $table->unsignedBigInteger('user_phu_huynh_id')->nullable();
+      $table->unsignedBigInteger('user_id')->nullable();
       $table
-        ->foreign('user_phu_huynh_id')
+        ->foreign('user_id')
         ->references('id')
         ->on('users');
       $table->timestamps();

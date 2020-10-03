@@ -8,23 +8,23 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Luong extends Model
 {
-    use HasFactory;
-    use SoftDeletes;
-    protected $table = 'luong';
-    protected $fillable = [
-        'thang',
-        'luonggoc',
-        'thuong',
-        'phat',
-        'thuclinh',
-        'trangthai',
-        'ghichu',
-        'nhan_vien_id',
-    ];
-    protected $dates = ['deleted_at'];
+  use HasFactory;
+  use SoftDeletes;
+  protected $table = 'luong';
+  protected $fillable = [
+    'thang',
+    'luonggoc',
+    'thuong',
+    'phat',
+    'thuclinh',
+    'trangthai',
+    'ghichu',
+    'nhan_vien_id',
+  ];
+  protected $dates = ['deleted_at'];
 
-    public function nhanVien()
-    {
-        return $this->belongsTo(NhanVien::class);
-    }
+  public function nhanVien()
+  {
+    return $this->belongsTo(NhanVien::class);
+  }
 }
