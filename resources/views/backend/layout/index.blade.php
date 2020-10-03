@@ -17,16 +17,6 @@
   <link rel="icon" href="https://colorlib.com/polygon/admindek/files/assets/images/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
-  <link rel="stylesheet" href="public/plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- fullCalendar -->
-  <link rel="stylesheet" href="plugins/fullcalendar/main.min.css">
-  <link rel="stylesheet" href="plugins/fullcalendar-daygrid/main.min.css">
-  <link rel="stylesheet" href="plugins/fullcalendar-timegrid/main.min.css">
-  <link rel="stylesheet" href="plugins/fullcalendar-bootstrap/main.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="public/dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.min.css')}}">
@@ -113,7 +103,7 @@
     <script type="text/javascript" src="{{asset('assets/js/calendar.js')}}"></script>
     <script src="{{asset('assets/js/rocket-loader.min.js')}}" data-cf-settings="d2d1d6e2f87cbebdf4013b26-|49" defer="">
     </script>
-
+  @yield('script')
 </body>
 
 </html>
