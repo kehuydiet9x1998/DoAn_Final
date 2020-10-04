@@ -18,7 +18,7 @@ class CreateKhoaHocsTable extends Migration
       $table->string('tenkhoahoc');
       $table->string('dotuoi');
       $table->unsignedInteger('sisotoida');
-      $table->string('capdo');
+      $table->string('mota');
       $table->string('noidung', 10000);
       $table->string('dieukienhoc');
       $table->bigInteger('hocphi');

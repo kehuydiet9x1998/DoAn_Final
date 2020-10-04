@@ -10,9 +10,8 @@ Route::get('/dangnhap', function () {
   return view('backend.dangnhap');
 });
 Route::prefix('administrators')->group(function () {
-  Route::get('courses', function () {
-    return view('backend.administrators.courses');
-  });
+  Route::resource('courses', "Administrators\KhoaHocController");
+
   Route::get('classes', function () {
     return view('backend.administrators.classes');
   });

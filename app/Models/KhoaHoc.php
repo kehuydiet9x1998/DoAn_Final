@@ -15,24 +15,18 @@ class KhoaHoc extends Model
   protected $fillable = [
     'tenkhoahoc',
     'dotuoi',
+    'mota',
     'sisotoida',
-    'capdo',
     'noidung',
     'dieukienhoc',
     'hocphi',
     'loai_khoa_hoc_id',
     'level_id',
-    'giao_vien_id',
   ];
 
   public function loaiKhoaHoc()
   {
     return $this->belongsTo(LoaiKhoaHoc::class);
-  }
-
-  public function giaoVien()
-  {
-    return $this->belongsTo(GiaoVien::class);
   }
 
   public function level()
