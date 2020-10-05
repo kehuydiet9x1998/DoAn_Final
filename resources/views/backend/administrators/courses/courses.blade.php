@@ -87,15 +87,12 @@
                   </table>
                 </div>
               </div>
-{{ $khoahocs->links() }}
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-                  
-
 </div>
 <div class="modal fade" id="large-Modal" tabindex="-1" role="dialog" style="z-index: 1050; display: none;"
   aria-hidden="true">

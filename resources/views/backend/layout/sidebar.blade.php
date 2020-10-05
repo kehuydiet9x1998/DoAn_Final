@@ -34,7 +34,7 @@ $main = [[
 ],
 ],
 ],];
-$phanquyen = 'administrators';
+$phanquyen = 'contact';
 if($phanquyen == 'contact') {
 $menu = [
 [

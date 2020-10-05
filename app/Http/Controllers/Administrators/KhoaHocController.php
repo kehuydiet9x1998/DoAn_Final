@@ -17,7 +17,7 @@ class KhoaHocController extends Controller
    */
   public function index()
   {
-    $khoahocs = KhoaHoc::paginate(2);
+    $khoahocs = KhoaHoc::all();
     $levels = Level::all();
     $loaikhoahocs = LoaiKhoaHoc::all();
     return view(
