@@ -6,179 +6,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfeacd01-f2c3-4401-a83c-21a86b8aa657" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Administrators/KhoaHocController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_seeder/giao_vien.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_seeder/khoa_hoc.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_seeder/level.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_seeder/loai_khoa_hoc.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_seeder/phu_huynh.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/jpg/avatar-5 (2).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/administrators/courses/add_course.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/administrators/courses/courses.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/administrators/courses/edit_course.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/administrators/courses/show_course.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/KhoaHoc.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/KhoaHoc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_08_003_create_giao_vien.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_08_003_create_giao_vien.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_08_017_create_khoa_hocs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_08_017_create_khoa_hocs_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeders/_seeder.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_seeder.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/accordion.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/accordion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/amcharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/amcharts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/autonumeric.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/autonumeric.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/bootstrap-datepicker.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/bootstrap-datepicker.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/bootstrap-datetimepicker.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/bootstrap-datetimepicker.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/bootstrap-growl.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/bootstrap-growl.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/bootstrap-maxlength.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/bootstrap-maxlength.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/bootstrap-multiselect.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/bootstrap-multiselect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/bootstrap-slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/bootstrap-slider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/bootstrap-tagsinput.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/bootstrap-tagsinput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/buttons.colvis.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/buttons.colvis.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/buttons.flash.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/buttons.flash.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/buttons.html5.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/buttons.html5.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/buttons.print.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/buttons.print.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/c3.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/c3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/calendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/cell-features.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/cell-features.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/cell-types.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/cell-types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/chart-nvd3.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/chart-nvd3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/chart-sparkline.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/chart-sparkline.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/chartist-plugin-threshold.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/chartist-plugin-threshold.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/chartist.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/chartist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/chartlist-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/chartlist-custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/chroma.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/chroma.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/ckeditor-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/ckeditor-custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/ckeditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/ckeditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/classie.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/classie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/clndr.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/clndr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/common-pages.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/common-pages.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/croper.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/croper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/cropper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/cropper.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/css-scrollbars.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/css-scrollbars.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/curvedlines.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/curvedlines.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/custom-google-chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/custom-google-chart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/custom-nestable.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/custom-nestable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/custom-picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/custom-picker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/custom-prism.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/custom-prism.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/d3.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/d3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/d3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/d3.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/data-operation.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/data-operation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/data-table-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/data-table-custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/datatables.autofill.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/datatables.autofill.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/datatables.bootstrap4.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/datatables.bootstrap4.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/datatables.buttons.min-2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/datatables.buttons.min-2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/datatables.buttons.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/datatables.buttons.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/datatables.colreorder.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/datatables.colreorder.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/datatables.fixedcolumns.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/datatables.fixedcolumns.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/datatables.fixedheader.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/datatables.fixedheader.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/datatables.keytable.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/datatables.keytable.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/datatables.responsive.min-2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/datatables.responsive.min-2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/datatables.responsive.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/datatables.responsive.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/datatables.rowreorder.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/datatables.rowreorder.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/datatables.scroller.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/datatables.scroller.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/datatables.select.min-2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/datatables.select.min-2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/datatables.select.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/datatables.select.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/daterangepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/daterangepicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/de.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/de.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/dropzone-amd-module.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/dropzone-amd-module.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/editable.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/editable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/email-decode.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/email-decode.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/excanvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/excanvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/float-chart-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/float-chart-custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/footable.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/footable.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/form-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/form-validation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/form-wizard.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/form-wizard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/fullcalendar.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/fullcalendar.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/gauge.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/gauge.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/gmaps.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/gmaps.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/handsontable.full.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/handsontable.full.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/i18next.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/i18next.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/i18nextxhrbackend.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/i18nextxhrbackend.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/inputmask.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/inputmask.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/integration.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/integration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/intro.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/intro.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery-jvectormap-2.0.2.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery-jvectormap-2.0.2.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery-ui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery-ui.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.barrating.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.barrating.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.cookie.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.cookie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.datatables.min-2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.datatables.min-2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.datatables.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.datatables.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.flot.categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.flot.categories.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.flot.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.flot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.flot.pie.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.flot.pie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.flot.tooltip.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.flot.tooltip.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.inputmask.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.inputmask.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.jqpagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.jqpagination.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.knob.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.knob.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.mcustomscrollbar.concat.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.mcustomscrollbar.concat.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.minicolors.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.minicolors.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.mousewheel.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.mousewheel.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.multi-select.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.multi-select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.nestable.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.nestable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.peity.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.peity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.quicksearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.quicksearch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.slimscroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.slimscroll.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.sparkline.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.sparkline.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.steps.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.steps.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.tabledit.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.tabledit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.toolbar.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.toolbar.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.validate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.wavify.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.wavify.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jscolor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jscolor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jstree.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jstree.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jszip.min-2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jszip.min-2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jszip.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jszip.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/knob-custom-chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/knob-custom-chart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/leaflet-mapbox-gl.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/leaflet-mapbox-gl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/leaflet.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/leaflet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/leaflet.markercluster.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/leaflet.markercluster.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/list-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/list-custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/loader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/map-api.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/map-api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/mapbox-gl.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/mapbox-gl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/markerclusterer.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/markerclusterer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/menu-compact.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/menu-compact.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/menu-header-fixed.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/menu-header-fixed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/menu-hori-fixed.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/menu-hori-fixed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/menu-sidebar-fixed.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/menu-sidebar-fixed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/menu-static.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/menu-static.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/modal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/modaleffects.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/modaleffects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/modernizr.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/modernizr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/moment-with-locales.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/moment-with-locales.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/moment.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/moment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/moment.min-2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/moment.min-2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/moment.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/moment.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/morris-custom-chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/morris-custom-chart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/morris.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/morris.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/notification.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/nv.d3.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/nv.d3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/offline.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/offline.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/owl.carousel.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/owl.carousel.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pdfmake.min-2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/pdfmake.min-2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pdfmake.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/pdfmake.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/peity-custom-chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/peity-custom-chart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/popper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/popper.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/raphael.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/raphael.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/rating.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/rating.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/responsive.bootstrap4.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/responsive.bootstrap4.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/rickshaw.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/rickshaw.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/rickshow-custom-.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/rickshow-custom-.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/rocket-loader.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/rocket-loader.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/row-reorder-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/row-reorder-custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/rows-only.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/rows-only.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/script.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/script.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/select2-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/select2-custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/select2.full.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/select2.full.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/serial.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/serial.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/sessiontimeout-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/sessiontimeout-custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/smoothscroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/smoothscroll.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/sortable.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/sortable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/spectrum.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/spectrum.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/stream_layers.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/stream_layers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/stroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/stroll.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/swiper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/swiper.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/tinymce.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/todo.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/todo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tweenmax.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/tweenmax.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/typeahead.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/typeahead.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/underscore-min-2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/underscore-min-2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/underscore-min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/underscore-min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/utilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/utilities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/validate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/waves.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/waves.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/widget-chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/widget-chart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/widget-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/widget-data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_seeder/Hoc_Sinh.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_seeder/Hoc_Sinh.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_seeder/Users.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_seeder/Users.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/jpg/avatar-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/jpg/avatar-1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/jpg/avatar-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/jpg/avatar-2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/jpg/avatar-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/jpg/avatar-3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/jpg/avatar-4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/jpg/avatar-4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/jpg/avatar-5.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/courses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/courses.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/items.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/teachers/items.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -350,7 +203,7 @@
       <workItem from="1601861173155" duration="4504000" />
       <workItem from="1601866928655" duration="1856000" />
       <workItem from="1601882315362" duration="3202000" />
-      <workItem from="1601885743449" duration="75000" />
+      <workItem from="1601885743449" duration="578000" />
     </task>
     <servers />
   </component>

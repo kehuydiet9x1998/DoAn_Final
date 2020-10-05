@@ -35,6 +35,6 @@ class CreateGiaoVien extends Migration
    */
   public function down()
   {
-    Schema::dropIfExists('giaovien');
+    Schema::dropIfExists('giao_vien');
   }
 }
