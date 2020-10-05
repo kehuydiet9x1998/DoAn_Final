@@ -66,7 +66,7 @@ class KhoaHocController extends Controller
     $loaikhoahocs = LoaiKhoaHoc::all();
     return view(
       'backend.administrators.courses.show_course',
-      compact('khoahoc', 'levels', 'loaikhoahocs')
+      compact('khoaHoc', 'levels', 'loaikhoahocs')
     );
   }
 
@@ -82,7 +82,7 @@ class KhoaHocController extends Controller
     $loaikhoahocs = LoaiKhoaHoc::all();
     return view(
       'backend.administrators.courses.edit_course',
-      compact('khoahoc', 'levels', 'loaikhoahocs')
+      compact('khoaHoc', 'levels', 'loaikhoahocs')
     );
   }
 
@@ -109,5 +109,12 @@ class KhoaHocController extends Controller
   {
     $khoaHoc->delete();
     return redirect(route('administrators.index'));
+  }
+
+  public function find(string $text = "")
+  {
+    return view('backend.administrators.courses.table', [
+      'khoahocs' => KhoaHoc::where('tenkhoahoc', 'like', "%$text%")->get(),
+    ]);
   }
 }

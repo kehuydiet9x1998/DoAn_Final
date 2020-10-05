@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Administrators\KhoaHocController;
 use App\Models\KhoaHoc;
 use Illuminate\Support\Facades\Route;
 
@@ -11,8 +12,11 @@ Route::get('/dangnhap', function () {
   return view('backend.dangnhap');
 });
 Route::prefix('administrators')->group(function () {
-  Route::get('courses', 'AdministratorController@listCourses');
+  // Route::get('courses', 'AdministratorController@listCourses');
+  Route::get('courses/find/{text?}', [KhoaHocController::class, 'find']);
+
   Route::resource('courses', "Administrators\KhoaHocController");
+
   Route::get('classes', function () {
     return view('backend.administrators.classes');
   });
@@ -41,6 +45,10 @@ Route::prefix('teachers')->group(function () {
 
 Route::get('/dashboard', function () {
   return view('backend.dashboard');
+});
+
+Route::prefix('/contacts')->group(function () {
+  Route::resource('students', "Contacts\StudentController");
 });
 
 Route::get('/news-feed', function () {
@@ -83,6 +91,9 @@ Route::get('/admin/thoi-khoa-bieu', function () {
   return view('backend.thoikhoabieu.datathoikhoabieu');
 });
 
-Route::test('/test', function () {
-  return KhoaHoc::all();
+//test
+Route::get('/test', function () {
+  return view('backend.administrators.courses.table', [
+    'khoahocs' => KhoaHoc::all(),
+  ]);
 });

@@ -33,7 +33,7 @@
                 </div>
                 <div class="card-block">
                   <div class="table-responsive">
-                    <table class="table table-hover m-b-0">
+                    <table class="table table-hover m-b-0" id="table">
                       <thead>
                       <tr>
                         <th>STT</th>
@@ -48,30 +48,30 @@
                       </tr>
                       </thead>
                       <tbody>
-                      @foreach($courses as $course)
-                        <tr>
-                          <td>
-                            <div class="d-inline-block align-middle">
-                              <div class="d-inline-block">
-                                <h6>{{$course->id}}</h6>
-                                <p class="text-muted m-b-0">Sales executive , NY</p>
-                              </div>
-                            </div>
-                          </td>
-                          <td>{{$course->tenkhoahoc}}</td>
-                          <td>{{$course->dotuoi}}</td>
-                          <td>{{$course->sisotoida}}</td>
-                          <td>{{$course->capdo}}</td>
-                          <td>{{$course->noidung}}</td>
-                          <td>{{$course->dieukienhoc}}</td>
-                          <td>{{$course->hocphi}}</td>
-                          <td>
-                            <label class="badge badge-inverse-primary">Sketch</label>
-                            <label class="badge badge-inverse-primary">Ui</label>
-                          </td>
-                          <td><a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a></td>
-                        </tr>
-                      @endforeach
+{{--                      @foreach($courses as $course)--}}
+{{--                        <tr>--}}
+{{--                          <td>--}}
+{{--                            <div class="d-inline-block align-middle">--}}
+{{--                              <div class="d-inline-block">--}}
+{{--                                <h6>{{$course->id}}</h6>--}}
+{{--                                <p class="text-muted m-b-0">Sales executive , NY</p>--}}
+{{--                              </div>--}}
+{{--                            </div>--}}
+{{--                          </td>--}}
+{{--                          <td>{{$course->tenkhoahoc}}</td>--}}
+{{--                          <td>{{$course->dotuoi}}</td>--}}
+{{--                          <td>{{$course->sisotoida}}</td>--}}
+{{--                          <td>{{$course->capdo}}</td>--}}
+{{--                          <td>{{$course->noidung}}</td>--}}
+{{--                          <td>{{$course->dieukienhoc}}</td>--}}
+{{--                          <td>{{$course->hocphi}}</td>--}}
+{{--                          <td>--}}
+{{--                            <label class="badge badge-inverse-primary">Sketch</label>--}}
+{{--                            <label class="badge badge-inverse-primary">Ui</label>--}}
+{{--                          </td>--}}
+{{--                          <td><a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a></td>--}}
+{{--                        </tr>--}}
+{{--                      @endforeach--}}
                       </tbody>
                     </table>
                   </div>
@@ -169,4 +169,7 @@
   <script type="text/javascript" src="{{asset('assets/js/form-validation.js')}}"></script>
   <script type="text/javascript" src="{{asset('assets/js/validate.js')}}"></script>
   <script type="text/javascript" src="{{asset('assets/js/underscore-min.js')}}"></script>
+  <script>
+    $(document).ready(function(){ $("#table").load('localhost::8000/test'); console.log('ok')})
+ </script>
 @endsection
