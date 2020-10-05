@@ -10,8 +10,6 @@ Route::get('/dangnhap', function () {
   return view('backend.dangnhap');
 });
 Route::prefix('administrators')->group(function () {
-
-  Route::get('courses', 'AdministratorController@listCourses');
   Route::resource('courses', "Administrators\KhoaHocController");
   Route::get('classes', function () {
     return view('backend.administrators.classes');
@@ -41,6 +39,10 @@ Route::prefix('teachers')->group(function () {
 
 Route::get('/dashboard', function () {
   return view('backend.dashboard');
+});
+
+Route::prefix('/contacts')->group(function (){
+  Route::resource('students', "Contacts\StudentController");
 });
 
 Route::get('/news-feed', function () {
@@ -81,4 +83,9 @@ Route::get('/admin/nhan-xet/themnhanxet', function () {
 
 Route::get('/admin/thoi-khoa-bieu', function () {
   return view('backend.thoikhoabieu.datathoikhoabieu');
+});
+
+//test
+Route::get('/test', function (){
+  return 'bac';
 });

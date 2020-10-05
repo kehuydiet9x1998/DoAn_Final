@@ -6,31 +6,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfeacd01-f2c3-4401-a83c-21a86b8aa657" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Administrators/KhoaHocController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/_seeder/giao_vien.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/_seeder/khoa_hoc.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/_seeder/level.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/_seeder/loai_khoa_hoc.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/_seeder/phu_huynh.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/jpg/avatar-5 (2).jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/administrators/courses/add_course.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/administrators/courses/courses.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/administrators/courses/edit_course.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/administrators/courses/show_course.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/DoAn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DoAn.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/KhoaHoc.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/KhoaHoc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_08_003_create_giao_vien.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_08_003_create_giao_vien.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_08_017_create_khoa_hocs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_08_017_create_khoa_hocs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/HocSinh.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/HocSinh.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_08_002_create_hoc_sinhs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_08_002_create_hoc_sinhs_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeders/_seeder.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_seeder.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeders/_seeder/Hoc_Sinh.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_seeder/Hoc_Sinh.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/_seeder/Users.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_seeder/Users.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/jpg/avatar-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/jpg/avatar-1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/jpg/avatar-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/jpg/avatar-2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/jpg/avatar-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/jpg/avatar-3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/jpg/avatar-4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/jpg/avatar-4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/jpg/avatar-5.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/courses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/courses.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/courses/courses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/courses/courses.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/modalItems.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/hocsinh/datahocsinh.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/hocsinh/themhocsinh.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -156,6 +143,23 @@
       <path value="$PROJECT_DIR$/vendor/scrivo/highlight.php" />
       <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
+      <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
+      <path value="$PROJECT_DIR$/vendor/bfinlay/laravel-excel-seeder" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-ide-helper" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iEUQwpw56exuy7CiRTsW0pzYKV" />
@@ -204,6 +208,10 @@
       <workItem from="1601866928655" duration="1856000" />
       <workItem from="1601882315362" duration="3202000" />
       <workItem from="1601885743449" duration="578000" />
+      <workItem from="1601900914728" duration="9634000" />
+      <workItem from="1601910853965" duration="64000" />
+      <workItem from="1601910931893" duration="13000" />
+      <workItem from="1601911004770" duration="1713000" />
     </task>
     <servers />
   </component>
@@ -227,10 +235,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="445" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1601556631505" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1601861573619">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1601910911790">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601861573619" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601910911790" />
     <state x="184" y="9" key="SettingsEditor" timestamp="1601537461773">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
