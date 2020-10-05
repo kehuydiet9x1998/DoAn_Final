@@ -14,12 +14,8 @@
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-6">
                     <div id="dom-table_filter" class="dataTables_filter" style="margin-left: -145px;">
-                      <label style="display: flex">Search:<input type="search" class="form-control input-sm"
-                          placeholder="" aria-controls="dom-table"
-                          style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;">
-                        <button type="button" class="btn btn-primary waves-effect" data-toggle="modal"
-                          data-target="#large-Modal"
-                          style="height: 26px; align-content: center; padding: 0px 10px;">Thêm khóa học</button>
+                      <label style="display: flex">Search:<input type="search" class="form-control input-sm" placeholder="" aria-controls="dom-table" style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;">
+                        <button type="button" class="btn btn-primary waves-effect" data-toggle="modal" data-target="#large-Modal" style="height: 26px; align-content: center; padding: 0px 10px;">Thêm khóa học</button>
                       </label>
                     </div>
                   </div>
@@ -55,50 +51,60 @@
                     <tbody>
                       @foreach($khoahocs as $khoahoc)
                       <tr>
-                      <td>{{$khoahoc->id}}</td>
+                        <td>{{$khoahoc->id}}</td>
+                        @php
+                        $tenkhoahoc = '';
+                        if(strlen($khoahoc->tenkhoahoc) > 20){
+                        $tenkhoahoc = substr($khoahoc->tenkhoahoc,0,20);
+                        }else{
+                        $khoahoc->tenkhoahoc;
+                        }
+                        @endphp
                         <td>
                           <div class="d-inline-block align-middle">
-                          <a href="{{route('courses.show', $khoahoc->id)}}">
-                            <div class="d-inline-block">
-                              <h6>{{$khoahoc->tenkhoahoc}}</h6>
-                              <p class="text-muted m-b-0"></p>
-                            </div></a>
+                            <a href="{{route('courses.show', $khoahoc->id)}}">
+                              <div class="d-inline-block">
+                                <h6 style="color:#4099ff; font-weight: 600; font-size:13px">{{
+                                  $khoahoc->tenkhoahoc }}</h6>
+
+
+                                <p class="text-muted m-b-0"></p>
+                              </div>
+                            </a>
                           </div>
                         </td>
-                      {{-- <td>{!!$khoahoc->mota!!}</td></td> --}}
+                        {{-- <td>{!!$khoahoc->mota!!}</td></td> --}}
                         {{-- <td>{!!$khoahoc->noidung!!}</td> --}}
                         <td>{{number_format($khoahoc->hocphi).'đ'}}</td>
                         <td>{{$khoahoc->dotuoi}}</td>
                         {{-- <td>{{$khoahoc->dieukienhoc}}</td> --}}
                         <td>
-                        <label class="badge badge-inverse-primary">{{$khoahoc->loaiKhoaHoc->tenloaikhoahoc}}</label>
+                          <label class="badge badge-inverse-primary">{{$khoahoc->loaiKhoaHoc->tenloaikhoahoc}}</label>
                         </td>
-                          <td>
-                            <label class="badge badge-inverse-primary">{{$khoahoc->level->tenlevel}}</label>
-                          </td>
-                        <td><a
-                            href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a></td>
+                        <td>
+                          <label class="badge badge-inverse-primary">{{$khoahoc->level->tenlevel}}</label>
+                        </td>
+                        <td><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a></td>
                       </tr>
 
                       @endforeach
 
                     </tbody>
-                    
+
                   </table>
                 </div>
               </div>
-                {{ $khoahocs->links() }}
+              {{ $khoahocs->links() }}
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-                  
+
 
 </div>
-<div class="modal fade" id="large-Modal" tabindex="-1" role="dialog" style="z-index: 1050; display: none;"
-  aria-hidden="true">
+<div class="modal fade" id="large-Modal" tabindex="-1" role="dialog" style="z-index: 1050; display: none;" aria-hidden="true">
   <form id="main" method="post" action="{{route('courses.store')}}" novalidate="">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
@@ -126,8 +132,7 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Repeat Password</label>
             <div class="col-sm-10">
-              <input type="password" class="form-control" id="repeat-password" name="repeat-password"
-                placeholder="Repeat Password">
+              <input type="password" class="form-control" id="repeat-password" name="repeat-password" placeholder="Repeat Password">
               <span class="messages"></span>
             </div>
           </div>
@@ -168,4 +173,20 @@
 <script type="text/javascript" src="{{asset('assets/js/form-validation.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/validate.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/underscore-min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/js/jquery.datatables.min.js')}}"></script>
+
+
+
+<script>
+  $(document).ready(function() {
+        $.get()
+        $('#example').DataTable({
+          "ajax":
+
+
+
+        });
+
+</script>
+
 @endsection

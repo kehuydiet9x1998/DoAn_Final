@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\KhoaHoc;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -10,7 +11,6 @@ Route::get('/dangnhap', function () {
   return view('backend.dangnhap');
 });
 Route::prefix('administrators')->group(function () {
-
   Route::get('courses', 'AdministratorController@listCourses');
   Route::resource('courses', "Administrators\KhoaHocController");
   Route::get('classes', function () {
@@ -81,4 +81,8 @@ Route::get('/admin/nhan-xet/themnhanxet', function () {
 
 Route::get('/admin/thoi-khoa-bieu', function () {
   return view('backend.thoikhoabieu.datathoikhoabieu');
+});
+
+Route::test('/test', function () {
+  return KhoaHoc::all();
 });
