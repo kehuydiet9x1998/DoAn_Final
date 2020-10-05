@@ -17,25 +17,27 @@
   <link rel="icon" href="https://colorlib.com/polygon/admindek/files/assets/images/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
-
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/waves.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/feather.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome-n.min.css')}}">
+  {{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome-n.min.css')}}"> --}}
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/themify-icons.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/icofont.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/chartist.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/widget.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/pages.css')}}">
+  {{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/css/pages.css')}}"> --}}
   <link rel="stylesheet" type="text/css" href="{{asset('css/app.css') }}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/datatables.bootstrap4.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/buttons.datatables.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/responsive.bootstrap4.min.css')}}">
 
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/fullcalendar.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/fullcalendar.print.css')}}" media='print'>
+  {{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/css/fullcalendar.print.css')}}" media='print'> --}}
+
 
   <style>
     .width-logo {
@@ -75,32 +77,33 @@
       </div>
     </div>
 
-
-    <script data-cfasync="false" src="{{asset('assets/js/email-decode.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/jquery.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/jquery-ui.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/popper.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/bootstrap.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/waves.min.js')}}"></script>
+
     <script type="text/javascript" src="{{asset('assets/js/jquery.slimscroll.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/js/jquery.flot.js')}}"></script>
+    {{-- <script type="text/javascript" src="{{asset('assets/js/jquery.flot.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/jquery.flot.categories.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/js/jquery.flot.tooltip.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/jquery.flot.tooltip.min.js')}}"></script> --}}
+    <script type="text/javascript" src="{{asset('assets/js/jquery.mcustomscrollbar.concat.min.js')}}"></script>
 
     <script type="text/javascript" src="{{asset('assets/js/pcoded.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/vertical-layout.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/script.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('js/app.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/modernizr.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/css-scrollbars.js')}}">
+
+    <script type="text/javascript" src="{{asset('assets/js/modernizr.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/css-scrollbars.js')}}">
     </script>
-    <script type="text/javascript" src="{{ asset('assets/js/classie.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/moment.min-2.js')}}"></script>
-    {{-- <script type="text/javascript" src="{{ asset('assets/js/fullcalendar.min.js')}}"></script> --}}
-    <script type="text/javascript" src="{{ asset('assets/js/calendar.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/jquery.mcustomscrollbar.concat.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/classie.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/moment.min-2.js')}}"></script>
+
+    <script type="text/javascript" src="{{asset('assets/js/fullcalendar.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/calendar.js')}}"></script>
     <script src="{{asset('assets/js/rocket-loader.min.js')}}" data-cf-settings="d2d1d6e2f87cbebdf4013b26-|49" defer="">
     </script>
+  @yield('script')
 </body>
 
 </html>

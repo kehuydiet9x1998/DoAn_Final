@@ -72,6 +72,7 @@ $menu = [
 ],
 ],
 ],
+
 [
 "title" => "Quản Lý Đào Tạo",
 "items" => [

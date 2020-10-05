@@ -2,16 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 Route::get('/', function () {
   return view('frontend.trangchu');
 });
@@ -20,25 +10,30 @@ Route::get('/dangnhap', function () {
   return view('backend.dangnhap');
 });
 Route::prefix('administrators')->group(function () {
-  Route::get('courses', function () {
-    return view('backend.administrators.courses');
-  });
-  Route::get('classes',function (){
+  Route::resource('courses', "Administrators\KhoaHocController");
+
+  Route::get('classes', function () {
     return view('backend.administrators.classes');
   });
-  Route::get('staffs',function (){
+  Route::get('staffs', function () {
     return view('backend.administrators.staffs');
   });
-  Route::get('contracts',function (){
+  Route::get('contracts', function () {
     return view('backend.administrators.contracts');
+  });
+  Route::get('payroll', function () {
+    return view('backend.administrators.payroll');
+  });
+  Route::get('timesheets', function () {
+    return view('backend.administrators.timesheets');
   });
 });
 
-Route::prefix('teachers')->group(function (){
-  Route::get('calendar',function (){
+Route::prefix('teachers')->group(function () {
+  Route::get('calendar', function () {
     return view('backend.teachers.calendar');
   });
-  Route::get('items',function (){
+  Route::get('items', function () {
     return view('backend.teachers.items');
   });
 });

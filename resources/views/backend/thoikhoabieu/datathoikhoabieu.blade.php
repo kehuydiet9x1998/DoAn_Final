@@ -58,7 +58,7 @@
               </div>
               <div class="col-xl-10 col-md-12">
                 <div id="calendar" class="fc fc-unthemed fc-ltr">
-                  <div class="fc-toolbar fc-header-toolbar">
+                  {{-- <div class="fc-toolbar fc-header-toolbar">
                     <div class="fc-left">
                       <div class="fc-button-group"><button type="button"
                           class="fc-prev-button fc-button fc-state-default fc-corner-left"><span
@@ -703,7 +703,7 @@
                         </tbody>
                       </table>
                     </div>
-                  </div>
+                  </div> --}}
                 </div>
               </div>
             </div>
