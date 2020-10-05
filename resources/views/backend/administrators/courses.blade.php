@@ -37,127 +37,41 @@
                       <thead>
                       <tr>
                         <th>STT</th>
-                        <th>Customer</th>
-                        <th>Company</th>
-                        <th>Lead Score</th>
-                        <th>Date</th>
-                        <th>Tags</th>
+                        <th>Tên khóa học</th>
+                        <th>Độ tuổi</th>
+                        <th>Sĩ số tối đa</th>
+                        <th>Cấp độ</th>
+                        <th>Nội dung</th>
+                        <th>Điều kiện học</th>
+                        <th>Học phí</th>
                         <th>Actions</th>
                       </tr>
                       </thead>
                       <tbody>
-                      <tr>
-                        <td>
-                          <div class="d-inline-block align-middle">
-                            <div class="d-inline-block">
-                              <h6>Shirley Hoe</h6>
-                              <p class="text-muted m-b-0">Sales executive , NY</p>
+                      @foreach($courses as $course)
+                        <tr>
+                          <td>
+                            <div class="d-inline-block align-middle">
+                              <div class="d-inline-block">
+                                <h6>{{$course->id}}</h6>
+                                <p class="text-muted m-b-0">Sales executive , NY</p>
+                              </div>
                             </div>
-                          </div>
-                        </td>
-                        <td>Pinterest</td>
-                        <td>223</td>
-                        <td>19-11-2018</td>
-                        <td>19-11-2018</td>
-                        <td>
-                          <label class="badge badge-inverse-primary">Sketch</label>
-                          <label class="badge badge-inverse-primary">Ui</label>
-                        </td>
-                        <td><a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a></td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-inline-block align-middle">
-                            <div class="d-inline-block">
-                              <h6>James Alexander</h6>
-                              <p class="text-muted m-b-0">Sales executive , EL</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td>Facebook</td>
-                        <td>268</td>
-                        <td>19-11-2018</td>
-                        <td>19-11-2018</td>
-                        <td>
-                          <label class="badge badge-inverse-primary">Ux</label>
-                          <label class="badge badge-inverse-danger">Ui</label>
-                          <label class="badge badge-inverse-danger">php</label>
-                        </td>
-                        <td><a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a></td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-inline-block align-middle">
-                            <div class="d-inline-block">
-                              <h6>Shirley Hoe</h6>
-                              <p class="text-muted m-b-0">Sales executive , NY</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td>Twitter</td>
-                        <td>293</td>
-                        <td>16-03-2018</td>
-                        <td>
-                          <label class="badge badge-inverse-danger">Sketch</label>
-                          <label class="badge badge-inverse-primary">Ui</label>
-                        </td>
-                        <td><a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a></td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-inline-block align-middle">
-                            <div class="d-inline-block">
-                              <h6>Shirley Hoe</h6>
-                              <p class="text-muted m-b-0">Sales executive , NY</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td>Pinterest</td>
-                        <td>223</td>
-                        <td>19-11-2018</td>
-                        <td>
-                          <label class="badge badge-inverse-primary">Ux</label>
-                          <label class="badge badge-inverse-success">Ui</label>
-                          <label class="badge badge-inverse-warning">php</label>
-                        </td>
-                        <td><a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a></td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-inline-block align-middle">
-                            <div class="d-inline-block">
-                              <h6>James Alexander</h6>
-                              <p class="text-muted m-b-0">Sales executive , EL</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td>Facebook</td>
-                        <td>268</td>
-                        <td>19-11-2018</td>
-                        <td>
-                          <label class="badge badge-inverse-primary">Sketch</label>
-                          <label class="badge badge-inverse-primary">Ui</label>
-                        </td>
-                        <td><a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a></td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-inline-block align-middle">
-                            <div class="d-inline-block">
-                              <h6>Shirley Hoe</h6>
-                              <p class="text-muted m-b-0">Sales executive , NY</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td>Twitter</td>
-                        <td>293</td>
-                        <td>16-03-2018</td>
-                        <td>
-                          <label class="badge badge-inverse-danger">Sketch</label>
-                          <label class="badge badge-inverse-primary">Ui</label>
-                        </td>
-                        <td><a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a></td>
-                      </tr>
+                          </td>
+                          <td>{{$course->tenkhoahoc}}</td>
+                          <td>{{$course->dotuoi}}</td>
+                          <td>{{$course->sisotoida}}</td>
+                          <td>{{$course->capdo}}</td>
+                          <td>{{$course->noidung}}</td>
+                          <td>{{$course->dieukienhoc}}</td>
+                          <td>{{$course->hocphi}}</td>
+                          <td>
+                            <label class="badge badge-inverse-primary">Sketch</label>
+                            <label class="badge badge-inverse-primary">Ui</label>
+                          </td>
+                          <td><a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a></td>
+                        </tr>
+                      @endforeach
                       </tbody>
                     </table>
                   </div>
@@ -181,30 +95,47 @@
           </div>
           <div class="modal-body">
             <div class="form-group row">
-              <label class="col-sm-2 col-form-label">Simple Input</label>
+              <label class="col-sm-2 col-form-label">Tên khóa học</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" name="name" id="name" placeholder="Text Input Validation">
+                <input type="text" class="form-control" name="name" id="name" placeholder="Nhập tên khóa học">
                 <span class="messages"></span>
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-sm-2 col-form-label">Password</label>
+              <label class="col-sm-2 col-form-label">độ tuổi</label>
               <div class="col-sm-10">
-                <input type="password" class="form-control" id="password" name="password" placeholder="Password input">
+                <input type="number" class="form-control" id="password" name="password" placeholder="Nhập độ tuổi">
                 <span class="messages"></span>
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-sm-2 col-form-label">Repeat Password</label>
+              <label class="col-sm-2 col-form-label">Sĩ số tối đa</label>
               <div class="col-sm-10">
-                <input type="password" class="form-control" id="repeat-password" name="repeat-password" placeholder="Repeat Password">
+                <input type="number" class="form-control" id="repeat-password" name="repeat-password" placeholder="Nhập sĩ số tối đa">
                 <span class="messages"></span>
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-sm-2 col-form-label">Email</label>
+              <label class="col-sm-2 col-form-label">Cấp độ</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="email" name="email" placeholder="Enter valid e-mail address">
+                <select name="select" class="form-control fill">
+                  <option value="opt1">Chọn cấp độ</option>
+                  <option value="opt2">Level 1</option>
+                  <option value="opt3">Level 2</option>
+                  <option value="opt4">Level 3</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Nội dung khóa học</label>
+              <div class="col-sm-10">
+                <textarea rows="5" cols="5" class="form-control" placeholder="Default textarea"></textarea>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Điều kiện học</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="name" id="name" placeholder="Nhập đi">
                 <span class="messages"></span>
               </div>
             </div>
