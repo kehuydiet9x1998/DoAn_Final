@@ -14,11 +14,8 @@
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-6">
                     <div id="dom-table_filter" class="dataTables_filter" style="margin-left: -145px;">
-                      <label style="display: flex">Search:<input type="search" class="form-control input-sm"
-                          placeholder="" aria-controls="dom-table"
-                          style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;">
-                        <a href="{{URL::to('admin/nhan-xet/themnhanxet')}}"  class="btn btn-success btn-round waves-effect waves-light"
-                          style="margin-top: -6px;height: 35px;line-height: 13px; margin-left: 5px">Thêm nhận xét</a>
+                      <label style="display: flex">Tìm kiếm:<input type="search" class="form-control input-sm" placeholder="" aria-controls="dom-table" style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;">
+                        <a href="{{URL::to('admin/nhan-xet/themnhanxet')}}" class="btn btn-success btn-round waves-effect waves-light" style="margin-top: -6px;height: 35px;line-height: 13px; margin-left: 5px">Thêm nhận xét</a>
                       </label>
                     </div>
                   </div>
@@ -66,8 +63,7 @@
                           <label class="badge badge-inverse-primary">Sketch</label>
                           <label class="badge badge-inverse-primary">Ui</label>
                         </td>
-                        <td><a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a
-                            href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a></td>
+                        <td><a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a></td>
                       </tr>
                       <tr>
                         <td>
@@ -86,8 +82,7 @@
                           <label class="badge badge-inverse-primary">Sketch</label>
                           <label class="badge badge-inverse-primary">Ui</label>
                         </td>
-                        <td><a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a
-                            href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a></td>
+                        <td><a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a></td>
                       </tr>
                       <tr>
                         <td>
@@ -106,10 +101,9 @@
                           <label class="badge badge-inverse-primary">Sketch</label>
                           <label class="badge badge-inverse-primary">Ui</label>
                         </td>
-                        <td><a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a
-                            href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a></td>
+                        <td><a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a></td>
                       </tr>
-                      
+
                     </tbody>
                   </table>
                 </div>

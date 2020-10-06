@@ -14,17 +14,16 @@
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-6">
                     <div id="dom-table_filter" class="dataTables_filter">
-                      <label style="display: flex">Search:<input type="search" id="search" class="form-control input-sm" placeholder="" aria-controls="dom-table" style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;">
-                        <button type="button" class="btn btn-primary waves-effect" data-toggle="modal" data-target="#large-Modal" style="height: 26px; align-content: center; padding: 0px 10px;">Thêm khóa học</button>
-                      </label>
+                      <label style="display: flex">Tìm kiếm:<input type="search" id="search" class="form-control input-sm" placeholder="" aria-controls="dom-table" style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;">
+                        <a href="/administrators/courses/create">
+                          <button id='add' class="btn btn-success btn-round waves-effect waves-light" style="margin-top: -6px;height: 35px;line-height: 13px; margin-left: 5px">Thêm khóa học</button>
+                        </a></label>
                     </div>
                   </div>
                 </div>
 
               </div>
               <div class="card-block" id="data">
-
-
               </div>
 
             </div>
@@ -38,70 +37,7 @@
 
 
 </div>
-<div class="modal fade" id="large-Modal" tabindex="-1" role="dialog" style="z-index: 1050; display: none;" aria-hidden="true">
-  <form id="main" method="post" action="{{route('courses.store')}}" novalidate="">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Thêm khóa học</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Tên khóa học</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" name="tenkhoahoc" id="name" placeholder="Nhập tên khóa học">
-              <span class="messages"></span>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Password</label>
-            <div class="col-sm-10">
-              <input type="password" class="form-control" id="password" name="password" placeholder="Password input">
-              <span class="messages"></span>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Repeat Password</label>
-            <div class="col-sm-10">
-              <input type="password" class="form-control" id="repeat-password" name="repeat-password" placeholder="Repeat Password">
-              <span class="messages"></span>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control" id="email" name="email" placeholder="Enter valid e-mail address">
-              <span class="messages"></span>
-            </div>
-          </div>
-          <div class="row">
-            <label class="col-sm-2 col-form-label">Radio Buttons</label>
-            <div class="col-sm-10">
-              <div class="form-check form-check-inline">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="gender" id="gender-1" value="option1"> Male
-                </label>
-              </div>
-              <div class="form-check form-check-inline">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="gender" id="gender-2" value="option2"> Female
-                </label>
-              </div>
-              <span class="messages"></span>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default waves-effect " data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary m-b-0 waves-effect waves-light ">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </form>
-</div>
+
 @endsection
 
 @section('script')
@@ -141,7 +77,7 @@
     $('#search').on('input', function(e) {
       result = encodeURI('/administrators/courses?tenkhoahoc=%' + e.target.value + '%')
       getData(result);
-    })
+    });
   });
 
 </script>
