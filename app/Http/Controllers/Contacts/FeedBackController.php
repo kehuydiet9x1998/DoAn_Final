@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Contacts;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\PhuHuynh;
 use App\Models\User;
-use App\Models\HocSinh;
-class StudentController extends Controller
+use App\Models\NhanXet;
+use Illuminate\Support\Facades\DB;
+
+class FeedBackController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +17,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = HocSinh::paginate(5);
-        return view('backend.contact.listStudent',['students'=>$students]);
+        $feedback = NhanXet::all();
+        return view('backend.contact.feedback',['feedback'=>$feedback]);
     }
 
     /**
@@ -49,7 +50,9 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        //
+        $nhanXet = NhanXet::findOrFail($id);
+        return view('backend.contact.modal', compact('nhanXet'));
+        // return 'ok';
     }
 
     /**
@@ -58,9 +61,10 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(NhanXet $nhanXet)
     {
-        //
+        
+        return view('backend.contact.modal', compact('nhanXet'));
     }
 
     /**

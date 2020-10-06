@@ -46,6 +46,7 @@ Route::get('/dashboard', function () {
 
 Route::prefix('/contacts')->group(function () {
   Route::resource('students', "Contacts\StudentController");
+  Route::resource('feedbacks', "Contacts\FeedBackController");
 });
 
 Route::get('/news-feed', function () {
