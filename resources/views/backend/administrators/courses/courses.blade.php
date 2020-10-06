@@ -13,46 +13,30 @@
                     <h5>Danh sách khóa học</h5>
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-6">
-                    <div id="dom-table_filter" class="dataTables_filter" style="margin-left: -145px;">
+                    <div id="dom-table_filter" class="dataTables_filter">
                       <label style="display: flex">Search:<input type="search" id="search" class="form-control input-sm" placeholder="" aria-controls="dom-table" style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;">
                         <button type="button" class="btn btn-primary waves-effect" data-toggle="modal" data-target="#large-Modal" style="height: 26px; align-content: center; padding: 0px 10px;">Thêm khóa học</button>
                       </label>
                     </div>
                   </div>
                 </div>
-                <div class="card-header-right">
-                  <ul class="list-unstyled card-option">
-                    <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
-                    <li><i class="feather icon-maximize full-card"></i></li>
-                    <li><i class="feather icon-minus minimize-card"></i></li>
-                    <li><i class="feather icon-refresh-cw reload-card"></i></li>
-                    <li><i class="feather icon-trash close-card"></i></li>
-                    <li><i class="feather icon-chevron-left open-card-option"></i></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="card-block">
-                <div class="table-responsive">
-                  <table class="table table-hover m-b-0" id="table">
 
-                  </table>
-                </div>
               </div>
-<<<<<<< HEAD
-=======
-              {{ $khoahocs->links() }}
->>>>>>> c10137ab4f2730906954d000cf82a44c566edc2c
+              <div class="card-block" id="data">
+
+
+              </div>
+
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-<<<<<<< HEAD
-=======
 
 
->>>>>>> c10137ab4f2730906954d000cf82a44c566edc2c
+
+
 </div>
 <div class="modal fade" id="large-Modal" tabindex="-1" role="dialog" style="z-index: 1050; display: none;" aria-hidden="true">
   <form id="main" method="post" action="{{route('courses.store')}}" novalidate="">
@@ -122,43 +106,41 @@
 
 @section('script')
 
-{{-- <script type="text/javascript" src="{{asset('assets/js/form-validation.js')}}"></script>
-<script type="text/javascript" src="{{asset('assets/js/validate.js')}}"></script>
-<script type="text/javascript" src="{{asset('assets/js/underscore-min.js')}}"></script> --}}
-
 <script>
-  $(document).ready(function() {
+  function getData(url) {
     $.ajax({
-      url: '/administrators/courses/find/'
+      url
       , beforeSend: function() {
-
         $('.card').addClass("card-load");
         $('.card').append('<div class="card-loader"><i class="feather icon-radio rotate-refresh"></div>');
       }
       , success: function(data) {
         $('.card').children(".card-loader").remove();
         $('.card').removeClass("card-load");
-        $('#table').html(data);
+        $('#data').html(data);
+        /* -------------------------------------------------------------------------- */
+        /*                                 paginate                                 */
+        /* -------------------------------------------------------------------------- */
+        $('.pagination .page-link').unbind('click').on('click', function(e) {
+          e.preventDefault();
+          var page = $(this).text();
+          url = result + '&page=' + page
+          getData(url);
+          $('li').removeClass('active disabled');
+          e.target.parentElement.classList.add('active')
+        });
       }
     })
-    // $('#table').load('/test');
+  }
+
+  $(document).ready(function() {
+    getData('/administrators/courses?sort_by=tenkhoahoc&desc')
+
+    result = '/administrators/courses?';
+
     $('#search').on('input', function(e) {
-      result = encodeURI('/administrators/courses/find/' + e.target.value)
-      $.ajax({
-        url: result
-        , beforeSend: function() {
-
-          $('.card').addClass("card-load");
-          $('.card').append('<div class="card-loader"><i class="feather icon-radio rotate-refresh"></div>');
-        }
-        , success: function(data) {
-          $('.card').children(".card-loader").remove();
-          $('.card').removeClass("card-load");
-          $('#table').html(data);
-        }
-      })
-
-
+      result = encodeURI('/administrators/courses?tenkhoahoc=%' + e.target.value + '%')
+      getData(result);
     })
   });
 

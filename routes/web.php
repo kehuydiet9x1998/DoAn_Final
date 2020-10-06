@@ -12,9 +12,6 @@ Route::get('/dangnhap', function () {
   return view('backend.dangnhap');
 });
 Route::prefix('administrators')->group(function () {
-  // Route::get('courses', 'AdministratorController@listCourses');
-  Route::get('courses/find/{text?}', [KhoaHocController::class, 'find']);
-
   Route::resource('courses', "Administrators\KhoaHocController");
 
   Route::get('classes', function () {

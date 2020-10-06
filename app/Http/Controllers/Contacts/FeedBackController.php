@@ -50,7 +50,9 @@ class FeedBackController extends Controller
      */
     public function show($id)
     {
-        //
+        $nhanXet = NhanXet::findOrFail($id);
+        return view('backend.contact.modal', compact('nhanXet'));
+        // return 'ok';
     }
 
     /**
@@ -59,9 +61,10 @@ class FeedBackController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(NhanXet $nhanXet)
     {
-        //
+        
+        return view('backend.contact.modal', compact('nhanXet'));
     }
 
     /**
