@@ -10,12 +10,12 @@
               <div class="card-header">
                 <div class="row">
                   <div class="col-xs-12 col-sm-12 col-md-6">
-                    <h5>DANH SÁCH HỌC VIÊN</h5>
+                    <h5>DANH SÁCH HỌC SINH</h5>
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-6">
                     <div id="dom-table_filter" class="dataTables_filter" style="margin-left: -145px;">
-                      <label style="display: flex">Search:<input type="search" class="form-control input-sm" placeholder="" aria-controls="dom-table" style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;">
-                        <button class="btn btn-success btn-round waves-effect waves-light" data-toggle="modal" data-target="#large-Modal" style="margin-top: -6px;height: 35px;line-height: 13px; margin-left: 5px">Thêm học viên</button>
+                      <label style="display: flex">Tìm kiếm:<input type="search" class="form-control input-sm" placeholder="" aria-controls="dom-table" style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;">
+                        <button class="btn btn-success btn-round waves-effect waves-light" data-toggle="modal" data-target="#large-Modal" style="margin-top: -6px;height: 35px;line-height: 13px; margin-left: 5px">Thêm học sinh</button>
                       </label>
                     </div>
                   </div>
@@ -58,7 +58,7 @@
                         <td>{{$st->ten}}</td>
                         <td>{{$st->ngaysinh}}</td>
                         <td>{{$st->gioitinh}}</td>
-                        <td>{{$st->trangthai}}</td>    
+                        <td>{{$st->trangthai}}</td>
                         <td>{{$st->hotenchame}}</td>
                         <td>{{$st->cmnd}}</td>
                         <td>{{$st->sodienthoai}}</td>
@@ -71,9 +71,9 @@
                   </table>
                 </div>
                 <div class="card-block" style="border-top: 1px solid #cccccc; padding-bottom: 10px; text-align: center">
-                   <div style="padding-top: 10px; display: inline-block">
-                      {{$students->links('vendor.pagination.bootstrap-4')}}
-                   </div>
+                  <div style="padding-top: 10px; display: inline-block">
+                    {{$students->links('vendor.pagination.bootstrap-4')}}
+                  </div>
                 </div>
               </div>
             </div>
@@ -89,7 +89,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Thêm học viên</h4>
+        <h4 class="modal-title">Thêm học sinh</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">×</span>
         </button>

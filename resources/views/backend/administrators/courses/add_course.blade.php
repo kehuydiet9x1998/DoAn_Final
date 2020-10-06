@@ -139,8 +139,6 @@
                   </div>
 
 
-
-
                   <div class="form-steps-content-summary">
                     <!-- Step 1 -->
                     <div class="form-step-content">
@@ -151,6 +149,65 @@
                             <input type="text" class="form-control" placeholder="Nhập tên khóa học">
                           </div>
                         </div>
+
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label">Loại khóa học</label>
+                          <div class="col-sm-10">
+                            <select name="select" class="form-control fill">
+                              <option value="opt1">Select One Value Only</option>
+                              <option value="opt2">Type 2</option>
+                              <option value="opt3">Type 3</option>
+                              <option value="opt4">Type 4</option>
+                              <option value="opt5">Type 5</option>
+                              <option value="opt6">Type 6</option>
+                              <option value="opt7">Type 7</option>
+                              <option value="opt8">Type 8</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label">Level</label>
+                          <div class="col-sm-10">
+                            <select name="select" class="form-control fill">
+                              <option value="opt1">Select One Value Only</option>
+                              <option value="opt2">Type 2</option>
+                              <option value="opt3">Type 3</option>
+                              <option value="opt4">Type 4</option>
+                              <option value="opt5">Type 5</option>
+                              <option value="opt6">Type 6</option>
+                              <option value="opt7">Type 7</option>
+                              <option value="opt8">Type 8</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label">Học phí</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Nhập học phí">
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label">Độ tuổi</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Nhập độ tuổi">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label">Sĩ số tối đa</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Nhập sĩ số tối đa">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label">Điều kiện học</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Nhập điều kiện học">
+                          </div>
+                        </div>
+
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Mô tả</label>
                           <div class="col-sm-10">
@@ -163,16 +220,6 @@
                             <textarea rows="5" cols="5" class="form-control" placeholder="Nhập nội dung"></textarea>
                           </div>
                         </div>
-                        <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Tên khóa học</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="Nhập tên khóa học">
-                          </div>
-                        </div>
-
-
-
-
 
                         <div class="contact-form-item contact-form-submit">
                           <a href="#" class="form-step-button button button-green pop-up-button button-invalid">
@@ -226,9 +273,7 @@
                         <div class="contact-form-item">
                           <input type="text" name="" placeholder="Postcode...">
                         </div>
-                        <!-- <div class="contact-form-item contact-form-textarea">
-                                                  <textarea name="" placeholder="Opmerking / vraag"></textarea>
-                                              </div> -->
+
                         <div class="contact-form-item contact-form-submit">
                           <a href="#" class="form-step-button button button-green pop-up-button button-invalid">
                             <span class="text">Hoàn tất</span>
@@ -243,120 +288,9 @@
                     <div class="step-alert"></div>
 
                   </div>
-                  <!-- <div class="pop-up-cancel">Annuleren</div> -->
                 </div>
               </div>
 
-              {{-- <div class="card-block">
-                <form>
-                  <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Tên khóa học</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" placeholder="Nhập tên khóa học">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Mô tả</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" placeholder="Nhập mô tả">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Nội dung</label>
-                    <div class="col-sm-10">
-                      <textarea rows="5" cols="5" class="form-control" placeholder="Nhập nội dung"></textarea>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Tên khóa học</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" placeholder="Nhập tên khóa học">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-10">
-                      <input type="password" class="form-control" placeholder="Password input">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Read only</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" placeholder="You can't change me" readonly="">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Disable Input</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" placeholder="Disabled text" disabled="">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Predefine
-                      Input</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" value="Enter yout content after me">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Select Box</label>
-                    <div class="col-sm-10">
-                      <select name="select" class="form-control">
-                        <option value="opt1">Select One Value Only</option>
-                        <option value="opt2">Type 2</option>
-                        <option value="opt3">Type 3</option>
-                        <option value="opt4">Type 4</option>
-                        <option value="opt5">Type 5</option>
-                        <option value="opt6">Type 6</option>
-                        <option value="opt7">Type 7</option>
-                        <option value="opt8">Type 8</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Round Input</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control form-control-round" placeholder=".form-control-round">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Maximum
-                      Length</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" placeholder="Content must be in 6 characters"
-                        maxlength="6">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Disable
-                      Autocomplete</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" placeholder="Autocomplete Off" autocomplete="off">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Static Text</label>
-                    <div class="col-sm-10">
-                      <div class="form-control-static">Hello !... This is
-                        static text
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Color</label>
-                    <div class="col-sm-10">
-                      <input type="color" class="form-control">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Upload File</label>
-                    <div class="col-sm-10">
-                      <input type="file" class="form-control">
-                    </div>
-                  </div>
-
-                </form>
-              </div> --}}
             </div>
           </div>
         </div>
@@ -411,7 +345,7 @@
 
       // Alert message / Hide and show the content
       if (_thisClass == true) {
-        alertMessage.html('Controleer alle velden');
+        alertMessage.html('Điền đầy đủ thông tin để tiếp tục');
         _this.addClass('button-bouncing');
       } else {
         alertMessage.html('');
@@ -439,20 +373,6 @@
 
     });
 
-    // // Step bar
-    // jQuery(document).on('change', '.form-step-content input, .form-step-content select', function() {
-    // var _this = jQuery(this);
-    // var index = _this.index();
-    // var hideNext = index +1;
-
-    // // Set content
-    // jQuery('.form-step-content').hide();
-    // jQuery('.form-step-content').eq(index).fadeIn(500);
-
-    // // Set sidebar
-    // jQuery(_this).nextAll().removeClass('step-item-active');
-
-    // });
   });
 
 </script>

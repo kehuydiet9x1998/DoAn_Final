@@ -3,7 +3,7 @@
      <div class="modal-content">
        <div class="modal-header">
          <h4 class="modal-title">Chi tiết nhận xét</h4>
-         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="myReset()">
            <span aria-hidden="true">×</span>
          </button>
        </div>
@@ -54,6 +54,6 @@
 
  </script>
  <script type="text/javascript" src="{{asset('assets/js/form-validation.js')}}"></script>
-<script type="text/javascript" src="{{asset('assets/js/validate.js')}}"></script>
-<script type="text/javascript" src="{{asset('assets/js/underscore-min.js')}}"></script>
+ <script type="text/javascript" src="{{asset('assets/js/validate.js')}}"></script>
+ <script type="text/javascript" src="{{asset('assets/js/underscore-min.js')}}"></script>
  <script type="text/javascript" src="{{asset('assets/js/bootstrap.min.js')}}"></script>
