@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Contacts;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\PhuHuynh;
 use App\Models\User;
@@ -16,7 +18,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = HocSinh::all();
+      $students = DB::table('hoc_sinh')->paginate(2);
         return view('backend.contact.listStudent',['students'=>$students]);
     }
 

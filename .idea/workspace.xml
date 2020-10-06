@@ -7,9 +7,11 @@
   <component name="ChangeListManager">
     <list default="true" id="dfeacd01-f2c3-4401-a83c-21a86b8aa657" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/NhanXet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/NhanXet.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Contacts/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contacts/StudentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/HocSinh.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/HocSinh.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PhuHuynh.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_seeder/Hoc_Sinh.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_seeder/Hoc_Sinh.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/listStudent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/listStudent.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +165,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LaravelDemo" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -203,6 +205,10 @@
       <workItem from="1601910931893" duration="13000" />
       <workItem from="1601911004770" duration="7200000" />
       <workItem from="1601943168496" duration="9346000" />
+      <workItem from="1601953826021" duration="2310000" />
+      <workItem from="1601957886963" duration="710000" />
+      <workItem from="1601972502851" duration="5863000" />
+      <workItem from="1601986283928" duration="419000" />
     </task>
     <servers />
   </component>
@@ -230,10 +236,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="445" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1601556631505" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1601910911790">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601974174878">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601910911790" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1601974174878" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1601974288902">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601974288902" />
     <state x="184" y="9" key="SettingsEditor" timestamp="1601537461773">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

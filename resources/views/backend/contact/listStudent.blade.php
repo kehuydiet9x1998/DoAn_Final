@@ -39,7 +39,6 @@
                         <th>STT</th>
                         <th>Họ đệm</th>
                         <th>Tên</th>
-                        <th>User</th>
                         <th>Ngày sinh</th>
                         <th>Giới tính</th>
                         <th>Họ tên cha mẹ</th>
@@ -53,10 +52,9 @@
                         <td>{{$st->id}}</td>
                         <td>{{$st->hodem}}</td>
                         <td>{{$st->ten}}</td>
-                        <td>{{$st->user->username}}</td>
                         <td>{{$st->ngaysinh}}</td>
                         <td>{{$st->gioitinh}}</td>
-                        <td>{{$st->phuhuynh->ten}}</td>
+                        <td>{{$st->hotenchame}}</td>
                         <td>{{$st->trangthai}}</td>
                         <td><a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a
                             href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a></td>
@@ -65,6 +63,11 @@
                       </tbody>
                     </table>
                   </div>
+                </div>
+                <div class="card-block" style="border-top: 1px solid #cccccc; padding-bottom: 10px; text-align: center">
+                   <div style="padding-top: 10px; display: inline-block">
+                      {{$students->links('vendor.pagination.bootstrap-4')}}
+                   </div>
                 </div>
               </div>
             </div>
