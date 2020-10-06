@@ -67,7 +67,7 @@
   [
   "type"=> "link",
   "icon"=> "feather icon-home",
-  "link"=> "/admin/nhan-xet",
+  "link"=> "/contacts/feedbacks",
   "text"=> "Nhận xét",
   ],
   ],
