@@ -50,14 +50,14 @@
                       <tbody>
                       @foreach($students as $st)
                         <tr>
-                        <td>{{$st->id}}</td>
+                        {{-- <td>{{$st->id}}</td>
                         <td>{{$st->hodem}}</td>
                         <td>{{$st->ten}}</td>
                         <td>{{$st->user->username}}</td>
                         <td>{{$st->ngaysinh}}</td>
                         <td>{{$st->gioitinh}}</td>
                         <td>{{$st->phuhuynh->ten}}</td>
-                        <td>{{$st->trangthai}}</td>
+                        <td>{{$st->trangthai}}</td> --}}
                         <td><a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a
                             href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a></td>
                       </tr>
