@@ -42,7 +42,7 @@
                         <th>Ngày sinh</th>
                         <th>Giới tính</th>
                         <th>Trạng thái</th>
-                        <th>Họ tên cha mẹ</th>
+                        <th>Phụ huynh</th>
                         <th>Số cmnd</th>
                         <th>Số điện thoại</th>
                         <th>Email</th>
@@ -95,25 +95,25 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="main" method="post" action="https://colorlib.com/" novalidate="">
+        <form id="main" method="post" action="#" novalidate="">
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Họ đện</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="name" id="name" placeholder="Nhập vào họ đệm">
+              <input type="text" class="form-control" name="hodem" id="hodem" placeholder="Nhập vào họ đệm">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Tên</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="password" name="password" placeholder="Nhập vào tên">
+              <input type="text" class="form-control" id="ten" name="ten" placeholder="Nhập vào tên">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Ngày sinh</label>
             <div class="col-sm-10">
-              <input type="date" class="form-control" id="repeat-password" name="repeat-password" placeholder="Repeat Password">
+              <input type="date" class="ngaysinh" id="repeat-password" name="repeat-password" placeholder="Repeat Password">
               <span class="messages"></span>
             </div>
           </div>
