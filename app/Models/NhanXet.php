@@ -20,4 +20,8 @@ class NhanXet extends Model
 
     'nhanxet',
   ];
+
+  public function user(){
+    return $this->belongsTo(User::class);
+  }
 }
