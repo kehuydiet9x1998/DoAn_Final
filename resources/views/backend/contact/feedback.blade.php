@@ -44,10 +44,10 @@
                       <tbody>
                       @foreach($feedback as $fb)
                       <tr>
-                        <td>{{$fb->id}}</td>
+                        {{-- <td>{{$fb->id}}</td>
                         <td>{{$fb->user->username}}</td>
                         <td>{{$fb->thoigian}}</td>
-                        <td>{{$fb->nhanxet}}</td>
+                        <td>{{$fb->nhanxet}}</td> --}}
                         <td>
                           <button type="button" class="btn btn-primary waves-effect"
                                   data-toggle="modal" data-target="#large-Modal"

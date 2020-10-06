@@ -18,9 +18,11 @@ class HocSinh extends Model
     'ngaysinh',
     'gioitinh',
     'trangthai',
-    'loaihocsinh',
-    'user_id',
-    'phu_huynh_id',
+    'cmnd',
+    'sodienthoai',
+    'hotenchame',
+    'quequan',
+    'email'
   ];
   public function user()
   {

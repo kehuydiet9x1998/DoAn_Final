@@ -16,7 +16,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = HocSinh::all();
+        $students = HocSinh::paginate(5);
         return view('backend.contact.listStudent',['students'=>$students]);
     }
 

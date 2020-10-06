@@ -39,25 +39,31 @@
                         <th>STT</th>
                         <th>Họ đệm</th>
                         <th>Tên</th>
-                        <th>User</th>
                         <th>Ngày sinh</th>
                         <th>Giới tính</th>
-                        <th>Họ tên cha mẹ</th>
                         <th>Trạng thái</th>
+                        <th>Họ tên cha mẹ</th>
+                        <th>Số cmnd</th>
+                        <th>Số điện thoại</th>
+                        <th>Email</th>
+                        <th>Quê quán</th>
                         <th>Actions</th>
                       </tr>
                       </thead>
                       <tbody>
                       @foreach($students as $st)
                         <tr>
-                        {{-- <td>{{$st->id}}</td>
+                        <td>{{$st->id}}</td>
                         <td>{{$st->hodem}}</td>
                         <td>{{$st->ten}}</td>
-                        <td>{{$st->user->username}}</td>
                         <td>{{$st->ngaysinh}}</td>
                         <td>{{$st->gioitinh}}</td>
-                        <td>{{$st->phuhuynh->ten}}</td>
-                        <td>{{$st->trangthai}}</td> --}}
+                        <td>{{$st->trangthai}}</td>
+                        <td>{{$st->hotenchame}}</td>
+                        <td>{{$st->cmnd}}</td>
+                        <td>{{$st->sodienthoai}}</td>
+                        <td>{{$st->email}}</td>
+                        <td>{{$st->diachi}}</td>
                         <td><a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a
                             href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a></td>
                       </tr>
@@ -72,6 +78,9 @@
         </div>
       </div>
     </div>
+    <span>
+      {{$students->links()}}
+    </span>
   </div>
   {{-- Modal them --}}
   <div class="modal fade show" id="large-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
