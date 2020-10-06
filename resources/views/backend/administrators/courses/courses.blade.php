@@ -96,7 +96,7 @@
 </div>
 <div class="modal fade" id="large-Modal" tabindex="-1" role="dialog" style="z-index: 1050; display: none;"
   aria-hidden="true">
-  <form id="main" method="post" action="https://colorlib.com/" onsubmit="return false" novalidate="">
+  <form id="main" method="post" action="{{route('courses.store')}}" novalidate="">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -107,9 +107,9 @@
         </div>
         <div class="modal-body">
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Simple Input</label>
+            <label class="col-sm-2 col-form-label">Tên khóa học</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="name" id="name" placeholder="Text Input Validation">
+              <input type="text" class="form-control" name="tenkhoahoc" id="name" placeholder="Nhập tên khóa học">
               <span class="messages"></span>
             </div>
           </div>
@@ -161,8 +161,8 @@
   </form>
 </div>
 @endsection
-@section('script')
+<!-- @section('script')
 <script type="text/javascript" src="{{asset('assets/js/form-validation.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/validate.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/underscore-min.js')}}"></script>
-@endsection
+@endsection -->

@@ -18,23 +18,14 @@ class CreateHocSinhsTable extends Migration
 
       $table->string('hodem');
       $table->string('ten');
-      $table->string('email');
-      $table->string('sodienthoai');
       $table->dateTime('ngaysinh');
       $table->string('gioitinh');
-      $table->string('diachi');
       $table->string('trangthai');
-      $table->unsignedBigInteger('phu_huynh_id')->nullable();
-      $table
-        ->foreign('phu_huynh_id')
-        ->references('id')
-        ->on('phu_huynh');
-
-      $table->unsignedBigInteger('user_id')->nullable();
-      $table
-        ->foreign('user_id')
-        ->references('id')
-        ->on('users');
+      $table->string('cmnd');
+      $table->string('hotenchame');
+      $table->string('email');
+      $table->string('sodienthoai');
+      $table->string('diachi');
       $table->timestamps();
       $table->softDeletes();
     });

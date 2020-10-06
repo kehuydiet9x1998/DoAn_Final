@@ -15,11 +15,8 @@ class HocSinh extends Model
   protected $fillable = [
     'hodem',
     'ten',
-    'email',
-    'sodienthoai',
     'ngaysinh',
     'gioitinh',
-    'diachi',
     'trangthai',
     'loaihocsinh',
     'user_id',
