@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Administrators;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Helper;
 use App\Models\KhoaHoc;
 use App\Models\Level;
 use App\Models\LoaiKhoaHoc;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request as FacadesRequest;
 
 class KhoaHocController extends Controller
 {
@@ -17,13 +19,13 @@ class KhoaHocController extends Controller
    */
   public function index()
   {
-    $khoahocs = KhoaHoc::paginate(10);
-    $levels = Level::all();
-    $loaikhoahocs = LoaiKhoaHoc::all();
-    return view(
-      'backend.administrators.courses.courses',
-      compact('khoahocs', 'levels', 'loaikhoahocs')
-    );
+    if (FacadesRequest::ajax()) {
+      $khoaHoc = Helper::getData(KhoaHoc::query(), 10);
+      return view('backend.administrators.courses.table', [
+        'khoahocs' => $khoaHoc,
+      ]);
+    }
+    return view('backend.administrators.courses.courses');
   }
 
   /**
@@ -109,12 +111,5 @@ class KhoaHocController extends Controller
   {
     $khoaHoc->delete();
     return redirect(route('administrators.index'));
-  }
-
-  public function find(string $text = "")
-  {
-    return view('backend.administrators.courses.table', [
-      'khoahocs' => KhoaHoc::where('tenkhoahoc', 'like', "%$text%")->get(),
-    ]);
   }
 }
