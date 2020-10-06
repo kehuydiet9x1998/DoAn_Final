@@ -21,7 +21,7 @@ class HocSinh extends Model
     'cmnd',
     'sodienthoai',
     'hotenchame',
-    'quequan',
+    'diachi',
     'email'
   ];
   public function dsLichTraiNghiem()

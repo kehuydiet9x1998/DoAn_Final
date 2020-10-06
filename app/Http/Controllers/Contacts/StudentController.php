@@ -18,7 +18,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-      $students = DB::table('hoc_sinh')->paginate(10);
+      $students = HocSinh::paginate(10);
         return view('backend.contact.listStudent',['students'=>$students]);
     }
 
@@ -27,15 +27,9 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function Add(Request $request)
+    public function create(Request $request)
     {
-        $data = array();
-        $data['category_name'] = $request->category_product_name;
-        $data['category_desc'] = $request->category_product_desc;
-        $data['category_status'] = $request->category_product_status;
-        $data['created_at'] = $request->created_at;
-        $data['updated_at'] = $request->updated_at;
-        $result = DB::table('tbl_category_product')->insert($data);
+        
     }
 
     /**
@@ -46,7 +40,9 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+         HocSinh::create($data);
+        return redirect(route('students.index'));
     }
 
     /**
@@ -91,6 +87,7 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        HocSinh::where('id', '=' , $id)->delete();
+        return redirect(route('students.index'));
     }
 }
