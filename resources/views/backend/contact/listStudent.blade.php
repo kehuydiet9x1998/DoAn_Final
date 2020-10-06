@@ -94,46 +94,81 @@
       <div class="modal-body">
         <form id="main" method="post" action="https://colorlib.com/" novalidate="">
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Simple Input</label>
+            <label class="col-sm-2 col-form-label">Họ đện</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="name" id="name" placeholder="Text Input Validation">
+              <input type="text" class="form-control" name="name" id="name" placeholder="Nhập vào họ đệm">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Password</label>
+            <label class="col-sm-2 col-form-label">Tên</label>
             <div class="col-sm-10">
-              <input type="password" class="form-control" id="password" name="password" placeholder="Password input">
+              <input type="text" class="form-control" id="password" name="password" placeholder="Nhập vào tên">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Repeat Password</label>
+            <label class="col-sm-2 col-form-label">Ngày sinh</label>
             <div class="col-sm-10">
-              <input type="password" class="form-control" id="repeat-password" name="repeat-password" placeholder="Repeat Password">
+              <input type="date" class="form-control" id="repeat-password" name="repeat-password" placeholder="Repeat Password">
+              <span class="messages"></span>
+            </div>
+          </div>
+          <div class="row">
+            <label class="col-sm-2 col-form-label">Giới tính</label>
+            <div class="col-sm-10">
+              <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="gender" id="gender-1" value="option1"> Nam
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="gender" id="gender-2" value="option2"> Nữ
+                </label>
+              </div>
+              <span class="messages"></span>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Trạng thái</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="email" name="email" placeholder="Trạng thái">
+              <span class="messages"></span>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Họ tên cha mẹ</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="email" name="email" placeholder="Nhập vào họ tên cha mẹ">
+              <span class="messages"></span>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Số CMND</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="email" name="email" placeholder="Nhập vào số cmnd">
+              <span class="messages"></span>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Số điện thoại</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="email" name="email" placeholder="Nhập vào số điện thoại">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
-              <input type="email" class="form-control" id="email" name="email" placeholder="Enter valid e-mail address">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Nhập vào Email">
               <span class="messages"></span>
             </div>
           </div>
-          <div class="row">
-            <label class="col-sm-2 col-form-label">Radio Buttons</label>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Quê quán</label>
             <div class="col-sm-10">
-              <div class="form-check form-check-inline">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="gender" id="gender-1" value="option1"> Male
-                </label>
-              </div>
-              <div class="form-check form-check-inline">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="gender" id="gender-2" value="option2"> Female
-                </label>
-              </div>
+              <input type="text" class="form-control" id="email" name="email" placeholder="Nhập vào quê quán">
               <span class="messages"></span>
             </div>
           </div>
@@ -161,7 +196,5 @@
   function myReset() {
     document.getElementById('main').reset();
   };
-
 </script>
-
 @endsection
