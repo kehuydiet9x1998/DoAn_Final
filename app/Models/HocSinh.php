@@ -24,16 +24,6 @@ class HocSinh extends Model
     'quequan',
     'email'
   ];
-  public function user()
-  {
-    return $this->belongsTo(User::class);
-  }
-
-  public function phuHuynh()
-  {
-    return $this->belongsTo(PhuHuynh::class);
-  }
-
   public function dsLichTraiNghiem()
   {
     return $this->hasMany(LichTraiNghiem::class);

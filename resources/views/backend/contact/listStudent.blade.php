@@ -58,7 +58,7 @@
                         <td>{{$st->ten}}</td>
                         <td>{{$st->ngaysinh}}</td>
                         <td>{{$st->gioitinh}}</td>
-                        <td>{{$st->trangthai}}</td>
+                        <td>{{$st->trangthai}}</td>    
                         <td>{{$st->hotenchame}}</td>
                         <td>{{$st->cmnd}}</td>
                         <td>{{$st->sodienthoai}}</td>
@@ -70,6 +70,11 @@
                     </tbody>
                   </table>
                 </div>
+                <div class="card-block" style="border-top: 1px solid #cccccc; padding-bottom: 10px; text-align: center">
+                   <div style="padding-top: 10px; display: inline-block">
+                      {{$students->links('vendor.pagination.bootstrap-4')}}
+                   </div>
+                </div>
               </div>
             </div>
           </div>
@@ -77,9 +82,7 @@
       </div>
     </div>
   </div>
-  <span>
-    {{$students->links()}}
-  </span>
+
 </div>
 {{-- Modal them --}}
 <div class="modal fade show" id="large-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
