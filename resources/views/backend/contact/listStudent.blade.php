@@ -58,7 +58,7 @@
                         <td>{{$st->ten}}</td>
                         <td>{{$st->ngaysinh}}</td>
                         <td>{{$st->gioitinh}}</td>
-                        <td>{{$st->trangthai}}</td>    
+                        <td>{{$st->trangthai}}</td>
                         <td>{{$st->hotenchame}}</td>
                         <td>{{$st->cmnd}}</td>
                         <td>{{$st->sodienthoai}}</td>
@@ -96,6 +96,7 @@
       </div>
       <div class="modal-body">
         <form id="main" method="post" action="https://colorlib.com/" novalidate="">
+          <input type="hidden" name="_token" value="{{csrf_token()}}">
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Simple Input</label>
             <div class="col-sm-10">
@@ -111,9 +112,9 @@
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Repeat Password</label>
+            <label class="col-sm-2 col-form-label">Tên phụ huynh</label>
             <div class="col-sm-10">
-              <input type="password" class="form-control" id="repeat-password" name="repeat-password" placeholder="Repeat Password">
+              <input type="text" class="form-control" id="Ten" name="repeat-password" placeholder="Password">
               <span class="messages"></span>
             </div>
           </div>

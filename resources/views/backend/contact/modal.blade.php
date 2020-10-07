@@ -35,7 +35,6 @@
              <label class="col-sm-2 col-form-label">Nội dung nhận xét</label>
              <div class="col-sm-10">
                <textarea rows="5" cols="5" class="form-control" placeholder="Default textarea" name="nhanxet">{{$nhanXet->nhanxet}}</textarea>
-
              </div>
            </div>
          </form>
