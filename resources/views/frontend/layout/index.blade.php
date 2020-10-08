@@ -18,7 +18,6 @@
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('css/app.css') }}">
-
   <title>TEKY EDU</title>
 </head>
 

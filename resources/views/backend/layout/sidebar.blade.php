@@ -34,7 +34,7 @@
   ],
   ],
   ],];
-  $phanquyen = 'contact';
+  $phanquyen = 'teacher';
   if($phanquyen == 'contact') {
   $menu = [
   [
@@ -122,7 +122,7 @@
   ],
   ];
   }
-  if($phanquyen == "giangvien"){
+  if($phanquyen == "teacher"){
   $menu = [ [
   "title" => "Giảng Dạy",
   "items" => [
@@ -130,25 +130,37 @@
   "link" => "/teachers/calendar",
   "type" => "link",
   "icon" => "fa fa-calendar-check-o",
-  "text" => "Xem lịch dạy",
+  "text" => "Lịch giảng dạy",
   ],
   [
-  "link" => "/khoa-hoc",
+  "link" => "/teachers/classes",
   "type" => "link",
-  "icon" => "fa fa-check",
-  "text" => "Dạy học",
+  "icon" => "fa fa-mortar-board",
+  "text" => "Danh sách lớp học",
   ],
   [
-  "link" => "/lop-hoc",
+  "link" => "/teachers/check-test",
   "type" => "link",
-  "icon" => "fa fa-wpforms",
+  "icon" => "fa fa-check-square-o",
   "text" => "Chấm bài tập",
+  ],
+  [
+  "link" => "/teachers/comment",
+  "type" => "link",
+  "icon" => "fa fa-comments",
+  "text" => "Nhận xét học sinh",
   ],
   [
   "link" => "/teachers/items",
   "type" => "link",
-  "icon" => "fa fa-tasks",
+  "icon" => "fa fa-product-hunt",
   "text" => "Sản phẩm cuối khóa",
+  ],
+  [
+  "link" => "/lop-hoc",
+  "type" => "link",
+  "icon" => "fa fa-question-circle-o",
+  "text" => "Hỏi đáp",
   ],
   ],
   ],

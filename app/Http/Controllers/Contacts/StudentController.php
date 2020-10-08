@@ -64,7 +64,7 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('backend.contact.edit_student_modal');
     }
 
     /**

@@ -19,7 +19,7 @@
            <div class="form-group row">
              <label class="col-sm-2 col-form-label">Đối tượng nhận xét</label>
              <div class="col-sm-10">
-               <input type="text" class="form-control" id="password" name="doituongnhanxet_id" value={{$nhanXet->doituongnhanxet_id}} placeholder="Đối tượng nhận xét">
+               <input type="text" class="form-control" id="password" name="doituongnhanxet_id" value={{$nhanXet->doituongnhanxet_id}} placeholder="">
                <span class="messages"></span>
              </div>
            </div>
@@ -35,7 +35,6 @@
              <label class="col-sm-2 col-form-label">Nội dung nhận xét</label>
              <div class="col-sm-10">
                <textarea rows="5" cols="5" class="form-control" placeholder="Default textarea" name="nhanxet">{{$nhanXet->nhanxet}}</textarea>
-
              </div>
            </div>
          </form>

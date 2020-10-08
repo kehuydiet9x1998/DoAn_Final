@@ -14,6 +14,7 @@
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-6">
                     <div id="dom-table_filter" class="dataTables_filter" style="margin-left: -145px;">
+<<<<<<< HEAD
                       <label style="display: flex">Search:<input type="search" class="form-control input-sm"
                           placeholder="" aria-controls="dom-table"
                           style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;">
@@ -21,11 +22,17 @@
                           data-target="#large-Modal"
                           style="margin-top: -6px;height: 35px;line-height: 13px; margin-left: 5px">Thêm học
                           viên</button>
+=======
+                      <label style="display: flex">Tìm kiếm:<input type="search" class="form-control input-sm" placeholder="" aria-controls="dom-table" style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;">
+                        <label style="display: flex">Tìm kiếm:<input type="search" class="form-control input-sm" placeholder="" aria-controls="dom-table" style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;">
+                        <button class="btn btn-success btn-round waves-effect waves-light" data-toggle="modal" data-target="#large-Modal" style="margin-top: -6px;height: 35px;line-height: 13px; margin-left: 5px">Thêm học sinh</button>
+                      </label>
+>>>>>>> 67d8bbbe99eeba6e847ad767b5152eefb4ba4d6d
                       </label>
                     </div>
                   </div>
                 </div>
-                {{-- <div class="card-header-right">
+                <div class="card-header-right">
                   <ul class="list-unstyled card-option">
                     <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
                     <li><i class="feather icon-maximize full-card"></i></li>
@@ -34,7 +41,7 @@
                     <li><i class="feather icon-trash close-card"></i></li>
                     <li><i class="feather icon-chevron-left open-card-option"></i></li>
                   </ul>
-                </div> --}}
+                </div>
               </div>
               <div class="card-block">
                 <div class="table-responsive">
@@ -64,18 +71,35 @@
                         <td>{{$st->ngaysinh}}</td>
                         <td>{{$st->gioitinh}}</td>
                         <td>{{$st->trangthai}}</td>
+<<<<<<< HEAD
                         {{-- <td>{{$st->hotenchame}}</td>
+=======
+                        <td>{{$st->hotenchame}}</td>
+>>>>>>> 67d8bbbe99eeba6e847ad767b5152eefb4ba4d6d
                         <td>{{$st->cmnd}}</td>
                         <td>{{$st->sodienthoai}}</td>
                         <td>{{$st->email}}</td> --}}
                         <td>{{$st->diachi}}</td>
-                        <td>
-                          <a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a>
-                        <form action="{{route('students.destroy', $st->id)}}" method="post">
+                        <td style="display: flex; width: 64px;">
+                          <li>
+                            <!-- <button class="btn btn-success btn-round waves-effect waves-light" data-toggle="modal" data-target="#edit-Modal"
+                            style="margin-top: -6px;height: 35px;line-height: 13px; margin-left: 5px">Sửa</button> -->
+                            <button class="edit_button" data-id="{{$st->id}}" data-toggle="modal" data-target="#edit-Modal">
+                            <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i>
+                            </button>
+                            <!-- Modal Sua -->
+                            <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog"
+                              style="z-index: 1050;display: none; padding-right: 17px;">
+
+                            </div>
+                          </li>
+                          <!-- <button class="edit_button" data-id="{{$st->id}}" data-toggle="modal" data-target="#edit"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></button> -->
+
+                          <form action="{{route('students.destroy', $st->id)}}" method="post">
                            @method('DELETE')
                            @csrf
-                            <button>
-                          <i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></button>
+                            <button style="border: none; padding: 2px 0px; margin-top: -1px;">
+                          <i class="feather icon-trash-2 f-w-600 f-16 m-r-15 text-c-red" style="margin:0;"></i></button>
                         </form>
                       </td>
 
@@ -109,35 +133,35 @@
           <span aria-hidden="true">×</span>
         </button>
       </div>
+      <div class="modal-body">
       <form method="post" action="{{route('students.store')}}" novalidate="">
-
         <div class="modal-body">
           <input type="hidden" name="_token" value="{{csrf_token()}}">
           {{ csrf_field() }}
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Họ đện</label>
-            <div class="col-sm-10">
+            <label class="col-sm-3 col-form-label">Họ đệm</label>
+            <div class="col-sm-9">
               <input type="text" class="form-control" name="hodem" id="hodem" placeholder="Nhập vào họ đệm">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Tên</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="ten" name="ten" placeholder="Nhập vào tên">
+            <label class="col-sm-3 col-form-label">Tên</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" name="ten" placeholder="Nhập vào tên">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Ngày sinh</label>
-            <div class="col-sm-10">
+            <label class="col-sm-3 col-form-label">Ngày sinh</label>
+            <div class="col-sm-9">
               <input type="date" class="ngaysinh" id="ngaysinh" name="ngaysinh" placeholder="">
               <span class="messages"></span>
             </div>
           </div>
           <div class="row">
-            <label class="col-sm-2 col-form-label">Giới tính</label>
-            <div class="col-sm-10">
+            <label class="col-sm-3 col-form-label">Giới tính</label>
+            <div class="col-sm-9">
               <div class="form-check form-check-inline">
                 <label class="form-check-label">
                   <input class="form-check-input" type="radio" name="gioitinh" id="gioitinh" value="Nam"> Nam
@@ -145,52 +169,52 @@
               </div>
               <div class="form-check form-check-inline">
                 <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="gioitinh" id="gioitinh" value="nu"> Nữ
+                  <input class="form-check-input" type="radio" name="gioitinh" id="gioitinh" value="Nữ"> Nữ
                 </label>
               </div>
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Trạng thái</label>
-            <div class="col-sm-10">
+            <label class="col-sm-3 col-form-label">Trạng thái</label>
+            <div class="col-sm-9">
               <input type="text" class="form-control" id="trangthai" name="trangthai" placeholder="Trạng thái">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Họ tên phụ huynh</label>
-            <div class="col-sm-10">
+            <label class="col-sm-3 col-form-label">Họ tên phụ huynh</label>
+            <div class="col-sm-9">
               <input type="text" class="form-control" id="hotenchame" name="hotenchame"
                 placeholder="Nhập vào họ tên cha mẹ">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Số CMND</label>
-            <div class="col-sm-10">
+            <label class="col-sm-3 col-form-label">Số CMND</label>
+            <div class="col-sm-9">
               <input type="text" class="form-control" id="cmnd" name="cmnd" placeholder="Nhập vào số cmnd">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Số điện thoại</label>
-            <div class="col-sm-10">
+            <label class="col-sm-3 col-form-label">Số điện thoại</label>
+            <div class="col-sm-9">
               <input type="text" class="form-control" id="sodienthoai" name="sodienthoai"
                 placeholder="Nhập vào số điện thoại">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-10">
+            <label class="col-sm-3 col-form-label">Email</label>
+            <div class="col-sm-9">
               <input type="email" class="form-control" id="email" name="email" placeholder="Nhập vào Email">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Địa chỉ</label>
-            <div class="col-sm-10">
+            <label class="col-sm-3 col-form-label">Địa chỉ</label>
+            <div class="col-sm-9">
               <input type="text" class="form-control" id="diachi" name="diachi" placeholder="Nhập vào quê quán">
               <span class="messages"></span>
             </div>
@@ -199,11 +223,12 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-default waves-effect " data-dismiss="modal"
             onclick="myReset()">Close</button>
-          <input type="submit" class="btn btn-primary waves-effect waves-light" value="Thêm">
+          <input type="submit" class="btn btn-primary waves-effect waves-light" value="Thêm"/>
         </div>
       </form>
     </div>
   </div>
+</div>
 </div>
 @endsection
 @section('script')
@@ -214,5 +239,19 @@
   function myReset() {
     document.getElementById('main').reset();
   };
+</script>
+
+<script>
+$(document).ready(function(){
+  $('.edit_button').click(function(){
+    console.log($(this).data('id'));
+    id = $(this).data('id')
+
+
+    $('#edit-Modal').load("/contacts/students/"+ id+'/edit');  $('#edit-Modal').show();
+    $('.modal-backdrop').show();
+
+  })
+});
 </script>
 @endsection
