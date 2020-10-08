@@ -52,7 +52,7 @@ class KhoaHocController extends Controller
   public function store(Request $request)
   {
     $data = $request->all();
-    return KhoaHoc::create($data);
+     KhoaHoc::create($data);
     return redirect(route('administrators.index'));
   }
 

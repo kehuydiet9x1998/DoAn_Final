@@ -38,6 +38,21 @@ Route::prefix('teachers')->group(function () {
   Route::get('items', function () {
     return view('backend.teachers.items');
   });
+  Route::get('classes', function () {
+    return view('backend.teachers.classes');
+  });
+  Route::get('classes', function () {
+    return view('backend.teachers.classes');
+  });
+  Route::get('classes/detail', function () {
+    return view('backend.teachers.class_detail');
+  });
+  Route::get('check-test', function () {
+    return view('backend.teachers.chambai');
+  });
+  Route::get('comment', function () {
+    return view('backend.teachers.comment');
+  });
 });
 
 Route::get('/dashboard', function () {

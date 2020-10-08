@@ -3,7 +3,7 @@
      <div class="modal-content">
        <div class="modal-header">
          <h4 class="modal-title">Chi tiết nhận xét</h4>
-         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="myReset()">
            <span aria-hidden="true">×</span>
          </button>
        </div>
@@ -19,7 +19,7 @@
            <div class="form-group row">
              <label class="col-sm-2 col-form-label">Đối tượng nhận xét</label>
              <div class="col-sm-10">
-               <input type="text" class="form-control" id="password" name="doituongnhanxet_id" value={{$nhanXet->doituongnhanxet_id}} placeholder="Đối tượng nhận xét">
+               <input type="text" class="form-control" id="password" name="doituongnhanxet_id" value={{$nhanXet->doituongnhanxet_id}} placeholder="">
                <span class="messages"></span>
              </div>
            </div>
@@ -53,6 +53,6 @@
 
  </script>
  <script type="text/javascript" src="{{asset('assets/js/form-validation.js')}}"></script>
-<script type="text/javascript" src="{{asset('assets/js/validate.js')}}"></script>
-<script type="text/javascript" src="{{asset('assets/js/underscore-min.js')}}"></script>
+ <script type="text/javascript" src="{{asset('assets/js/validate.js')}}"></script>
+ <script type="text/javascript" src="{{asset('assets/js/underscore-min.js')}}"></script>
  <script type="text/javascript" src="{{asset('assets/js/bootstrap.min.js')}}"></script>
