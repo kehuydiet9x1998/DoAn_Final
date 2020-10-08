@@ -9,8 +9,7 @@
       </button>
     </div>
     <div class="modal-body">
-      <form method="post" action="{{route('students.update', $hocsinh->id)}}" novalidate="">
-          @method('PUT')
+      <form method="post" action="{{route('students.store')}}" novalidate="">
         <div class="modal-body">
           <input type="hidden" name="_token" value="{{csrf_token()}}">
           {{ csrf_field() }}
@@ -18,7 +17,7 @@
             <label class="col-sm-3 col-form-label">Họ đệm</label>
             <div class="col-sm-9">
               <input type="text" class="form-control" name="hodem" id="hodem" placeholder="Nhập vào họ đệm"
-                value="{{$hocsinh->hodem}}">
+                value={{$hocsinh->hodem}}>
               <span class="messages"></span>
             </div>
           </div>
@@ -27,14 +26,14 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Tên</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" name="ten" placeholder="Nhập vào tên" value="{{$hocsinh->ten}}">
+              <input type="text" class="form-control" name="ten" placeholder="Nhập vào tên">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Ngày sinh</label>
             <div class="col-sm-9">
-              <input type="date" class="ngaysinh" id="ngaysinh" name="ngaysinh"  value="{{(substr($hocsinh->ngaysinh, 0, 10))}}"placeholder="">
+              <input type="date" class="ngaysinh" id="ngaysinh" name="ngaysinh" placeholder="">
               <span class="messages"></span>
             </div>
           </div>
@@ -42,10 +41,10 @@
             <label class="col-sm-3 col-form-label">Giới tính</label>
             <div class="col-sm-9">
               <div class="form-check form-check-inline">
-              
+
                 <label class="form-check-label">
                   <input class="form-check-input" type="radio" name="gioitinh" id="gioitinh" value="Nam"
-                   {{$hocsinh->gioitinh == 'Nam' ? " checked": ''}}> Nam
+                    {{$hocsinh->gioitinh == 'Nam' ? " checked": ''}}> Nam
                 </label>
               </div>
               <div class="form-check form-check-inline">
@@ -60,8 +59,7 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Trạng thái</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" value="{{$hocsinh->trangthai}}" id="trangthai" name="trangthai"
-                placeholder="Trạng thái">
+              <input type="text" class="form-control" id="trangthai" name="trangthai" placeholder="Trạng thái">
               <span class="messages"></span>
             </div>
           </div>
@@ -69,15 +67,14 @@
             <label class="col-sm-3 col-form-label">Họ tên phụ huynh</label>
             <div class="col-sm-9">
               <input type="text" class="form-control" id="hotenchame" name="hotenchame"
-                placeholder="Nhập vào họ tên cha mẹ" value="{{$hocsinh->hotenchame}}">
+                placeholder="Nhập vào họ tên cha mẹ">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Số CMND</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="cmnd" name="cmnd"
-                placeholder="Nhập vào số cmnd" value="{{$hocsinh->cmnd}}">
+              <input type="text" class="form-control" id="cmnd" name="cmnd" placeholder="Nhập vào số cmnd">
               <span class="messages"></span>
             </div>
           </div>
@@ -85,22 +82,21 @@
             <label class="col-sm-3 col-form-label">Số điện thoại</label>
             <div class="col-sm-9">
               <input type="text" class="form-control" id="sodienthoai" name="sodienthoai"
-                placeholder="Nhập vào số điện thoại" value="{{$hocsinh->sodienthoai}}">
+                placeholder="Nhập vào số điện thoại">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Email</label>
             <div class="col-sm-9">
-              <input type="email" class="form-control" id="email" name="email" placeholder="Nhập vào Email"
-                value="{{$hocsinh->email}}">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Nhập vào Email">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Địa chỉ</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="diachi" name="diachi" placeholder="Nhập vào quê quán" value="{{$hocsinh->diachi}}">
+              <input type="text" class="form-control" id="diachi" name="diachi" placeholder="Nhập vào quê quán">
               <span class="messages"></span>
             </div>
           </div>
@@ -108,7 +104,7 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-default waves-effect " data-dismiss="modal"
             onclick="myReset()">Close</button>
-          <input type="submit" class="btn btn-primary waves-effect waves-light" value="Cập nhậtnhật" />
+          <input type="submit" class="btn btn-primary waves-effect waves-light" value="Thêm" />
         </div>
       </form>
     </div>

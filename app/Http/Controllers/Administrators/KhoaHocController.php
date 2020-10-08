@@ -98,6 +98,7 @@ class KhoaHocController extends Controller
   public function update(Request $request, KhoaHoc $khoaHoc)
   {
     $khoaHoc->fill($request->all());
+    $khoaHoc->save();
     return redirect(route('administrators.index'));
   }
 
