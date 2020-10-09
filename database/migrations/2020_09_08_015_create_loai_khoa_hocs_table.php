@@ -16,7 +16,7 @@ class CreateLoaiKhoaHocsTable extends Migration
     Schema::create('loai_khoa_hoc', function (Blueprint $table) {
       $table->id();
       $table->string('tenloaikhoahoc');
-      $table->string('mota');
+      $table->text('mota');
       $table->timestamps();
       $table->softDeletes();
     });

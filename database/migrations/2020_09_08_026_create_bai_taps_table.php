@@ -16,7 +16,7 @@ class CreateBaiTapsTable extends Migration
     Schema::create('bai_tap', function (Blueprint $table) {
       $table->id();
       $table->string('tenbaitap');
-      $table->string('noidung', 10000);
+      $table->text('noidung');
       $table->string('trangthai');
       $table->float('diem');
       $table->unsignedBigInteger('buoi_hoc_id');

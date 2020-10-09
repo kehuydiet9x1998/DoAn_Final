@@ -16,7 +16,7 @@ class CreateBaiGiangsTable extends Migration
     Schema::create('bai_giang', function (Blueprint $table) {
       $table->id();
       $table->string('tenbaigiang');
-      $table->string('noidung', 10000);
+      $table->text('noidung');
       $table->float('thoigiandukien');
       $table->unsignedBigInteger('khoa_hoc_id');
       $table

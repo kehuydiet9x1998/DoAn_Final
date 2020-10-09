@@ -20,7 +20,7 @@
             <div class="d-inline-block align-middle">
               <a href="{{route('courses.show', $khoahoc->id)}}">
                 <div class="d-inline-block">
-                  <h6 style="color:#4099ff; font-weight: 600; font-size:12px">{{
+                  <h6 class="name_link_green">{{
                                   $khoahoc->tenkhoahoc }}</h6>
                   <p class="text-muted m-b-0"></p>
                 </div>
