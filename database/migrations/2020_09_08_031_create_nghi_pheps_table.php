@@ -16,7 +16,7 @@ class CreateNghiPhepsTable extends Migration
     Schema::create('nghi_phep', function (Blueprint $table) {
       $table->id();
       $table->string('lydo');
-      $table->string('ghichu');
+      $table->string('ghichu')->default('');
       $table->unsignedBigInteger('hoc_sinh_id');
       $table
         ->foreign('hoc_sinh_id')

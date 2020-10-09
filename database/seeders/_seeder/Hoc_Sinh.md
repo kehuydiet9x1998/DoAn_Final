@@ -1,31 +1,31 @@
 hoc_sinh
 ========
 
-|        hodem        | ten  | ngaysinh  | trangthai | gioitinh |   cmnd   |     hotenchame     |     email      | sodienthoai |    diachi    |
-|---------------------|------|-----------|-----------|----------|----------|--------------------|----------------|-------------|--------------|
-| Trần Hoàng Bảo | Long | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn Hoan | TesT@gmaul.com | 31967938    | Hải Phòng |
-| Hoàng bảo        | a    | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn A    | TesT@gmaul.com | 31967938    | Hải Phòng |
-| Lê Văn            | B    | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn B    | TesT@gmaul.com | 31967938    | Hải Phòng |
-| Nguyễn Văn       | C    | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn C    | TesT@gmaul.com | 31967938    | Hải Phòng |
-| Hoàng Văn         | C    | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn D    | TesT@gmaul.com | 31967938    | Hải Phòng |
-| Nguyễn Thị      | D    | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn E    | TesT@gmaul.com | 31967938    | Hải Phòng |
-| Trần Thị        | E    | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn F    | TesT@gmaul.com | 31967938    | Hải Phòng |
-| Hoàng Thị        | R    | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn G    | TesT@gmaul.com | 31967938    | Hải Phòng |
-| Nguyễn Đức     | G    | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn H    | TesT@gmaul.com | 31967938    | Hải Phòng |
-| Lê Đức          | T    | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn Y    | TesT@gmaul.com | 31967938    | Hải Phòng |
-| Nguyễn Văn       | Y    | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn K    | TesT@gmaul.com | 31967938    | Hải Phòng |
-| Hoàng bảo        | U    | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn Hoan | TesT@gmaul.com | 31967938    | Hải Phòng |
-| Lê Văn            | I    | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn Hoan | TesT@gmaul.com | 31967938    | Hải Phòng |
-| Nguyễn Văn       | K    | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn Hoan | TesT@gmaul.com | 31967938    | Hải Phòng |
-| Hoàng Văn         | Long | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn Hoan | TesT@gmaul.com | 31967938    | Hải Phòng |
-| Nguyễn Thị      | Q    | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn Hoan | TesT@gmaul.com | 31967938    | Hải Phòng |
-| Trần Thị        | A    | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn Hoan | TesT@gmaul.com | 31967938    | Hải Phòng |
-| Hoàng Thị        | X    | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn Hoan | TesT@gmaul.com | 31967938    | Hải Phòng |
-| Nguyễn Đức     | C    | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn Hoan | TesT@gmaul.com | 31967938    | Hải Phòng |
-| Lê Đức          | B    | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn Hoan | TesT@gmaul.com | 31967938    | Hải Phòng |
-| Nguyễn Văn       | N    | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn Hoan | TesT@gmaul.com | 31967938    | Hải Phòng |
-| Hoàng bảo        | H    | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn Hoan | TesT@gmaul.com | 31967938    | Hải Phòng |
-| Lê Văn            | J    | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn Hoan | TesT@gmaul.com | 31967938    | Hải Phòng |
-| Nguyễn Văn       | K    | 2005/1/11 | chinhthuc | Nam      | 31444322 | Nguyễn Văn Hoan | TesT@gmaul.com | 31967938    | Hải Phòng |
+|          hodem          |   ten   |  ngaysinh  | trangthai | gioitinh |   cmnd    |           hotenchame           |     email      | sodienthoai |    diachi    |
+|-------------------------|---------|------------|-----------|----------|-----------|--------------------------------|----------------|-------------|--------------|
+| Đặng Kim             | Anh     | 1998-1-11  | chinhthuc | Nữ     | 031444322 | Lê Nguyễn Hồng An         | TesT@gmaul.com | 0362081139  | Hải Phòng |  |
+| Đặng Gia             | Bảo   | 2009/02/10 | chinhthuc | Nam      | 031444323 | Nguyễn Võ Khánh An         | TesT@gmaul.com | 0397515779  | Hải Phòng |  |
+| Nguyễn Gia            | Bảo   | 2009/2/24  | hocthu    | Nam      | 031444324 | Nguyễn Trường Thiên Ân  | TesT@gmaul.com | 0338047437  | Hải Phòng |  |
+| Nguyễn Hoàng         | Đại  | 2009/8/24  | chinhthuc | Nam      | 031444325 | Nguyễn Tống Gia Bảo      | TesT@gmaul.com | 0778857332  | Hải Phòng |  |
+| Phùng Bá              | Đại  | 2009/1/12  | chinhthuc | Nam      | 031444326 | Trần Bảo Châu             | TesT@gmaul.com | 0377642878  | Hải Phòng |  |
+| Lưu Phương           | Đông  | 2009/7/7   | chinhthuc | Nam      | 031444327 | Nguyễn Thị Yến Chi       | TesT@gmaul.com | 0937762890  | Hải Phòng |  |
+| Phan Nguyễn Khánh    | Giang   | 2009/7/8   | chinhthuc | Nữ     | 031444328 | Trần Ngọc Thương Dịu   | TesT@gmaul.com | 0794950150  | Hải Phòng |  |
+| Bùi Thị Ngọc       | Giàu   | 2009/7/9   | chinhthuc | Nữ     | 031444329 | Nguyễn Quốc Duy            | TesT@gmaul.com | 0328371836  | Hải Phòng |  |
+| Võ Minh                | Hạnh  | 2009/7/10  | chinhthuc | Nam      | 031444330 | Phạm Hà Khánh Duy          | TesT@gmaul.com | 0903532486  | Hải Phòng |  |
+| Bùi Xuân              | Hòa    | 2009/7/11  | chinhthuc | Nam      | 031444331 | Nguyễn Thái Dương         | TesT@gmaul.com | 0987655823  | Hải Phòng |  |
+| Nguyễn Nhật         | Huy     | 2009/7/12  | chinhthuc | Nam      | 031444332 | Đặng Phước Đông        | TesT@gmaul.com | 0909740563  | Hải Phòng |  |
+| Nguyễn Ngọc Diễm  | Hương | 2009/7/13  | chinhthuc | Nữ     | 031444333 | Đặng Nguyễn Khánh Hà    | TesT@gmaul.com | 0343096782  | Hải Phòng |  |
+| Trần Huỳnh Mai      | Hương | 2009/7/14  | chinhthuc | Nữ     | 031444334 | Lê Nguyễn Ngọc Hân       | TesT@gmaul.com | 0365765935  | Hải Phòng |  |
+| Lê Trung               | Kiên   | 2009/7/15  | chinhthuc | Nam      | 031444335 | Nguyễn Gia Huy               | TesT@gmaul.com | 0902700593  | Hải Phòng |  |
+| Châu Gia               | Kiệt  | 2009/7/16  | chinhthuc | Nam      | 031444336 | Trần Lâm Anh Khoa           | TesT@gmaul.com | 0944885514  | Hải Phòng |  |
+| Trần Thị Mỹ       | Linh    | 2009/7/17  | chinhthuc | Nữ     | 031444337 | Tạ Đình Khôi              | TesT@gmaul.com | 0764479676  | Hải Phòng |  |
+| Huỳnh Thanh           | Mai     | 2009/7/18  | chinhthuc | Nữ     | 031444338 | Hoàng Tú Lam                 | TesT@gmaul.com | 0707257818  | Hải Phòng |  |
+| Sa Thị Tuyết        | My      | 2009/7/19  | chinhthuc | Nữ     | 031444339 | Hồ Thị Khánh Linh         | TesT@gmaul.com | 0366033641  | Hải Phòng |  |
+| Phạm Thanh            | Nga     | 2009/7/20  | chinhthuc | Nữ     | 031444340 | Nguyễn Huỳnh Kim Ngân     | TesT@gmaul.com | 0909405049  | Hải Phòng |  |
+| Nguyễn Thị Mỹ     | Ngọc  | 2009/7/21  | chinhthuc | Nữ     | 031444341 | Nguyễn Trần Thanh Ngân    | TesT@gmaul.com | 0973138391  | Hải Phòng |  |
+| Đỗ Vũ               | Nguyên | 2009/7/22  | chinhthuc | Nam      | 031444342 | Tô Huỳnh Hồng Ngân       | TesT@gmaul.com | 0938483941  | Hải Phòng |  |
+| Lương Thị Yến     | Nhi     | 2009/7/23  | chinhthuc | Nữ     | 031444343 | Bùi Ngọc Minh Nghi          | TesT@gmaul.com | 0938418067  | Hải Phòng |  |
+| Nguyễn Thị Thu      | Nhi     | 2009/7/24  | chinhthuc | Nữ     | 031444344 | Lê Quỳnh Phương Nghi      | TesT@gmaul.com | 0358063923  | Hải Phòng |  |
+| Võ Ngọc Yến        | Nhi     | 2009/7/25  | chinhthuc | Nữ     | 031444345 | Nguyễn Ngọc Hạnh Nguyên | TesT@gmaul.com | 0902489120  | Hải Phòng |  |
 (24 rows)
 

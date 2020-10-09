@@ -19,7 +19,7 @@ class CreateHocPhisTable extends Migration
       $table->dateTime('ngaynop');
       $table->string('trangthai');
       $table->bigInteger('sotiendong')->unsigned();
-      $table->string('ghichu');
+      $table->string('ghichu')->default('');
       $table->unsignedBigInteger('hoc_sinh_id');
       $table
         ->foreign('hoc_sinh_id')

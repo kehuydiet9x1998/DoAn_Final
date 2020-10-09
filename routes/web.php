@@ -38,9 +38,7 @@ Route::prefix('teachers')->group(function () {
   Route::get('items', function () {
     return view('backend.teachers.items');
   });
-  Route::get('classes', function () {
-    return view('backend.teachers.classes');
-  });
+
   Route::get('classes', function () {
     return view('backend.teachers.classes');
   });
