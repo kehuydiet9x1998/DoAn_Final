@@ -51,7 +51,9 @@
                         <td>{{$fb->nhanxet}}</td>
                         <td>
                           <button data-id="{{$fb->id}}" type="button" class="btn btn-primary waves-effect" data-toggle="modal" data-target="#large-Modal" style="background-color: white; border: none; padding: 0" id="">
-                            <i class="fa fa-eye f-w-600 f-16 m-r-15 text-c-green"></i></button>
+                            <i class="fa fa-eye f-w-600 f-16 m-r-15 text-c-green"></i>
+                          </button>
+                        </td>
                       </tr>
                       @endforeach
                     </tbody>

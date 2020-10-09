@@ -53,7 +53,8 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        //
+        $hocsinh = HocSinh::findOrFail($id);
+        return view('backend.contact.show_student_modal', ['hocsinh' => $hocsinh]);
     }
 
     /**

@@ -1,5 +1,4 @@
-{{-- <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog"
-  style="z-index: 1050;display: none; padding-right: 17px;"> --}}
+
 <div class="modal-dialog modal-lg" role="document">
   <div class="modal-content">
     <div class="modal-header">
@@ -113,7 +112,6 @@
       </form>
     </div>
   </div>
-  {{-- </div> --}}
   <script>
     function myReset() {
       $('.modal').hide();

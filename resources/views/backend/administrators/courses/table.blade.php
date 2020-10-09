@@ -35,16 +35,21 @@
           <td>
             <label class="badge badge-inverse-primary">{{$khoahoc->level->tenlevel}}</label>
           </td>
-          <td><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a></td>
+          <td>
+          <form action="{{route('courses.destroy', $khoahoc->id)}}" method="post">
+            @method('DELETE')
+            @csrf
+            <button style="border: none; padding: 2px 0px; margin-top: -1px;"
+              onclick="return confirm ('Bạn có muốn xóa không')">
+              <i class="feather icon-trash-2 f-w-600 f-16 m-r-15 text-c-red" style="margin:0;"></i></button>
+          </form>
+        </td>
         </tr>
-
         @endforeach
-
       </tbody>
-
     </table>
   </div>
   <div style="float:right; margin-right:20px">
-    {{ $khoahocs->links() }}
+    {{ $khoahocs->links()}}
   </div>
 </div>
