@@ -32,6 +32,11 @@ class GiaoVien extends Model
     return $this->belongsTo(User::class);
   }
 
+  public function dsLopHoc()
+  {
+    return $this->hasMany(LopHoc::class);
+  }
+
   public function dsBuoiHoc()
   {
     return $this->hasMany(BuoiHoc::class);

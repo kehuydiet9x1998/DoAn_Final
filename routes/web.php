@@ -39,12 +39,8 @@ Route::prefix('teachers')->group(function () {
     return view('backend.teachers.items');
   });
 
-  Route::get('classes', function () {
-    return view('backend.teachers.classes');
-  });
-  Route::get('classes/detail', function () {
-    return view('backend.teachers.class_detail');
-  });
+  Route::resource('classes', 'Teachers\LopHocController');
+
   Route::get('check-test', function () {
     return view('backend.teachers.chambai');
   });

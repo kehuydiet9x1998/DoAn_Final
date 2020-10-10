@@ -21,12 +21,22 @@ class CreateLopHocsTable extends Migration
         ->unsigned()
         ->default(0);
       $table->string('trangthai');
+      $table->dateTime('ngaybatdau');
+      $table->dateTime('ngayketthuc');
+      $table->unsignedInteger('sobuoi')->default(10);
+      $table->unsignedInteger('sobuoidahoc')->default(0);
       $table->string('ghichu')->default('');
       $table->unsignedBigInteger('khoa_hoc_id');
       $table
         ->foreign('khoa_hoc_id')
         ->references('id')
         ->on('khoa_hoc');
+
+      $table->unsignedBigInteger('giao_vien_id');
+      $table
+        ->foreign('giao_vien_id')
+        ->references('id')
+        ->on('giao_vien');
       $table->timestamps();
       $table->softDeletes();
     });

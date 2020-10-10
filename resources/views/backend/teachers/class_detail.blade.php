@@ -7,9 +7,9 @@
           <div class="row">
             <div class="col-sm-12">
               <div class="card">
-                <div class="card-header">
+                {{-- <div class="card-header">
                   <h5>Thông tin chi tiết</h5>
-                </div>
+                </div> --}}
                 <div class="card-block tab-icon">
                   <div class="row">
                     <div class="col-lg-12">
@@ -32,7 +32,7 @@
                             <div class="col-sm-12">
                               <div class="card">
                                 <div class="card-header">
-                                  <h5 style="color: #2ce00c; font-size: 14px; font-weight: bold";>Lớp học: Xưởng chế tạo ROBOT</h5>
+                                <h5 style="color: #2ce00c; font-size: 14px; font-weight: bold";>Lớp học: {{$class->khoaHoc->tenkhoahoc}}</h5>
                                 </div>
                                 <div class="card-block">
                                   <div class="row ui-sortable" id="draggablePanelList">
@@ -40,40 +40,40 @@
                                       <div class="card-sub">
                                         <div class="card-block" style="display: flex; margin-top: -25px">
                                           <h5 class="card-title"><i class="fa fa-code"></i>Mã lớp học :</h5>
-                                          <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px">HP-LKT-C-RB-916-XCTRB-0001</h5>
+                                        <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px"><b>{{$class->tenlop}}</b></h5>
                                         </div>
                                         <div class="card-block" style="display: flex; margin-top: -40px">
                                           <h5 class="card-title"><i class="fa fa-calendar"></i>Thời gian học :</h5>
-                                          <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px">19/10/2019 đến 27/03/2021</h5>
+                                        <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px"><b>{{$class->ngaybatdau}} đến {{$class->ngayketthuc}}</b></h5>
                                         </div>
                                         <div class="card-block" style="display: flex; margin-top: -40px">
                                           <h5 class="card-title"><i class="fa fa-clock-o"></i>Lịch học :</h5>
-                                          <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px">14:00 PM-16:00 PM Thứ bảy</h5>
+                                          <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px"><b>14:00 PM-16:00 PM Thứ bảy</b></h5>
                                         </div>
                                         <div class="card-block" style="display: flex; margin-top: -40px">
                                           <h5 class="card-title"><i class="fa fa-graduation-cap"></i>Giảng viên :</h5>
-                                          <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px">Nguyễn Văn Linh</h5>
+                                          <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px"><b> {{$class->giaoVien->hodem. ' ' . $class->giaoVien->ten}}</b></h5>
                                         </div>
                                       </div>
                                     </div>
                                     <div class="col-lg-12 col-xl-6 ui-sortable-handle">
                                       <div class="card-sub">
                                         <div class="card-block" style="display: flex; margin-top: -25px">
-                                          <h5 class="card-title"><i class="fa fa-bars"></i>Khóa học :</h5>
-                                          <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px">Xưởng chế tạo ROBOT</h5>
+                                        <h5 class="card-title"><i class="fa fa-bars"></i>Khóa học: </h5>
+                                        <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px"><b>{{$class->khoaHoc->tenkhoahoc}}</b></h5>
                                         </div>
                                         <div class="card-block" style="display: flex; margin-top: -40px">
                                           <h5 class="card-title"><i class="fa fa-book"></i>Bài học :</h5>
-                                          <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px">11/12</h5>
+                                        <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px"><b>{{$class->sobuoidahoc}}/{{$class->sobuoi}}</b></h5>
                                         </div>
                                         <div class="card-block" style="display: flex; margin-top: -40px">
                                           <h5 class="card-title"><i class="fa fa-bank"></i>Loại lớp học :</h5>
-                                          <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px">Group Class</h5>
+                                          <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px"><b>Group Class</b></h5>
                                         </div>
-                                        <div class="card-block" style="margin-top: -40px">
+                                        {{-- <div class="card-block" style="margin-top: -40px">
                                           <h5 class="card-title" style="float: left"><i class="fa fa-building-o"></i>Trung tâm :</h5>
                                           <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px"> TEKY - Center: 104 Lương Khánh Thiện - HP</h5>
-                                        </div>
+                                        </div> --}}
                                       </div>
                                     </div>
                                   </div>
@@ -86,7 +86,7 @@
                               <div class="card">
                                 <div class="card-header">
                                   <div class="card-header-left">
-                                    <h5>Lộ trình khóa học : Xưởng chế tạo ROBOT</h5>
+                                  <h5>Lộ trình khóa học : {{$class->khoaHoc->tenkhoahoc}}</h5>
                                   </div>
                                 </div>
                                 <div class="card-block">
@@ -257,9 +257,9 @@
   </div>
 @endsection
 @section('script')
-  <script type="text/javascript" src="{{asset('assets/js/form-validation.js')}}"></script>
+  {{-- <script type="text/javascript" src="{{asset('assets/js/form-validation.js')}}"></script>
   <script type="text/javascript" src="{{asset('assets/js/validate.js')}}"></script>
   <script type="text/javascript" src="{{asset('assets/js/underscore-min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+  <script type="text/javascript" src="{{asset('assets/js/bootstrap.min.js')}}"></script> --}}
 @endsection
 
