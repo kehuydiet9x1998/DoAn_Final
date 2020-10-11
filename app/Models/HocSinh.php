@@ -24,6 +24,9 @@ class HocSinh extends Model
     'diachi',
     'email'
   ];
+
+
+
   public function dsLichTraiNghiem()
   {
     return $this->hasMany(LichTraiNghiem::class);

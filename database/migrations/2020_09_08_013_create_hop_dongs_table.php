@@ -17,9 +17,9 @@ class CreateHopDongsTable extends Migration
       $table->id();
       $table->dateTime('ngaytao');
       $table->dateTime('ngayhethan');
-      $table->string('noidung', 10000);
+      $table->text('noidung');
       $table->string('trangthai');
-      $table->string('ghichu');
+      $table->string('ghichu')->default('');
       $table->unsignedBigInteger('nhan_vien_id');
       $table
         ->foreign('nhan_vien_id')

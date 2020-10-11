@@ -25,6 +25,7 @@ class CreateGiaoVien extends Migration
       $table->string('diachi');
       $table->string('tinhtrang');
       $table->timestamps();
+      $table->softDeletes();
     });
   }
 

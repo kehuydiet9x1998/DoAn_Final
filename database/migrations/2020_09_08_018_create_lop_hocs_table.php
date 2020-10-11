@@ -16,18 +16,27 @@ class CreateLopHocsTable extends Migration
     Schema::create('lop_hoc', function (Blueprint $table) {
       $table->id();
       $table->string('tenlop');
-      $table->dateTime('ngaytao');
       $table
         ->integer('siso')
         ->unsigned()
         ->default(0);
       $table->string('trangthai');
-      $table->string('ghichu');
+      $table->dateTime('ngaybatdau');
+      $table->dateTime('ngayketthuc');
+      $table->unsignedInteger('sobuoi')->default(10);
+      $table->unsignedInteger('sobuoidahoc')->default(0);
+      $table->string('ghichu')->default('');
       $table->unsignedBigInteger('khoa_hoc_id');
       $table
         ->foreign('khoa_hoc_id')
         ->references('id')
         ->on('khoa_hoc');
+
+      $table->unsignedBigInteger('giao_vien_id');
+      $table
+        ->foreign('giao_vien_id')
+        ->references('id')
+        ->on('giao_vien');
       $table->timestamps();
       $table->softDeletes();
     });

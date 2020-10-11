@@ -19,7 +19,7 @@ class CreateKhenThuongKyLuatsTable extends Migration
       $table->string('ten');
       $table->string('lydo');
       $table->bigInteger('sotien')->unsigned();
-      $table->string('ghichu');
+      $table->string('ghichu')->default('');
       $table->string('loai');
       $table->unsignedBigInteger('nhan_vien_id');
       $table

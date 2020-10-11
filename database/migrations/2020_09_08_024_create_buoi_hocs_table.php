@@ -16,7 +16,7 @@ class CreateBuoiHocsTable extends Migration
     Schema::create('buoi_hoc', function (Blueprint $table) {
       $table->id();
       $table->dateTime('ngayhoc');
-      $table->string('ghichu');
+      $table->string('ghichu')->default('');
       $table->string('noidungbuoihoc', 10000);
       $table->dateTime('giocheckin');
       $table->dateTime('giocheckout');

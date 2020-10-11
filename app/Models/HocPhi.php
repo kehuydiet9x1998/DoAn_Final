@@ -22,6 +22,7 @@ class HocPhi extends Model
     'nhan_vien_id',
   ];
 
+
   public function hocSinh()
   {
     return $this->belongsTo(HocSinh::class);

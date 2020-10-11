@@ -38,15 +38,9 @@ Route::prefix('teachers')->group(function () {
   Route::get('items', function () {
     return view('backend.teachers.items');
   });
-  Route::get('classes', function () {
-    return view('backend.teachers.classes');
-  });
-  Route::get('classes', function () {
-    return view('backend.teachers.classes');
-  });
-  Route::get('classes/detail', function () {
-    return view('backend.teachers.class_detail');
-  });
+
+  Route::resource('classes', 'Teachers\LopHocController');
+
   Route::get('check-test', function () {
     return view('backend.teachers.chambai');
   });
@@ -62,18 +56,7 @@ Route::get('/dashboard', function () {
 Route::prefix('/contacts')->group(function () {
   Route::resource('students', "Contacts\StudentController");
   Route::resource('feedbacks', "Contacts\FeedBackController");
-  Route::get('list-teachers', function () {
-    return view('backend.contact.listTeacher');
-  });
-  Route::get('checkin-teachers', function () {
-    return view('backend.contact.checkIn');
-  });
-  Route::get('classify', function () {
-    return view('backend.contact.phanlop');
-  });
-  Route::get('move-class', function () {
-    return view('backend.contact.chuyenlop');
-  });
+  Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
 });
 
 Route::get('/news-feed', function () {
