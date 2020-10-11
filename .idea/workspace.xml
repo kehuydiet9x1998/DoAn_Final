@@ -7,28 +7,10 @@
   <component name="ChangeListManager">
     <list default="true" id="dfeacd01-f2c3-4401-a83c-21a86b8aa657" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Administrators/KhoaHocController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Administrators/KhoaHocController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Contacts/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contacts/StudentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/HocSinh.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/HocSinh.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/_seeder/Hoc_Sinh.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_seeder/Hoc_Sinh.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/classes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/classes.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/contracts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/contracts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/courses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/courses.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/courses/add_course.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/courses/add_course.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/courses/courses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/courses/courses.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/payroll.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/payroll.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/staffs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/staffs.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/timesheets.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/timesheets.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/feedback.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/feedback.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/listStudent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/listStudent.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/layout/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layout/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/lichtrainghiem/datalichtrainghiem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/lichtrainghiem/datalichtrainghiem.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/nhanxet/datanhanxet.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/nhanxet/datanhanxet.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/calendar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/teachers/calendar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/items.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/teachers/items.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layout/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layout/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/trangchu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/trangchu.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -239,6 +221,13 @@
       <workItem from="1602071469064" duration="18483000" />
       <workItem from="1602116556657" duration="9456000" />
       <workItem from="1602142527879" duration="4020000" />
+      <workItem from="1602160868843" duration="10279000" />
+      <workItem from="1602250443599" duration="7874000" />
+      <workItem from="1602293632648" duration="3748000" />
+      <workItem from="1602298196983" duration="456000" />
+      <workItem from="1602298703122" duration="5085000" />
+      <workItem from="1602313612576" duration="3841000" />
+      <workItem from="1602421564336" duration="5824000" />
     </task>
     <servers />
   </component>
@@ -262,10 +251,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1601952688566" />
-    <state x="445" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601556631505">
+    <state x="445" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602426833802">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="445" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1601556631505" />
+    <state x="445" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1602426833802" />
     <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601974174878">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -278,9 +267,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="259" y="10" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1602058592838" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1602124695611">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1602299356665">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1602124695611" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1602299356665" />
   </component>
 </project>

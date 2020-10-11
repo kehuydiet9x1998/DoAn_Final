@@ -62,6 +62,18 @@ Route::get('/dashboard', function () {
 Route::prefix('/contacts')->group(function () {
   Route::resource('students', "Contacts\StudentController");
   Route::resource('feedbacks', "Contacts\FeedBackController");
+  Route::get('list-teachers', function () {
+    return view('backend.contact.listTeacher');
+  });
+  Route::get('checkin-teachers', function () {
+    return view('backend.contact.checkIn');
+  });
+  Route::get('classify', function () {
+    return view('backend.contact.phanlop');
+  });
+  Route::get('move-class', function () {
+    return view('backend.contact.chuyenlop');
+  });
 });
 
 Route::get('/news-feed', function () {
