@@ -34,14 +34,9 @@
   ],
   ],
   ],];
-<<<<<<< HEAD
   $phanquyen = 'administrators';
   if($phanquyen == 'contact') 
   {
-=======
-  $phanquyen = 'contact';
-  if($phanquyen == 'contact') {
->>>>>>> 6ba88802f0a0d7af2bad9e80d1c52ab742a06c54
   $menu = [
   [
   "title" => "Chăm Sóc Khách Hàng",
