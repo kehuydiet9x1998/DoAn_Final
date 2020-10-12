@@ -1,15 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Contacts;
+namespace App\Http\Controllers\administrators;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Validator;
+use App\Models\GiaoVien;
 use Illuminate\Http\Request;
-use App\Models\PhuHuynh;
-use App\Models\User;
-use App\Models\HocSinh;
-class StudentController extends Controller
+
+class TeacherController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +15,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-      $students = HocSinh::orderBy('ten', 'ASC')->paginate(10);
-      return view('backend.contact.listStudent',['students'=>$students]);
+        // $teacher = GiaoVien::orderBy('ten','ASC') ->paginate(10);
+        $teacher = GiaoVien::all();
+        return view('backend.administrators.teacher' , ['teachers' => $teacher]);
     }
 
     /**
@@ -27,9 +25,9 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        
+        //
     }
 
     /**
@@ -40,60 +38,62 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        HocSinh::create($data);
-        return redirect(route('students.index'));
+        $data = $request-> all();
+        GiaoVien::create($data);
+        return redirect(route('teachers.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\GiaoVien  $giaoVien
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $hocsinh = HocSinh::findOrFail($id);
-        return view('backend.contact.show_student_modal', ['hocsinh' => $hocsinh]);
+        $data = GiaoVien::findorFail($id);
+        return view('backend.administrators.teacher.show_teacher',['teachers'=>$data]);
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\GiaoVien  $giaoVien
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-         $hocsinh =  HocSinh::find($id);
-        //  return $hocsinh;
-        return view('backend.contact.edit_student_modal', ['hocsinh'=>$hocsinh] );
+        $data = GiaoVien::findorFail($id);
+        return view('backend.administrators.teacher.edit_teacher', ['teachers' => $data]);
+
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\GiaoVien  $giaoVien
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $hocsinh = HocSinh::findOrFail($id);
-        $hocsinh->fill($request->all());
-        $hocsinh->save();
-        return redirect(route('students.index'));
+        $data = GiaoVien::find($id);
+        $data->fill($request -> all());
+        $data->save();
+        return redirect(route('teachers.index'));
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\GiaoVien  $giaoVien
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        HocSinh::where('id', '=' , $id)->delete();
-        return redirect(route('students.index'));
+        GiaoVien::where('id','=',$id)->delete();
+        return redirect(route('teachers.index'));
     }
 }

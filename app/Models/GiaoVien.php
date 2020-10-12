@@ -13,7 +13,7 @@ class GiaoVien extends Model
   use SoftDeletes;
 
   protected $table = 'giao_vien';
-  protected $dates = ['deleted_at'];
+  //protected $dates = ['deleted_at'];
   protected $fillable = [
     'cmnd',
     'hodem',

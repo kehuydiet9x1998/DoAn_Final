@@ -34,8 +34,9 @@
   ],
   ],
   ],];
-  $phanquyen = 'contact';
-  if($phanquyen == 'contact') {
+  $phanquyen = 'administrators';
+  if($phanquyen == 'contact') 
+  {
   $menu = [
   [
   "title" => "Chăm Sóc Khách Hàng",
@@ -122,7 +123,8 @@
   ],
   ];
   }
-  if($phanquyen == "teacher"){
+  if($phanquyen == "teacher")
+  {
   $menu = [ [
   "title" => "Giảng Dạy",
   "items" => [
@@ -193,6 +195,12 @@
   "type" => "link",
   "icon" => "fa fa-users",
   "text" => "Nhân viên",
+  ],
+  [
+  "link" => "/administrators/teachers",
+  "type" => "link",
+  "icon" => "fa fa-users",
+  "text" => "Giảng viên",
   ],
   [
   "link" => "/administrators/contracts",

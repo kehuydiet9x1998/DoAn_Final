@@ -256,8 +256,7 @@
      id = $(this).data('id')
      $('#edit-Modal').load("/contacts/students/" + id + '/edit');
      $('#edit-Modal').show();
-      $('.modal-backdrop').show();
-
+     $('.modal-backdrop').show();
      })
   });
 </script>

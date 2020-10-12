@@ -7,8 +7,7 @@
       </button>
     </div>
     <div class="modal-body">
-      <form method="post" action="{{route('students.update', $hocsinh->id)}}" novalidate="">
-        @method('PUT')
+      <form>
         <div class="modal-body">
           <input type="hidden" name="_token" value="{{csrf_token()}}">
           {{ csrf_field() }}
@@ -107,8 +106,8 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default waves-effect " data-dismiss="modal"
-            onclick="myReset()">Close</button>
-          <input type="submit" class="btn btn-primary waves-effect waves-light" value="Cập nhậtnhật" />
+            onclick="myReset()">Close
+          </button>
         </div>
       </form>
     </div>
