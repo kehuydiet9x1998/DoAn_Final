@@ -26,11 +26,10 @@
                     <table class="table table-hover m-b-0" id="table">
                       <thead>
                       <tr>
-                        <th>STT</th>
+                        <th>MÃ GIẢNG VIÊN</th>
                         <th>HỌ VÀ TÊN</th>
                         <th>NGÀY SINH</th>
                         <th>GIỚI TÍNH</th>
-                        <th>SỐ CMND</th>
                         <th>SỐ ĐIỆN THOẠI</th>
                         <th>EMAIL</th>
                         <th>TRẠNG THÁI</th>
@@ -38,33 +37,30 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td>1</td>
+                          <td>GV - 001</td>
                           <td>Nguyễn Văn Linh</td>
                           <td>06/03/1998</td>
                           <td>Nam</td>
-                          <td>031098000121</td>
                           <td>0363915150</td>
                           <td>nguyenlinh1998@gmail.com</td>
                           <td><label class="badge badge-inverse-default">Thử việc</label></td>
 
                         </tr>
                         <tr>
-                          <td>2</td>
+                          <td>GV - 002</td>
                           <td>Phạm Quang Cường</td>
                           <td>06/03/1998</td>
                           <td>Nam</td>
-                          <td>031098000121</td>
                           <td>0363915150</td>
                           <td>nguyenlinh1998@gmail.com</td>
                           <td><label class="badge badge-inverse-success">Giảng viên</label></td>
 
                         </tr>
                         <tr>
-                          <td>2</td>
+                          <td>GV - 003</td>
                           <td>Nguyễn Văn Hoan</td>
                           <td>06/03/1998</td>
                           <td>Nam</td>
-                          <td>031098000121</td>
                           <td>0363915150</td>
                           <td>nguyenlinh1998@gmail.com</td>
                           <td><label class="badge badge-inverse-danger">Đã nghỉ việc</label></td>

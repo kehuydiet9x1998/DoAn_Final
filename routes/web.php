@@ -57,6 +57,9 @@ Route::prefix('/contacts')->group(function () {
   Route::resource('students', "Contacts\StudentController");
   Route::resource('feedbacks', "Contacts\FeedBackController");
   Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
+  Route::get('list-teachers', function (){
+    return view('backend.contact.listTeacher');
+  });
 });
 
 Route::get('/news-feed', function () {

@@ -54,12 +54,6 @@
   ],
   [
   "type" => "link",
-  "icon" => "fa fa-money",
-  "link" => "/lop-hoc",
-  "text" => "Công nợ khách hàng",
-  ],
-  [
-  "type" => "link",
   "icon" => "fa fa-history",
   "link" => "/admin/lich-trai-nghiem",
   "text" => "Lịch trải nghiệm",
