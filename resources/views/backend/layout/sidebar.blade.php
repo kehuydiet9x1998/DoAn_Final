@@ -34,9 +34,14 @@
   ],
   ],
   ],];
+<<<<<<< HEAD
   $phanquyen = 'administrators';
   if($phanquyen == 'contact') 
   {
+=======
+  $phanquyen = 'contact';
+  if($phanquyen == 'contact') {
+>>>>>>> 6ba88802f0a0d7af2bad9e80d1c52ab742a06c54
   $menu = [
   [
   "title" => "Chăm Sóc Khách Hàng",
@@ -84,40 +89,34 @@
   "text" => "Khóa học",
   ],
   [
-  "link" => "/lop-hoc",
-  "type" => "link",
-  "icon" => "fa fa-mortar-board",
-  "text" => "Lớp học",
-  ],
-  [
-  "link"=>"/lop-hoc",
+  "link"=>"/contacts/list-teachers",
   "type"=>"link",
   "icon"=>"fa fa-slideshare",
   "text"=>"Giảng viên"
   ],
   [
-  "link"=> "/lop-hoc",
+  "link"=>"/contacts/checkin-teachers",
+  "type"=>"link",
+  "icon"=>"fa fa-hourglass-start",
+  "text"=>"CHECK-IN giảng viên"
+  ],
+  [
+  "link"=> "/contacts/classify",
   "type"=> "link",
   "icon"=> "fa fa-braille",
   "text"=> "Phân lớp",
   ],
-  [
-  "link" => "/lop-hoc",
+   [
+  "link" => "/contacts/move-class",
   "type" => "link",
-  "icon" => "fas fa-save",
-  "text" => "Bảo lưu",
-  ],
-  [
-  "link" => "/khoa-hoc",
-  "type" => "link",
-  "icon" => "fa fa-check-square-o",
-  "text" => "Theo dõi lớp học",
+  "icon" => "fa fa-mortar-board",
+  "text" => "Chuyển lớp",
   ],
   [
   "link" => "/admin/thoi-khoa-bieu",
   "type" => "link",
-  "icon" => "far fa-calendar-alt",
-  "text" => "Thời khóa biểu",
+  "icon" => "fa fa-calendar",
+  "text" => "Lịch giảng dậy",
   ],
   ],
   ],

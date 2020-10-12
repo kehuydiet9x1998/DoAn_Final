@@ -142,16 +142,6 @@
                     </div>
                   </div>
                 </div>
-                <div class="card-header-right">
-                  <ul class="list-unstyled card-option">
-                    <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
-                    <li><i class="feather icon-maximize full-card"></i></li>
-                    <li><i class="feather icon-minus minimize-card"></i></li>
-                    <li><i class="feather icon-refresh-cw reload-card"></i></li>
-                    <li><i class="feather icon-trash close-card"></i></li>
-                    <li><i class="feather icon-chevron-left open-card-option"></i></li>
-                  </ul>
-                </div>
               </div>
               <div class="card-block">
                 <div class="table-responsive">
@@ -164,10 +154,10 @@
                         <th>Ngày sinh</th>
                         <th>Giới tính</th>
                         <th>Trạng thái</th>
-                        {{-- <th>Phụ huynh</th>
+                        <th>Phụ huynh</th>
                         <th>Số cmnd</th>
                         <th>Số điện thoại</th>
-                        <th>Email</th> --}}
+                        <th>Email</th>
                         <th>Quê quán</th>
                         <th>Actions</th>
                       </tr>
@@ -180,7 +170,15 @@
                         <td>{{$st->ten}}</td>
                         <td>{{$st->ngaysinh}}</td>
                         <td>{{$st->gioitinh}}</td>
+<<<<<<< HEAD
                         <td>{{$st->trangthai}}</td>                      
+=======
+                        <td>{{$st->trangthai}}</td>
+                        {{-- <td>{{$st->hotenchame}}</td>
+                        <td>{{$st->cmnd}}</td>
+                        <td>{{$st->sodienthoai}}</td>
+                        <td>{{$st->email}}</td>
+>>>>>>> 6ba88802f0a0d7af2bad9e80d1c52ab742a06c54
                         <td>{{$st->diachi}}</td>
                         <td style="display: flex; width: 64px;">
                           <div>
@@ -232,7 +230,13 @@
   </div>
 </div>
 
+<<<<<<< HEAD
 {{-- Modal them --}}
+=======
+</div>
+
+
+>>>>>>> 6ba88802f0a0d7af2bad9e80d1c52ab742a06c54
 @endsection
 @section('script')
 <script>

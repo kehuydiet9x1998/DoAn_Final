@@ -22,6 +22,9 @@
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/waves.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/feather.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/daterangepicker.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/datedropper.min.css')}}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
   {{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome-n.min.css')}}"> --}}
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/themify-icons.css')}}">
@@ -104,6 +107,8 @@
     <script type="text/javascript" src="{{asset('assets/js/calendar.js')}}"></script>
     <script src="{{asset('assets/js/rocket-loader.min.js')}}" data-cf-settings="d2d1d6e2f87cbebdf4013b26-|49" defer="">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
     @yield('script')
 </body>
 

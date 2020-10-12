@@ -53,14 +53,15 @@
                       </tr>
                     </thead>
                     <tbody>
+                      @foreach ($classes as $class)
                       <tr>
                         <td>
                           <div class="d-inline-block align-middle">
                             <div class="d-inline-block">
-                              <a href="classes/detail">
-                                <h6 class="name_link_green">HP-LKT-C-RB-916-XCTRB-0001</h6>
+                            <a href="{{route('classes.show', $class->id)}}">
+                              <h6 class="name_link_green">{{$class->tenlop}}</h6>
                               </a>
-                              <p class=" m-b-0 text-muted">Khóa học: Xưởng chế tạo RoBot</p>
+                            <p class=" m-b-0 text-muted">Khóa học: {{$class->khoaHoc->tenkhoahoc}}</p>
                               {{-- <p class="m-t-2 m-b-0 text-muted">Giáo viên: Học viện TEKY</p> --}}
                             </div>
                           </div>
@@ -70,15 +71,21 @@
                             <h6 >Xưởng chế tạo RoBot</h6>
 
                         </td> --}}
-                        <td>6</td>
+                      <td>{{$class->siso}}</td>
                         <td>
-                          <i class="fa fa-calendar-minus-o"></i> 19-11-2019
+                          <i class="fa fa-calendar-minus-o"></i> {{substr($class->ngaybatdau,0, 10)}}
                           <br>
-                          <i class="fa fa-calendar-times-o"></i> 11-11-2020</td>
-                        <td>11/12</td>
-                        <td><label class="badge badge-inverse-warning"> Level 3</label></td>
+                          <i class="fa fa-calendar-times-o"></i> {{substr($class->ngayketthuc,0, 10)}}</td>
+                        <td>{{$class->sobuoidahoc}}/{{$class->sobuoi}}</td>
+                        @php
+                        $lv = $class->khoaHoc->level->tenlevel;
+                        @endphp
+                        <td><label class="badge badge-inverse-{{$lv == 'Trung cấp' ? 'warning': ($lv == 'Sơ cấp'? 'success' : 'info')}}">{{($lv)}}</label></td>
                         <td>
-                          <label class="badge badge-inverse-success">Đang diễn ra</label>
+                          @php
+                            $tt = $class->trangthai;
+                          @endphp
+                        <label class="badge badge-inverse-{{$tt == 'Đang hoạt động' ? 'success': ($tt == 'Chưa hoạt động' ? 'warning' : 'danger' ) }}">{{$tt}}</label>
                         </td>
 
                         {{-- <td>
@@ -94,6 +101,8 @@
                           </form>
                         </td> --}}
                       </tr>
+                      @endforeach
+
                     </tbody>
                   </table>
                 </div>
