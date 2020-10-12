@@ -108,9 +108,9 @@ class KhoaHocController extends Controller
    * @param  \App\Models\KhoaHoc  $khoaHoc
    * @return \Illuminate\Http\Response
    */
-  public function destroy(KhoaHoc $khoaHoc)
+  public function destroy($id)
   {
-    $khoaHoc->delete();
-    return redirect(route('administrators.index'));
+    KhoaHoc::where('id', '=', $id)->delete();
+    return redirect(route('courses.index'));
   }
 }

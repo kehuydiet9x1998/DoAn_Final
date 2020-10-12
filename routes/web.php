@@ -11,14 +11,13 @@ Route::get('/', function () {
 Route::get('/dangnhap', function () {
   return view('backend.dangnhap');
 });
-Route::prefix('administrators')->group(function () {
+Route::prefix('/administrators')->group(function () {
   Route::resource('courses', "Administrators\KhoaHocController");
+  Route::resource('staffs', "Administrators\NhanVienController");
+  Route::resource('teachers', "Administrators\TeacherController");
 
   Route::get('classes', function () {
     return view('backend.administrators.classes');
-  });
-  Route::get('staffs', function () {
-    return view('backend.administrators.staffs');
   });
   Route::get('contracts', function () {
     return view('backend.administrators.contracts');

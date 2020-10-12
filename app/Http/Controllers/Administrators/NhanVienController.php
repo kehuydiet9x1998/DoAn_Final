@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Contacts;
+namespace App\Http\Controllers\Administrators;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Http\Request;
-use App\Models\PhuHuynh;
-use App\Models\User;
+use App\Models\ChucVu;
 use App\Models\HocSinh;
-class StudentController extends Controller
+use App\Models\NhanVien;
+use Illuminate\Http\Request;
+
+class NhanVienController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +17,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-      $students = HocSinh::orderBy('ten', 'ASC')->paginate(10);
-      return view('backend.contact.listStudent',['students'=>$students]);
+        $staffs = NhanVien::orderBy('ten', 'ASC')->paginate(10);
+        $chucvu =ChucVu::all();
+        return view('backend.administrators.staffs', ['staffs' => $staffs,'chucvu'=>$chucvu]);
     }
 
     /**
@@ -27,9 +27,9 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        
+        //
     }
 
     /**
@@ -41,59 +41,60 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        HocSinh::create($data);
-        return redirect(route('students.index'));
+        NhanVien::create($data);
+        return redirect(route('staffs.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\NhanVien  $nhanVien
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $hocsinh = HocSinh::findOrFail($id);
-        return view('backend.contact.show_student_modal', ['hocsinh' => $hocsinh]);
+        $staffs = NhanVien::findorFail($id);
+        return view('backend.administrators.staff.show_staffs',['staffs' => $staffs]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\NhanVien  $nhanVien
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-         $hocsinh =  HocSinh::find($id);
-        //  return $hocsinh;
-        return view('backend.contact.edit_student_modal', ['hocsinh'=>$hocsinh] );
+        $data = NhanVien::find($id);
+        $chucvu = ChucVu::all();
+        return view('backend.administrators.staff.edit_staffs', ['staffs' => $data, 'chucvu' => $chucvu]);
+
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\NhanVien  $nhanVien
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $hocsinh = HocSinh::findOrFail($id);
-        $hocsinh->fill($request->all());
-        $hocsinh->save();
-        return redirect(route('students.index'));
+        $nhanvien = NhanVien::findorFail($id);
+        $nhanvien->fill($request -> all());
+        $nhanvien -> save();
+        return redirect(route('staffs.index'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\NhanVien  $nhanVien
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        HocSinh::where('id', '=' , $id)->delete();
-        return redirect(route('students.index'));
+        NhanVien::where('id', '=', $id)->delete();
+        return redirect(route('staffs.index'));
     }
 }
