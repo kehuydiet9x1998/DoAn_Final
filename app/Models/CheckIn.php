@@ -21,6 +21,9 @@ class CheckIn extends Model
 
   public function getGiocheckinAttribute($value)
   {
+    if ($value == null) {
+      return '#';
+    }
     $time = strtotime($value);
     return date('h:m', $time);
   }
@@ -28,7 +31,7 @@ class CheckIn extends Model
   public function getGiocheckoutAttribute($value)
   {
     if ($value == null) {
-      return null;
+      return '#';
     }
     $time = strtotime($value);
     return date('h:m', $time);

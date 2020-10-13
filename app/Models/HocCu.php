@@ -10,7 +10,7 @@ class HocCu extends Model
 {
   use HasFactory;
   use SoftDeletes;
-  protected $table = 'khoa_hoc';
+  protected $table = 'hoc_cu';
   protected $dates = ['deleted_at'];
   protected $fillable = [
     'tenthietbi',

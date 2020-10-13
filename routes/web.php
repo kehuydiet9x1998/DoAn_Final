@@ -39,6 +39,7 @@ Route::prefix('teachers')->group(function () {
   });
 
   Route::resource('classes', 'Teachers\LopHocController');
+  Route::resource('lessons', 'Teachers\BuoiHocController');
 
   Route::get('check-test', function () {
     return view('backend.teachers.chambai');

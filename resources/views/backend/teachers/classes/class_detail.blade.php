@@ -104,10 +104,12 @@
                                   @foreach($dsBuoiHoc as $key=>$buoiHoc )
                                   <li style="text-align: center; margin-left: 18px; float: left">
                                     <span>---</span>
-                                    <button class="btn waves-effect waves-light" style="border-radius: 50%; padding: 5px 10px">{{$key+1}}</button>
+                                    <button class="btn waves-effect waves-light buoihoc" style="border-radius: 50%; padding: 5px 10px" data-id="{{$buoiHoc->id}}">{{$key+1}}</button>
                                     <span>---</span>
                                     <div class="sub-text">{{$buoiHoc->ngayhoc}}</div>
-                                    <div class="sub-title">{{$buoiHoc->checkin->giocheckin}}-{{$buoiHoc->checkin->giocheckout == null ? '#' :$buoiHoc->checkin->giocheckout}}</div>
+                                    <div class="sub-title">
+                                      {{$buoiHoc->checkin->giocheckin}}-
+                                      {{$buoiHoc->checkin->giocheckout}}</div>
                                   </li>
                                   @endforeach
                                 </ul>
@@ -115,103 +117,11 @@
                             </div>
                           </div>
                         </div>
-                        <div class="row">
-                          <div class="col-sm-12">
-                            <div class="card">
-                              <div class="card-header">
-                                <div class="card-header-left">
-                                  <h6>KHÓA HỌC: XƯỞNG CHẾ TẠO ROBOT - BUỔI HỌC: 1/12</h6>
-                                  <div>14:00 - 16:00 | 26/07/20 </div>
-                                </div>
-                              </div>
-                              <div class="card-block">
-                                <ul style="display: flex">
-                                  <li style="margin: 0 10px">
-                                    <button data-id="1" class="btn waves-effect waves-light btn-round" data-toggle="modal" data-target="#hoccu-Modal">HỌC CỤ</button>
-                                    @include('backend.teachers.hoccu-modal')
-                                  </li>
-                                  <li style="margin: 0 10px">
-                                    <button class="btn waves-effect waves-light btn-round">CHECK-IN</button>
-                                  </li>
-                                  <li style="margin: 0 10px">
-                                    <button data-id="1" class="btn waves-effect waves-light btn-round" data-toggle="modal" data-target="#diemdanh-Modal">ĐIỂM DANH</button>
-                                    @include('backend.teachers.diemdanh-modal')
-                                  </li>
-                                  <li style="margin: 0 10px">
-                                    <button data-id="1" class="btn waves-effect waves-light btn-round" data-toggle="modal" data-target="#hoclieu-Modal">HỌC LIỆU</button>
-                                    @include('backend.teachers.hoclieu-modal')
-                                  </li>
-                                  <li style="margin: 0 10px">
-                                    <button data-id="1" class="btn waves-effect waves-light btn-round" data-toggle="modal" data-target="#giaobaitap-Modal">GIAO BÀI TẬP</button>
-                                    @include('backend.teachers.giaobaitap-modal')
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-12">
-                            <div class="card table-card">
-                              <div class="card-block">
-                                <div class="table-responsive">
-                                  <table class="table table-hover m-b-0">
-                                    <thead>
-                                      <tr>
-                                        <th>Mã học sinh</th>
-                                        <th>Họ và tên</th>
-                                        <th>Điểm danh</th>
-                                        <th>BTVN</th>
-                                        <th>Action</th>
-                                        <th>Trạng thái</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                      <tr>
-                                        <td>
-                                          <div class="d-inline-block align-middle">
-                                            <div class="d-inline-block">
-                                              <h6>HP-LKT-000013</h6>
-                                            </div>
-                                          </div>
-                                        </td>
-                                        <td><a href="classes/detail">
-                                            <h6>Nguyễn Hải Minh</h6>
-                                          </a></td>
-                                        <td style="text-align: center">
-                                          <div class="checkbox-zoom zoom-success">
-                                            <label>
-                                              <input type="checkbox" value="">
-                                              <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-success"></i></span>
-                                            </label>
-                                          </div>
-                                        </td>
-                                        <td>Chưa có BTVN</td>
-                                        <td>
-                                          <ul style="display: flex;">
-                                            <li style="margin: 0 3px">
-                                              <button type="button" class="btn btn-primary waves-effect" data-toggle="modal" data-target="#mail-Modal" style="background-color: white; border: none; padding: 0">
-                                                <i class="fa fa-comments-o f-w-600 f-16 m-r-15 text-c-green" style="font-size: 20px"></i>
-                                              </button>
-                                              @include('backend.teachers.nhanxet-modal')
-                                            </li>
-                                            <li>
-                                              <a href="classes/check-test"><i class="fa fa-book f-w-600 f-16 m-r-15 text-c-green" style="font-size: 20px"></i></a>
-                                            </li>
-                                          </ul>
-                                        </td>
-                                        <td>
-                                          <label class="badge badge-primary">Đang học</label>
-                                        </td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                        <div id="buoihoc"></div>
+                        {{-- @include('backend.teachers.classes.buoihoc') --}}
                       </div>
+
+
                       {{-- Danh sách dự án của học sinh --}}
                       <div class="tab-pane" id="messages7" role="tabpanel">
                         <div class="row">
@@ -267,8 +177,25 @@
 </div>
 @endsection
 @section('script')
-{{-- <script type="text/javascript" src="{{asset('assets/js/form-validation.js')}}"></script>
-<script type="text/javascript" src="{{asset('assets/js/validate.js')}}"></script>
-<script type="text/javascript" src="{{asset('assets/js/underscore-min.js')}}"></script>
-<script type="text/javascript" src="{{asset('assets/js/bootstrap.min.js')}}"></script> --}}
+<script>
+  $(document).ready(function() {
+    $('.buoihoc').click(function() {
+      $('#buoihoc').load('/teachers/lessons/' + $(this).data('id'));
+    });
+    $('.buoihoc')[0].click();
+  });
+
+  // $(document).on({
+  //   ajaxStart: function() {
+  //     $('.card').addClass("card-load");
+  //     $('.card').append('<div class="card-loader"><i class="feather icon-radio rotate-refresh"></div>');
+  //   }
+  //   , ajaxStop: function() {
+  //     $('.card').children(".card-loader").remove();
+  //     $('.card').removeClass("card-load");
+  //   }
+
+  // });
+
+</script>
 @endsection
