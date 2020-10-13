@@ -34,8 +34,8 @@
   ],
   ],
   ],];
-  $phanquyen = 'contact';
-  if($phanquyen == 'contact') 
+  $phanquyen = 'student';
+  if($phanquyen == 'contact')
   {
   $menu = [
   [
@@ -249,6 +249,45 @@
   ],
   ],
   ],];
+  }
+  if($phanquyen == "student")
+  {
+  $menu = [ [
+  "title" => "Học tập",
+  "items" => [
+  [
+  "link" => "/student/calendar",
+  "type" => "link",
+  "icon" => "fa fa-calendar-check-o",
+  "text" => "Thời khóa biểu",
+  ],
+  [
+  "link" => "/student/class",
+  "type" => "link",
+  "icon" => "fa fa-mortar-board",
+  "text" => "Lớp học của tôi",
+  ],
+  [
+  "link" => "/student/courses",
+  "type" => "link",
+  "icon" => "fa fa-check-square-o",
+  "text" => "Khóa học",
+  ],
+  [
+  "link" => "/student/home-work",
+  "type" => "link",
+  "icon" => "fa fa-comments",
+  "text" => "Bài tập về nhà",
+  ],
+  [
+  "link" => "/student/review",
+  "type" => "link",
+  "icon" => "fa fa-product-hunt",
+  "text" => "Ôn bài",
+  ],
+  ],
+  ],
+  ];
   }
 @endphp
 

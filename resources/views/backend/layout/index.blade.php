@@ -32,7 +32,6 @@
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/chartist.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/widget.css')}}">
-  {{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/css/pages.css')}}"> --}}
   {{-- <link rel="stylesheet" type="text/css" href="{{asset('css/app.css') }}"> --}}
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/datatables.bootstrap4.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/buttons.datatables.min.css')}}">

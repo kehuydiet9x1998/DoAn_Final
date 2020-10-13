@@ -61,6 +61,30 @@ Route::prefix('/contacts')->group(function () {
   });
 });
 
+Route::prefix('/student')->group(function () {
+  Route::get('/calendar', function () {
+    return view('backend.students.calendar');
+  });
+  Route::get('class', function (){
+    return view('backend.students.class');
+  });
+  Route::get('class/detail', function (){
+    return view('backend.students.class-detail');
+  });
+  Route::get('courses', function (){
+    return view('backend.students.courses');
+  });
+  Route::get('courses/1', function (){
+    return view('backend.students.course-detail');
+  });
+  Route::get('home-work', function (){
+    return view('backend.students.homework');
+  });
+  Route::get('review', function (){
+    return view('backend.students.review');
+  });
+});
+
 Route::get('/news-feed', function () {
   return view('backend.bantin');
 });

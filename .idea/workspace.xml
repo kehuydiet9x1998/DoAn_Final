@@ -7,9 +7,15 @@
   <component name="ChangeListManager">
     <list default="true" id="dfeacd01-f2c3-4401-a83c-21a86b8aa657" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_seeder/Hoc_Sinh.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_seeder/Hoc_Sinh.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_seeder/Users.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_seeder/Users.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_seeder/chuc_vu.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_seeder/chuc_vu.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_seeder/giao_vien.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_seeder/giao_vien.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_seeder/khoa_hoc.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_seeder/khoa_hoc.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_seeder/lop_hoc.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_seeder/lop_hoc.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_seeder/nhan_vien.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_seeder/nhan_vien.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/listStudent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/listStudent.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/listTeacher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/listTeacher.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/show_student_modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/show_student_modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/layout/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layout/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -229,6 +235,9 @@
       <workItem from="1602313612576" duration="3841000" />
       <workItem from="1602421564336" duration="5824000" />
       <workItem from="1602468703420" duration="2393000" />
+      <workItem from="1602567412220" duration="5302000" />
+      <workItem from="1602576674520" duration="10020000" />
+      <workItem from="1602596266341" duration="4850000" />
     </task>
     <servers />
   </component>
