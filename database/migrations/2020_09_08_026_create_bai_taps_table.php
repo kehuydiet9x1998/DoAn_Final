@@ -15,15 +15,20 @@ class CreateBaiTapsTable extends Migration
   {
     Schema::create('bai_tap', function (Blueprint $table) {
       $table->id();
-      $table->string('tenbaitap');
+      $table->string('tenbaitap')->null;
+      $table->text('loaicauhoi');
       $table->text('noidung');
-      $table->string('trangthai');
-      $table->float('diem');
-      $table->unsignedBigInteger('buoi_hoc_id');
+      $table->text('hinhanhminhhoa')->nullable();
+      $table->text('dapan1')->nullable();
+      $table->text('dapan2')->nullable();
+      $table->text('dapan3')->nullable();
+      $table->text('dapan4')->nullable();
+      $table->text('dapan');
+      $table->unsignedBigInteger('bai_giang_id');
       $table
-        ->foreign('buoi_hoc_id')
+        ->foreign('bai_giang_id')
         ->references('id')
-        ->on('buoi_hoc');
+        ->on('bai_giang');
       $table->timestamps();
       $table->softDeletes();
     });

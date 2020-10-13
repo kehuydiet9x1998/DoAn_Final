@@ -18,7 +18,7 @@ class FeedBackController extends Controller
     public function index()
     {
         $feedback = NhanXet::all();
-        return view('backend.contact.feedback',['feedback'=>$feedback]);
+        return view('backend.contact.nhanxet.feedback',['feedback'=>$feedback]);
     }
 
     /**
@@ -51,7 +51,7 @@ class FeedBackController extends Controller
     public function show($id)
     {
         $nhanXet = NhanXet::findOrFail($id);
-        return view('backend.contact.modal', compact('nhanXet'));
+        return view('backend.contact.nhanxet.modal', compact('nhanXet'));
         // return 'ok';
     }
 

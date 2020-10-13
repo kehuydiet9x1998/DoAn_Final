@@ -17,7 +17,7 @@ class LopHocController extends Controller
   public function index()
   {
     $classes = LopHoc::paginate(10);
-    return view('backend.teachers.classes', compact('classes'));
+    return view('backend.teachers.classes.classes', compact('classes'));
   }
 
   /**
@@ -49,7 +49,7 @@ class LopHocController extends Controller
    */
   public function show(LopHoc $class)
   {
-    return view('backend.teachers.class_detail', compact('class'));
+    return view('backend.teachers.classes.class_detail', compact('class'));
   }
 
   /**

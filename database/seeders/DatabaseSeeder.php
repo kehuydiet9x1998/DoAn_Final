@@ -29,7 +29,12 @@ class DatabaseSeeder extends SpreadsheetSeeder
       DB::table($name)->truncate();
     }
 
-    $this->file = ['/database/seeders/_seeder.xlsx'];
+    $this->file = [
+      '/database/seeders/_danh_muc_seeder.xlsx',
+      '/database/seeders/_khoa_hoc_seeder.xlsx',
+      '/database/seeders/_lop_hoc_seeder.xlsx',
+      '/database/seeders/_buoi_hoc_seeder.xlsx',
+    ];
     $this->truncate = false;
     parent::run();
   }

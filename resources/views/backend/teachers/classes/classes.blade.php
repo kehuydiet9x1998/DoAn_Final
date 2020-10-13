@@ -22,10 +22,8 @@
                     </select>
                   </div>
                   <div class="col-sm-12 col-xl-3 m-b-30">
-                    <input id="date" style="display:none" type="date" class="form-control"
-                      placeholder="Lọc theo ngày" />
-                    <input placeholder="Lọc theo ngày" class="textbox-n form-control" type="text"
-                      onfocus="(this.type='date')" id="date" />
+                    <input id="date" style="display:none" type="date" class="form-control" placeholder="Lọc theo ngày" />
+                    <input placeholder="Lọc theo ngày" class="textbox-n form-control" type="text" onfocus="(this.type='date')" id="date" />
                   </div>
                   <div class="col-sm-12 col-xl-3 m-b-30">
                     <input type="text" class="form-control" name="timkiem" id="timkiem" placeholder="Tìm trong bảng">
@@ -58,10 +56,10 @@
                         <td>
                           <div class="d-inline-block align-middle">
                             <div class="d-inline-block">
-                            <a href="{{route('classes.show', $class->id)}}">
-                              <h6 class="name_link_green">{{$class->tenlop}}</h6>
+                              <a href="{{route('classes.show', $class->id)}}">
+                                <h6 class="name_link_green">{{$class->tenlop}}</h6>
                               </a>
-                            <p class=" m-b-0 text-muted">Khóa học: {{$class->khoaHoc->tenkhoahoc}}</p>
+                              <p class=" m-b-0 text-muted">Khóa học: {{$class->khoaHoc->tenkhoahoc}}</p>
                               {{-- <p class="m-t-2 m-b-0 text-muted">Giáo viên: Học viện TEKY</p> --}}
                             </div>
                           </div>
@@ -71,11 +69,11 @@
                             <h6 >Xưởng chế tạo RoBot</h6>
 
                         </td> --}}
-                      <td>{{$class->siso}}</td>
+                        <td>{{$class->dsLopHoc()->count()}}</td>
                         <td>
-                          <i class="fa fa-calendar-minus-o"></i> {{substr($class->ngaybatdau,0, 10)}}
+                          <i class="fa fa-calendar-minus-o"></i> {{$class->ngaybatdau}}
                           <br>
-                          <i class="fa fa-calendar-times-o"></i> {{substr($class->ngayketthuc,0, 10)}}</td>
+                          <i class="fa fa-calendar-times-o"></i> {{$class->ngayketthuc}}</td>
                         <td>{{$class->sobuoidahoc}}/{{$class->sobuoi}}</td>
                         @php
                         $lv = $class->khoaHoc->level->tenlevel;
@@ -83,22 +81,21 @@
                         <td><label class="badge badge-inverse-{{$lv == 'Trung cấp' ? 'warning': ($lv == 'Sơ cấp'? 'success' : 'info')}}">{{($lv)}}</label></td>
                         <td>
                           @php
-                            $tt = $class->trangthai;
+                          $tt = $class->trangthai;
                           @endphp
-                        <label class="badge badge-inverse-{{$tt == 'Đang hoạt động' ? 'success': ($tt == 'Chưa hoạt động' ? 'warning' : 'danger' ) }}">{{$tt}}</label>
+                          <label class="badge badge-inverse-{{$tt == 'Đang hoạt động' ? 'success': ($tt == 'Chưa hoạt động' ? 'warning' : 'danger' ) }}">{{$tt}}</label>
                         </td>
 
                         {{-- <td>
                           <form action="/
                         {{route('students.destroy')}}
                         " method="post">
-                            @method('DELETE')
-                            @csrf
+                        @method('DELETE')
+                        @csrf
 
-                            <button style="border: none; padding: 2px 0px; margin-top: -1px;">
-                              <i class="feather icon-trash-2 f-w-600 f-16 m-r-15 text-c-red"
-                                style="margin:0;"></i></button>
-                          </form>
+                        <button style="border: none; padding: 2px 0px; margin-top: -1px;">
+                          <i class="feather icon-trash-2 f-w-600 f-16 m-r-15 text-c-red" style="margin:0;"></i></button>
+                        </form>
                         </td> --}}
                       </tr>
                       @endforeach

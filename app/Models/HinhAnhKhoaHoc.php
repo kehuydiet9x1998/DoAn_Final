@@ -12,7 +12,7 @@ class HinhAnhKhoaHoc extends Model
   use SoftDeletes;
   protected $table = 'hinh_anh_khoa_hoc';
   protected $dates = ['deleted_at'];
-  protected $fillable = ['anh', 'duongdan', 'khoa_hoc_id'];
+  protected $fillable = ['duongdan', 'khoa_hoc_id'];
 
   public function khoaHoc()
   {

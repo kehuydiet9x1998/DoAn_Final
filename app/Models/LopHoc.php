@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -23,17 +24,24 @@ class LopHoc extends Model
 
   public function getNgaybatdauAttribute($value)
   {
-    return substr($value, 0, 10);
+    $date = strtotime($value);
+    return date('d-m-Y', $date);
   }
 
   public function getNgayketthucAttribute($value)
   {
-    return substr($value, 0, 10);
+    $date = strtotime($value);
+    return date('d-m-Y', $date);
   }
 
   public function khoaHoc()
   {
     return $this->belongsTo(khoaHoc::class);
+  }
+
+  public function dsHocCu()
+  {
+    return $this->hasMany(HocCu::class);
   }
 
   public function giaoVien()
@@ -46,9 +54,9 @@ class LopHoc extends Model
     return $this->hasMany(BuoiHoc::class);
   }
 
-  public function dsThoiGianHoc()
+  public function lichHoc()
   {
-    return $this->hasMany(ThoiGianHoc::class);
+    return $this->hasOne(ThoiGianHoc::class);
   }
 
   public function dsLopHoc()

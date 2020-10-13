@@ -17,7 +17,7 @@ class CreateBaiGiangsTable extends Migration
       $table->id();
       $table->string('tenbaigiang');
       $table->text('noidung');
-      $table->float('thoigiandukien');
+      $table->text('filebaigiang');
       $table->unsignedBigInteger('khoa_hoc_id');
       $table
         ->foreign('khoa_hoc_id')
