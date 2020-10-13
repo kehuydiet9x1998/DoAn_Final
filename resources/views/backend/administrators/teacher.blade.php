@@ -33,8 +33,7 @@
                     <thead>
                       <tr>
                         <th>ID</th>
-                        <th>Họ đệm</th>
-                        <th>Tên</th>
+                        <th>Họ và tên</th>
                         <th>Giới tính</th>
                         <th>Ngày sinh</th>
                         <th>SĐT</th>
@@ -48,8 +47,7 @@
                       @foreach ($teachers as $teacher)
                       <tr>
                         <td>{{$teacher->id}}</td>
-                        <td>{{$teacher->hodem}}</td>
-                        <td>{{$teacher->ten}}</td>
+                        <td>{{$teacher->hodem .' '.$teacher->ten}}</td>
                         <td>{{$teacher->gioitinh}}</td>
                         <td>{{$teacher->ngaysinh}}</td>
                         <td>{{$teacher->sodienthoai}}</td>

@@ -34,7 +34,7 @@
   ],
   ],
   ],];
-  $phanquyen = 'administrators';
+  $phanquyen = 'teacher';
   if($phanquyen == 'contact') 
   {
   $menu = [
@@ -52,12 +52,6 @@
   "icon" => "fa fa-dollar",
   "link" => "/admin/hocphi",
   "text" => "Học phí",
-  ],
-  [
-  "type" => "link",
-  "icon" => "fa fa-money",
-  "link" => "/lop-hoc",
-  "text" => "Công nợ khách hàng",
   ],
   [
   "type" => "link",

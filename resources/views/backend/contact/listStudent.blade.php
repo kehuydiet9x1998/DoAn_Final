@@ -17,7 +17,6 @@
                       <label style="display: flex">Search:<input type="search" class="form-control input-sm"
                           placeholder="" aria-controls="dom-table"
                           style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;">
-                        <li>
                           <button class="btn btn-success btn-round waves-effect waves-light" data-toggle="modal"
                             data-target="#large-Modal"
                             style="margin-top: -6px;height: 35px;line-height: 13px; margin-left: 5px">Thêm học
@@ -137,7 +136,7 @@
                                 </div>
                               </div>
                             </div>
-                        </li>
+                        
                       </label>
                     </div>
                   </div>
@@ -149,8 +148,7 @@
                     <thead>
                       <tr>
                         <th>STT</th>
-                        <th>Họ đệm</th>
-                        <th>Tên</th>
+                        <th>HỌ VÀ TÊN</th>
                         <th>Ngày sinh</th>
                         <th>Giới tính</th>
                         <th>Trạng thái</th>
@@ -166,8 +164,7 @@
                       @foreach($students as $st)
                       <tr>
                         <td>{{$st->id}}</td>
-                        <td>{{$st->hodem}}</td>
-                        <td>{{$st->ten}}</td>
+                        <td>{{$st->hodem. ' ' .$st->ten}}</td>
                         <td>{{$st->ngaysinh}}</td>
                         <td>{{$st->gioitinh}}</td>
                         <td>{{$st->trangthai}}</td>
@@ -189,8 +186,8 @@
                             </div>
                           </div>
 
-                          <button class="my_edit" data-id="{{$st->id}}" data-toggle="modal" data-target="#edit-Modal">
-                            <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i>
+                          <button class="my_edit" data-id="{{$st->id}}" data-toggle="modal" data-target="#edit-Modal" style="background-color: white; border: none">
+                            <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green" style="margin-right: 3px"></i>
                           </button>
                           <!-- Modal Sua -->
                           <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog"
@@ -199,7 +196,7 @@
                           <form action="{{route('students.destroy', $st->id)}}" method="post">
                             @method('DELETE')
                             @csrf
-                            <button style="border: none; padding: 2px 0px; margin-top: -1px;"
+                            <button style="border: none; padding: 2px 0px; margin-top: -1px; background-color: white"
                               onclick="return confirm ('Bạn có muốn xóa không')">
                               <i class="feather icon-trash-2 f-w-600 f-16 m-r-15 text-c-red"
                                 style="margin:0;">
@@ -225,7 +222,12 @@
     </div>
   </div>
 </div>
+<<<<<<< HEAD
 {{-- Modal them --}}
+=======
+
+
+>>>>>>> a96dbaa77d09c603652ff780fce29de19944ecd4
 @endsection
 @section('script')
 <script>

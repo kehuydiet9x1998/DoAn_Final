@@ -7,9 +7,9 @@
   <component name="ChangeListManager">
     <list default="true" id="dfeacd01-f2c3-4401-a83c-21a86b8aa657" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/feedback.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/feedback.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/listStudent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/listStudent.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/layout/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layout/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/listTeacher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/listTeacher.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/show_student_modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/show_student_modal.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -228,6 +228,7 @@
       <workItem from="1602298703122" duration="5085000" />
       <workItem from="1602313612576" duration="3841000" />
       <workItem from="1602421564336" duration="5824000" />
+      <workItem from="1602468703420" duration="2393000" />
     </task>
     <servers />
   </component>

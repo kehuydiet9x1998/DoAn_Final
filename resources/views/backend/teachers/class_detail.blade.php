@@ -52,7 +52,7 @@
                                         </div>
                                         <div class="card-block" style="display: flex; margin-top: -40px">
                                           <h5 class="card-title"><i class="fa fa-graduation-cap"></i>Giảng viên :</h5>
-                                          <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px"><b> {{$class->giaoVien->hodem. ' ' . $class->giaoVien->ten}}</b></h5>
+                                          <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px"><b>{{$class->giaoVien->hodem.' '.$class->giaoVien->ten}}</b></h5>
                                         </div>
                                       </div>
                                     </div>
