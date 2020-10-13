@@ -19,7 +19,7 @@ class NhanVienController extends Controller
     {
         $staffs = NhanVien::orderBy('ten', 'ASC')->paginate(10);
         $chucvu =ChucVu::all();
-        return view('backend.administrators.staffs', ['staffs' => $staffs,'chucvu'=>$chucvu]);
+        return view('backend.administrators.staff.staffs', ['staffs' => $staffs,'chucvu'=>$chucvu]);
     }
 
     /**

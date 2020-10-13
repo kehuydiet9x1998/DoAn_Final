@@ -152,6 +152,10 @@
                         <th>Ngày sinh</th>
                         <th>Giới tính</th>
                         <th>Trạng thái</th>
+                        <th>Phụ huynh</th>
+                        {{-- <th>Số cmnd</th>
+                        <th>Số điện thoại</th>
+                        <th>Email</th> --}}
                         <th>Quê quán</th>
                         <th>Actions</th>
                       </tr>
@@ -163,7 +167,11 @@
                         <td>{{$st->hodem. ' ' .$st->ten}}</td>
                         <td>{{$st->ngaysinh}}</td>
                         <td>{{$st->gioitinh}}</td>
-                        <td>{{$st->trangthai}}</td>                      
+                        <td>{{$st->trangthai}}</td>
+                        <td>{{$st->hotenchame}}</td>
+                        {{-- <td>{{$st->cmnd}}</td>
+                        <td>{{$st->sodienthoai}}</td>
+                        <td>{{$st->email}}</td> --}}
                         <td>{{$st->diachi}}</td>
                         <td style="display: flex; width: 64px;">
                           <div>
@@ -214,8 +222,12 @@
     </div>
   </div>
 </div>
+<<<<<<< HEAD
+{{-- Modal them --}}
+=======
 
 
+>>>>>>> a96dbaa77d09c603652ff780fce29de19944ecd4
 @endsection
 @section('script')
 <script>

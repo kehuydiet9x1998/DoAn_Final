@@ -17,7 +17,7 @@ class TeacherController extends Controller
     {
         // $teacher = GiaoVien::orderBy('ten','ASC') ->paginate(10);
         $teacher = GiaoVien::all();
-        return view('backend.administrators.teacher' , ['teachers' => $teacher]);
+        return view('backend.administrators.teacher.teacher' , ['teachers' => $teacher]);
     }
 
     /**

@@ -17,7 +17,7 @@ Route::prefix('/administrators')->group(function () {
   Route::resource('teachers', "Administrators\TeacherController");
 
   Route::get('classes', function () {
-    return view('backend.administrators.classes');
+    return view('backend.administrators.class.classes');
   });
   Route::get('contracts', function () {
     return view('backend.administrators.contracts');
@@ -83,7 +83,7 @@ Route::get('/admin/hocsinh/themhocsinh', function () {
 });
 
 Route::get('/admin/lich-trai-nghiem', function () {
-  return view('backend.lichtrainghiem.datalichtrainghiem');
+  return view('backend.contact.lichtrainghiem.datalichtrainghiem');
 });
 
 Route::get('/admin/lich-trai-nghiem/them', function () {
