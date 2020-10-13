@@ -54,11 +54,10 @@ Route::get('/dashboard', function () {
 
 Route::prefix('/contacts')->group(function () {
   Route::resource('students', "Contacts\StudentController");
+  Route::resource('hocphis', "Contacts\HocPhiController");
   Route::resource('feedbacks', "Contacts\FeedBackController");
   Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
-  Route::get('list-teachers', function (){
-    return view('backend.contact.listTeacher');
-  });
+  Route::resource('list-teachers', "Contacts\GiangVienController");
 });
 
 Route::get('/news-feed', function () {
@@ -81,13 +80,6 @@ Route::get('/admin/hocsinh/themhocsinh', function () {
   return view('backend.hocsinh.themhocsinh');
 });
 
-Route::get('/admin/lich-trai-nghiem', function () {
-  return view('backend.contact.lichtrainghiem.datalichtrainghiem');
-});
-
-Route::get('/admin/lich-trai-nghiem/them', function () {
-  return view('backend.lichtrainghiem.themlichtrainghiem');
-});
 
 Route::get('/admin/nhan-xet', function () {
   return view('backend.nhanxet.datanhanxet');

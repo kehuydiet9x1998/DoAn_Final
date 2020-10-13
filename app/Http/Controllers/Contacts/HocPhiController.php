@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Contacts;
 
 use App\Http\Controllers\Controller;
+use App\Models\HocPhi;
 use App\Models\HocSinh;
-use App\Models\LichTraiNghiem;
+use App\Models\NhanVien;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
-class LichTraiNghiemController extends Controller
+class HocPhiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +18,10 @@ class LichTraiNghiemController extends Controller
      */
     public function index()
     {
-        $allhocsinhs = HocSinh::all()->sortByDesc('id');
-        $data = LichTraiNghiem::all();
-        return view('backend.contact.lichtrainghiem.listlichtrainghiem',['hocsinhs'=>$data,'allhocsinhs'=>$allhocsinhs]);
+        $hocsinhs = HocSinh::all()->sortByDesc('id');
+        $nhanviens = NhanVien::all();
+        $data = HocPhi::all();
+        return view('backend.contact.hocphi.ListHocPhi',['hocphis'=>$data,'hocsinhs'=>$hocsinhs, 'nhanviens' => $nhanviens]);
     }
 
     /**
@@ -39,60 +42,62 @@ class LichTraiNghiemController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request -> all();
-       LichTraiNghiem::create($data);
-        return redirect(route('lichtrainghiem.index'));
+        $data = $request->all();
+        HocPhi::create($data);
+        return redirect(route('hocphis.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\LichTraiNghiem  $lichTraiNghiem
+     * @param  \App\Models\HocPhi  $hocPhi
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $data = LichTraiNghiem::find($id);
-        return view('backend.contact.lichtrainghiem.show_lichtrainghiem_modal', ['hocsinh' => $data]);
+        $data = HocPhi::findOrFail($id);
+        return view('backend.contact.hocphi.Show_HocPhi_Modal', ['hocphi' => $data]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\LichTraiNghiem  $lichTraiNghiem
+     * @param  \App\Models\HocPhi  $hocPhi
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $data = LichTraiNghiem::find($id);
-        return view('backend.contact.lichtrainghiem.edit_lichtrainghiem_modal', ['hocsinh' => $data]);
+        $data = HocPhi::find($id);
+        return view('backend.contact.hocphi.Edit_HocPhi_Modal', ['hocphi' => $data]);
+
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\LichTraiNghiem  $lichTraiNghiem
+     * @param  \App\Models\HocPhi  $hocPhi
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
-        $data = LichTraiNghiem::find($id);
-        $data->fill($request-> all());
-        $data->save();
-        return redirect(route('lichtrainghiem.index'));
+        $data = HocPhi::find($id);
+        $data->fill($request->all());
+        $data -> save();
+        return redirect(route('hocphis.index'));
+
 
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\LichTraiNghiem  $lichTraiNghiem
+     * @param  \App\Models\HocPhi  $hocPhi
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        LichTraiNghiem::where('id','=',$id)->delete();
-        return redirect(route('lichtrainghiem.index'));
+        HocPhi::Where('id','=',$id)->delete();
+        return redirect(route('hocphis.index'));
     }
 }

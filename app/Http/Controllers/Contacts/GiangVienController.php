@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Contacts;
 
 use App\Http\Controllers\Controller;
-use App\Models\HocPhi;
+use App\Models\GiaoVien;
 use Illuminate\Http\Request;
 
-class HocPhiControler extends Controller
+class GiangVienController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,8 @@ class HocPhiControler extends Controller
      */
     public function index()
     {
-        //
+        $data = GiaoVien::all();
+        return view('backend.contact.giangvien.list_giangvien',['teachers'=>$data]);
     }
 
     /**
@@ -42,10 +43,10 @@ class HocPhiControler extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\HocPhi  $hocPhi
+     * @param  \App\Models\GiaoVien  $giaoVien
      * @return \Illuminate\Http\Response
      */
-    public function show(HocPhi $hocPhi)
+    public function show(GiaoVien $giaoVien)
     {
         //
     }
@@ -53,10 +54,10 @@ class HocPhiControler extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\HocPhi  $hocPhi
+     * @param  \App\Models\GiaoVien  $giaoVien
      * @return \Illuminate\Http\Response
      */
-    public function edit(HocPhi $hocPhi)
+    public function edit(GiaoVien $giaoVien)
     {
         //
     }
@@ -65,10 +66,10 @@ class HocPhiControler extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\HocPhi  $hocPhi
+     * @param  \App\Models\GiaoVien  $giaoVien
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, HocPhi $hocPhi)
+    public function update(Request $request, GiaoVien $giaoVien)
     {
         //
     }
@@ -76,10 +77,10 @@ class HocPhiControler extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\HocPhi  $hocPhi
+     * @param  \App\Models\GiaoVien  $giaoVien
      * @return \Illuminate\Http\Response
      */
-    public function destroy(HocPhi $hocPhi)
+    public function destroy(GiaoVien $giaoVien)
     {
         //
     }
