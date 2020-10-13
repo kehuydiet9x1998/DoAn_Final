@@ -36,6 +36,11 @@ class LopHoc extends Model
     return $this->belongsTo(khoaHoc::class);
   }
 
+  public function dsHocCu()
+  {
+    return $this->hasMany(HocCu::class);
+  }
+
   public function giaoVien()
   {
     return $this->belongsTo(GiaoVien::class);

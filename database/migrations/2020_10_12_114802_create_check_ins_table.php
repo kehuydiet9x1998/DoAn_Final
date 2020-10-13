@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBaiGiangsTable extends Migration
+class CreateCheckInsTable extends Migration
 {
   /**
    * Run the migrations.
@@ -13,16 +13,18 @@ class CreateBaiGiangsTable extends Migration
    */
   public function up()
   {
-    Schema::create('bai_giang', function (Blueprint $table) {
+    Schema::create('check_in', function (Blueprint $table) {
       $table->id();
-      $table->string('tenbaigiang');
-      $table->text('noidung');
-      $table->text('filebaigiang');
-      $table->unsignedBigInteger('khoa_hoc_id');
       $table
-        ->foreign('khoa_hoc_id')
+        ->time('giocheckin')
+        ->default()
+        ->default(DB::raw('CURRENT_TIMESTAMP'));
+      $table->time('giocheckout')->nullable();
+      $table->unsignedBigInteger('buoi_hoc_id');
+      $table
+        ->foreign('buoi_hoc_id')
         ->references('id')
-        ->on('khoa_hoc');
+        ->on('buoi_hoc');
       $table->timestamps();
       $table->softDeletes();
     });
@@ -35,6 +37,6 @@ class CreateBaiGiangsTable extends Migration
    */
   public function down()
   {
-    Schema::dropIfExists('bai_giang');
+    Schema::dropIfExists('check_in');
   }
 }

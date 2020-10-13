@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePhanLopsTable extends Migration
+class CreateSanPhamCuoiKhoasTable extends Migration
 {
   /**
    * Run the migrations.
@@ -13,19 +13,17 @@ class CreatePhanLopsTable extends Migration
    */
   public function up()
   {
-    Schema::create('phan_lop', function (Blueprint $table) {
+    Schema::create('san_pham_cuoi_khoa', function (Blueprint $table) {
       $table->id();
-      $table
-        ->dateTime('ngayvaolop')
-
-        ->default()
-        ->default(DB::raw('CURRENT_TIMESTAMP'));
+      $table->string('mota');
+      $table->text('noidung');
+      $table->text('fileslide')->nullable();
       $table->unsignedBigInteger('hoc_sinh_id');
-      $table->unsignedBigInteger('lop_hoc_id');
       $table
         ->foreign('hoc_sinh_id')
         ->references('id')
         ->on('hoc_sinh');
+      $table->unsignedBigInteger('lop_hoc_id');
       $table
         ->foreign('lop_hoc_id')
         ->references('id')
@@ -42,6 +40,6 @@ class CreatePhanLopsTable extends Migration
    */
   public function down()
   {
-    Schema::dropIfExists('phan_lop');
+    Schema::dropIfExists('san_pham_cuoi_khoa');
   }
 }

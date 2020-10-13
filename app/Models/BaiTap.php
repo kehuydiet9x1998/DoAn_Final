@@ -14,14 +14,24 @@ class BaiTap extends Model
   protected $dates = ['deleted_at'];
   protected $fillable = [
     'tenbaitap',
+    'loaicauhoi',
+    'hinhanhminhhoa',
     'noidung',
-    'trangthai',
-    'diem',
-    'buoi_hoc_id',
+    'dapan1',
+    'dapan2',
+    'dapan3',
+    'dapan4',
+    'dapan',
+    'bai_giang_id',
   ];
 
-  public function buoiHoc()
+  public function baiGiang()
   {
-    return $this->belongsTo(BuoiHoc::class);
+    return $this->belongsTo(BaiGiang::class);
+  }
+
+  public function dsDanhSachBaiTap()
+  {
+    return $this->belongsTo(DanhSachBaiTap::class);
   }
 }

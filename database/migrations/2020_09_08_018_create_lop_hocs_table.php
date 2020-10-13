@@ -21,8 +21,8 @@ class CreateLopHocsTable extends Migration
         ->unsigned()
         ->default(0);
       $table->string('trangthai');
-      $table->dateTime('ngaybatdau');
-      $table->dateTime('ngayketthuc');
+      $table->dateTime('ngaybatdau')->default(DB::raw('CURRENT_TIMESTAMP'));
+      $table->dateTime('ngayketthuc')->nullable();
       $table->unsignedInteger('sobuoi')->default(10);
       $table->unsignedInteger('sobuoidahoc')->default(0);
       $table->string('ghichu')->default('');
