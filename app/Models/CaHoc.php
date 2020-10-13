@@ -18,4 +18,15 @@ class CaHoc extends Model
   {
     return $this->hasMany(ThoiGianHoc::class);
   }
+
+  public function getThoigianbatdauAttribute($value)
+  {
+    $time = strtotime($value);
+    return date('h:m A', $time);
+  }
+  public function getThoigianketthucAttribute($value)
+  {
+    $time = strtotime($value);
+    return date('h:m A', $time);
+  }
 }

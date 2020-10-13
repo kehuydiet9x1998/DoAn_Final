@@ -18,4 +18,19 @@ class CheckIn extends Model
   {
     return $this->belongsTo(BuoiHoc::class);
   }
+
+  public function getGiocheckinAttribute($value)
+  {
+    $time = strtotime($value);
+    return date('h:m', $time);
+  }
+
+  public function getGiocheckoutAttribute($value)
+  {
+    if ($value == null) {
+      return null;
+    }
+    $time = strtotime($value);
+    return date('h:m', $time);
+  }
 }

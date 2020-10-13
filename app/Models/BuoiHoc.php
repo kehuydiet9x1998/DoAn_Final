@@ -30,6 +30,11 @@ class BuoiHoc extends Model
     return $this->belongsTo(DanhSachBaiTap::class);
   }
 
+  public function getNgayhocAttribute($value)
+  {
+    return date('d-m-Y', strtotime($value));
+  }
+
   public function lopHoc()
   {
     return $this->belongsTo(LopHoc::class);
