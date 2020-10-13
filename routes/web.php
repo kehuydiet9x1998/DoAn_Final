@@ -39,6 +39,7 @@ Route::prefix('teachers')->group(function () {
   });
 
   Route::resource('classes', 'Teachers\LopHocController');
+  Route::resource('lessons', 'Teachers\BuoiHocController');
 
   Route::get('check-test', function () {
     return view('backend.teachers.chambai');
@@ -56,7 +57,7 @@ Route::prefix('/contacts')->group(function () {
   Route::resource('students', "Contacts\StudentController");
   Route::resource('feedbacks', "Contacts\FeedBackController");
   Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
-  Route::get('list-teachers', function (){
+  Route::get('list-teachers', function () {
     return view('backend.contact.listTeacher');
   });
 });

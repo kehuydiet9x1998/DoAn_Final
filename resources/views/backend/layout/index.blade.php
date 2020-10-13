@@ -33,7 +33,7 @@
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/widget.css')}}">
   {{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/css/pages.css')}}"> --}}
-  {{-- <link rel="stylesheet" type="text/css" href="{{asset('css/app.css') }}"> --}}
+  <link rel="stylesheet" type="text/css" href="{{asset('css/app.css') }}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/datatables.bootstrap4.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/buttons.datatables.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/responsive.bootstrap4.min.css')}}">
@@ -107,8 +107,8 @@
     <script type="text/javascript" src="{{asset('assets/js/calendar.js')}}"></script>
     <script src="{{asset('assets/js/rocket-loader.min.js')}}" data-cf-settings="d2d1d6e2f87cbebdf4013b26-|49" defer="">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script> --}}
     @yield('script')
 </body>
 
