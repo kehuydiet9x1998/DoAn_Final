@@ -179,11 +179,14 @@
 @section('script')
 <script>
   $(document).ready(function() {
+
+    // load buổi học theo id
     $('.buoihoc').click(function() {
       $('#buoihoc').load('/teachers/lessons/' + $(this).data('id'));
     });
     $('.buoihoc')[0].click();
   });
+
 
   // $(document).on({
   //   ajaxStart: function() {

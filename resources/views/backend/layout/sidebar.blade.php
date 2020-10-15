@@ -34,7 +34,8 @@ $main = [[
 ],
 ],
 ],];
-$phanquyen = 'contact';
+$phanquyen = Auth::user()->vaitro;
+
 if($phanquyen == 'contact')
 {
 $menu = [
@@ -156,7 +157,11 @@ $menu = [ [
 ],
 ];
 }
-if($phanquyen == 'administrators'){
+
+
+
+
+if($phanquyen == 'administrator'){
 $menu = [
 [
 "title" => "Khóa học",
