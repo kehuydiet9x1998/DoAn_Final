@@ -65,7 +65,7 @@
                               </h5>
                             </i>
                           </button>
-                          @include('backend.contact.suagv-Modal')
+                          @include('backend.contact.phanlop-Modal')
                           {{--                            <form action="{{route('students.destroy', $st->id)}}" method="post" style="margin-left: 2px">--}}
                           {{--                              @method('DELETE')--}}
                           {{--                              @csrf--}}

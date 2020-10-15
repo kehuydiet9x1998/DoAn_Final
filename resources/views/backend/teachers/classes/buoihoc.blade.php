@@ -66,14 +66,12 @@
                     </a></td>
                   <td style="text-align: center">
                     <div class="checkbox-zoom zoom-{{$diemdanh->ketqua == -1 ? 'danger' : 'success'}}">
-                      <label>
                         <span class="cr">
                           <i class="cr-icon icofont {{$diemdanh->ketqua == 1
-                          ? 'icofont-ui-check text-success'
-                          : ($diemdanh->ketqua == -1 ? 'icofont-error text-danger' : '') }}">
+                          ? 'icofont-ui-check txt-success'
+                          : ($diemdanh->ketqua == -1 ? 'icofont-error txt-danger' : '') }}" style="padding-left: 2px">
                           </i>
                         </span>
-                      </label>
                     </div>
                   </td>
                   @php

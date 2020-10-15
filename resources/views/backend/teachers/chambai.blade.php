@@ -57,7 +57,7 @@
                           <button type="button" class="btn btn-primary waves-effect" data-toggle="modal"
                                   data-target="#chambai-Modal" style="background-color: white; border: none; padding: 0">
                             <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></button>
-                          @include('backend.teachers.chambai-modal')
+                          @include('backend.teachers.classes.chambai-modal')
                         </td>
                       </tr>
                       </tbody>

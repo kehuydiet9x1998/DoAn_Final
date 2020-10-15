@@ -59,6 +59,45 @@ Route::prefix('/contacts')->group(function () {
   Route::resource('feedbacks', "Contacts\FeedBackController");
   Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
   Route::resource('list-teachers', "Contacts\GiangVienController");
+  Route::get('classify', function () {
+    return view('backend.contact.phanlop');
+  });
+});
+
+Route::prefix('/student')->group(function () {
+  Route::get('/calendar', function () {
+    return view('backend.students.calendar');
+  });
+  Route::get('class', function (){
+    return view('backend.students.class');
+  });
+  Route::get('class/detail', function (){
+    return view('backend.students.class-detail');
+  });
+  Route::get('courses', function (){
+    return view('backend.students.courses');
+  });
+  Route::get('courses/1', function (){
+    return view('backend.students.course-detail');
+  });
+  Route::get('home-work', function (){
+    return view('backend.students.homework');
+  });
+  Route::get('home-work/1', function (){
+    return view('backend.students.homework-detail');
+  });
+  Route::get('review', function (){
+    return view('backend.students.review');
+  });
+  Route::get('class/comment/1', function (){
+    return view('backend.students.comment');
+  });
+  Route::get('my-comment', function (){
+    return view('backend.students.mycomment');
+  });
+  Route::get('review', function (){
+    return view('backend.students.review');
+  });
 });
 
 Route::get('/news-feed', function () {
