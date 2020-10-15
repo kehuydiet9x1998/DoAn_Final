@@ -20,6 +20,7 @@
                       <option value="opt2">Đang diễn ra</option>
                       <option value="opt3">Đã hoàn thành</option>
                     </select>
+
                   </div>
                   <div class="col-sm-12 col-xl-3 m-b-30">
                     <input id="date" style="display:none" type="date" class="form-control" placeholder="Lọc theo ngày" />

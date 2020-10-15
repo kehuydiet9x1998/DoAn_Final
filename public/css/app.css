@@ -33,7 +33,7 @@
   border: 5px solid #2e81f4;
 }
 
-.story > h4 {
+.story>h4 {
   position: absolute;
   bottom: 10px;
   left: 20px;
@@ -61,12 +61,12 @@
   padding: 15px;
 }
 
-.messagesender__top > form {
+.messagesender__top>form {
   display: flex;
   flex: 1;
 }
 
-.messagesender__top > form > input {
+.messagesender__top>form>input {
   outline-width: 0;
   border: none;
   padding: 5px 20px;
@@ -75,7 +75,7 @@
   background: #eff2f5;
 }
 
-.messagesender__top > form > button {
+.messagesender__top>form>button {
   display: none;
 }
 
@@ -92,7 +92,8 @@
   margin: 5px;
   cursor: pointer;
 }
-.messagesender_option > h3 {
+
+.messagesender_option>h3 {
   font-size: medium;
   margin-left: 10px;
 }
@@ -121,16 +122,16 @@
   margin-right: 10px;
 }
 
-.my_post__topinfo > h3 {
+.my_post__topinfo>h3 {
   font-size: medium;
 }
 
-.my_post__topinfo > p {
+.my_post__topinfo>p {
   font-size: small;
   color: gray;
 }
 
-.my_post__image > img {
+.my_post__image>img {
   width: 100%;
 }
 
@@ -149,6 +150,7 @@
   cursor: pointer;
   /* padding: 15px; */
 }
+
 .my_post__option {
   display: flex;
   align-items: center;

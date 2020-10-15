@@ -33,8 +33,7 @@
               <i class="feather icon-bell"></i>
               <span class="badge bg-c-red">5</span>
             </div>
-            <ul class="show-notification notification-view dropdown-menu" data-dropdown-in="fadeIn"
-              data-dropdown-out="fadeOut">
+            <ul class="show-notification notification-view dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
               <li>
                 <h6>Thông báo</h6>
                 <label class="label label-danger">Mới</label>
@@ -86,14 +85,13 @@
         <li class="user-profile header-notification">
           <div class="dropdown-primary dropdown">
             <div class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{asset('assets/jpg/avatar-4.jpg')}}" class="img-radius" alt="User-Profile-Image">
-              <span>Linh Nguyễn</span>
+              <img src="{{asset(Auth::user()->anhdaidien)}}" class="img-radius" alt="User-Profile-Image">
+              <span>{{Auth::user()->name}}</span>
               <i class="feather icon-chevron-down"></i>
             </div>
-            <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn"
-              data-dropdown-out="fadeOut">
+            <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
               <li>
-                <a href="#!">
+                <a href="#">
                   <i class="feather icon-settings"></i> Cài đặt
                 </a>
               </li>
@@ -103,12 +101,12 @@
                 </a>
               </li>
               <li>
-                <a href="email-inbox.html">
+                <a href="#">
                   <i class="feather icon-mail"></i> Hộp thư
                 </a>
               </li>
               <li>
-                <a href="auth-sign-in-social.html">
+                <a onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                   <i class="feather icon-log-out"></i> Đăng xuất
                 </a>
               </li>
