@@ -34,7 +34,7 @@
   ],
   ],
   ],];
-  $phanquyen = 'student';
+  $phanquyen = 'contact';
   if($phanquyen == 'contact')
   {
   $menu = [
@@ -50,13 +50,13 @@
   [
   "type" => "link",
   "icon" => "fa fa-dollar",
-  "link" => "/admin/hocphi",
+  "link" => "/contacts/hocphis",
   "text" => "Học phí",
   ],
   [
   "type" => "link",
   "icon" => "fa fa-history",
-  "link" => "/admin/lich-trai-nghiem",
+  "link" => "/contacts/lichtrainghiem",
   "text" => "Lịch trải nghiệm",
   ],
   [
