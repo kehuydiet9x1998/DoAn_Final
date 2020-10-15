@@ -1,5 +1,6 @@
 @extends('backend.layout.index')
 @section('content')
+
 <div class="pcoded-inner-content">
   <div class="main-body">
     <div class="page-wrapper">
@@ -10,6 +11,7 @@
               <div class="card-header">
                 <div class="row">
                   <div class="col-xs-12 col-sm-12 col-md-6">
+
                     <h5>DANH SÁCH HỌC SINH</h5>
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-6">
@@ -27,7 +29,7 @@
                                 </button>
                               </div>
                               <div class="modal-body">
-                                <form method="post" action="{{route('students.store')}}" novalidate="">
+                                <form method="post" action="{{route('students.store')}}" novalidate="" id="addform">
                                   <div class="modal-body">
                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                                     {{ csrf_field() }}
@@ -119,10 +121,6 @@
                               </div>
                             </div>
                           </div>
-
-
-
-
                       </label>
                     </div>
 
@@ -159,7 +157,7 @@
                         <td style="display: flex; width: 64px;">
                           <div>
                             {{-- // cais nayhf ddeer hie thi chhi tiet --}}
-                            <button data-id="{{$st->id}}" type="button" class="btn btn-primary waves-effect" data-toggle="modal" data-target="#show-Modal" style="background-color: white; border: none; padding: 0" id="">
+                            <button data-id="{{$st->id}}" type="button" class="btn btn-primary show-modal waves-effect" data-toggle="modal" data-target="#show-Modal" style="background-color: white; border: none; padding: 0" id="">
                               <i class="fa fa-eye f-w-600 f-16 m-r-15 text-c-green"></i>
                             </button>
                             <div class="modal fade show" id="show-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
@@ -213,7 +211,7 @@
 <script>
   $(document).
   ready(function() {
-    $('.btn.btn-primary').click(function(e) {
+    $('.show-modal').click(function(e) {
       id = $(this).data('id');
       $('#show-Modal').load("/contacts/students/" + id);
       $('#show-Modal').show();
@@ -228,5 +226,15 @@
   });
 
 </script>
+
+{{-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script> --}}
+
+
+<script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+
+{{-- {!! JsValidator::formRequest('App\Http\Requests\MyFormRequest') !!} --}}
+{!! $jsValidator->selector('#addform') !!}
+
 
 @endsection

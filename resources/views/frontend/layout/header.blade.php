@@ -19,7 +19,11 @@
        </li>
        <li><a href="/giao-vien">Đội ngũ giáo viên</a></li>
        <li><a href="/contact-us">Liên hệ</a></li>
+       @if(Auth::check())
+       <li><a href="/login">Dashboard</a></li>
+       @else
        <li><a href="/login">Đăng nhập</a></li>
+       @endif
      </ul>
    </div>
  </div>
