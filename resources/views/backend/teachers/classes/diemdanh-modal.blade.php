@@ -24,8 +24,6 @@
                     </thead>
                     <tbody>
                       @foreach($lesson->dsDiemDanh as $diemdanh)
-
-
                       <tr style="align-items: center  ">
                         <td>
                           <h6>{{$diemdanh->hocSinh->hodem . ' ' . $diemdanh->hocSinh->ten }}</h6>
@@ -40,7 +38,7 @@
                           </div>
                         </td>
                         <td>
-                          <input type="text" class="form-control" placeholder="Ghi chú của giáo viên">
+                          <input type="text" class="form-control" placeholder="Ghi chú của giáo viên" style="margin-top: -5 px">
                         </td>
                         <td> <label class="badge badge-primary">Đang học</label></td>
                       </tr>

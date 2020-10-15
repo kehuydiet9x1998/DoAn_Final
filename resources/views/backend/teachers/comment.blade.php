@@ -54,7 +54,7 @@
                         <td>
                           <button type="button" class="btn btn-primary waves-effect" data-toggle="modal" data-target="#mail-Modal" style="background-color: white; border: none; padding: 0">
                             <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></button>
-                          @include('backend.teachers.nhanxet-modal')
+                          @include('backend.teachers.classes.nhanxet-modal')
                         </td>
                       </tr>
                       <tr>
@@ -71,7 +71,7 @@
                         <td>
                           <button type="button" class="btn btn-primary waves-effect" data-toggle="modal" data-target="#mail-Modal" style="background-color: white; border: none; padding: 0">
                             <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></button>
-                          @include('backend.teachers.nhanxet-modal')
+                          @include('backend.teachers.classes.nhanxet-modal')
                         </td>
                       </tr>
                       <tr>
@@ -88,7 +88,7 @@
                         <td>
                           <button type="button" class="btn btn-primary waves-effect" data-toggle="modal" data-target="#mail-Modal" style="background-color: white; border: none; padding: 0">
                             <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></button>
-                          @include('backend.teachers.nhanxet-modal')
+                          @include('backend.teachers.classes.nhanxet-modal')
                         </td>
                       </tr>
                       </tbody>

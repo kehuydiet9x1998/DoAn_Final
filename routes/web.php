@@ -61,46 +61,85 @@ Route::middleware('auth')->group(function () {
   Route::get('/news-feed', function () {
     return view('backend.bantin');
   });
+  Route::prefix('/contacts')->group(function () {
+    Route::resource('students', "Contacts\StudentController");
+    Route::resource('hocphis', "Contacts\HocPhiController");
+    Route::resource('feedbacks', "Contacts\FeedBackController");
+    Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
+    Route::resource('list-teachers', "Contacts\GiangVienController");
 
-  Route::get('/test', function () {
-    return view('backend.test');
+    Route::get('classify', function () {
+      return view('backend.contact.phanlop');
+    });
   });
 
-  Route::get('/khoa-hoc', function () {
-    return view('backend.khoahoc.alldata');
-  });
+  Route::prefix('/student')->group(function () {
+    Route::get('/calendar', function () {
+      return view('backend.students.calendar');
+    });
+    Route::get('class', function () {
+      return view('backend.students.class');
+    });
+    Route::get('class/detail', function () {
+      return view('backend.students.class-detail');
+    });
+    Route::get('courses', function () {
+      return view('backend.students.courses');
+    });
+    Route::get('courses/1', function () {
+      return view('backend.students.course-detail');
+    });
+    Route::get('home-work', function () {
+      return view('backend.students.homework');
+    });
+    Route::get('home-work/1', function () {
+      return view('backend.students.homework-detail');
+    });
+    Route::get('review', function () {
+      return view('backend.students.review');
+    });
+    Route::get('class/comment/1', function () {
+      return view('backend.students.comment');
+    });
+    Route::get('my-comment', function () {
+      return view('backend.students.mycomment');
+    });
+    Route::get('review', function () {
+      return view('backend.students.review');
+    });
 
-  Route::get('/admin/hocsinh', function () {
-    return view('backend.hocsinh.datahocsinh');
-  });
+    Route::get('/test', function () {
+      return view('backend.test');
+    });
 
-  Route::get('/admin/hocsinh/themhocsinh', function () {
-    return view('backend.hocsinh.themhocsinh');
-  });
+    Route::get('/khoa-hoc', function () {
+      return view('backend.khoahoc.alldata');
+    });
 
-  Route::get('/admin/lich-trai-nghiem', function () {
-    return view('backend.contact.lichtrainghiem.datalichtrainghiem');
-  });
+    Route::get('/admin/hocsinh', function () {
+      return view('backend.hocsinh.datahocsinh');
+    });
 
-  Route::get('/admin/lich-trai-nghiem/them', function () {
-    return view('backend.lichtrainghiem.themlichtrainghiem');
-  });
+    Route::get('/admin/hocsinh/themhocsinh', function () {
+      return view('backend.hocsinh.themhocsinh');
+    });
 
-  Route::get('/admin/nhan-xet', function () {
-    return view('backend.nhanxet.datanhanxet');
-  });
+    Route::get('/admin/lich-trai-nghiem', function () {
+      return view('backend.contact.lichtrainghiem.datalichtrainghiem');
+    });
 
-  Route::get('/admin/nhan-xet/themnhanxet', function () {
-    return view('backend.nhanxet.themnhanxet');
-  });
+    Route::get('/admin/nhan-xet/themnhanxet', function () {
+      return view('backend.nhanxet.themnhanxet');
+    });
 
-  Route::get('/admin/thoi-khoa-bieu', function () {
-    return view('backend.thoikhoabieu.datathoikhoabieu');
-  });
+    Route::get('/admin/thoi-khoa-bieu', function () {
+      return view('backend.thoikhoabieu.datathoikhoabieu');
+    });
 
-  //test
-  Route::get('/test', function () {
-    return view('backend.test');
+    //test
+    Route::get('/test', function () {
+      return view('backend.test');
+    });
   });
 });
 

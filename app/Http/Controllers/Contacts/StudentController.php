@@ -66,7 +66,6 @@ class StudentController extends Controller
     public function edit($id)
     {
          $hocsinh =  HocSinh::find($id);
-        //  return $hocsinh;
         return view('backend.contact.hocsinh.edit_student_modal', ['hocsinh'=>$hocsinh] );
     }
 

@@ -136,15 +136,11 @@
                       <tr>
                         <th>STT</th>
                         <th>HỌ VÀ TÊN</th>
-                        <th>Ngày sinh</th>
-                        <th>Giới tính</th>
-                        <th>Trạng thái</th>
-                        <th>Phụ huynh</th>
-                        {{-- <th>Số cmnd</th>
-                        <th>Số điện thoại</th>
-                        <th>Email</th> --}}
-                        <th>Quê quán</th>
-                        <th>Actions</th>
+                        <th>NGÀY SINH</th>
+                        <th>GIỚI TÍNH</th>
+                        <th>TRẠNG THÁI</th>
+                        <th>QUÊ QUÁN</th>
+                        <th>ACTIONS</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -203,35 +199,34 @@
     </div>
   </div>
 </div>
-<<<<<<< HEAD {{-- Modal them --}}=======>>>>>>> a96dbaa77d09c603652ff780fce29de19944ecd4
-  @endsection
-  @section('script')
-  <script>
-    function myReset() {
-      document.getElementById('main').reset();
-    };
+@endsection
+@section('script')
+<script>
+  function myReset() {
+    document.getElementById('main').reset();
+  };
 
-  </script>
-
+</script>
 
 
-  <script>
-    $(document).
-    ready(function() {
-      $('.btn.btn-primary').click(function(e) {
-        id = $(this).data('id');
-        $('#show-Modal').load("/contacts/students/" + id);
-        $('#show-Modal').show();
-        $('.modal-backdrop').show();
-      });
-      $('.my_edit').click(function(e) {
-        id = $(this).data('id')
-        $('#edit-Modal').load("/contacts/students/" + id + '/edit');
-        $('#edit-Modal').show();
-        $('.modal-backdrop').show();
-      })
+
+<script>
+  $(document).
+  ready(function() {
+    $('.btn.btn-primary').click(function(e) {
+      id = $(this).data('id');
+      $('#show-Modal').load("/contacts/students/" + id);
+      $('#show-Modal').show();
+      $('.modal-backdrop').show();
     });
+    $('.my_edit').click(function(e) {
+      id = $(this).data('id')
+      $('#edit-Modal').load("/contacts/students/" + id + '/edit');
+      $('#edit-Modal').show();
+      $('.modal-backdrop').show();
+    })
+  });
 
-  </script>
+</script>
 
-  @endsection
+@endsection
