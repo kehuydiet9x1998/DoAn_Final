@@ -12,7 +12,7 @@ class DiemDanh extends Model
   use SoftDeletes;
   protected $table = 'diem_danh';
   protected $dates = ['deleted_at'];
-  protected $fillable = ['trangthai', 'ghichu', 'hoc_sinh_id', 'buoi_hoc_id'];
+  protected $fillable = ['ghichu', 'hoc_sinh_id', 'buoi_hoc_id', 'ketqua'];
 
   public function hocSinh()
   {

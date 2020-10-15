@@ -17,7 +17,7 @@ Route::prefix('/administrators')->group(function () {
   Route::resource('teachers', "Administrators\TeacherController");
 
   Route::get('classes', function () {
-    return view('backend.administrators.classes');
+    return view('backend.administrators.class.classes');
   });
   Route::get('contracts', function () {
     return view('backend.administrators.contracts');
@@ -39,6 +39,7 @@ Route::prefix('teachers')->group(function () {
   });
 
   Route::resource('classes', 'Teachers\LopHocController');
+  Route::resource('lessons', 'Teachers\BuoiHocController');
 
   Route::get('check-test', function () {
     return view('backend.teachers.chambai');
@@ -54,10 +55,12 @@ Route::get('/dashboard', function () {
 
 Route::prefix('/contacts')->group(function () {
   Route::resource('students', "Contacts\StudentController");
+  Route::resource('hocphis', "Contacts\HocPhiController");
   Route::resource('feedbacks', "Contacts\FeedBackController");
   Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
-  Route::get('list-teachers', function (){
-    return view('backend.contact.listTeacher');
+  Route::resource('list-teachers', "Contacts\GiangVienController");
+  Route::get('classify', function () {
+    return view('backend.contact.phanlop');
   });
 });
 
@@ -79,6 +82,18 @@ Route::prefix('/student')->group(function () {
   });
   Route::get('home-work', function (){
     return view('backend.students.homework');
+  });
+  Route::get('home-work/1', function (){
+    return view('backend.students.homework-detail');
+  });
+  Route::get('review', function (){
+    return view('backend.students.review');
+  });
+  Route::get('class/comment/1', function (){
+    return view('backend.students.comment');
+  });
+  Route::get('my-comment', function (){
+    return view('backend.students.mycomment');
   });
   Route::get('review', function (){
     return view('backend.students.review');
@@ -105,13 +120,6 @@ Route::get('/admin/hocsinh/themhocsinh', function () {
   return view('backend.hocsinh.themhocsinh');
 });
 
-Route::get('/admin/lich-trai-nghiem', function () {
-  return view('backend.lichtrainghiem.datalichtrainghiem');
-});
-
-Route::get('/admin/lich-trai-nghiem/them', function () {
-  return view('backend.lichtrainghiem.themlichtrainghiem');
-});
 
 Route::get('/admin/nhan-xet', function () {
   return view('backend.nhanxet.datanhanxet');

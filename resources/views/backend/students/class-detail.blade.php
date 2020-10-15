@@ -110,18 +110,20 @@
                                   <ul style="display: flex">
                                     <li style="margin: 0 10px">
                                       <button data-id="1" class="btn waves-effect waves-light btn-round">
-                                        <a style="font-size: 14px; font-weight: 700" href="home-work">LÀM BÀI TẬP</a>
+                                        <a style="font-size: 14px; font-weight: 700" href="student/home-work/1">LÀM BÀI TẬP</a>
                                       </button>
+                                    </li>
+                                    <li style="margin: 0 10px">
+                                      <button type="button" class="btn waves-effect waves-light btn-round" data-toggle="modal"
+                                              data-target="#mail-Modal" style="font-size: 14px; font-weight: bold">
+                                        XEM NHẬN XÉT
+                                      </button>
+                                      @include('backend.students.mycomment-modal')
                                     </li>
                                     <li style="margin: 0 10px">
                                       <button data-id="1" class="btn waves-effect waves-light btn-round">
-                                        <a style="font-size: 14px; font-weight: 800" href="comment">XEM NHẬN XÉT</a>
+                                        <a style="font-size: 14px; font-weight: 800" href="comment/1">NHẬN XÉT GIẢNG VIÊN</a>
                                       </button>
-                                    </li>
-                                    <li style="margin: 0 10px">
-                                      <button data-id="1" class="btn waves-effect waves-light btn-round"
-                                              data-toggle="modal" data-target="#hoccu-Modal" style="font-weight: 600">NHẬN XÉT GIẢNG VIÊN</button>
-                                      @include('backend.teachers.hoccu-modal')
                                     </li>
                                   </ul>
                                 </div>

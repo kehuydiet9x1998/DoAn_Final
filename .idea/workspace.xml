@@ -6,17 +6,135 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfeacd01-f2c3-4401-a83c-21a86b8aa657" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Contacts/HocPhiController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Teachers/BuoiHocController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/CheckIn.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/DanhSachBaiTap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/HocCu.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/SanPhamCuoiKhoa.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_12_114802_create_check_ins_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_12_131003_create_danh_sach_bai_taps_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_12_141453_create_hoc_cus_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_12_142054_create_san_pham_cuoi_khoas_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_buoi_hoc_seeder.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_buoi_hoc_seeder/buoi_hoc.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_buoi_hoc_seeder/check_in.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_buoi_hoc_seeder/danh_sach_bai_tap.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_buoi_hoc_seeder/diem_danh.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/chuc_vu.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/giao_vien.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/hoc_sinh.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/level.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/loai_khoa_hoc.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/nhan_vien.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/phong_hoc.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/users.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_khoa_hoc_seeder.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_khoa_hoc_seeder/bai_giang.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_khoa_hoc_seeder/bai_tap.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_khoa_hoc_seeder/hinh_anh_khoa_hoc.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_khoa_hoc_seeder/hoc_cu.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_khoa_hoc_seeder/khoa_hoc.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_lop_hoc_seeder.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_lop_hoc_seeder/ca_hoc.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_lop_hoc_seeder/lop_hoc.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_lop_hoc_seeder/phan_lop.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_lop_hoc_seeder/thoi_gian_hoc.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_seeder/bai_giang.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_seeder/buoi_hoc.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_seeder/ca_hoc.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_seeder/check_in.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_seeder/hinh_anh_khoa_hoc.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_seeder/phong_hoc.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/_seeder/thoi_gian_hoc.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/anh/hoccu/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/anh/hoccu/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/anh/hoccu/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/baitap/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/baitap/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/baitap/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/baitap/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/baitap/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/contact/giangvien/list_giangvien.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/Add_HocPhi_Modal.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/Edit_HocPhi_Modal.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/ListHocPhi.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/Show_HocPhi_Modal.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/add_lichtrainghiem_modal.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/edit_lichtrainghiem_modal.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/listlichtrainghiem.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/show_lichtrainghiem_modal.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/teachers/classes/buoihoc.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/teachers/classes/class_detail.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/teachers/classes/diemdanh-modal.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/teachers/classes/giaobaitap-modal.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/teachers/classes/hoccu-modal.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/teachers/classes/hoclieu-modal.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/_seeder/Hoc_Sinh.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_seeder/Hoc_Sinh.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/_seeder/Users.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_seeder/Users.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/_seeder/chuc_vu.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_seeder/chuc_vu.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/_seeder/giao_vien.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_seeder/giao_vien.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Administrators/NhanVienController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Administrators/NhanVienController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Administrators/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Administrators/TeacherController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Contacts/FeedBackController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contacts/FeedBackController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Contacts/HocPhiControler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contacts/GiangVienController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Contacts/LichTraiNghiemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contacts/LichTraiNghiemController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Contacts/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contacts/StudentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Teachers/LopHocController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Teachers/LopHocController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/BaiGiang.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/BaiGiang.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/BaiTap.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/BaiTap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/BuoiHoc.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/BuoiHoc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/CaHoc.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/CaHoc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/DiemDanh.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/DiemDanh.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/HinhAnhKhoaHoc.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/HinhAnhKhoaHoc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/HocSinh.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/HocSinh.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/KhoaHoc.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/KhoaHoc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/LopHoc.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/LopHoc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_08_018_create_lop_hocs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_08_018_create_lop_hocs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_08_021_create_hinh_anh_khoa_hocs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_08_021_create_hinh_anh_khoa_hocs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_08_023_create_bai_giangs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_08_023_create_bai_giangs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_08_024_create_buoi_hocs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_08_024_create_buoi_hocs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_08_026_create_bai_taps_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_08_026_create_bai_taps_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_08_027_create_diem_danhs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_08_027_create_diem_danhs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_08_028_create_phan_lops_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_08_028_create_phan_lops_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_seeder.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeders/_seeder/khoa_hoc.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_seeder/khoa_hoc.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeders/_seeder/lop_hoc.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_seeder/lop_hoc.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/_seeder/nhan_vien.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_seeder/nhan_vien.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/listStudent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/listStudent.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/~$_seeder.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/classes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/class/classes.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/staffs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/staff/staffs.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/teacher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/teacher/teacher.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/edit_student_modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/edit_student_modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/feedback.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/nhanxet/feedback.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/listStudent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/listStudent.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/listStudent.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/listTeacher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/giangvien/listTeacher.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/nhanxet/modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/phanlop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/phanlop.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/show_student_modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/show_student_modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/suagv-modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/giangvien/suagv-modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/themgv-Modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/giangvien/themgv-Modal.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/layout/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layout/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/lichtrainghiem/datalichtrainghiem.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/lichtrainghiem/themlichtrainghiem.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/nhanxet/datanhanxet.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/nhanxet/themnhanxet.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/students/class-detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/students/class-detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/students/class.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/students/class.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/students/comment-modal.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/students/homework.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/students/homework.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/students/review.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/students/review.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/chambai-modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/teachers/classes/chambai-modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/chambai.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/teachers/chambai.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/class_detail.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/classes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/teachers/classes/classes.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/comment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/teachers/comment.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/diemdanh-modal.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/giaobaitap-modal.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/hoccu-modal.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/hoclieu-modal.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/nhanxet-modal.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/thoikhoabieu/datathoikhoabieu.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -169,14 +287,18 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LaravelDemo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/backend/students" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\DoAn\resources\views\backend\students" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\DoAn\resources\views\backend\teachers" />
     </key>
@@ -238,6 +360,11 @@
       <workItem from="1602567412220" duration="5302000" />
       <workItem from="1602576674520" duration="10020000" />
       <workItem from="1602596266341" duration="4850000" />
+      <workItem from="1602638562182" duration="2590000" />
+      <workItem from="1602643855753" duration="2177000" />
+      <workItem from="1602660483412" duration="2391000" />
+      <workItem from="1602724675446" duration="7968000" />
+      <workItem from="1602748351800" duration="4931000" />
     </task>
     <servers />
   </component>
@@ -257,10 +384,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601952688566">
+    <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602660514166">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1601952688566" />
+    <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1602660514166" />
     <state x="445" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602426833802">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -277,9 +404,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="259" y="10" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1602058592838" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1602299356665">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1602750664133">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1602299356665" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1602750664133" />
   </component>
 </project>

@@ -22,10 +22,8 @@ class HocSinh extends Model
     'sodienthoai',
     'hotenchame',
     'diachi',
-    'email'
+    'email',
   ];
-
-
 
   public function dsLichTraiNghiem()
   {
@@ -55,5 +53,10 @@ class HocSinh extends Model
   public function dsNghiPhep()
   {
     return $this->hasMany(NghiPhep::class);
+  }
+
+  public function dsDanhSachBaiTap()
+  {
+    return $this->belongsTo(DanhSachBaiTap::class);
   }
 }

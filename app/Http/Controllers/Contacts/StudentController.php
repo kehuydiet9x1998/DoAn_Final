@@ -19,7 +19,7 @@ class StudentController extends Controller
     public function index()
     {
       $students = HocSinh::orderBy('ten', 'ASC')->paginate(10);
-      return view('backend.contact.listStudent',['students'=>$students]);
+      return view('backend.contact.hocsinh.listStudent',['students'=>$students]);
     }
 
     /**
@@ -54,7 +54,7 @@ class StudentController extends Controller
     public function show($id)
     {
         $hocsinh = HocSinh::findOrFail($id);
-        return view('backend.contact.show_student_modal', ['hocsinh' => $hocsinh]);
+        return view('backend.contact.hocsinh.show_student_modal', ['hocsinh' => $hocsinh]);
     }
 
     /**
@@ -66,8 +66,7 @@ class StudentController extends Controller
     public function edit($id)
     {
          $hocsinh =  HocSinh::find($id);
-        //  return $hocsinh;
-        return view('backend.contact.edit_student_modal', ['hocsinh'=>$hocsinh] );
+        return view('backend.contact.hocsinh.edit_student_modal', ['hocsinh'=>$hocsinh] );
     }
 
     /**

@@ -28,4 +28,9 @@ class BaiGiang extends Model
   {
     return $this->hasMany(BuoiHoc::class);
   }
+
+  public function dsBaiTap()
+  {
+    return $this->hasMany(BaiTap::class);
+  }
 }

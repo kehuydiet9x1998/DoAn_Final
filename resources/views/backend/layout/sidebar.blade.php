@@ -285,6 +285,12 @@
   "icon" => "fa fa-product-hunt",
   "text" => "Ôn bài",
   ],
+  [
+  "link" => "/student/my-comment",
+  "type" => "link",
+  "icon" => "fa fa-themeisle",
+  "text" => "Nhận xét của tôi",
+  ],
   ],
   ],
   ];

@@ -17,23 +17,26 @@
                     <div class="col-sm-12 col-xl-3 m-b-30">
                       <select name="select" class="form-control form-control-inverse fill">
                         <option value="opt1">Lọc theo</option>
+                        <option value="opt1">Tất cả</option>
                         <option value="opt2">Đã làm BTVN</option>
                         <option value="opt3">Chưa làm BTVN</option>
                       </select>
                     </div>
                     <div class="col-sm-12 col-xl-3 m-b-30">
-                      <input id="date" style="display:none" type="date" class="form-control"
-                             placeholder="Lọc theo ngày" />
-                      <input placeholder="Lọc theo ngày" class="textbox-n form-control" type="text"
-                             onfocus="(this.type='date')" id="date" />
+                      <select name="select" class="form-control form-control-inverse fill">
+                        <option value="opt1">Lọc theo tên lớp</option>
+                        <option value="opt1">Tất cả</option>
+                        <option value="opt2">Xưởng lắp ráp ROBOT</option>
+                        <option value="opt3">Thiết kế và lập trình web</option>
+                      </select>
                     </div>
-                    <div class="col-sm-12 col-xl-3 m-b-30">
-                      <input type="text" class="form-control" name="timkiem" id="timkiem" placeholder="Tìm trong bảng">
-                    </div>
-                    <div class="col-sm-12 col-xl-2 m-b-30">
+                    <div class="col-sm-12 col-xl-6 m-b-30">
                       <button class="btn btn-primary btn-round waves-effect waves-light">
                         <i class="fa fa-filter"></i>
                         Lọc</button>
+                      <button data-id="1" class="btn waves-effect waves-light btn-round" style="margin-left: 20px">
+                        <a style="font-size: 14px;" href="home-work/1">LÀM BÀI TẬP HÔM NAY</a>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -69,7 +72,7 @@
                         @endphp
                         <td><label class="badge badge-inverse-{{$lv == 'Đã làm BTVN' ? 'warning': ($lv == 'Chưa làm BTVN'? 'success' : 'info')}}">{{($lv)}}</label></td>
                         <td>
-                          <a href="home-work" style="background-color: white; border: none; padding: 0; text-align: center">
+                          <a href="home-work/1" style="background-color: white; border: none; padding: 0; text-align: center">
                             <i class="fa fa-edit f-w-600 f-16 m-r-15 text-c-green" style="font-size: 16px">
                               <h5 style="color: black; font-size: 14px">
                                 BTVN

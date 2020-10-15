@@ -92,14 +92,13 @@
                                 </h5>
                               </i>
                             </a>
-                            <button type="button" class="btn edit btn-primary waves-effect" data-toggle="modal" data-target="#phanlop-Modal"
-                                    data-id="1" style="background-color: white; border: none; padding: 0; margin-top: -10px">
+                            <a href="class/comment/1" style="background-color: white; border: none; padding: 0; text-align: center">
                               <i class="fa fa-commenting f-w-600 f-16 m-r-15 text-c-green" style="font-size: 16px">
                                 <h5 style="color: black; font-size: 14px">
                                   Nhận xét GV
                                 </h5>
                               </i>
-                            </button>
+                            </a>
                           </td>
                         </tr>
                       </tbody>

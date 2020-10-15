@@ -25,9 +25,24 @@ class BuoiHoc extends Model
     'giao_vien_id',
   ];
 
+  public function dsBaiTap()
+  {
+    return $this->hasMany(DanhSachBaiTap::class);
+  }
+
+  public function getNgayhocAttribute($value)
+  {
+    return date('d-m-Y', strtotime($value));
+  }
+
   public function lopHoc()
   {
     return $this->belongsTo(LopHoc::class);
+  }
+
+  public function checkIn()
+  {
+    return $this->hasOne(CheckIn::class);
   }
 
   public function baiGiang()
@@ -43,11 +58,6 @@ class BuoiHoc extends Model
   public function giaoVien()
   {
     return $this->belongsTo(GiaoVien::class);
-  }
-
-  public function dsBaiTap()
-  {
-    return $this->hasMany(BaiTap::class);
   }
 
   public function dsDiemDanh()

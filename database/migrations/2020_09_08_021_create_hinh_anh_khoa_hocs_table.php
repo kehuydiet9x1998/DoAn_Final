@@ -15,7 +15,6 @@ class CreateHinhAnhKhoaHocsTable extends Migration
   {
     Schema::create('hinh_anh_khoa_hoc', function (Blueprint $table) {
       $table->id();
-      $table->string('anh');
       $table->string('duongdan');
       $table->unsignedBigInteger('khoa_hoc_id');
       $table

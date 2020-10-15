@@ -15,7 +15,11 @@ class CreatePhanLopsTable extends Migration
   {
     Schema::create('phan_lop', function (Blueprint $table) {
       $table->id();
-      $table->dateTime('ngayvaolop');
+      $table
+        ->dateTime('ngayvaolop')
+
+        ->default()
+        ->default(DB::raw('CURRENT_TIMESTAMP'));
       $table->unsignedBigInteger('hoc_sinh_id');
       $table->unsignedBigInteger('lop_hoc_id');
       $table

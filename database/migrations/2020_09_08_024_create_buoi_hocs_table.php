@@ -18,8 +18,6 @@ class CreateBuoiHocsTable extends Migration
       $table->dateTime('ngayhoc');
       $table->string('ghichu')->default('');
       $table->string('noidungbuoihoc', 10000);
-      $table->dateTime('giocheckin');
-      $table->dateTime('giocheckout');
       $table->string('trangthai');
       $table->unsignedBigInteger('lop_hoc_id');
       $table

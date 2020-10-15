@@ -15,7 +15,7 @@ class CreateDiemDanhsTable extends Migration
   {
     Schema::create('diem_danh', function (Blueprint $table) {
       $table->id();
-      $table->string('trangthai');
+      $table->integer('ketqua')->default(0);
       $table->string('ghichu')->default('');
       $table->unsignedBigInteger('hoc_sinh_id');
       $table->unsignedBigInteger('buoi_hoc_id');

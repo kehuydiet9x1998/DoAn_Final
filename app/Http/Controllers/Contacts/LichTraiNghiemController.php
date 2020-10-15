@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Contacts;
 
 use App\Http\Controllers\Controller;
+use App\Models\HocSinh;
 use App\Models\LichTraiNghiem;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,9 @@ class LichTraiNghiemController extends Controller
      */
     public function index()
     {
-        //
+        $allhocsinhs = HocSinh::all()->sortByDesc('id');
+        $data = LichTraiNghiem::all();
+        return view('backend.contact.lichtrainghiem.listlichtrainghiem',['hocsinhs'=>$data,'allhocsinhs'=>$allhocsinhs]);
     }
 
     /**
@@ -36,7 +39,9 @@ class LichTraiNghiemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request -> all();
+       LichTraiNghiem::create($data);
+        return redirect(route('lichtrainghiem.index'));
     }
 
     /**
@@ -45,9 +50,10 @@ class LichTraiNghiemController extends Controller
      * @param  \App\Models\LichTraiNghiem  $lichTraiNghiem
      * @return \Illuminate\Http\Response
      */
-    public function show(LichTraiNghiem $lichTraiNghiem)
+    public function show($id)
     {
-        //
+        $data = LichTraiNghiem::find($id);
+        return view('backend.contact.lichtrainghiem.show_lichtrainghiem_modal', ['hocsinh' => $data]);
     }
 
     /**
@@ -56,9 +62,10 @@ class LichTraiNghiemController extends Controller
      * @param  \App\Models\LichTraiNghiem  $lichTraiNghiem
      * @return \Illuminate\Http\Response
      */
-    public function edit(LichTraiNghiem $lichTraiNghiem)
+    public function edit($id)
     {
-        //
+        $data = LichTraiNghiem::find($id);
+        return view('backend.contact.lichtrainghiem.edit_lichtrainghiem_modal', ['hocsinh' => $data]);
     }
 
     /**
@@ -68,9 +75,13 @@ class LichTraiNghiemController extends Controller
      * @param  \App\Models\LichTraiNghiem  $lichTraiNghiem
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, LichTraiNghiem $lichTraiNghiem)
+    public function update(Request $request, $id)
     {
-        //
+        $data = LichTraiNghiem::find($id);
+        $data->fill($request-> all());
+        $data->save();
+        return redirect(route('lichtrainghiem.index'));
+
     }
 
     /**
@@ -79,8 +90,9 @@ class LichTraiNghiemController extends Controller
      * @param  \App\Models\LichTraiNghiem  $lichTraiNghiem
      * @return \Illuminate\Http\Response
      */
-    public function destroy(LichTraiNghiem $lichTraiNghiem)
+    public function destroy($id)
     {
-        //
+        LichTraiNghiem::where('id','=',$id)->delete();
+        return redirect(route('lichtrainghiem.index'));
     }
 }
