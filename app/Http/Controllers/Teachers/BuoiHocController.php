@@ -48,6 +48,7 @@ class BuoiHocController extends Controller
    */
   public function show(BuoiHoc $lesson)
   {
+
     if (FacadesRequest::ajax()) {
       $class = $lesson->lopHoc;
       return view(

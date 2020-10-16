@@ -6,7 +6,7 @@ Route::get('/', function () {
   return view('frontend.trangchu');
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'web'])->group(function () {
   Route::prefix('/administrators')->group(function () {
     Route::resource('courses', "Administrators\KhoaHocController");
     Route::resource('staffs', "Administrators\NhanVienController");
@@ -74,14 +74,10 @@ Route::middleware('auth')->group(function () {
   });
 
   Route::prefix('/student')->group(function () {
+    Route::resource('class', "Students\MyClassController");
+
     Route::get('/calendar', function () {
       return view('backend.students.calendar');
-    });
-    Route::get('class', function () {
-      return view('backend.students.class');
-    });
-    Route::get('class/detail', function () {
-      return view('backend.students.class-detail');
     });
     Route::get('courses', function () {
       return view('backend.students.courses');
@@ -110,30 +106,6 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/test', function () {
       return view('backend.test');
-    });
-
-    Route::get('/khoa-hoc', function () {
-      return view('backend.khoahoc.alldata');
-    });
-
-    Route::get('/admin/hocsinh', function () {
-      return view('backend.hocsinh.datahocsinh');
-    });
-
-    Route::get('/admin/hocsinh/themhocsinh', function () {
-      return view('backend.hocsinh.themhocsinh');
-    });
-
-    Route::get('/admin/lich-trai-nghiem', function () {
-      return view('backend.contact.lichtrainghiem.datalichtrainghiem');
-    });
-
-    Route::get('/admin/nhan-xet/themnhanxet', function () {
-      return view('backend.nhanxet.themnhanxet');
-    });
-
-    Route::get('/admin/thoi-khoa-bieu', function () {
-      return view('backend.thoikhoabieu.datathoikhoabieu');
     });
 
     //test

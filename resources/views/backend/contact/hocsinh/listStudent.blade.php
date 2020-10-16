@@ -1,5 +1,6 @@
 @extends('backend.layout.index')
 @section('content')
+
 <div class="pcoded-inner-content">
   <div class="main-body">
     <div class="page-wrapper">
@@ -10,6 +11,7 @@
               <div class="card-header">
                 <div class="row">
                   <div class="col-xs-12 col-sm-12 col-md-6">
+
                     <h5>DANH SÁCH HỌC SINH</h5>
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-6">
@@ -42,7 +44,7 @@
                                       <label class="col-sm-3 col-form-label">Tên</label>
                                       <div class="col-sm-9">
                                         <input type="text" class="form-control" name="ten" placeholder="Nhập vào tên">
-                                        <span class="messages"></span>
+                                      <span class="messages"></span>
                                       </div>
                                     </div>
                                     <div class="form-group row">
@@ -119,10 +121,6 @@
                               </div>
                             </div>
                           </div>
-
-
-
-
                       </label>
                     </div>
 

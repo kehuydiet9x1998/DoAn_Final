@@ -29,7 +29,7 @@ class StudentController extends Controller
      */
     public function create(Request $request)
     {
-        
+
     }
 
     /**
@@ -40,6 +40,17 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
+    //kiểm tra
+        $messages = [
+          'ten.required' => 'Tên bắt buộc',
+          'ten.string' => 'Tên phải là chuỗi',
+        ];
+
+        $this->validate($request, [
+          'ten' => 'required|string',
+          'gioitinh' => 'required|string'
+        ], $messages);
+
         $data = $request->all();
         HocSinh::create($data);
         return redirect(route('students.index'));

@@ -43,7 +43,7 @@
                       <thead>
                       <tr>
                         <th>Mã lớp</th>
-                        <th>Lớp học</th>
+                        <th>Giáo viên</th>
                         <th>Sĩ số</th>
                         <th>Bắt đầu/Kết thúc</th>
                         <th>Buổi học</th>
@@ -53,36 +53,33 @@
                       </tr>
                       </thead>
                       <tbody>
-                        <tr>
+                        @foreach ($classes as $class)
+                          <tr>
                           <td>
                             <div class="d-inline-block align-middle">
                               <div class="d-inline-block">
-                                <a href="class/detail">
-                                  <h6 class="name_link_green">LP 001</h6>
-                                </a>
-                                <p class=" m-b-0 text-muted">ROBOT</p>
+                              <a href="{{route('class.show',$class->id)}}">
+                                <h6 class="name_link_green">{{$class->tenlop}}</h6>
+                              </a>
+                              <p class=" m-b-0 text-muted">Khóa học: {{$class->KhoaHoc->tenkhoahoc}}</p>
                                 {{-- <p class="m-t-2 m-b-0 text-muted">Giáo viên: Học viện TEKY</p> --}}
                               </div>
                             </div>
                           </td>
                           <td>
-                              <h6 >Xưởng chế tạo RoBot</h6>
+                              <h6>{{$class->GiaoVien->hodem.' '.$class->GiaoVien->ten}}</h6>
                           </td>
-                          <td>6</td>
+                          <td>{{$class->dsLopHoc()->count()}}</td>
                           <td>
-                            <i class="fa fa-calendar-minus-o"></i>20/8/2020
+                            <i class="fa fa-calendar-minus-o"></i>{{$class->ngaybatdau}}
                             <br>
-                            <i class="fa fa-calendar-times-o"></i>20/10/2020</td>
-                          <td>11/12</td>
-                          @php
-                            $lv = 'Sơ cấp';
-                          @endphp
-                          <td><label class="badge badge-inverse-{{$lv == 'Trung cấp' ? 'warning': ($lv == 'Sơ cấp'? 'success' : 'info')}}">{{($lv)}}</label></td>
+                            <i class="fa fa-calendar-times-o"></i>{{$class->ngayketthuc}}</td>
+                          <td>{{$class->sobuoi}}</td>
+                          <td><label
+                              class="badge badge-inverse-success">{{$class-> KhoaHoc -> level -> tenlevel}}</label>
+                          </td>
                           <td>
-                            @php
-                              $tt = 'Đang hoạt động';
-                            @endphp
-                            <label class="badge badge-inverse-{{$tt == 'Đang hoạt động' ? 'success': ($tt == 'Chưa hoạt động' ? 'warning' : 'danger' ) }}">{{$tt}}</label>
+                            <label class="badge badge-inverse-success">{{$class->trangthai}}</label>
                           </td>
                           <td>
                             <a href="home-work" style="background-color: white; border: none; padding: 0; text-align: center">
@@ -101,6 +98,8 @@
                             </a>
                           </td>
                         </tr>
+                        @endforeach
+
                       </tbody>
                     </table>
                   </div>
