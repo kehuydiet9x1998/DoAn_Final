@@ -18,7 +18,7 @@
           </div>
           <div class="card-block table-border-style">
             <div class="table-responsive">
-              <table class="table table-bordered">
+              <table class="table table-bordered" id="our_table">
                 <thead>
                   <tr>
                     <th>THỨ</th>
@@ -35,6 +35,7 @@
                 </thead>
                 <tbody>
                   @for($j=1; $j < 4; $j++) <tr>
+
                     @switch($j)
                     @case(1)
                     <th scope="row" style="background-color: var(--sang); vertical-align: middle">SÁNG</th>
@@ -49,40 +50,40 @@
                     @endswitch
                     @for($i=0 ; $i<7; $i++) @php $temp=$dsLopHoc->where('lichHoc.thu' , $i+2)->where('lichHoc.caHoc.buoi' , $j)@endphp
 
-
-
-
-                      {{-- @foreach ($dsLopHoc as $lophoc) @if($lophoc->lichHoc->thu == $i+2 &&
-                      $lophoc->lichHoc->caHoc->buoi == $j)
-                      @php $temp = $lophoc @endphp
-                      @endif
-                      @endforeach --}}
-
-                      @if($temp)
+                      @if(count($temp)> 0)
                       <td style="padding: 0">
-                        <table>
-                          @foreach ($temp as $item)
-                          <tr>
-                            <td style="white-space: normal; background-color: #{{str_pad(dechex(mt_rand(0xAA  , 0xFF)), 2, '0', STR_PAD_LEFT).
+                        <div class="event" draggable="true" id={{random_int(0,10000000000000)}}>
+                          <table>
+                            @foreach ($temp as $item)
+                            <tr>
+                              <td style="white-space: normal; background-color: #{{str_pad(dechex(mt_rand(0xAA  , 0xFF)), 2, '0', STR_PAD_LEFT).
                             str_pad(dechex(mt_rand(0xAA  , 0xFF)), 2, '0', STR_PAD_LEFT).
                             str_pad(dechex(mt_rand(0xAA  , 0xFF)), 2, '0', STR_PAD_LEFT)}}; font-weight: 600">
 
-                              {{$item->tenlop}}
-                              <p class=" m-b-0 text-muted">Thời gian: {{$item->lichhoc->caHoc->thoigianbatdau}} - {{$item->lichhoc->caHoc->thoigianketthuc}} </p>
-                              <p class=" m-b-0 text-muted">Khóa học: {{$item->khoaHoc->tenkhoahoc}}</p>
-                              <p class=" m-b-0 text-muted">Bài học : {{$item->sobuoidahoc}}/{{$item->sobuoi}}</p>
-                              <p class=" m-b-0 text-muted">Phòng học: {{$item->lichhoc->phonghoc->tenphong}}</p>
-                            </td>
-                          </tr>
-                          @endforeach
-                        </table>
+
+                                {{$item->tenlop}}
+                                <p class=" m-b-0 text-muted">Thời gian: {{$item->lichhoc->caHoc->thoigianbatdau}} - {{$item->lichhoc->caHoc->thoigianketthuc}} </p>
+                                <p class=" m-b-0 text-muted">Khóa học: {{$item->khoaHoc->tenkhoahoc}}</p>
+                                <p class=" m-b-0 text-muted">Bài học : {{$item->sobuoidahoc}}/{{$item->sobuoi}}</p>
+                                <p class=" m-b-0 text-muted">Phòng học: {{$item->lichhoc->phonghoc->tenphong}}</p>
+
+                              </td>
+
+                            </tr>
+
+                            @endforeach
+                          </table>
+                        </div>
                       </td>
                       @else
-                      <td></td>
+                      <td style="padding:0">
+
+                      </td>
                       @endif
                       @endfor </tr> @endfor
                 </tbody>
               </table>
+
             </div>
           </div>
         </div>
@@ -90,4 +91,31 @@
     </div>
   </div>
 </div>
+@endsection
+
+@section('script')
+<script>
+  $(document).ready(function() {
+    $('.event').on("dragstart", function(event) {
+      var dt = event.originalEvent.dataTransfer;
+      dt.setData('Text', $(this).attr('id'));
+    });
+    $('#our_table td').on("dragenter dragover drop", function(event) {
+      event.preventDefault();
+      if (event.type === 'drop') {
+        var data = event.originalEvent.dataTransfer.getData('Text', $(this).attr('id'));
+
+        de = $('#' + data).detach();
+        if (event.originalEvent.target.tagName === "DIV") {
+          de.insertBefore($(event.originalEvent.target));
+        } else {
+          de.appendTo($(this));
+        }
+      };
+    });
+  })
+
+</script>
+
+
 @endsection
