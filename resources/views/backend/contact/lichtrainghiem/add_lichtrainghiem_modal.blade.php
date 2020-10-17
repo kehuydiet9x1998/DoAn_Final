@@ -15,7 +15,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <form method="post" action="{{route('lichtrainghiem.store')}}" novalidate="">
+              <form id="addform" method="post" action="{{route('lichtrainghiem.store')}}" novalidate="">
                 <div class="modal-body">
                   <input type="hidden" name="_token" value="{{csrf_token()}}">
                   {{ csrf_field() }}
@@ -23,7 +23,7 @@
                     <label class="col-sm-3 col-form-label">Họ tên học viên</label>
                     <div class="col-sm-9">
                       <select name="hoc_sinh_id" class="form-control form-control-inverse">
-                        <option>{{'Chọn học sinh'}}</option>
+                        <option value="">{{'Chọn học sinh'}}</option>
                         @foreach ($allhocsinhs as $hocsinh)
                         <option value="{{$hocsinh->id}}">
                           {{$hocsinh->hodem.' '.$hocsinh->ten.' / '.$hocsinh->sodienthoai .' / '. substr($hocsinh->ngaysinh,0,10).' / '.$hocsinh->trangthai }}

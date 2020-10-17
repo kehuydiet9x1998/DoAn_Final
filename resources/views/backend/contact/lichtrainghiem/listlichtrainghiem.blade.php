@@ -106,6 +106,7 @@
   function myReset() {
     document.getElementById('main').reset();
   };
+
 </script>
 
 <script>
@@ -125,6 +126,11 @@
 
     })
   });
+
 </script>
+
+<script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+{!! $jsValidator->selector('#addform') !!}
+
 
 @endsection

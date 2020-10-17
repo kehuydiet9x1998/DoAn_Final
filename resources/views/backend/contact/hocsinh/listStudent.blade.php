@@ -44,7 +44,7 @@
                                       <label class="col-sm-3 col-form-label">Tên</label>
                                       <div class="col-sm-9">
                                         <input type="text" class="form-control" name="ten" placeholder="Nhập vào tên">
-                                        <span class="messages"></span>
+                                      <span class="messages"></span>
                                       </div>
                                     </div>
                                     <div class="form-group row">
@@ -227,14 +227,12 @@
 
 </script>
 
-{{-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script> --}}
+
 
 
 <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
-
-{{-- {!! JsValidator::formRequest('App\Http\Requests\MyFormRequest') !!} --}}
 {!! $jsValidator->selector('#addform') !!}
+
 
 
 @endsection

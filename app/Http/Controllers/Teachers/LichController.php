@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\Teachers;
 
 use App\Http\Controllers\Controller;
-use App\Models\BuoiHoc;
+use App\Models\GiaoVien;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Request as FacadesRequest;
 
-class BuoiHocController extends Controller
+class LichController extends Controller
 {
   /**
    * Display a listing of the resource.
@@ -16,7 +15,9 @@ class BuoiHocController extends Controller
    */
   public function index()
   {
-    //
+    $dsLopHoc = auth()->user()->giaoVien->dsLopHoc;
+    // return $dsLopHoc;
+    return view('backend.teachers.calendar', compact('dsLopHoc'));
   }
 
   /**
@@ -43,28 +44,20 @@ class BuoiHocController extends Controller
   /**
    * Display the specified resource.
    *
-   * @param  \App\Models\BuoiHoc  $buoiHoc
+   * @param  \App\Models\GiaoVien  $giaoVien
    * @return \Illuminate\Http\Response
    */
-  public function show(BuoiHoc $lesson)
+  public function show(GiaoVien $giaoVien)
   {
-
-    if (FacadesRequest::ajax()) {
-      $class = $lesson->lopHoc;
-      return view(
-        'backend.teachers.classes.buoihoc',
-        compact(['class', 'lesson'])
-      );
-    }
   }
 
   /**
    * Show the form for editing the specified resource.
    *
-   * @param  \App\Models\BuoiHoc  $buoiHoc
+   * @param  \App\Models\GiaoVien  $giaoVien
    * @return \Illuminate\Http\Response
    */
-  public function edit(BuoiHoc $buoiHoc)
+  public function edit(GiaoVien $giaoVien)
   {
     //
   }
@@ -73,10 +66,10 @@ class BuoiHocController extends Controller
    * Update the specified resource in storage.
    *
    * @param  \Illuminate\Http\Request  $request
-   * @param  \App\Models\BuoiHoc  $buoiHoc
+   * @param  \App\Models\GiaoVien  $giaoVien
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, BuoiHoc $buoiHoc)
+  public function update(Request $request, GiaoVien $giaoVien)
   {
     //
   }
@@ -84,10 +77,10 @@ class BuoiHocController extends Controller
   /**
    * Remove the specified resource from storage.
    *
-   * @param  \App\Models\BuoiHoc  $buoiHoc
+   * @param  \App\Models\GiaoVien  $giaoVien
    * @return \Illuminate\Http\Response
    */
-  public function destroy(BuoiHoc $buoiHoc)
+  public function destroy(GiaoVien $giaoVien)
   {
     //
   }

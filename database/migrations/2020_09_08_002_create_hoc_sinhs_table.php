@@ -26,6 +26,7 @@ class CreateHocSinhsTable extends Migration
       $table->string('email');
       $table->string('sodienthoai');
       $table->string('diachi');
+      $table->foreignId('user_id')->constrained()->cascadeOnDelete();
       $table->timestamps();
       $table->softDeletes();
     });

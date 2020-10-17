@@ -15,10 +15,7 @@ class CreateCheckInsTable extends Migration
   {
     Schema::create('check_in', function (Blueprint $table) {
       $table->id();
-      $table
-        ->time('giocheckin')
-        ->default()
-        ->default(DB::raw('CURRENT_TIMESTAMP'));
+      $table->time('giocheckin')->nullable();
       $table->time('giocheckout')->nullable();
       $table->unsignedBigInteger('buoi_hoc_id');
       $table

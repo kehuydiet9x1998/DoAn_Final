@@ -7,7 +7,7 @@ if($phanquyen == 'contact')
     "items" => [
     [
     "text" => "Trang chủ",
-    "link" => "/dashboard",
+    "link" => "/contacts/dashboard",
     "icon" => "feather icon-home",
     "type" => "link",
     ],
@@ -31,8 +31,6 @@ if($phanquyen == 'contact')
     "items" => [
     ["text" => "Cài đặt", "link" => "/baocao"],
     ["text" => "Danh sách người dùng", "link" => "/baocao"],
-    ["text" => "Phân quyền", "link" => "/baocao"],
-    ["text" => "Sao lưu / Phục hồi", "link" => "/baocao"],
     ],
     ],
     ],
@@ -142,8 +140,6 @@ if($phanquyen == "teacher")
     "items" => [
     ["text" => "Cài đặt", "link" => "/baocao"],
     ["text" => "Danh sách người dùng", "link" => "/baocao"],
-    ["text" => "Phân quyền", "link" => "/baocao"],
-    ["text" => "Sao lưu / Phục hồi", "link" => "/baocao"],
     ],
     ],
     ],
@@ -326,7 +322,7 @@ if($phanquyen == "student")
     "items" => [
     [
     "text" => "Trang chủ",
-    "link" => "/dashboard",
+    "link" => "/student/dashboard",
     "icon" => "feather icon-home",
     "type" => "link",
     ],
@@ -350,8 +346,6 @@ if($phanquyen == "student")
     "items" => [
     ["text" => "Cài đặt", "link" => "/baocao"],
     ["text" => "Danh sách người dùng", "link" => "/baocao"],
-    ["text" => "Phân quyền", "link" => "/baocao"],
-    ["text" => "Sao lưu / Phục hồi", "link" => "/baocao"],
     ],
     ],
     ],

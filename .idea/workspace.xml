@@ -6,8 +6,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfeacd01-f2c3-4401-a83c-21a86b8aa657" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Students/BaiTapVeNhaController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Students/BuoiHocController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Students/KhoaHocController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Students/MyClassController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Teachers/LichController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/drag-min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/baitap/1291789903.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/students/baitapvenha/homework-detail.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/students/baitapvenha/homework.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/students/khoahoc/course-detail.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/students/khoahoc/courses.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/students/myclass/buoihoc.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/students/myclass/class-detail.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/students/myclass/class.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Contacts/LichTraiNghiemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contacts/LichTraiNghiemController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Contacts/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contacts/StudentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Teachers/BuoiHocController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Teachers/BuoiHocController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/BuoiHoc.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/BuoiHoc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/CaHoc.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/CaHoc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/LopHoc.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/LopHoc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ThoiGianHoc.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ThoiGianHoc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_08_002_create_hoc_sinhs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_08_002_create_hoc_sinhs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_08_003_create_giao_vien.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_08_003_create_giao_vien.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_08_010_create_ca_hocs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_08_010_create_ca_hocs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_08_018_create_lop_hocs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_08_018_create_lop_hocs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_08_029_create_thoi_gian_hocs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_08_029_create_thoi_gian_hocs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_12_114802_create_check_ins_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_12_114802_create_check_ins_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/giao_vien.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/giao_vien.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/hoc_sinh.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/hoc_sinh.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/users.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/users.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_lop_hoc_seeder.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_lop_hoc_seeder.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_lop_hoc_seeder/ca_hoc.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_lop_hoc_seeder/ca_hoc.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_lop_hoc_seeder/lop_hoc.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_lop_hoc_seeder/lop_hoc.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_lop_hoc_seeder/thoi_gian_hoc.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_lop_hoc_seeder/thoi_gian_hoc.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/edit_student_modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/edit_student_modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/listStudent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/listStudent.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/add_lichtrainghiem_modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/add_lichtrainghiem_modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/edit_lichtrainghiem_modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/edit_lichtrainghiem_modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/listlichtrainghiem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/listlichtrainghiem.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/students/class-detail.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/students/class.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/students/course-detail.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/students/courses.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/students/homework-detail.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/students/homework.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/calendar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/teachers/calendar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/classes/buoihoc.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/teachers/classes/buoihoc.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/classes/class_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/teachers/classes/class_detail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -247,6 +298,7 @@
       <workItem from="1602923865057" duration="396000" />
       <workItem from="1602937651411" duration="12000" />
       <workItem from="1602937875995" duration="11413000" />
+      <workItem from="1602949671125" duration="358000" />
     </task>
     <servers />
   </component>

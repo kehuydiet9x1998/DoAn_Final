@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Teachers;
+namespace App\Http\Controllers\Students;
 
 use App\Http\Controllers\Controller;
 use App\Models\BuoiHoc;
@@ -46,14 +46,14 @@ class BuoiHocController extends Controller
    * @param  \App\Models\BuoiHoc  $buoiHoc
    * @return \Illuminate\Http\Response
    */
-  public function show(BuoiHoc $lesson)
+  public function show($id)
   {
-
     if (FacadesRequest::ajax()) {
-      $class = $lesson->lopHoc;
+      $buoihoc = BuoiHoc::find($id);
+      $class = BuoiHoc::find($id)->LopHoc->khoaHoc;
       return view(
-        'backend.teachers.classes.buoihoc',
-        compact(['class', 'lesson'])
+        'backend.students.myclass.buoihoc',
+        ['class' => $class, 'buoihoc' => $buoihoc]
       );
     }
   }

@@ -8,7 +8,8 @@
       </button>
     </div>
     <div class="modal-body">
-      <form method="post" action="{{route('students.update', $hocsinh->id)}}" novalidate="">
+      {{-- dat id cho form nay --}}
+      <form id="editform" method="post" action="{{route('students.update', $hocsinh->id)}}" novalidate="">
           @method('PUT')
         <div class="modal-body">
           <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -41,7 +42,7 @@
             <label class="col-sm-3 col-form-label">Giới tính</label>
             <div class="col-sm-9">
               <div class="form-check form-check-inline">
-              
+
                 <label class="form-check-label">
                   <input class="form-check-input" type="radio" name="gioitinh" id="gioitinh" value="Nam"
                    {{$hocsinh->gioitinh == 'Nam' ? " checked": ''}}> Nam
@@ -118,3 +119,4 @@
       $('.modal-backdrop').hide();
     };
   </script>
+{!! $jsValidator->selector('#editform') !!}

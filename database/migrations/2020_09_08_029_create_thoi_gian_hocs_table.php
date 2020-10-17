@@ -26,6 +26,10 @@ class CreateThoiGianHocsTable extends Migration
         ->foreign('lop_hoc_id')
         ->references('id')
         ->on('lop_hoc');
+      $table
+        ->foreignId('phong_hoc_id')
+        ->constrained('phong_hoc')
+        ->cascadeOnDelete();
       $table->timestamps();
       $table->softDeletes();
     });

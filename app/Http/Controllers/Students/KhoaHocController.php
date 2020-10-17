@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Teachers;
+namespace App\Http\Controllers\Students;
 
 use App\Http\Controllers\Controller;
-use App\Models\BuoiHoc;
+use App\Models\KhoaHoc;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Request as FacadesRequest;
 
-class BuoiHocController extends Controller
+class KhoaHocController extends Controller
 {
   /**
    * Display a listing of the resource.
@@ -16,7 +15,8 @@ class BuoiHocController extends Controller
    */
   public function index()
   {
-    //
+    $data = KhoaHoc::paginate(7);
+    return view('backend.students.khoahoc.courses', ['khoahocs' => $data]);
   }
 
   /**
@@ -43,28 +43,22 @@ class BuoiHocController extends Controller
   /**
    * Display the specified resource.
    *
-   * @param  \App\Models\BuoiHoc  $buoiHoc
+   * @param  \App\Models\KhoaHoc  $khoaHoc
    * @return \Illuminate\Http\Response
    */
-  public function show(BuoiHoc $lesson)
+  public function show($id)
   {
-
-    if (FacadesRequest::ajax()) {
-      $class = $lesson->lopHoc;
-      return view(
-        'backend.teachers.classes.buoihoc',
-        compact(['class', 'lesson'])
-      );
-    }
+    $data = KhoaHoc::find($id);
+    return view('backend.students.khoahoc.course-detail', ['khoahoc' => $data]);
   }
 
   /**
    * Show the form for editing the specified resource.
    *
-   * @param  \App\Models\BuoiHoc  $buoiHoc
+   * @param  \App\Models\KhoaHoc  $khoaHoc
    * @return \Illuminate\Http\Response
    */
-  public function edit(BuoiHoc $buoiHoc)
+  public function edit(KhoaHoc $khoaHoc)
   {
     //
   }
@@ -73,10 +67,10 @@ class BuoiHocController extends Controller
    * Update the specified resource in storage.
    *
    * @param  \Illuminate\Http\Request  $request
-   * @param  \App\Models\BuoiHoc  $buoiHoc
+   * @param  \App\Models\KhoaHoc  $khoaHoc
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, BuoiHoc $buoiHoc)
+  public function update(Request $request, KhoaHoc $khoaHoc)
   {
     //
   }
@@ -84,10 +78,10 @@ class BuoiHocController extends Controller
   /**
    * Remove the specified resource from storage.
    *
-   * @param  \App\Models\BuoiHoc  $buoiHoc
+   * @param  \App\Models\KhoaHoc  $khoaHoc
    * @return \Illuminate\Http\Response
    */
-  public function destroy(BuoiHoc $buoiHoc)
+  public function destroy(KhoaHoc $khoaHoc)
   {
     //
   }
