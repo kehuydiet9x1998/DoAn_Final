@@ -46,11 +46,11 @@ Route::middleware('auth')->group(function () {
     Route::get('items', function () {
       return view('backend.teachers.items');
     });
+    Route::get('dashboard', function () {
+      return view('backend.teachers.dashboard-teacher');
+    });
   });
 
-  Route::get('/dashboard', function () {
-    return view('backend.dashboard');
-  });
 
   Route::prefix('/contacts')->group(function () {
     Route::resource('students', "Contacts\StudentController");
@@ -58,6 +58,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
     Route::get('list-teachers', function () {
       return view('backend.contact.listTeacher');
+    });
+    Route::get('dashboard', function () {
+      return view('backend.contact.dashboard-contact');
     });
   });
 
@@ -77,6 +80,9 @@ Route::middleware('auth')->group(function () {
   });
 
   Route::prefix('/student')->group(function () {
+    Route::get('dashboard', function () {
+      return view('backend.students.dashboard-student');
+    });
     Route::get('/calendar', function () {
       return view('backend.students.calendar');
     });
