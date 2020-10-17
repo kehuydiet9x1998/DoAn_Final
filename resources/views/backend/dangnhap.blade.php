@@ -32,20 +32,21 @@
       max-width: 100%;
       max-height: 80%;
     }
+
   </style>
 </head>
 
 <body>
 
 
-  <section class="login-block"
-    style="height: 100%; background: url('{{asset("/assets/images/blur.jpg")}}') no-repeat; background-size: 100% 100%">
+  <section class="login-block" style="height: 100%; background: url('{{asset("/assets/images/blur.jpg")}}') no-repeat; background-size: 100% 100%">
 
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-12">
 
-          <form class="md-float-material form-material">
+          <form class="md-float-material form-material" method="POST" action="{{ route('login') }}">
+
             <div class="text-center">
               @include('utils.logo')
             </div>
@@ -58,47 +59,62 @@
                 </div>
 
                 <p class="text-muted text-center p-b-5">Chào mừng bạn đến với TEKY</p>
+
+                @csrf
+
                 <div class="form-group form-primary">
-                  <input type="text" name="user-name" class="form-control" required="">
+                  <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name">
                   <span class="form-bar"></span>
                   <label class="float-label">Tên đăng nhập</label>
+                  @error('name')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+
                 </div>
                 <div class="form-group form-primary">
-                  <input type="password" name="password" class="form-control" required="">
+                  <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                   <span class="form-bar"></span>
                   <label class="float-label">Mật khẩu</label>
+                  @error('password')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+
                 </div>
                 <div class="row m-t-25 text-left">
                   <div class="col-12">
                     <div class="checkbox-fade fade-in-primary">
                       <label>
-                        <input type="checkbox" value="">
+                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                         <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
                         <span class="text-inverse">Lưu đăng nhập</span>
                       </label>
                     </div>
+                    @if (Route::has('password.request'))
                     <div class="forgot-phone text-right float-right">
-                      <a href="auth-reset-password.html" class="text-right f-w-600"> Quên mật khẩu?</a>
+                      <a class="btn btn-link" href="{{ route('password.request') }}"> Quên mật khẩu?</a>
                     </div>
+                    @endif
                   </div>
                 </div>
                 <div class="row m-t-30">
-                  <div class="col-md-12"><a href="/dashboard">
-                      <button type="button"
-                        class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">LOGIN</button>
-                    </a></div>
-
+                  <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">ĐĂNG NHẬP</button>
                 </div>
-                <p style="text-align: center">
-                  Hotline lãnh đạo: <b>+84 948-666-183</b>
-                </p>
-              </div>
-            </div>
-          </form>
 
+              </div>
+              <p style="text-align: center">
+                Hotline lãnh đạo: <b>+84 948-666-183</b>
+              </p>
+            </div>
         </div>
+        </form>
 
       </div>
+
+    </div>
 
     </div>
 

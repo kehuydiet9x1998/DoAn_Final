@@ -1,8 +1,7 @@
 <?php
 
 return [
-
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Authentication Language Lines
     |--------------------------------------------------------------------------
@@ -13,7 +12,6 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-
+  'failed' => 'Thông tin đăng nhập không chính xác.',
+  'throttle' => 'Sai mật khẩu quá nhiều lần. Thử lại sau :seconds giây.',
 ];

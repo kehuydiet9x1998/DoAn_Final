@@ -5,7 +5,6 @@
 <!-- Added by HTTrack -->
 
 
-
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
 <head>
@@ -25,7 +24,7 @@
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/daterangepicker.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/datedropper.min.css')}}">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
-  {{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome-n.min.css')}}"> --}}
+  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome-n.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/themify-icons.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/icofont.css')}}">
@@ -80,6 +79,11 @@
         </div>
       </div>
     </div>
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+      @csrf
+    </form>
+
 
     <script type="text/javascript" src="{{asset('assets/js/jquery.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/jquery-ui.min.js')}}"></script>
