@@ -24,6 +24,10 @@ class CreateGiaoVien extends Migration
       $table->string('email');
       $table->string('diachi');
       $table->string('tinhtrang');
+      $table
+        ->foreignId('user_id')
+        ->constrained()
+        ->cascadeOnDelete();
       $table->timestamps();
       $table->softDeletes();
     });

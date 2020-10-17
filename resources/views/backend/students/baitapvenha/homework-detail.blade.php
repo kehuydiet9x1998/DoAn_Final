@@ -10,9 +10,11 @@
               <div class="card-header">
                 <h6 class="col-sm-12" style="font-weight: bold; font-size: 16px">Lớp: Xưởng lắp ráp ROBOT - LP - 001
                 </h6>
-                <h6 class="col-sm-12">Học viên : Nguyễn Hải Minh</h6>
-                <h6 class="col-sm-12">Buổi học : 11/12</h6>
-                <h6 class="col-sm-12">Ngày học : 20/8/2020</h6>
+                <h6 class="col-sm-12">Học viên : {{auth()->user()->hocsinh->hodem. ' '.auth()->user()->hocsinh->ten}}
+                </h6>
+                <h6 class="col-sm-12">Buổi học :
+                  {{$btvn[0]->buoi_hoc_id}}/{{$btvn[0]->buoihoc->lophoc->dsbuoihoc->count()}}</h6>
+                <h6 class="col-sm-12">Ngày học : {{$btvn[0]->buoihoc->ngayhoc}}</h6>
                 <h6 class="col-sm-12 text-c-green" style="display: none">Số câu đúng : 1/10</h6>
                 <h6 class="col-sm-12 text-c-green" style="display: none">Số điểm: 1/10</h6>
               </div>
@@ -22,32 +24,33 @@
               @foreach ($btvn as $bt)
               <div class="card-block col-sm-12">
                 <h6 class="col-sm-12">Câu hỏi {{"$cau"}}:
-                  {{$bt->noidung}}
+                  {{$bt->baitap->noidung}}
                 </h6>
+                <img class="img img-fluid" width="400px" src="{{asset($bt->baitap->hinhanhminhhoa)}}" alt="">
                 <div class="form-radio col-sm-12">
                   <form>
                     <div class="radio radiofill radio-info radio-inline col-sm-12">
                       <label>
                         <input type="radio" name="radio">
-                        <i class="helper"></i>A) {{$bt->dapan1}}
+                        <i class="helper"></i>A) {{$bt->baitap->dapan1}}
                       </label>
                     </div>
                     <div class="radio radiofill radio-info radio-inline col-sm-12">
                       <label>
                         <input type="radio" name="radio">
-                        <i class="helper"></i>B) {{$bt->dapan2}}
+                        <i class="helper"></i>B) {{$bt->baitap->dapan2}}
                       </label>
                     </div>
                     <div class="radio radiofill radio-info radio-inline col-sm-12">
                       <label>
                         <input type="radio" name="radio">
-                        <i class="helper"></i>C) {{$bt->dapan3}}
+                        <i class="helper"></i>C) {{$bt->baitap->dapan3}}
                       </label>
                     </div>
                     <div class="radio radiofill radio-info radio-inline col-sm-12">
                       <label>
                         <input type="radio" name="radio">
-                        <i class="helper"></i>D) {{$bt->dapan4}}
+                        <i class="helper"></i>D) {{$bt->baitap->dapan4}}
                       </label>
                     </div>
                   </form>

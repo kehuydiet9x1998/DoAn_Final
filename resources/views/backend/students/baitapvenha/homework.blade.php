@@ -59,14 +59,16 @@
                           <div class="d-inline-block align-middle">
                             <div class="d-inline-block">
                               <a href="class/detail">
-                                <h6 class="name_link_green">{{$buoihoc->id}}</h6>
-                                <h6 class="name_link_green">{{$buoihoc->tenlop}}</h6>
+
+                                <h6 class="name_link_green">{{$buoihoc->lopHoc->tenlop}}</h6>
                               </a>
+                              <p>{{$buoihoc->lopHoc->khoahoc->tenkhoahoc}}</p>
+
                             </div>
                           </div>
                         </td>
                         <td>
-                          <h6>{{$buoihoc->hodem.' '.$buoihoc->ten}}</h6>
+                          <h6>{{$buoihoc->giaovien->hodem.' '.$buoihoc->giaovien->ten}}</h6>
                         </td>
                         <td style="padding-left: 30px">{{$buoihoc->id}}</td>
                         <td><label class="badge badge-inverse-success">{{'chưa biết viết gì'}}</label>

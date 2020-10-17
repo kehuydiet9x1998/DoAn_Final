@@ -17,6 +17,7 @@ class CreateCaHocsTable extends Migration
       $table->id();
       $table->time('thoigianbatdau');
       $table->time('thoigianketthuc');
+      $table->integer('buoi');
       $table->timestamps();
       $table->softDeletes();
     });

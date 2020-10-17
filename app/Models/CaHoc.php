@@ -12,7 +12,7 @@ class CaHoc extends Model
   use SoftDeletes;
   protected $table = 'ca_hoc';
   protected $dates = ['deleted_at'];
-  protected $fillable = ['thoigianbatdau', 'thoigianketthuc'];
+  protected $fillable = ['thoigianbatdau', 'thoigianketthuc', 'buoi'];
 
   public function dsThoiGianHoc()
   {
@@ -22,11 +22,11 @@ class CaHoc extends Model
   public function getThoigianbatdauAttribute($value)
   {
     $time = strtotime($value);
-    return date('h:m A', $time);
+    return date('h:m', $time);
   }
   public function getThoigianketthucAttribute($value)
   {
     $time = strtotime($value);
-    return date('h:m A', $time);
+    return date('h:m', $time);
   }
 }

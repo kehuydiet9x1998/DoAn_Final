@@ -27,21 +27,22 @@ Route::middleware(['auth', 'web'])->group(function () {
   });
 
   Route::prefix('teachers')->group(function () {
-    Route::get('calendar', function () {
-      return view('backend.teachers.calendar');
-    });
-    Route::get('items', function () {
-      return view('backend.teachers.items');
-    });
-
     Route::resource('classes', 'Teachers\LopHocController');
     Route::resource('lessons', 'Teachers\BuoiHocController');
+    Route::resource('checkin', 'Lessons\CheckInController');
+    Route::resource('diemdanh', 'Lessons\DiemDanhController');
+    Route::resource('danhsachbaitap', 'Lessons\DanhSachBaiTapController');
+    Route::resource('calendar', 'Teachers\LichController');
 
     Route::get('check-test', function () {
       return view('backend.teachers.chambai');
     });
     Route::get('comment', function () {
       return view('backend.teachers.comment');
+    });
+
+    Route::get('items', function () {
+      return view('backend.teachers.items');
     });
   });
 

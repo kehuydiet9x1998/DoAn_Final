@@ -25,7 +25,7 @@ class CheckIn extends Model
       return '#';
     }
     $time = strtotime($value);
-    return date('h:m', $time);
+    return date('h:i', $time);
   }
 
   public function getGiocheckoutAttribute($value)
@@ -34,6 +34,6 @@ class CheckIn extends Model
       return '#';
     }
     $time = strtotime($value);
-    return date('h:m', $time);
+    return date('h:i', $time);
   }
 }

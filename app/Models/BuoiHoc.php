@@ -27,7 +27,7 @@ class BuoiHoc extends Model
 
   public function dsBaiTap()
   {
-    return $this->hasMany(DanhSachBaiTap::class);
+    return $this->hasMany(DanhSachBaiTap::class, 'buoi_hoc_id', 'id');
   }
 
   public function getNgayhocAttribute($value)

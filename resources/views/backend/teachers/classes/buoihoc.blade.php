@@ -18,8 +18,24 @@
 
            </li>
            <li style="margin: 0 10px">
-             <button class="btn waves-effect waves-light btn-round">CHECK-IN</button>
+             <button class="btn waves-effect waves-light btn-round"
+               onclick="  document.getElementById('checkin-form').submit();">CHECK-IN</button>
            </li>
+           <form id="checkin-form" action="{{route('checkin.store')}}" method="post">
+             @csrf
+             <input type="hidden" name="buoi_hoc_id" value="{{$lesson->id}}">
+           </form>
+
+           <li style="margin: 0 10px">
+             <button class="btn waves-effect waves-light btn-round"
+               onclick="  document.getElementById('checkout-form').submit();">CHECK-OUT</button>
+           </li>
+           <form id="checkout-form" action="{{route('checkin.store')}}" method="post">
+             @csrf
+             <input type="hidden" name="buoi_hoc_id" value="{{$lesson->id}}">
+             <input type="hidden" name="giocheckout">
+           </form>
+
            <li style="margin: 0 10px">
              <button data-id="1" class="btn waves-effect waves-light btn-round" data-toggle="modal"
                data-target="#diemdanh-Modal">ĐIỂM DANH</button>
@@ -40,7 +56,6 @@
      </div>
    </div>
  </div>
- {{-- danh sách học sinh --}}
  <div class="row">
    <div class="col-md-12">
      <div class="card table-card">
@@ -112,7 +127,3 @@
      </div>
    </div>
  </div>
-
- <script>
-
- </script>
