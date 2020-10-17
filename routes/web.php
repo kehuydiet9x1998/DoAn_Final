@@ -75,18 +75,12 @@ Route::middleware(['auth', 'web'])->group(function () {
 
   Route::prefix('/student')->group(function () {
     Route::resource('class', "Students\MyClassController");
+    Route::resource('courses', 'Students\KhoaHocController');
+    Route::resource('home-work', 'Students\BaiTapVeNhaController');
+    Route::resource('lessons', 'Students\BuoiHocController');
 
     Route::get('/calendar', function () {
       return view('backend.students.calendar');
-    });
-    Route::get('courses', function () {
-      return view('backend.students.courses');
-    });
-    Route::get('courses/1', function () {
-      return view('backend.students.course-detail');
-    });
-    Route::get('home-work', function () {
-      return view('backend.students.homework');
     });
     Route::get('home-work/1', function () {
       return view('backend.students.homework-detail');

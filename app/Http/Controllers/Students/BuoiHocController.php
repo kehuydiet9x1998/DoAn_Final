@@ -3,13 +3,12 @@
 namespace App\Http\Controllers\Students;
 
 use App\Http\Controllers\Controller;
-use App\Models\LopHoc;
+use App\Models\BuoiHoc;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request as FacadesRequest;
 
-class MyClassController extends Controller
+class BuoiHocController extends Controller
 {
-
-  private $idbuoihoc;
   /**
    * Display a listing of the resource.
    *
@@ -17,8 +16,7 @@ class MyClassController extends Controller
    */
   public function index()
   {
-    $data = LopHoc::all();
-    return view('backend.students.myclass.class', ['classes' => $data]);
+    //
   }
 
   /**
@@ -45,21 +43,28 @@ class MyClassController extends Controller
   /**
    * Display the specified resource.
    *
-   * @param  \App\Models\LopHoc  $lopHoc
+   * @param  \App\Models\BuoiHoc  $buoiHoc
    * @return \Illuminate\Http\Response
    */
-  public function show(LopHoc $class)
+  public function show($id)
   {
-    return view('backend.students.myclass.class-detail', ['classes' => $class]);
+    if (FacadesRequest::ajax()) {
+      $buoihoc = BuoiHoc::find($id);
+      $class = BuoiHoc::find($id)->LopHoc->khoaHoc;
+      return view(
+        'backend.students.myclass.buoihoc',
+        ['class' => $class, 'buoihoc' => $buoihoc]
+      );
+    }
   }
 
   /**
    * Show the form for editing the specified resource.
    *
-   * @param  \App\Models\LopHoc  $lopHoc
+   * @param  \App\Models\BuoiHoc  $buoiHoc
    * @return \Illuminate\Http\Response
    */
-  public function edit(LopHoc $lopHoc)
+  public function edit(BuoiHoc $buoiHoc)
   {
     //
   }
@@ -68,10 +73,10 @@ class MyClassController extends Controller
    * Update the specified resource in storage.
    *
    * @param  \Illuminate\Http\Request  $request
-   * @param  \App\Models\LopHoc  $lopHoc
+   * @param  \App\Models\BuoiHoc  $buoiHoc
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, LopHoc $lopHoc)
+  public function update(Request $request, BuoiHoc $buoiHoc)
   {
     //
   }
@@ -79,10 +84,10 @@ class MyClassController extends Controller
   /**
    * Remove the specified resource from storage.
    *
-   * @param  \App\Models\LopHoc  $lopHoc
+   * @param  \App\Models\BuoiHoc  $buoiHoc
    * @return \Illuminate\Http\Response
    */
-  public function destroy(LopHoc $lopHoc)
+  public function destroy(BuoiHoc $buoiHoc)
   {
     //
   }

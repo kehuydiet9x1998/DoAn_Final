@@ -7,7 +7,7 @@
       </button>
     </div>
     <div class="modal-body">
-      <form method="post" action="{{route('lichtrainghiem.update', $hocsinh->id)}}" novalidate="">
+      <form id="editform" method="post" action="{{route('lichtrainghiem.update', $hocsinh->id)}}" novalidate="">
         @method('PUT')
         <div class="modal-body">
           <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -77,3 +77,5 @@
     $('.modal-backdrop').hide();
   };
 </script>
+
+{!! $jsValidator->selector('#editform') !!}
