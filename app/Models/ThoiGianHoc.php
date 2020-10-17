@@ -12,7 +12,7 @@ class ThoiGianHoc extends Model
   use SoftDeletes;
   protected $table = 'thoi_gian_hoc';
   protected $dates = ['deleted_at'];
-  protected $fillable = ['lop_hoc_id', 'ca_hoc_id', 'thu'];
+  protected $fillable = ['lop_hoc_id', 'ca_hoc_id', 'thu', 'phong_hoc_id'];
 
   public function lopHoc()
   {
@@ -22,5 +22,10 @@ class ThoiGianHoc extends Model
   public function caHoc()
   {
     return $this->belongsTo(CaHoc::class);
+  }
+
+  public function phongHoc()
+  {
+    return $this->hasOne(PhongHoc::class, 'id', 'phong_hoc_id');
   }
 }

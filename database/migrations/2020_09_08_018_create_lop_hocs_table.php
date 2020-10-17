@@ -37,6 +37,7 @@ class CreateLopHocsTable extends Migration
         ->foreign('giao_vien_id')
         ->references('id')
         ->on('giao_vien');
+
       $table->timestamps();
       $table->softDeletes();
     });

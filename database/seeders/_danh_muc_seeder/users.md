@@ -10,5 +10,6 @@ users
 | assets/jpg/avatar-3.jpg  | phuhuynh01   | $2y$10$wKRif0mHhnAOGZt4Ux1Iq.yyfVFJla5CvmqEXl02XM4FMYj9CYPy6 | student       | hoatdong  |   |
 | assets/jpg/avatar-3.jpg  | hocsinh01    | $2y$10$wKRif0mHhnAOGZt4Ux1Iq.yyfVFJla5CvmqEXl02XM4FMYj9CYPy6 | student       | hoatdong  |   |
 | assets/jpg/avatar-3.jpg  | hocsinh02    | $2y$10$wKRif0mHhnAOGZt4Ux1Iq.yyfVFJla5CvmqEXl02XM4FMYj9CYPy6 | student       | hoatdong  |   |
-(7 rows)
+| assets/jpg/avatar-3.jpg  | giaovien01   |                                                              | teacher       | hoatdong  |   |
+(8 rows)
 

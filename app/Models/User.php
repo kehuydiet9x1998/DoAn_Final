@@ -9,17 +9,22 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use HasFactory;
-    use Notifiable, SoftDeletes;
-    protected $table = 'users';
+  use HasFactory;
+  use Notifiable, SoftDeletes;
+  protected $table = 'users';
 
-    protected $fillable = [
-        'anhdaidien',
-        'username',
-        'password',
-        'vaitro',
-        'trangthai',
-    ];
-    protected $hidden = ['password'];
-    protected $dates = ['deleted_at'];
+  protected $fillable = [
+    'anhdaidien',
+    'username',
+    'password',
+    'vaitro',
+    'trangthai',
+  ];
+  protected $hidden = ['password'];
+  protected $dates = ['deleted_at'];
+
+  public function giaoVien()
+  {
+    return $this->hasOne(GiaoVien::class);
+  }
 }
