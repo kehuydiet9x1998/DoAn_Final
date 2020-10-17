@@ -129,8 +129,8 @@ Route::get('/admin/nhan-xet/themnhanxet', function () {
   return view('backend.nhanxet.themnhanxet');
 });
 
-Route::get('/admin/thoi-khoa-bieu', function () {
-  return view('backend.thoikhoabieu.datathoikhoabieu');
+Route::get('/test1', function () {
+  return view('backend.test1');
 });
 
 //test

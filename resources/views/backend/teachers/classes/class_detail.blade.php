@@ -185,17 +185,5 @@
     $('.buoihoc')[0].click();
   });
 
-  // $(document).on({
-  //   ajaxStart: function() {
-  //     $('.card').addClass("card-load");
-  //     $('.card').append('<div class="card-loader"><i class="feather icon-radio rotate-refresh"></div>');
-  //   }
-  //   , ajaxStop: function() {
-  //     $('.card').children(".card-loader").remove();
-  //     $('.card').removeClass("card-load");
-  //   }
-
-  // });
-
 </script>
 @endsection

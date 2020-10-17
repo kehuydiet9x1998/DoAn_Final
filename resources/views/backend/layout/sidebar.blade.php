@@ -34,7 +34,7 @@
   ],
   ],
   ],];
-  $phanquyen = 'student';
+  $phanquyen = 'teacher';
   if($phanquyen == 'contact')
   {
   $menu = [
