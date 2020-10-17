@@ -16,8 +16,22 @@
 
             </li>
             <li style="margin: 0 10px">
-              <button class="btn waves-effect waves-light btn-round">CHECK-IN</button>
+              <button class="btn waves-effect waves-light btn-round" onclick="  document.getElementById('checkin-form').submit();">CHECK-IN</button>
             </li>
+            <form id="checkin-form" action="{{route('checkin.store')}}" method="post">
+              @csrf
+              <input type="hidden" name="buoi_hoc_id" value="{{$lesson->id}}">
+            </form>
+
+            <li style="margin: 0 10px">
+              <button class="btn waves-effect waves-light btn-round" onclick="  document.getElementById('checkout-form').submit();">CHECK-OUT</button>
+            </li>
+            <form id="checkout-form" action="{{route('checkin.store')}}" method="post">
+              @csrf
+              <input type="hidden" name="buoi_hoc_id" value="{{$lesson->id}}">
+              <input type="hidden" name="giocheckout">
+            </form>
+
             <li style="margin: 0 10px">
               <button data-id="1" class="btn waves-effect waves-light btn-round" data-toggle="modal" data-target="#diemdanh-Modal">ĐIỂM DANH</button>
               @include('backend.teachers.classes.diemdanh-modal')
@@ -66,12 +80,12 @@
                     </a></td>
                   <td style="text-align: center">
                     <div class="checkbox-zoom zoom-{{$diemdanh->ketqua == -1 ? 'danger' : 'success'}}">
-                        <span class="cr">
-                          <i class="cr-icon icofont {{$diemdanh->ketqua == 1
+                      <span class="cr">
+                        <i class="cr-icon icofont {{$diemdanh->ketqua == 1
                           ? 'icofont-ui-check txt-success'
                           : ($diemdanh->ketqua == -1 ? 'icofont-error txt-danger' : '') }}" style="padding-left: 2px">
-                          </i>
-                        </span>
+                        </i>
+                      </span>
                     </div>
                   </td>
                   @php
