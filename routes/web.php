@@ -113,6 +113,12 @@ Route::middleware(['auth', 'web'])->group(function () {
   Route::get('/dashboard', function () {
     return view('backend.dashboard');
   });
+  Route::get('/myhome', function () {
+    return view('backend.myhome');
+  });
+  Route::get('/notifications', function () {
+    return view('backend.notification');
+  });
 });
 
 Auth::routes();
