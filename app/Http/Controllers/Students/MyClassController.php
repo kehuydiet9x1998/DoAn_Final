@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 
 class MyClassController extends Controller
 {
-
   private $idbuoihoc;
   /**
    * Display a listing of the resource.
@@ -17,7 +16,12 @@ class MyClassController extends Controller
    */
   public function index()
   {
-    $data = LopHoc::all();
+    $data = auth()
+      ->user()
+      ->hocsinh->dsLopHoc()
+      ->with('lophoc')
+      ->get()
+      ->pluck('lophoc');
     return view('backend.students.myclass.class', ['classes' => $data]);
   }
 

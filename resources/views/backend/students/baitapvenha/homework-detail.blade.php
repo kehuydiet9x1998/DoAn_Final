@@ -6,83 +6,76 @@
       <div class="page-body">
         <div class="row">
           <div class="col-sm-12">
-            <div class="card">
-              <div class="card-header">
-                <h6 class="col-sm-12" style="font-weight: bold; font-size: 16px">Lớp: Xưởng lắp ráp ROBOT - LP - 001
-                </h6>
-                <h6 class="col-sm-12">Học viên : {{auth()->user()->hocsinh->hodem. ' '.auth()->user()->hocsinh->ten}}
-                </h6>
-                <h6 class="col-sm-12">Buổi học :
-                  {{$btvn[0]->buoi_hoc_id}}/{{$btvn[0]->buoihoc->lophoc->dsbuoihoc->count()}}</h6>
-                <h6 class="col-sm-12">Ngày học : {{$btvn[0]->buoihoc->ngayhoc}}</h6>
-                <h6 class="col-sm-12 text-c-green" style="display: none">Số câu đúng : 1/10</h6>
-                <h6 class="col-sm-12 text-c-green" style="display: none">Số điểm: 1/10</h6>
-              </div>
-              @php
-              $cau=1;
-              @endphp
-              @foreach ($btvn as $bt)
-              <div class="card-block col-sm-12">
-                <h6 class="col-sm-12">Câu hỏi {{"$cau"}}:
-                  {{$bt->baitap->noidung}}
-                </h6>
-                <img class="img img-fluid" width="400px" src="{{asset($bt->baitap->hinhanhminhhoa)}}" alt="">
-                <div class="form-radio col-sm-12">
-                  <form>
+            <form action="{{route('home-work.store')}}" method="post">
+              @csrf
+              @method('post')
+              <div class="card">
+                <div class="card-header">
+                  <h6 class="col-sm-12" style="font-weight: bold; font-size: 16px">Lớp: Xưởng lắp ráp ROBOT - LP - 001
+                  </h6>
+                  <h6 class="col-sm-12">Học viên : {{auth()->user()->hocsinh->hodem. ' '.auth()->user()->hocsinh->ten}}
+                  </h6>
+                  <h6 class="col-sm-12">Buổi học :
+                    {{$buoihoc->id}}/{{$buoihoc->lophoc->dsbuoihoc->count()}}</h6>
+                  <h6 class="col-sm-12">Ngày học : {{$buoihoc->ngayhoc}}</h6>
+                  <h6 class="col-sm-12 text-c-green" style="display: none">Số câu đúng : 1/10</h6>
+                  <h6 class="col-sm-12 text-c-green" style="display: none">Số điểm: 1/10</h6>
+                </div>
+                @php
+                $cau=1;
+                @endphp
+                @if(count($btvn)>0)
+                @foreach ($btvn as $bt)
+                <div class="card-block col-sm-12">
+                  <h6 class="col-sm-12">Câu hỏi {{"$cau"}}:
+                    {{$bt->baitap->noidung}}
+                  </h6>
+                  <input type="hidden" name="buoi_hoc_id" value={{$buoihoc->id}}>
+                  <input type="hidden" name="hoc_sinh_id" value={{auth()->user()->hocsinh->id}}>
+                  <input type="hidden" name="bai_tap_id[]" value={{$bt->baitap->id}}>
+                  <img class="img img-fluid" style="margin:40px" width="400px" src="{{asset($bt->baitap->hinhanhminhhoa)}}" alt="">
+                  <div class="form-radio col-sm-12">
                     <div class="radio radiofill radio-info radio-inline col-sm-12">
                       <label>
-                        <input type="radio" name="radio">
+                        <input type="radio" name="{{$bt->baitap->id}}" value="a">
                         <i class="helper"></i>A) {{$bt->baitap->dapan1}}
                       </label>
                     </div>
                     <div class="radio radiofill radio-info radio-inline col-sm-12">
                       <label>
-                        <input type="radio" name="radio">
+                        <input type="radio" name="{{$bt->baitap->id}}" value="b">
+
                         <i class="helper"></i>B) {{$bt->baitap->dapan2}}
                       </label>
                     </div>
                     <div class="radio radiofill radio-info radio-inline col-sm-12">
                       <label>
-                        <input type="radio" name="radio">
+                        <input type="radio" name="{{$bt->baitap->id}}" value="c">
+
                         <i class="helper"></i>C) {{$bt->baitap->dapan3}}
                       </label>
                     </div>
                     <div class="radio radiofill radio-info radio-inline col-sm-12">
                       <label>
-                        <input type="radio" name="radio">
+                        <input type="radio" name="{{$bt->baitap->id}}" value="d">
                         <i class="helper"></i>D) {{$bt->baitap->dapan4}}
                       </label>
                     </div>
-                  </form>
-                </div>
-              </div>
-              @php
-              $cau++;
-              @endphp
-              @endforeach
-              {{-- <div class="col-sm-12">
-                <h6 class="col-sm-12">Câu hỏi 1: Bạn hãy cho biết HTML là viết tắt của từ khóa nào </h6>
-                <div class="card col-sm-12" style="white-space: normal; padding: 0">
-                  <div class="card-header" style="text-align: left">
-                    <h5>Đáp án của bạn</h5>
-                  </div>
-                  <div class="card-block">
-                    <div id="header" style="text-align: left; padding-left: 20px; padding-top: 10px">
-                      <div id="headerRight">
-                        <div contenteditable="true">
-                          <p>
-                            Nhập câu trả lời
-                          </p>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
-              </div> --}}
-              <div class="card-footer col-sm-12" style="text-align: center">
-                <button class="btn btn-info btn-round waves-effect waves-light">Nộp bài</button>
+                @php
+                $cau++;
+                @endphp
+                @endforeach
+                @else
+                <span style="text-align:center"><i>Chưa có btvn</i></span>
+                @endif
+                <div class="card-footer col-sm-12" style="text-align: center">
+                  <button type="submit" class="btn btn-info btn-round waves-effect waves-light">Nộp bài</button>
+                  <button type="button" class="btn btn-default btn-round">Trở lại</button>
+                </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>

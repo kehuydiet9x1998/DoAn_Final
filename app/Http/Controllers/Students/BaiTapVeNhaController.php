@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Students;
 
 use App\Http\Controllers\Controller;
+use App\Models\BaiTap;
 use App\Models\BuoiHoc;
 use App\Models\DanhSachBaiTap;
 use Illuminate\Http\Request;
@@ -17,29 +18,18 @@ class BaiTapVeNhaController extends Controller
    */
   public function index()
   {
-    // $data = DB::table('buoi_hoc')
-    //   ->join('lop_hoc', 'lop_hoc.id', '=', 'buoi_hoc.lop_hoc_id')
-    //   ->join('giao_vien', 'lop_hoc.giao_vien_id', '=', 'giao_vien.id')
-    //   ->join('phan_lop', 'lop_hoc.id', '=', 'phan_lop.lop_hoc_id')
-    //   ->where('phan_lop.hoc_sinh_id', '=', 1)
-    //   ->select('lop_hoc.id', 'lop_hoc.tenlop', 'buoi_hoc.id', 'giao_vien.hodem', 'giao_vien.ten')->get();
     $hocsinh = auth()->user()->hocsinh;
-    $buoihoc = $hocsinh->dsLopHoc()
+    $buoihoc = $hocsinh
+      ->dsLopHoc()
       ->with('lopHoc.dsBuoiHoc')
       ->get()
       ->pluck('lopHoc.dsBuoiHoc')
       ->collapse()
       ->unique('id')
       ->values();
-    return view('backend.students.baitapvenha.homework', ['buoihocs' => $buoihoc]);
-
-    // SELECT
-    // lop_hoc.id,lop_hoc.tenlop,buoi_hoc.id,giao_vien.hodem,giao_vien.ten
-    // FROM phan_lop,buoi_hoc,lop_hoc,giao_vien
-    // WHERE lop_hoc.id = phan_lop.lop_hoc_id
-    // and lop_hoc.id=buoi_hoc.lop_hoc_id
-    // and phan_lop.hoc_sinh_id = 1
-    // and lop_hoc.giao_vien_id = giao_vien.id
+    return view('backend.students.baitapvenha.homework', [
+      'buoihocs' => $buoihoc,
+    ]);
   }
 
   /**
@@ -60,30 +50,45 @@ class BaiTapVeNhaController extends Controller
    */
   public function store(Request $request)
   {
-    //
+    foreach ($request['bai_tap_id'] as $bai_tap_id) {
+      $dapan = BaiTap::find($bai_tap_id)->dapan;
+      if ($request->has($bai_tap_id)) {
+        DanhSachBaiTap::updateOrCreate(
+          [
+            'buoi_hoc_id' => $request['buoi_hoc_id'],
+            'bai_tap_id' => $bai_tap_id,
+            'hoc_sinh_id' => $request['hoc_sinh_id'],
+          ],
+          [
+            'dapan' => $request['bai_tap_id'],
+            'diem' => $dapan == $request[$bai_tap_id] ? 1 : 0,
+            'trangthai' => 'Đã hoàn thành',
+          ]
+        );
+      }
+    }
+    return back();
   }
 
   /**
    * Display the specified resource.
    *
-   * @param  \App\Models\LopHoc  $lopHoc
+   * @param  \App\Models\LopHoc  $lopHoc'
    * @return \Illuminate\Http\Response
    */
   public function show($id = '')
   {
-    // $data = DanhSachBaiTap::where('buoi_hoc_id', '=', $id);
-    // $data = DB::table('danh_sach_bai_tap')
-    //   ->join('bai_tap', 'danh_sach_bai_tap.bai_tap_id', '=', 'bai_tap.id')
-    //   ->where('buoi_hoc_id', '=', $id)
-    //   ->select('danh_sach_bai_tap.*', 'bai_tap.*')->get();
     $hocsinh = auth()->user()->hocsinh;
 
-    $data = BuoiHoc::find($id)->dsBaiTap()->where('hoc_sinh_id', '=', $hocsinh->id)->get();
-    // return $data;
-    return view('backend.students.baitapvenha.homework-detail', ['btvn' => $data]);
-    // SELECT * FROM danh_sach_bai_tap,bai_tap
-    // WHERE danh_sach_bai_tap.bai_tap_id = bai_tap.id
-    // and danh_sach_bai_tap.buoi_hoc_id = 1
+    $data = BuoiHoc::find($id)
+      ->dsBaiTap()
+      ->where('hoc_sinh_id', '=', $hocsinh->id)
+      ->get();
+    $buoihoc = BuoiHoc::find($id);
+    return view('backend.students.baitapvenha.homework-detail', [
+      'btvn' => $data,
+      'buoihoc' => $buoihoc,
+    ]);
   }
 
   /**

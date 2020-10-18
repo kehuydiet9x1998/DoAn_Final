@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Teachers;
+namespace App\Http\Controllers\Students;
 
 use App\Http\Controllers\Controller;
-use App\Models\GiaoVien;
+use App\Models\HocSinh;
 use Illuminate\Http\Request;
 
 class LichController extends Controller
@@ -15,7 +15,13 @@ class LichController extends Controller
    */
   public function index()
   {
-    $dsLopHoc = auth()->user()->giaoVien->dsLopHoc;
+    $dsLopHoc = auth()
+      ->user()
+      ->hocSinh->dslophoc()
+      ->with('lophoc')
+      ->get()
+      ->pluck('lophoc');
+    // return $dsLopHoc;
     return view('backend.teachers.calendar', compact('dsLopHoc'));
   }
 
@@ -43,20 +49,21 @@ class LichController extends Controller
   /**
    * Display the specified resource.
    *
-   * @param  \App\Models\GiaoVien  $giaoVien
+   * @param  \App\Models\HocSinh  $hocSinh
    * @return \Illuminate\Http\Response
    */
-  public function show(GiaoVien $giaoVien)
+  public function show(HocSinh $hocSinh)
   {
+    //
   }
 
   /**
    * Show the form for editing the specified resource.
    *
-   * @param  \App\Models\GiaoVien  $giaoVien
+   * @param  \App\Models\HocSinh  $hocSinh
    * @return \Illuminate\Http\Response
    */
-  public function edit(GiaoVien $giaoVien)
+  public function edit(HocSinh $hocSinh)
   {
     //
   }
@@ -65,10 +72,10 @@ class LichController extends Controller
    * Update the specified resource in storage.
    *
    * @param  \Illuminate\Http\Request  $request
-   * @param  \App\Models\GiaoVien  $giaoVien
+   * @param  \App\Models\HocSinh  $hocSinh
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, GiaoVien $giaoVien)
+  public function update(Request $request, HocSinh $hocSinh)
   {
     //
   }
@@ -76,10 +83,10 @@ class LichController extends Controller
   /**
    * Remove the specified resource from storage.
    *
-   * @param  \App\Models\GiaoVien  $giaoVien
+   * @param  \App\Models\HocSinh  $hocSinh
    * @return \Illuminate\Http\Response
    */
-  public function destroy(GiaoVien $giaoVien)
+  public function destroy(HocSinh $hocSinh)
   {
     //
   }

@@ -49,7 +49,6 @@ Route::middleware(['auth', 'web'])->group(function () {
     });
   });
 
-
   Route::prefix('/contacts')->group(function () {
     Route::resource('students', "Contacts\StudentController");
     Route::resource('feedbacks', "Contacts\FeedBackController");
@@ -85,10 +84,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('courses', 'Students\KhoaHocController');
     Route::resource('home-work', 'Students\BaiTapVeNhaController');
     Route::resource('lessons', 'Students\BuoiHocController');
-
-    Route::get('/calendar', function () {
-      return view('backend.students.calendar');
-    });
+    Route::resource('calendar', 'Students\LichController');
     Route::get('home-work/1', function () {
       return view('backend.students.homework-detail');
     });

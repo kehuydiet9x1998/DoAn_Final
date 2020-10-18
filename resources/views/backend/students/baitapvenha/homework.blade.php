@@ -54,11 +54,13 @@
                     </thead>
                     <tbody>
                       @foreach ($buoihocs as $buoihoc)
+                      @if($buoihoc->dsbaitap->count()>0)
                       <tr>
                         <td>
                           <div class="d-inline-block align-middle">
                             <div class="d-inline-block">
-                              <a href="class/detail">
+                              <a href="/student/class/{{$buoihoc->lopHoc->id}}">
+
 
                                 <h6 class="name_link_green">{{$buoihoc->lopHoc->tenlop}}</h6>
                               </a>
@@ -74,8 +76,7 @@
                         <td><label class="badge badge-inverse-success">{{'chưa biết viết gì'}}</label>
                         </td>
                         <td>
-                          <a href="{{route('home-work.show',$buoihoc->id)}}"
-                            style="background-color: white; border: none; padding: 0; text-align: center">
+                          <a href="{{route('home-work.show',$buoihoc->id)}}" style="background-color: white; border: none; padding: 0; text-align: center">
                             <i class="fa fa-edit f-w-600 f-16 m-r-15 text-c-green" style="font-size: 16px">
                               <h5 style="color: black; font-size: 14px">
                                 BTVN
@@ -83,7 +84,7 @@
                             </i>
                           </a>
                         </td>
-                      </tr>
+                      </tr>@endif
                       @endforeach
                     </tbody>
                   </table>
