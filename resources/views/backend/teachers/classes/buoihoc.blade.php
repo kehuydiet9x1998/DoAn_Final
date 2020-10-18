@@ -10,14 +10,13 @@
          </div>
        </div>
        <div class="card-block">
-         <ul style="display: flex">
-           <li style="margin: 0 10px">
+         <ul class="col-sm-12">
+           <li style="margin: 0px 10px 5px 0px; float: left">
              <button data-id="1" class="btn waves-effect waves-light btn-round" data-toggle="modal"
                data-target="#hoccu-Modal">HỌC CỤ</button>
              @include('backend.teachers.classes.hoccu-modal')
-
            </li>
-           <li style="margin: 0 10px">
+           <li style="margin: 0px 10px 5px 0px; float: left">
              <button class="btn waves-effect waves-light btn-round"
                onclick="  document.getElementById('checkin-form').submit();">CHECK-IN</button>
            </li>
@@ -25,8 +24,7 @@
              @csrf
              <input type="hidden" name="buoi_hoc_id" value="{{$lesson->id}}">
            </form>
-
-           <li style="margin: 0 10px">
+           <li style="margin: 0px 10px 5px 0px; float: left">
              <button class="btn waves-effect waves-light btn-round"
                onclick="  document.getElementById('checkout-form').submit();">CHECK-OUT</button>
            </li>
@@ -35,18 +33,17 @@
              <input type="hidden" name="buoi_hoc_id" value="{{$lesson->id}}">
              <input type="hidden" name="giocheckout">
            </form>
-
-           <li style="margin: 0 10px">
+           <li style="margin: 0px 10px 5px 0px; float: left">
              <button data-id="1" class="btn waves-effect waves-light btn-round" data-toggle="modal"
                data-target="#diemdanh-Modal">ĐIỂM DANH</button>
              @include('backend.teachers.classes.diemdanh-modal')
            </li>
-           <li style="margin: 0 10px">
+           <li style="margin: 0px 10px 5px 0px; float: left">
              <button data-id="1" class="btn waves-effect waves-light btn-round" data-toggle="modal"
                data-target="#hoclieu-Modal">HỌC LIỆU</button>
              @include('backend.teachers.classes.hoclieu-modal')
            </li>
-           <li style="margin: 0 10px">
+           <li style="margin: 0px 10px 5px 0px; float: left">
              <button data-id="1" class="btn waves-effect waves-light btn-round" data-toggle="modal"
                data-target="#giaobaitap-Modal">GIAO BÀI TẬP</button>
              @include('backend.teachers.classes.giaobaitap-modal')

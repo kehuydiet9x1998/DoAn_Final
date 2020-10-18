@@ -58,7 +58,7 @@
                         <td>
                           <div class="d-inline-block align-middle">
                             <div class="d-inline-block">
-                              <a href="class/detail">
+                              <a href={{route('class.show',$buoihoc->lopHoc->id)}}>
 
                                 <h6 class="name_link_green">{{$buoihoc->lopHoc->tenlop}}</h6>
                               </a>
