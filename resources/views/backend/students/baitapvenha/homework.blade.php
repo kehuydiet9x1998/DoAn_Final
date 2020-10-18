@@ -46,7 +46,6 @@
                     <thead>
                       <tr>
                         <th>Mã lớp</th>
-                        <th>Giáo viên</th>
                         <th>Buổi học</th>
                         <th>Trạng thái</th>
                         <th>Action</th>
@@ -63,16 +62,14 @@
 
                                 <h6 class="name_link_green">{{$buoihoc->lopHoc->tenlop}}</h6>
                               </a>
-                              <p>{{$buoihoc->lopHoc->khoahoc->tenkhoahoc}}</p>
-
+                              <p style="margin-bottom:5px" class="text-muted">{{$buoihoc->lopHoc->khoahoc->tenkhoahoc}}</p>
+                              <p class="m-b-0 text-muted">Giáo viên:{{$buoihoc->giaovien->hodem.' '.$buoihoc->giaovien->ten}}</p>
                             </div>
                           </div>
                         </td>
-                        <td>
-                          <h6>{{$buoihoc->giaovien->hodem.' '.$buoihoc->giaovien->ten}}</h6>
-                        </td>
+
                         <td style="padding-left: 30px">{{$buoihoc->id}}</td>
-                        <td><label class="badge badge-inverse-success">{{'chưa biết viết gì'}}</label>
+                        <td><label class="badge badge-inverse-success">{{$buoihoc->dsbaitap[0]->trangthai}}</label>
                         </td>
                         <td>
                           <a href="{{route('home-work.show',$buoihoc->id)}}" style="background-color: white; border: none; padding: 0; text-align: center">
@@ -96,9 +93,4 @@
     </div>
   </div>
 </div>
-@endsection
-@section('script')
-<script type="text/javascript" src="{{asset('assets/js/form-validation.js')}}"></script>
-<script type="text/javascript" src="{{asset('assets/js/validate.js')}}"></script>
-<script type="text/javascript" src="{{asset('assets/js/underscore-min.js')}}"></script>
 @endsection

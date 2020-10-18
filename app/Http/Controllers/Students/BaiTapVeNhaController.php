@@ -60,7 +60,7 @@ class BaiTapVeNhaController extends Controller
             'hoc_sinh_id' => $request['hoc_sinh_id'],
           ],
           [
-            'dapan' => $request['bai_tap_id'],
+            'chon' => $request[$bai_tap_id],
             'diem' => $dapan == $request[$bai_tap_id] ? 1 : 0,
             'trangthai' => 'Đã hoàn thành',
           ]
@@ -79,12 +79,20 @@ class BaiTapVeNhaController extends Controller
   public function show($id = '')
   {
     $hocsinh = auth()->user()->hocsinh;
-
+    $buoihoc = BuoiHoc::find($id);
     $data = BuoiHoc::find($id)
       ->dsBaiTap()
       ->where('hoc_sinh_id', '=', $hocsinh->id)
       ->get();
-    $buoihoc = BuoiHoc::find($id);
+    if (count($data) > 0) {
+      if ($data[0]->trangthai == 'Đã hoàn thành') {
+        return view('backend.students.baitapvenha.homework-result', [
+          'btvn' => $data,
+          'buoihoc' => $buoihoc,
+        ]);
+      }
+    }
+
     return view('backend.students.baitapvenha.homework-detail', [
       'btvn' => $data,
       'buoihoc' => $buoihoc,

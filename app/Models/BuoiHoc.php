@@ -40,6 +40,11 @@ class BuoiHoc extends Model
     return $this->belongsTo(LopHoc::class);
   }
 
+  public function dsNhanXetHocSinh()
+  {
+    return $this->hasMany(NhanXetHocSinh::class);
+  }
+
   public function checkIn()
   {
     return $this->hasOne(CheckIn::class);

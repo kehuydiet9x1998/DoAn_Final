@@ -16,7 +16,7 @@
                   <h6 class="col-sm-12">Học viên : {{auth()->user()->hocsinh->hodem. ' '.auth()->user()->hocsinh->ten}}
                   </h6>
                   <h6 class="col-sm-12">Buổi học :
-                    {{$buoihoc->id}}/{{$buoihoc->lophoc->dsbuoihoc->count()}}</h6>
+                    {{(int)($buoihoc->id) - (int)($buoihoc->lophoc->dsbuoihoc()->first()->id) +1}}/{{$buoihoc->lophoc->dsbuoihoc->count()}}</h6>
                   <h6 class="col-sm-12">Ngày học : {{$buoihoc->ngayhoc}}</h6>
                   <h6 class="col-sm-12 text-c-green" style="display: none">Số câu đúng : 1/10</h6>
                   <h6 class="col-sm-12 text-c-green" style="display: none">Số điểm: 1/10</h6>
@@ -72,7 +72,7 @@
                 @endif
                 <div class="card-footer col-sm-12" style="text-align: center">
                   <button type="submit" class="btn btn-info btn-round waves-effect waves-light">Nộp bài</button>
-                  <button type="button" class="btn btn-default btn-round">Trở lại</button>
+                  <button onclick="window.history.back();" type="button" class="btn btn-default btn-round">Trở lại</button>
                 </div>
               </div>
             </form>
@@ -82,9 +82,4 @@
     </div>
   </div>
 </div>
-@endsection
-@section('script')
-<script type="text/javascript" src="{{asset('assets/js/form-validation.js')}}"></script>
-<script type="text/javascript" src="{{asset('assets/js/validate.js')}}"></script>
-<script type="text/javascript" src="{{asset('assets/js/underscore-min.js')}}"></script>
 @endsection

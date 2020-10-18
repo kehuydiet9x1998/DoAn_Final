@@ -33,6 +33,7 @@ class CreateDanhSachBaiTapsTable extends Migration
       $table->string('trangthai')->default('Chưa hoàn thành');
       $table->float('diem')->default(0);
       $table->string('nhanxet')->default('');
+      $table->string('chon')->default('');
       $table->timestamps();
       $table->softDeletes();
     });

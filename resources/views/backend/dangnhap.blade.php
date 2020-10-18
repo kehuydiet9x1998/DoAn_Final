@@ -63,7 +63,7 @@
                 @csrf
 
                 <div class="form-group form-primary">
-                  <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name">
+                  <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="username">
                   <span class="form-bar"></span>
                   <label class="float-label">Tên đăng nhập</label>
                   @error('name')

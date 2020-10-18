@@ -19,6 +19,7 @@ class DanhSachBaiTap extends Model
     'trangthai',
     'diem',
     'nhanxet',
+    'chon',
   ];
 
   public function buoiHoc()

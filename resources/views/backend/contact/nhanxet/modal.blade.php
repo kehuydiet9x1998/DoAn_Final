@@ -52,7 +52,5 @@
    };
 
  </script>
- <script type="text/javascript" src="{{asset('assets/js/form-validation.js')}}"></script>
- <script type="text/javascript" src="{{asset('assets/js/validate.js')}}"></script>
- <script type="text/javascript" src="{{asset('assets/js/underscore-min.js')}}"></script>
+
  <script type="text/javascript" src="{{asset('assets/js/bootstrap.min.js')}}"></script>

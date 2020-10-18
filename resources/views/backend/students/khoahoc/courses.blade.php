@@ -12,15 +12,14 @@
                   <div class="col-lg-12">
                     <ul class="nav nav-tabs md-tabs " role="tablist">
                       <li class="nav-item">
-                        <a class="nav-link active show" data-toggle="tab" href="#home7" role="tab" aria-selected="true"
-                          style="font-size: 14px; font-weight: bold;">
+                        <a class="nav-link active show" data-toggle="tab" href="#home7" role="tab" aria-selected="true" style="font-size: 14px; font-weight: bold;">
                           <i class="fa fa-info-circle"></i>DANH SÁCH KHÓA HỌC</a>
                         <div class="slide"></div>
                       </li>
                     </ul>
                     @foreach ($khoahocs as $khoahoc)
                     <div class="tab-content card-block">
-                      {{--  Thông tin khóa học    --}}
+                      {{-- Thông tin khóa học    --}}
                       <div class="tab-pane active show" id="home7" role="tabpanel">
                         <div class="row">
                           <div class="col-sm-12">
@@ -83,14 +82,12 @@
                                     </div>
                                   </div>
                                   <div class="col-lg-12" style="text-align: center">
-                                    <iframe class="col-sm-auto" src="https://www.youtube.com/embed/tgbNymZ7vqY"
-                                      allowfullscreen>
+                                    <iframe class="col-sm-auto" src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen>
                                     </iframe>
                                   </div>
                                   <div class="col-sm-12" style="text-align: center; margin-top: 5px">
                                     <button data-id="1" class="btn waves-effect waves-light btn-round">
-                                      <a style="font-size: 14px; font-weight: 700;"
-                                        href="{{route('courses.show',$khoahoc->id)}}">
+                                      <a style="font-size: 14px; font-weight: 700;" href="{{route('courses.show',$khoahoc->id)}}">
                                         XEM CHI TIẾT KHÓA HỌC
                                       </a>
                                     </button>
@@ -118,10 +115,4 @@
     </div>
   </div>
 </div>
-@endsection
-@section('script')
-{{-- <script type="text/javascript" src="{{asset('assets/js/form-validation.js')}}"></script>
-<script type="text/javascript" src="{{asset('assets/js/validate.js')}}"></script>
-<script type="text/javascript" src="{{asset('assets/js/underscore-min.js')}}"></script>
-<script type="text/javascript" src="{{asset('assets/js/bootstrap.min.js')}}"></script> --}}
 @endsection

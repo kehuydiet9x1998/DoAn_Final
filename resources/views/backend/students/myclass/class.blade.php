@@ -22,10 +22,8 @@
                     </select>
                   </div>
                   <div class="col-sm-12 col-xl-3 m-b-30">
-                    <input id="date" style="display:none" type="date" class="form-control"
-                      placeholder="Lọc theo ngày" />
-                    <input placeholder="Lọc theo ngày" class="textbox-n form-control" type="text"
-                      onfocus="(this.type='date')" id="date" />
+                    <input id="date" style="display:none" type="date" class="form-control" placeholder="Lọc theo ngày" />
+                    <input placeholder="Lọc theo ngày" class="textbox-n form-control" type="text" onfocus="(this.type='date')" id="date" />
                   </div>
                   <div class="col-sm-12 col-xl-3 m-b-30">
                     <input type="text" class="form-control" name="timkiem" id="timkiem" placeholder="Tìm trong bảng">
@@ -81,16 +79,14 @@
                           <label class="badge badge-inverse-success">{{$class->trangthai}}</label>
                         </td>
                         <td>
-                          <a href="home-work"
-                            style="background-color: white; border: none; padding: 0; text-align: center">
+                          <a href="home-work" style="background-color: white; border: none; padding: 0; text-align: center">
                             <i class="fa fa-edit f-w-600 f-16 m-r-15 text-c-green" style="font-size: 16px">
                               <h5 style="color: black; font-size: 14px">
                                 BTVN
                               </h5>
                             </i>
                           </a>
-                          <a href="class/comment/1"
-                            style="background-color: white; border: none; padding: 0; text-align: center">
+                          <a href="class/comment/1" style="background-color: white; border: none; padding: 0; text-align: center">
                             <i class="fa fa-commenting f-w-600 f-16 m-r-15 text-c-green" style="font-size: 16px">
                               <h5 style="color: black; font-size: 14px">
                                 Nhận xét GV
@@ -111,9 +107,4 @@
     </div>
   </div>
 </div>
-@endsection
-@section('script')
-<script type="text/javascript" src="{{asset('assets/js/form-validation.js')}}"></script>
-<script type="text/javascript" src="{{asset('assets/js/validate.js')}}"></script>
-<script type="text/javascript" src="{{asset('assets/js/underscore-min.js')}}"></script>
 @endsection
