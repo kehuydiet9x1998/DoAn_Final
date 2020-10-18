@@ -8,21 +8,21 @@
         </div>
       </div>
       <div class="card-block">
-        <ul style="display: flex">
-          <li style="margin: 0 10px">
+        <ul>
+          <li style="margin: 0px 10px 5px 0px; float: left">
             <button data-id="1" class="btn waves-effect waves-light btn-round">
               <a style="font-size: 14px; font-weight: 700" href="{{route('home-work.show',$buoihoc->id)}}">LÀM BÀI
                 TẬP</a>
             </button>
           </li>
-          <li style="margin: 0 10px">
+          <li style="margin: 0px 10px 5px 0px; float: left">
             <button type="button" class="btn waves-effect waves-light btn-round" data-toggle="modal"
               data-target="#mail-Modal" style="font-size: 14px; font-weight: bold">
               XEM NHẬN XÉT
             </button>
             @include('backend.students.mycomment-modal')
           </li>
-          <li style="margin: 0 10px">
+          <li style="margin: 0px 10px 5px 0px; float: left">
             <button data-id="1" class="btn waves-effect waves-light btn-round">
               <a style="font-size: 14px; font-weight: 800" href="comment/1">NHẬN XÉT GIẢNG
                 VIÊN</a>

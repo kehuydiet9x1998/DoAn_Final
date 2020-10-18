@@ -33,51 +33,51 @@
                                 <div class="row ui-sortable" id="draggablePanelList">
                                   <div class="col-lg-12 col-xl-6 ui-sortable-handle">
                                     <div class="card-sub">
-                                      <div class="card-block" style="display: flex; margin-top: -25px">
-                                        <h5 class="card-title"><i class="fa fa-code"></i>Mã khóa học :</h5>
-                                        <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px">
+                                      <div class="card-block" style="margin-top: -25px">
+                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-code"></i>Mã khóa học :</h5>
+                                        <h5 class="card-title">
                                           <b>{{$khoahoc->id}}</b></h5>
                                       </div>
-                                      <div class="card-block" style="display: flex; margin-top: -40px">
-                                        <h5 class="card-title"><i class="fa fa-user-circle"></i>Sĩ số tối đa:</h5>
-                                        <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px">
+                                      <div class="card-block" style="margin-top: -40px">
+                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-user-circle"></i>Sĩ số tối đa:</h5>
+                                        <h5 class="card-title">
                                           <b>{{$khoahoc->sisotoida}}</b></h5>
                                       </div>
-                                      <div class="card-block" style="display: flex; margin-top: -40px">
-                                        <h5 class="card-title"><i class="fa fa-clock-o"></i>Độ tuổi:</h5>
-                                        <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px">
+                                      <div class="card-block" style="margin-top: -40px">
+                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-clock-o"></i>Độ tuổi:</h5>
+                                        <h5 class="card-title">
                                           <b>{{$khoahoc->dotuoi}}</b></h5>
                                       </div>
-                                      <div class="card-block" style="display: flex; margin-top: -40px">
-                                        <h5 class="card-title"><i class="fa fa-graduation-cap"></i>Điều kiện bắt buộc:
+                                      <div class="card-block" style="margin-top: -40px">
+                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-graduation-cap"></i>Điều kiện bắt buộc:
                                         </h5>
-                                        <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px">
+                                        <h5 class="card-title" style="margin-top: 1.5px">
                                           <b>{{$khoahoc->dieukienhoc}}</b></h5>
                                       </div>
                                     </div>
                                   </div>
                                   <div class="col-lg-12 col-xl-6 ui-sortable-handle">
                                     <div class="card-sub">
-                                      <div class="card-block" style="display: flex; margin-top: -25px">
-                                        <h5 class="card-title"><i class="fa fa-bars"></i>Loại khóa học: </h5>
-                                        <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px">
+                                      <div class="card-block" style="margin-top: -25px">
+                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-bars"></i>Loại khóa học: </h5>
+                                        <h5 class="card-title">
                                           <span>{{$khoahoc->loaikhoaHoc->tenloaikhoahoc}}</span></h5>
                                       </div>
-                                      <div class="card-block" style="display: flex; margin-top: -40px">
-                                        <h5 class="card-title"><i class="fa fa-book"></i>Học phí :</h5>
-                                        <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px">
+                                      <div class="card-block" style="margin-top: -40px">
+                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-book"></i>Học phí :</h5>
+                                        <h5 class="card-title">
                                           <b>{{number_format($khoahoc->hocphi)}} VNĐ</b>
                                         </h5>
                                       </div>
-                                      <div class="card-block" style="display: flex; margin-top: -40px">
-                                        <h5 class="card-title"><i class="fa fa-bank"></i>Loại lớp học :</h5>
-                                        <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px"><b>Group
+                                      <div class="card-block" style="margin-top: -40px">
+                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-bank"></i>Loại lớp học :</h5>
+                                        <h5 class="card-title"><b>Group
                                             Class</b></h5>
                                       </div>
                                       <div class="card-block" style="margin-top: -40px">
-                                        <h5 class="card-title" style="float: left"><i class="fa fa-building"></i>Trung
+                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-building"></i>Trung
                                           tâm :</h5>
-                                        <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px"><b>104 -
+                                        <h5 class="card-title"><b>104 -
                                             Lương Khánh Thiện</b></h5>
                                       </div>
                                     </div>
