@@ -255,6 +255,8 @@
 </div>
 
 <script>
+  // alert('ok')
+
   function myReset() {
     $('#mail-Modal').hide();
 
