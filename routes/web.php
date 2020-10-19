@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Teachers\BaiTapController;
 use Illuminate\Support\Facades\Route;
 
@@ -8,6 +9,7 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth', 'web'])->group(function () {
+  Route::get('/dashboard', [DashboardController::class, 'index']);
   Route::prefix('/administrators')->group(function () {
     Route::resource('courses', "Administrators\KhoaHocController");
     Route::resource('staffs', "Administrators\NhanVienController");
@@ -47,9 +49,6 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::get('items', function () {
       return view('backend.teachers.items');
     });
-    Route::get('dashboard', function () {
-      return view('backend.teachers.dashboard-teacher');
-    });
   });
 
   Route::prefix('/contacts')->group(function () {
@@ -58,9 +57,6 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
     Route::get('list-teachers', function () {
       return view('backend.contact.listTeacher');
-    });
-    Route::get('dashboard', function () {
-      return view('backend.contact.dashboard-contact');
     });
   });
 
@@ -80,9 +76,6 @@ Route::middleware(['auth', 'web'])->group(function () {
   });
 
   Route::prefix('/student')->group(function () {
-    Route::get('dashboard', function () {
-      return view('backend.students.dashboard-student');
-    });
     Route::resource('class', "Students\MyClassController");
     Route::resource('courses', 'Students\KhoaHocController');
     Route::resource('home-work', 'Students\BaiTapVeNhaController');
@@ -114,9 +107,7 @@ Route::middleware(['auth', 'web'])->group(function () {
       return view('backend.test');
     });
   });
-  Route::get('/dashboard', function () {
-    return view('backend.dashboard');
-  });
+
   Route::get('/myhome', function () {
     return view('backend.myhome');
   });
