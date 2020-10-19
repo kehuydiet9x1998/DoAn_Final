@@ -52,18 +52,6 @@ Route::middleware(['auth', 'web'])->group(function () {
     });
   });
 
-  Route::prefix('/contacts')->group(function () {
-    Route::resource('students', "Contacts\StudentController");
-    Route::resource('feedbacks', "Contacts\FeedBackController");
-    Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
-    Route::get('list-teachers', function () {
-      return view('backend.contact.listTeacher');
-    });
-    Route::get('dashboard', function () {
-      return view('backend.contact.dashboard-contact');
-    });
-  });
-
   Route::get('/news-feed', function () {
     return view('backend.bantin');
   });
@@ -73,7 +61,9 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('feedbacks', "Contacts\FeedBackController");
     Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
     Route::resource('list-teachers', "Contacts\GiangVienController");
-
+    Route::get('dashboard', function () {
+      return view('backend.contact.dashboard-contact');
+    });
     Route::get('classify', function () {
       return view('backend.contact.phanlop');
     });

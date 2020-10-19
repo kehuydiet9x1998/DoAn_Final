@@ -51,10 +51,13 @@
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Học viên</label>
               <div class="col-sm-9">
-                <select class="selectpicker form-control form-control-primary fill" multiple>
-                  <option>Mustard</option>
-                  <option>Ketchup</option>
-                  <option>Relish</option>
+                <select class="selectpicker form-control form-control-primary fill" data-live-search="true" data-actions-box="true"
+                        data-max-options="2" multiple>
+                  <option>Nguyễn Hải Minh</option>
+                  <option>Đặng Kim Anh</option>
+                  <option>Đặng Kim Anh</option>
+                  <option>Đặng Kim Anh</option>
+                  <option>Đinh Mỹ Ngọc</option>
                 </select>
               </div>
             </div>
