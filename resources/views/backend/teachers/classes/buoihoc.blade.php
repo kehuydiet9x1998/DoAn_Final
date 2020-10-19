@@ -105,7 +105,7 @@
                        $diemdanh->hoc_sinh_id)->where('buoi_hoc_id', $lesson->id)->first();
 
                        @endphp
-                       <a href="/teachers/xembaitap/{{$diemdanh->hoc_sinh_id}}/{{$lesson->id}}"><i class="fa fa-book f-w-600 f-16 m-r-15 {{$baitap->trangthai == 'Đã hoàn thành'? 'text-c-green' : 'text-c-orenge'}}" style="font-size: 20px"></i></a>
+                       <a href="/teachers/xembaitap/{{$diemdanh->hoc_sinh_id}}/{{$lesson->id}}"><i class="fa fa-book f-w-600 f-16 m-r-15 text-c-green" style="font-size: 20px"></i></a>
                      </li>
                  <td>
                    <label class="badge badge-primary">Đang học</label>
@@ -123,7 +123,6 @@
  <script>
    $(document).ready(function() {
      $('.nhanxet').click(function() {
-       //alert($(this).data('id'))
        $('#mail-Modal').load('/teachers/nhanxet/' + $(this).data('id'))
      });
    });

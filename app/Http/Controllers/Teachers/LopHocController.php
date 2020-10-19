@@ -39,23 +39,25 @@ class LopHocController extends Controller
    */
   public function store(Request $request)
   {
-
     $data = $request->all();
-    NhanXetHocSinh::updateOrCreate([
-      'buoi_hoc_id' => $request['buoi_hoc_id'],
-      'hoc_sinh_id' => $request['hoc_sinh_id'],
-      'lop_hoc_id' => $request['lop_hoc_id'],
-      'khoa_hoc_id' => $request['khoa_hoc_id']
-    ], $request->only([
-      "khanangtiepthu",
-      "khanangsangtao",
-      "apdungkienthuc",
-      "lambaitapvenha",
-      "ythuchoctap",
-      "tinhthanhoctap",
-      "khananglamviecnhom",
-      "kynangthuyettrinh"
-    ]));
+    NhanXetHocSinh::updateOrCreate(
+      [
+        'buoi_hoc_id' => $request['buoi_hoc_id'],
+        'hoc_sinh_id' => $request['hoc_sinh_id'],
+        'lop_hoc_id' => $request['lop_hoc_id'],
+        'khoa_hoc_id' => $request['khoa_hoc_id'],
+      ],
+      $request->only([
+        "khanangtiepthu",
+        "khanangsangtao",
+        "apdungkienthuc",
+        "lambaitapvenha",
+        "ythuchoctap",
+        "tinhthanhoctap",
+        "kynanglamviecnhom",
+        "kynangthuyettrinh",
+      ])
+    );
     // $datanhanxet = NhanXetHocSinh::where('hoc_sinh_id', '=', $request->hoc_sinh_id)->where('lop_hoc_id', '=', $request->lop_hoc_id)->where('buoi_hoc_id', '=', $request->buoi_hoc_id)->get();
     // $nhanxet = NhanXetHocSinh::where('hoc_sinh_id', '=', '2')->get();
     // return $nhanxet;

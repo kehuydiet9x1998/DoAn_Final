@@ -87,24 +87,29 @@ class NhanXetHocSinhController extends Controller
   }
   public function NhanXet($idhocsinh, $idbuoihoc, $idlophoc, $idkhoahoc)
   {
-    $data =  NhanXetHocSinh::where('hoc_sinh_id', $idhocsinh)
+    $data = NhanXetHocSinh::where('hoc_sinh_id', $idhocsinh)
       ->where('buoi_hoc_id', $idbuoihoc)
       ->where('lop_hoc_id', $idlophoc)
       ->where('khoa_hoc_id', $idkhoahoc)
       ->first();
-    return view(
-      'backend.teachers.classes.nhanxet-modal',
-      ['nhanxet' => $data, 'hocsinhid' => $idhocsinh, 'buoihocid' => $idbuoihoc, 'lophocid' => $idlophoc, 'khoahocid' => $idkhoahoc]
-    );
+    return view('backend.teachers.classes.nhanxet-modal', [
+      'nhanxet' => $data,
+      'hocsinhid' => $idhocsinh,
+      'buoihocid' => $idbuoihoc,
+      'lophocid' => $idlophoc,
+      'khoahocid' => $idkhoahoc,
+    ]);
   }
 
   public function XemNhanXet($idhocsinh, $idbuoihoc, $idlophoc, $idkhoahoc)
   {
-    $data =  NhanXetHocSinh::where('hoc_sinh_id', $idhocsinh)
+    $data = NhanXetHocSinh::where('hoc_sinh_id', $idhocsinh)
       ->where('buoi_hoc_id', $idbuoihoc)
       ->where('lop_hoc_id', $idlophoc)
       ->where('khoa_hoc_id', $idkhoahoc)
       ->first();
-    return view('backend.teachers.classes.xemnhanxet-modal', ['nhanxet' => $data]);
+    return view('backend.teachers.classes.xemnhanxet-modal', [
+      'nhanxet' => $data,
+    ]);
   }
 }

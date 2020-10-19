@@ -128,8 +128,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button onclick="myReset()" type="button" class="btn btn-default waves-effect "
-            data-dismiss="modal">Đóng</button>
+          <button onclick="myReset()" type="button" class="btn btn-default waves-effect " data-dismiss="modal">Đóng</button>
           <input type="submit" class="btn btn-primary waves-effect waves-light" value="Cập nhật nhận xét" />
         </div>
       </form>
@@ -245,8 +244,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button onclick="myReset()" type="button" class="btn btn-default waves-effect "
-            data-dismiss="modal">Đóng</button>
+          <button onclick="myReset()" type="button" class="btn btn-default waves-effect " data-dismiss="modal">Đóng</button>
           <input type="submit" class="btn btn-primary waves-effect waves-light" value="Thêm nhận xét" />
         </div>
       </form>
@@ -258,30 +256,23 @@
 
 <script>
   function myReset() {
-    $('.modal').hide();
+    $('#mail-Modal').hide();
+
     $('.modal-backdrop').hide();
   };
 
-  $(document).ready(function () {
-    $('.xemnhanxet').click(function () {
-      //alert($(this).data('id'))
-      $('#xemnhanxet-Modal').load('/teachers/xemnhanxet/' + $(this).data('id'))
-    });
+  // $(document).ready(function() {
+  //   $('.xemnhanxet').click(function() {
+  //     //alert($(this).data('id'))
+  //     $('#xemnhanxet-Modal').load('/teachers/xemnhanxet/' + $(this).data('id'))
+  //   });
 
-    $('xemlainhanxet').click(function () {
-      // myReset();
-      $('#xemnhanxet-Modal2').load('/teachers/xemnhanxet/' + $(this).data('id'))
-    })
-  });
+  //   $('xemlainhanxet').click(function() {
+  //     // myReset();
+  //     $('#xemnhanxet-Modal2').load('/teachers/xemnhanxet/' + $(this).data('id'))
+  //   })
+  // });
+
+  //đoạn này k cần nữa à
 
 </script>
-
-{{-- <script>
-  $(document).ready(function () {
-    $('.xemnhanxet').click(function () {
-      //alert($(this).data('id'))
-      $('#xemnhanxet-Modal').load('/teachers/xemnhanxet/' + $(this).data('id'))
-    });
-  });
-
-</script> --}}
