@@ -53,7 +53,7 @@ class LopHocController extends Controller
       "lambaitapvenha",
       "ythuchoctap",
       "tinhthanhoctap",
-      "khananglamviecnhom",
+      "kynanglamviecnhom",
       "kynangthuyettrinh"
     ]));
     // $datanhanxet = NhanXetHocSinh::where('hoc_sinh_id', '=', $request->hoc_sinh_id)->where('lop_hoc_id', '=', $request->lop_hoc_id)->where('buoi_hoc_id', '=', $request->buoi_hoc_id)->get();
