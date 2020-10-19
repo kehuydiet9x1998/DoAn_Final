@@ -12,14 +12,12 @@
                   <div class="col-lg-12">
                     <ul class="nav nav-tabs md-tabs " role="tablist">
                       <li class="nav-item">
-                        <a class="nav-link active show" data-toggle="tab" href="#home7" role="tab" aria-selected="true"
-                          style="font-size: 14px; font-weight: bold;">
+                        <a class="nav-link active show" data-toggle="tab" href="#home7" role="tab" aria-selected="true" style="font-size: 14px; font-weight: bold;">
                           <i class="fa fa-info-circle"></i>Chi tiết lớp học</a>
                         <div class="slide"></div>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#messages7" role="tab" aria-selected="false"
-                          style="font-size: 14px; font-weight: bold;">
+                        <a class="nav-link" data-toggle="tab" href="#messages7" role="tab" aria-selected="false" style="font-size: 14px; font-weight: bold;">
                           <i class="fa fa-fort-awesome"></i>Theo dõi bài tập về nhà</a>
                         <div class="slide"></div>
                       </li>
@@ -98,9 +96,7 @@
                                             Class</b></h5>
                                       </div>
                                       <div class="card-block" style="margin-top: -40px">
-                                        <h5 class="card-title col-sm-auto"
-                                          style="float: left; margin:0px 10px 0px 0px; padding: 0"><i
-                                            class="fa fa-building-o"></i>Trung tâm :</h5>
+                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-building-o"></i>Trung tâm :</h5>
                                         <h5 class="card-title"> TEKY - Center: 104 Lương Khánh Thiện - HP</h5>
                                       </div>
                                     </div>
@@ -128,9 +124,7 @@
                                   @foreach($dsBuoiHoc as $key=>$buoiHoc )
                                   <li style="text-align: center; margin-left: 18px; float: left">
                                     <span>---</span>
-                                    <button class="btn waves-effect waves-light buoihoc"
-                                      style="border-radius: 50%; padding: 5px 10px"
-                                      data-id="{{$buoiHoc->id}}">{{$key+1}}</button>
+                                    <button class="btn waves-effect waves-light buoihoc" style="border-radius: 50%; padding: 5px 10px" data-id="{{$buoiHoc->id}}">{{$key+1}}</button>
                                     <span>---</span>
                                     <div class="sub-text">{{$buoiHoc->ngayhoc}}</div>
                                     <div class="sub-title">
@@ -166,22 +160,35 @@
                                     <thead>
                                       <tr>
                                         <th>HỌ VÀ TÊN</th>
-                                        @for($i = 1 ; $i<13 ; $i++) <th>LESSON {{$i}}</th>
+                                        @for($i = 1 ; $i<=$class->dsBuoihoc->count() ; $i++) <th>LESSON {{$i}}</th>
                                           @endfor
                                       </tr>
                                     </thead>
                                     <tbody>
+                                      @foreach($class->dslophoc as $phanlop)
                                       <tr>
                                         <td>
                                           <div class="d-inline-block align-middle">
                                             <div class="d-inline-block">
-                                              <h6>Nguyễn Hải Minh</h6>
+                                              <h6>{{$phanlop->hocsinh->hodem. ' '. $phanlop->hocsinh->ten}}</h6>
                                             </div>
                                           </div>
                                         </td>
-                                        @for($i = 1; $i<13 ; $i++) <td style="text-align: center">{{$i}}/10</td>
-                                          @endfor
+                                        @foreach($class->dsbuoihoc as $buoihoc)
+
+                                        @php
+                                        $socau = App\Models\BuoiHoc::sobaitap($phanlop->hoc_sinh_id, $buoihoc->id);
+                                        $socaudung = App\Models\BuoiHoc::socaudung($phanlop->hoc_sinh_id, $buoihoc->id);
+                                        if($socau != 0) $diem = round($socaudung/$socau,2)*10;
+                                        else $diem = -1;
+                                        @endphp
+
+                                        <td style="text-align: center">{{$diem != -1 ? "$diem/10" : '-'}}</td>
+
+                                        @endforeach
                                       </tr>
+                                      @endforeach
+
                                     </tbody>
                                   </table>
                                 </div>
@@ -204,10 +211,10 @@
 @endsection
 @section('script')
 <script>
-  $(document).ready(function () {
+  $(document).ready(function() {
 
     // load buổi học theo id
-    $('.buoihoc').click(function () {
+    $('.buoihoc').click(function() {
       $('#buoihoc').load('/teachers/lessons/' + $(this).data('id'));
     });
     $('.buoihoc')[0].click();

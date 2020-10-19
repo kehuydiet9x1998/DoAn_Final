@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Teachers\BaiTapController;
 use Illuminate\Support\Facades\Route;
 use App\Models\NhanXetHocSinh;
 use App\Http\Controllers\students\XemNhanXetController;
@@ -45,80 +46,78 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::get('/nhanxetmodal/{hocsinhid}/{buoihocid}/{lophocid}/{khoahocid}', function ($hocsinhid, $buoihocid, $lophocid, $khoahocid) {
       return view('backend.teachers.classes.nhanxet-modal', ['hocsinhid' => $hocsinhid, 'buoihocid' => $buoihocid, 'lophocid' => $lophocid, 'khoahocid' => $khoahocid]);
     });
+
+    Route::resource('check-test', 'Teachers\BaiTapController');
+
+    Route::get('/xembaitap/{hocsinhid}/{buoihocid}', [
+      BaiTapController::class,
+      'xembaitap',
+    ]);
+
+    Route::get('check-test', function () {
+      return view('backend.teachers.chambai');
+    });
+    Route::get('comment', function () {
+      return view('backend.teachers.comment');
+    });
+
+    Route::get('items', function () {
+      return view('backend.teachers.items');
+    });
   });
 
+  Route::prefix('/contacts')->group(function () {
+    Route::resource('students', "Contacts\StudentController");
+    Route::resource('feedbacks', "Contacts\FeedBackController");
+    Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
+    Route::get('list-teachers', function () {
+      return view('backend.contact.listTeacher');
+    });
+    Route::get('dashboard', function () {
+      return view('backend.contact.dashboard-contact');
+    });
+  });
 
-
-  Route::get('check-test', function () {
-    return view('backend.teachers.chambai');
-  });
-  Route::get('comment', function () {
-    return view('backend.teachers.comment');
+  Route::get('/news-feed', function () {
+    return view('backend.bantin');
   });
 
-  Route::get('items', function () {
-    return view('backend.teachers.items');
-  });
-  Route::get('dashboard', function () {
-    return view('backend.teachers.dashboard-teacher');
-  });
-});
+  Route::prefix('/contacts')->group(function () {
+    Route::resource('students', "Contacts\StudentController");
+    Route::resource('hocphis', "Contacts\HocPhiController");
+    Route::resource('feedbacks', "Contacts\FeedBackController");
+    Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
+    Route::resource('list-teachers', "Contacts\GiangVienController");
 
-Route::prefix('/contacts')->group(function () {
-  Route::resource('students', "Contacts\StudentController");
-  Route::resource('feedbacks', "Contacts\FeedBackController");
-  Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
-  Route::get('list-teachers', function () {
-    return view('backend.contact.listTeacher');
+    Route::get('classify', function () {
+      return view('backend.contact.phanlop');
+    });
   });
-  Route::get('dashboard', function () {
-    return view('backend.contact.dashboard-contact');
-  });
-});
 
-Route::get('/news-feed', function () {
-  return view('backend.bantin');
-});
-
-Route::prefix('/contacts')->group(function () {
-  Route::resource('students', "Contacts\StudentController");
-  Route::resource('hocphis', "Contacts\HocPhiController");
-  Route::resource('feedbacks', "Contacts\FeedBackController");
-  Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
-  Route::resource('list-teachers', "Contacts\GiangVienController");
-
-  Route::get('classify', function () {
-    return view('backend.contact.phanlop');
+  Route::prefix('/student')->group(function () {
+    Route::get('dashboard', function () {
+      return view('backend.students.dashboard-student');
+    });
+    Route::resource('class', "Students\MyClassController");
+    Route::resource('courses', 'Students\KhoaHocController');
+    Route::resource('home-work', 'Students\BaiTapVeNhaController');
+    Route::resource('lessons', 'Students\BuoiHocController');
+    Route::resource('calendar', 'Students\LichController');
+    Route::resource('my-comment', 'Students\NhanXetGiaoVienController');
+    Route::get('review', function () {
+      return view('backend.students.review');
+    });
+    Route::get('/xemnhanxet/{idbuoihoc}/{idlophoc}/{idkhoahoc}', [XemNhanXetController::class, 'showNhanXet']);
+    Route::get('review', function () {
+      return view('backend.students.review');
+    });
+    Route::get('/myhome', function () {
+      return view('backend.myhome');
+    });
+    Route::get('/notifications', function () {
+      return view('backend.notification');
+    });
   });
-});
-
-Route::prefix('/student')->group(function () {
-  Route::get('dashboard', function () {
-    return view('backend.students.dashboard-student');
-  });
-  Route::resource('class', "Students\MyClassController");
-  Route::resource('courses', 'Students\KhoaHocController');
-  Route::resource('home-work', 'Students\BaiTapVeNhaController');
-  Route::resource('lessons', 'Students\BuoiHocController');
-  Route::resource('calendar', 'Students\LichController');
-  Route::resource('my-comment', 'Students\NhanXetGiaoVienController');
-  Route::get('review', function () {
-    return view('backend.students.review');
-  });
-  Route::get('/xemnhanxet/{idbuoihoc}/{idlophoc}/{idkhoahoc}', [XemNhanXetController::class, 'showNhanXet']);
-  Route::get('review', function () {
-    return view('backend.students.review');
-  });
-  Route::get('/test', function () {
-    return view('backend.test');
-  });
-  //test
-  Route::get('/test', function () {
-    return view('backend.test');
-  });
-});
-Route::get('/dashboard', function () {
-  return view('backend.dashboard');
 });
 
 Auth::routes();

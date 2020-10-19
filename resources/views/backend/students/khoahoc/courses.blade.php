@@ -105,14 +105,14 @@
               </div>
             </div>
           </div>
-          <div class="card-block" style="border-top: 1px solid #cccccc; padding-bottom: 10px; text-align: center">
+          {{-- <div class="card-block" style="border-top: 1px solid #cccccc; padding-bottom: 10px; text-align: center">
             <div style="padding-top: 10px; display: inline-block">
               {{$khoahocs->links('vendor.pagination.bootstrap-4')}}
-            </div>
-          </div>
         </div>
-      </div>
+      </div> --}}
     </div>
   </div>
+</div>
+</div>
 </div>
 @endsection

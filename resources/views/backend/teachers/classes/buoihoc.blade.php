@@ -12,9 +12,9 @@
        <div class="card-block">
          <ul class="col-sm-12">
            <li style="margin: 0px 10px 5px 0px; float: left">
-             <button data-id="1" class="btn waves-effect waves-light btn-round" data-toggle="modal"
+             < <button data-id="1" class="btn waves-effect waves-light btn-round" data-toggle="modal"
                data-target="#hoccu-Modal">HỌC CỤ</button>
-             @include('backend.teachers.classes.hoccu-modal')
+               @include('backend.teachers.classes.hoccu-modal')
            </li>
            <li style="margin: 0px 10px 5px 0px; float: left">
              <button class="btn waves-effect waves-light btn-round"
@@ -110,13 +110,15 @@
                          style="z-index: 1050;display: none; padding-right: 17px;"></div>
                      </li>
                      <li>
-                       <a href="classes/check-test"><i class="fa fa-book f-w-600 f-16 m-r-15 text-c-green"
+                       @php
+                       $baitap = App\Models\DanhSachBaiTap::where('hoc_sinh_id',
+                       $diemdanh->hoc_sinh_id)->where('buoi_hoc_id', $lesson->id)->first();
+
+                       @endphp
+                       <a href="/teachers/xembaitap/{{$diemdanh->hoc_sinh_id}}/{{$lesson->id}}"><i
+                           class="fa fa-book f-w-600 f-16 m-r-15 {{$baitap->trangthai == 'Đã hoàn thành'? 'text-c-green' : 'text-c-orenge'}}"
                            style="font-size: 20px"></i></a>
-                     </li>
-                   </ul>
-                 </td>
-                 <td>
-                   <label class="badge badge-primary">Đang học</label>
+                       <label class="badge badge-primary">Đang học</label>
                  </td>
                </tr>
                @endforeach
