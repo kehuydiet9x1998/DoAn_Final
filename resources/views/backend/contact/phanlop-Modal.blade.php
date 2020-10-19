@@ -1,5 +1,4 @@
-<div class="modal fade show" id="phanlop-Modal" tabindex="-1" role="dialog"
-     style="z-index: 1050;display: none; padding-right: 17px;">
+<div class="modal fade show" id="phanlop-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -51,22 +50,22 @@
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Học viên</label>
               <div class="col-sm-9">
-                <select class="selectpicker form-control form-control-primary fill" multiple>
-                  <option>Mustard</option>
-                  <option>Ketchup</option>
-                  <option>Relish</option>
+                <select class="selectpicker form-control form-control-primary fill" data-live-search="true" data-actions-box="true" data-max-options="3" multiple title="Choose one of the following..." multiple>
+                  <option>Nguyễn Hải Minh</option>
+                  <option>Đặng Kim Anh</option>
+                  <option>Đặng Kim Anh</option>
+                  <option>Đặng Kim Anh</option>
+                  <option>Đinh Mỹ Ngọc</option>
                 </select>
               </div>
             </div>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default waves-effect " data-dismiss="modal"
-                    onclick="myReset()">Close</button>
-            <input type="submit" class="btn btn-primary waves-effect waves-light" value="Cập nhật"/>
+          <div class=" modal-footer">
+            <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Close</button>
+            <input type="submit" class="btn btn-primary waves-effect waves-light" value="Cập nhật" />
           </div>
         </form>
       </div>
     </div>
   </div>
 </div>
-

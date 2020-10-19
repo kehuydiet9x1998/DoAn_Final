@@ -7,8 +7,9 @@
   <component name="ChangeListManager">
     <list default="true" id="dfeacd01-f2c3-4401-a83c-21a86b8aa657" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/_khoa_hoc_seeder/bai_tap.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_khoa_hoc_seeder/bai_tap.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/layout/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layout/navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/phanlop-Modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/phanlop-Modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/phanlop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/phanlop.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/test.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -263,6 +264,7 @@
       <workItem from="1602984640120" duration="3925000" />
       <workItem from="1603005631858" duration="2837000" />
       <workItem from="1603023654352" duration="8235000" />
+      <workItem from="1603093836780" duration="3220000" />
     </task>
     <servers />
   </component>
