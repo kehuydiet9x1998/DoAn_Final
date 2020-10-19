@@ -100,11 +100,14 @@
                  <td>
                    <ul style="display: flex;">
                      <li style="margin: 0 3px">
-                       <button type="button" class="btn btn-primary waves-effect" data-toggle="modal"
-                         data-target="#mail-Modal" style="background-color: white; border: none; padding: 0">
+                       <button type="button"
+                         data-id="{{$diemdanh->hoc_sinh_id}}/{{$lesson->id}}/{{$lesson->lopHoc->id}}/{{$lesson->lopHoc->khoaHoc->id}}"
+                         class="btn btn-primary waves-effect nhanxet" data-toggle="modal" data-target="#mail-Modal"
+                         style="background-color: white; border: none; padding: 0">
                          <i class="fa fa-comments-o f-w-600 f-16 m-r-15 text-c-green" style="font-size: 20px"></i>
                        </button>
-                       @include('backend.teachers.classes.nhanxet-modal')
+                       <div class="modal fade show" id="mail-Modal" tabindex="-1" role="dialog"
+                         style="z-index: 1050;display: none; padding-right: 17px;"></div>
                      </li>
                      <li>
                        <a href="classes/check-test"><i class="fa fa-book f-w-600 f-16 m-r-15 text-c-green"
@@ -124,3 +127,13 @@
      </div>
    </div>
  </div>
+
+ <script>
+   $(document).ready(function () {
+     $('.nhanxet').click(function () {
+       //alert($(this).data('id'))
+       $('#mail-Modal').load('/teachers/nhanxet/' + $(this).data('id'))
+     });
+   });
+
+ </script>

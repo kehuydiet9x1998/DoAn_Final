@@ -7,29 +7,14 @@
       </button>
     </div>
     <div class="modal-body">
-      @if (!empty($nhanxet))
-      <p style="text-align:center"><i>Bạn đã nhận xét học sinh này rồi</i></p>
-      <div class="modal-footer">
-        <ul style="display: flex;">
-          <li style="margin: 0 3px">
-            <button type="button" class="btn btn-primary waves-effect xemlainhanxet" data-toggle="modal"
-              data-target="#xemnhanxet-Modal2"
-              data-id="{{$nhanxet->hoc_sinh_id}}/{{$nhanxet->buoi_hoc_id}}/{{$nhanxet->lop_hoc_id}}/{{$nhanxet->khoa_hoc_id}}">Xem
-              nhận xét</button>
-            <div class="modal fade show" id="xemnhanxet-Modal2" tabindex="-1" role="dialog"
-              style="z-index: 1050;display: none; padding-right: 17px;"></div>
-          </li>
-        </ul>
-      </div>
-      @else
-      <form method="post" action="{{route('classes.store')}}" novalidate="">
+      <form method="post" action="" novalidate="">
         <div class="modal-body">
           <input type="hidden" name="_token" value="{{csrf_token()}}">
           {{ csrf_field() }}
-          <input type="text" style="display: none;" name="lop_hoc_id" value="{{$lophocid}}">
+          {{-- <input type="text" style="display: none;" name="lop_hoc_id" value="{{$lophocid}}">
           <input type="text" style="display: none;" name="khoa_hoc_id" value="{{$khoahocid}}">
           <input type="text" style="display: none;" name="hoc_sinh_id" value="{{$hocsinhid}}">
-          <input type="text" style="display: none;" name="buoi_hoc_id" value="{{$buoihocid}}">
+          <input type="text" style="display: none;" name="buoi_hoc_id" value="{{$buoihocid}}"> --}}
           <h5 class="col-sm-12" style="font-weight: bold;
               padding-left: 0px; padding-bottom: 8px;border-bottom: 1px solid #cccccc">Kiến thức</h5>
           <div class="form-group row" style="display: flex; align-items: center">
@@ -135,11 +120,9 @@
         <div class="modal-footer">
           <button onclick="myReset()" type="button" class="btn btn-default waves-effect "
             data-dismiss="modal">Đóng</button>
-          <input type="submit" class="btn btn-primary waves-effect waves-light" value="Thêm nhận xét" />
+          <input type="submit" class="btn btn-primary waves-effect waves-light" value="Cập nhật nhận xét" />
         </div>
       </form>
-      @endif
-
     </div>
   </div>
 </div>
@@ -150,26 +133,4 @@
     $('.modal-backdrop').hide();
   };
 
-  $(document).ready(function () {
-    $('.xemnhanxet').click(function () {
-      //alert($(this).data('id'))
-      $('#xemnhanxet-Modal').load('/teachers/xemnhanxet/' + $(this).data('id'))
-    });
-
-    $('xemlainhanxet').click(function () {
-      // myReset();
-      $('#xemnhanxet-Modal2').load('/teachers/xemnhanxet/' + $(this).data('id'))
-    })
-  });
-
 </script>
-
-{{-- <script>
-  $(document).ready(function () {
-    $('.xemnhanxet').click(function () {
-      //alert($(this).data('id'))
-      $('#xemnhanxet-Modal').load('/teachers/xemnhanxet/' + $(this).data('id'))
-    });
-  });
-
-</script> --}}

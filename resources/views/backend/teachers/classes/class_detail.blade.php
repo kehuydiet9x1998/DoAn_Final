@@ -39,12 +39,16 @@
                                   <div class="col-lg-12 col-xl-6 ui-sortable-handle">
                                     <div class="card-sub">
                                       <div class="card-block" style="margin-top: -25px">
-                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-code"></i>Mã lớp học :</h5>
+                                        <h5 class="card-title col-sm-auto"
+                                          style="float: left; margin:0px 10px 0px 0px; padding: 0"><i
+                                            class="fa fa-code"></i>Mã lớp học :</h5>
                                         <h5 class="card-title">
                                           <b>{{$class->tenlop}}</b></h5>
                                       </div>
                                       <div class="card-block" style="margin-top: -40px">
-                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-calendar"></i>Thời gian học :</h5>
+                                        <h5 class="card-title col-sm-auto"
+                                          style="float: left; margin:0px 10px 0px 0px; padding: 0"><i
+                                            class="fa fa-calendar"></i>Thời gian học :</h5>
                                         <h5 class="card-title">
                                           <b>{{$class->ngaybatdau}} đến {{$class->ngayketthuc}}</b></h5>
                                       </div>
@@ -52,7 +56,9 @@
                                       $lichhoc = $class->lichHoc;
                                       @endphp
                                       <div class="card-block" style="margin-top: -40px">
-                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-clock-o"></i>Lịch học :</h5>
+                                        <h5 class="card-title col-sm-auto"
+                                          style="float: left; margin:0px 10px 0px 0px; padding: 0"><i
+                                            class="fa fa-clock-o"></i>Lịch học :</h5>
                                         <h5 class="card-title">
                                           <b>{{$lichhoc->caHoc->thoigianbatdau}}-{{$lichhoc->caHoc->thoigianketthuc}}
                                             Thứ {{$lichhoc->thu}}</b></h5>
@@ -60,7 +66,9 @@
 
                                       </div>
                                       <div class="card-block" style="margin-top: -40px">
-                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-graduation-cap"></i>Giảng viên :</h5>
+                                        <h5 class="card-title col-sm-auto"
+                                          style="float: left; margin:0px 10px 0px 0px; padding: 0"><i
+                                            class="fa fa-graduation-cap"></i>Giảng viên :</h5>
                                         <h5 class="card-title"><b>
                                             {{$class->giaoVien->hodem. ' ' . $class->giaoVien->ten}}</b></h5>
                                       </div>
@@ -69,24 +77,32 @@
                                   <div class="col-lg-12 col-xl-6 ui-sortable-handle">
                                     <div class="card-sub">
                                       <div class="card-block" style="margin-top: -25px">
-                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-bars"></i>Khóa học: </h5>
+                                        <h5 class="card-title col-sm-auto"
+                                          style="float: left; margin:0px 10px 0px 0px; padding: 0"><i
+                                            class="fa fa-bars"></i>Khóa học: </h5>
                                         <h5 class="card-title">
                                           <b>{{$class->khoaHoc->tenkhoahoc}}</b></h5>
                                       </div>
                                       <div class="card-block" style="margin-top: -40px">
-                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-book"></i>Bài học :</h5>
+                                        <h5 class="card-title col-sm-auto"
+                                          style="float: left; margin:0px 10px 0px 0px; padding: 0"><i
+                                            class="fa fa-book"></i>Bài học :</h5>
                                         <h5 class="card-title">
                                           <b>{{$class->sobuoidahoc}}/{{$class->sobuoi}}</b></h5>
                                       </div>
                                       <div class="card-block" style="margin-top: -40px">
-                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-bank"></i>Loại lớp học :</h5>
+                                        <h5 class="card-title col-sm-auto"
+                                          style="float: left; margin:0px 10px 0px 0px; padding: 0"><i
+                                            class="fa fa-bank"></i>Loại lớp học :</h5>
                                         <h5 class="card-title"><b>Group
                                             Class</b></h5>
                                       </div>
-                                       <div class="card-block" style="margin-top: -40px">
-                                          <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-building-o"></i>Trung tâm :</h5>
-                                          <h5 class="card-title"> TEKY - Center: 104 Lương Khánh Thiện - HP</h5>
-                                        </div>
+                                      <div class="card-block" style="margin-top: -40px">
+                                        <h5 class="card-title col-sm-auto"
+                                          style="float: left; margin:0px 10px 0px 0px; padding: 0"><i
+                                            class="fa fa-building-o"></i>Trung tâm :</h5>
+                                        <h5 class="card-title"> TEKY - Center: 104 Lương Khánh Thiện - HP</h5>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
@@ -196,5 +212,6 @@
     });
     $('.buoihoc')[0].click();
   });
+
 </script>
 @endsection
