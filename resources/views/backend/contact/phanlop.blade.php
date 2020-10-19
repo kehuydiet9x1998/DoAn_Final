@@ -1,6 +1,6 @@
 @extends('backend.layout.index')
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
-{{--<link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap-multiselect.css')}}">--}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
 @section('content')
 <div class="pcoded-inner-content">
   <div class="main-body">
@@ -106,6 +106,6 @@
 </div>
 @endsection
 @section('script')
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
 @endsection

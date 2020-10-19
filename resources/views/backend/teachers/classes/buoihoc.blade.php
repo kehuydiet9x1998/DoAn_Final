@@ -12,21 +12,18 @@
        <div class="card-block">
          <ul class="col-sm-12">
            <li style="margin: 0px 10px 5px 0px; float: left">
-             < <button data-id="1" class="btn waves-effect waves-light btn-round" data-toggle="modal"
-               data-target="#hoccu-Modal">HỌC CỤ</button>
+             < <button data-id="1" class="btn waves-effect waves-light btn-round" data-toggle="modal" data-target="#hoccu-Modal">HỌC CỤ</button>
                @include('backend.teachers.classes.hoccu-modal')
            </li>
            <li style="margin: 0px 10px 5px 0px; float: left">
-             <button class="btn waves-effect waves-light btn-round"
-               onclick="  document.getElementById('checkin-form').submit();">CHECK-IN</button>
+             <button class="btn waves-effect waves-light btn-round" onclick="  document.getElementById('checkin-form').submit();">CHECK-IN</button>
            </li>
            <form id="checkin-form" action="{{route('checkin.store')}}" method="post">
              @csrf
              <input type="hidden" name="buoi_hoc_id" value="{{$lesson->id}}">
            </form>
            <li style="margin: 0px 10px 5px 0px; float: left">
-             <button class="btn waves-effect waves-light btn-round"
-               onclick="  document.getElementById('checkout-form').submit();">CHECK-OUT</button>
+             <button class="btn waves-effect waves-light btn-round" onclick="  document.getElementById('checkout-form').submit();">CHECK-OUT</button>
            </li>
            <form id="checkout-form" action="{{route('checkin.store')}}" method="post">
              @csrf
@@ -34,18 +31,15 @@
              <input type="hidden" name="giocheckout">
            </form>
            <li style="margin: 0px 10px 5px 0px; float: left">
-             <button data-id="1" class="btn waves-effect waves-light btn-round" data-toggle="modal"
-               data-target="#diemdanh-Modal">ĐIỂM DANH</button>
+             <button data-id="1" class="btn waves-effect waves-light btn-round" data-toggle="modal" data-target="#diemdanh-Modal">ĐIỂM DANH</button>
              @include('backend.teachers.classes.diemdanh-modal')
            </li>
            <li style="margin: 0px 10px 5px 0px; float: left">
-             <button data-id="1" class="btn waves-effect waves-light btn-round" data-toggle="modal"
-               data-target="#hoclieu-Modal">HỌC LIỆU</button>
+             <button data-id="1" class="btn waves-effect waves-light btn-round" data-toggle="modal" data-target="#hoclieu-Modal">HỌC LIỆU</button>
              @include('backend.teachers.classes.hoclieu-modal')
            </li>
            <li style="margin: 0px 10px 5px 0px; float: left">
-             <button data-id="1" class="btn waves-effect waves-light btn-round" data-toggle="modal"
-               data-target="#giaobaitap-Modal">GIAO BÀI TẬP</button>
+             <button data-id="1" class="btn waves-effect waves-light btn-round" data-toggle="modal" data-target="#giaobaitap-Modal">GIAO BÀI TẬP</button>
              @include('backend.teachers.classes.giaobaitap-modal')
            </li>
          </ul>
@@ -100,14 +94,10 @@
                  <td>
                    <ul style="display: flex;">
                      <li style="margin: 0 3px">
-                       <button type="button"
-                         data-id="{{$diemdanh->hoc_sinh_id}}/{{$lesson->id}}/{{$lesson->lopHoc->id}}/{{$lesson->lopHoc->khoaHoc->id}}"
-                         class="btn btn-primary waves-effect nhanxet" data-toggle="modal" data-target="#mail-Modal"
-                         style="background-color: white; border: none; padding: 0">
+                       <button type="button" data-id="{{$diemdanh->hoc_sinh_id}}/{{$lesson->id}}/{{$lesson->lopHoc->id}}/{{$lesson->lopHoc->khoaHoc->id}}" class="btn btn-primary waves-effect nhanxet" data-toggle="modal" data-target="#mail-Modal" style="background-color: white; border: none; padding: 0">
                          <i class="fa fa-comments-o f-w-600 f-16 m-r-15 text-c-green" style="font-size: 20px"></i>
                        </button>
-                       <div class="modal fade show" id="mail-Modal" tabindex="-1" role="dialog"
-                         style="z-index: 1050;display: none; padding-right: 17px;"></div>
+                       <div class="modal fade show" id="mail-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;"></div>
                      </li>
                      <li>
                        @php
@@ -115,10 +105,10 @@
                        $diemdanh->hoc_sinh_id)->where('buoi_hoc_id', $lesson->id)->first();
 
                        @endphp
-                       <a href="/teachers/xembaitap/{{$diemdanh->hoc_sinh_id}}/{{$lesson->id}}"><i
-                           class="fa fa-book f-w-600 f-16 m-r-15 {{$baitap->trangthai == 'Đã hoàn thành'? 'text-c-green' : 'text-c-orenge'}}"
-                           style="font-size: 20px"></i></a>
-                       <label class="badge badge-primary">Đang học</label>
+                       <a href="/teachers/xembaitap/{{$diemdanh->hoc_sinh_id}}/{{$lesson->id}}"><i class="fa fa-book f-w-600 f-16 m-r-15 text-c-green" style="font-size: 20px"></i></a>
+                     </li>
+                 <td>
+                   <label class="badge badge-primary">Đang học</label>
                  </td>
                </tr>
                @endforeach
@@ -131,9 +121,8 @@
  </div>
 
  <script>
-   $(document).ready(function () {
-     $('.nhanxet').click(function () {
-       //alert($(this).data('id'))
+   $(document).ready(function() {
+     $('.nhanxet').click(function() {
        $('#mail-Modal').load('/teachers/nhanxet/' + $(this).data('id'))
      });
    });

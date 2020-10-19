@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Teachers\BaiTapController;
 use Illuminate\Support\Facades\Route;
 use App\Models\NhanXetHocSinh;
@@ -11,6 +12,7 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth', 'web'])->group(function () {
+  Route::get('/dashboard', [DashboardController::class, 'index']);
   Route::prefix('/administrators')->group(function () {
     Route::resource('courses', "Administrators\KhoaHocController");
     Route::resource('staffs', "Administrators\NhanVienController");
@@ -41,11 +43,25 @@ Route::middleware(['auth', 'web'])->group(function () {
     // Route::get('/nhanxetmodal/{hocsinhid}/{buoihocid}/{lophocid}/{khoahocid}', function ($hocsinhid, $buoihocid, $lophocid, $khoahocid) {
     //   return view('backend.teachers.classes.nhanxet-modal', ['hocsinhid' => $hocsinhid, 'buoihocid' => $buoihocid, 'lophocid' => $lophocid, 'khoahocid' => $khoahocid]);
     // });
-    Route::get('/nhanxet/{hocsinhid}/{buoihocid}/{lophocid}/{khoahocid}', [NhanXetHocSinhController::class, 'NhanXet']);
-    Route::get('/xemnhanxet/{hocsinhid}/{buoihocid}/{lophocid}/{khoahocid}', [NhanXetHocSinhController::class, 'XemNhanXet']);
-    Route::get('/nhanxetmodal/{hocsinhid}/{buoihocid}/{lophocid}/{khoahocid}', function ($hocsinhid, $buoihocid, $lophocid, $khoahocid) {
-      return view('backend.teachers.classes.nhanxet-modal', ['hocsinhid' => $hocsinhid, 'buoihocid' => $buoihocid, 'lophocid' => $lophocid, 'khoahocid' => $khoahocid]);
-    });
+    Route::get('/nhanxet/{hocsinhid}/{buoihocid}/{lophocid}/{khoahocid}', [
+      NhanXetHocSinhController::class,
+      'NhanXet',
+    ]);
+    Route::get('/xemnhanxet/{hocsinhid}/{buoihocid}/{lophocid}/{khoahocid}', [
+      NhanXetHocSinhController::class,
+      'XemNhanXet',
+    ]);
+    Route::get(
+      '/nhanxetmodal/{hocsinhid}/{buoihocid}/{lophocid}/{khoahocid}',
+      function ($hocsinhid, $buoihocid, $lophocid, $khoahocid) {
+        return view('backend.teachers.classes.nhanxet-modal', [
+          'hocsinhid' => $hocsinhid,
+          'buoihocid' => $buoihocid,
+          'lophocid' => $lophocid,
+          'khoahocid' => $khoahocid,
+        ]);
+      }
+    );
 
     Route::resource('check-test', 'Teachers\BaiTapController');
 
@@ -54,9 +70,6 @@ Route::middleware(['auth', 'web'])->group(function () {
       'xembaitap',
     ]);
 
-    Route::get('check-test', function () {
-      return view('backend.teachers.chambai');
-    });
     Route::get('comment', function () {
       return view('backend.teachers.comment');
     });
@@ -95,9 +108,6 @@ Route::middleware(['auth', 'web'])->group(function () {
   });
 
   Route::prefix('/student')->group(function () {
-    Route::get('dashboard', function () {
-      return view('backend.students.dashboard-student');
-    });
     Route::resource('class', "Students\MyClassController");
     Route::resource('courses', 'Students\KhoaHocController');
     Route::resource('home-work', 'Students\BaiTapVeNhaController');
@@ -107,7 +117,10 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::get('review', function () {
       return view('backend.students.review');
     });
-    Route::get('/xemnhanxet/{idbuoihoc}/{idlophoc}/{idkhoahoc}', [XemNhanXetController::class, 'showNhanXet']);
+    Route::get('/xemnhanxet/{idbuoihoc}/{idlophoc}/{idkhoahoc}', [
+      XemNhanXetController::class,
+      'showNhanXet',
+    ]);
     Route::get('review', function () {
       return view('backend.students.review');
     });
