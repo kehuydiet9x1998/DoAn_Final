@@ -35,6 +35,31 @@ class BuoiHoc extends Model
     return date('d-m-Y', strtotime($value));
   }
 
+  public static function sobaitap($hoc_sinh_id, $buoi_hoc_id)
+  {
+    return DanhSachBaiTap::where('hoc_sinh_id', $hoc_sinh_id)
+      ->where('buoi_hoc_id', $buoi_hoc_id)
+      ->count();
+  }
+
+  public static function socaudung($hoc_sinh_id, $buoi_hoc_id)
+  {
+    $baitaps = DanhSachBaiTap::where('hoc_sinh_id', $hoc_sinh_id)
+      ->where('buoi_hoc_id', $buoi_hoc_id)
+      ->get();
+    $socaudung = 0;
+    foreach ($baitaps as $baitap) {
+      if ($baitap->chon == $baitap->baitap->dapan) {
+        $socaudung++;
+      }
+    }
+    return $socaudung;
+  }
+
+  public function diem()
+  {
+  }
+
   public function lopHoc()
   {
     return $this->belongsTo(LopHoc::class);

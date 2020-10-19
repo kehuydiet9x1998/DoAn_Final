@@ -41,9 +41,8 @@
                     <thead>
                       <tr>
                         <th>Mã lớp</th>
-                        <th>Giáo viên</th>
-                        <th>Sĩ số</th>
                         <th>Bắt đầu/Kết thúc</th>
+                        <th>Sĩ số</th>
                         <th>Buổi học</th>
                         <th>Level</th>
                         <th>Trạng thái</th>
@@ -60,18 +59,17 @@
                                 <h6 class="name_link_green">{{$class->tenlop}}</h6>
                               </a>
                               <p class=" m-b-0 text-muted">Khóa học: {{$class->KhoaHoc->tenkhoahoc}}</p>
-                              {{-- <p class="m-t-2 m-b-0 text-muted">Giáo viên: Học viện TEKY</p> --}}
+                              <p class="m-t-5 m-b-0 text-muted">Giáo viên: Học viện TEKY</p>
                             </div>
                           </div>
                         </td>
-                        <td>
-                          <h6>{{$class->GiaoVien->hodem.' '.$class->GiaoVien->ten}}</h6>
-                        </td>
-                        <td>{{$class->dsLopHoc()->count()}}</td>
+
                         <td>
                           <i class="fa fa-calendar-minus-o"></i>{{$class->ngaybatdau}}
                           <br>
                           <i class="fa fa-calendar-times-o"></i>{{$class->ngayketthuc}}</td>
+                        <td>{{$class->dsLopHoc()->count()}}</td>
+
                         <td>{{$class->sobuoi}}</td>
                         <td><label class="badge badge-inverse-success">{{$class-> KhoaHoc -> level -> tenlevel}}</label>
                         </td>
@@ -86,13 +84,13 @@
                               </h5>
                             </i>
                           </a>
-                          <a href="class/comment/1" style="background-color: white; border: none; padding: 0; text-align: center">
+                          {{-- <a href="class/comment/1" style="background-color: white; border: none; padding: 0; text-align: center">
                             <i class="fa fa-commenting f-w-600 f-16 m-r-15 text-c-green" style="font-size: 16px">
                               <h5 style="color: black; font-size: 14px">
                                 Nhận xét GV
                               </h5>
                             </i>
-                          </a>
+                          </a> --}}
                         </td>
                       </tr>
                       @endforeach

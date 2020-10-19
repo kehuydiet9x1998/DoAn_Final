@@ -89,6 +89,7 @@ class BaiTapVeNhaController extends Controller
         return view('backend.students.baitapvenha.homework-result', [
           'btvn' => $data,
           'buoihoc' => $buoihoc,
+          'hocsinh' => auth()->user()->hocsinh,
         ]);
       }
     }
@@ -96,6 +97,7 @@ class BaiTapVeNhaController extends Controller
     return view('backend.students.baitapvenha.homework-detail', [
       'btvn' => $data,
       'buoihoc' => $buoihoc,
+      'hocsinh' => auth()->user()->hocsinh,
     ]);
   }
 

@@ -1,12 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Students;
+namespace App\Http\Controllers\Teachers;
 
 use App\Http\Controllers\Controller;
-use App\Models\KhoaHoc;
+use App\Models\BuoiHoc;
+use App\Models\DanhSachBaiTap;
+use App\Models\HocSinh;
 use Illuminate\Http\Request;
 
-class KhoaHocController extends Controller
+class BaiTapController extends Controller
 {
   /**
    * Display a listing of the resource.
@@ -15,15 +17,28 @@ class KhoaHocController extends Controller
    */
   public function index()
   {
-    $data = auth()
+    $dsbuoihoc = auth()
       ->user()
-      ->hocsinh->dslophoc()
-      ->with('lophoc.khoahoc')
+      ->giaovien->dslophoc()
+      ->with('dsbuoihoc')
       ->get()
-      ->pluck('lophoc.khoahoc');
+      ->pluck('dsbuoihoc')
+      ->collapse();
+    // return $dsbuoihoc;
+    return view('backend.teachers.chambai', compact('dsbuoihoc'));
+  }
 
-    // return $data;
-    return view('backend.students.khoahoc.courses', ['khoahocs' => $data]);
+  public function xembaitap($hocsinhid, $buoihocid)
+  {
+    $data = BuoiHoc::find($buoihocid)
+      ->dsBaiTap()
+      ->where('hoc_sinh_id', '=', $hocsinhid)
+      ->get();
+    return view('backend.students.baitapvenha.homework-result', [
+      'btvn' => $data,
+      'buoihoc' => BuoiHoc::find($buoihocid),
+      'hocsinh' => HocSinh::find($hocsinhid),
+    ]);
   }
 
   /**
@@ -50,22 +65,20 @@ class KhoaHocController extends Controller
   /**
    * Display the specified resource.
    *
-   * @param  \App\Models\KhoaHoc  $khoaHoc
+   * @param  \App\Models\BuoiHoc  $buoiHoc
    * @return \Illuminate\Http\Response
    */
-  public function show($id)
+  public function show(BuoiHoc $buoiHoc)
   {
-    $data = KhoaHoc::find($id);
-    return view('backend.students.khoahoc.course-detail', ['khoahoc' => $data]);
   }
 
   /**
    * Show the form for editing the specified resource.
    *
-   * @param  \App\Models\KhoaHoc  $khoaHoc
+   * @param  \App\Models\BuoiHoc  $buoiHoc
    * @return \Illuminate\Http\Response
    */
-  public function edit(KhoaHoc $khoaHoc)
+  public function edit(BuoiHoc $buoiHoc)
   {
     //
   }
@@ -74,10 +87,10 @@ class KhoaHocController extends Controller
    * Update the specified resource in storage.
    *
    * @param  \Illuminate\Http\Request  $request
-   * @param  \App\Models\KhoaHoc  $khoaHoc
+   * @param  \App\Models\BuoiHoc  $buoiHoc
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, KhoaHoc $khoaHoc)
+  public function update(Request $request, BuoiHoc $buoiHoc)
   {
     //
   }
@@ -85,10 +98,10 @@ class KhoaHocController extends Controller
   /**
    * Remove the specified resource from storage.
    *
-   * @param  \App\Models\KhoaHoc  $khoaHoc
+   * @param  \App\Models\BuoiHoc  $buoiHoc
    * @return \Illuminate\Http\Response
    */
-  public function destroy(KhoaHoc $khoaHoc)
+  public function destroy(BuoiHoc $buoiHoc)
   {
     //
   }

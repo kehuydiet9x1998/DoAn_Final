@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Teachers\BaiTapController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -33,10 +34,12 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('diemdanh', 'Lessons\DiemDanhController');
     Route::resource('danhsachbaitap', 'Lessons\DanhSachBaiTapController');
     Route::resource('calendar', 'Teachers\LichController');
+    Route::resource('check-test', 'Teachers\BaiTapController');
 
-    Route::get('check-test', function () {
-      return view('backend.teachers.chambai');
-    });
+    Route::get('/xembaitap/{hocsinhid}/{buoihocid}', [
+      BaiTapController::class,
+      'xembaitap',
+    ]);
     Route::get('comment', function () {
       return view('backend.teachers.comment');
     });
@@ -85,6 +88,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('home-work', 'Students\BaiTapVeNhaController');
     Route::resource('lessons', 'Students\BuoiHocController');
     Route::resource('calendar', 'Students\LichController');
+
     Route::get('home-work/1', function () {
       return view('backend.students.homework-detail');
     });

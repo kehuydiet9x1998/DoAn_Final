@@ -47,6 +47,7 @@
                       <tr>
                         <th>Mã lớp</th>
                         <th>Buổi học</th>
+                        <th>Điểm</th>
                         <th>Trạng thái</th>
                         <th>Action</th>
                       </tr>
@@ -69,6 +70,14 @@
                         </td>
 
                         <td style="padding-left: 30px">{{$buoihoc->id}}</td>
+
+                        @php
+                        $socau = App\Models\BuoiHoc::sobaitap(auth()->user()->hocsinh->id, $buoihoc->id);
+                        $socaudung = App\Models\BuoiHoc::socaudung(auth()->user()->hocsinh->id, $buoihoc->id);
+                        $diem = round($socaudung/$socau,2)*10;
+                        @endphp
+
+                        <td>{{ $buoihoc->dsbaitap[0]->trangthai == 'Đã hoàn thành' ? "$diem/10" : 'Chưa có điểm'}}</td>
                         <td><label class="badge badge-inverse-success">{{$buoihoc->dsbaitap[0]->trangthai}}</label>
                         </td>
                         <td>
