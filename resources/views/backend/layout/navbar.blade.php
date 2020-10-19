@@ -96,7 +96,7 @@
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="myhome">
                   <i class="feather icon-user"></i> Trang cá nhân
                 </a>
               </li>
