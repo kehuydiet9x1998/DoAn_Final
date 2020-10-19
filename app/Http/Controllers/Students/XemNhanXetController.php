@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Students;
+namespace App\Http\Controllers\students;
 
 use App\Http\Controllers\Controller;
-use App\Models\LopHoc;
+use App\Models\NhanXet;
+use App\Models\NhanXetHocSinh;
 use Illuminate\Http\Request;
 
-class MyClassController extends Controller
+class XemNhanXetController extends Controller
 {
-  private $idbuoihoc;
   /**
    * Display a listing of the resource.
    *
@@ -16,13 +16,7 @@ class MyClassController extends Controller
    */
   public function index()
   {
-    $data = auth()
-      ->user()
-      ->hocSinh->dsLopHoc()
-      ->with('lophoc')
-      ->get()
-      ->pluck('lophoc');
-    return view('backend.students.myclass.class', ['classes' => $data]);
+    //
   }
 
   /**
@@ -49,21 +43,21 @@ class MyClassController extends Controller
   /**
    * Display the specified resource.
    *
-   * @param  \App\Models\LopHoc  $lopHoc
+   * @param  \App\Models\NhanXetHocSinh  $nhanXetHocSinh
    * @return \Illuminate\Http\Response
    */
-  public function show(LopHoc $class)
+  public function show(NhanXetHocSinh $nhanXetHocSinh)
   {
-    return view('backend.students.myclass.class-detail', ['classes' => $class]);
+    //
   }
 
   /**
    * Show the form for editing the specified resource.
    *
-   * @param  \App\Models\LopHoc  $lopHoc
+   * @param  \App\Models\NhanXetHocSinh  $nhanXetHocSinh
    * @return \Illuminate\Http\Response
    */
-  public function edit(LopHoc $lopHoc)
+  public function edit(NhanXetHocSinh $nhanXetHocSinh)
   {
     //
   }
@@ -72,10 +66,10 @@ class MyClassController extends Controller
    * Update the specified resource in storage.
    *
    * @param  \Illuminate\Http\Request  $request
-   * @param  \App\Models\LopHoc  $lopHoc
+   * @param  \App\Models\NhanXetHocSinh  $nhanXetHocSinh
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, LopHoc $lopHoc)
+  public function update(Request $request, NhanXetHocSinh $nhanXetHocSinh)
   {
     //
   }
@@ -83,11 +77,18 @@ class MyClassController extends Controller
   /**
    * Remove the specified resource from storage.
    *
-   * @param  \App\Models\LopHoc  $lopHoc
+   * @param  \App\Models\NhanXetHocSinh  $nhanXetHocSinh
    * @return \Illuminate\Http\Response
    */
-  public function destroy(LopHoc $lopHoc)
+  public function destroy(NhanXetHocSinh $nhanXetHocSinh)
   {
     //
+  }
+  public function showNhanXet($buoihocid, $lophocid, $khoahocid)
+  {
+    $idhocsinh = auth()->user()->hocsinh->id;
+    $data =  NhanXetHocSinh::where('hoc_sinh_id', $idhocsinh)->where('buoi_hoc_id', $buoihocid)->where('lop_hoc_id', $lophocid)->first();
+
+    return view('backend.students.xemnhanxet.xemnhanxet', ['nhanxet' => $data]);
   }
 }
