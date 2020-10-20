@@ -45,7 +45,7 @@
                             </div>
                           </td>
                           <td>
-                            <input name="ghichu[]" type="text" class="form-control" placeholder="Ghi chú của giáo viên" style="margin-top: -5 px">
+                            <input name="ghichu[]" type="text" class="form-control" placeholder="Ghi chú của giáo viên" style="margin-top: -5px">
                           </td>
                           <td> <label class="badge badge-primary">Đang học</label></td>
                         </tr>

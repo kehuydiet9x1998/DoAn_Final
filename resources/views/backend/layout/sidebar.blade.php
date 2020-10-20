@@ -48,7 +48,7 @@ $menu = [
 [
 "type" => "link",
 "icon" => "fa fa-dollar",
-"link" => "/admin/hocphi",
+"link" => "/contacts/hocphis",
 "text" => "Học phí",
 ],
 [
