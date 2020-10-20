@@ -1615,9 +1615,7 @@ pre code {
 .table-striped tbody tr:nth-of-type(odd) {
  background-color:rgba(0,0,0,.05)
 }
-.table-hover tbody tr:hover {
- background-color:rgba(0,0,0,.075)
-}
+
 .table-primary,
 .table-primary>td,
 .table-primary>th {

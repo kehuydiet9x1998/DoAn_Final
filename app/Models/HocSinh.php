@@ -25,6 +25,11 @@ class HocSinh extends Model
     'email',
   ];
 
+  public function getNgaysinhAttribute($value)
+  {
+    return date('d-m-Y', strtotime($value));
+  }
+
   public function dsLichTraiNghiem()
   {
     return $this->hasMany(LichTraiNghiem::class);

@@ -28,13 +28,14 @@
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/themify-icons.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/icofont.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/chartist.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/widget.css')}}">
   {{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/css/pages.css')}}"> --}}
   <link rel="stylesheet" type="text/css" href="{{asset('css/app.css') }}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/datatables.bootstrap4.min.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/buttons.datatables.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/buttons.datatables.min-2.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/select.datatables.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/responsive.bootstrap4.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
 
 
   @yield('css')
@@ -50,7 +51,6 @@
       max-width: 100%;
       max-height: 80%;
     }
-
   </style>
 </head>
 
@@ -104,6 +104,31 @@
     </script>
     <script type="text/javascript" src="{{asset('assets/js/classie.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/moment.min-2.js')}}"></script>
+
+
+    <script type="text/javascript" src="{{asset('assets/js/jquery.dataTables.min-2.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/datatables.bootstrap4.min.js')}}"></script>
+    {{-- <script type="text/javascript" src="{{asset('assets/js/datatables.min.js')}}"></script> --}}
+    <script type="text/javascript" src="{{asset('assets/js/datatables.buttons.min-2.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/dataTables.select.min.js')}}"></script>
+
+    <script type="text/javascript" src="{{asset('assets/js/buttons.flash.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/buttons.html5.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/buttons.print.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/buttons.colVis.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/my-script.js')}}"></script>
+
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    {{-- <script src="//cdn.datatables.net/buttons/1.2.4/js/buttons.flash.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.colVis.min.js"></script> --}}
+
+    {{-- <script src="//cdn.datatables.net/buttons/1.2.4/js/buttons.flash.min.js"></script> --}}
+    {{-- <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.colVis.min.js"></script> --}}
 
     <script src="{{asset('assets/js/rocket-loader.min.js')}}" data-cf-settings="d2d1d6e2f87cbebdf4013b26-|49" defer="">
     </script>

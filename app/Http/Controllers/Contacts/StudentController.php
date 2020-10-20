@@ -16,7 +16,6 @@ class StudentController extends Controller
   protected $validationRules = ['ten' => 'required'];
   protected $attributes = ['ten' => 'Tên'];
 
-
   public function __construct()
   {
     $this->jsValidator = JsValidator::make(
@@ -25,7 +24,7 @@ class StudentController extends Controller
       $this->attributes
     );
   }
-  // t ví dụ m validate thằng 
+  // t ví dụ m validate thằng
   /**
    * Display a listing of the resource.
    *
@@ -33,8 +32,7 @@ class StudentController extends Controller
    */
   public function index()
   {
-
-    $students = HocSinh::orderBy('ten', 'ASC')->paginate(10);
+    $students = HocSinh::orderBy('ten', 'ASC')->get();
     return view(
       'backend.contact.hocsinh.listStudent',
       compact('students')
@@ -85,8 +83,6 @@ class StudentController extends Controller
    */
   public function edit($id)
   {
-
-
     $hocsinh = HocSinh::find($id);
     return view('backend.contact.hocsinh.edit_student_modal', [
       'hocsinh' => $hocsinh,
