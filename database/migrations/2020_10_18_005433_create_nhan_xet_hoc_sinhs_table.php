@@ -31,6 +31,14 @@ class CreateNhanXetHocSinhsTable extends Migration
         ->foreignId('buoi_hoc_id')
         ->constrained('buoi_hoc')
         ->cascadeOnDelete();
+      $table
+        ->foreignId('lop_hoc_id')
+        ->constrained('lop_hoc')
+        ->cascadeOnDelete();
+      $table
+        ->foreignId('khoa_hoc_id')
+        ->constrained('khoa_hoc')
+        ->cascadeOnDelete();
       $table->timestamps();
     });
   }

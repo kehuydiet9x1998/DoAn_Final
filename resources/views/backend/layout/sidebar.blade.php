@@ -7,7 +7,7 @@ $main = [[
 "items" => [
 [
 "text" => "Trang chủ",
-"link" => "/contacts/dashboard",
+"link" => "/$phanquyen/dashboard",
 "icon" => "feather icon-home",
 "type" => "link",
 ],

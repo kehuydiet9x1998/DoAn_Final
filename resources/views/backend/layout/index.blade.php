@@ -23,7 +23,6 @@
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/feather.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/daterangepicker.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/datedropper.min.css')}}">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome-n.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/themify-icons.css')}}">
@@ -37,8 +36,7 @@
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/buttons.datatables.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/responsive.bootstrap4.min.css')}}">
 
-  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/fullcalendar.css')}}">
-  {{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/css/fullcalendar.print.css')}}" media='print'> --}}
+
   @yield('css')
 
   <style>
@@ -92,9 +90,9 @@
     <script type="text/javascript" src="{{asset('assets/js/waves.min.js')}}"></script>
 
     <script type="text/javascript" src="{{asset('assets/js/jquery.slimscroll.js')}}"></script>
-    {{-- <script type="text/javascript" src="{{asset('assets/js/jquery.flot.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/jquery.flot.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/jquery.flot.categories.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/js/jquery.flot.tooltip.min.js')}}"></script> --}}
+    <script type="text/javascript" src="{{asset('assets/js/jquery.flot.tooltip.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/jquery.mcustomscrollbar.concat.min.js')}}"></script>
 
     <script type="text/javascript" src="{{asset('assets/js/pcoded.min.js')}}"></script>
@@ -107,8 +105,6 @@
     <script type="text/javascript" src="{{asset('assets/js/classie.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/moment.min-2.js')}}"></script>
 
-    <script type="text/javascript" src="{{asset('assets/js/fullcalendar.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/js/calendar.js')}}"></script>
     <script src="{{asset('assets/js/rocket-loader.min.js')}}" data-cf-settings="d2d1d6e2f87cbebdf4013b26-|49" defer="">
     </script>
 

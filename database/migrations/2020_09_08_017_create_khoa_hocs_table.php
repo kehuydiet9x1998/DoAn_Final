@@ -22,6 +22,7 @@ class CreateKhoaHocsTable extends Migration
       $table->text('noidung');
       $table->string('dieukienhoc');
       $table->bigInteger('hocphi');
+
       $table->unsignedBigInteger('loai_khoa_hoc_id');
       $table
         ->foreign('loai_khoa_hoc_id')
