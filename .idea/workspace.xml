@@ -7,10 +7,11 @@
   <component name="ChangeListManager">
     <list default="true" id="dfeacd01-f2c3-4401-a83c-21a86b8aa657" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/phanlop-Modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/phanlop-Modal.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/phanlop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/phanlop.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/test.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/Edit_HocPhi_Modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/Edit_HocPhi_Modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/ListHocPhi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/ListHocPhi.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/moneyStudent.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/classes/diemdanh-modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/teachers/classes/diemdanh-modal.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +265,9 @@
       <workItem from="1602984640120" duration="3925000" />
       <workItem from="1603005631858" duration="2837000" />
       <workItem from="1603023654352" duration="8235000" />
-      <workItem from="1603093836780" duration="3220000" />
+      <workItem from="1603093836780" duration="5900000" />
+      <workItem from="1603109044825" duration="7073000" />
+      <workItem from="1603117805394" duration="61000" />
     </task>
     <servers />
   </component>
@@ -292,6 +295,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="445" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1602426833802" />
+    <state x="363" y="100" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1603115540417">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="363" y="100" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1603115540417" />
     <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601974174878">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -304,9 +311,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="259" y="10" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1602058592838" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1602750664133">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1603112299351">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1602750664133" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1603112299351" />
   </component>
 </project>
