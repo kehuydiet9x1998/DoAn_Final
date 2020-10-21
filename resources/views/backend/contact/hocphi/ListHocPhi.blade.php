@@ -18,7 +18,7 @@
               </div>
               <div class="card-block">
                 <div class="table-responsive">
-                  <table class="table table-hover m-b-0">
+                  <table class="table table-hover m-b-0" id="datatable">
                     <thead>
                       <tr>
                         <th>Mã HĐ</th>
@@ -32,45 +32,30 @@
                       </tr>
                     </thead>
                     <tbody>
+                    @foreach($hocphi as $hp)
+
                       <tr>
-                        <td>1</td>
-                        <td>Nguyễn Hải Minh</td>
-                        <td>HV - 001</td>
-                        <td>23000000</td>
-                        <td>0</td>
-                        <td>23000000</td>
-                        <td style="text-align: center"><label class="badge badge-default">Chưa hoàn thành</label></td>
+                        <td>{{$hp->id}}</td>
+                        <td>{{$hp->hocsinh->hodem .' '. $hp->hocsinh->ten}}</td>
+                        <td>{{$hp->hoc_sinh_id}}</td>
+                        <td>{{$hp->canthu}}</td>
+                        <td>{{$hp->dadong}}</td>
+                        <td>{{$hp->conno}}</td>
+                        <td style="text-align: center"><label class="badge badge-default">{{$hp->trangthai}}</label></td>
                         <td>
                           <div>
-                            <button data-id="1" class="btn waves-effect waves-light btn-round" data-toggle="modal"
-                                    data-target="#hocphi-Modal" style="border: none; background-color: transparent">
+                            <button data-id="{{$hp->id}}" class="btn waves-effect waves-light btn-round my_edit" data-toggle="modal"
+                                    data-target="#edit-Modal" style="border: none; background-color: transparent">
                               <i class="fa fa-edit text-c-green" style="font-weight: bold; font-size: 20px"></i>
                             </button>
-                            @include('backend.contact.hocphi.Edit_HocPhi_Modal')
                           </div>
                         </td>
                       </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Nguyễn Hải Hà</td>
-                        <td>HV - 002</td>
-                        <td>23000000</td>
-                        <td>23000000</td>
-                        <td>0</td>
-                        <td style="text-align: center"><label class="badge badge-success">Hoàn thành</label></td>
-                        <td>
-                          <div>
-                            <button data-id="1" class="btn waves-effect waves-light btn-round" data-toggle="modal"
-                                    data-target="#hocphi-Modal" style="border: none; background-color: transparent" disabled>
-                              <i class="fa fa-edit text-c-green" style="font-weight: bold; font-size: 20px"></i>
-                            </button>
-                            @include('backend.contact.hocphi.Edit_HocPhi_Modal')
-                          </div>
-                        </td>
-                      </tr>
+                    @endforeach
                     </tbody>
                   </table>
                 </div>
+                <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;"></div>
               </div>
             </div>
           </div>
@@ -84,12 +69,6 @@
 <script>
   $(document).
   ready(function () {
-    $('.btn.btn-primary').click(function (e) {
-      id = $(this).data('id');
-      $('#show-Modal').load("/contacts/hocphis/" + id);
-      $('#show-Modal').show();
-      $('.modal-backdrop').show();
-    });
     $('.my_edit').click(function (e) {
       id = $(this).data('id')
       $('#edit-Modal').load("/contacts/hocphis/" + id + '/edit');
@@ -99,5 +78,4 @@
     })
   });
 </script>
-
 @endsection

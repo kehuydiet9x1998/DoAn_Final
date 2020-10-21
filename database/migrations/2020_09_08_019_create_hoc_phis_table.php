@@ -15,21 +15,15 @@ class CreateHocPhisTable extends Migration
   {
     Schema::create('hoc_phi', function (Blueprint $table) {
       $table->id();
-      $table->string('lydo');
-      $table->dateTime('ngaynop');
+      $table->bigInteger('canthu')->unsigned();
+      $table->bigInteger('dadong')->unsigned();
+      $table->bigInteger('conno')->unsigned();
       $table->string('trangthai');
-      $table->bigInteger('sotiendong')->unsigned();
-      $table->string('ghichu')->default('');
       $table->unsignedBigInteger('hoc_sinh_id');
       $table
         ->foreign('hoc_sinh_id')
         ->references('id')
         ->on('hoc_sinh');
-      $table->unsignedBigInteger('nhan_vien_id');
-      $table
-        ->foreign('nhan_vien_id')
-        ->references('id')
-        ->on('nhan_vien');
 
       $table->timestamps();
       $table->softDeletes();

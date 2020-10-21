@@ -28,12 +28,12 @@
 
             {{-- @include('backend.students.mycomment-modal') --}}
           </li>
-          {{-- <li style="margin: 0px 10px 5px 0px; float: left">
+           <li style="margin: 0px 10px 5px 0px; float: left">
             <button data-id="1" class="btn waves-effect waves-light btn-round">
               <a style="font-size: 14px; font-weight: 800" href="comment/1">NHẬN XÉT GIẢNG
                 VIÊN</a>
             </button>
-          </li> --}}
+          </li>
         </ul>
       </div>
     </div>
@@ -46,7 +46,8 @@
       //alert('/student/xemnhanxet/' + $(this).data('id'))
       // alert('ok')
       $('#mail-Modal').load('/student/xemnhanxet/' + $(this).data('id'))
+      $('#mail-Modal').show();
+      $('.modal-backdrop').show();    
     });
   });
-
 </script>

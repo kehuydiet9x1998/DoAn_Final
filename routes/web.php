@@ -125,15 +125,17 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::get('review', function () {
       return view('backend.students.review');
     });
-    Route::get('/myhome', function () {
-      return view('backend.myhome');
-    });
     Route::get('/notifications', function () {
       return view('backend.notification');
     });
+    Route::get('class/comment/1', function () {
+      return view('backend.students.nhanxetgiaovien.comment');
+    });
   });
 });
-
+Route::get('/myhome', function () {
+  return view('backend.myhome');
+});
 Auth::routes();
 
 Route::get('/chat', [ChatsController::class, 'index']);

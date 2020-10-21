@@ -1,33 +1,32 @@
-<div class="modal fade show" id="hocphi-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
+
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title">Thông tin chi tiết</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="myReset()">
           <span aria-hidden="true">×</span>
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" action="" novalidate="">
+        <form action="{{route('hocphis.store')}}" method="POST">
+          <input type="hidden" name="_token" value="{{csrf_token()}}"> {{ csrf_field() }}
           <div class="modal-body">
-            <input type="hidden" name="_token" value="{{csrf_token()}}">
-            {{ csrf_field() }}
             <div class="form-group row" style="margin-bottom: 0px; margin-top: -20px;">
-              <label class="col-sm-1 col-form-label" style="font-weight: bold">Mã HĐ:</label>
-              <div class="col-sm-11">
-                <label class="col-form-label">1</label>
+              <label class="col-sm-auto col-form-label" style="font-weight: bold">Mã HĐ:</label>
+              <div class="col-sm-auto">
+                <label class="col-form-label">{{$hocphi->id}}</label>
               </div>
             </div>
             <div class="form-group row" style="margin-bottom: 0px">
-              <label class="col-sm-1 col-form-label" style="font-weight: bold">Tên HV:</label>
-              <div class="col-sm-11">
-                <label class="col-form-label">Nguyễn Hải Minh</label>
+              <label class="col-sm-auto col-form-label" style="font-weight: bold">Tên HV:</label>
+              <div class="col-sm-auto">
+                <label class="col-form-label">{{$hocphi->hocsinh->hodem.' '.$hocphi->hocsinh->ten}}</label>
               </div>
             </div>
             <div class="form-group row" style="margin-bottom: 5px">
-              <label class="col-sm-1 col-form-label" style="font-weight: bold">Mã HV</label>
-              <div class="col-sm-11">
-                <label class="col-form-label">HV - 001</label>
+              <label class="col-sm-auto col-form-label" style="font-weight: bold">Mã HV</label>
+              <div class="col-sm-auto">
+                <label class="col-form-label">{{$hocphi->hoc_sinh_id}}</label>
               </div>
             </div>
             <div class="form-group row" style="margin-bottom: 5px">
@@ -48,42 +47,20 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($khoanthu as $kt)
                         <tr>
                           <td>
                             <div class="d-inline-block align-middle">
                               <div class="d-inline-block">
-                                <h6>1</h6>
+                                <h6>{{$kt->id}}</h6>
                               </div>
                             </div>
                           </td>
-                          <td>Phí xây dựng</td>
-                          <td>1000000</td>
-                          <td><label class="badge badge-inverse-primary">Bắt buộc</label></td>
+                          <td>{{$kt->tenkhoanthu}}</td>
+                          <td>{{$kt->sotien}}</td>
+                          <td><label class="badge badge-inverse-primary">{{$kt->trangthai}}</label></td>
                         </tr>
-                        <tr>
-                          <td>
-                            <div class="d-inline-block align-middle">
-                              <div class="d-inline-block">
-                                <h6>2</h6>
-                              </div>
-                            </div>
-                          </td>
-                          <td>Đồ dùng học tập</td>
-                          <td>1000000</td>
-                          <td><label class="badge badge-inverse-primary">Bắt buộc</label></td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <div class="d-inline-block align-middle">
-                              <div class="d-inline-block">
-                                <h6>3</h6>
-                              </div>
-                            </div>
-                          </td>
-                          <td>Phí tài liệu</td>
-                          <td>1000000</td>
-                          <td><label class="badge badge-inverse-primary">Bắt buộc</label></td>
-                        </tr>
+                        @endforeach
                         </tbody>
                       </table>
                     </div>
@@ -171,45 +148,21 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                          <td>
-                            <div class="d-inline-block align-middle">
-                              <div class="d-inline-block">
-                                <h6>33000000</h6>
+                        @foreach($lsthu as $lst)
+                          <tr>
+                            <td>
+                              <div class="d-inline-block align-middle">
+                                <div class="d-inline-block">
+                                  <h6>{{$lst->sotiencandong}}</h6>
+                                </div>
                               </div>
-                            </div>
-                          </td>
-                          <td>20000000</td>
-                          <td>13000000</td>
-                          <td>19/10/2020</td>
-                          <td>Nguyễn Văn Hoan</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <div class="d-inline-block align-middle">
-                              <div class="d-inline-block">
-                                <h6>13000000</h6>
-                              </div>
-                            </div>
-                          </td>
-                          <td>10000000</td>
-                          <td>3000000</td>
-                          <td>20/10/2020</td>
-                          <td>Nguyễn Văn Linh</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <div class="d-inline-block align-middle">
-                              <div class="d-inline-block">
-                                <h6>3000000</h6>
-                              </div>
-                            </div>
-                          </td>
-                          <td>3000000</td>
-                          <td>0</td>
-                          <td>21/10/2020</td>
-                          <td>Phạm Quang Cường</td>
-                        </tr>
+                            </td>
+                            <td>{{$lst->sotiendadong}}</td>
+                            <td>{{$lst->sotienconthieu}}</td>
+                            <td>{{$lst->ngaydong}}</td>
+                            <td>{{$lst->nhanvien->hodem.' '.$lst->nhanvien->ten}}</td>
+                          </tr>
+                        @endforeach
                         </tbody>
                       </table>
                     </div>
@@ -218,12 +171,15 @@
               </div>
             </div>
             <div class="form-group row" style="margin-bottom: 0px">
+              <input type="hidden" name="sotiencandong" value="{{$sotiencandong}}">
               <label class="col-sm-3 col-form-label">Nhập số tiền đóng lần này: </label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" placeholder="Nhập số tiền">
+                <input type="number" name="sotiendadong" class="form-control" placeholder="Nhập số tiền">
               </div>
+              <input type="hidden" name="ngaydong" value="{{date("Y-m-d")}}">
+              <input type="hidden" name="nhan_vien_id" value="{{Auth::user()->nhanvien->id}}">
+              <input type="hidden" name="hoc_phi_id" value="{{$hocphi->id}}">
             </div>
-          </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default waves-effect " data-dismiss="modal"
                     onclick="myReset()">Close</button>
@@ -235,4 +191,10 @@
     </div>
   </div>
 
-</div>
+  <script>
+    function myReset(){
+      $('#edit-Modal').hide();
+      $('.modal-backdrop').hide();
+    }
+
+  </script>
