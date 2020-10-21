@@ -23,6 +23,7 @@ class HocSinh extends Model
     'hotenchame',
     'diachi',
     'email',
+    'user_id',
   ];
 
   public function getNgaysinhAttribute($value)

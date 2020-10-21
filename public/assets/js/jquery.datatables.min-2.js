@@ -4101,7 +4101,7 @@
           sNext: "Tiếp theo",
           sPrevious: "Trước"
         },
-        sEmptyTable: "No data available in table",
+        sEmptyTable: "Không có dữ liệu",
         sInfo: "Hiển thị _START_ đến _END_ trên _TOTAL_ bản ghi",
         sInfoEmpty: "Hiển thị 0 đến 0 trên 0 bản ghi",
         sInfoFiltered: "(lọc từ _MAX_ tổng số bản ghi)",

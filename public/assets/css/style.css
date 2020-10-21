@@ -3203,7 +3203,7 @@ table thead .border-bottom-info th {
 
 .header-navbar .navbar-wrapper .navbar-container .nav-left a,
 .header-navbar .navbar-wrapper .navbar-container .nav-right a {
-  padding: 0 .6rem
+  /*! padding: 0 .6rem; */
 }
 
 .header-navbar .navbar-wrapper .navbar-container .nav-left .dropdown-toggle::after,

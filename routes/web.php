@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChatsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Teachers\BaiTapController;
 use Illuminate\Support\Facades\Route;
@@ -134,3 +135,9 @@ Route::middleware(['auth', 'web'])->group(function () {
 });
 
 Auth::routes();
+
+Route::get('/chat', [ChatsController::class, 'index']);
+Route::get('/messages/{id}', [ChatsController::class, 'getMessage'])->name(
+  'messages'
+);
+Route::post('/messages', [ChatsController::class, 'sendMessage']);

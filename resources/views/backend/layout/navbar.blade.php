@@ -76,10 +76,11 @@
         </li>
         <li class="header-notification">
           <div class="dropdown-primary dropdown">
-            <div class="displayChatbox dropdown-toggle" data-toggle="dropdown">
-              <i class="feather icon-message-square"></i>
-              <span class="badge bg-c-green">3</span>
+
+            <div class="displayChatbox dropdown-toggle">
+              <a href="/chat"><i class="feather icon-message-square"></i><span class="badge bg-c-green">3</span></a>
             </div>
+
           </div>
         </li>
         <li class="user-profile header-notification">

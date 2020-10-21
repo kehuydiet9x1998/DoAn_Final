@@ -34,7 +34,7 @@
               </div>
               <div class="card-block">
                 <div class="table-responsive">
-                  <table class="table table-hover m-b-0">
+                  <table class="table table-hover m-b-0" id="datatable">
                     <thead>
                       <tr>
                         <th>ID</th>
@@ -45,7 +45,7 @@
                         <th>Email</th>
                         <th>Địa chỉ</th>
                         <th>Tình trạng</th>
-                        <th>Action</th>
+                        <th class="noVis">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -72,9 +72,9 @@
                             </div>
                           </div>
                           <!-- Modal Sua -->
-                          
+
                           {{-- Xóa giáo viên --}}
-                          
+
                         </td>
                       </tr>
                       @endforeach
