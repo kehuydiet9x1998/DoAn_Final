@@ -97,10 +97,26 @@
         <div class="modal-footer">
           <button onclick="myReset()" type="button" class="btn btn-default waves-effect "
             data-dismiss="modal">Đóng</button>
-          <input type="submit" class="btn btn-primary waves-effect waves-light" value="Thêm nhận xét" />
+{{--          <input type="submit" class="btn btn-primary waves-effect waves-light" value="Thêm nhận xét" />--}}
         </div>
       </form>
       @endif
     </div>
   </div>
 </div>
+<script>
+  // $(document).ready(function() {
+  //   $('.nhanxet').click(function() {
+  //     $('#mail-Modal').load('/teachers/nhanxet/' + $(this).data('id'))
+  //     $('#mail-Modal').show();
+  //     $('.modal-backdrop').show();
+  //   });
+  // });
+function myReset(){
+   $('#mail-Modal').hide();
+  $('.modal-backdrop').hide();
+}
+ 
+
+
+</script>

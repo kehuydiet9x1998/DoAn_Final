@@ -32,4 +32,9 @@ class User extends Authenticatable
   {
     return $this->hasOne(HocSinh::class);
   }
+
+  public function nhanVien()
+  {
+    return $this->hasOne(NhanVien::class);
+  }
 }

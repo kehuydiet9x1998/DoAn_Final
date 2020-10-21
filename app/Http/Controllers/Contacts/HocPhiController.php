@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Contacts;
 
 use App\Http\Controllers\Controller;
 use App\Models\HocPhi;
-use App\Models\HocSinh;
-use App\Models\NhanVien;
+use App\Models\LichSuHocPhi;
+use App\Models\KhoanThu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -18,10 +18,9 @@ class HocPhiController extends Controller
      */
     public function index()
     {
-        $hocsinhs = HocSinh::all()->sortByDesc('id');
-        $nhanviens = NhanVien::all();
-        $data = HocPhi::all();
-        return view('backend.contact.hocphi.ListHocPhi',['hocphis'=>$data,'hocsinhs'=>$hocsinhs, 'nhanviens' => $nhanviens]);
+        $hocphi = HocPhi::all();
+        $khoanthu = KhoanThu::all();
+        return view('backend.contact.hocphi.ListHocPhi',compact('khoanthu','hocphi'));
     }
 
     /**
@@ -43,7 +42,8 @@ class HocPhiController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        HocPhi::create($data);
+        $data['sotienconthieu'] = $data['sotiencandong'] - $data['sotiendadong'];
+        LichSuHocPhi::create($data);
         return redirect(route('hocphis.index'));
     }
 
@@ -55,8 +55,7 @@ class HocPhiController extends Controller
      */
     public function show($id)
     {
-        $data = HocPhi::findOrFail($id);
-        return view('backend.contact.hocphi.Show_HocPhi_Modal', ['hocphi' => $data]);
+
     }
 
     /**
@@ -67,8 +66,12 @@ class HocPhiController extends Controller
      */
     public function edit($id)
     {
-        $data = HocPhi::find($id);
-        return view('backend.contact.hocphi.Edit_HocPhi_Modal', ['hocphi' => $data]);
+        $hocphi = HocPhi::find($id);
+        $khoanthu = KhoanThu::all();
+        $lsthu =  LichSuHocPhi::all()->where('hoc_phi_id',$id);
+        $sotiencandong = LichSuHocPhi::where('hoc_phi_id',$id)->orderBy('created_at', 'desc')->first()->sotienconthieu;
+        return view('backend.contact.hocphi.Edit_HocPhi_Modal',
+          ['hocphi'=>$hocphi,'khoanthu'=>$khoanthu,'lsthu'=>$lsthu, 'sotiencandong' => $sotiencandong]);
 
     }
 
@@ -81,11 +84,8 @@ class HocPhiController extends Controller
      */
     public function update(Request $request,$id)
     {
-        $data = HocPhi::find($id);
-        $data->fill($request->all());
-        $data -> save();
-        return redirect(route('hocphis.index'));
 
+      $hocphi = HocPhi::find($id);
 
     }
 

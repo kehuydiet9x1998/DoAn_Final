@@ -118,24 +118,24 @@
                         </div>
                         <div id="buoihoc"></div>
                         {{-- @include('backend.students.myclass.buoihoc') --}}
-                        <div class="row">
-                          <div class="col-sm-12">
-                            <div class="card">
-                              <div class="card-header">
-                                <div class="card-header-left">
-                                  <h5>MÔ TẢ KHÓA HỌC</h5>
-                                </div>
-                              </div>
-                              <div class="card-block">
-                                <p>
-                                  Xây dựng nền tảng kiến thức vững chắc về thiết kế đồ họa,
-                                  tạo phong cách cá nhân, lập trình thuật toán điều khiển nhân vật, môi trường.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+{{--                        <div class="row">--}}
+{{--                          <div class="col-sm-12">--}}
+{{--                            <div class="card">--}}
+{{--                              <div class="card-header">--}}
+{{--                                <div class="card-header-left">--}}
+{{--                                  <h5>MÔ TẢ KHÓA HỌC</h5>--}}
+{{--                                </div>--}}
+{{--                              </div>--}}
+{{--                              <div class="card-block">--}}
+{{--                                <p>--}}
+{{--                                  Xây dựng nền tảng kiến thức vững chắc về thiết kế đồ họa,--}}
+{{--                                  tạo phong cách cá nhân, lập trình thuật toán điều khiển nhân vật, môi trường.--}}
+{{--                                </p>--}}
+{{--                              </div>--}}
+{{--                            </div>--}}
+{{--                          </div>--}}
+{{--                        </div>--}}
+{{--                      </div>--}}
                     </div>
                   </div>
                 </div>

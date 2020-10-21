@@ -7,11 +7,19 @@
   <component name="ChangeListManager">
     <list default="true" id="dfeacd01-f2c3-4401-a83c-21a86b8aa657" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Contacts/HocPhiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contacts/HocPhiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/HocPhi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/HocPhi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_08_019_create_hoc_phis_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_08_019_create_hoc_phis_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_19_132501_create_lich_su_hoc_phis_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_19_132501_create_lich_su_hoc_phis_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/Edit_HocPhi_Modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/Edit_HocPhi_Modal.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/ListHocPhi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/ListHocPhi.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/moneyStudent.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/classes/diemdanh-modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/teachers/classes/diemdanh-modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/listStudent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/listStudent.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/students/myclass/buoihoc.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/students/myclass/buoihoc.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/students/myclass/class-detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/students/myclass/class-detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/students/xemnhanxet/xemnhanxet.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/students/xemnhanxet/xemnhanxet.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/classes/buoihoc.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/teachers/classes/buoihoc.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,6 +276,11 @@
       <workItem from="1603093836780" duration="5900000" />
       <workItem from="1603109044825" duration="7073000" />
       <workItem from="1603117805394" duration="61000" />
+      <workItem from="1603177292985" duration="5797000" />
+      <workItem from="1603194514338" duration="15467000" />
+      <workItem from="1603242702240" duration="2473000" />
+      <workItem from="1603245695529" duration="2865000" />
+      <workItem from="1603249649240" duration="695000" />
     </task>
     <servers />
   </component>
@@ -311,9 +324,28 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="259" y="10" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1602058592838" />
+    <state x="126" y="84" width="1055" height="456" key="dock-window-1" timestamp="1603182028522">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="126" y="84" width="1055" height="456" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1603182028522" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1603248126567">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1603248126567" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1603112299351">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1603112299351" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/backend/students/myclass/class-detail.blade.php</url>
+          <line>120</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
