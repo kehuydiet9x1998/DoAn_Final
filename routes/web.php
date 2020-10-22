@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChatsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Teachers\BaiTapController;
 use Illuminate\Support\Facades\Route;
@@ -124,13 +125,21 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::get('review', function () {
       return view('backend.students.review');
     });
-    Route::get('/myhome', function () {
-      return view('backend.myhome');
-    });
     Route::get('/notifications', function () {
       return view('backend.notification');
     });
+    Route::get('class/comment/1', function () {
+      return view('backend.students.nhanxetgiaovien.comment');
+    });
   });
 });
-
+Route::get('/myhome', function () {
+  return view('backend.myhome');
+});
 Auth::routes();
+
+Route::get('/chat', [ChatsController::class, 'index']);
+Route::get('/messages/{id}', [ChatsController::class, 'getMessage'])->name(
+  'messages'
+);
+Route::post('/messages', [ChatsController::class, 'sendMessage']);

@@ -13,7 +13,6 @@
               <div class="card-header">
                 <div class="row">
                   <div class="col-xs-12 col-sm-12 col-md-6">
-
                     <h5>DANH SÁCH HỌC SINH</h5>
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-6">

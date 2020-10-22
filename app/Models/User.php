@@ -15,7 +15,7 @@ class User extends Authenticatable
 
   protected $fillable = [
     'anhdaidien',
-    'username',
+    'name',
     'password',
     'vaitro',
     'trangthai',
@@ -31,5 +31,10 @@ class User extends Authenticatable
   public function hocSinh()
   {
     return $this->hasOne(HocSinh::class);
+  }
+
+  public function nhanVien()
+  {
+    return $this->hasOne(NhanVien::class);
   }
 }

@@ -13,28 +13,23 @@ class HocPhi extends Model
   protected $table = 'hoc_phi';
   protected $dates = ['deleted_at'];
   protected $fillable = [
-    'lydo',
-    'ngaynop',
+    'candong',
+    'dadong',
+    'conno',
     'trangthai',
-    'sotiendong',
-    'ghichu',
     'hoc_sinh_id',
-    'nhan_vien_id',
   ];
-
-
   public function hocSinh()
   {
     return $this->belongsTo(HocSinh::class);
   }
 
-  public function nhanVien()
-  {
-    return $this->belongsTo(NhanVien::class);
-  }
 
   public function dsHocPhi()
   {
     return $this->hasMany(ChiTietHocPhi::class);
+  }
+  public function  lsHocPhi(){
+    return $this->hasMany(LichSuHocPhi::class);
   }
 }
