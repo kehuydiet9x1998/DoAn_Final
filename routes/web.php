@@ -109,7 +109,7 @@ Route::middleware(['auth', 'web'])->group(function () {
 
   Route::prefix('/student')->group(function () {
     Route::resource('class', "Students\MyClassController");
-    Route::resource('courses', 'Students\KhoaHocController');
+    Route::resource('allcourses', 'Students\KhoaHocController');
     Route::resource('home-work', 'Students\BaiTapVeNhaController');
     Route::resource('lessons', 'Students\BuoiHocController');
     Route::resource('calendar', 'Students\LichController');

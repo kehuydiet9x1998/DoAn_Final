@@ -22,7 +22,7 @@ class KhoaHocController extends Controller
       ->get()
       ->pluck('lophoc.khoahoc');
 
-    // return $data;
+    return $data;
     return view('backend.students.khoahoc.courses', ['khoahocs' => $data]);
   }
 

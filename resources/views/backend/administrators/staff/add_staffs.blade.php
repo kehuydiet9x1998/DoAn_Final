@@ -1,10 +1,7 @@
 <div id="dom-table_filter" class="dataTables_filter" style="margin-left: -145px;">
-  <label style="display: flex">Search:<input type="search" class="form-control input-sm" placeholder=""
-      aria-controls="dom-table" style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;">
-    <li>
+    <li style="list-style: none">
       <button class="btn btn-success btn-round waves-effect waves-light" data-toggle="modal" data-target="#large-Modal"
-        style="margin-top: -6px;height: 35px;line-height: 13px; margin-left: 5px">Thêm nhân
-        viên</button>
+        style="margin-top: -6px;height: 35px;line-height: 13px; margin-left: 5px; float: right">Thêm nhân viên</button>
       <div class="modal fade show" id="large-Modal" tabindex="-1" role="dialog"
         style="z-index: 1050;display: none; padding-right: 17px;">
         <div class="modal-dialog modal-lg" role="document">
@@ -93,14 +90,14 @@
                       <span class="messages"></span>
                     </div>
                   </div>
-                  <div class="form-group row">  
+                  <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Chức vụ</label>
                     <div class="col-sm-9">
                       <select name="chuc_vu_id" class="form-control form-control-inverse">
                         <option>Chọn chức vụ</option>
                         @foreach ($chucvu as $cv)
-                         <option value="{{$cv->id}}">{{$cv->ten}}</option>   
-                        @endforeach    
+                         <option value="{{$cv->id}}">{{$cv->ten}}</option>
+                        @endforeach
                       </select>
                     </div>
                   </div>
@@ -114,6 +111,6 @@
             </div>
           </div>
         </div>
+      </div>
     </li>
-  </label>
 </div>

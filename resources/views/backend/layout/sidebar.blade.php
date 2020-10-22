@@ -366,7 +366,7 @@ $menu = [ [
 "text" => "Lớp học của tôi",
 ],
 [
-"link" => "/student/courses",
+"link" => "/student/allcourses",
 "type" => "link",
 "icon" => "fa fa-check-square-o",
 "text" => "Khóa học",
