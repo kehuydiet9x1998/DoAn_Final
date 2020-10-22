@@ -57,6 +57,17 @@ class StudentController extends Controller
   public function store(Request $request)
   {
     $data = $request->all();
+
+    $id = DB::select("SHOW TABLE STATUS LIKE 'hoc_sinh'");
+    $next_id = $id[0]->Auto_increment;
+    $user = User::create([
+      'name' => 'hocsinh' . sprintf("%04d", $next_id),
+      'password' => bcrypt('123456'),
+      'vaitro' => 'student',
+      'trangthai' => 'Hoạt động',
+      'anhdaidien' => 'assets/jpg/avatar-3.jpg',
+    ]);
+    $data['user_id'] = $user->id;
     HocSinh::create($data);
     return redirect(route('students.index'));
   }

@@ -16,7 +16,6 @@
   <link rel="icon" href="https://colorlib.com/polygon/admindek/files/assets/images/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
-  <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/waves.min.css')}}">
@@ -37,6 +36,7 @@
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/responsive.bootstrap4.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
 
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   @yield('css')
 
@@ -51,6 +51,7 @@
       max-width: 100%;
       max-height: 80%;
     }
+
   </style>
 </head>
 
@@ -63,8 +64,8 @@
   <div id="pcoded" class="pcoded">
     <div class="pcoded-overlay-box"></div>
     @include('backend.layout.navbar')
-    @include('backend.layout.listchat')
-    @include('backend.layout.messsagedetail')
+    {{-- @include('backend.layout.listchat') --}}
+    {{-- @include('backend.layout.messsagedetail') --}}
     <div class="pcoded-container navbar-wrapper">
       <div class="pcoded-main-container">
         <div class="pcoded-wrapper">
