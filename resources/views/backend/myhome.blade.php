@@ -10,7 +10,6 @@
               <div class="card-block tab-icon">
                 <div class="row">
                   <div class="col-lg-12">
-                    <img class="img img-fluid" src="{{asset('assets/jpg/card1.jpg')}}" alt="Card image cap">
                     <ul class="nav nav-tabs md-tabs " role="tablist">
                       <li class="nav-item">
                         <a class="nav-link active show" data-toggle="tab" href="#home7" role="tab" aria-selected="true" style="font-size: 14px; font-weight: bold;">
@@ -19,7 +18,7 @@
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#account" role="tab" aria-selected="true" style="font-size: 14px; font-weight: bold;">
-                          <i class="fa fa-key"></i>Tài khoản của tôi</a>
+                          <i class="fa fa-key"></i>TÀI KHOẢN CỦA TÔI</a>
                         <div class="slide"></div>
                       </li>
                     </ul>
@@ -27,8 +26,10 @@
                       <div class="tab-pane active show" id="home7" role="tabpanel">
                         <div class="row">
                           <div class="col-sm-12">
-                            <div class="card">
+                            <div>
                               <div class="card-header col-sm-12" style="text-align: center;">
+                                <img class="card-img-top img-fluid" src="{{asset('assets/jpg/card1.jpg')}}" alt="Card image cap" style="width: 240px; height: 240px; border-radius: 50%">
+
                                 <h6 class="text-c-purple" style="margin-top: 10px;">Giảng viên Fulltime</h6>
                                 <h4 style="margin-top: 10px; font-size: 24px; font-weight: bold">Nguyễn Văn Linh</h4>
                                 <h6 class="sub-title"></h6>
@@ -38,56 +39,54 @@
                                   <div class="col-lg-12 col-xl-6 ui-sortable-handle">
                                     <div class="card-sub">
                                       <div class="card-block" style="margin-top: -50px">
-                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-code"></i>Mã GV :</h5>
-                                        <h5 class="card-title">
-                                          <b>GV - 001</b></h5>
+                                        <h6 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-code"></i>Mã GV :</h6>
+                                        <h6 class="card-title">
+                                          <b>GV - 001</b></h6>
                                       </div>
                                       <div class="card-block" style="margin-top: -40px">
-                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0">
-                                          <i class="fa fa-user"></i>Username :</h5>
-                                        <h5 class="card-title">
-                                          <b>linhnv</b></h5>
+                                        <h6 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0">
+                                          <i class="fa fa-user"></i>Username :</h6>
+                                        <h6 class="card-title">
+                                          <b>linhnv</b></h6>
                                       </div>
                                       <div class="card-block" style="margin-top: -40px">
-                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0">
-                                          <i class="fa fa-flag"></i>Quốc tịch :</h5>
-                                        <h5 class="card-title">
-                                          <b>Việt Nam</b></h5>
+                                        <h6 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0">
+                                          <i class="fa fa-flag"></i>Quốc tịch :</h6>
+                                        <h6 class="card-title">
+                                          <b>Việt Nam</b></h6>
                                       </div>
                                       <div class="card-block" style="margin-top: -40px">
-                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0">
-                                          <i class="fa fa-building-o"></i>Giảng dậy tại:</h5>
-                                        <h5 class="card-title">
-                                          <b>TEKY - Center: 104 - Lương Khánh Thiện - HP</b></h5>
+                                        <h6 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0">
+                                          <i class="fa fa-male"></i>Giới tính :</h6>
+                                        <h6 class="card-title">
+                                          <b>Nam</b></h6>
                                       </div>
+
+
                                     </div>
                                   </div>
                                   <div class="col-lg-12 col-xl-6 ui-sortable-handle">
                                     <div class="card-sub">
                                       <div class="card-block" style="margin-top: -50px">
-                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0">
-                                          <i class="fa fa-home"></i>Địa chỉ:</h5>
-                                        <h5 class="card-title">
-                                          <b>xóm 1 - thôn Kiều Đông - xã Hồng Thái - An Dương - Hải Phòng</b></h5>
+                                        <h6 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0">
+                                          <i class="fa fa-home"></i>Địa chỉ:</h6>
+                                        <h6 class="card-title" style="display: inline-block;width: 260px;">
+
+                                          <b>xóm 1 - thôn Kiều Đông - xã Hồng Thái - An Dương - Hải Phòng</b></h6>
                                       </div>
                                       <div class="card-block" style="margin-top: -40px">
-                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0">
-                                          <i class="fa fa-mobile-phone"></i>Di động:</h5>
-                                        <h5 class="card-title">
-                                          <b>0363915150</b></h5>
+                                        <h6 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0">
+                                          <i class="fa fa-mobile-phone"></i>Di động:</h6>
+                                        <h6 class="card-title">
+                                          <b>0363915150</b></h6>
                                       </div>
                                       <div class="card-block" style="margin-top: -40px">
-                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0">
-                                          <i class="fa fa-calendar"></i>Ngày sinh:</h5>
-                                        <h5 class="card-title">
-                                          <b>06/03/1998</b></h5>
+                                        <h6 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0">
+                                          <i class="fa fa-calendar"></i>Ngày sinh:</h6>
+                                        <h6 class="card-title">
+                                          <b>06/03/1998</b></h6>
                                       </div>
-                                      <div class="card-block" style="margin-top: -40px">
-                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0">
-                                          <i class="fa fa-male"></i>Giới tính :</h5>
-                                        <h5 class="card-title">
-                                          <b>Nam</b></h5>
-                                      </div>
+
                                     </div>
                                   </div>
                                 </div>
@@ -95,12 +94,12 @@
                             </div>
                           </div>
                         </div>
-                        {{-- <div class="row">
+                        <div class="row">
                           <div class="col-sm-12">
                             <div class="card">
                               <div class="card-header">
                                 <div class="card-header-left">
-                                  <h5 class="text-c-green">Danh sách lớp giảng dạy</h5>
+                                  <h6 class="text-c-green">Danh sách lớp giảng dạy</h6>
                                 </div>
                               </div>
                               <div class="card-block table-border-style">
@@ -129,12 +128,12 @@
                               </div>
                             </div>
                           </div>
-                        </div> --}}
+                        </div>
                       </div>
                       <div class="tab-pane" id="account" role="tabpanel">
                         <div class="row">
                           <div class="col-sm-12">
-                            <div class="card">
+                            <div>
                               <div class="card-header col-sm-12" style="text-align: center;">
                                 <img class="card-img-top img-fluid" src="{{asset('assets/jpg/card1.jpg')}}" alt="Card image cap" style="width: 240px; height: 240px; border-radius: 50%">
                                 <h6 class="text-c-purple" style="margin-top: 10px;">Giảng viên Fulltime</h6>

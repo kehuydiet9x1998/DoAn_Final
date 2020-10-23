@@ -14,16 +14,14 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Họ tên học viên</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" name="hodem" id="hodem"
-                value="{{$hocphi->hocSinh->hodem .' '.$hocphi->hocSinh->ten}}">
+              <input type="text" class="form-control" name="hodem" id="hodem" value="{{$hocphi->hocSinh->hodem .' '.$hocphi->hocSinh->ten}}">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Họ tên nhân viên </label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" name="ten"
-                value="{{$hocphi->nhanVien->hodem .' '.$hocphi->nhanVien->ten}}">
+              <input type="text" class="form-control" name="ten" value="{{$hocphi->nhanVien->hodem .' '.$hocphi->nhanVien->ten}}">
               <span class="messages"></span>
             </div>
           </div>
@@ -37,8 +35,7 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Ngày đóng</label>
             <div class="col-sm-9">
-              <input type="date" class="ngaysinh" id="ngaysinh" name="ngaysinh"
-                value="{{substr($hocphi->ngaynop,0 ,10)}}">
+              <input type="date" class="ngaysinh" id="ngaysinh" name="ngaysinh" value="{{substr($hocphi->ngaynop,0 ,10)}}">
               <span class="messages"></span>
             </div>
           </div>
@@ -59,15 +56,13 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Ghi chí</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="tinhtrang" name="tinhtrang" placeholder="Trạng thái"
-                value="{{$hocphi->ghichu}}">
+              <input type="text" class="form-control" id="tinhtrang" name="tinhtrang" placeholder="Trạng thái" value="{{$hocphi->ghichu}}">
               <span class="messages"></span>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default waves-effect " data-dismiss="modal"
-            onclick="myReset()">Close</button>
+          <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Đóng</button>
         </div>
       </form>
     </div>
@@ -78,4 +73,5 @@
     $('.modal').hide();
     $('.modal-backdrop').hide();
   };
+
 </script>

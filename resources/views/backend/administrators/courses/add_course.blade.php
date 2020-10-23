@@ -121,164 +121,126 @@
               <div class="card-header">
                 <h5>THÊM HỌC SINH</h5>
               </div>
-              <div class="card-block">
-                <div class="form-steps-form">
-                  <div class="form-step-bar">
-                    <div class="step-item step-item-active">
-                      <div class="step-icon">1</div>
-                      <div class="step-text">Thông tin chung</div>
-                    </div>
-                    <div class="step-item">
-                      <div class="step-icon">2</div>
-                      <div class="step-text">Hình ảnh khóa học</div>
-                    </div>
-                    <div class="step-item">
-                      <div class="step-icon">3</div>
-                      <div class="step-text">Bài giảng</div>
-                    </div>
-                  </div>
+              <form action="{{ route('courses.store')}}" method="post">
+                @csrf
+                <div class="card-block">
+                  <div class="form-steps-form">
+                    <div class="form-step-bar">
+                      <div class="step-item step-item-active">
+                        <div class="step-icon">1</div>
+                        <div class="step-text">Thông tin chung</div>
+                      </div>
 
-
-                  <div class="form-steps-content-summary">
-                    <!-- Step 1 -->
-                    <div class="form-step-content">
-                      <div class="contact-form">
-                        <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Tên khóa học</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="Nhập tên khóa học">
-                          </div>
-                        </div>
-
-                        <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Loại khóa học</label>
-                          <div class="col-sm-10">
-                            <select name="select" class="form-control fill">
-                              <option value="opt1">Select One Value Only</option>
-                              <option value="opt2">Type 2</option>
-                              <option value="opt3">Type 3</option>
-                              <option value="opt4">Type 4</option>
-                              <option value="opt5">Type 5</option>
-                              <option value="opt6">Type 6</option>
-                              <option value="opt7">Type 7</option>
-                              <option value="opt8">Type 8</option>
-                            </select>
-                          </div>
-                        </div>
-
-                        <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Level</label>
-                          <div class="col-sm-10">
-                            <select name="select" class="form-control fill">
-                              <option value="opt1">Select One Value Only</option>
-                              <option value="opt2">Type 2</option>
-                              <option value="opt3">Type 3</option>
-                              <option value="opt4">Type 4</option>
-                              <option value="opt5">Type 5</option>
-                              <option value="opt6">Type 6</option>
-                              <option value="opt7">Type 7</option>
-                              <option value="opt8">Type 8</option>
-                            </select>
-                          </div>
-                        </div>
-
-                        <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Học phí</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="Nhập học phí">
-                          </div>
-                        </div>
-
-                        <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Độ tuổi</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="Nhập độ tuổi">
-                          </div>
-                        </div>
-                        <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Sĩ số tối đa</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="Nhập sĩ số tối đa">
-                          </div>
-                        </div>
-                        <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Điều kiện học</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="Nhập điều kiện học">
-                          </div>
-                        </div>
-
-                        <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Mô tả</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="Nhập mô tả">
-                          </div>
-                        </div>
-                        <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Nội dung</label>
-                          <div class="col-sm-10">
-                            <textarea rows="5" cols="5" class="form-control" placeholder="Nhập nội dung"></textarea>
-                          </div>
-                        </div>
-
-                        <div class="contact-form-item contact-form-submit">
-                          <a href="#" class="form-step-button button button-green pop-up-button button-invalid">
-                            <span class="text">Tiếp tục</span>
-                            <span class="icon arrow-right-icon-white"></span>
-                          </a>
-                        </div>
+                      <div class="step-item">
+                        <div class="step-icon">2</div>
+                        <div class="step-text">Bài giảng</div>
                       </div>
                     </div>
-                    <!-- END Step 1 -->
 
-                    <!-- Step 2 -->
-                    <div class="form-step-content">
-                      <div class="contact-form">
 
-                        <form action="https://colorlib.com/polygon/admindek/files/assets/pages/file-upload/file-upload.php" class="dropzone dz-clickable" id="drop-form">
-
-                          <div class="fallback">
-                            <input name="file" type="file" multiple />
+                    <div class="form-steps-content-summary">
+                      <!-- Step 1 -->
+                      <div class="form-step-content">
+                        <div class="contact-form">
+                          <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Tên khóa học</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="tenkhoahoc" class="form-control" placeholder="Nhập tên khóa học">
+                            </div>
                           </div>
 
-                        </form>
-                        <div class="text-center m-t-20">
-                          <button class="btn btn-primary">Tải lên</button>
-                        </div>
+                          <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Hình ảnh</label>
+                            <div class="col-sm-10">
+                              <input type="file" name="hinhanhkhoahoc[]" class="form-control" placeholder="Thêm hình ảnh" multiple>
+                            </div>
+                          </div>
 
+                          <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Loại khóa học</label>
+                            <div class="col-sm-10">
+                              <select name="select" name="loai_khoa_hoc_id" class="form-control fill">
+                                <option value="">-- Loại khóa học --</option>
+                                @foreach($loaikhoahocs as $loaikhoahoc)
+                                <option value={{ $loaikhoahoc->id }}>{{ $loaikhoahoc->tenloaikhoahoc }}</option>
+                                @endforeach
+                              </select>
+                            </div>
+                          </div>
 
-                        <div class="contact-form-item contact-form-submit">
-                          <a href="#" class="form-step-button button button-green pop-up-button button-invalid">
-                            <span class="text">Tiếp tục</span>
-                            <span class="icon arrow-right-icon-white"></span>
-                          </a>
+                          <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Level</label>
+                            <div class="col-sm-10">
+                              <select name="select" name="level_id" class="form-control fill">
+                                <option value="">-- Level --</option>
+                                @foreach($levels as $level)
+                                <option value={{ $level->id }}>{{ $level->tenlevel }}</option>
+                                @endforeach
+
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Học phí</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control" name="hocphi" placeholder="Nhập học phí">
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Độ tuổi</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="dotuoi" class="form-control" placeholder="Nhập độ tuổi">
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Sĩ số tối đa</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="sisotoida" class="form-control" placeholder="Nhập sĩ số tối đa">
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Điều kiện học</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="dieukienhoc" class="form-control" placeholder="Nhập điều kiện học">
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Mô tả</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="mota" class="form-control" placeholder="Nhập mô tả">
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Nội dung</label>
+                            <div class="col-sm-10">
+                              <textarea rows="5" name="noidung" cols="5" class="form-control" placeholder="Nhập nội dung"></textarea>
+                            </div>
+                          </div>
+
+                          <div class="contact-form-item contact-form-submit">
+                            <a href="#" class="form-step-button button button-green pop-up-button button-invalid">
+                              <span class="text">Tiếp tục</span>
+                              <span class="icon arrow-right-icon-white"></span>
+                            </a>
+                          </div>
                         </div>
                       </div>
-                      <!-- END Step 2 -->
-                    </div>
+                      <!-- END Step 1 -->
 
-                    <!-- Step 3 -->
-                    <div class="form-step-content">
-                      <h2>3. Thông tin buổi học</h2>
-                      <div class="contact-form">
-                        <div class="contact-form-item">
-                          <input type="text" name="" placeholder="Naam...">
-                        </div>
-                        <div class="contact-form-item">
-                          <input type="text" name="" placeholder="E-mail...">
-                        </div>
-                        <div class="contact-form-item">
-                          <input type="text" name="" placeholder="Adres...">
-                        </div>
-                        <div class="contact-form-item">
-                          <input type="text" name="" placeholder="Postcode...">
-                        </div>
+
+                      <!-- Step 3 -->
+                      <div class="form-step-content">
+                        <h2>3. Thêm bài giảng</h2>
+
 
                         <div class="contact-form-item contact-form-submit">
-                          <a href="#" class="form-step-button button button-green pop-up-button button-invalid">
+                          <button type="submit" class="btn btn-success">
                             <span class="text">Hoàn tất</span>
                             <span class="icon arrow-right-icon-white"></span>
-                          </a>
+                            </a>
                         </div>
                       </div>
                     </div>
@@ -289,14 +251,14 @@
 
                   </div>
                 </div>
-              </div>
-
             </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>
 <input type="file" multiple="multiple" class="dz-hidden-input" style="visibility: hidden; position: absolute; top: 0px; left: 0px; height: 0px; width: 0px;">
 
@@ -321,41 +283,16 @@
       var stepContent = _this.closest('.form-step-content').index();
       var stepContentNext = _this.closest('.form-step-content').index() + 1;
 
-      // Loop through the fields
-      jQuery(".form-step-content").eq(stepContent).find('input, select').each(function() {
-        var fieldsValue = jQuery(this).val();
 
-        if (fieldsValue == "") {
-          valid = true;
-          // jQuery(this).after('<span class="step-required"></span>');
-        }
-        if (fieldsValue != "") {
-          // jQuery(this).find('.step-required').remove();
-        }
-      });
 
-      // Set boolean true if all not is empty
-      if (valid == true) {
-        _this.addClass('button-invalid');
-        _thisClass = true;
-      } else {
-        _this.removeClass('button-invalid');
-        _thisClass = false;
-      }
+      alertMessage.html('');
 
-      // Alert message / Hide and show the content
-      if (_thisClass == true) {
-        alertMessage.html('Điền đầy đủ thông tin để tiếp tục');
-        _this.addClass('button-bouncing');
-      } else {
-        alertMessage.html('');
+      jQuery('.form-step-content').hide();
+      jQuery('.form-step-content').eq(stepContentNext).fadeIn(500);
 
-        jQuery('.form-step-content').hide();
-        jQuery('.form-step-content').eq(stepContentNext).fadeIn(500);
+      //stepBarNext
+      jQuery('.step-item').eq(stepContentNext).addClass('step-item-active');
 
-        //stepBarNext
-        jQuery('.step-item').eq(stepContentNext).addClass('step-item-active');
-      }
     });
 
     // Step bar

@@ -11,9 +11,8 @@
                 <div class="col-lg-12">
                   <ul class="nav nav-tabs md-tabs " role="tablist">
                     <li class="nav-item">
-                      <a class="nav-link active show" data-toggle="tab" href="#home7" role="tab" aria-selected="true"
-                        style="font-size: 14px; font-weight: bold;">
-                        <i class="fa fa-info-circle"></i>THÔNG TIN KHÓA HÓC</a>
+                      <a class="nav-link active show" data-toggle="tab" href="#home7" role="tab" aria-selected="true" style="font-size: 14px; font-weight: bold;">
+                        <i class="fa fa-info-circle"></i>THÔNG TIN KHÓA HỌC</a>
                       <div class="slide"></div>
                     </li>
                   </ul>
@@ -90,8 +89,7 @@
                             <div class="row ui-sortable" id="draggablePanelList">
                               <div class="col-lg-12 col-xl-12 ui-sortable-handle">
                                 <div class="card-sub">
-                                  <img class="card-img-top img-fluid" src="{{asset('assets/jpg/card1.jpg')}}"
-                                    alt="Card image cap">
+                                  <img class="card-img-top img-fluid" src="{{asset('assets/jpg/card1.jpg')}}" alt="Card image cap">
                                   <div class="card-block">
                                     <h5 class="card-title">Ảnh đại diện</h5>
                                     {{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -115,7 +113,7 @@
                               <div class="sortable-moves card-sub ui-sortable-handle" style="padding-left: 10px">
                                 <h5 class="card-title"><i class="fa fa-wpforms" style="padding-right: 3px"></i>Nội dung:
                                 </h5>
-                                <p class="card-text">{{$khoahoc->noidung}}</p>
+                                <p class="card-text">{{Str::limit($khoahoc->noidung,550 , '...')}}</p>
                               </div>
                               <div class="sortable-moves card-sub ui-sortable-handle" style="padding-left: 10px">
                                 <h5 class="card-title"><i class="fa fa-gg" style="padding-right: 3px"></i>Độ
@@ -191,8 +189,7 @@
                         $time = new Carbon\Carbon($nhanxet->thoigian);
                         @endphp
                         <li style="text-align: center; margin: 5px 5px; display: flex; align-items: center">
-                          <img class="card-img-top img-fluid" src="{{asset("$anh")}}" alt="Card image cap"
-                            style="width: 40px; height: 40px; border-radius: 50%">
+                          <img class="card-img-top img-fluid" src="{{asset("$anh")}}" alt="Card image cap" style="width: 40px; height: 40px; border-radius: 50%">
                           <h6 style="margin-left: 10px">
                             {{$nhanxet->user->hocsinh->hodem.' '.$nhanxet->user->hocsinh->ten.' [ '.$nhanxet->created_at->diffForHumans().' ] '}}
                           </h6>
@@ -200,8 +197,7 @@
                         </li>
                       </ul>
                       @endforeach
-                      <div class="card-block"
-                        style="border-top: 1px solid #cccccc; padding-bottom: 10px; text-align: center">
+                      <div class="card-block" style="border-top: 1px solid #cccccc; padding-bottom: 10px; text-align: center">
                         <div style="padding-top: 10px; display: inline-block">
                           {{$nhanxets->links('vendor.pagination.bootstrap-4')}}
                           {{-- {{$khoahocs->links()}} --}}
@@ -226,8 +222,7 @@
                             $time = date_format($date,"Y-m-d H:i:s");
                             setlocale(LC_TIME, 'vi_VN'); Carbon\Carbon::setLocale('vi');
                             @endphp
-                            <img class="card-img-top img-fluid" src="{{asset("$anh")}}" alt="Card image cap"
-                              style="width: 40px; height: 40px; border-radius: 50%">
+                            <img class="card-img-top img-fluid" src="{{asset("$anh")}}" alt="Card image cap" style="width: 40px; height: 40px; border-radius: 50%">
                             <input name="noidung" type="text" placeholder="Nhập vào đánh giá của bạn">
                             <input name="user_id" style="display: none;" value="{{$user->id}}">
                             <input name="khoa_hoc_id" style="display: none;" value="{{$khoahoc->id}}">
@@ -237,8 +232,7 @@
                         </div>
                       </div>
                       <div class="card-footer">
-                        <input type="submit" class="btn btn-info btn-round waves-effect waves-light"
-                          style="float: right" value="Gửi"></input>
+                        <input type="submit" class="btn btn-info btn-round waves-effect waves-light" style="float: right" value="Gửi"></input>
                       </div>
                     </div>
                   </form>

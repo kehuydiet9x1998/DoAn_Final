@@ -1,5 +1,4 @@
-<div class="modal fade show" id="suagv-Modal" tabindex="-1" role="dialog"
-     style="z-index: 1050;display: none; padding-right: 17px;">
+<div class="modal fade show" id="suagv-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -60,8 +59,7 @@
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Số điện thoại</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" id="sodienthoai" name="sodienthoai"
-                       placeholder="Nhập vào số điện thoại">
+                <input type="text" class="form-control" id="sodienthoai" name="sodienthoai" placeholder="Nhập vào số điện thoại">
                 <span class="messages"></span>
               </div>
             </div>
@@ -93,9 +91,8 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default waves-effect " data-dismiss="modal"
-                    onclick="myReset()">Close</button>
-            <input type="submit" class="btn btn-primary waves-effect waves-light" value="Cập nhật"/>
+            <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Đóng</button>
+            <input type="submit" class="btn btn-primary waves-effect waves-light" value="Cập nhật" />
           </div>
         </form>
       </div>

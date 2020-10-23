@@ -4015,7 +4015,10 @@ tbody.collapse.show {
  padding:1.25rem
 }
 .card-title {
- margin-bottom:.75rem
+ margin-bottom:1.2rem;
+ min-width: 130px;
+ max-width: 250px;
+ display: inline-block;
 }
 .card-subtitle {
  margin-top:-.375rem;
