@@ -18,10 +18,8 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('courses', "Administrators\KhoaHocController");
     Route::resource('staffs', "Administrators\NhanVienController");
     Route::resource('teachers', "Administrators\TeacherController");
+    Route::resource('allclass', "Administrators\LopHocController");
 
-    Route::get('classes', function () {
-      return view('backend.administrators.class.classes');
-    });
     Route::get('contracts', function () {
       return view('backend.administrators.contracts');
     });

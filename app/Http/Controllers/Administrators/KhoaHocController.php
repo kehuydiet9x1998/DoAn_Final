@@ -21,7 +21,8 @@ class KhoaHocController extends Controller
   public function index()
   {
     $khoahocs = KhoaHoc::all();
-    return view('backend.administrators.courses.courses',compact('khoahocs'));
+
+    return view('backend.administrators.courses.courses',compact('khoahocs',));
   }
 
   /**

@@ -233,7 +233,7 @@ $menu = [
 "text" => "Thông tin khóa học",
 ],
 [
-"link" => "/administrators/classes",
+"link" => "/administrators/allclass",
 "type" => "link",
 "icon" => "fa fa-graduation-cap",
 "text" => "Lớp học ",
