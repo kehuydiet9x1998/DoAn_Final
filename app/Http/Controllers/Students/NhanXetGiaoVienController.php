@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Students;
 
 use App\Http\Controllers\Controller;
+use App\Models\GiaoVien;
 use App\Models\LopHoc;
 use App\Models\NhanXetGiaoVien;
 use App\Models\PhanLop;
@@ -45,7 +46,9 @@ class NhanXetGiaoVienController extends Controller
    */
   public function store(Request $request)
   {
-    //
+    $data = $request->all();
+    NhanXetGiaoVien::create($data);
+    return back();
   }
 
   /**
@@ -57,8 +60,12 @@ class NhanXetGiaoVienController extends Controller
   public function show($id)
   {
     $data =  PhanLop::find($id)->lopHoc;
+    $user = auth()->user();
+    $idgiaovien = PhanLop::find($id)->lopHoc->giaoVien->id;
+    $dsnhanxet = NhanXetGiaoVien::where('giao_vien_id', $idgiaovien)->orderBy('id', 'desc')->paginate(20);
+
     //return $data;
-    return view('backend.students.nhanxetgiaovien.nhanxetgiaovien', ['lophoc' => $data]);
+    return view('backend.students.nhanxetgiaovien.nhanxetgiaovien', ['lophoc' => $data, 'user' => $user, 'dsnhanxet' => $dsnhanxet]);
   }
 
   /**
@@ -92,6 +99,5 @@ class NhanXetGiaoVienController extends Controller
    */
   public function destroy(NhanXetGiaoVien $nhanXetGiaoVien)
   {
-    //
   }
 }
