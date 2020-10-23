@@ -50,7 +50,5 @@
      $('.modal').hide();
      $('.modal-backdrop').hide();
    };
-
  </script>
-
  <script type="text/javascript" src="{{asset('assets/js/bootstrap.min.js')}}"></script>

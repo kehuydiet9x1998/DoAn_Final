@@ -6,22 +6,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfeacd01-f2c3-4401-a83c-21a86b8aa657" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DoAn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DoAn.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Administrators/KhoaHocController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Administrators/KhoaHocController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/LopHoc.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/LopHoc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/users.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/users.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/_khoa_hoc_seeder/khoa_hoc.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_khoa_hoc_seeder/khoa_hoc.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/classes/classes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/classes/classes.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/courses/add_course.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/courses/add_course.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/contracts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/contracts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/teacher/add_teacher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/teacher/add_teacher.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/teacher/teacher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/teacher/teacher.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/listStudent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/listStudent.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/show_student_modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/show_student_modal.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/layout/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layout/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/chuyenlop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/chuyenlop.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/giangvien/list_giangvien.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/giangvien/list_giangvien.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/add_lichtrainghiem_modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/add_lichtrainghiem_modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/listlichtrainghiem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/listlichtrainghiem.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/nhanxet/feedback.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/nhanxet/feedback.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/nhanxet/modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/nhanxet/modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/phanlop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/phanlop.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -188,12 +183,12 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\DoAn\resources\views\backend\students" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\DoAn\app\Http\Controllers\Administrators" />
       <recent name="D:\xampp\htdocs\DoAn\resources\views\backend\teachers" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\DoAn\resources\views\backend\students" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.vendor">
@@ -293,7 +288,7 @@
       <workItem from="1603328577717" duration="924000" />
       <workItem from="1603375069539" duration="9660000" />
       <workItem from="1603413493671" duration="8704000" />
-      <workItem from="1603454849655" duration="5238000" />
+      <workItem from="1603454849655" duration="12710000" />
     </task>
     <servers />
   </component>
@@ -317,10 +312,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1602660514166" />
-    <state x="445" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602426833802">
+    <state x="445" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603461669688">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="445" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1602426833802" />
+    <state x="445" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1603461669688" />
     <state x="363" y="100" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1603115540417">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -355,7 +350,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/backend/students/myclass/class-detail.blade.php</url>
-          <line>120</line>
+          <line>117</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
