@@ -263,18 +263,4 @@
     $('.modal-backdrop').hide();
   };
 
-  // $(document).ready(function() {
-  //   $('.xemnhanxet').click(function() {
-  //     //alert($(this).data('id'))
-  //     $('#xemnhanxet-Modal').load('/teachers/xemnhanxet/' + $(this).data('id'))
-  //   });
-
-  //   $('xemlainhanxet').click(function() {
-  //     // myReset();
-  //     $('#xemnhanxet-Modal2').load('/teachers/xemnhanxet/' + $(this).data('id'))
-  //   })
-  // });
-
-  //đoạn này k cần nữa à
-
 </script>

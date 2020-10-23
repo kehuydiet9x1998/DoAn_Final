@@ -21,7 +21,6 @@
                     </div>
                   </div>
                 </div>
-
               </div>
               <div class="card-block">
                   <div class="table-responsive">

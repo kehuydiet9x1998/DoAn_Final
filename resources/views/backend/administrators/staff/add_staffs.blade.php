@@ -64,8 +64,7 @@
                   <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Số điện thoại</label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="sodienthoai" name="sodienthoai"
-                        placeholder="Nhập vào số điện thoại">
+                      <input type="text" class="form-control" id="sodienthoai" name="sodienthoai" placeholder="Nhập vào số điện thoại">
                       <span class="messages"></span>
                     </div>
                   </div>
@@ -103,8 +102,7 @@
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default waves-effect " data-dismiss="modal"
-                    onclick="myReset()">Close</button>
+                  <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Đóng</button>
                   <input type="submit" class="btn btn-primary waves-effect waves-light" value="Thêm" />
                 </div>
               </form>

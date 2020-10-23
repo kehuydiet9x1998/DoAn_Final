@@ -1,5 +1,4 @@
-<div class="modal fade show" id="chuyenlop-Modal" tabindex="-1" role="dialog"
-     style="z-index: 1050;display: none; padding-right: 17px;">
+<div class="modal fade show" id="chuyenlop-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -62,13 +61,11 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default waves-effect " data-dismiss="modal"
-                    onclick="myReset()">Close</button>
-            <input type="submit" class="btn btn-primary waves-effect waves-light" value="Cập nhật"/>
+            <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Đóng</button>
+            <input type="submit" class="btn btn-primary waves-effect waves-light" value="Cập nhật" />
           </div>
         </form>
       </div>
     </div>
   </div>
 </div>
-

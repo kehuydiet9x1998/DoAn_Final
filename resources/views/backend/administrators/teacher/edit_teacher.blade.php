@@ -29,8 +29,7 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Ngày sinh</label>
             <div class="col-sm-9">
-              <input type="date" class="ngaysinh" id="ngaysinh" name="ngaysinh"
-                value="{{substr($teachers->ngaysinh ,0 ,10)}}">
+              <input type="date" class="ngaysinh" id="ngaysinh" name="ngaysinh" value="{{substr($teachers->ngaysinh ,0 ,10)}}">
               <span class="messages"></span>
             </div>
           </div>
@@ -39,14 +38,12 @@
             <div class="col-sm-9">
               <div class="form-check form-check-inline">
                 <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="gioitinh" id="gioitinh" value="Nam"
-                    {{$teachers->gioitinh == 'Nam' ? "checked" :''}}> Nam
+                  <input class="form-check-input" type="radio" name="gioitinh" id="gioitinh" value="Nam" {{$teachers->gioitinh == 'Nam' ? "checked" :''}}> Nam
                 </label>
               </div>
               <div class="form-check form-check-inline">
                 <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="gioitinh" id="gioitinh" value="Nữ"
-                    {{$teachers->gioitinh == 'Nữ' ? "checked" :''}}> Nữ
+                  <input class="form-check-input" type="radio" name="gioitinh" id="gioitinh" value="Nữ" {{$teachers->gioitinh == 'Nữ' ? "checked" :''}}> Nữ
                 </label>
               </div>
               <span class="messages"></span>
@@ -62,40 +59,35 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Số điện thoại</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="sodienthoai" name="sodienthoai"
-                placeholder="Nhập vào số điện thoại" value="{{$teachers->sodienthoai}}">
+              <input type="text" class="form-control" id="sodienthoai" name="sodienthoai" placeholder="Nhập vào số điện thoại" value="{{$teachers->sodienthoai}}">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Email</label>
             <div class="col-sm-9">
-              <input type="email" class="form-control" id="email" name="email" placeholder="Nhập vào Email"
-                value="{{$teachers->email}}">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Nhập vào Email" value="{{$teachers->email}}">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Địa chỉ</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="diachi" name="diachi" placeholder="Nhập vào quê quán"
-                value="{{$teachers->diachi}}">
+              <input type="text" class="form-control" id="diachi" name="diachi" placeholder="Nhập vào quê quán" value="{{$teachers->diachi}}">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Tình trạng</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="tinhtrang" name="tinhtrang" placeholder="Trạng thái"
-                value="{{$teachers->tinhtrang}}">
+              <input type="text" class="form-control" id="tinhtrang" name="tinhtrang" placeholder="Trạng thái" value="{{$teachers->tinhtrang}}">
               <span class="messages"></span>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default waves-effect " data-dismiss="modal"
-            onclick="myReset()">Close</button>
-            <input type="submit" class="btn btn-primary waves-effect waves-light" value="Sửa thông tin" />
+          <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Đóng</button>
+          <input type="submit" class="btn btn-primary waves-effect waves-light" value="Sửa thông tin" />
         </div>
       </form>
     </div>
@@ -105,4 +97,5 @@
       $('.modal').hide();
       $('.modal-backdrop').hide();
     };
+
   </script>

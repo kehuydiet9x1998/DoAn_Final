@@ -7,7 +7,7 @@
       </button>
     </div>
     <div class="modal-body">
-      <form >
+      <form>
         <div class="modal-body">
           <input type="hidden" name="_token" value="{{csrf_token()}}">
           {{ csrf_field() }}
@@ -37,14 +37,12 @@
             <div class="col-sm-9">
               <div class="form-check form-check-inline">
                 <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="gioitinh" id="gioitinh" value="Nam"
-                  {{$staffs->gioitinh == 'Nam' ? "checked" :''}}> Nam
+                  <input class="form-check-input" type="radio" name="gioitinh" id="gioitinh" value="Nam" {{$staffs->gioitinh == 'Nam' ? "checked" :''}}> Nam
                 </label>
               </div>
               <div class="form-check form-check-inline">
                 <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="gioitinh" id="gioitinh" value="Nữ"
-                  {{$staffs->gioitinh == 'Nữ' ? "checked" :''}}> Nữ
+                  <input class="form-check-input" type="radio" name="gioitinh" id="gioitinh" value="Nữ" {{$staffs->gioitinh == 'Nữ' ? "checked" :''}}> Nữ
                 </label>
               </div>
               <span class="messages"></span>
@@ -53,16 +51,14 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Số CMND</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" name="cmnd" 
-              placeholder="Nhập vào tên" value="{{$staffs->cmnd}}">
+              <input type="text" class="form-control" name="cmnd" placeholder="Nhập vào tên" value="{{$staffs->cmnd}}">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Số điện thoại</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="sodienthoai" name="sodienthoai"
-                placeholder="Nhập vào số điện thoại" value="{{$staffs->sodienthoai}}">
+              <input type="text" class="form-control" id="sodienthoai" name="sodienthoai" placeholder="Nhập vào số điện thoại" value="{{$staffs->sodienthoai}}">
               <span class="messages"></span>
             </div>
           </div>
@@ -97,8 +93,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default waves-effect " data-dismiss="modal"
-            onclick="myReset()">Close</button>
+          <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Đóng</button>
         </div>
       </form>
     </div>
@@ -108,4 +103,5 @@
       $('.modal').hide();
       $('.modal-backdrop').hide();
     };
+
   </script>
