@@ -115,6 +115,8 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('lessons', 'Students\BuoiHocController');
     Route::resource('calendar', 'Students\LichController');
     Route::resource('my-comment', 'Students\NhanXetGiaoVienController');
+    Route::resource('review-khoahoc', 'Students\NhanXetKhoahocController');
+    Route::resource('review-giaovien', 'Students\NhanXetGiaoVienController');
     Route::get('review', function () {
       return view('backend.students.review');
     });
@@ -127,9 +129,6 @@ Route::middleware(['auth', 'web'])->group(function () {
     });
     Route::get('/notifications', function () {
       return view('backend.notification');
-    });
-    Route::get('class/comment/1', function () {
-      return view('backend.students.nhanxetgiaovien.comment');
     });
   });
 });

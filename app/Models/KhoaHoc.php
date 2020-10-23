@@ -53,4 +53,8 @@ class KhoaHoc extends Model
   {
     return $this->hasMany(ChiTietHocPhi::class);
   }
+  public function dsNhanXet()
+  {
+    return $this->hasMany(NhanXetKhoaHoc::class);
+  }
 }
