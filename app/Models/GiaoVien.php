@@ -48,4 +48,8 @@ class GiaoVien extends Model
       $query->where('ten', 'like', 'Giảng viên');
     })->get();
   }
+  public function dsNhanXet()
+  {
+    return $this->hasMany(NhanXetGiaoVien::class);
+  }
 }

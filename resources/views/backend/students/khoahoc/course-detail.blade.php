@@ -2,7 +2,6 @@
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/pages.css')}}">
 <div class="pcoded-inner-content">
-
   <div class="main-body">
     <div class="page-wrapper">
 
@@ -94,7 +93,6 @@
 
       </div>
     </div>
-
   </div>
 </div>
 </div>

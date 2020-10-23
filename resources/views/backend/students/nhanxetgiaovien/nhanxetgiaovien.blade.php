@@ -26,7 +26,7 @@
                               <div class="card-header col-sm-12" style="text-align: center;">
                                 <img class="card-img-top img-fluid" src="{{asset('assets/jpg/card1.jpg')}}"
                                   alt="Card image cap" style="width: 240px; height: 240px; border-radius: 50%">
-                                <h6 style="margin-top: 10px; font-size: 16px; font-weight: bold">
+                                <h6 style="margin-top: 10px; font-size: 16px; font-weight: bold">{{$lophoc->tenlop}}
                                 </h6>
                               </div>
                               <div class="card-block">
@@ -36,7 +36,7 @@
                                       <div class="card-block" style="display: flex; margin-top: -25px">
                                         <h5 class="card-title"><i class="fa fa-code"></i>Giới tính :</h5>
                                         <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px">
-                                          <b>{{$lophoc->giaovien->gioitinh}}</b></h5>
+                                          <b></b></h5>
                                       </div>
                                       <div class="card-block" style="display: flex; margin-top: -40px">
                                         <h5 class="card-title"><i class="fa fa-calendar"></i>Trình độ chuyên môn :</h5>
@@ -111,7 +111,7 @@
                                         {{-- <input type="text" style="display:none" name="doituongnhanxet_id}"
                                           value="{{$lophoc->giaovien->id}}"> --}}
                                         {{-- <input type="text" style="display:none" name="user_id}" value="{{}}"> --}}
-                                      </div>
+                                        {{-- </div>
                                     </div>
                                   </div>
                                 </div>
@@ -135,7 +135,7 @@
     </div>
   </div>
 </div>
-@endsection
-@section('script')
+                @endsection
+                @section('script')
 
-@endsection
+                @endsection
