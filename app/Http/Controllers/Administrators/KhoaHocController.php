@@ -19,13 +19,20 @@ class KhoaHocController extends Controller
    */
   public function index()
   {
-    if (FacadesRequest::ajax()) {
-      $khoaHoc = Helper::getData(KhoaHoc::query(), 10);
-      return view('backend.administrators.courses.table', [
-        'khoahocs' => $khoaHoc,
-      ]);
-    }
-    return view('backend.administrators.courses.courses');
+    // if (FacadesRequest::ajax()) {
+    //   $khoaHoc = Helper::getData(KhoaHoc::query(), 10);
+    //   return view('backend.administrators.courses.table', [
+    //     'khoahocs' => $khoaHoc,
+    //   ]);
+    // }
+    $khoaHoc = KhoaHoc::orderBy('created_at', 'desc')->get();
+
+    $levels = Level::all();
+    $loaikhoahocs = LoaiKhoaHoc::all();
+    return view(
+      'backend.administrators.courses.courses',
+      compact('khoaHoc', 'levels', 'loaikhoahocs')
+    );
   }
 
   /**
@@ -35,8 +42,6 @@ class KhoaHocController extends Controller
    */
   public function create()
   {
-    $levels = Level::all();
-    $loaikhoahocs = LoaiKhoaHoc::all();
     return view(
       'backend.administrators.courses.add_course',
       compact('levels', 'loaikhoahocs')
@@ -52,7 +57,7 @@ class KhoaHocController extends Controller
   public function store(Request $request)
   {
     $data = $request->all();
-     KhoaHoc::create($data);
+    KhoaHoc::create($data);
     return redirect(route('administrators.index'));
   }
 
