@@ -14,24 +14,21 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Họ tên học viên</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" name="hodem" id="hodem"
-                value="{{$hocsinh->hocSinh->hodem .' '.$hocsinh->hocSinh->ten}}">
+              <input type="text" class="form-control" name="hodem" id="hodem" value="{{$hocsinh->hocSinh->hodem .' '.$hocsinh->hocSinh->ten}}">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Họ tên phụ huynh</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" name="ten"
-                value="{{$hocsinh->hocSinh->hotenchame}}">
+              <input type="text" class="form-control" name="ten" value="{{$hocsinh->hocSinh->hotenchame}}">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Số điện thoại</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" name="cmnd"
-                value="{{$hocsinh->hocSinh->sodienthoai}}">
+              <input type="text" class="form-control" name="cmnd" value="{{$hocsinh->hocSinh->sodienthoai}}">
               <span class="messages"></span>
             </div>
           </div>
@@ -45,23 +42,20 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Ngày học</label>
             <div class="col-sm-9">
-              <input type="date" class="ngaysinh" id="ngaysinh" name="ngaysinh"
-                value="{{substr($hocsinh->thoigian,0 ,10)}}">
+              <input type="date" class="ngaysinh" id="ngaysinh" name="ngaysinh" value="{{substr($hocsinh->thoigian,0 ,10)}}">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Ghi chí</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="tinhtrang" name="tinhtrang" placeholder="Trạng thái"
-                value="{{$hocsinh->ghichu}}">
+              <input type="text" class="form-control" id="tinhtrang" name="tinhtrang" placeholder="Trạng thái" value="{{$hocsinh->ghichu}}">
               <span class="messages"></span>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default waves-effect " data-dismiss="modal"
-            onclick="myReset()">Close</button>
+          <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Đóng</button>
         </div>
       </form>
     </div>
@@ -72,4 +66,5 @@
     $('.modal').hide();
     $('.modal-backdrop').hide();
   };
+
 </script>

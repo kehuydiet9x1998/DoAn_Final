@@ -4,7 +4,6 @@ use App\Http\Controllers\ChatsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Teachers\BaiTapController;
 use Illuminate\Support\Facades\Route;
-use App\Models\NhanXetHocSinh;
 use App\Http\Controllers\students\XemNhanXetController;
 use App\Http\Controllers\Teachers\NhanXetHocSinhController;
 
@@ -18,10 +17,8 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('courses', "Administrators\KhoaHocController");
     Route::resource('staffs', "Administrators\NhanVienController");
     Route::resource('teachers', "Administrators\TeacherController");
+    Route::resource('allclass', "Administrators\LopHocController");
 
-    Route::get('classes', function () {
-      return view('backend.administrators.class.classes');
-    });
     Route::get('contracts', function () {
       return view('backend.administrators.contracts');
     });
@@ -87,9 +84,6 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::get('list-teachers', function () {
       return view('backend.contact.listTeacher');
     });
-    Route::get('dashboard', function () {
-      return view('backend.contact.dashboard-contact');
-    });
   });
 
   Route::get('/news-feed', function () {
@@ -110,7 +104,7 @@ Route::middleware(['auth', 'web'])->group(function () {
 
   Route::prefix('/student')->group(function () {
     Route::resource('class', "Students\MyClassController");
-    Route::resource('courses', 'Students\KhoaHocController');
+    Route::resource('allcourses', 'Students\KhoaHocController');
     Route::resource('home-work', 'Students\BaiTapVeNhaController');
     Route::resource('lessons', 'Students\BuoiHocController');
     Route::resource('calendar', 'Students\LichController');
@@ -135,6 +129,7 @@ Route::middleware(['auth', 'web'])->group(function () {
 Route::get('/myhome', function () {
   return view('backend.myhome');
 });
+
 Auth::routes();
 
 Route::get('/chat', [ChatsController::class, 'index']);

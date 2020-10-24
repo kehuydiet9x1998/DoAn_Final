@@ -233,7 +233,7 @@ $menu = [
 "text" => "Thông tin khóa học",
 ],
 [
-"link" => "/administrators/classes",
+"link" => "/administrators/allclass",
 "type" => "link",
 "icon" => "fa fa-graduation-cap",
 "text" => "Lớp học ",
@@ -366,7 +366,7 @@ $menu = [ [
 "text" => "Lớp học của tôi",
 ],
 [
-"link" => "/student/courses",
+"link" => "/student/allcourses",
 "type" => "link",
 "icon" => "fa fa-check-square-o",
 "text" => "Giới thiệu khóa học",

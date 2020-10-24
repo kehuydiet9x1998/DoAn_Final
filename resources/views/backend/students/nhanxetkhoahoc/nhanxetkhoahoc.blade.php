@@ -13,7 +13,7 @@
                     <li class="nav-item">
                       <a class="nav-link active show" data-toggle="tab" href="#home7" role="tab" aria-selected="true"
                         style="font-size: 14px; font-weight: bold;">
-                        <i class="fa fa-info-circle"></i>THÔNG TIN KHÓA HÓC</a>
+                        <i class="fa fa-info-circle"></i>THÔNG TIN KHÓA HỌC</a>
                       <div class="slide"></div>
                     </li>
                   </ul>

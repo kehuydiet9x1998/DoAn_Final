@@ -1,11 +1,8 @@
 <div id="dom-table_filter" class="dataTables_filter" style="margin-left: -145px;">
-  <label style="display: flex">Search:<input type="search" class="form-control input-sm" aria-controls="dom-table"
-      style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;">
+  <label style="display: flex">Search:<input type="search" class="form-control input-sm" aria-controls="dom-table" style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;">
     <li>
-      <button class="btn btn-success btn-round waves-effect waves-light" data-toggle="modal" data-target="#large-Modal"
-        style="margin-top: -6px;height: 35px;line-height: 13px; margin-left: 5px">Thêm lịch trải nghiệm</button>
-      <div class="modal fade show" id="large-Modal" tabindex="-1" role="dialog"
-        style="z-index: 1050;display: none; padding-right: 17px;">
+      <button class="btn btn-success btn-round waves-effect waves-light" data-toggle="modal" data-target="#large-Modal" style="margin-top: -6px;height: 35px;line-height: 13px; margin-left: 5px">Thêm lịch trải nghiệm</button>
+      <div class="modal fade show" id="large-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
         <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -58,8 +55,7 @@
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default waves-effect " data-dismiss="modal"
-                    onclick="myReset()">Close</button>
+                  <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Đóng</button>
                   <input type="submit" class="btn btn-primary waves-effect waves-light" value="Thêm" />
                 </div>
               </form>

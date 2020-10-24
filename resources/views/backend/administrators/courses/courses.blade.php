@@ -14,20 +14,70 @@
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-6">
                     <div id="dom-table_filter" class="dataTables_filter">
-                      <label style="display: flex">Tìm kiếm:<input type="search" id="search"
-                          class="form-control input-sm" placeholder="" aria-controls="dom-table"
-                          style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;">
                         <a href="/administrators/courses/create">
                           <button id='add' class="btn btn-success btn-round waves-effect waves-light"
-                            style="margin-top: -6px;height: 35px;line-height: 13px; margin-left: 5px">Thêm khóa
-                            học</button>
-                        </a></label>
+                                  style="height: 35px;line-height: 13px; margin-left: 5px; float: right">Thêm khóa học</button>
+                        </a>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="card-block" id="data">
-              </div>
+              <div class="card-block">
+                  <div class="table-responsive">
+                    <table class="table table-hover m-b-0" id="datatable">
+                      <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Tên khóa học</th>
+                        <th>Học phí</th>
+                        <th>Độ tuổi</th>
+                        <th>Loại khóa học</th>
+                        <th>Level</th>
+                        <th>Actions</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      @foreach($khoahocs as $khoahoc)
+                        <tr>
+                          <td>{{$khoahoc->id}}</td>
+                          <td>
+                            <div class="d-inline-block align-middle">
+                              <a href="{{route('courses.show', $khoahoc->id)}}">
+                                <div class="d-inline-block">
+                                  <h6 class="name_link_green">{{$khoahoc->tenkhoahoc }}</h6>
+                                  <p class="text-muted m-b-0"></p>
+                                </div>
+                              </a>
+                            </div>
+                          </td>
+                          <td>{{number_format($khoahoc->hocphi).'đ'}}</td>
+                          <td>{{$khoahoc->dotuoi}}</td>
+                          <td>
+                            <label class="badge badge-inverse-primary">{{$khoahoc->loaiKhoaHoc->tenloaikhoahoc}}</label>
+                          </td>
+                          <td>
+                            <label class="badge badge-inverse-primary">{{$khoahoc->level->tenlevel}}</label>
+                          </td>
+                          <td style="display: flex">
+                            <a href="{{route('courses.edit',$khoahoc->id)}}">
+                            <button style="border: none; padding: 2px 0px; margin-top: -1px; background-color: transparent">
+                              <i class="fa fa-edit f-w-600 f-16 m-r-15 text-c-green" style="margin:0; font-size: 20px"></i></button>
+                            </a>
+                            <form action="{{route('courses.destroy', $khoahoc->id)}}" method="post">
+                              @method('DELETE')
+                              @csrf
+                              <button style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent"
+                                      onclick="return confirm ('Bạn có muốn xóa không')">
+                                <i class="feather icon-trash-2 f-w-600 f-16 m-r-15 text-c-red" style="margin:0; font-size: 20px"></i></button>
+                            </form>
+                          </td>
+                        </tr>
+                      @endforeach
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
             </div>
           </div>
         </div>
@@ -42,46 +92,3 @@
 
 @endsection
 
-@section('script')
-
-<script>
-  function getData(url) {
-    $.ajax({
-      url,
-      beforeSend: function () {
-        $('.card').addClass("card-load");
-        $('.card').append('<div class="card-loader"><i class="feather icon-radio rotate-refresh"></div>');
-      },
-      success: function (data) {
-        $('.card').children(".card-loader").remove();
-        $('.card').removeClass("card-load");
-        $('#data').html(data);
-        /* -------------------------------------------------------------------------- */
-        /*                                 paginate                                 */
-        /* -------------------------------------------------------------------------- */
-        $('.pagination .page-link').unbind('click').on('click', function (e) {
-          e.preventDefault();
-          var page = $(this).text();
-          url = result + '&page=' + page
-          getData(url);
-          $('li').removeClass('active disabled');
-          e.target.parentElement.classList.add('active')
-        });
-      }
-    })
-  }
-
-  $(document).ready(function () {
-    getData('/administrators/courses?sort_by=tenkhoahoc&desc')
-
-    result = '/administrators/courses?';
-
-    $('#search').on('input', function (e) {
-      result = encodeURI('/administrators/courses?tenkhoahoc=%' + e.target.value + '%')
-      getData(result);
-    });
-  });
-
-</script>
-
-@endsection
