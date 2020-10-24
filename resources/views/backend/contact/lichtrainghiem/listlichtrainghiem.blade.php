@@ -16,28 +16,16 @@
                     @include('backend.contact.lichtrainghiem.add_lichtrainghiem_modal')
                   </div>
                 </div>
-                <div class="card-header-right">
-                  <ul class="list-unstyled card-option">
-                    <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
-                    <li><i class="feather icon-maximize full-card"></i></li>
-                    <li><i class="feather icon-minus minimize-card"></i></li>
-                    <li><i class="feather icon-refresh-cw reload-card"></i></li>
-                    <li><i class="feather icon-trash close-card"></i></li>
-                    <li><i class="feather icon-chevron-left open-card-option"></i></li>
-                  </ul>
-                </div>
               </div>
               <div class="card-block">
                 <div class="table-responsive">
-                  <table class="table table-hover m-b-0">
+                  <table class="table table-hover m-b-0" id="datatable">
                     <thead>
                       <tr>
                         <th>ID</th>
                         <th>Tên học sinh</th>
-                        {{-- <th>Tên phụ huynh</th>
-                        <th>Số điện thoại</th> --}}
+                        <th>Thời gian</th>
                         <th>Trang thái</th>
-                        <th>Ngày học</th>
                         <th>Ghi chú</th>
                         <th>Action</th>
                       </tr>
@@ -47,8 +35,6 @@
                       <tr>
                         <td>{{$hocsinh->id}}</td>
                         <td>{{$hocsinh->hocSinh->hodem .' '.$hocsinh->hocSinh->ten}}</td>
-                        {{-- <td>{{$hocsinh->hocSinh->hotenchame}}</td>
-                        <td>{{$hocsinh->hocSinh->sodienthoai}}</td> --}}
                         <td>{{$hocsinh->trangthai}}</td>
                         <td>{{substr($hocsinh->thoigian,0,10)}}</td>
                         <td>{{$hocsinh->ghichu}}</td>

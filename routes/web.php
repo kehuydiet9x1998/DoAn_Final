@@ -137,3 +137,6 @@ Route::get('/messages/{id}', [ChatsController::class, 'getMessage'])->name(
   'messages'
 );
 Route::post('/messages', [ChatsController::class, 'sendMessage']);
+Route::get('/pro-class', function (){
+  return view('proclass-detail');
+});
