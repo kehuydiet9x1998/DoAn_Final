@@ -19,7 +19,7 @@
                         <div class="modal-dialog modal-lg" role="document">
                           <div class="modal-content">
                             <div class="modal-header">
-                              <h4 class="modal-title">Thêm nhân viên</h4>
+                              <h4 class="modal-title">Thêm kh óa học</h4>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">×</span>
                               </button>
@@ -161,10 +161,8 @@
                           <label class="badge badge-inverse-primary">{{$khoahoc->level->tenlevel}}</label>
                         </td>
                         <td style="display: flex">
-                          <a href="{{route('courses.edit',$khoahoc->id)}}">
-                            <button style="border: none; padding: 2px 0px; margin-top: -1px; background-color: transparent">
-                              <i class="fa fa-edit f-w-600 f-16 m-r-15 text-c-green" style="margin:0; font-size: 20px"></i></button>
-                          </a>
+                          <button class="edit_course" data-id="{{ $khoahoc->id }}" data-toggle="modal" data-target="#edit_course" style="border: none; padding: 2px 0px; margin-top: -1px; background-color: transparent">
+                            <i class="fa fa-edit f-w-600 f-16 m-r-15 text-c-green" style="margin:0; font-size: 20px"></i></button>
                           <form action="{{route('courses.destroy', $khoahoc->id)}}" method="post">
                             @method('DELETE')
                             @csrf
@@ -176,6 +174,9 @@
                       @endforeach
                     </tbody>
                   </table>
+                  <div class="modal fade show" id="edit_course" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
+
+                  </div>
                 </div>
               </div>
 
@@ -190,5 +191,29 @@
     </div>
   </div>
 </div>
+
+@endsection
+
+
+@section('script')
+
+<script>
+  $(document).ready(function() {
+    // $('.btn.btn-primary').click(function(e) {
+    // id = $(this).data('id');
+    // $('#show-Modal').load("/administrators/staffs/" + id);
+    // $('#show-Modal').show();
+    // $('.modal-backdrop').show();
+    // });
+    $('.edit_course').click(function(e) {
+
+      id = $(this).data('id');
+      $('#edit_course').load("/administrators/courses/" + id + '/edit');
+      $('#edit-course').show();
+      $('.modal-backdrop').show();
+    })
+  });
+
+</script>
 
 @endsection

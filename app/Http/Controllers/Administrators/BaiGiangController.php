@@ -46,47 +46,56 @@ class BaiGiangController extends Controller
   /**
    * Display the specified resource.
    *
-   * @param  \App\Models\BaiGiang  $baiGiang
+   * @param  \App\Models\BaiGiang  $baigiang
    * @return \Illuminate\Http\Response
    */
-  public function show(BaiGiang $baiGiang)
+  public function show(BaiGiang $baigiang)
   {
+    return view('showbaigiang', compact('baigiang'));
   }
 
   /**
    * Show the form for editing the specified resource.
    *
-   * @param  \App\Models\BaiGiang  $baiGiang
+   * @param  \App\Models\BaiGiang  $baigiang
    * @return \Illuminate\Http\Response
    */
-  public function edit(BaiGiang $baiGiang)
+  public function edit(BaiGiang $baigiang)
   {
+    return view(
+      'backend.administrators.courses.edit_baigiang',
+      compact('baigiang')
+    );
   }
 
   /**
    * Update the specified resource in storage.
    *
    * @param  \Illuminate\Http\Request  $request
-   * @param  \App\Models\BaiGiang  $baiGiang
+   * @param  \App\Models\BaiGiang  $baigiang
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, BaiGiang $baiGiang)
+  public function update(Request $request, BaiGiang $baigiang)
   {
-    return $request->file('filebaigiang');
-    $baiGiang->fill($request->all());
-    $baiGiang->save();
+    $baigiang->fill($request->except('filebaigiang'));
+    if ($request->has('filebaigiang')) {
+      $baigiang->filebaigiang = $request
+        ->file('filebaigiang')
+        ->store('baigiang');
+    }
+    $baigiang->save();
     return back();
   }
 
   /**
    * Remove the specified resource from storage.
    *
-   * @param  \App\Models\BaiGiang  $baiGiang
+   * @param  \App\Models\BaiGiang  $baigiang
    * @return \Illuminate\Http\Response
    */
-  public function destroy(BaiGiang $baiGiang)
+  public function destroy(BaiGiang $baigiang)
   {
-    $baiGiang->delete();
+    $baigiang->delete();
     return back();
   }
 }

@@ -52,9 +52,9 @@ class KhoaHocController extends Controller
   {
     // return $request->all();
     $data = $request->except('hinhanhkhoahoc');
-    $khoahoc = KhoaHoc::create($data);
+    $course = KhoaHoc::create($data);
     foreach ($request['hinhanhkhoahoc'] as $key => $hinhanhkhoahoc) {
-      $khoahoc->dsHinhAnh()->create([
+      $course->dsHinhAnh()->create([
         'duongdan' => $request->hinhanhkhoahoc[$key]->store('hinhanhkhoahoc'),
       ]);
     }
@@ -64,7 +64,7 @@ class KhoaHocController extends Controller
   /**
    * Display the specified resource.
    *
-   * @param  \App\Models\KhoaHoc  $khoaHoc
+   * @param  \App\Models\KhoaHoc  $course
    * @return \Illuminate\Http\Response
    */
   public function show($id)
@@ -79,18 +79,18 @@ class KhoaHocController extends Controller
   /**
    * Show the form for editing the specified resource.
    *
-   * @param  \App\Models\KhoaHoc  $khoaHoc
+   * @param  \App\Models\KhoaHoc  $course
    * @return \Illuminate\Http\Response
    */
   public function edit($id)
   {
     $khoahoc = KhoaHoc::find($id);
-    $loaikhoahoc = LoaiKhoaHoc::all();
-    $level = Level::all();
-    $baigiang = BaiGiang::all()->where('khoa_hoc_id', $id);
+    $loaikhoahocs = LoaiKhoaHoc::all();
+    $levels = Level::all();
+    // $baigiang = BaiGiang::all()->where('khoa_hoc_id', $id);
     return view(
       'backend.administrators.courses.edit_course',
-      compact('khoahoc', 'loaikhoahoc', 'level', 'baigiang')
+      compact('khoahoc', 'loaikhoahocs', 'levels')
     );
   }
 
@@ -98,20 +98,29 @@ class KhoaHocController extends Controller
    * Update the specified resource in storage.
    *
    * @param  \Illuminate\Http\Request  $request
-   * @param  \App\Models\KhoaHoc  $khoaHoc
+   * @param  \App\Models\KhoaHoc  $course
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, KhoaHoc $khoaHoc)
+  public function update(Request $request, KhoaHoc $course)
   {
-    $khoaHoc->fill($request->all());
-    $khoaHoc->save();
-    return redirect(route('administrators.index'));
+    // return $request->all();
+    $course->fill($request->except('hinhanhkhoahoc'));
+    if ($request->has('hinhanhkhoahoc')) {
+      foreach ($request->file('hinhanhkhoahoc') as $hinhanh) {
+        $course->dsHinhAnh()->create([
+          'duongdan' => $hinhanh->store('hinhanhkhoahoc'),
+          // 'khoa_hoc_id' => $course->id,
+        ]);
+      }
+    }
+    $course->save();
+    return back();
   }
 
   /**
    * Remove the specified resource from storage.
    *
-   * @param  \App\Models\KhoaHoc  $khoaHoc
+   * @param  \App\Models\KhoaHoc  $course
    * @return \Illuminate\Http\Response
    */
   public function destroy($id)

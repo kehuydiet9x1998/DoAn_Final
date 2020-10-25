@@ -210,13 +210,21 @@
                                         </div>
                                       </td>
                                       <td>{{Str::limit($baigiang->noidung, 40)}}</td>
-                                      <td>{{$baigiang->filebaigiang}}</td>
+                                      <td>
+                                        <button class="baigiang" data-id="{{$baigiang->id}}" data-toggle="modal" data-target="#baigiang-Modal" class="jstree-anchor" tabindex="-1" id="j1_14_anchor" style="background: transparent; outline:none; border:none; color:in">
+                                          <i class="fa fa-file-pdf-o f-w-600 f-16 m-r-15 text-c-red"></i>
+                                          bai_giang_{{ $baigiang->id }}.pdf
+                                        </button>
+                                      </td>
 
                                       <td style="display: flex">
-                                        <a href="{{route('baigiang.edit',$baigiang->id)}}">
-                                          <button style="border: none; padding: 2px 0px; margin-top: -1px; background-color: transparent">
-                                            <i class="fa fa-edit f-w-600 f-16 m-r-15 text-c-green" style="margin:0; font-size: 20px"></i></button>
-                                        </a>
+                                        <div>
+                                          <button class="my_edit" data-id="{{$baigiang->id}}" data-toggle="modal" data-target="#edit-Modal" style="background-color: transparent; border: none; padding: 0 0 0 7px">
+                                            <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i>
+                                          </button>
+
+                                        </div>
+
                                         <form action="{{route('baigiang.destroy', $baigiang->id)}}" method="post">
                                           @method('DELETE')
                                           @csrf
@@ -228,6 +236,13 @@
                                     @endforeach
                                   </tbody>
                                 </table>
+                                <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
+                                </div>
+
+                                <div class="modal fade show" id="baigiang-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
+                                </div>
+
+
                               </div>
                             </div>
 
@@ -258,6 +273,28 @@
   $(document).on("click", '[data-toggle="lightbox"]', function(event) {
     event.preventDefault();
     $(this).ekkoLightbox();
+  });
+
+  $(document).ready(function() {
+
+    $('.my_edit').click(function(e) {
+
+      id = $(this).data('id');
+      $('#edit-Modal').load("/administrators/baigiang/" + id + '/edit');
+      $('#edit-Modal').show();
+      $('.modal-backdrop').show();
+
+    });
+
+    $('.baigiang').click(function(e) {
+      id = $(this).data('id');
+      $('#baigiang-Modal').load("/administrators/baigiang/" + id);
+      $('#baigiang-Modal').show();
+
+      $('.modal-backdrop').show();
+
+    });
+
   });
 
 </script>

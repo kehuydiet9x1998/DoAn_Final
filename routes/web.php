@@ -141,3 +141,7 @@ Route::post('/messages', [ChatsController::class, 'sendMessage']);
 Route::get('/pro-class', function () {
   return view('proclass-detail');
 });
+
+Route::get('test', function () {
+  return view('test');
+});
