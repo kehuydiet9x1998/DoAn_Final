@@ -17,10 +17,9 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('courses', "Administrators\KhoaHocController");
     Route::resource('staffs', "Administrators\NhanVienController");
     Route::resource('teachers', "Administrators\TeacherController");
+    Route::resource('allclass', "Administrators\LopHocController");
+    Route::resource('baigiang', "Administrators\BaiGiangController");
 
-    Route::get('classes', function () {
-      return view('backend.administrators.class.classes');
-    });
     Route::get('contracts', function () {
       return view('backend.administrators.contracts');
     });
@@ -106,7 +105,7 @@ Route::middleware(['auth', 'web'])->group(function () {
 
   Route::prefix('/student')->group(function () {
     Route::resource('class', "Students\MyClassController");
-    Route::resource('courses', 'Students\KhoaHocController');
+    Route::resource('allcourses', 'Students\KhoaHocController');
     Route::resource('home-work', 'Students\BaiTapVeNhaController');
     Route::resource('lessons', 'Students\BuoiHocController');
     Route::resource('calendar', 'Students\LichController');
@@ -139,3 +138,6 @@ Route::get('/messages/{id}', [ChatsController::class, 'getMessage'])->name(
   'messages'
 );
 Route::post('/messages', [ChatsController::class, 'sendMessage']);
+Route::get('/pro-class', function () {
+  return view('proclass-detail');
+});

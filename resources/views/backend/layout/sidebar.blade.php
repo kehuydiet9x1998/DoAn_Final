@@ -54,7 +54,7 @@ $menu = [
 [
 "type" => "link",
 "icon" => "fa fa-history",
-"link" => "/admin/lich-trai-nghiem",
+"link" => "/contacts/lichtrainghiem",
 "text" => "Lịch trải nghiệm",
 ],
 [
@@ -230,10 +230,10 @@ $menu = [
 "link" => "/administrators/courses",
 "type" => "link",
 "icon" => "fa fa-institution",
-"text" => "Thông tin khóa học",
+"text" => "Khóa học",
 ],
 [
-"link" => "/administrators/classes",
+"link" => "/administrators/allclass",
 "type" => "link",
 "icon" => "fa fa-graduation-cap",
 "text" => "Lớp học ",
@@ -366,7 +366,7 @@ $menu = [ [
 "text" => "Lớp học của tôi",
 ],
 [
-"link" => "/student/courses",
+"link" => "/student/allcourses",
 "type" => "link",
 "icon" => "fa fa-check-square-o",
 "text" => "Giới thiệu khóa học",

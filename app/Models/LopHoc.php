@@ -20,6 +20,7 @@ class LopHoc extends Model
     'trangthai',
     'ghichu',
     'khoa_hoc_id',
+    'giao_vien_id',
   ];
 
   public function getNgaybatdauAttribute($value)
@@ -31,7 +32,7 @@ class LopHoc extends Model
   public function getNgayketthucAttribute($value)
   {
     $date = strtotime($value);
-    return date('d-m-Y', $date);
+    return date('d/m/Y', $date);
   }
 
   public function khoaHoc()

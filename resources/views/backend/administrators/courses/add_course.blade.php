@@ -142,47 +142,86 @@
                       <!-- Step 1 -->
                       <div class="form-step-content">
                         <div class="contact-form">
+                          <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Tên khóa học</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="tenkhoahoc" class="form-control" placeholder="Nhập tên khóa học">
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Loại khóa học</label>
+                            <div class="col-sm-10">
+                              <select name="select" class="form-control fill">
+                                @foreach($loaikhoahocs as $lkh)
+                                <option value="{{$lkh->id}}">{{$lkh->tenloaikhoahoc}}</option>
+                                @endforeach
+                              </select>
+                            </div>
+
+                            <div class="form-group row">
+                              <label class="col-sm-2 col-form-label">Level</label>
+                              <div class="col-sm-10">
+                                <select name="select" class="form-control fill">
+                                  @foreach($levels as $lv)
+                                  <option value="{{$lv->id}}">{{$lv->tenlevel}}</option>
+                                  @endforeach
+                                </select>
+                              </div>
+
+                              <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Level</label>
+                                <div class="col-sm-10">
+                                  <select name="select" name="level_id" class="form-control fill">
+                                    <option value="">-- Level --</option>
+                                    @foreach($levels as $level)
+                                    <option value={{ $level->id }}>{{ $level->tenlevel }}</option>
+                                    @endforeach
+
+                                  </select>
+                                </div>
+                              </div>
 
 
-                          <div class="contact-form-item contact-form-submit">
-                            <a href="#" class="form-step-button button button-green pop-up-button button-invalid">
-                              <span class="text">Tiếp tục</span>
-                              <span class="icon arrow-right-icon-white"></span>
-                            </a>
+                              <div class="contact-form-item contact-form-submit">
+                                <a href="#" class="form-step-button button button-green pop-up-button button-invalid">
+                                  <span class="text">Tiếp tục</span>
+                                  <span class="icon arrow-right-icon-white"></span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- END Step 1 -->
+
+
+                          <!-- Step 3 -->
+                          <div class="form-step-content">
+                            <h2>3. Thêm bài giảng</h2>
+
+
+                            <div class="contact-form-item contact-form-submit">
+                              <button type="submit" class="btn btn-success">
+                                <span class="text">Hoàn tất</span>
+                                <span class="icon arrow-right-icon-white"></span>
+                                </a>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <!-- END Step 1 -->
+                        <!-- END Step 3 -->
 
 
-                      <!-- Step 3 -->
-                      <div class="form-step-content">
-                        <h2>3. Thêm bài giảng</h2>
+                        <div class="step-alert"></div>
 
-
-                        <div class="contact-form-item contact-form-submit">
-                          <button type="submit" class="btn btn-success">
-                            <span class="text">Hoàn tất</span>
-                            <span class="icon arrow-right-icon-white"></span>
-                            </a>
-                        </div>
                       </div>
                     </div>
-                    <!-- END Step 3 -->
-
-
-                    <div class="step-alert"></div>
-
                   </div>
-                </div>
+              </form>
             </div>
-            </form>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 <input type="file" multiple="multiple" class="dz-hidden-input" style="visibility: hidden; position: absolute; top: 0px; left: 0px; height: 0px; width: 0px;">
 

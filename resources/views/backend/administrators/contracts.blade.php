@@ -14,26 +14,15 @@
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-6">
                     <div id="dom-table_filter" class="dataTables_filter" style="margin-left: -145px;">
-                      <label style="display: flex">Tìm kiếm:<input type="search" class="form-control input-sm" placeholder="" aria-controls="dom-table" style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;">
-                        <button class="btn btn-success btn-round waves-effect waves-light" style="margin-top: -6px;height: 35px;line-height: 13px; margin-left: 5px">Thêm hợp đồng</button>
-                      </label>
+                      <button class="btn btn-success btn-round waves-effect waves-light"
+                              style="margin-top: -6px;height: 35px;line-height: 13px; float: right">Thêm hợp đồng</button>
                     </div>
                   </div>
-                </div>
-                <div class="card-header-right">
-                  <ul class="list-unstyled card-option">
-                    <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
-                    <li><i class="feather icon-maximize full-card"></i></li>
-                    <li><i class="feather icon-minus minimize-card"></i></li>
-                    <li><i class="feather icon-refresh-cw reload-card"></i></li>
-                    <li><i class="feather icon-trash close-card"></i></li>
-                    <li><i class="feather icon-chevron-left open-card-option"></i></li>
-                  </ul>
                 </div>
               </div>
               <div class="card-block">
                 <div class="table-responsive">
-                  <table class="table table-hover m-b-0">
+                  <table class="table table-hover m-b-0" id="datatable">
                     <thead>
                       <tr>
                         <th>STT</th>

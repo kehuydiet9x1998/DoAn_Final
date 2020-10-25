@@ -16,26 +16,15 @@
                     @include('backend.administrators.teacher.add_teacher')
                   </div>
                 </div>
-                <div class="card-header-right">
-                  <ul class="list-unstyled card-option">
-                    <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
-                    <li><i class="feather icon-maximize full-card"></i></li>
-                    <li><i class="feather icon-minus minimize-card"></i></li>
-                    <li><i class="feather icon-refresh-cw reload-card"></i></li>
-                    <li><i class="feather icon-trash close-card"></i></li>
-                    <li><i class="feather icon-chevron-left open-card-option"></i></li>
-                  </ul>
-                </div>
               </div>
               <div class="card-block">
                 <div class="table-responsive">
-                  <table class="table table-hover m-b-0">
+                  <table class="table table-hover m-b-0" id="datatable">
                     <thead>
                       <tr>
                         <th>ID</th>
                         <th>Họ và tên</th>
                         <th>Giới tính</th>
-                        <th>Ngày sinh</th>
                         <th>SĐT</th>
                         <th>Email</th>
                         <th>Địa chỉ</th>
@@ -49,7 +38,6 @@
                         <td>{{$teacher->id}}</td>
                         <td>{{$teacher->hodem .' '.$teacher->ten}}</td>
                         <td>{{$teacher->gioitinh}}</td>
-                        <td>{{$teacher->ngaysinh}}</td>
                         <td>{{$teacher->sodienthoai}}</td>
                         <td>{{$teacher->email}}</td>
                         <td>{{$teacher->diachi}}</td>
@@ -59,7 +47,7 @@
                             {{-- Xem chi tiết nhân viên --}}
                             <button data-id="{{$teacher->id}}" type="button" class="btn btn-primary waves-effect"
                               data-toggle="modal" data-target="#show-Modal"
-                              style="background-color: white; border: none; padding: 0" id="">
+                              style="background-color: white; border: none; padding: 0;">
                               <i class="fa fa-eye f-w-600 f-16 m-r-15 text-c-green"></i>
                             </button>
                             <div class="modal fade show" id="show-Modal" tabindex="-1" role="dialog"
@@ -69,7 +57,7 @@
                           <!-- Modal Sua -->
                           <div>
                             <button class="my_edit" data-id="{{$teacher->id}}" data-toggle="modal"
-                              data-target="#edit-Modal">
+                              data-target="#edit-Modal" style="border: none; background-color: transparent">
                               <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i>
                             </button>
                             <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog"
@@ -81,7 +69,7 @@
                             <form action="{{route('teachers.destroy', $teacher->id)}}" method="post">
                               @method('DELETE')
                               @csrf
-                              <button style="border: none; padding: 2px 0px; margin-top: -1px;"
+                              <button style="border: none; padding:0px; margin: -1px 0px 0px -15px; background-color: transparent"
                                 onclick="return confirm ('Bạn có muốn xóa không')">
                                 <i class="feather icon-trash-2 f-w-600 f-16 m-r-15 text-c-red" style="margin:0;">
                                 </i>

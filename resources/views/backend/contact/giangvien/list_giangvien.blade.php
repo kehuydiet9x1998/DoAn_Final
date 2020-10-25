@@ -12,14 +12,6 @@
                   <div class="col-xs-12 col-sm-12 col-md-6">
                     <h5>Danh sách giáo viên</h5>
                   </div>
-                  <div class="col-xs-12 col-sm-12 col-md-6">
-                    <div id="dom-table_filter" class="dataTables_filter" style="margin-left: -145px;">
-                      <label style="display: flex">Search:<input type="search" class="form-control input-sm"
-                          placeholder="" aria-controls="dom-table"
-                          style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;">
-                      </label>
-                    </div>
-                  </div>
                 </div>
                 <div class="card-header-right">
                   <ul class="list-unstyled card-option">

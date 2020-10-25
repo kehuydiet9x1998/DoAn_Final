@@ -12,26 +12,11 @@
                   <div class="col-xs-12 col-sm-12 col-md-6">
                     <h5>DANH SÁCH NHẬN XÉT</h5>
                   </div>
-                  <div class="col-xs-12 col-sm-12 col-md-6">
-                    <div id="dom-table_filter" class="dataTables_filter" style="margin-left: -50px;">
-                      <label style="display: flex">Tìm kiếm:<input type="search" class="form-control input-sm" placeholder="" aria-controls="dom-table" style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;"></label>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-header-right">
-                  <ul class="list-unstyled card-option">
-                    <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
-                    <li><i class="feather icon-maximize full-card"></i></li>
-                    <li><i class="feather icon-minus minimize-card"></i></li>
-                    <li><i class="feather icon-refresh-cw reload-card"></i></li>
-                    <li><i class="feather icon-trash close-card"></i></li>
-                    <li><i class="feather icon-chevron-left open-card-option"></i></li>
-                  </ul>
                 </div>
               </div>
               <div class="card-block">
                 <div class="table-responsive">
-                  <table class="table table-hover m-b-0" id="example">
+                  <table class="table table-hover m-b-0" id="datatable">
                     <thead>
                       <tr>
                         <th>ID</th>

@@ -150,26 +150,17 @@
                             <p style="margin-top:15px" class="badge badge-pill badge-{{$st->trangthai == 'Học thử'? 'warning' : 'primary'}}">
                               {{$st->trangthai}}</p>
                           </td>
-                          {{-- <td>{{$st->hotenchame}}</td> --}}
-                          {{-- <td>{{$st->cmnd}}</td>
-                          <td>{{$st->sodienthoai}}</td>
-                          <td>{{$st->email}}</td> --}}
                           <td>{{$st->diachi}}</td>
                           <td style="display: flex;">
                             <div>
-                              {{-- // cais nayhf ddeer hie thi chhi tiet --}}
-                              {{-- <button data-id="{{$st->id}}" type="button"
-                              class="btn btn-primary show-modal waves-effect" data-toggle="modal"
-                              data-target="#show-Modal" style="background-color: white; border: none; padding: 0"
-                              id="">
-                              <i class="fa fa-eye f-w-600 f-16 m-r-15 text-c-green"></i>
-                              </button> --}}
-                              <div class="modal fade show" id="show-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
+                              <div class="modal fade show" id="show-Modal" tabindex="-1" role="dialog"
+                                style="z-index: 1050;display: none; padding-right: 17px;">
                               </div>
                             </div>
-
-                            <button class="my_edit" data-id="{{$st->id}}" data-toggle="modal" data-target="#edit-Modal" style="background-color: white; border: none">
-                              <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green" style="margin-right: 3px"></i>
+                            <button class="my_edit" data-id="{{$st->id}}" data-toggle="modal" data-target="#edit-Modal"
+                              style="background-color: white; border: none">
+                              <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"
+                                style="margin-right: 3px"></i>
                             </button>
                             <!-- Modal Sua -->
                             <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">

@@ -17,6 +17,7 @@ class BaiGiang extends Model
     'noidung',
     'thoigiandukien',
     'khoa_hoc_id',
+    'filebaigiang',
   ];
 
   public function khoaHoc()

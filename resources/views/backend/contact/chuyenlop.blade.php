@@ -38,7 +38,7 @@
               </div>
               <div class="card-block">
                 <div class="table-responsive">
-                  <table class="table table-hover m-b-0" id="table">
+                  <table class="table table-hover m-b-0" id="datatable">
                     <thead>
                       <tr>
                         <th>MÃ HỌC VIÊN</th>
@@ -71,12 +71,6 @@
                     </tbody>
                   </table>
                 </div>
-                {{-- phân trang--}}
-                {{-- <div class="card-block" style="border-top: 1px solid #cccccc; padding-bottom: 10px; text-align: center">--}}
-                {{-- <div style="padding-top: 10px; display: inline-block">--}}
-                {{-- {{$students->links('vendor.pagination.bootstrap-4')}}--}}
-                {{-- </div>--}}
-                {{-- </div>--}}
               </div>
             </div>
           </div>

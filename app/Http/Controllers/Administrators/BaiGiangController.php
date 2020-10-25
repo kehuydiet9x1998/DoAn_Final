@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Students;
+namespace App\Http\Controllers\Administrators;
 
 use App\Http\Controllers\Controller;
-use App\Models\KhoaHoc;
+use App\Models\BaiGiang;
 use Illuminate\Http\Request;
 
-class KhoaHocController extends Controller
+class BaiGiangController extends Controller
 {
   /**
    * Display a listing of the resource.
@@ -15,15 +15,7 @@ class KhoaHocController extends Controller
    */
   public function index()
   {
-    $data = auth()
-      ->user()
-      ->hocsinh->dslophoc()
-      ->with('lophoc.khoahoc')
-      ->get()
-      ->pluck('lophoc.khoahoc');
-
-    return $data;
-    return view('backend.students.khoahoc.courses', ['khoahocs' => $data]);
+    //
   }
 
   /**
@@ -44,52 +36,57 @@ class KhoaHocController extends Controller
    */
   public function store(Request $request)
   {
-    //
+    $tenfile = $request->file('filebaigiang')->store('baigiang');
+    $data = $request->all();
+    $data['filebaigiang'] = $tenfile;
+    BaiGiang::create($data);
+    return back();
   }
 
   /**
    * Display the specified resource.
    *
-   * @param  \App\Models\KhoaHoc  $khoaHoc
+   * @param  \App\Models\BaiGiang  $baiGiang
    * @return \Illuminate\Http\Response
    */
-  public function show($id)
+  public function show(BaiGiang $baiGiang)
   {
-    $data = KhoaHoc::find($id);
-    return view('backend.students.khoahoc.course-detail', ['khoahoc' => $data]);
   }
 
   /**
    * Show the form for editing the specified resource.
    *
-   * @param  \App\Models\KhoaHoc  $khoaHoc
+   * @param  \App\Models\BaiGiang  $baiGiang
    * @return \Illuminate\Http\Response
    */
-  public function edit(KhoaHoc $khoaHoc)
+  public function edit(BaiGiang $baiGiang)
   {
-    //
   }
 
   /**
    * Update the specified resource in storage.
    *
    * @param  \Illuminate\Http\Request  $request
-   * @param  \App\Models\KhoaHoc  $khoaHoc
+   * @param  \App\Models\BaiGiang  $baiGiang
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, KhoaHoc $khoaHoc)
+  public function update(Request $request, BaiGiang $baiGiang)
   {
-    //
+    return $request->file('filebaigiang');
+    $baiGiang->fill($request->all());
+    $baiGiang->save();
+    return back();
   }
 
   /**
    * Remove the specified resource from storage.
    *
-   * @param  \App\Models\KhoaHoc  $khoaHoc
+   * @param  \App\Models\BaiGiang  $baiGiang
    * @return \Illuminate\Http\Response
    */
-  public function destroy(KhoaHoc $khoaHoc)
+  public function destroy(BaiGiang $baiGiang)
   {
-    //
+    $baiGiang->delete();
+    return back();
   }
 }

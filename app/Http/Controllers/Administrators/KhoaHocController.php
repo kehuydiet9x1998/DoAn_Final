@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Administrators;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Helper;
+use App\Models\BaiGiang;
 use App\Models\KhoaHoc;
 use App\Models\Level;
 use App\Models\LoaiKhoaHoc;
@@ -19,19 +20,12 @@ class KhoaHocController extends Controller
    */
   public function index()
   {
-    // if (FacadesRequest::ajax()) {
-    //   $khoaHoc = Helper::getData(KhoaHoc::query(), 10);
-    //   return view('backend.administrators.courses.table', [
-    //     'khoahocs' => $khoaHoc,
-    //   ]);
-    // }
-    $khoaHoc = KhoaHoc::orderBy('created_at', 'desc')->get();
-
-    $levels = Level::all();
+    $khoahocs = KhoaHoc::all();
     $loaikhoahocs = LoaiKhoaHoc::all();
+    $levels = Level::all();
     return view(
       'backend.administrators.courses.courses',
-      compact('khoaHoc', 'levels', 'loaikhoahocs')
+      compact('khoahocs', 'loaikhoahocs', 'levels')
     );
   }
 
@@ -56,9 +50,15 @@ class KhoaHocController extends Controller
    */
   public function store(Request $request)
   {
-    $data = $request->all();
-    KhoaHoc::create($data);
-    return redirect(route('administrators.index'));
+    // return $request->all();
+    $data = $request->except('hinhanhkhoahoc');
+    $khoahoc = KhoaHoc::create($data);
+    foreach ($request['hinhanhkhoahoc'] as $key => $hinhanhkhoahoc) {
+      $khoahoc->dsHinhAnh()->create([
+        'duongdan' => $request->hinhanhkhoahoc[$key]->store('hinhanhkhoahoc'),
+      ]);
+    }
+    return back();
   }
 
   /**
@@ -67,13 +67,12 @@ class KhoaHocController extends Controller
    * @param  \App\Models\KhoaHoc  $khoaHoc
    * @return \Illuminate\Http\Response
    */
-  public function show(KhoaHoc $khoaHoc)
+  public function show($id)
   {
-    $levels = Level::all();
-    $loaikhoahocs = LoaiKhoaHoc::all();
+    $khoahoc = KhoaHoc::find($id);
     return view(
       'backend.administrators.courses.show_course',
-      compact('khoaHoc', 'levels', 'loaikhoahocs')
+      compact('khoahoc')
     );
   }
 
@@ -83,13 +82,15 @@ class KhoaHocController extends Controller
    * @param  \App\Models\KhoaHoc  $khoaHoc
    * @return \Illuminate\Http\Response
    */
-  public function edit(KhoaHoc $khoaHoc)
+  public function edit($id)
   {
-    $levels = Level::all();
-    $loaikhoahocs = LoaiKhoaHoc::all();
+    $khoahoc = KhoaHoc::find($id);
+    $loaikhoahoc = LoaiKhoaHoc::all();
+    $level = Level::all();
+    $baigiang = BaiGiang::all()->where('khoa_hoc_id', $id);
     return view(
       'backend.administrators.courses.edit_course',
-      compact('khoaHoc', 'levels', 'loaikhoahocs')
+      compact('khoahoc', 'loaikhoahoc', 'level', 'baigiang')
     );
   }
 
