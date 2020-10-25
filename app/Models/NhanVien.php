@@ -26,6 +26,11 @@ class NhanVien extends Model
     'user_id',
   ];
 
+  public function getNgaysinhAttribute($value)
+  {
+    return date('d-m-Y', strtotime($value));
+  }
+
   public function user()
   {
     return $this->belongsTo(User::class);

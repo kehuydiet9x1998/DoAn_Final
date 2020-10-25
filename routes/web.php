@@ -18,6 +18,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('staffs', "Administrators\NhanVienController");
     Route::resource('teachers', "Administrators\TeacherController");
     Route::resource('allclass', "Administrators\LopHocController");
+    Route::resource('baigiang', "Administrators\BaiGiangController");
 
     Route::get('contracts', function () {
       return view('backend.administrators.contracts');
@@ -137,6 +138,10 @@ Route::get('/messages/{id}', [ChatsController::class, 'getMessage'])->name(
   'messages'
 );
 Route::post('/messages', [ChatsController::class, 'sendMessage']);
-Route::get('/pro-class', function (){
+Route::get('/pro-class', function () {
   return view('proclass-detail');
+});
+
+Route::get('test', function () {
+  return view('test');
 });

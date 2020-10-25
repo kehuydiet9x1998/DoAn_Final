@@ -230,7 +230,7 @@ $menu = [
 "link" => "/administrators/courses",
 "type" => "link",
 "icon" => "fa fa-institution",
-"text" => "Thông tin khóa học",
+"text" => "Khóa học",
 ],
 [
 "link" => "/administrators/allclass",
