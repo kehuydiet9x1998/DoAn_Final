@@ -36,7 +36,6 @@ class DanhSachBaiTapController extends Controller
    */
   public function store(Request $request)
   {
-    // dd($request->all());
     for ($i = 0; $i < count($request['hoc_sinh_id']); $i++) {
       for ($j = 0; $j < count($request['bai_tap_id']); $j++) {
         $hoc_sinh_id = $request['hoc_sinh_id'][$i];
