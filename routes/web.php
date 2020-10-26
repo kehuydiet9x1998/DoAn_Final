@@ -19,6 +19,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('teachers', "Administrators\TeacherController");
     Route::resource('allclass', "Administrators\LopHocController");
     Route::resource('baigiang', "Administrators\BaiGiangController");
+    Route::resource('baitap', "Administrators\BaiTapController");
 
     Route::get('contracts', function () {
       return view('backend.administrators.contracts');

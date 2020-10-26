@@ -24,9 +24,13 @@
                           <div class="col-sm-12">
                             <div class="card">
                               <div class="card-header col-sm-12" style="text-align: center;">
-                                <img class="card-img-top img-fluid" src="{{asset('assets/jpg/card1.jpg')}}"
-                                  alt="Card image cap" style="width: 240px; height: 240px; border-radius: 50%">
-                                <h6 style="margin-top: 10px; font-size: 16px; font-weight: bold">{{$lophoc->tenlop}}
+                                @php
+                                $anh = $lophoc->giaovien->user->anhdaidien;
+                                @endphp
+                                <img class="card-img-top img-fluid" src="{{asset("$anh")}}" alt="Card image cap"
+                                  style="width: 240px; height: 240px; border-radius: 50%">
+                                <h6 style="margin-top: 10px; font-size: 16px; font-weight: bold">Giáo viên:
+                                  {{$lophoc->giaovien->hodem.' '.$lophoc->giaovien->ten}}
                                 </h6>
                               </div>
                               <div class="card-block">
@@ -36,17 +40,17 @@
                                       <div class="card-block" style="display: flex; margin-top: -25px">
                                         <h5 class="card-title"><i class="fa fa-code"></i>Giới tính :</h5>
                                         <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px">
-                                          <b></b></h5>
+                                          <b>{{$lophoc->giaovien->gioitinh}}</b></h5>
                                       </div>
                                       <div class="card-block" style="display: flex; margin-top: -40px">
-                                        <h5 class="card-title"><i class="fa fa-calendar"></i>Trình độ chuyên môn :</h5>
-                                        <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px"><b>Thạc
-                                            sĩ</b></h5>
+                                        <h5 class="card-title"><i class="fa fa-calendar"></i>Số điện thoại:</h5>
+                                        <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px">
+                                          <b>{{$lophoc->giaovien->sodienthoai}}</b></h5>
                                       </div>
                                       <div class="card-block" style="display: flex; margin-top: -40px">
                                         <h5 class="card-title"><i class="fa fa-clock-o"></i>Lớp bạn đang học:</h5>
                                         <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px">
-                                          <b></b></h5>
+                                          <b>{{$lophoc->tenlop}}</b></h5>
                                       </div>
                                     </div>
                                   </div>
@@ -55,12 +59,12 @@
                                       <div class="card-block" style="display: flex; margin-top: -25px">
                                         <h5 class="card-title"><i class="fa fa-bars"></i>Khóa học: </h5>
                                         <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px">
-                                          <b></b></h5>
+                                          <b>{{$lophoc->khoahoc->tenkhoahoc}}</b></h5>
                                       </div>
                                       <div class="card-block" style="display: flex; margin-top: -40px">
                                         <h5 class="card-title"><i class="fa fa-book"></i>Loại khóa học:</h5>
                                         <h5 class="card-title" style="margin-left: 5px; margin-top: 1.5px">
-                                          <b></b>
+                                          <b>{{$lophoc->khoahoc->loaikhoahoc->tenloaikhoahoc}}</b>
                                         </h5>
                                       </div>
                                       <div class="card-block" style="display: flex; margin-top: -40px">
@@ -84,14 +88,30 @@
                                 </div>
                               </div>
                               <div class="card-block">
+                                @foreach ($dsnhanxet as $nhanxet)
+                                @php
+                                $anh = $nhanxet->user->anhdaidien;
+                                setlocale(LC_TIME, 'vi_VN'); Carbon\Carbon::setLocale('vi');
+                                $time = new Carbon\Carbon($nhanxet->thoigian);
+                                @endphp
                                 <ul>
                                   <li style="text-align: center; margin: 5px 5px; display: flex; align-items: center">
-                                    <img class="card-img-top img-fluid" src="{{asset('assets/jpg/card1.jpg')}}"
-                                      alt="Card image cap" style="width: 40px; height: 40px; border-radius: 50%">
-                                    <h6 style="margin-left: 10px">Nguyễn Hải Minh - [HV - 001] : </h6>
-                                    <h6 class="text-c-purple" style="margin-left: 10px">Thầy dậy hay quá</h6>
+                                    <img class="card-img-top img-fluid" src="{{asset("$anh")}}" alt="Card image cap"
+                                      style="width: 40px; height: 40px; border-radius: 50%">
+                                    <h6 style="margin-left: 10px">
+                                      {{$nhanxet->user->hocsinh->hodem.' '.$nhanxet->user->hocsinh->ten.' [ '. $nhanxet->thoigian.' ] '}}
+                                    </h6>
+                                    <h6 class="text-c-purple" style="margin-left: 10px">{{$nhanxet->noidung}}</h6>
                                   </li>
                                 </ul>
+                                @endforeach
+                                <div class="card-block"
+                                  style="border-top: 1px solid #cccccc; padding-bottom: 10px; text-align: center">
+                                  <div style="padding-top: 10px; display: inline-block">
+                                    {{$dsnhanxet->links('vendor.pagination.bootstrap-4')}}
+                                    {{-- {{$khoahocs->links()}} --}}
+                                  </div>
+                                </div>
                               </div>
                             </div>
                             <form method="post" action="{{route('review-giaovien.store')}}" novalidate="">
@@ -104,14 +124,22 @@
                                 <div class="card-block">
                                   <div id="header" style="text-align: left; padding-left: 20px; padding-top: 10px">
                                     <div id="headerRight">
+                                      @php
+                                      $anh = $user->anhdaidien;
+                                      date_default_timezone_set("Asia/Bangkok");
+                                      $date=date_create();
+                                      $time = date_format($date,"Y-m-d H:i:s");
+                                      setlocale(LC_TIME, 'vi_VN'); Carbon\Carbon::setLocale('vi');
+                                      @endphp
                                       <div contenteditable="true">
-                                        <img class="card-img-top img-fluid" src="{{asset('assets/jpg/card1.jpg')}}"
-                                          alt="Card image cap" style="width: 40px; height: 40px; border-radius: 50%">
-                                        <input name="nhanxet" type="text" placeholder="Nhập vào đánh giá của bạn">
-                                        {{-- <input type="text" style="display:none" name="doituongnhanxet_id}"
-                                          value="{{$lophoc->giaovien->id}}"> --}}
-                                        {{-- <input type="text" style="display:none" name="user_id}" value="{{}}"> --}}
-                                        {{-- </div>
+                                        <img class="card-img-top img-fluid" src="{{asset("$anh")}}" alt="Card image cap"
+                                          style="width: 40px; height: 40px; border-radius: 50%">
+                                        <input name="noidung" type="text" placeholder="Nhập vào đánh giá của bạn">
+                                        <input type="text" style="display:none" name="giao_vien_id"
+                                          value="{{$lophoc->giaovien->id}}">
+                                        <input type="text" style="display:none" name="user_id" value="{{$user->id}}">
+                                        <input name="thoigian" style="display: none;" value="{{$time}}">
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
@@ -135,7 +163,7 @@
     </div>
   </div>
 </div>
-                @endsection
-                @section('script')
+@endsection
+@section('script')
 
-                @endsection
+@endsection

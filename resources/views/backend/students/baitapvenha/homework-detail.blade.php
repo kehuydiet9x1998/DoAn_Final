@@ -16,7 +16,8 @@
                   <h6 class="col-sm-12">Học viên : {{$hocsinh->hodem. ' '.$hocsinh->ten}}
                   </h6>
                   <h6 class="col-sm-12">Buổi học :
-                    {{(int)($buoihoc->id) - (int)($buoihoc->lophoc->dsbuoihoc()->first()->id) +1}}/{{$buoihoc->lophoc->dsbuoihoc->count()}}</h6>
+                    {{(int)($buoihoc->id) - (int)($buoihoc->lophoc->dsbuoihoc()->first()->id) +1}}/{{$buoihoc->lophoc->dsbuoihoc->count()}}
+                  </h6>
                   <h6 class="col-sm-12">Ngày học : {{$buoihoc->ngayhoc}}</h6>
                   <h6 class="col-sm-12 text-c-green" style="display: none">Số câu đúng : 1/10</h6>
                   <h6 class="col-sm-12 text-c-green" style="display: none">Số điểm: 1/10</h6>
@@ -33,7 +34,8 @@
                   <input type="hidden" name="buoi_hoc_id" value={{$buoihoc->id}}>
                   <input type="hidden" name="hoc_sinh_id" value={{$hocsinh->id}}>
                   <input type="hidden" name="bai_tap_id[]" value={{$bt->baitap->id}}>
-                  <img class="img img-fluid" style="margin:40px" width="400px" src="{{asset($bt->baitap->hinhanhminhhoa)}}" alt="">
+                  <img class="img img-fluid" style="margin:40px" width="400px"
+                    src="{{asset($bt->baitap->hinhanhminhhoa)}}" alt="">
                   <div class="form-radio col-sm-12">
                     <div class="radio radiofill radio-info radio-inline col-sm-12">
                       <label>
@@ -71,10 +73,15 @@
                 <span style="text-align:center"><i>Chưa có btvn</i></span>
                 @endif
                 <div class="card-footer col-sm-12" style="text-align: center">
+                  @if (count($btvn)>0)
                   <button type="submit" class="btn btn-info btn-round waves-effect waves-light">Nộp bài</button>
-                  <button onclick="window.history.back();" type="button" class="btn btn-default btn-round">Trở lại</button>
+                  <button onclick="window.history.back();" type="button" class="btn btn-default btn-round">Trở
+                    lại</button>
+                  @else
+                  <button onclick="window.history.back();" type="button" class="btn btn-default btn-round">Trở
+                    lại</button>
+                  @endif
                 </div>
-              </div>
             </form>
           </div>
         </div>

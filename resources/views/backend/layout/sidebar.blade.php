@@ -389,12 +389,12 @@ $menu = [ [
 "icon" => "fa fa-comments",
 "text" => "Nhận xét giáo viên",
 ],
-[
-"link" => "/student/my-comment",
-"type" => "link",
-"icon" => "fa fa-themeisle",
-"text" => "Nhận xét của tôi",
-],
+// [
+// "link" => "/student/my-comment",
+// "type" => "link",
+// "icon" => "fa fa-themeisle",
+// "text" => "Nhận xét của tôi",
+// ],
 ],
 ],];
 }
