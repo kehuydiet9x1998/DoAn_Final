@@ -7,18 +7,9 @@
   <component name="ChangeListManager">
     <list default="true" id="dfeacd01-f2c3-4401-a83c-21a86b8aa657" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/contracts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/contracts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/teacher/add_teacher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/teacher/add_teacher.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/teacher/teacher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/teacher/teacher.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/chuyenlop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/chuyenlop.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/giangvien/list_giangvien.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/giangvien/list_giangvien.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/add_lichtrainghiem_modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/add_lichtrainghiem_modal.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/listlichtrainghiem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/listlichtrainghiem.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/nhanxet/feedback.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/nhanxet/feedback.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/nhanxet/modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/nhanxet/modal.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/phanlop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/phanlop.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Students/BaiTapVeNhaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Students/BaiTapVeNhaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Students/KhoaHocController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Students/KhoaHocController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/students/khoahoc/courses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/students/khoahoc/courses.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,12 +174,12 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\DoAn\resources\views\backend\students" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\DoAn\app\Http\Controllers\Administrators" />
       <recent name="D:\xampp\htdocs\DoAn\resources\views\backend\teachers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\DoAn\resources\views\backend\students" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.vendor">
@@ -288,7 +279,9 @@
       <workItem from="1603328577717" duration="924000" />
       <workItem from="1603375069539" duration="9660000" />
       <workItem from="1603413493671" duration="8704000" />
-      <workItem from="1603454849655" duration="12710000" />
+      <workItem from="1603454849655" duration="12870000" />
+      <workItem from="1603501103281" duration="3695000" />
+      <workItem from="1603717947762" duration="48000" />
     </task>
     <servers />
   </component>

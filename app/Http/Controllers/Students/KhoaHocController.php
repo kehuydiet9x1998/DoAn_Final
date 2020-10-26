@@ -21,8 +21,7 @@ class KhoaHocController extends Controller
       ->with('lophoc.khoahoc')
       ->get()
       ->pluck('lophoc.khoahoc');
-
-    return $data;
+    $data = KhoaHoc::paginate(7);
     return view('backend.students.khoahoc.courses', ['khoahocs' => $data]);
   }
 
