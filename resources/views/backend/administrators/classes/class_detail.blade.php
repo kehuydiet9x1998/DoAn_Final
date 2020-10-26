@@ -47,22 +47,13 @@
                                           <b>{{$class->ngaybatdau}} đến {{$class->ngayketthuc}}</b></h5>
                                       </div>
                                       @php
-                                      $lichhoc = $class->lichHoc[0];
+                                      $lichhoc = $class->lichHoc;
                                       @endphp
                                       <div class="card-block" style="margin-top: -40px">
                                         <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-clock-o"></i>Lịch học :</h5>
                                         <h5 class="card-title">
                                           <b>{{$lichhoc->caHoc->thoigianbatdau}}-{{$lichhoc->caHoc->thoigianketthuc}}
-                                            @foreach($class->lichHoc as $key=> $lichhoc)
-                                            @if($lichhoc->thu == 8)
-                                            Chủ nhật
-                                            @else
-                                            Thứ {{ $lichhoc->thu }}
-                                            @endif
-                                            @if($key != count($class->lichhoc)-1)
-                                            ,@endif
-                                            @endforeach
-                                          </b></h5>
+                                            Thứ {{$lichhoc->thu}}</b></h5>
 
 
                                       </div>

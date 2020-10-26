@@ -43,13 +43,23 @@
                                           <b>{{$classes->ngaybatdau}} đến {{$classes->ngayketthuc}}</b></h6>
                                       </div>
                                       @php
-                                      $lichhoc = $classes->lichHoc;
+                                      $lichhoc = $classes->lichHoc[0];
                                       @endphp
                                       <div class="card-block" style="margin-top: -40px">
                                         <h6 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-clock-o"></i>Lịch học :</h6>
                                         <h6 class="card-title">
                                           <b>{{$lichhoc->caHoc->thoigianbatdau}} -
-                                            {{$lichhoc->caHoc->thoigianketthuc}} Thứ {{$lichhoc->thu}}</b></h6>
+                                            {{$lichhoc->caHoc->thoigianketthuc}}
+                                            @foreach($classes->lichHoc as $key=> $lichhoc)
+                                            @if($lichhoc->thu == 8)
+                                            Chủ nhật
+                                            @else
+                                            Thứ {{ $lichhoc->thu }}
+                                            @endif
+                                            @if($key != count($classes->lichhoc)-1)
+                                            ,@endif
+                                            @endforeach</b></h6>
+
                                       </div>
                                       <div class="card-block" style="margin-top: -40px">
                                         <h6 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-graduation-cap"></i>Giảng viên :</h6>
@@ -104,7 +114,7 @@
                                     <span>----</span>
                                     <div class="sub-text">{{$value->ngayhoc}}</div>
                                     <div class="sub-title">
-                                      {{$classes->lichHoc->caHoc->thoigianbatdau}}-{{$classes->lichHoc->caHoc->thoigianketthuc}}
+                                      {{$classes->lichHoc[0]->caHoc->thoigianbatdau}}-{{$classes->lichHoc[0]->caHoc->thoigianketthuc}}
                                     </div>
                                   </li>
                                   @endforeach

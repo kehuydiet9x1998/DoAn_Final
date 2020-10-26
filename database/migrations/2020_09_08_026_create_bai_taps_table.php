@@ -16,7 +16,7 @@ class CreateBaiTapsTable extends Migration
     Schema::create('bai_tap', function (Blueprint $table) {
       $table->id();
       $table->string('tenbaitap')->null;
-      $table->text('loaicauhoi');
+      $table->text('loaicauhoi')->default('tracnghiem');
       $table->text('noidung');
       $table->text('hinhanhminhhoa')->nullable();
       $table->text('dapan1')->nullable();

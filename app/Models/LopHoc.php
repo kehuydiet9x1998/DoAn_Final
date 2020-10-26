@@ -57,7 +57,7 @@ class LopHoc extends Model
 
   public function lichHoc()
   {
-    return $this->hasOne(ThoiGianHoc::class);
+    return $this->hasMany(ThoiGianHoc::class);
   }
 
   public function dsLopHoc()

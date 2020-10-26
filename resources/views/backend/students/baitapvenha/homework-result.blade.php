@@ -22,8 +22,10 @@
                 $socau = App\Models\BuoiHoc::sobaitap($hocsinh->id, $buoihoc->id);
                 $socaudung = App\Models\BuoiHoc::socaudung($hocsinh->id, $buoihoc->id);
                 @endphp
+                @if($socau > 0)
                 <h6 class="col-sm-12 text-c-green">Số câu đúng : {{$socaudung}}/{{$socau}}</h6>
                 <h6 class="col-sm-12 text-c-green">Số điểm: {{round($socaudung/$socau,2)*10}}/10</h6>
+                @endif
               </div>
               @php
               $cau=1;

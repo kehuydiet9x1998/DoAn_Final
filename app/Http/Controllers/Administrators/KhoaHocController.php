@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Administrators;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Helper;
 use App\Models\BaiGiang;
+use App\Models\CaHoc;
 use App\Models\KhoaHoc;
 use App\Models\Level;
 use App\Models\LoaiKhoaHoc;
+use App\Models\PhongHoc;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Request as FacadesRequest;
 
@@ -23,6 +25,7 @@ class KhoaHocController extends Controller
     $khoahocs = KhoaHoc::all();
     $loaikhoahocs = LoaiKhoaHoc::all();
     $levels = Level::all();
+
     return view(
       'backend.administrators.courses.courses',
       compact('khoahocs', 'loaikhoahocs', 'levels')
@@ -36,10 +39,10 @@ class KhoaHocController extends Controller
    */
   public function create()
   {
-    return view(
-      'backend.administrators.courses.add_course',
-      compact('levels', 'loaikhoahocs')
-    );
+    // return view(
+    //   'backend.administrators.courses.add_course',
+    //   compact('levels', 'loaikhoahocs')
+    // );
   }
 
   /**

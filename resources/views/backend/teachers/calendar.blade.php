@@ -54,8 +54,16 @@
                     @break
                     @default
                     @endswitch
-                    @for($i=0 ; $i<7; $i++) @php $temp=$dsLopHoc->where('lichHoc.thu' , $i+2)->where('lichHoc.caHoc.buoi' , $j) ; @endphp
-                      @if(count($temp)> 0)
+                    @for($i=0 ; $i<7; $i++) @php $temp=$dsLopHoc->filter(function($query) use ($i, $j) {
+
+                      return $query->lichHoc->where('caHoc.buoi' , $j)->where('thu' , $i+2)->count() > 0;
+
+                      });
+
+                      // $dsLopHoc->where('lichHoc.thu' , $i+2)->where('lichHoc.caHoc.buoi' , $j);
+                      @endphp
+
+                      @if(count($temp)>0)
                       <td style="padding: 0">
                         <div class="event" draggable="true" id={{random_int(0,10000000000000)}}>
                           <table>
@@ -65,10 +73,10 @@
                             str_pad(dechex(mt_rand(0xAA  , 0xFF)), 2, '0', STR_PAD_LEFT).
                             str_pad(dechex(mt_rand(0xAA  , 0xFF)), 2, '0', STR_PAD_LEFT)}}; font-weight: 600">
                                 {{$item->tenlop}}
-                                <p class=" m-b-0 text-muted">Thời gian: {{$item->lichhoc->caHoc->thoigianbatdau}} - {{$item->lichhoc->caHoc->thoigianketthuc}} </p>
+                                <p class=" m-b-0 text-muted">Thời gian: {{$item->lichhoc[0]->caHoc->thoigianbatdau}} - {{$item->lichhoc[0]->caHoc->thoigianketthuc}} </p>
                                 <p class=" m-b-0 text-muted">Khóa học: {{$item->khoaHoc->tenkhoahoc}}</p>
                                 <p class=" m-b-0 text-muted">Bài học : {{$item->sobuoidahoc}}/{{$item->sobuoi}}</p>
-                                <p class=" m-b-0 text-muted">Phòng học: {{$item->lichhoc->phonghoc->tenphong}}</p>
+                                <p class=" m-b-0 text-muted">Phòng học: {{$item->lichhoc[0]->phonghoc->tenphong}}</p>
                               </td>
                             </tr>
                             @endforeach
