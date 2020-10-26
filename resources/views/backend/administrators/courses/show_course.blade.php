@@ -21,20 +21,17 @@
                     {{-- Khối chưa tiêu đề --}}
                     <ul class="nav nav-tabs md-tabs " role="tablist">
                       <li class="nav-item">
-                        <a class="nav-link active show" data-toggle="tab" href="#home7" role="tab" aria-selected="true"
-                          style="font-size: 14px; font-weight: bold;">
+                        <a class="nav-link active show" data-toggle="tab" href="#home7" role="tab" aria-selected="true" style="font-size: 14px; font-weight: bold;">
                           <i class="fa fa-info-circle"></i>THÔNG TIN CHUNG</a>
                         <div class="slide"></div>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#account" role="tab" aria-selected="true"
-                          style="font-size: 14px; font-weight: bold;">
+                        <a class="nav-link" data-toggle="tab" href="#account" role="tab" aria-selected="true" style="font-size: 14px; font-weight: bold;">
                           <i class="fa fa-file"></i>HỌC LIỆU</a>
                         <div class="slide"></div>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#baitap" role="tab" aria-selected="true"
-                          style="font-size: 14px; font-weight: bold;">
+                        <a class="nav-link" data-toggle="tab" href="#baitap" role="tab" aria-selected="true" style="font-size: 14px; font-weight: bold;">
                           <i class="fa fa-tasks"></i>BÀI TẬP</a>
                         <div class="slide"></div>
                       </li>
@@ -53,10 +50,8 @@
                                   <div class="row">
                                     <div class="col-lg-12">
                                       @foreach($khoahoc->dshinhanh as $hinhanh)
-                                      <a href="{{ asset($hinhanh->duongdan) }}" data-toggle="lightbox"
-                                        data-gallery="example-gallery" class="col-sm-4 thumbnail">
-                                        <img style="height: 180px" src="{{ asset($hinhanh->duongdan) }}"
-                                          class="img-fluid">
+                                      <a href="{{ asset($hinhanh->duongdan) }}" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 thumbnail">
+                                        <img style="height: 180px" src="{{ asset($hinhanh->duongdan) }}" class="img-fluid">
                                       </a>
                                       @endforeach
                                     </div>
@@ -139,11 +134,8 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-6">
                                   <div id="dom-table_filter" class="dataTables_filter">
-                                    <button class="btn btn-success btn-round waves-effect waves-light"
-                                      data-toggle="modal" data-target="#large-Modal"
-                                      style="float: right; margin-right:30px">Thêm học liệu</button>
-                                    <div class="modal fade show" id="large-Modal" tabindex="-1" role="dialog"
-                                      style="z-index: 1050;display: none; padding-right: 17px;">
+                                    <button class="btn btn-success btn-round waves-effect waves-light" data-toggle="modal" data-target="#large-Modal" style="float: right; margin-right:30px">Thêm học liệu</button>
+                                    <div class="modal fade show" id="large-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
                                       <div class="modal-dialog modal-lg" role="document">0000
                                         <div class="modal-content">
                                           <div class="modal-header">
@@ -153,8 +145,7 @@
                                             </button>
                                           </div>
                                           <div class="modal-body">
-                                            <form method="post" action="{{route('baigiang.store')}}" novalidate=""
-                                              enctype="multipart/form-data">
+                                            <form method="post" action="{{route('baigiang.store')}}" novalidate="" enctype="multipart/form-data">
                                               <div class="modal-body">
                                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                                                 {{ csrf_field() }}
@@ -163,33 +154,28 @@
                                                 <div class="form-group row">
                                                   <label class="col-sm-2 col-form-label">Tên bài giảng</label>
                                                   <div class="col-sm-10">
-                                                    <input type="text" name="tenbaigiang" class="form-control"
-                                                      placeholder="Nhập tên bài giảng">
+                                                    <input type="text" name="tenbaigiang" class="form-control" placeholder="Nhập tên bài giảng">
                                                   </div>
                                                 </div>
 
                                                 <div class="form-group row">
                                                   <label class="col-sm-2 col-form-label">Nội dung bài giảng</label>
                                                   <div class="col-sm-10">
-                                                    <textarea name="noidung" class="form-control" id="" cols="30"
-                                                      rows="10" placeholder="Nhập nội dung bài giảng"></textarea>
+                                                    <textarea name="noidung" class="form-control" id="" cols="30" rows="10" placeholder="Nhập nội dung bài giảng"></textarea>
                                                   </div>
                                                 </div>
 
                                                 <div class="form-group row">
                                                   <label class="col-sm-2 col-form-label">File bài giảng</label>
                                                   <div class="col-sm-10">
-                                                    <input type="file" name="filebaigiang" class="form-control"
-                                                      placeholder="Chọn file bài giảng" id="">
+                                                    <input type="file" name="filebaigiang" class="form-control" placeholder="Chọn file bài giảng" id="">
                                                   </div>
                                                 </div>
 
                                               </div>
                                               <div class="modal-footer">
-                                                <button type="button" class="btn btn-default waves-effect "
-                                                  data-dismiss="modal" onclick="myReset()">Đóng</button>
-                                                <input type="submit" class="btn btn-primary waves-effect waves-light"
-                                                  value="Thêm" />
+                                                <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Đóng</button>
+                                                <input type="submit" class="btn btn-primary waves-effect waves-light" value="Thêm" />
                                               </div>
                                             </form>
                                           </div>
@@ -228,10 +214,7 @@
                                       </td>
                                       <td>{{Str::limit($baigiang->noidung, 40)}}</td>
                                       <td>
-                                        <button class="baigiang" data-id="{{$baigiang->id}}" data-toggle="modal"
-                                          data-target="#baigiang-Modal" class="jstree-anchor" tabindex="-1"
-                                          id="j1_14_anchor"
-                                          style="background: transparent; outline:none; border:none; color:in">
+                                        <button class="baigiang" data-id="{{$baigiang->id}}" data-toggle="modal" data-target="#baigiang-Modal" class="jstree-anchor" tabindex="-1" id="j1_14_anchor" style="background: transparent; outline:none; border:none; color:in">
                                           <i class="fa fa-file-pdf-o f-w-600 f-16 m-r-15 text-c-red"></i>
                                           bai_giang_{{ $baigiang->id }}.pdf
                                         </button>
@@ -239,9 +222,7 @@
 
                                       <td style="display: flex">
                                         <div>
-                                          <button class="my_edit" data-id="{{$baigiang->id}}" data-toggle="modal"
-                                            data-target="#edit-Modal"
-                                            style="background-color: transparent; border: none; padding: 0 0 0 7px">
+                                          <button class="my_edit" data-id="{{$baigiang->id}}" data-toggle="modal" data-target="#edit-Modal" style="background-color: transparent; border: none; padding: 0 0 0 7px">
                                             <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i>
                                           </button>
 
@@ -250,11 +231,8 @@
                                         <form action="{{route('baigiang.destroy', $baigiang->id)}}" method="post">
                                           @method('DELETE')
                                           @csrf
-                                          <button
-                                            style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent"
-                                            onclick="return confirm ('Bạn có muốn xóa không')">
-                                            <i class="feather icon-trash-2 f-w-600 f-16 m-r-15 text-c-red"
-                                              style="margin:0; font-size: 20px"></i></button>
+                                          <button style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent" onclick="return confirm ('Bạn có muốn xóa không')">
+                                            <i class="feather icon-trash-2 f-w-600 f-16 m-r-15 text-c-red" style="margin:0; font-size: 20px"></i></button>
                                         </form>
                                       </td>
                                     </tr>
@@ -262,12 +240,10 @@
                                   </tbody>
                                 </table>
 
-                                <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog"
-                                  style="z-index: 1050;display: none; padding-right: 17px;">
+                                <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
                                 </div>
 
-                                <div class="modal fade show" id="baigiang-Modal" tabindex="-1" role="dialog"
-                                  style="z-index: 1050;display: none; padding-right: 17px;">
+                                <div class="modal fade show" id="baigiang-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
                                 </div>
 
 
@@ -290,11 +266,8 @@
 
                                 <div class="col-xs-12 col-sm-12 col-md-6">
                                   <div id="dom-table_filter" class="dataTables_filter">
-                                    <button class="btn btn-success btn-round waves-effect waves-light"
-                                      data-toggle="modal" data-target="#large-Modal2"
-                                      style="float: right; margin-right:30px">Thêm bài tập</button>
-                                    <div class="modal fade show" id="large-Modal2" tabindex="-1" role="dialog"
-                                      style="z-index: 1050;display: none; padding-right: 17px;">
+                                    <button class="btn btn-success btn-round waves-effect waves-light" data-toggle="modal" data-target="#large-Modal2" style="float: right; margin-right:30px">Thêm bài tập</button>
+                                    <div class="modal fade show" id="large-Modal2" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
                                       <div class="modal-dialog modal-lg" role="document">
                                         <div class="modal-content">
                                           <div class="modal-header">
@@ -304,8 +277,7 @@
                                             </button>
                                           </div>
                                           <div class="modal-body">
-                                            <form method="post" action="{{route('baitap.store')}}" novalidate=""
-                                              enctype="multipart/form-data">
+                                            <form method="post" action="{{route('baitap.store')}}" novalidate="" enctype="multipart/form-data">
                                               <div class="modal-body">
                                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                                                 {{ csrf_field() }}
@@ -318,27 +290,18 @@
                                                     <span class="messages"></span>
                                                   </div>
                                                 </div>
-                                                <div class="form-group row">
-                                                  <label class="col-sm-2 col-form-label">Loại câu hỏi</label>
-                                                  <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="loaicauhoi"
-                                                      id="hodem">
-                                                    <span class="messages"></span>
-                                                  </div>
-                                                </div>
+
                                                 <div class="form-group row">
                                                   <label class="col-sm-2 col-form-label">Nội dung bài tâp</label>
                                                   <div class="col-sm-10">
-                                                    <textarea name="noidung" class="form-control" id="" cols="30"
-                                                      rows="10"></textarea>
+                                                    <textarea name="noidung" class="form-control" id="" cols="30" rows="10"></textarea>
                                                     <span class="messages"></span>
                                                   </div>
                                                 </div>
                                                 <div class="form-group row">
                                                   <label class="col-sm-2 col-form-label">Hình ảnh</label>
                                                   <div class="col-sm-10">
-                                                    <input type="file" name="hinhanhbaitap" class="form-control"
-                                                      placeholder="Thêm hình ảnh" multiple>
+                                                    <input type="file" name="hinhanhbaitap" class="form-control" placeholder="Thêm hình ảnh" multiple>
                                                   </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -389,10 +352,8 @@
                                                 </div>
                                               </div>
                                               <div class="modal-footer">
-                                                <button type="button" class="btn btn-default waves-effect "
-                                                  data-dismiss="modal" onclick="myReset()">Đóng</button>
-                                                <input type="submit" class="btn btn-primary waves-effect waves-light"
-                                                  value="Thêm" />
+                                                <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Đóng</button>
+                                                <input type="submit" class="btn btn-primary waves-effect waves-light" value="Thêm" />
                                               </div>
                                             </form>
                                           </div>
@@ -455,9 +416,7 @@
                               <td>{{Str::limit($baitap->baigiang->tenbaigiang,40)}}</td>
                               <td style="display: flex">
                                 <div>
-                                  <button class="my_edit_baitap" data-id="{{$baitap->id}}" data-toggle="modal"
-                                    data-target="#edit-Modal_Baitap"
-                                    style="background-color: transparent; border: none; padding: 0 0 0 7px">
+                                  <button class="my_edit_baitap" data-id="{{$baitap->id}}" data-toggle="modal" data-target="#edit-Modal_Baitap" style="background-color: transparent; border: none; padding: 0 0 0 7px">
                                     <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i>
                                   </button>
                                 </div>
@@ -465,11 +424,8 @@
                                 <form action="{{route('baitap.destroy', $baitap->id)}}" method="post">
                                   @method('DELETE')
                                   @csrf
-                                  <button
-                                    style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent"
-                                    onclick="return confirm ('Bạn có muốn xóa không')">
-                                    <i class="feather icon-trash-2 f-w-600 f-16 m-r-15 text-c-red"
-                                      style="margin:0; font-size: 20px"></i></button>
+                                  <button style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent" onclick="return confirm ('Bạn có muốn xóa không')">
+                                    <i class="feather icon-trash-2 f-w-600 f-16 m-r-15 text-c-red" style="margin:0; font-size: 20px"></i></button>
                                 </form>
                               </td>
                               </tr>
@@ -477,12 +433,10 @@
                               @endforeach
                               </tbody>
                               </table>
-                              <div class="modal fade show" id="edit-Modal_Baitap" tabindex="-1" role="dialog"
-                                style="z-index: 1050;display: none; padding-right: 17px;">
+                              <div class="modal fade show" id="edit-Modal_Baitap" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
                               </div>
 
-                              <div class="modal fade show" id="baitap-Modal" tabindex="-1" role="dialog"
-                                style="z-index: 1050;display: none; padding-right: 17px;">
+                              <div class="modal fade show" id="baitap-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
                               </div>
 
 
@@ -510,27 +464,27 @@
 @section('script')
 <script src="{{ asset('assets/js/ekko-lightbox.js') }}"></script>
 <script>
-  $(document).on("click", '[data-toggle="lightbox"]', function (event) {
+  $(document).on("click", '[data-toggle="lightbox"]', function(event) {
     event.preventDefault();
     $(this).ekkoLightbox();
   });
 
-  $(document).ready(function () {
-    $('.my_edit').click(function (e) {
+  $(document).ready(function() {
+    $('.my_edit').click(function(e) {
       id = $(this).data('id');
       $('#edit-Modal').load("/administrators/baigiang/" + id + '/edit');
       $('#edit-Modal').show();
       $('.modal-backdrop').show();
     });
 
-    $('.baigiang').click(function (e) {
+    $('.baigiang').click(function(e) {
       id = $(this).data('id');
       $('#baigiang-Modal').load("/administrators/baigiang/" + id);
       $('#baigiang-Modal').show();
       $('.modal-backdrop').show();
     });
 
-    $('.my_edit_baitap').click(function (e) {
+    $('.my_edit_baitap').click(function(e) {
       id = $(this).data('id');
       $('#edit-Modal_Baitap').load("/administrators/baitap/" + id + '/edit');
       $('#edit-Modal_Baitap').show();

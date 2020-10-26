@@ -42,9 +42,9 @@ class BaiTapController extends Controller
       $path = $request->file('hinhanhbaitap')->store('hinhanhbaitap');
       $request['hinhanhminhhoa'] = $path;
       $data = $request->all();
-      return $data;
-      // BaiTap::create($data);
-      // return back();
+      // return $data;
+      BaiTap::create($data);
+      return back();
     } else {
       $data = $request->all();
       BaiTap::create($data);
@@ -74,7 +74,10 @@ class BaiTapController extends Controller
     $baitap = BaiTap::find($id);
     $khoahocid = BaiTap::find($id)->baiGiang->khoaHoc->id;
     $baigiangs = BaiGiang::where('khoa_hoc_id', $khoahocid)->get();
-    return view('backend.administrators.courses.edit_baitap_modal', ['baitap' => $baitap, 'baigiangs' => $baigiangs]);
+    return view('backend.administrators.courses.edit_baitap_modal', [
+      'baitap' => $baitap,
+      'baigiangs' => $baigiangs,
+    ]);
   }
 
   /**

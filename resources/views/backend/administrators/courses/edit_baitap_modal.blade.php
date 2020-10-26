@@ -19,13 +19,6 @@
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Loại câu hỏi</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" name="loaicauhoi" id="hodem" value="{{$baitap->loaicauhoi}}">
-              <span class="messages"></span>
-            </div>
-          </div>
-          <div class="form-group row">
             <label class="col-sm-2 col-form-label">Nội dung bài tâp</label>
             <div class="col-sm-10">
               <textarea name="noidung" class="form-control" id="" cols="30" rows="10">{{ $baitap->noidung }}</textarea>
@@ -37,8 +30,7 @@
             <div class="col-sm-10">
               <div class="row m-b-10">
                 <div class="col-md-12">
-                  <a href="{{ asset($baitap->hinhanhminhhoa) }}" data-toggle="lightbox" data-gallery="example-gallery"
-                    class="col-sm-4 thumbnail">
+                  <a href="{{ asset($baitap->hinhanhminhhoa) }}" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 thumbnail">
                     <img style="height: 100px" src="{{ asset($baitap->hinhanhminhhoa) }}" class="img-fluid">
                   </a>
                 </div>
@@ -93,8 +85,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default waves-effect " data-dismiss="modal"
-            onclick="myReset()">Đóng</button>
+          <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Đóng</button>
           <input type="submit" class="btn btn-primary waves-effect waves-light" value="Sửa thông tin" />
         </div>
       </form>
