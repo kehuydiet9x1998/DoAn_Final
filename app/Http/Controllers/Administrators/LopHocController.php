@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Administrators;
 
 use App\Http\Controllers\Controller;
+use App\Models\CaHoc;
 use Illuminate\Http\Request;
 use App\Models\LopHoc;
 use App\Models\KhoaHoc;
 use App\Models\GiaoVien;
+use App\Models\PhongHoc;
 use Illuminate\Support\Facades\DB;
 use JsValidator;
 
@@ -40,9 +42,11 @@ class LopHocController extends Controller
     $lophocs = LopHoc::all();
     $khoahocs = KhoaHoc::all();
     $giangviens = GiaoVien::all();
+    $phonghocs = PhongHoc::all();
+    $cahocs = CaHoc::all();
     return view(
       'backend.administrators.classes.classes',
-      compact('lophocs', 'khoahocs', 'giangviens')
+      compact('lophocs', 'khoahocs', 'giangviens', 'cahocs', 'phonghocs')
     )->with(['jsValidator' => $this->jsValidator]);
   }
 
@@ -64,9 +68,19 @@ class LopHocController extends Controller
   public function store(Request $request)
   {
     $data = $request->all();
+
     $data['trangthai'] = 'Chưa diễn ra';
     $data['sobuoidahoc'] = 0;
-    LopHoc::create($data);
+    $lophoc = LopHoc::create($data);
+
+    foreach ($request['thu'] as $thu) {
+      $lophoc->lichHoc()->create([
+        'phong_hoc_id' => $request->phong_hoc_id,
+        'thu' => $thu,
+        'ca_hoc_id' => $request->ca_hoc_id,
+      ]);
+    }
+
     return back();
   }
 
@@ -92,9 +106,12 @@ class LopHocController extends Controller
     $lophoc = LopHoc::find($id);
     $khoahocs = KhoaHoc::all();
     $giangviens = GiaoVien::all();
+    $cahocs = CaHoc::all();
+    $phonghocs = PhongHoc::all();
+
     return view(
-      'backend.administrators.classes.show-class',
-      compact('lophoc', 'khoahocs', 'giangviens')
+      'backend.administrators.classes.edit-class',
+      compact('lophoc', 'khoahocs', 'giangviens', 'cahocs', 'phonghocs')
     )->with(['jsValidator' => $this->jsValidator]);
   }
 
@@ -107,7 +124,21 @@ class LopHocController extends Controller
    */
   public function update(Request $request, $id)
   {
-    //
+    // return $request->all();
+    $lophoc = LopHoc::find($id);
+    $lophoc->fill($request->except('thu'));
+    $lophoc->lichHoc()->delete();
+    $lophoc->save();
+
+    foreach ($request['thu'] as $thu) {
+      $lophoc->lichHoc()->create([
+        'phong_hoc_id' => $request->phong_hoc_id,
+        'thu' => $thu,
+        'ca_hoc_id' => $request->ca_hoc_id,
+      ]);
+    }
+
+    return back();
   }
 
   /**

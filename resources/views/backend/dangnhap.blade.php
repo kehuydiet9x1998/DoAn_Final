@@ -146,6 +146,7 @@
 
   <script src="{{asset('assets/js/rocket-loader.min.js')}}" data-cf-settings="d2d1d6e2f87cbebdf4013b26-|49" defer="">
   </script>
+
 </body>
 
 </html>

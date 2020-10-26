@@ -133,7 +133,6 @@
                         <th>Tên khóa học</th>
                         <th>Học phí</th>
                         <th>Độ tuổi</th>
-                        <th>Loại khóa học</th>
                         <th>Level</th>
                         <th>Actions</th>
                       </tr>
@@ -147,16 +146,16 @@
                             <a href="{{route('courses.show', $khoahoc->id)}}">
                               <div class="d-inline-block">
                                 <h6 class="name_link_green">{{$khoahoc->tenkhoahoc }}</h6>
-                                <p class="text-muted m-b-0"></p>
+                                <p class="text-muted m-b-0">
+                                  Loại khóa học: {{$khoahoc->loaiKhoaHoc->tenloaikhoahoc}}
+                                </p>
                               </div>
                             </a>
                           </div>
                         </td>
                         <td>{{number_format($khoahoc->hocphi).'đ'}}</td>
                         <td>{{$khoahoc->dotuoi}}</td>
-                        <td>
-                          <label class="badge badge-inverse-primary">{{$khoahoc->loaiKhoaHoc->tenloaikhoahoc}}</label>
-                        </td>
+
                         <td>
                           <label class="badge badge-inverse-primary">{{$khoahoc->level->tenlevel}}</label>
                         </td>
