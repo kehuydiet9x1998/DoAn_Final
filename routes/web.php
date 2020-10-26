@@ -70,9 +70,7 @@ Route::middleware(['auth', 'web'])->group(function () {
       'xembaitap',
     ]);
 
-    Route::get('comment', function () {
-      return view('backend.teachers.comment');
-    });
+    Route::get('comment', [NhanXetHocSinhController::class, 'index']);
 
     Route::get('items', function () {
       return view('backend.teachers.items');

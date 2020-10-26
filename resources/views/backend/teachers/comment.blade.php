@@ -54,7 +54,24 @@
                         <td>
                           <button type="button" class="btn btn-primary waves-effect" data-toggle="modal" data-target="#mail-Modal" style="background-color: white; border: none; padding: 0">
                             <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></button>
-                          @include('backend.teachers.classes.nhanxet-modal')
+                          {{-- @include('backend.teachers.classes.nhanxet-modal') --}}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-inline-block align-middle">
+                            <div class="d-inline-block">
+                              <h6>LKT - HS - 01</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>Nguyễn Hải Minh</td>
+                        <td>RB - 01</td>
+                        <td><label class="badge badge-inverse-primary">Đang học</label></td>
+                        <td>
+                          <button type="button" class="btn btn-primary waves-effect" data-toggle="modal" data-target="#mail-Modal" style="background-color: white; border: none; padding: 0">
+                            <i class="fa fa-comment f-w-600 f-16 m-r-15 text-c-green"></i></button>
+                          {{-- @include('backend.teachers.classes.nhanxet-modal') --}}
                         </td>
                       </tr>
                       <tr>
@@ -71,24 +88,7 @@
                         <td>
                           <button type="button" class="btn btn-primary waves-effect" data-toggle="modal" data-target="#mail-Modal" style="background-color: white; border: none; padding: 0">
                             <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></button>
-                          @include('backend.teachers.classes.nhanxet-modal')
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-inline-block align-middle">
-                            <div class="d-inline-block">
-                              <h6>LKT - HS - 01</h6>
-                            </div>
-                          </div>
-                        </td>
-                        <td>Nguyễn Hải Minh</td>
-                        <td>RB - 01</td>
-                        <td><label class="badge badge-inverse-primary">Đang học</label></td>
-                        <td>
-                          <button type="button" class="btn btn-primary waves-effect" data-toggle="modal" data-target="#mail-Modal" style="background-color: white; border: none; padding: 0">
-                            <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></button>
-                          @include('backend.teachers.classes.nhanxet-modal')
+                          {{-- @include('backend.teachers.classes.nhanxet-modal') --}}
                         </td>
                       </tr>
                     </tbody>

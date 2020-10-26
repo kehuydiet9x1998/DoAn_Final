@@ -15,7 +15,7 @@ class NhanXetHocSinhController extends Controller
    */
   public function index()
   {
-    //
+    return view('backend.teachers.comment');
   }
 
   /**
@@ -37,7 +37,6 @@ class NhanXetHocSinhController extends Controller
   public function store(Request $request)
   {
     $data = $request->all();
-    //return $data;
     NhanXetHocSinh::create($data);
   }
 
@@ -81,10 +80,12 @@ class NhanXetHocSinhController extends Controller
    * @param  \App\Models\NhanXetHocSinh  $nhanXetHocSinh
    * @return \Illuminate\Http\Response
    */
+
   public function destroy(NhanXetHocSinh $nhanXetHocSinh)
   {
     //
   }
+
   public function NhanXet($idhocsinh, $idbuoihoc, $idlophoc, $idkhoahoc)
   {
     $data = NhanXetHocSinh::where('hoc_sinh_id', $idhocsinh)
