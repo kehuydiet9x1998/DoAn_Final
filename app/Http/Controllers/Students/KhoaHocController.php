@@ -15,13 +15,14 @@ class KhoaHocController extends Controller
    */
   public function index()
   {
-    $data = auth()
-      ->user()
-      ->hocsinh->dslophoc()
-      ->with('lophoc.khoahoc')
-      ->get()
-      ->pluck('lophoc.khoahoc');
+    // $data = auth()
+    //   ->user()
+    //   ->hocsinh->dslophoc()
+    //   ->with('lophoc.khoahoc')
+    //   ->get()
+    //   ->pluck('lophoc.khoahoc');
     $data = KhoaHoc::paginate(7);
+    // return $data;
     return view('backend.students.khoahoc.courses', ['khoahocs' => $data]);
   }
 

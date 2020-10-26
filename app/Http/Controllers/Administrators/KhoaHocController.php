@@ -21,8 +21,12 @@ class KhoaHocController extends Controller
   public function index()
   {
     $khoahocs = KhoaHoc::all();
-
-    return view('backend.administrators.courses.courses',compact('khoahocs',));
+    $loaikhoahocs = LoaiKhoaHoc::all();
+    $levels = Level::all();
+    return view(
+      'backend.administrators.courses.courses',
+      compact('khoahocs', 'loaikhoahocs', 'levels')
+    );
   }
 
   /**
@@ -32,8 +36,6 @@ class KhoaHocController extends Controller
    */
   public function create()
   {
-    $levels = Level::all();
-    $loaikhoahocs = LoaiKhoaHoc::all();
     return view(
       'backend.administrators.courses.add_course',
       compact('levels', 'loaikhoahocs')
@@ -48,15 +50,21 @@ class KhoaHocController extends Controller
    */
   public function store(Request $request)
   {
-    $data = $request->all();
-     KhoaHoc::create($data);
-    return redirect(route('administrators.index'));
+    // return $request->all();
+    $data = $request->except('hinhanhkhoahoc');
+    $course = KhoaHoc::create($data);
+    foreach ($request['hinhanhkhoahoc'] as $key => $hinhanhkhoahoc) {
+      $course->dsHinhAnh()->create([
+        'duongdan' => $request->hinhanhkhoahoc[$key]->store('hinhanhkhoahoc'),
+      ]);
+    }
+    return back();
   }
 
   /**
    * Display the specified resource.
    *
-   * @param  \App\Models\KhoaHoc  $khoaHoc
+   * @param  \App\Models\KhoaHoc  $course
    * @return \Illuminate\Http\Response
    */
   public function show($id)
@@ -71,18 +79,18 @@ class KhoaHocController extends Controller
   /**
    * Show the form for editing the specified resource.
    *
-   * @param  \App\Models\KhoaHoc  $khoaHoc
+   * @param  \App\Models\KhoaHoc  $course
    * @return \Illuminate\Http\Response
    */
   public function edit($id)
   {
     $khoahoc = KhoaHoc::find($id);
-    $loaikhoahoc = LoaiKhoaHoc::all();
-    $level = Level::all();
-    $baigiang = BaiGiang::all()->where('khoa_hoc_id',$id);
+    $loaikhoahocs = LoaiKhoaHoc::all();
+    $levels = Level::all();
+    // $baigiang = BaiGiang::all()->where('khoa_hoc_id', $id);
     return view(
       'backend.administrators.courses.edit_course',
-      compact('khoahoc','loaikhoahoc','level','baigiang')
+      compact('khoahoc', 'loaikhoahocs', 'levels')
     );
   }
 
@@ -90,20 +98,29 @@ class KhoaHocController extends Controller
    * Update the specified resource in storage.
    *
    * @param  \Illuminate\Http\Request  $request
-   * @param  \App\Models\KhoaHoc  $khoaHoc
+   * @param  \App\Models\KhoaHoc  $course
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, KhoaHoc $khoaHoc)
+  public function update(Request $request, KhoaHoc $course)
   {
-    $khoaHoc->fill($request->all());
-    $khoaHoc->save();
-    return redirect(route('administrators.index'));
+    // return $request->all();
+    $course->fill($request->except('hinhanhkhoahoc'));
+    if ($request->has('hinhanhkhoahoc')) {
+      foreach ($request->file('hinhanhkhoahoc') as $hinhanh) {
+        $course->dsHinhAnh()->create([
+          'duongdan' => $hinhanh->store('hinhanhkhoahoc'),
+          // 'khoa_hoc_id' => $course->id,
+        ]);
+      }
+    }
+    $course->save();
+    return back();
   }
 
   /**
    * Remove the specified resource from storage.
    *
-   * @param  \App\Models\KhoaHoc  $khoaHoc
+   * @param  \App\Models\KhoaHoc  $course
    * @return \Illuminate\Http\Response
    */
   public function destroy($id)

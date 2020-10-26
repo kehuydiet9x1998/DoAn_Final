@@ -29,14 +29,16 @@
                         <td>
                           <h6>{{$baiGiang->id}}</h6>
                         </td>
-                        <td>{{$baiGiang->tenbaigiang}}</td>
 
+
+                        <td>{{ $baiGiang->tenbaigiang }}</td>
                         <td>
-                          <button style="background:transparent; border:none; outline:none">
-
+                          <button class="baigiang" data-id="{{$baiGiang->id}}" data-toggle="modal" data-target="#baigiang-Modal" class="jstree-anchor" tabindex="-1" id="j1_14_anchor" style="background: transparent; outline:none; border:none; color:in">
                             <i class="fa fa-file-pdf-o f-w-600 f-16 m-r-15 text-c-red"></i>
-                            {{substr($baiGiang->filebaigiang, 9)}}</button>
+                            bai_giang_{{ $baiGiang->id }}.pdf
+                          </button>
                         </td>
+
                         <td>
                           <label class="badge badge-primary">Đã tải lên</label>
                         </td>
@@ -55,9 +57,31 @@
           </div>
         </div>
       </div>
+
+
+
       <div class="modal-footer">
         <button type="button" class="btn btn-default waves-effect " data-dismiss="modal">Đóng</button>
       </div>
     </div>
   </div>
 </div>
+
+<div class="modal fade show" id="baigiang-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
+</div>
+
+
+<script>
+  $(document).ready(function() {
+
+    $('.baigiang').click(function(e) {
+      id = $(this).data('id');
+      $('#hoclieu-Modal').hide();
+      $('#baigiang-Modal').load("/administrators/baigiang/" + id);
+      $('#baigiang-Modal').show();
+
+    });
+
+  });
+
+</script>
