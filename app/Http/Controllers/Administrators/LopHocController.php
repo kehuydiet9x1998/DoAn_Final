@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\LopHoc;
 use App\Models\KhoaHoc;
 use App\Models\GiaoVien;
+use App\Models\HocSinh;
 use App\Models\PhongHoc;
 use Illuminate\Support\Facades\DB;
 use JsValidator;
@@ -92,7 +93,12 @@ class LopHocController extends Controller
    */
   public function show($id)
   {
-    $lophoc = LopHoc::find($id);
+    $class = LopHoc::find($id);
+    $hocsinhs = HocSinh::all();
+    return view(
+      'backend.administrators.classes.class_detail',
+      compact('class', 'hocsinhs')
+    );
   }
 
   /**

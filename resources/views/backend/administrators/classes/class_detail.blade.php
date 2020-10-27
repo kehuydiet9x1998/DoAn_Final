@@ -1,4 +1,9 @@
 @extends('backend.layout.index')
+@section('css')
+<link rel="stylesheet" href="{{asset('assets/css/bootstrap-select.min.css')}}">
+
+@endsection
+
 @section('content')
 <div class="pcoded-inner-content">
   <div class="main-body">
@@ -16,6 +21,13 @@
                           <i class="fa fa-info-circle"></i>Chi tiết lớp học</a>
                         <div class="slide"></div>
                       </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#hocsinh" role="tab" aria-selected="false" style="font-size: 14px; font-weight: bold;">
+                          <i class="fa fa-list"></i>Danh sách học sinh</a>
+                        <div class="slide"></div>
+                      </li>
+
                       <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#messages7" role="tab" aria-selected="false" style="font-size: 14px; font-weight: bold;">
                           <i class="fa fa-fort-awesome"></i>Theo dõi bài tập về nhà</a>
@@ -23,7 +35,11 @@
                       </li>
                     </ul>
                     <div class="tab-content card-block">
-                      {{-- Thông tin khóa học    --}}
+
+                      {{-- /* -------------------------------------------------------------------------- */
+                      /* Thong tin co ban */
+                      /* -------------------------------------------------------------------------- */ --}}
+
                       <div class="tab-pane active show" id="home7" role="tabpanel">
                         <div class="row">
                           <div class="col-sm-12">
@@ -47,13 +63,22 @@
                                           <b>{{$class->ngaybatdau}} đến {{$class->ngayketthuc}}</b></h5>
                                       </div>
                                       @php
-                                      $lichhoc = $class->lichHoc;
+                                      $lichhoc = $class->lichHoc[0];
                                       @endphp
                                       <div class="card-block" style="margin-top: -40px">
                                         <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-clock-o"></i>Lịch học :</h5>
                                         <h5 class="card-title">
                                           <b>{{$lichhoc->caHoc->thoigianbatdau}}-{{$lichhoc->caHoc->thoigianketthuc}}
-                                            Thứ {{$lichhoc->thu}}</b></h5>
+                                            @foreach($class->lichHoc as $key=> $lichhoc)
+                                            @if($lichhoc->thu == 8)
+                                            Chủ nhật
+                                            @else
+                                            Thứ {{ $lichhoc->thu }}
+                                            @endif
+                                            @if($key != count($class->lichhoc)-1)
+                                            ,@endif
+                                            @endforeach
+                                          </b></h5>
 
 
                                       </div>
@@ -92,7 +117,7 @@
                             </div>
                           </div>
                         </div>
-                        {{-- Thông tin buổi học --}}
+
                         <div class="row">
                           <div class="col-sm-12">
                             <div class="card">
@@ -126,9 +151,87 @@
                         <div id="buoihoc"></div>
                         {{-- @include('backend.teachers.classes.buoihoc') --}}
                       </div>
+                      {{--
+/* -------------------------------------------------------------------------- */
+/*                             Danh sach hoc sinh                             */
+/* -------------------------------------------------------------------------- */ --}}
 
+                      <div class="tab-pane" id="hocsinh" role="tabpanel">
+                        <div class="row">
+                          <div class="col-sm-12">
+                            {{-- Khối thê sửa xóa --}}
+                            <div class="card-header">
+                              <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-6">
+                                  <h5>Danh sách học sinh</h5>
+                                </div>
 
-                      {{-- Danh sách dự án của học sinh --}}
+                                <div class="col-xs-12 col-sm-12 col-md-6">
+                                  @include('backend.administrators.classes.phan_lop_modal')
+                                </div>
+
+                              </div>
+                            </div>
+                            {{-- Khối chứa thông tin  --}}
+                            <div class="card-block">
+                              <div class="table-responsive">
+                                <table class="table table-hover m-b-0">
+                                  <thead>
+                                    <tr>
+                                      <th>ID</th>
+                                      <th>Học sinh</th>
+                                      <th>Ngày vào lớp</th>
+                                      <th>Trạng thái</th>
+                                      <th>Actions</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    {{-- @foreach($khoahoc->dsbaigiang as $baigiang)
+                                    @foreach ($baigiang->dsbaitap as $baitap)
+                                    <tr>
+                                      <td>{{$baitap->id}}</td>
+
+                                    <td>{{Str::limit($baitap->noidung, 40)}}</td>
+                                    <td>{{$baitap->dapan1}}</td>
+                                    <td>{{$baitap->dapan2}}</td>
+                                    <td>{{$baitap->dapan3}}</td>
+                                    <td>{{$baitap->dapan4}}</td>
+                                    <td>{{$baitap->dapan}}</td>
+                                    <td>{{Str::limit($baitap->baigiang->tenbaigiang,40)}}</td>
+                                    <td style="display: flex">
+                                      <div>
+                                        <button class="my_edit_baitap" data-id="{{$baitap->id}}" data-toggle="modal" data-target="#edit-Modal_Baitap" style="background-color: transparent; border: none; padding: 0 0 0 7px">
+                                          <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i>
+                                        </button>
+                                      </div>
+
+                                      <form action="{{route('baitap.destroy', $baitap->id)}}" method="post">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent" onclick="return confirm ('Bạn có muốn xóa không')">
+                                          <i class="feather icon-trash-2 f-w-600 f-16 m-r-15 text-c-red" style="margin:0; font-size: 20px"></i></button>
+                                      </form>
+                                    </td>
+                                    </tr>
+                                    @endforeach
+                                    @endforeach --}}
+                                  </tbody>
+                                </table>
+                                <div class="modal fade show" id="chuyenlop-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
+                                </div>
+
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+
+                      {{--
+/* -------------------------------------------------------------------------- */
+/*                             San pham cuoi khoa                             */
+/* -------------------------------------------------------------------------- */ --}}
+
                       <div class="tab-pane" id="messages7" role="tabpanel">
                         <div class="row">
                           <div class="col-md-12">

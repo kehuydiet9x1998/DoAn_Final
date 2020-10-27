@@ -1,7 +1,7 @@
 <div class="modal-dialog modal-lg" role="document">
   <div class="modal-content">
     <div class="modal-header">
-      <h4 class="modal-title">Chi tiết học phí của học viên</h4>
+      <h4 class="modal-title">Chi tiết học phí của học sinh</h4>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="myReset()">
         <span aria-hidden="true">×</span>
       </button>
@@ -12,7 +12,7 @@
           <input type="hidden" name="_token" value="{{csrf_token()}}">
           {{ csrf_field() }}
           <div class="form-group row">
-            <label class="col-sm-3 col-form-label">Họ tên học viên</label>
+            <label class="col-sm-3 col-form-label">Họ tên học sinh</label>
             <div class="col-sm-9">
               <input type="text" class="form-control" name="hodem" id="hodem" value="{{$hocphi->hocSinh->hodem .' '.$hocphi->hocSinh->ten}}">
               <span class="messages"></span>

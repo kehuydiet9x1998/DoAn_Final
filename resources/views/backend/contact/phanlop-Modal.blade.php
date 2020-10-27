@@ -48,7 +48,7 @@
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Học viên</label>
+              <label class="col-sm-3 col-form-label">Học sinh</label>
               <div class="col-sm-9">
                 <select class="selectpicker form-control form-control-primary fill" data-live-search="true" data-actions-box="true" data-max-options="3" multiple title="Choose one of the following..." multiple>
                   <option>Nguyễn Hải Minh</option>

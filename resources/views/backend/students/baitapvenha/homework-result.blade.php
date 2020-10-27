@@ -13,7 +13,7 @@
               <div class="card-header">
                 <h6 class="col-sm-12" style="font-weight: bold; font-size: 16px">Lớp: Xưởng lắp ráp ROBOT - LP - 001
                 </h6>
-                <h6 class="col-sm-12">Học viên : {{$hocsinh->hodem. ' '.$hocsinh->ten}}
+                <h6 class="col-sm-12">Học sinh : {{$hocsinh->hodem. ' '.$hocsinh->ten}}
                 </h6>
                 <h6 class="col-sm-12">Buổi học :
                   {{(int)($buoihoc->id) - (int)($buoihoc->lophoc->dsbuoihoc()->first()->id) +1}}/{{$buoihoc->lophoc->dsbuoihoc->count()}}</h6>

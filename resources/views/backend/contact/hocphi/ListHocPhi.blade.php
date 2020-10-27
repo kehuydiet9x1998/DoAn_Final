@@ -10,7 +10,7 @@
               <div class="card-header">
                 <div class="row">
                   <div class="col-xs-12 col-sm-12 col-md-6">
-                    <h5>Danh sách đóng học phí của học viên</h5>
+                    <h5>Danh sách đóng học phí của học sinh</h5>
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-6">
                   </div>
@@ -32,7 +32,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                    @foreach($hocphi as $hp)
+                      @foreach($hocphi as $hp)
 
                       <tr>
                         <td>{{$hp->id}}</td>
@@ -44,14 +44,13 @@
                         <td style="text-align: center"><label class="badge badge-default">{{$hp->trangthai}}</label></td>
                         <td>
                           <div>
-                            <button data-id="{{$hp->id}}" class="btn waves-effect waves-light btn-round my_edit" data-toggle="modal"
-                                    data-target="#edit-Modal" style="border: none; background-color: transparent">
+                            <button data-id="{{$hp->id}}" class="btn waves-effect waves-light btn-round my_edit" data-toggle="modal" data-target="#edit-Modal" style="border: none; background-color: transparent">
                               <i class="fa fa-edit text-c-green" style="font-weight: bold; font-size: 20px"></i>
                             </button>
                           </div>
                         </td>
                       </tr>
-                    @endforeach
+                      @endforeach
                     </tbody>
                   </table>
                 </div>
@@ -68,8 +67,8 @@
 @section('script')
 <script>
   $(document).
-  ready(function () {
-    $('.my_edit').click(function (e) {
+  ready(function() {
+    $('.my_edit').click(function(e) {
       id = $(this).data('id')
       $('#edit-Modal').load("/contacts/hocphis/" + id + '/edit');
       $('#edit-Modal').show();
@@ -77,5 +76,6 @@
 
     })
   });
+
 </script>
 @endsection

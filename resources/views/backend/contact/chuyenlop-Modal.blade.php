@@ -13,14 +13,14 @@
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             {{ csrf_field() }}
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Mã học viên</label>
+              <label class="col-sm-3 col-form-label">Mã học sinh</label>
               <div class="col-sm-9">
                 <input type="number" id="siso" name="ngaysinh" placeholder="" disabled>
                 <span class="messages"></span>
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Tên học viên</label>
+              <label class="col-sm-3 col-form-label">Tên học sinh</label>
               <div class="col-sm-9">
                 <input type="number" id="siso" name="ngaysinh" placeholder="" disabled>
                 <span class="messages"></span>

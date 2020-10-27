@@ -122,7 +122,7 @@
                           <div class="card">
                             <div class="card-header">
                               <div class="card-header-left">
-                                <h5>Đánh giá của học viên</h5>
+                                <h5>Đánh giá của học sinh</h5>
                               </div>
                             </div>
                             <div class="card-block">

@@ -17,7 +17,7 @@
                   <input type="hidden" name="_token" value="{{csrf_token()}}">
                   {{ csrf_field() }}
                   <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Họ tên học viên</label>
+                    <label class="col-sm-3 col-form-label">Họ tên học sinh</label>
                     <div class="col-sm-9">
                       <select name="hoc_sinh_id" class="form-control form-control-inverse">
                         <option>{{'Chọn học sinh'}}</option>

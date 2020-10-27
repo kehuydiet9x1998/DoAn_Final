@@ -2,8 +2,6 @@
 
 @section('css')
 <link rel="stylesheet" href="{{  asset('assets/css/ekko-lightbox.css')  }}">
-
-
 @endsection
 
 @section('content')

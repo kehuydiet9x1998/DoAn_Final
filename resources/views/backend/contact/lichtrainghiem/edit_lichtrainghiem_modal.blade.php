@@ -13,7 +13,7 @@
           <input type="hidden" name="_token" value="{{csrf_token()}}">
           {{ csrf_field() }}
           <div class="form-group row">
-            <label class="col-sm-3 col-form-label">Họ tên học viên</label>
+            <label class="col-sm-3 col-form-label">Họ tên học sinh</label>
             <div class="col-sm-9">
               <input type="text" class="form-control" value="{{$hocsinh->hocSinh->hodem .' '.$hocsinh->hocSinh->ten}}">
               <span class="messages"></span>
