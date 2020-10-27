@@ -19,10 +19,13 @@
                       <option value="opt3">RB - 02</option>
                     </select>
                   </div>
-                  <div class="col-xs-12 col-xl-4 m-b-30" style="margin-left: 30px; margin-top: 10px; margin-bottom: 10px">
+                  <div class="col-xs-12 col-xl-4 m-b-30"
+                    style="margin-left: 30px; margin-top: 10px; margin-bottom: 10px">
                     <div id="dom-table_filter" class="dataTables_filter" style="margin-left: -35px;">
                       <label style="display: flex; align-items: center">
-                        Tìm kiếm:<input type="search" class="form-control input-sm" placeholder="" aria-controls="dom-table" style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;"></label>
+                        Tìm kiếm:<input type="search" class="form-control input-sm" placeholder=""
+                          aria-controls="dom-table"
+                          style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;"></label>
                     </div>
                   </div>
                 </div>
@@ -48,9 +51,14 @@
                         <td>{{ $buoihoc->lophoc->tenlop }}</td>
                         <td>{{ $buoihoc->baigiang->tenbaigiang }}</td>
                         <td><label class="badge badge-inverse-primary">Đang học</label></td>
-                        <td>
-                          <button data-id="{{$phanlop->hoc_sinh_id}}/{{$buoihoc->id}}/{{$buoihoc->lopHoc->id}}/{{$buoihoc->lopHoc->khoaHoc->id}}" class="btn btn-primary waves-effect nhanxet" data-toggle="modal" data-target="#mail-Modal" style="background-color: white; border: none; padding: 0">
-                            <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></button>
+                        <td style="text-indent:17px">
+                          <button
+                            data-id="{{$phanlop->hoc_sinh_id}}/{{$buoihoc->id}}/{{$buoihoc->lopHoc->id}}/{{$buoihoc->lopHoc->khoaHoc->id}}"
+                            class="btn btn-primary waves-effect nhanxet" data-toggle="modal" data-target="#mail-Modal"
+                            style="background-color: white; border: none; padding: 0">
+                            <i class="fa fa-commenting-o f-w-600 f-16 m-r-15 text-c-green"
+                              style="text-align:center"></i></button>
+                          {{-- đổi luôn đi --}}
                         </td>
                       </tr>
 
@@ -59,7 +67,8 @@
 
                     </tbody>
                   </table>
-                  <div class="modal fade show" id="mail-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;"></div>
+                  <div class="modal fade show" id="mail-Modal" tabindex="-1" role="dialog"
+                    style="z-index: 1050;display: none; padding-right: 17px;"></div>
 
 
                 </div>
@@ -76,8 +85,8 @@
 @section('script')
 
 <script>
-  $(document).ready(function() {
-    $('.nhanxet').click(function() {
+  $(document).ready(function () {
+    $('.nhanxet').click(function () {
       $('#mail-Modal').load('/teachers/nhanxet/' + $(this).data('id'))
       $('#mail-Modal').show();
       $('.modal-backdrop').show();
