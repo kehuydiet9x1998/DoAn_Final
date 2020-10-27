@@ -95,9 +95,10 @@ class LopHocController extends Controller
   {
     $class = LopHoc::find($id);
     $hocsinhs = HocSinh::all();
+    $classes = LopHoc::all();
     return view(
       'backend.administrators.classes.class_detail',
-      compact('class', 'hocsinhs')
+      compact('class', 'hocsinhs', 'classes')
     );
   }
 

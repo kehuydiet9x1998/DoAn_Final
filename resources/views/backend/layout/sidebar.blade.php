@@ -88,7 +88,7 @@ $menu = [
 "text"=>"CHECK-IN giảng viên"
 ],
 [
-"link"=> "/contacts/classify",
+"link"=> "/contacts/phanlop",
 "type"=> "link",
 "icon"=> "fa fa-braille",
 "text"=> "Phân lớp",

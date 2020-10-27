@@ -49,7 +49,7 @@ class BaiTapController extends Controller
       $data = $request->all();
       BaiTap::create($data);
     }
-    // return back();
+    return back();
   }
 
   /**

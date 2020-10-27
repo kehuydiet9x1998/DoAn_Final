@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Administrators\PhanLopController;
 use App\Http\Controllers\ChatsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Teachers\BaiTapController;
@@ -78,15 +79,6 @@ Route::middleware(['auth', 'web'])->group(function () {
     });
   });
 
-  Route::prefix('/contacts')->group(function () {
-    Route::resource('students', "Contacts\StudentController");
-    Route::resource('feedbacks', "Contacts\FeedBackController");
-    Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
-    Route::get('list-teachers', function () {
-      return view('backend.contact.listTeacher');
-    });
-  });
-
   Route::get('/news-feed', function () {
     return view('backend.bantin');
   });
@@ -97,10 +89,14 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('feedbacks', "Contacts\FeedBackController");
     Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
     Route::resource('list-teachers', "Contacts\GiangVienController");
+    Route::resource('phanlop', 'Administrators\PhanLopController');
 
-    Route::get('classify', function () {
-      return view('backend.contact.phanlop');
-    });
+    // override route
+    Route::get('phanlop/{class}', [PhanLopController::class, 'index']);
+
+    // Route::get('classify', function () {
+    //   return view('backend.contact.phanlop');
+    // });
   });
 
   Route::prefix('/student')->group(function () {

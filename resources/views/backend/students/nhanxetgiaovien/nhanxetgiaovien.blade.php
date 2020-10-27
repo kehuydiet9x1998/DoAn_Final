@@ -124,13 +124,24 @@
                                       $anh = $user->anhdaidien;
                                       date_default_timezone_set("Asia/Bangkok");
                                       $date=date_create();
+                                     
                                       $time = date_format($date,"Y-m-d H:i:s");
                                       setlocale(LC_TIME, 'vi_VN'); Carbon\Carbon::setLocale('vi');
                                       @endphp
+<<<<<<< HEAD
                                       <div contenteditable="true">
                                         <img class="card-img-top img-fluid" src="{{asset("$anh")}}" alt="Card image cap" style="width: 40px; height: 40px; border-radius: 50%">
                                         <input name="noidung" type="text" placeholder="Nhập vào đánh giá của bạn">
                                         <input type="text" style="display:none" name="giao_vien_id" value="{{$lophoc->giaovien->id}}">
+=======
+                                      <div>
+                                        <img class="card-img-top img-fluid" src="{{asset("$anh")}}" alt="Card image cap"
+                                          style="width: 40px; height: 40px; border-radius: 50%; float: left;">
+                                        <input type="text" name="user_id" value="{{$user->hocsinh->hodem.' '.$user->hocsinh->ten.' : '.$time}}" style="border: none; margin-left:8px; margin-top: 10px; background-color:transparent; width:50%" disabled>
+                                        <textarea name="noidung" rows="2" class="form-control" placeholder="Nhập vào đánh giá của bạn" style="border: none; margin-top: 13px;"></textarea>
+                                        <input type="text" style="display:none" name="giao_vien_id"
+                                          value="{{$lophoc->giaovien->id}}">
+>>>>>>> 71e9b8a3a502c207743141c1e5240961f4de480c
                                         <input type="text" style="display:none" name="user_id" value="{{$user->id}}">
                                         <input name="thoigian" style="display: none;" value="{{$time}}">
                                       </div>

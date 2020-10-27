@@ -94,7 +94,7 @@
                                     <div class="col-md-12 ui-sortable-handle">
                                       <div class="card-sub m-b-20">
                                         <div class="card-block">
-                                          <h5 class="card-header">Mô tả khóa học</h5>
+                                          <h5 class="card-title">Mô tả khóa học</h5>
                                           <p class="card-text">{{$khoahoc->mota}}</p>
                                         </div>
                                       </div>
@@ -102,8 +102,8 @@
                                     <div class="col-md-12 ui-sortable-handle">
                                       <div class="card-sub m-b-20">
                                         <div class="card-block">
-                                          <h5 class="card-header">Học sinh được gì</h5>
-                                          <p class="card-title">Kiến thức - chưa có dữ liệu trong csdl </p>
+                                          <h5 class="card-title">Học sinh được gì</h5>
+                                          <p class="card-text">Kiến thức - chưa có dữ liệu trong csdl </p>
                                           <p class="card-text">Biết về robot - chưa có dữ liệu trong csdl</p>
                                         </div>
                                       </div>
@@ -168,7 +168,8 @@
                                     setlocale(LC_TIME, 'vi_VN'); Carbon\Carbon::setLocale('vi');
                                     @endphp
                                     <img class="card-img-top img-fluid" src="{{asset("$anh")}}" alt="Card image cap" style="width: 40px; height: 40px; border-radius: 50%">
-                                    <input name="noidung" type="text" placeholder="Nhập vào đánh giá của bạn">
+                                    <input type="text" name="user_id" value="{{$user->hocsinh->hodem.' '.$user->hocsinh->ten.' : '.$time}}" style="border: none; margin-left:8px; margin-top: 10px; background-color:transparent; width:50%" disabled>
+                                    <textarea name="noidung" rows="2" class="form-control" placeholder="Nhập vào đánh giá của bạn" style="border: none; margin-top: 13px;"></textarea>
                                     <input name="user_id" style="display: none;" value="{{$user->id}}">
                                     <input name="khoa_hoc_id" style="display: none;" value="{{$khoahoc->id}}">
 

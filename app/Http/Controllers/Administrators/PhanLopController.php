@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Administrators;
 
 use App\Http\Controllers\Controller;
+use App\Models\HocSinh;
+use App\Models\LopHoc;
 use App\Models\PhanLop;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PhanLopController extends Controller
@@ -15,7 +18,9 @@ class PhanLopController extends Controller
    */
   public function index()
   {
-    //
+    $classes = LopHoc::all();
+    $hocsinhs = HocSinh::all();
+    return view('backend.contact.phanlop', compact('classes', 'hocsinhs'));
   }
 
   /**
@@ -25,7 +30,6 @@ class PhanLopController extends Controller
    */
   public function create()
   {
-    //
   }
 
   /**
@@ -36,7 +40,18 @@ class PhanLopController extends Controller
    */
   public function store(Request $request)
   {
-    return $request->all();
+    $lop_hoc_id = $request['lop_hoc_id'];
+    $ngayvaolop = Carbon::now('Asia/Ho_Chi_Minh');
+    foreach ($request['hoc_sinh_id'] as $hoc_sinh_id) {
+      PhanLop::updateOrInsert(
+        ['hoc_sinh_id' => $hoc_sinh_id, 'lop_hoc_id' => $lop_hoc_id],
+        ['ngayvaolop' => $ngayvaolop]
+      );
+    }
+    $lophoc = LopHoc::find($lop_hoc_id);
+    $lophoc->siso = PhanLop::where('lop_hoc_id', $lop_hoc_id)->count();
+    $lophoc->save();
+    return back();
   }
 
   /**
@@ -45,9 +60,15 @@ class PhanLopController extends Controller
    * @param  \App\Models\PhanLop  $phanlop
    * @return \Illuminate\Http\Response
    */
-  public function show(PhanLop $phanlop)
+  public function show($id)
   {
-    //
+    $classes = LopHoc::all();
+    $hocsinhs = HocSinh::all();
+    $class = LopHoc::find($id);
+    return view(
+      'backend.administrators.classes.phan_lop_modal',
+      compact('classes', 'hocsinhs', 'class')
+    );
   }
 
   /**

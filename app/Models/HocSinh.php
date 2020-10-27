@@ -65,4 +65,9 @@ class HocSinh extends Model
   {
     return $this->belongsTo(DanhSachBaiTap::class);
   }
+
+  public function user()
+  {
+    return $this->belongsTo(User::class);
+  }
 }

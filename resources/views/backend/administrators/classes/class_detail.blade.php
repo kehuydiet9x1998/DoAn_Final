@@ -1,5 +1,6 @@
 @extends('backend.layout.index')
 @section('css')
+{{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}"> --}}
 <link rel="stylesheet" href="{{asset('assets/css/bootstrap-select.min.css')}}">
 
 @endsection
@@ -167,7 +168,7 @@
                                 </div>
 
                                 <div class="col-xs-12 col-sm-12 col-md-6">
-                                  @include('backend.administrators.classes.phan_lop_modal')
+                                  @include('backend.administrators.classes.phan_lop')
                                 </div>
 
                               </div>
@@ -186,35 +187,37 @@
                                     </tr>
                                   </thead>
                                   <tbody>
-                                    {{-- @foreach($khoahoc->dsbaigiang as $baigiang)
-                                    @foreach ($baigiang->dsbaitap as $baitap)
+                                    @if($class->dslophoc)
+                                    @foreach($class->dslophoc as $phanlop)
                                     <tr>
-                                      <td>{{$baitap->id}}</td>
 
-                                    <td>{{Str::limit($baitap->noidung, 40)}}</td>
-                                    <td>{{$baitap->dapan1}}</td>
-                                    <td>{{$baitap->dapan2}}</td>
-                                    <td>{{$baitap->dapan3}}</td>
-                                    <td>{{$baitap->dapan4}}</td>
-                                    <td>{{$baitap->dapan}}</td>
-                                    <td>{{Str::limit($baitap->baigiang->tenbaigiang,40)}}</td>
-                                    <td style="display: flex">
-                                      <div>
-                                        <button class="my_edit_baitap" data-id="{{$baitap->id}}" data-toggle="modal" data-target="#edit-Modal_Baitap" style="background-color: transparent; border: none; padding: 0 0 0 7px">
-                                          <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i>
-                                        </button>
-                                      </div>
+                                      <td>{{$phanlop->id}}</td>
+                                      <td>{{ $phanlop->hocsinh->hodem . ' ' .$phanlop->hocsinh->ten }}</td>
+                                      <td>{{ substr($phanlop->ngayvaolop, 0 ,10) }}</td>
+                                      <td><label for="" class="badge badge-primary">Đang học</label></td>
+                                      <td style="display: flex">
+                                        <div>
+                                          <button class="chuyenlop" data-id="{{$phanlop->id}}" data-toggle="modal" data-target="#chuyenlop-Modal" style="background-color: transparent; border: none; padding: 0 0 0 7px">
+                                            <i class="fa fa-refresh f-w-600 f-16 m-r-15 text-c-green"></i>
+                                          </button>
+                                        </div>
+                                        <div>
+                                          <button class="baoluu" data-id="{{$phanlop->id}}" data-toggle="modal" data-target="#baoluu-Modal" style="background-color: transparent; border: none; padding: 0 0 0 7px">
+                                            <i class="fa fa-pause-circle f-w-600 f-16 m-r-15 text-c-green"></i>
+                                          </button>
+                                        </div>
 
-                                      <form action="{{route('baitap.destroy', $baitap->id)}}" method="post">
-                                        @method('DELETE')
-                                        @csrf
-                                        <button style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent" onclick="return confirm ('Bạn có muốn xóa không')">
-                                          <i class="feather icon-trash-2 f-w-600 f-16 m-r-15 text-c-red" style="margin:0; font-size: 20px"></i></button>
-                                      </form>
-                                    </td>
+
+                                        <form action="{{route('phanlop.destroy', $phanlop->id)}}" method="post">
+                                          @method('DELETE')
+                                          @csrf
+                                          <button style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent" onclick="return confirm ('Bạn có muốn xóa không')">
+                                            <i class="feather icon-trash-2 f-w-600 f-16 m-r-15 text-c-red" style="margin:0; font-size: 20px"></i></button>
+                                        </form>
+                                      </td>
                                     </tr>
                                     @endforeach
-                                    @endforeach --}}
+                                    @endif
                                   </tbody>
                                 </table>
                                 <div class="modal fade show" id="chuyenlop-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
