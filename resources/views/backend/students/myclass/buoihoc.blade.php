@@ -23,22 +23,23 @@
               data-id="{{$buoihoc->id}}/{{$buoihoc->lophoc->id}}/{{$buoihoc->lophoc->khoahoc->id}}">
               XEM NHẬN XÉT
             </button>
-            <div class="modal fade show" id="mail-Modal" tabindex="-1" role="dialog"
-              style="z-index: 1050;display: none; padding-right: 17px;"></div>
+
 
             {{-- @include('backend.students.mycomment-modal') --}}
           </li>
-           <li style="margin: 0px 10px 5px 0px; float: left">
+          {{-- <li style="margin: 0px 10px 5px 0px; float: left">
             <button data-id="1" class="btn waves-effect waves-light btn-round">
               <a style="font-size: 14px; font-weight: 800" href="comment/1">NHẬN XÉT GIẢNG
                 VIÊN</a>
             </button>
-          </li>
+          </li> --}}
         </ul>
       </div>
     </div>
   </div>
 </div>
+<div class="modal fade show" id="mail-Modal" tabindex="-1" role="dialog"
+  style="z-index: 1050;display: none; padding-right: 17px;"></div>
 
 <script>
   $(document).ready(function () {
@@ -47,7 +48,8 @@
       // alert('ok')
       $('#mail-Modal').load('/student/xemnhanxet/' + $(this).data('id'))
       $('#mail-Modal').show();
-      $('.modal-backdrop').show();    
+      // $('.modal-backdrop').show();
     });
   });
+
 </script>
