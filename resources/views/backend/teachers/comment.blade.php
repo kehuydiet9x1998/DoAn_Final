@@ -32,67 +32,36 @@
                   <table class="table table-hover m-b-0">
                     <thead>
                       <tr>
-                        <th>MÃ HỌC SINH</th>
                         <th>TÊN HỌC SINH</th>
-                        <th>MÃ LỚP</th>
+                        <th>LỚP HỌC</th>
+                        <th>BÀI HỌC</th>
                         <th>TRẠNG THÁI</th>
                         <th>ACTIONS</th>
                       </tr>
                     </thead>
                     <tbody>
+                      @foreach($dsbuoihoc as $buoihoc)
+                      @foreach($buoihoc->lophoc->dslophoc as $phanlop)
                       <tr>
-                        <td>
-                          <div class="d-inline-block align-middle">
-                            <div class="d-inline-block">
-                              <h6>LKT - HS - 01</h6>
-                            </div>
-                          </div>
-                        </td>
-                        <td>Nguyễn Hải Minh</td>
-                        <td>RB - 01</td>
+
+                        <td>{{ $phanlop->hocsinh->hodem . ' '. $phanlop->hocsinh->ten}}</td>
+                        <td>{{ $buoihoc->lophoc->tenlop }}</td>
+                        <td>{{ $buoihoc->baigiang->tenbaigiang }}</td>
                         <td><label class="badge badge-inverse-primary">Đang học</label></td>
                         <td>
-                          <button type="button" class="btn btn-primary waves-effect" data-toggle="modal" data-target="#mail-Modal" style="background-color: white; border: none; padding: 0">
+                          <button data-id="{{$phanlop->hoc_sinh_id}}/{{$buoihoc->id}}/{{$buoihoc->lopHoc->id}}/{{$buoihoc->lopHoc->khoaHoc->id}}" class="btn btn-primary waves-effect nhanxet" data-toggle="modal" data-target="#mail-Modal" style="background-color: white; border: none; padding: 0">
                             <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></button>
-                          {{-- @include('backend.teachers.classes.nhanxet-modal') --}}
                         </td>
                       </tr>
-                      <tr>
-                        <td>
-                          <div class="d-inline-block align-middle">
-                            <div class="d-inline-block">
-                              <h6>LKT - HS - 01</h6>
-                            </div>
-                          </div>
-                        </td>
-                        <td>Nguyễn Hải Minh</td>
-                        <td>RB - 01</td>
-                        <td><label class="badge badge-inverse-primary">Đang học</label></td>
-                        <td>
-                          <button type="button" class="btn btn-primary waves-effect" data-toggle="modal" data-target="#mail-Modal" style="background-color: white; border: none; padding: 0">
-                            <i class="fa fa-comment f-w-600 f-16 m-r-15 text-c-green"></i></button>
-                          {{-- @include('backend.teachers.classes.nhanxet-modal') --}}
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-inline-block align-middle">
-                            <div class="d-inline-block">
-                              <h6>LKT - HS - 01</h6>
-                            </div>
-                          </div>
-                        </td>
-                        <td>Nguyễn Hải Minh</td>
-                        <td>RB - 01</td>
-                        <td><label class="badge badge-inverse-primary">Đang học</label></td>
-                        <td>
-                          <button type="button" class="btn btn-primary waves-effect" data-toggle="modal" data-target="#mail-Modal" style="background-color: white; border: none; padding: 0">
-                            <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></button>
-                          {{-- @include('backend.teachers.classes.nhanxet-modal') --}}
-                        </td>
-                      </tr>
+
+                      @endforeach
+                      @endforeach
+
                     </tbody>
                   </table>
+                  <div class="modal fade show" id="mail-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;"></div>
+
+
                 </div>
               </div>
             </div>
@@ -102,4 +71,19 @@
     </div>
   </div>
 </div>
+@endsection
+
+@section('script')
+
+<script>
+  $(document).ready(function() {
+    $('.nhanxet').click(function() {
+      $('#mail-Modal').load('/teachers/nhanxet/' + $(this).data('id'))
+      $('#mail-Modal').show();
+      $('.modal-backdrop').show();
+    });
+  });
+
+</script>
+
 @endsection

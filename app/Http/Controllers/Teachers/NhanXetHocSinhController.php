@@ -15,7 +15,14 @@ class NhanXetHocSinhController extends Controller
    */
   public function index()
   {
-    return view('backend.teachers.comment');
+    $dsbuoihoc = auth()
+      ->user()
+      ->giaovien->dslophoc()
+      ->with('dsbuoihoc')
+      ->get()
+      ->pluck('dsbuoihoc')
+      ->collapse();
+    return view('backend.teachers.comment', compact('dsbuoihoc'));
   }
 
   /**
