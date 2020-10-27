@@ -192,6 +192,9 @@
 <script>
   function myReset() {
     $('#edit-Modal').hide();
+    $('body').removeClass('modal-open');
+
+
     $('.modal-backdrop').hide();
   }
 

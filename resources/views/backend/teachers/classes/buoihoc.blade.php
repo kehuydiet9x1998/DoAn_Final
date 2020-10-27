@@ -13,7 +13,7 @@
          <ul class="col-sm-12">
            <li style="margin: 0px 10px 5px 0px; float: left">
              <button data-id="1" class="btn waves-effect waves-light btn-round" data-toggle="modal" data-target="#hoccu-Modal">HỌC CỤ</button>
-               @include('backend.teachers.classes.hoccu-modal')
+             @include('backend.teachers.classes.hoccu-modal')
            </li>
            <li style="margin: 0px 10px 5px 0px; float: left">
              <button class="btn waves-effect waves-light btn-round" onclick="  document.getElementById('checkin-form').submit();">CHECK-IN</button>
@@ -94,8 +94,7 @@
                  <td>
                    <ul style="display: flex;">
                      <li style="margin: 0 3px">
-                       <button type="button" data-id="{{$diemdanh->hoc_sinh_id}}/{{$lesson->id}}/{{$lesson->lopHoc->id}}/{{$lesson->lopHoc->khoaHoc->id}}"
-                               class="btn btn-primary waves-effect nhanxet" data-toggle="modal" data-target="#mail-Modal" style="background-color: white; border: none; padding: 0">
+                       <button type="button" data-id="{{$diemdanh->hoc_sinh_id}}/{{$lesson->id}}/{{$lesson->lopHoc->id}}/{{$lesson->lopHoc->khoaHoc->id}}" class="btn btn-primary waves-effect nhanxet" data-toggle="modal" data-target="#mail-Modal" style="background-color: white; border: none; padding: 0">
                          <i class="fa fa-comments-o f-w-600 f-16 m-r-15 text-c-green" style="font-size: 20px"></i>
                        </button>
                      </li>
@@ -125,8 +124,8 @@
    $(document).ready(function() {
      $('.nhanxet').click(function() {
        $('#mail-Modal').load('/teachers/nhanxet/' + $(this).data('id'))
-       $('#mail-Modal').show();
-       $('.modal-backdrop').show();
+       $('#mail-Modal').modal().show();
+       //  $('.modal-backdrop').show();
      });
    });
 
