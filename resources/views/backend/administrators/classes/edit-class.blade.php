@@ -44,82 +44,69 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Ngày học</label>
             <div class="col-sm-9">
-              <div class="checkbox-zoom zoom-success">
+              <div class="checkbox-zoom zoom-success" style="text-align: center">
                 <label>
                   <input type="checkbox" name="thu[]" value="2" @foreach($lophoc->lichhoc as $lich) @if($lich->thu == 2) checked @endif @endforeach>
                   <span class="cr">
                     <i class="cr-icon icofont icofont-ui-check txt-success"></i>
                   </span>
-                  <span>Thứ 2</span>
                 </label>
+                <div style="margin-top: -10px">Thứ 2</div>
               </div>
-
-              <div class="checkbox-zoom zoom-success">
+              <div class="checkbox-zoom zoom-success" style="text-align: center">
                 <label>
                   <input type="checkbox" name="thu[]" value="3" @foreach($lophoc->lichhoc as $lich) @if($lich->thu == 3) checked @endif @endforeach>
-
                   <span class="cr">
                     <i class="cr-icon icofont icofont-ui-check txt-success"></i>
                   </span>
-                  <span>Thứ 3</span>
                 </label>
+                <div style="margin-top: -10px">Thứ 3</div>
               </div>
-
-              <div class="checkbox-zoom zoom-success">
+              <div class="checkbox-zoom zoom-success" style="text-align: center">
                 <label>
                   <input type="checkbox" name="thu[]" value="4" @foreach($lophoc->lichhoc as $lich) @if($lich->thu == 4) checked @endif @endforeach>
-
                   <span class="cr">
                     <i class="cr-icon icofont icofont-ui-check txt-success"></i>
                   </span>
-                  <span>Thứ 4</span>
                 </label>
+                <div style="margin-top: -10px">Thứ 4</div>
               </div>
-
-              <div class="checkbox-zoom zoom-success">
+              <div class="checkbox-zoom zoom-success" style="text-align: center">
                 <label>
                   <input type="checkbox" name="thu[]" value="5" @foreach($lophoc->lichhoc as $lich) @if($lich->thu == 5) checked @endif @endforeach>
-
                   <span class="cr">
                     <i class="cr-icon icofont icofont-ui-check txt-success"></i>
                   </span>
-                  <span>Thứ 5</span>
                 </label>
+                <div style="margin-top: -10px">Thứ 5</div>
               </div>
-
-              <div class="checkbox-zoom zoom-success">
+              <div class="checkbox-zoom zoom-success" style="text-align: center">
                 <label>
                   <input type="checkbox" name="thu[]" value="6" @foreach($lophoc->lichhoc as $lich) @if($lich->thu == 6) checked @endif @endforeach>
-
                   <span class="cr">
                     <i class="cr-icon icofont icofont-ui-check txt-success"></i>
                   </span>
-                  <span>Thứ 6</span>
                 </label>
+                <div style="margin-top: -10px">Thứ 6</div>
               </div>
-
-              <div class="checkbox-zoom zoom-success">
+              <div class="checkbox-zoom zoom-success" style="text-align: center">
                 <label>
                   <input type="checkbox" name="thu[]" value="7" @foreach($lophoc->lichhoc as $lich) @if($lich->thu == 7) checked @endif @endforeach>
                   <span class="cr">
                     <i class="cr-icon icofont icofont-ui-check txt-success"></i>
                   </span>
-                  <span>Thứ 7</span>
                 </label>
+                <div style="margin-top: -10px">Thứ 7</div>
               </div>
-
-              <div class="checkbox-zoom zoom-success">
+              <div class="checkbox-zoom zoom-success" style="text-align: center">
                 <label>
                   <input type="checkbox" name="thu[]" value="8" @foreach($lophoc->lichhoc as $lich) @if($lich->thu == 8) checked @endif @endforeach>
-
                   <span class="cr">
                     <i class="cr-icon icofont icofont-ui-check txt-success"></i>
                   </span>
-                  <span>Chủ nhật</span>
                 </label>
+                <div style="margin-top: -10px">Chủ nhật</div>
               </div>
-
-
             </div>
           </div>
 
