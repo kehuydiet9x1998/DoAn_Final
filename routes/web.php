@@ -90,7 +90,9 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
     Route::resource('list-teachers', "Contacts\GiangVienController");
     Route::resource('phanlop', 'Administrators\PhanLopController');
-
+    Route::get('checkin-teachers', function (){
+      return view('backend.contact.checkIn');
+    });
     // override route
     Route::get('phanlop/{class}', [PhanLopController::class, 'index']);
 

@@ -42,80 +42,72 @@
               </div>
             </div>
 
-            <div class="form-group row">
+            <div class="form-group row" style="margin-top: -10px">
               <label class="col-sm-3 col-form-label">Ngày học</label>
               <div class="col-sm-9">
-                <div class="checkbox-zoom zoom-success">
+                <div class="checkbox-zoom zoom-success" style="text-align: center">
                   <label>
                     <input type="checkbox" name="thu[]" value="2">
                     <span class="cr">
                       <i class="cr-icon icofont icofont-ui-check txt-success"></i>
                     </span>
-                    <span>Thứ 2</span>
                   </label>
+                  <div style="margin-top: -10px">Thứ 2</div>
                 </div>
-
-                <div class="checkbox-zoom zoom-success">
+                <div class="checkbox-zoom zoom-success" style="text-align: center">
                   <label>
                     <input type="checkbox" name="thu[]" value="3">
                     <span class="cr">
                       <i class="cr-icon icofont icofont-ui-check txt-success"></i>
                     </span>
-                    <span>Thứ 3</span>
                   </label>
+                  <div style="margin-top: -10px">Thứ 3</div>
                 </div>
-
-                <div class="checkbox-zoom zoom-success">
+                <div class="checkbox-zoom zoom-success" style="text-align: center">
                   <label>
                     <input type="checkbox" name="thu[]" value="4">
                     <span class="cr">
                       <i class="cr-icon icofont icofont-ui-check txt-success"></i>
                     </span>
-                    <span>Thứ 4</span>
                   </label>
+                  <div style="margin-top: -10px">Thứ 4</div>
                 </div>
-
-                <div class="checkbox-zoom zoom-success">
+                <div class="checkbox-zoom zoom-success" style="text-align: center">
                   <label>
                     <input type="checkbox" name="thu[]" value="5">
                     <span class="cr">
                       <i class="cr-icon icofont icofont-ui-check txt-success"></i>
                     </span>
-                    <span>Thứ 5</span>
                   </label>
+                  <div style="margin-top: -10px">Thứ 5</div>
                 </div>
-
-                <div class="checkbox-zoom zoom-success">
+                <div class="checkbox-zoom zoom-success" style="text-align: center">
                   <label>
                     <input type="checkbox" name="thu[]" value="6">
                     <span class="cr">
                       <i class="cr-icon icofont icofont-ui-check txt-success"></i>
                     </span>
-                    <span>Thứ 6</span>
                   </label>
+                  <div style="margin-top: -10px">Thứ 6</div>
                 </div>
-
-                <div class="checkbox-zoom zoom-success">
+                <div class="checkbox-zoom zoom-success" style="text-align: center">
                   <label>
                     <input type="checkbox" name="thu[]" value="7">
                     <span class="cr">
                       <i class="cr-icon icofont icofont-ui-check txt-success"></i>
                     </span>
-                    <span>Thứ 7</span>
                   </label>
+                  <div style="margin-top: -10px">Thứ 7</div>
                 </div>
-
-                <div class="checkbox-zoom zoom-success">
+                <div class="checkbox-zoom zoom-success" style="text-align: center">
                   <label>
                     <input type="checkbox" name="thu[]" value="8">
                     <span class="cr">
                       <i class="cr-icon icofont icofont-ui-check txt-success"></i>
                     </span>
-                    <span>Chủ nhật</span>
                   </label>
+                  <div style="margin-top: -10px">Chủ nhật</div>
                 </div>
-
-
               </div>
             </div>
 
