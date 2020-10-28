@@ -38,6 +38,7 @@
                         <th>HỌC SINH</th>
                         <th>LỚP HỌC</th>
                         <th>BÀI HỌC</th>
+                        <th>BUỔI HỌC</th>
                         <th>Điểm</th>
                         <th>TRẠNG THÁI</th>
                         <th>XEM</th>
@@ -66,20 +67,25 @@
 
                                 <h6 class="name_link_green">{{$buoihoc->lopHoc->tenlop}}</h6>
                               </a>
-                              {{-- <p style="margin-bottom:5px" class="text-muted">{{$baitap->buoihoc->lopHoc->khoahoc->tenkhoahoc}}</p> --}}
-                              {{-- <p class="m-b-0 text-muted">Giáo viên:{{$baitap->buoihoc->giaovien->hodem.' '.$baitap->buoihoc->giaovien->ten}}</p> --}}
+                              {{-- <p style="margin-bottom:5px" class="text-muted">{{$baitap->buoihoc->lopHoc->khoahoc->tenkhoahoc}}
+                              </p> --}}
+                              {{-- <p class="m-b-0 text-muted">Giáo viên:{{$baitap->buoihoc->giaovien->hodem.' '.$baitap->buoihoc->giaovien->ten}}
+                              </p> --}}
                             </div>
                           </div>
                         </td>
 
                         <td>{{$buoihoc->baigiang->tenbaigiang}}</td>
+                        <td>{{$buoihoc->id}}</td>
                         @php
                         $socau = App\Models\BuoiHoc::sobaitap($phanlop->hoc_sinh_id, $buoihoc->id);
                         $socaudung = App\Models\BuoiHoc::socaudung($phanlop->hoc_sinh_id, $buoihoc->id);
                         $diem = round($socaudung/$socau,2)*10;
                         @endphp
                         <td>{{$baitap->trangthai == 'Đã hoàn thành'? "$diem/10": ''}} </td>
-                        <td><label class="badge badge-inverse-{{$baitap->trangthai == 'Đã hoàn thành'? 'success': 'danger'}}">{{$baitap->trangthai}}</label></td>
+                        <td><label
+                            class="badge badge-inverse-{{$baitap->trangthai == 'Đã hoàn thành'? 'success': 'danger'}}">{{$baitap->trangthai}}</label>
+                        </td>
                         <td>
                           @if($baitap->trangthai == 'Đã hoàn thành')
                           <a href="/teachers/xembaitap/{{$phanlop->hoc_sinh_id}}/{{$buoihoc->id}}">

@@ -33,7 +33,8 @@
               <i class="feather icon-bell"></i>
               <span class="badge bg-c-red">5</span>
             </div>
-            <ul class="show-notification notification-view dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+            <ul class="show-notification notification-view dropdown-menu" data-dropdown-in="fadeIn"
+              data-dropdown-out="fadeOut">
               <li>
                 <h6>Thông báo</h6>
                 <label class="label label-danger">Mới</label>
@@ -90,17 +91,39 @@
               <span>{{Auth::user()->name}}</span>
               <i class="feather icon-chevron-down"></i>
             </div>
-            <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+            <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn"
+              data-dropdown-out="fadeOut">
               <li>
                 <a href="#">
                   <i class="feather icon-settings"></i> Cài đặt
                 </a>
               </li>
-              <li>
-                <a href="myhome">
+              @php
+              switch (Auth::user()->vaitro) {
+              case 'student':
+              echo '<li>
+                <a href="/student/trangcanhan">
                   <i class="feather icon-user"></i> Trang cá nhân
                 </a>
-              </li>
+              </li>';
+              break;
+              case 'contact':
+              echo '<li>
+                <a href="contact/trangcanhan">
+                  <i class="feather icon-user"></i> Trang cá nhân
+                </a>
+              </li>';
+              break;
+              case 'teacher':
+              echo '<li>
+                <a href="/teachers/trangcanhan">
+                  <i class="feather icon-user"></i> Trang cá nhân
+                </a>
+              </li>';
+              break;
+              }
+              @endphp
+
               <li>
                 <a href="#">
                   <i class="feather icon-mail"></i> Hộp thư
