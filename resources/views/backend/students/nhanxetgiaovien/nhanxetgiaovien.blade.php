@@ -12,8 +12,7 @@
                   <div class="col-lg-12">
                     <ul class="nav nav-tabs md-tabs " role="tablist">
                       <li class="nav-item">
-                        <a class="nav-link active show" data-toggle="tab" href="#home7" role="tab" aria-selected="true"
-                          style="font-size: 14px; font-weight: bold;">
+                        <a class="nav-link active show" data-toggle="tab" href="#home7" role="tab" aria-selected="true" style="font-size: 14px; font-weight: bold;">
                           <i class="fa fa-info-circle"></i>THÔNG TIN GIẢNG VIÊN</a>
                         <div class="slide"></div>
                       </li>
@@ -27,8 +26,7 @@
                                 @php
                                 $anh = $lophoc->giaovien->user->anhdaidien;
                                 @endphp
-                                <img class="card-img-top img-fluid" src="{{asset("$anh")}}" alt="Card image cap"
-                                  style="width: 240px; height: 240px; border-radius: 50%">
+                                <img class="card-img-top img-fluid" src="{{asset("$anh")}}" alt="Card image cap" style="width: 240px; height: 240px; border-radius: 50%">
                                 <h6 style="margin-top: 10px; font-size: 16px; font-weight: bold">Giáo viên:
                                   {{$lophoc->giaovien->hodem.' '.$lophoc->giaovien->ten}}
                                 </h6>
@@ -84,7 +82,7 @@
                             <div class="card">
                               <div class="card-header">
                                 <div class="card-header-left">
-                                  <h5>Đánh giá của học viên</h5>
+                                  <h5>Đánh giá của học sinh</h5>
                                 </div>
                               </div>
                               <div class="card-block">
@@ -96,8 +94,7 @@
                                 @endphp
                                 <ul>
                                   <li style="text-align: center; margin: 5px 5px; display: flex; align-items: center">
-                                    <img class="card-img-top img-fluid" src="{{asset("$anh")}}" alt="Card image cap"
-                                      style="width: 40px; height: 40px; border-radius: 50%">
+                                    <img class="card-img-top img-fluid" src="{{asset("$anh")}}" alt="Card image cap" style="width: 40px; height: 40px; border-radius: 50%">
                                     <h6 style="margin-left: 10px">
                                       {{$nhanxet->user->hocsinh->hodem.' '.$nhanxet->user->hocsinh->ten.' [ '. $nhanxet->thoigian.' ] '}}
                                     </h6>
@@ -105,8 +102,7 @@
                                   </li>
                                 </ul>
                                 @endforeach
-                                <div class="card-block"
-                                  style="border-top: 1px solid #cccccc; padding-bottom: 10px; text-align: center">
+                                <div class="card-block" style="border-top: 1px solid #cccccc; padding-bottom: 10px; text-align: center">
                                   <div style="padding-top: 10px; display: inline-block">
                                     {{$dsnhanxet->links('vendor.pagination.bootstrap-4')}}
                                     {{-- {{$khoahocs->links()}} --}}
@@ -132,6 +128,12 @@
                                       $time = date_format($date,"Y-m-d H:i:s");
                                       setlocale(LC_TIME, 'vi_VN'); Carbon\Carbon::setLocale('vi');
                                       @endphp
+<<<<<<< HEAD
+                                      <div contenteditable="true">
+                                        <img class="card-img-top img-fluid" src="{{asset("$anh")}}" alt="Card image cap" style="width: 40px; height: 40px; border-radius: 50%">
+                                        <input name="noidung" type="text" placeholder="Nhập vào đánh giá của bạn">
+                                        <input type="text" style="display:none" name="giao_vien_id" value="{{$lophoc->giaovien->id}}">
+=======
                                       <div>
                                         <img class="card-img-top img-fluid" src="{{asset("$anh")}}" alt="Card image cap"
                                           style="width: 40px; height: 40px; border-radius: 50%; float: left;">
@@ -139,6 +141,7 @@
                                         <textarea name="noidung" rows="2" class="form-control" placeholder="Nhập vào đánh giá của bạn" style="border: none; margin-top: 13px;"></textarea>
                                         <input type="text" style="display:none" name="giao_vien_id"
                                           value="{{$lophoc->giaovien->id}}">
+>>>>>>> 71e9b8a3a502c207743141c1e5240961f4de480c
                                         <input type="text" style="display:none" name="user_id" value="{{$user->id}}">
                                         <input name="thoigian" style="display: none;" value="{{$time}}">
                                       </div>
@@ -146,8 +149,7 @@
                                   </div>
                                 </div>
                                 <div class="card-footer">
-                                  <input type="submit" class="btn btn-info btn-round waves-effect waves-light"
-                                    style="float: right" value="Gửi"></input>
+                                  <input type="submit" class="btn btn-info btn-round waves-effect waves-light" style="float: right" value="Gửi"></input>
                                 </div>
                               </div>
                             </form>

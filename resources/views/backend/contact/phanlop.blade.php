@@ -1,11 +1,11 @@
 @extends('backend.layout.index')
-<link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
 @section('content')
 <div class="pcoded-inner-content">
   <div class="main-body">
     <div class="page-wrapper">
       <div class="page-body">
+
+
         <div class="row">
           <div class="col-md-12">
             <div class="card table-card">
@@ -51,51 +51,42 @@
                       </tr>
                     </thead>
                     <tbody>
+                      @foreach($classes as $class)
                       <tr>
-                        <td>LP - 001</td>
-                        <td>8</td>
-                        <td>6</td>
-                        <td>Nguyễn Văn Linh</td>
-                        <td><label class="badge badge-inverse-success">Đang diễn ra</label></td>
+                        <td>
+                          <div class="d-inline-block align-middle">
+                            <div class="d-inline-block">
+                              <a href="{{route('classes.show', $class->id)}}">
+                                <h6 class="name_link_green">{{$class->tenlop}}</h6>
+                              </a>
+                              <p class=" m-b-0 text-muted">Khóa học: {{$class->khoaHoc->tenkhoahoc}}</p>
+                              {{-- <p class="m-t-2 m-b-0 text-muted">Giáo viên: Học viện TEKY</p> --}}
+                            </div>
+                          </div>
+                        </td>
+
+                        <td>{{ $class->khoahoc->sisotoida }}</td>
+                        <td>{{ $class->siso }}</td>
+                        <td>{{ $class->giaovien->hodem. ' '. $class->giaovien->ten }}</td>
+                        <td><label class="badge badge-inverse-success">{{ $class->trangthai }}</label></td>
                         <td style="display: flex;">
-                          <button type="button" class="btn edit btn-primary waves-effect" data-toggle="modal" data-target="#phanlop-Modal" data-id="1" style="background-color: white; border: none; padding: 0">
+                          <button type="button" class="btn edit btn-primary waves-effect phanlop" data-id="{{ $class->id }}" data-toggle="modal" data-target="#phanlop-Modal" data-id="1" style="background-color: white; border: none; padding: 0">
                             <i class="fa fa-edit f-w-600 f-16 m-r-15 text-c-green" style="font-size: 16px">
                               <h5 style="color: black; font-size: 14px">
                                 Phân lớp
                               </h5>
                             </i>
                           </button>
-                          @include('backend.contact.phanlop-Modal')
                         </td>
 
                       </tr>
-                      <tr>
-                        <td>LP - 002</td>
-                        <td>8</td>
-                        <td>8</td>
-                        <td>Nguyễn Văn Hoan</td>
-                        <td><label class="badge badge-inverse-default">Chưa diễn ra</label></td>
-                        <td style="display: flex;">
-                          <button type="button" class="btn edit btn-primary waves-effect" data-toggle="modal" data-target="#phanlop-Modal" data-id="1" style="background-color: white; border: none; padding: 0" disabled>
-                            <i class="fa fa-edit f-w-600 f-16 m-r-15 text-c-green" style="font-size: 16px">
-                              <h5 style="color: black; font-size: 14px">
-                                Phân lớp
-                              </h5>
-                            </i>
-                          </button>
-                          @include('backend.contact.phanlop-Modal')
-                        </td>
 
-                      </tr>
+                      @endforeach
+
                     </tbody>
                   </table>
                 </div>
-                {{-- phân trang--}}
-                {{-- <div class="card-block" style="border-top: 1px solid #cccccc; padding-bottom: 10px; text-align: center">--}}
-                {{-- <div style="padding-top: 10px; display: inline-block">--}}
-                {{-- {{$students->links('vendor.pagination.bootstrap-4')}}--}}
-                {{-- </div>--}}
-                {{-- </div>--}}
+
               </div>
             </div>
           </div>
@@ -104,8 +95,28 @@
     </div>
   </div>
 </div>
+
+
+
+
+<div id="Modal"></div>
+
 @endsection
 @section('script')
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+<script src="{{asset('assets/js/bootstrap-select.min.js')}}"></script>
+
+<script>
+  $(document).ready(function() {
+    $('.phanlop').click(function() {
+      $('#Modal').load('/contacts/phanlop/' + $(this).data('id'), function() {
+        $('#phanlop-Modal').show();
+      });
+    });
+    $('#Modal').load('/contacts/phanlop/' + 1);
+
+
+
+  });
+
+</script>
 @endsection

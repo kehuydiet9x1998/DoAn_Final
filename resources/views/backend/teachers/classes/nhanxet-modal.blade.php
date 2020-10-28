@@ -259,8 +259,8 @@
 
   function myReset() {
     $('#mail-Modal').hide();
-
-    $('.modal-backdrop').hide();
+    $('body').removeClass('modal-open');
+    $('.modal-backdrop').remove();
   };
 
 </script>

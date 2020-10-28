@@ -26,6 +26,7 @@
   <script>
     function myReset() {
       $('.modal-backdrop').hide();
+      $('body').removeClass('modal-open');
       $('#baigiang-Modal').hide();
     }
 

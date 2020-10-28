@@ -111,7 +111,7 @@
                                         <th style="text-align: center">KHÓA HỌC</th>
                                         <th style="text-align: center">MÃ LỚP</th>
                                         <th style="text-align: center">TÊN LỚP</th>
-                                        <th style="text-align: center">HỌC VIÊN</th>
+                                        <th style="text-align: center">HỌC SINH</th>
                                       </tr>
                                     </thead>
                                     <tbody>

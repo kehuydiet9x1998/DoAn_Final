@@ -13,7 +13,7 @@
                 <div class="card-header">
                   <h6 class="col-sm-12" style="font-weight: bold; font-size: 16px">Lớp: Xưởng lắp ráp ROBOT - LP - 001
                   </h6>
-                  <h6 class="col-sm-12">Học viên : {{$hocsinh->hodem. ' '.$hocsinh->ten}}
+                  <h6 class="col-sm-12">Học sinh : {{$hocsinh->hodem. ' '.$hocsinh->ten}}
                   </h6>
                   <h6 class="col-sm-12">Buổi học :
                     {{(int)($buoihoc->id) - (int)($buoihoc->lophoc->dsbuoihoc()->first()->id) +1}}/{{$buoihoc->lophoc->dsbuoihoc->count()}}
@@ -34,8 +34,7 @@
                   <input type="hidden" name="buoi_hoc_id" value={{$buoihoc->id}}>
                   <input type="hidden" name="hoc_sinh_id" value={{$hocsinh->id}}>
                   <input type="hidden" name="bai_tap_id[]" value={{$bt->baitap->id}}>
-                  <img class="img img-fluid" style="margin:40px" width="400px"
-                    src="{{asset($bt->baitap->hinhanhminhhoa)}}" alt="">
+                  <img class="img img-fluid" style="margin:40px" width="400px" src="{{asset($bt->baitap->hinhanhminhhoa)}}" alt="">
                   <div class="form-radio col-sm-12">
                     <div class="radio radiofill radio-info radio-inline col-sm-12">
                       <label>

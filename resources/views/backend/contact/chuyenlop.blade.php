@@ -41,8 +41,8 @@
                   <table class="table table-hover m-b-0" id="datatable">
                     <thead>
                       <tr>
-                        <th>MÃ HỌC VIÊN</th>
-                        <th>TÊN HỌC VIÊN</th>
+                        <th>MÃ HỌC SINH</th>
+                        <th>TÊN HỌC SINH</th>
                         <th>LỚP HỌC HIỆN TẠI</th>
                         <th>MÃ LỚP HIỆN TẠI</th>
                         <th>TRẠNG THÁI</th>
