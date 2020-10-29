@@ -165,6 +165,8 @@
         $('#buoihoc').load('/student/lessons/' + $(this).data('id'));
       });
       $('.buoihoc')[0].click();
+      // $('.buoihoc')[0].show();
+
     });
 
   </script>

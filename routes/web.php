@@ -42,6 +42,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('danhsachbaitap', 'Lessons\DanhSachBaiTapController');
     Route::resource('calendar', 'Teachers\LichController');
     Route::resource('nhanxethocsinh', 'Teachers\NhanXetHocSinhController');
+    Route::resource('trangcanhan', 'Teachers\TrangCaNhanController');
     // Route::get('/nhanxetmodal/{hocsinhid}/{buoihocid}/{lophocid}/{khoahocid}', function ($hocsinhid, $buoihocid, $lophocid, $khoahocid) {
     //   return view('backend.teachers.classes.nhanxet-modal', ['hocsinhid' => $hocsinhid, 'buoihocid' => $buoihocid, 'lophocid' => $lophocid, 'khoahocid' => $khoahocid]);
     // });
@@ -90,7 +91,9 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
     Route::resource('list-teachers', "Contacts\GiangVienController");
     Route::resource('phanlop', 'Administrators\PhanLopController');
-
+    Route::get('checkin-teachers', function (){
+      return view('backend.contact.checkIn');
+    });
     // override route
     Route::get('phanlop/{class}', [PhanLopController::class, 'index']);
 
@@ -108,6 +111,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('my-comment', 'Students\NhanXetGiaoVienController');
     Route::resource('review-khoahoc', 'Students\NhanXetKhoahocController');
     Route::resource('review-giaovien', 'Students\NhanXetGiaoVienController');
+    Route::resource('trangcanhan', 'Students\TrangCaNhanController');
     Route::get('review', function () {
       return view('backend.students.review');
     });

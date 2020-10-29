@@ -106,7 +106,7 @@
                                   <div class="col-sm-12" style="text-align: center; margin-top: 5px">
                                     <button data-id="1" class="btn waves-effect waves-light btn-round">
                                       <a style="font-size: 14px; font-weight: 700;"
-                                        href="{{route('courses.show',$khoahoc->id)}}">
+                                        href="{{route('allcourses.show',$khoahoc->id)}}">
                                         XEM CHI TIẾT KHÓA HỌC
                                       </a>
                                     </button>
