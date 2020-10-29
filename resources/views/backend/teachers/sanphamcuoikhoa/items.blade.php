@@ -56,7 +56,7 @@
                                       <select name="lop_hoc_id" class="form-control form-control-primary fill">
                                         @foreach ($dslophoc as $lophoc)
                                         <option value="{{$lophoc->id}}">
-                                          {{$lophoc->khoahoc->tenkhoahoc}}</option>
+                                          {{$lophoc->tenlop}}</option>
                                         @endforeach
 
                                       </select>
