@@ -32,6 +32,9 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::get('timesheets', function () {
       return view('backend.administrators.timesheets');
     });
+    Route::get('phanquyen', function () {
+      return view('backend.administrators.phanquyen');
+    });
   });
 
   Route::prefix('teachers')->group(function () {
