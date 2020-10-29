@@ -176,7 +176,7 @@ if ($phanquyen == "teacher") {
           "text" => "Nhận xét học sinh",
         ],
         [
-          "link" => "/teachers/items",
+          "link" => "/teachers/sanphamcuoikhoa",
           "type" => "link",
           "icon" => "fa fa-product-hunt",
           "text" => "Sản phẩm cuối khóa",
