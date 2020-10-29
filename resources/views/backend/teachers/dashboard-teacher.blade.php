@@ -1,5 +1,7 @@
 @extends('backend.layout.index')
 @section('content')
+  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/fullcalendar.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/fullcalendar.print.css')}}" media='print'>
   <div class="pcoded-inner-content">
     <div class="main-body">
       <div class="page-wrapper">
@@ -96,6 +98,18 @@
               </div>
             </div>
           </div>
+          <div class="card">
+            <div class="card-header">
+              <h5>Full Calendar</h5>
+            </div>
+            <div class="card-block">
+              <div class="row">
+                <div class="col-md-12">
+                  <div id='calendar'></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         </div>
       </div>
@@ -148,5 +162,40 @@
       }
     });
   </script>
-
+  <script type="text/javascript" src="{{asset('assets/js/fullcalendar.min.js')}}"></script>
+  <script>
+    jQuery(document).ready(function($) {
+      $('#calendar').fullCalendar({
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'month,basicWeek,basicDay'
+        },
+        navLinks: false,
+        editable: false,
+        eventLimit: false,
+        //đổ dữ liệu ra event
+        events: [{
+          title:  'My Event',
+          start:  '2020-10-10T14:30:00',
+          allDay: false
+        },
+          {
+            title:  'My Event2',
+            color: 'yellow',
+            start:  '2020-10-10T17:30:00',
+            allDay: false
+          },
+          {
+            title:  'My Event2',
+            color: 'yellow',
+            start:  '2020-10-10T17:30:00',
+            allDay: false
+          },
+        ],
+        timezone: 'Asia/Ho_Chi_Minh',
+        timeFormat: 'H(:mm)'
+      });
+    });
+  </script>
 @endsection
