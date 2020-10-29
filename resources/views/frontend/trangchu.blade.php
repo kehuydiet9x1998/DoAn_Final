@@ -4,18 +4,18 @@
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
 
-  <link rel="stylesheet" href="http://127.0.0.1:8000/assets/fonts/roboto.css">
-  <link rel="stylesheet" href="http://127.0.0.1:8000/assets/fonts/material_ui_icon.css">
-  <link rel="stylesheet" href="http://127.0.0.1:8000/assets/fonts/paytone_one.css">
-  <link rel="stylesheet" href="http://127.0.0.1:8000/assets/fonts/montserrat.css">
-  <link rel="stylesheet" href="http://127.0.0.1:8000/assets/fonts/poppins.css">
+  <link rel="stylesheet" href="/assets/fonts/roboto.css">
+  <link rel="stylesheet" href="/assets/fonts/material_ui_icon.css">
+  <link rel="stylesheet" href="/assets/fonts/paytone_one.css">
+  <link rel="stylesheet" href="/assets/fonts/montserrat.css">
+  <link rel="stylesheet" href="/assets/fonts/poppins.css">
 
-  <link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/assets/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/assets/css/frontend.css">
-  <link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/assets/css/font-awesome-n.min.css">
-  <link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/assets/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/assets/css/slick.css">
-  <link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/css/app.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/frontend.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome-n.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/slick.css">
+  <link rel="stylesheet" type="text/css" href="/css/app.css">
   <title>TEKY EDU</title>
   <style type="text/css">
     @charset 'UTF-8';
@@ -1089,8 +1089,8 @@
 
   </style>
 
-  <script type="text/javascript" src="http://127.0.0.1:8000/assets/js/jquery.min.js"></script>
-  <script type="text/javascript" src="http://127.0.0.1:8000/assets/js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/js/jquery-ui.min.js"></script>
 
 </head>
 
@@ -1572,8 +1572,8 @@
       </div>
     </div>
   </div>
-  {{-- <script type="text/javascript" src="http://127.0.0.1:8000/js/app.js"></script> --}}
+  {{-- <script type="text/javascript" src="/js/app.js"></script> --}}
 
-  <script type="text/javascript" src="http://127.0.0.1:8000/assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
 </body>
 </html>

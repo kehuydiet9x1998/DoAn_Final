@@ -14,9 +14,7 @@
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-6">
                     <div id="dom-table_filter" class="dataTables_filter">
-                      <label style="display: flex">Tìm kiếm:<input type="search" id="search"
-                          class="form-control input-sm" placeholder="" aria-controls="dom-table"
-                          style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;">
+                      <label style="display: flex">Tìm kiếm:<input type="search" id="search" class="form-control input-sm" placeholder="" aria-controls="dom-table" style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;">
                       </label>
                     </div>
                   </div>
@@ -42,7 +40,8 @@
                         <td>{{$khoahoc->id}}</td>
                         <td>
                           <div class="d-inline-block align-middle">
-                            <a href="{{route('allcourses.show', $khoahoc->id)}}">
+                            <a href="{{route('review-khoahoc.show', $khoahoc->id)}}">
+
                               <div class="d-inline-block">
                                 <h6 class="name_link_green">{{
                                   $khoahoc->tenkhoahoc }}</h6>
@@ -62,8 +61,7 @@
                         <td>
                           <div class="col-sm-12" style="text-align: center; margin-top: 5px">
                             <button style="border: none; padding: 2px 0px; margin-top: -1px; background-color: white">
-                              <a class="fa fa-commenting-o" aria-hidden="true" style="margin:0; background-color: white"
-                                href="{{route('review-khoahoc.show',$khoahoc->id)}}">
+                              <a class="fa fa-commenting-o" aria-hidden="true" style="margin:0; background-color: white" href="{{route('review-khoahoc.show',$khoahoc->id)}}">
                               </a>
                             </button>
                           </div>
