@@ -17,7 +17,7 @@
                 <div class="row ui-sortable" id="draggablePanelList">
                   <div class="col-lg-12 col-xl-12 ui-sortable-handle">
                     <div class="card-sub">
-                      <img class="card-img-top img-fluid" src="{{asset('assets/jpg/card1.jpg')}}" alt="Card image cap">
+                      <img class="card-img-top img-fluid" src="{{asset('assets/jpg/card2.jpg')}}" alt="Card image cap">
                       <div class="card-block">
                         <h6 class="card-title">Ảnh đại diện</h6>
                         {{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of
