@@ -44,7 +44,7 @@
                         <td>{{$phanlop->lophoc->giaovien->sodienthoai}}</td>
                         <td>
                           <div class="d-inline-block align-middle">
-                            <a href="{{route('courses.show', $phanlop->lophoc->khoahoc->id)}}">
+                            <a href="{{route('allcourses.show', $phanlop->lophoc->khoahoc->id)}}">
                               <div class="d-inline-block">
                                 <h6 class="name_link_green">{{
                                   $phanlop->lophoc->khoahoc->tenkhoahoc }}</h6>

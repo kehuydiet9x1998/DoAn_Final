@@ -38,6 +38,7 @@
                         <th>TÊN HỌC SINH</th>
                         <th>LỚP HỌC</th>
                         <th>BÀI HỌC</th>
+                        <th>BUỔI HỌC</th>
                         <th>TRẠNG THÁI</th>
                         <th>ACTIONS</th>
                       </tr>
@@ -50,6 +51,7 @@
                         <td>{{ $phanlop->hocsinh->hodem . ' '. $phanlop->hocsinh->ten}}</td>
                         <td>{{ $buoihoc->lophoc->tenlop }}</td>
                         <td>{{ $buoihoc->baigiang->tenbaigiang }}</td>
+                        <td>{{ $buoihoc->id }}</td>
                         <td><label class="badge badge-inverse-primary">Đang học</label></td>
                         <td style="text-indent:17px">
                           <button

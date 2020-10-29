@@ -42,7 +42,7 @@
                         <td>{{$khoahoc->id}}</td>
                         <td>
                           <div class="d-inline-block align-middle">
-                            <a href="{{route('courses.show', $khoahoc->id)}}">
+                            <a href="{{route('allcourses.show', $khoahoc->id)}}">
                               <div class="d-inline-block">
                                 <h6 class="name_link_green">{{
                                   $khoahoc->tenkhoahoc }}</h6>
