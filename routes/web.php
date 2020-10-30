@@ -96,6 +96,8 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
     Route::resource('list-teachers', "Contacts\GiangVienController");
     Route::resource('phanlop', 'Administrators\PhanLopController');
+    Route::resource('allcourses', 'Students\KhoaHocController');
+    Route::resource('trangcanhan', 'Contacts\TrangCaNhanController');
     Route::get('checkin-teachers', function () {
       return view('backend.contact.checkIn');
     });

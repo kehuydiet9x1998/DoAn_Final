@@ -109,7 +109,7 @@
               break;
               case 'contact':
               echo '<li>
-                <a href="contact/trangcanhan">
+                <a href="/contacts/trangcanhan">
                   <i class="feather icon-user"></i> Trang cá nhân
                 </a>
               </li>';
@@ -117,6 +117,13 @@
               case 'teacher':
               echo '<li>
                 <a href="/teachers/trangcanhan">
+                  <i class="feather icon-user"></i> Trang cá nhân
+                </a>
+              </li>';
+              break;
+              case 'administrator':
+              echo '<li>
+                <a href="/administrators/trangcanhan">
                   <i class="feather icon-user"></i> Trang cá nhân
                 </a>
               </li>';

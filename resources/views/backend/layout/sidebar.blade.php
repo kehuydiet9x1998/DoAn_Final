@@ -73,14 +73,14 @@ if ($phanquyen == 'contact') {
       "title" => "Quản Lý Đào Tạo",
       "items" => [
         [
-          "link" => "/administrators/allcourse",
+          "link" => "/contacts/allcourses",
           "type" => "link",
           "icon" => " fa fa-institution",
           "text" => "Khóa học",
         ],
 
         [
-          "link" => "/administrators/allcourse",
+          "link" => "/contacts/allclass",
           "type" => "link",
           "icon" => " fa fa-list-alt",
           "text" => "Lớp học",
