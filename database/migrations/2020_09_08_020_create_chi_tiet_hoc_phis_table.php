@@ -15,22 +15,16 @@ class CreateChiTietHocPhisTable extends Migration
   {
     Schema::create('chi_tiet_hoc_phi', function (Blueprint $table) {
       $table->id();
-      $table->string('tenkhoanthu');
       $table
-        ->bigInteger('sotien')
-        ->unsigned()
-        ->default(0);
-      $table->unsignedBigInteger('sotiendong')->default(0);
-      $table->unsignedBigInteger('hoc_phi_id');
+        ->foreignId('khoan_thu_id')
+        ->constrained('khoan_thu')
+        ->cascadeOnDelete();
       $table
-        ->foreign('hoc_phi_id')
-        ->references('id')
-        ->on('hoc_phi');
-      $table->unsignedBigInteger('khoa_hoc_id');
-      $table
-        ->foreign('khoa_hoc_id')
-        ->references('id')
-        ->on('khoa_hoc');
+        ->foreignId('lich_su_hoc_phi_id')
+        ->constrained('lich_su_hoc_phi')
+        ->cascadeOnDelete();
+      $table->integer('dadong')->default(0);
+      $table->string('trangthai')->nullable();
       $table->timestamps();
       $table->softDeletes();
     });

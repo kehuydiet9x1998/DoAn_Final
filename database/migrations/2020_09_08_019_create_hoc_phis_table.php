@@ -15,10 +15,19 @@ class CreateHocPhisTable extends Migration
   {
     Schema::create('hoc_phi', function (Blueprint $table) {
       $table->id();
-      $table->bigInteger('canthu')->unsigned();
-      $table->bigInteger('dadong')->unsigned();
-      $table->bigInteger('conno')->unsigned();
-      $table->string('trangthai');
+      $table
+        ->bigInteger('canthu')
+        ->unsigned()
+        ->default(0);
+      $table
+        ->bigInteger('dadong')
+        ->unsigned()
+        ->default(0);
+      $table
+        ->bigInteger('conno')
+        ->unsigned()
+        ->default(0);
+      $table->string('trangthai')->default('Đã hoàn thành');
       $table->unsignedBigInteger('hoc_sinh_id');
       $table
         ->foreign('hoc_sinh_id')

@@ -28,7 +28,6 @@ if ($phanquyen == 'contact') {
           "icon" => "fa fa-bell",
           "type" => "link",
         ],
-
       ],
     ],
   ];
@@ -37,17 +36,30 @@ if ($phanquyen == 'contact') {
       "title" => "Chăm Sóc Khách Hàng",
       "items" => [
         [
+          "link" => "/administrators/courses",
+          "type" => "link",
+          "icon" => " fa fa-institution",
+          "text" => "Khóa học",
+        ],
+
+        [
+          "link" => "/administrators/allclass",
+          "type" => "link",
+          "icon" => " fa fa-list-alt",
+          "text" => "Lớp học",
+        ],
+        [
           "type" => "link",
           "icon" => "fa fa-user",
           "link" => "/contacts/students",
           "text" => "Học sinh",
         ],
-        [
-          "link" => "/contacts/phanlop",
-          "type" => "link",
-          "icon" => "fa fa-braille",
-          "text" => "Phân lớp",
-        ],
+        // [
+        //   "link" => "/contacts/phanlop",
+        //   "type" => "link",
+        //   "icon" => "fa fa-braille",
+        //   "text" => "Phân lớp",
+        // ],
         [
           "type" => "link",
           "icon" => "fa fa-dollar",
@@ -60,12 +72,12 @@ if ($phanquyen == 'contact') {
           "link" => "/contacts/lichtrainghiem",
           "text" => "Lịch trải nghiệm",
         ],
-        [
-          "type" => "link",
-          "icon" => "feather icon-home",
-          "link" => "/contacts/feedbacks",
-          "text" => "Nhận xét",
-        ],
+        // [
+        //   "type" => "link",
+        //   "icon" => "feather icon-home",
+        //   "link" => "/contacts/feedbacks",
+        //   "text" => "Nhận xét",
+        // ],
       ],
     ],
 
@@ -73,21 +85,7 @@ if ($phanquyen == 'contact') {
       "title" => "Quản Lý Đào Tạo",
       "items" => [
         [
-          "link" => "/administrators/allcourse",
-          "type" => "link",
-          "icon" => " fa fa-institution",
-          "text" => "Khóa học",
-        ],
-
-        [
-          "link" => "/administrators/allcourse",
-          "type" => "link",
-          "icon" => " fa fa-list-alt",
-          "text" => "Lớp học",
-        ],
-
-        [
-          "link" => "/admin/thoi-khoa-bieu",
+          "link" => "/administrators/calendar",
           "type" => "link",
           "icon" => "fa fa-calendar",
           "text" => "Lịch giảng dậy",
@@ -262,8 +260,6 @@ if ($phanquyen == 'administrator') {
           "link" => "/contacts/hocphis",
           "text" => "Khoản thu",
         ],
-
-
       ],
     ],
     [

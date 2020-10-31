@@ -14,6 +14,7 @@ class LopHoc extends Model
   protected $table = 'lop_hoc';
   protected $dates = ['deleted_at'];
   protected $fillable = [
+    'id',
     'tenlop',
     'ngaytao',
     'siso',
@@ -22,6 +23,12 @@ class LopHoc extends Model
     'khoa_hoc_id',
     'giao_vien_id',
   ];
+
+  public function soBuoiDaHoc()
+  {
+    $sobuoidahoc = $this->dsBuoiHoc->where('trangthai', 'Đã kết thúc')->count();
+    return $sobuoidahoc;
+  }
 
   public function getNgaybatdauAttribute($value)
   {
@@ -48,6 +55,11 @@ class LopHoc extends Model
   public function giaoVien()
   {
     return $this->belongsTo(GiaoVien::class);
+  }
+
+  public function dsKhoanThu()
+  {
+    return $this->hasMany(KhoanThu::class);
   }
 
   public function dsBuoiHoc()

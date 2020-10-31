@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Contacts;
 
 use App\Http\Controllers\Controller;
+use App\Models\ChiTietHocPhi;
+use App\Models\HocCu;
 use App\Models\HocPhi;
 use App\Models\LichSuHocPhi;
 use App\Models\KhoanThu;
@@ -20,7 +22,10 @@ class HocPhiController extends Controller
   {
     $hocphi = HocPhi::all();
     $khoanthu = KhoanThu::all();
-    return view('backend.contact.hocphi.ListHocPhi', compact('khoanthu', 'hocphi'));
+    return view(
+      'backend.contact.hocphi.ListHocPhi',
+      compact('khoanthu', 'hocphi')
+    );
   }
 
   /**
@@ -41,10 +46,25 @@ class HocPhiController extends Controller
    */
   public function store(Request $request)
   {
-    $data = $request->all();
-    $data['sotienconthieu'] = $data['sotiencandong'] - $data['sotiendadong'];
-    LichSuHocPhi::create($data);
-    return redirect(route('hocphis.index'));
+    $data = $request->only(['nhan_vien_id', 'hoc_phi_id']);
+    $data['ngaydong'] = date('Y/m/d');
+    $data['sotiendadong'] = str_replace(',', '', $request['sotiendadong']);
+    $lichsu = LichSuHocPhi::create($data);
+    foreach ($request['khoanthu'] as $khoan_thu_id) {
+      $lichsu
+        ->dsChiTiet()
+        ->create(['khoan_thu_id' => $khoan_thu_id, 'dadong' => 1]);
+      KhoanThu::find($khoan_thu_id)->update(['trangthai' => 'Đã hoàn thành']);
+    }
+
+    /* -------------------------------------------------------------------------- */
+    /*                          update tinh trang hoc phi                         */
+    /* -------------------------------------------------------------------------- */
+
+    $hocphi = HocPhi::find($request['hoc_phi_id']);
+    $hocphi->updateHocPhi();
+
+    return back();
   }
 
   /**
@@ -55,6 +75,13 @@ class HocPhiController extends Controller
    */
   public function show($id)
   {
+    $hocphi = HocPhi::find($id);
+
+    $lsthu = LichSuHocPhi::all()->where('hoc_phi_id', $id);
+    return view(
+      'backend.contact.hocphi.lichsu_modal',
+      compact('lsthu', 'hocphi')
+    );
   }
 
   /**
@@ -66,13 +93,19 @@ class HocPhiController extends Controller
   public function edit($id)
   {
     $hocphi = HocPhi::find($id);
-    $khoanthu = KhoanThu::all();
-    $lsthu =  LichSuHocPhi::all()->where('hoc_phi_id', $id);
-    $sotiencandong = LichSuHocPhi::where('hoc_phi_id', $id)->orderBy('created_at', 'desc')->first()->sotienconthieu;
-    return view(
-      'backend.contact.hocphi.Edit_HocPhi_Modal',
-      ['hocphi' => $hocphi, 'khoanthu' => $khoanthu, 'lsthu' => $lsthu, 'sotiencandong' => $sotiencandong]
-    );
+
+    $khoanthu = KhoanThu::where(function ($query) use ($id) {
+      $query->where('hoc_phi_id', $id)->where(function ($query) {
+        $query->where('trangthai', 'Chưa đóng')->orWhere('trangthai', 'Còn nợ');
+      });
+    })
+    ->get();
+    // $sotiencandong = LichSuHocPhi::where('hoc_phi_id', $id)->orderBy('created_at', 'desc')->first()->sotienconthieu;
+    return view('backend.contact.hocphi.Edit_HocPhi_Modal', [
+      'hocphi' => $hocphi,
+      'khoanthu' => $khoanthu,
+      // 'sotiencandong' => $sotiencandong,
+    ]);
   }
 
   /**
@@ -84,7 +117,6 @@ class HocPhiController extends Controller
    */
   public function update(Request $request, $id)
   {
-
     $hocphi = HocPhi::find($id);
   }
 
@@ -98,5 +130,13 @@ class HocPhiController extends Controller
   {
     HocPhi::Where('id', '=', $id)->delete();
     return redirect(route('hocphis.index'));
+  }
+
+  public function tinhhocphi()
+  {
+    foreach (HocPhi::all() as $hocphi) {
+      $hocphi->updateHocPhi();
+    }
+    return back();
   }
 }

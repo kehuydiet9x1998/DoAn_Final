@@ -143,6 +143,8 @@ namespace App\Models{
  * @property-read int|null $ds_diem_danh_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\NghiPhep[] $dsNghiPhep
  * @property-read int|null $ds_nghi_phep_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\NhanXetHocSinh[] $dsNhanXetHocSinh
+ * @property-read int|null $ds_nhan_xet_hoc_sinh_count
  * @property-read \App\Models\GiaoVien $giaoVien
  * @property-read \App\Models\LopHoc $lopHoc
  * @property-read \App\Models\PhongHoc $phongHoc
@@ -175,6 +177,7 @@ namespace App\Models{
  * @property int $id
  * @property string $thoigianbatdau
  * @property string $thoigianketthuc
+ * @property int $buoi
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
@@ -184,6 +187,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|CaHoc newQuery()
  * @method static \Illuminate\Database\Query\Builder|CaHoc onlyTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|CaHoc query()
+ * @method static \Illuminate\Database\Eloquent\Builder|CaHoc whereBuoi($value)
  * @method static \Illuminate\Database\Eloquent\Builder|CaHoc whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|CaHoc whereDeletedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|CaHoc whereId($value)
@@ -201,7 +205,7 @@ namespace App\Models{
  * App\Models\CheckIn
  *
  * @property int $id
- * @property string $giocheckin
+ * @property string|null $giocheckin
  * @property string|null $giocheckout
  * @property int $buoi_hoc_id
  * @property \Illuminate\Support\Carbon|null $created_at
@@ -230,11 +234,10 @@ namespace App\Models{
  * App\Models\ChiTietHocPhi
  *
  * @property int $id
- * @property string $tenkhoanthu
- * @property int $sotien
+ * @property int $khoan_thu_id
+ * @property int $lich_su_hoc_phi_id
  * @property int $sotiendong
- * @property int $hoc_phi_id
- * @property int $khoa_hoc_id
+ * @property string|null $trangthai
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
@@ -246,12 +249,11 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|ChiTietHocPhi query()
  * @method static \Illuminate\Database\Eloquent\Builder|ChiTietHocPhi whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ChiTietHocPhi whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ChiTietHocPhi whereHocPhiId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ChiTietHocPhi whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ChiTietHocPhi whereKhoaHocId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ChiTietHocPhi whereSotien($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ChiTietHocPhi whereKhoanThuId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ChiTietHocPhi whereLichSuHocPhiId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ChiTietHocPhi whereSotiendong($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ChiTietHocPhi whereTenkhoanthu($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ChiTietHocPhi whereTrangthai($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ChiTietHocPhi whereUpdatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|ChiTietHocPhi withTrashed()
  * @method static \Illuminate\Database\Query\Builder|ChiTietHocPhi withoutTrashed()
@@ -300,6 +302,7 @@ namespace App\Models{
  * @property string $trangthai
  * @property float $diem
  * @property string $nhanxet
+ * @property string $chon
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
@@ -312,6 +315,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|DanhSachBaiTap query()
  * @method static \Illuminate\Database\Eloquent\Builder|DanhSachBaiTap whereBaiTapId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|DanhSachBaiTap whereBuoiHocId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|DanhSachBaiTap whereChon($value)
  * @method static \Illuminate\Database\Eloquent\Builder|DanhSachBaiTap whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|DanhSachBaiTap whereDeletedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|DanhSachBaiTap whereDiem($value)
@@ -372,6 +376,7 @@ namespace App\Models{
  * @property string $email
  * @property string $diachi
  * @property string $tinhtrang
+ * @property int $user_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
@@ -379,6 +384,8 @@ namespace App\Models{
  * @property-read int|null $ds_buoi_hoc_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\LopHoc[] $dsLopHoc
  * @property-read int|null $ds_lop_hoc_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\NhanXetGiaoVien[] $dsNhanXet
+ * @property-read int|null $ds_nhan_xet_count
  * @property-read \App\Models\User $user
  * @method static \Illuminate\Database\Eloquent\Builder|GiaoVien newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|GiaoVien newQuery()
@@ -397,6 +404,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|GiaoVien whereTen($value)
  * @method static \Illuminate\Database\Eloquent\Builder|GiaoVien whereTinhtrang($value)
  * @method static \Illuminate\Database\Eloquent\Builder|GiaoVien whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GiaoVien whereUserId($value)
  * @method static \Illuminate\Database\Query\Builder|GiaoVien withTrashed()
  * @method static \Illuminate\Database\Query\Builder|GiaoVien withoutTrashed()
  */
@@ -468,33 +476,30 @@ namespace App\Models{
  * App\Models\HocPhi
  *
  * @property int $id
- * @property string $lydo
- * @property string $ngaynop
+ * @property int $canthu
+ * @property int $dadong
+ * @property int $conno
  * @property string $trangthai
- * @property int $sotiendong
- * @property string $ghichu
  * @property int $hoc_sinh_id
- * @property int $nhan_vien_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ChiTietHocPhi[] $dsHocPhi
  * @property-read int|null $ds_hoc_phi_count
  * @property-read \App\Models\HocSinh $hocSinh
- * @property-read \App\Models\NhanVien $nhanVien
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\LichSuHocPhi[] $lsHocPhi
+ * @property-read int|null $ls_hoc_phi_count
  * @method static \Illuminate\Database\Eloquent\Builder|HocPhi newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|HocPhi newQuery()
  * @method static \Illuminate\Database\Query\Builder|HocPhi onlyTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|HocPhi query()
+ * @method static \Illuminate\Database\Eloquent\Builder|HocPhi whereCanthu($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HocPhi whereConno($value)
  * @method static \Illuminate\Database\Eloquent\Builder|HocPhi whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HocPhi whereDadong($value)
  * @method static \Illuminate\Database\Eloquent\Builder|HocPhi whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|HocPhi whereGhichu($value)
  * @method static \Illuminate\Database\Eloquent\Builder|HocPhi whereHocSinhId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|HocPhi whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|HocPhi whereLydo($value)
- * @method static \Illuminate\Database\Eloquent\Builder|HocPhi whereNgaynop($value)
- * @method static \Illuminate\Database\Eloquent\Builder|HocPhi whereNhanVienId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|HocPhi whereSotiendong($value)
  * @method static \Illuminate\Database\Eloquent\Builder|HocPhi whereTrangthai($value)
  * @method static \Illuminate\Database\Eloquent\Builder|HocPhi whereUpdatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|HocPhi withTrashed()
@@ -518,6 +523,7 @@ namespace App\Models{
  * @property string $email
  * @property string $sodienthoai
  * @property string $diachi
+ * @property int $user_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
@@ -532,6 +538,7 @@ namespace App\Models{
  * @property-read int|null $ds_lop_hoc_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\NghiPhep[] $dsNghiPhep
  * @property-read int|null $ds_nghi_phep_count
+ * @property-read \App\Models\User $user
  * @method static \Illuminate\Database\Eloquent\Builder|HocSinh newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|HocSinh newQuery()
  * @method static \Illuminate\Database\Query\Builder|HocSinh onlyTrashed()
@@ -550,6 +557,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|HocSinh whereTen($value)
  * @method static \Illuminate\Database\Eloquent\Builder|HocSinh whereTrangthai($value)
  * @method static \Illuminate\Database\Eloquent\Builder|HocSinh whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HocSinh whereUserId($value)
  * @method static \Illuminate\Database\Query\Builder|HocSinh withTrashed()
  * @method static \Illuminate\Database\Query\Builder|HocSinh withoutTrashed()
  */
@@ -653,6 +661,8 @@ namespace App\Models{
  * @property-read int|null $ds_hinh_anh_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\LopHoc[] $dsLopHoc
  * @property-read int|null $ds_lop_hoc_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\NhanXetKhoaHoc[] $dsNhanXet
+ * @property-read int|null $ds_nhan_xet_count
  * @property-read \App\Models\Level $level
  * @property-read \App\Models\LoaiKhoaHoc $loaiKhoaHoc
  * @method static \Illuminate\Database\Eloquent\Builder|KhoaHoc newModelQuery()
@@ -676,6 +686,38 @@ namespace App\Models{
  * @method static \Illuminate\Database\Query\Builder|KhoaHoc withoutTrashed()
  */
 	class KhoaHoc extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\KhoanThu
+ *
+ * @property int $id
+ * @property string $tenkhoanthu
+ * @property int $sotien
+ * @property int $sotiendanop
+ * @property int $hoc_phi_id
+ * @property string $trangthai
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @method static \Illuminate\Database\Eloquent\Builder|KhoanThu newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|KhoanThu newQuery()
+ * @method static \Illuminate\Database\Query\Builder|KhoanThu onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|KhoanThu query()
+ * @method static \Illuminate\Database\Eloquent\Builder|KhoanThu whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|KhoanThu whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|KhoanThu whereHocPhiId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|KhoanThu whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|KhoanThu whereSotien($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|KhoanThu whereSotiendanop($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|KhoanThu whereTenkhoanthu($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|KhoanThu whereTrangthai($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|KhoanThu whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|KhoanThu withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|KhoanThu withoutTrashed()
+ */
+	class KhoanThu extends \Eloquent {}
 }
 
 namespace App\Models{
@@ -704,6 +746,42 @@ namespace App\Models{
  * @method static \Illuminate\Database\Query\Builder|Level withoutTrashed()
  */
 	class Level extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\LichSuHocPhi
+ *
+ * @property int $id
+ * @property int $sotiencandong
+ * @property int $sotiendadong
+ * @property int $sotienconthieu
+ * @property string $ngaydong
+ * @property int $hoc_phi_id
+ * @property int $nhan_vien_id
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \App\Models\HocPhi $hocPhi
+ * @property-read \App\Models\NhanVien $nhanVien
+ * @method static \Illuminate\Database\Eloquent\Builder|LichSuHocPhi newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|LichSuHocPhi newQuery()
+ * @method static \Illuminate\Database\Query\Builder|LichSuHocPhi onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|LichSuHocPhi query()
+ * @method static \Illuminate\Database\Eloquent\Builder|LichSuHocPhi whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|LichSuHocPhi whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|LichSuHocPhi whereHocPhiId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|LichSuHocPhi whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|LichSuHocPhi whereNgaydong($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|LichSuHocPhi whereNhanVienId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|LichSuHocPhi whereSotiencandong($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|LichSuHocPhi whereSotienconthieu($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|LichSuHocPhi whereSotiendadong($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|LichSuHocPhi whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|LichSuHocPhi withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|LichSuHocPhi withoutTrashed()
+ */
+	class LichSuHocPhi extends \Eloquent {}
 }
 
 namespace App\Models{
@@ -791,7 +869,8 @@ namespace App\Models{
  * @property-read int|null $ds_lop_hoc_count
  * @property-read \App\Models\GiaoVien $giaoVien
  * @property-read \App\Models\KhoaHoc $khoaHoc
- * @property-read \App\Models\ThoiGianHoc|null $lichHoc
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ThoiGianHoc[] $lichHoc
+ * @property-read int|null $lich_hoc_count
  * @method static \Illuminate\Database\Eloquent\Builder|LopHoc newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|LopHoc newQuery()
  * @method static \Illuminate\Database\Query\Builder|LopHoc onlyTrashed()
@@ -853,6 +932,32 @@ namespace App\Models{
  * @method static \Illuminate\Database\Query\Builder|Luong withoutTrashed()
  */
 	class Luong extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\Message
+ *
+ * @property int $id
+ * @property int $from
+ * @property int $to
+ * @property string $message
+ * @property int $is_read
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|Message newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Message newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Message query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Message whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Message whereFrom($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Message whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Message whereIsRead($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Message whereMessage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Message whereTo($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Message whereUpdatedAt($value)
+ */
+	class Message extends \Eloquent {}
 }
 
 namespace App\Models{
@@ -973,6 +1078,136 @@ namespace App\Models{
 
 namespace App\Models{
 /**
+ * App\Models\NhanXetGiaoVien
+ *
+ * @property int $id
+ * @property int $user_id
+ * @property int $giao_vien_id
+ * @property string $thoigian
+ * @property string $noidung
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \App\Models\GiaoVien $giaoVien
+ * @property-read \App\Models\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetGiaoVien newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetGiaoVien newQuery()
+ * @method static \Illuminate\Database\Query\Builder|NhanXetGiaoVien onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetGiaoVien query()
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetGiaoVien whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetGiaoVien whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetGiaoVien whereGiaoVienId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetGiaoVien whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetGiaoVien whereNoidung($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetGiaoVien whereThoigian($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetGiaoVien whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetGiaoVien whereUserId($value)
+ * @method static \Illuminate\Database\Query\Builder|NhanXetGiaoVien withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|NhanXetGiaoVien withoutTrashed()
+ */
+	class NhanXetGiaoVien extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\NhanXetHocSinh
+ *
+ * @property int $id
+ * @property string|null $khanangtiepthu
+ * @property string|null $khanangsangtao
+ * @property string|null $apdungkienthuc
+ * @property string|null $lambaitapvenha
+ * @property string|null $ythuchoctap
+ * @property string|null $tinhthanhoctap
+ * @property string|null $kynanglamviecnhom
+ * @property string|null $kynangthuyettrinh
+ * @property int $hoc_sinh_id
+ * @property int $buoi_hoc_id
+ * @property int $lop_hoc_id
+ * @property int $khoa_hoc_id
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\BuoiHoc $buoiHoc
+ * @property-read \App\Models\HocSinh $hocSinh
+ * @property-read \App\Models\KhoaHoc $khoaHoc
+ * @property-read \App\Models\LopHoc $lopHoc
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetHocSinh newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetHocSinh newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetHocSinh query()
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetHocSinh whereApdungkienthuc($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetHocSinh whereBuoiHocId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetHocSinh whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetHocSinh whereHocSinhId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetHocSinh whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetHocSinh whereKhanangsangtao($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetHocSinh whereKhanangtiepthu($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetHocSinh whereKhoaHocId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetHocSinh whereKynanglamviecnhom($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetHocSinh whereKynangthuyettrinh($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetHocSinh whereLambaitapvenha($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetHocSinh whereLopHocId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetHocSinh whereTinhthanhoctap($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetHocSinh whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetHocSinh whereYthuchoctap($value)
+ */
+	class NhanXetHocSinh extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\NhanXetKhoaHoc
+ *
+ * @property int $id
+ * @property int $user_id
+ * @property int $khoa_hoc_id
+ * @property string $thoigian
+ * @property string $noidung
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \App\Models\KhoaHoc $khoaHoc
+ * @property-read \App\Models\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetKhoaHoc newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetKhoaHoc newQuery()
+ * @method static \Illuminate\Database\Query\Builder|NhanXetKhoaHoc onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetKhoaHoc query()
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetKhoaHoc whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetKhoaHoc whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetKhoaHoc whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetKhoaHoc whereKhoaHocId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetKhoaHoc whereNoidung($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetKhoaHoc whereThoigian($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetKhoaHoc whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|NhanXetKhoaHoc whereUserId($value)
+ * @method static \Illuminate\Database\Query\Builder|NhanXetKhoaHoc withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|NhanXetKhoaHoc withoutTrashed()
+ */
+	class NhanXetKhoaHoc extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\Permission
+ *
+ * @property int $id
+ * @property string $ten
+ * @property string $slug
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Permission newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Permission newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Permission query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Permission whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Permission whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Permission whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Permission whereTen($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Permission whereUpdatedAt($value)
+ */
+	class Permission extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * App\Models\PhanLop
  *
  * @property int $id
@@ -1063,6 +1298,31 @@ namespace App\Models{
 
 namespace App\Models{
 /**
+ * App\Models\Role
+ *
+ * @property int $id
+ * @property string $ten
+ * @property string $slug
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Permission[] $permissions
+ * @property-read int|null $permissions_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\User[] $users
+ * @property-read int|null $users_count
+ * @method static \Illuminate\Database\Eloquent\Builder|Role newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Role newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Role query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Role whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Role whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Role whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Role whereTen($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Role whereUpdatedAt($value)
+ */
+	class Role extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * App\Models\SanPhamCuoiKhoa
  *
  * @method static \Illuminate\Database\Eloquent\Builder|SanPhamCuoiKhoa newModelQuery()
@@ -1080,11 +1340,13 @@ namespace App\Models{
  * @property string $thu
  * @property int $ca_hoc_id
  * @property int $lop_hoc_id
+ * @property int $phong_hoc_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property-read \App\Models\CaHoc $caHoc
  * @property-read \App\Models\LopHoc $lopHoc
+ * @property-read \App\Models\PhongHoc|null $phongHoc
  * @method static \Illuminate\Database\Eloquent\Builder|ThoiGianHoc newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|ThoiGianHoc newQuery()
  * @method static \Illuminate\Database\Query\Builder|ThoiGianHoc onlyTrashed()
@@ -1094,6 +1356,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|ThoiGianHoc whereDeletedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ThoiGianHoc whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ThoiGianHoc whereLopHocId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ThoiGianHoc wherePhongHocId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ThoiGianHoc whereThu($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ThoiGianHoc whereUpdatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|ThoiGianHoc withTrashed()
@@ -1116,8 +1379,13 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \App\Models\GiaoVien|null $giaoVien
+ * @property-read \App\Models\HocSinh|null $hocSinh
+ * @property-read \App\Models\NhanVien|null $nhanVien
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
  * @property-read int|null $notifications_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Role[] $roles
+ * @property-read int|null $roles_count
  * @method static \Illuminate\Database\Eloquent\Builder|User newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|User newQuery()
  * @method static \Illuminate\Database\Query\Builder|User onlyTrashed()

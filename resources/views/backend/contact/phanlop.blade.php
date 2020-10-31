@@ -1,4 +1,13 @@
+@php $menu = true;@endphp
 @extends('backend.layout.index')
+
+@section('css')
+{{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}"> --}}
+<link rel="stylesheet" href="{{asset('assets/css/bootstrap-select.min.css')}}">
+
+@endsection
+
+
 @section('content')
 <div class="pcoded-inner-content">
   <div class="main-body">
@@ -70,13 +79,17 @@
                         <td>{{ $class->giaovien->hodem. ' '. $class->giaovien->ten }}</td>
                         <td><label class="badge badge-inverse-success">{{ $class->trangthai }}</label></td>
                         <td style="display: flex;">
-                          <button type="button" class="btn edit btn-primary waves-effect phanlop" data-id="{{ $class->id }}" data-toggle="modal" data-target="#phanlop-Modal" data-id="1" style="background-color: white; border: none; padding: 0">
-                            <i class="fa fa-edit f-w-600 f-16 m-r-15 text-c-green" style="font-size: 16px">
-                              <h5 style="color: black; font-size: 14px">
-                                Phân lớp
-                              </h5>
-                            </i>
-                          </button>
+                          <div id="dom-table_filter" class="dataTables_filter">
+
+                            <button type="button" class="btn edit btn-primary waves-effect phanlop" data-id="{{ $class->id }}" data-toggle="modal" data-target="#phanlop-Modal{{ $class->id }}" data-id="1" style="background-color: white; border: none; padding: 0">
+                              <i class="fa fa-edit f-w-600 f-16 m-r-15 text-c-green" style="font-size: 16px">
+                                <h5 style="color: black; font-size: 14px">
+                                  Phân lớp
+                                </h5>
+                              </i>
+                            </button>
+                            @include('backend.administrators.classes.phan_lop_modal')
+                          </div>
                         </td>
 
                       </tr>
@@ -96,27 +109,8 @@
   </div>
 </div>
 
-
-
-
-<div id="Modal"></div>
-
 @endsection
+
 @section('script')
 <script src="{{asset('assets/js/bootstrap-select.min.js')}}"></script>
-
-<script>
-  $(document).ready(function() {
-    $('.phanlop').click(function() {
-      $('#Modal').load('/contacts/phanlop/' + $(this).data('id'), function() {
-        $('#phanlop-Modal').show();
-      });
-    });
-    $('#Modal').load('/contacts/phanlop/' + 1);
-
-
-
-  });
-
-</script>
 @endsection

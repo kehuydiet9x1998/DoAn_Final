@@ -54,13 +54,10 @@
                         <td style="display: flex; width: 64px;">
                           <div>
                             {{-- Xem chi tiết nhân viên --}}
-                            <button data-id="{{$teacher->id}}" type="button" class="btn btn-primary waves-effect"
-                              data-toggle="modal" data-target="#show-Modal"
-                              style="background-color: white; border: none; padding: 0" id="">
+                            <button data-id="{{$teacher->id}}" type="button" class="btn btn-primary waves-effect" data-toggle="modal" data-target="#show-Modal" style="background-color: white; border: none; padding: 0" id="">
                               <i class="fa fa-eye f-w-600 f-16 m-r-15 text-c-green"></i>
                             </button>
-                            <div class="modal fade show" id="show-Modal" tabindex="-1" role="dialog"
-                              style="z-index: 1050;display: none; padding-right: 17px;">
+                            <div class="modal fade show" id="show-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
                             </div>
                           </div>
                           <!-- Modal Sua -->
@@ -87,25 +84,33 @@
   function myReset() {
     document.getElementById('main').reset();
   };
+
 </script>
 
 <script>
   $(document).
-  ready(function () {
-    $('.btn.btn-primary').click(function (e) {
+  ready(function() {
+    $('.btn.btn-primary').click(function(e) {
       id = $(this).data('id');
       $('#show-Modal').load("/administrators/teachers/" + id);
       $('#show-Modal').show();
+      $('body').addClass('modal-open');
+
+
       $('.modal-backdrop').show();
     });
-    $('.my_edit').click(function (e) {
+    $('.my_edit').click(function(e) {
       id = $(this).data('id')
       $('#edit-Modal').load("/administrators/teachers/" + id + '/edit');
       $('#edit-Modal').show();
+      $('body').addClass('modal-open');
+
+
       $('.modal-backdrop').show();
 
     })
   });
+
 </script>
 
 @endsection

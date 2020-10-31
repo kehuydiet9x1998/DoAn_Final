@@ -29,6 +29,7 @@ class LopHocController extends Controller
     'siso' => 'Sĩ số',
     'sobuoi' => 'Số buổi',
   ];
+
   public function __construct()
   {
     $this->jsValidator = JsValidator::make(
@@ -45,9 +46,17 @@ class LopHocController extends Controller
     $giangviens = GiaoVien::all();
     $phonghocs = PhongHoc::all();
     $cahocs = CaHoc::all();
+    $hocsinhs = HocSinh::all();
     return view(
       'backend.administrators.classes.classes',
-      compact('lophocs', 'khoahocs', 'giangviens', 'cahocs', 'phonghocs')
+      compact(
+        'lophocs',
+        'khoahocs',
+        'giangviens',
+        'cahocs',
+        'phonghocs',
+        'hocsinhs'
+      )
     )->with(['jsValidator' => $this->jsValidator]);
   }
 

@@ -12,21 +12,15 @@ class ChiTietHocPhi extends Model
   use SoftDeletes;
   protected $table = 'chi_tiet_hoc_phi';
   protected $dates = ['deleted_at'];
-  protected $fillable = [
-    'tenkhoanthu',
-    'sotien',
-    'sotiendong',
-    'hoc_phi_id',
-    'khoa_hoc_id',
-  ];
+  protected $fillable = ['lich_su_hoc_phi_id', 'khoan_thu_id', 'dadong'];
 
-  public function hocPhi()
+  public function lichSuHocPhi()
   {
-    return $this->belongsTo(HocPhi::class);
+    return $this->belongsTo(LichSuHocPhi::class);
   }
 
-  public function khoaHoc()
+  public function khoanThu()
   {
-    return $this->belongsTo(KhoaHoc::class);
+    return $this->belongsTo(KhoanThu::class);
   }
 }

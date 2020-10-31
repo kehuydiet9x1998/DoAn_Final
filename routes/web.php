@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Administrators\PhanLopController;
 use App\Http\Controllers\ChatsController;
+use App\Http\Controllers\Contacts\HocPhiController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Teachers\BaiTapController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('baigiang', "Administrators\BaiGiangController");
     Route::resource('baitap', "Administrators\BaiTapController");
     Route::resource('phanlop', 'Administrators\PhanLopController');
+    Route::resource('calendar', 'Administrators\LichController');
 
     Route::get('contracts', function () {
       return view('backend.administrators.contracts');
@@ -91,15 +93,14 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
     Route::resource('list-teachers', "Contacts\GiangVienController");
     Route::resource('phanlop', 'Administrators\PhanLopController');
-    Route::get('checkin-teachers', function (){
+    Route::get('checkin-teachers', function () {
       return view('backend.contact.checkIn');
     });
-    // override route
     Route::get('phanlop/{class}', [PhanLopController::class, 'index']);
-
-    // Route::get('classify', function () {
-    //   return view('backend.contact.phanlop');
-    // });
+    Route::get('tinhhocphi', [HocPhiController::class, 'tinhhocphi'])->name(
+      'tinhhocphi'
+    );
+    Route::resource('phieuthu', 'Contacts\PhieuThuController');
   });
 
   Route::prefix('/student')->group(function () {

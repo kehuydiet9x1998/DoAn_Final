@@ -153,14 +153,11 @@
                           <td>{{$st->diachi}}</td>
                           <td style="display: flex;">
                             <div>
-                              <div class="modal fade show" id="show-Modal" tabindex="-1" role="dialog"
-                                style="z-index: 1050;display: none; padding-right: 17px;">
+                              <div class="modal fade show" id="show-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
                               </div>
                             </div>
-                            <button class="my_edit" data-id="{{$st->id}}" data-toggle="modal" data-target="#edit-Modal"
-                              style="background-color: white; border: none">
-                              <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"
-                                style="margin-right: 3px"></i>
+                            <button class="my_edit" data-id="{{$st->id}}" data-toggle="modal" data-target="#edit-Modal" style="background-color: white; border: none">
+                              <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green" style="margin-right: 3px"></i>
                             </button>
                             <!-- Modal Sua -->
                             <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
@@ -212,12 +209,18 @@
         id = $(this).data('id');
         $('#show-Modal').load("/contacts/students/" + id);
         $('#show-Modal').show();
+        $('body').addClass('modal-open');
+
+
         $('.modal-backdrop').show();
       });
       $('.my_edit').click(function(e) {
         id = $(this).data('id')
         $('#edit-Modal').load("/contacts/students/" + id + '/edit');
         $('#edit-Modal').show();
+        $('body').addClass('modal-open');
+
+
         $('.modal-backdrop').show();
       });
     });

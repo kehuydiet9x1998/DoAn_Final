@@ -1,19 +1,17 @@
+@section('css')
 <link rel="stylesheet" href="{{asset('assets/css/bootstrap-select.min.css')}}">
+@endsection
 
 <script>
   function myReset() {
     $('.modal').hide();
     $('body').removeClass('modal-open');
-
-
     $('.modal-backdrop').hide();
   }
 
 </script>
 
-
-
-<div class="modal fade show" id="phanlop-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
+<div class="modal fade show" id="phanlop-Modal{{ isset($menu) ? $class->id : '' }}" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -42,11 +40,7 @@
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Mã lớp</label>
               <div class="col-sm-9">
-                <select name="lop_hoc_id" class="form-control form-control-primary fill">
-                  @foreach($classes as $item)
-                  <option @if($item->id == $class->id) selected @endif value="{{ $item->id }}">{{ $item->tenlop. ' - '. $item->khoahoc->tenkhoahoc }}</option>
-                  @endforeach
-                </select>
+                <label for="" style="font-weight: bold">{{ $class->tenlop }}</label>
               </div>
             </div>
             <div class="form-group row" style="display: flex; align-items: center">
@@ -73,10 +67,4 @@
   </div>
 </div>
 
-
-
-@section('script')
-<script src="{{asset('assets/js/bootstrap-select.min.js')}}"></script>
-
-
-@endsection
+{{-- <script src="{{asset('assets/js/bootstrap-select.min.js')}}"></script> --}}

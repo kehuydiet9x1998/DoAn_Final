@@ -55,7 +55,7 @@
   </style>
 </head>
 
-<body>
+<body id="mybody">
 
   <div class="loader-bg">
     <div class="loader-bar"></div>

@@ -96,12 +96,18 @@
       id = $(this).data('id');
       $('#show-Modal').load("/contacts/lichtrainghiem/" + id);
       $('#show-Modal').show();
+      $('body').addClass('modal-open');
+
+
       $('.modal-backdrop').show();
     });
     $('.my_edit').click(function(e) {
       id = $(this).data('id')
       $('#edit-Modal').load("/contacts/lichtrainghiem/" + id + '/edit');
       $('#edit-Modal').show();
+      $('body').addClass('modal-open');
+
+
       $('.modal-backdrop').show();
 
     })

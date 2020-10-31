@@ -1,6 +1,8 @@
 @extends('backend.layout.index')
 @section('content')
-
+@php
+$menu = true;
+@endphp
 <div class="pcoded-inner-content">
   <div class="main-body">
     <div class="page-wrapper">
@@ -27,46 +29,62 @@
                         <th>STT</th>
                         <th>TÊN LỚP</th>
                         <th>SĨ SỐ</th>
+                        <th>SỐ BUỔI</th>
                         <th>TRẠNG THÁI</th>
-                        <th>GV ĐỨNG LỚP</th>
                         <th>ACTIONS</th>
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($lophocs as $lh)
+                      @foreach($lophocs as $class)
                       <tr>
                         <td>
                           <div class="d-inline-block align-middle">
                             <div class="d-inline-block">
-                              <h6>{{$lh->id}}</h6>
+                              <h6>{{$class->id}}</h6>
                             </div>
                           </div>
                         </td>
                         <td>
                           <div class="d-inline-block align-middle">
-                            <a href="{{route('allclass.show', $lh->id)}}">
+                            <a href="{{route('allclass.show', $class->id)}}">
                               <div class="d-inline-block">
-                                <h6 class="name_link_green">{{$lh->tenlop }}</h6>
+                                <h6 class="name_link_green">{{$class->tenlop }}</h6>
                                 <p class="text-muted m-b-0">
-                                  Khóa học: {{$lh->khoaHoc->tenkhoahoc}}
+                                  Khóa học: {{$class->khoaHoc->tenkhoahoc}}
+                                </p>
+                                <p class="text-muted m-b-0" style="margin-top:5px">
+                                  Giáo viên: {{$class->giaovien->hodem.' '.$class->giaovien->ten}}
                                 </p>
                               </div>
                             </a>
                           </div>
                         </td>
 
-                        <td>{{$lh->siso}}</td>
-                        <td><label class="badge badge-success">{{$lh->trangthai}}</label></td>
-                        <td>{{$lh->giaovien->hodem.' '.$lh->giaovien->ten}}</td>
+                        <td>{{$class->siso}}</td>
+                        @php
+                        $sobuoi = $class->sobuoi;
+                        $sobuoidahoc = $class->soBuoiDaHoc();
+                        @endphp
+                        <td>{{$sobuoidahoc.'/'.$sobuoi }}</td>
+
+                        <td><label class="badge badge-success">{{$class->trangthai}}</label></td>
                         <td>
                           <ul style="display: flex">
+                            <div id="dom-table_filter" class="dataTables_filter">
+                              <button type="button" class="btn edit btn-primary waves-effect phanlop" data-toggle="modal" data-target="#phanlop-Modal{{ $class->id }}" data-id="1" style="background-color: white; border: none; padding: 0">
+                                <i class="fa fa-user-plus m-r-15 text-c-blue">
+                                </i>
+                              </button>
+                              @include('backend.administrators.classes.phan_lop_modal')
+                            </div>
+
                             <li>
-                              <button style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent" data-toggle="modal" data-target="#edit-Modal" data-id="{{$lh->id}}" class="my_edit">
+                              <button style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent" data-toggle="modal" data-target="#edit-Modal" data-id="{{$class->id}}" class="my_edit">
                                 <i class="fa fa-edit f-w-600 f-16 m-r-15 text-c-green" style="margin:0; font-size: 20px"></i></button>
                               <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;"></div>
                             </li>
                             <li>
-                              <form action="{{route('allclass.destroy', $lh->id)}}" method="post">
+                              <form action="{{route('allclass.destroy', $class->id)}}" method="post">
                                 @method('DELETE')
                                 @csrf
                                 <button style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent" onclick="return confirm ('Bạn có muốn xóa không')">
@@ -99,6 +117,7 @@
       id = $(this).data('id')
       $('#edit-Modal').load("/administrators/allclass/" + id + '/edit');
       $('#edit-Modal').show();
+      $('body').addClass('modal-open');
       $('.modal-backdrop').show();
     });
   });
