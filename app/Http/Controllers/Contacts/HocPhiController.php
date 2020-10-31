@@ -63,8 +63,7 @@ class HocPhiController extends Controller
 
     $hocphi = HocPhi::find($request['hoc_phi_id']);
     $hocphi->updateHocPhi();
-
-    return back();
+    return Redirect::to('/contacts/print/' . $hocphi->id);
   }
 
   /**
@@ -98,8 +97,7 @@ class HocPhiController extends Controller
       $query->where('hoc_phi_id', $id)->where(function ($query) {
         $query->where('trangthai', 'Chưa đóng')->orWhere('trangthai', 'Còn nợ');
       });
-    })
-    ->get();
+    })->get();
     // $sotiencandong = LichSuHocPhi::where('hoc_phi_id', $id)->orderBy('created_at', 'desc')->first()->sotienconthieu;
     return view('backend.contact.hocphi.Edit_HocPhi_Modal', [
       'hocphi' => $hocphi,
@@ -137,6 +135,7 @@ class HocPhiController extends Controller
     foreach (HocPhi::all() as $hocphi) {
       $hocphi->updateHocPhi();
     }
+
     return back();
   }
 }

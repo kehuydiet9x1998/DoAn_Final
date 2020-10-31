@@ -8,6 +8,7 @@ use App\Http\Controllers\Teachers\BaiTapController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\students\XemNhanXetController;
 use App\Http\Controllers\Teachers\NhanXetHocSinhController;
+use App\Models\LichSuHocPhi;
 
 Route::get('/', function () {
   return view('frontend.trangchu');
@@ -98,7 +99,6 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
     Route::resource('list-teachers', "Contacts\GiangVienController");
     Route::resource('phanlop', 'Administrators\PhanLopController');
-    // Route::resource('allcourses', 'Students\KhoaHocController');
     Route::resource('trangcanhan', 'Contacts\TrangCaNhanController');
     Route::get('checkin-teachers', function () {
       return view('backend.contact.checkIn');
@@ -108,6 +108,11 @@ Route::middleware(['auth', 'web'])->group(function () {
       'tinhhocphi'
     );
     Route::resource('phieuthu', 'Contacts\PhieuThuController');
+    Route::get('print/{id}', function ($id) {
+      return view('backend.contact.hocphi.print', [
+        'phieuthu' => LichSuHocPhi::find($id),
+      ]);
+    });
   });
 
   Route::prefix('/student')->group(function () {

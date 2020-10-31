@@ -6,10 +6,10 @@
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body" id="phieuthucontent">
+        <div class="modal-body">
           {{-- <form action="{{route('hocphis.store')}}" method="POST"> --}}
           <input type="hidden" name="_token" value="{{csrf_token()}}"> {{ csrf_field() }}
-          <div class="modal-body">
+          <div class="modal-body" id="phieuthucontent">
             <div class="row" style="margin-bottom: 30px">
               <div class="col-md-6">
                 <div class="form-group row" style="margin-bottom: 5px; ">
@@ -116,34 +116,9 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset();$('#history-Modal').show();$('#mybody').addClass('modal-open');$('.modal-backdrop').show();">Đóng</button>
 
-              <input type="submit" onclick="printDiv()" class="btn btn-success waves-effect waves-light" value="In hóa đơn" />
+              <a type="submit" target="_blank" href="/contacts/print/{{ $phieuthu->id }}" class="btn btn-success waves-effect waves-light">In hóa đơn</a>
 
             </div>
-            {{-- </form> --}}
           </div>
         </div>
       </div>
-
-      <script>
-        function printDiv() {
-
-          $('#phieuthucontent').printThis({
-            loadCSS: "/assets/css/custom-print.css"
-          , });
-
-
-          // var newWin = window.open('', 'Print-Window');
-
-          // newWin.document.open();
-
-          // newWin.document.write('<html> <body onload = "window.print()" > ' + $('#phieuthucontent').html() + ' </body> </html > ');
-
-          // newWin.document.close();
-
-          // setTimeout(function() {
-          //   newWin.close();
-          // }, 10);
-
-        }
-
-      </script>
