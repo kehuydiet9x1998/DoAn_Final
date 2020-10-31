@@ -34,6 +34,9 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::get('timesheets', function () {
       return view('backend.administrators.timesheets');
     });
+    Route::get('phanquyen', function () {
+      return view('backend.administrators.phanquyen');
+    });
   });
 
   Route::prefix('teachers')->group(function () {
@@ -45,6 +48,8 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('calendar', 'Teachers\LichController');
     Route::resource('nhanxethocsinh', 'Teachers\NhanXetHocSinhController');
     Route::resource('trangcanhan', 'Teachers\TrangCaNhanController');
+    Route::resource('sanphamcuoikhoa', 'Teachers\SanPhamCuoiKhoaController');
+
     // Route::get('/nhanxetmodal/{hocsinhid}/{buoihocid}/{lophocid}/{khoahocid}', function ($hocsinhid, $buoihocid, $lophocid, $khoahocid) {
     //   return view('backend.teachers.classes.nhanxet-modal', ['hocsinhid' => $hocsinhid, 'buoihocid' => $buoihocid, 'lophocid' => $lophocid, 'khoahocid' => $khoahocid]);
     // });
@@ -93,6 +98,8 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
     Route::resource('list-teachers', "Contacts\GiangVienController");
     Route::resource('phanlop', 'Administrators\PhanLopController');
+    // Route::resource('allcourses', 'Students\KhoaHocController');
+    Route::resource('trangcanhan', 'Contacts\TrangCaNhanController');
     Route::get('checkin-teachers', function () {
       return view('backend.contact.checkIn');
     });
