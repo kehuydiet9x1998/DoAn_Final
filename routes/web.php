@@ -4,6 +4,7 @@ use App\Http\Controllers\Administrators\PhanLopController;
 use App\Http\Controllers\ChatsController;
 use App\Http\Controllers\Contacts\HocPhiController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PrintController;
 use App\Http\Controllers\Teachers\BaiTapController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\students\XemNhanXetController;
@@ -108,11 +109,9 @@ Route::middleware(['auth', 'web'])->group(function () {
       'tinhhocphi'
     );
     Route::resource('phieuthu', 'Contacts\PhieuThuController');
-    Route::get('print/{id}', function ($id) {
-      return view('backend.contact.hocphi.print', [
-        'phieuthu' => LichSuHocPhi::find($id),
-      ]);
-    });
+    Route::get('print/{id}', [PrintController::class, 'printPhieuThu']);
+    Route::get('printphieuchi/{id}', [PrintController::class, 'printPhieuChi']);
+    Route::resource('phieuchi', 'Contacts\PhieuChiController');
   });
 
   Route::prefix('/student')->group(function () {

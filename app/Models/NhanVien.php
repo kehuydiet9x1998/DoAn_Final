@@ -60,4 +60,9 @@ class NhanVien extends Model
   {
     return $this->hasMany(KhenThuongKyLuat::class);
   }
+
+  public function dsPhieuChi()
+  {
+    return $this->hasMany(PhieuChi::class);
+  }
 }

@@ -20,7 +20,7 @@ class HocPhiController extends Controller
    */
   public function index()
   {
-    $hocphi = HocPhi::all();
+    $hocphi = HocPhi::orderBy('trangthai')->get();
     $khoanthu = KhoanThu::all();
     return view(
       'backend.contact.hocphi.ListHocPhi',

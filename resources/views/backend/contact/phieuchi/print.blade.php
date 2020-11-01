@@ -1,9 +1,9 @@
 <?php
 function VndText($amount)
 {
-if($amount <=0) { return $textnumber="Tiền phải là số nguyên dương lớn hơn số 0" ; } $Text=array("không", "một" , "hai" , "ba" , "bốn" , "năm" , "sáu" , "bảy" , "tám" , "chín" ); $TextLuythua=array("","nghìn", "triệu" , "tỷ" , "ngàn tỷ" , "triệu tỷ" , "tỷ tỷ" ); $textnumber="" ; $length=strlen($amount); for ($i=0; $i < $length; $i++) $unread[$i]=0; for ($i=0; $i < $length; $i++) { $so=substr($amount, $length - $i -1 , 1); if ( ($so==0) && ($i % 3==0) && ($unread[$i]==0)){ for ($j=$i+1 ; $j < $length ; $j ++) { $so1=substr($amount,$length - $j -1, 1); if ($so1 !=0) break; } if (intval(($j - $i )/3)> 0){
+if($amount <=0) { return $textnumber="Tiền phải là số nguyên dương lớn hơn số 0" ; } $Text=array("không", "một" , "hai" , "ba" , "bốn" , "năm" , "sáu" , "bảy" , "tám" , "chín" ); $TextLuychia=array("","nghìn", "triệu" , "tỷ" , "ngàn tỷ" , "triệu tỷ" , "tỷ tỷ" ); $textnumber="" ; $length=strlen($amount); for ($i=0; $i < $length; $i++) $unread[$i]=0; for ($i=0; $i < $length; $i++) { $so=substr($amount, $length - $i -1 , 1); if ( ($so==0) && ($i % 3==0) && ($unread[$i]==0)){ for ($j=$i+1 ; $j < $length ; $j ++) { $so1=substr($amount,$length - $j -1, 1); if ($so1 !=0) break; } if (intval(($j - $i )/3)> 0){
   for ($k = $i ; $k <intval(($j-$i) /3)*3 + $i; $k++) $unread[$k]=1; } } } for ($i=0; $i < $length; $i++) { $so=substr($amount,$length - $i -1, 1); if ($unread[$i]==1) continue; if ( ($i% 3==0) && ($i> 0))
-    $textnumber = $TextLuythua[$i/3] ." ". $textnumber;
+    $textnumber = $TextLuychia[$i/3] ." ". $textnumber;
 
     if ($i % 3 == 2 )
     $textnumber = 'trăm ' . $textnumber;
@@ -15,7 +15,7 @@ if($amount <=0) { return $textnumber="Tiền phải là số nguyên dương l�
     $textnumber = $Text[$so] ." ". $textnumber;
     }
 
-    //Phai de cac ham replace theo dung thu tu nhu the nay
+    //Phai de cac ham replace theo dung chi tu nhu the nay
     $textnumber = str_replace("không mươi", "lẻ", $textnumber);
     $textnumber = str_replace("lẻ không", "", $textnumber);
     $textnumber = str_replace("mươi không", "mươi", $textnumber);
@@ -66,11 +66,11 @@ if($amount <=0) { return $textnumber="Tiền phải là số nguyên dương l�
           <p class="MsoNormal" style="text-align: center;" align="center">&nbsp;</p>
         </td>
         <td style="padding: 0in 5.4pt; width: 2.05in;" width="197" valign="top">
-          <p class="MsoNormal" style="text-align: center;" align="center"><strong><span style="font-size: 10pt; font-family: Verdana;">PHIẾU THU</span></strong><em> </em></p>
+          <p class="MsoNormal" style="text-align: center;" align="center"><strong><span style="font-size: 10pt; font-family: Verdana;">PHIẾU CHI</span></strong><em> </em></p>
           <p class="MsoNormal" style="text-align: center;" align="center"><em><span style="font-size: 10pt; font-family: Verdana;">
-                Ngày {{ date('d', strtotime($phieuthu->ngaydong)) }}
-                tháng {{ date('m', strtotime($phieuthu->ngaydong)) }}
-                năm {{ date('Y', strtotime($phieuthu->ngaydong)) }}</span></span></em><strong> </strong></p>
+                Ngày {{ date('d', strtotime($phieuchi->ngaytao)) }}
+                tháng {{ date('m', strtotime($phieuchi->ngaytao)) }}
+                năm {{ date('Y', strtotime($phieuchi->ngaytao)) }}</span></span></em><strong> </strong></p>
 
         </td>
         <td style="padding: 0in 5.4pt; width: 2.05in;" width="197" valign="top">
@@ -83,28 +83,20 @@ if($amount <=0) { return $textnumber="Tiền phải là số nguyên dương l�
       </tr>
     </tbody>
   </table>
-  <p class="MsoNormal" style="text-indent: 0.5in;"><span style="font-size: 10pt; font-family: Verdana;">Họ và tên người nôp tiền:
-      {{ $phieuthu->hocphi->hocsinh->hodem .' '. $phieuthu->hocphi->hocsinh->ten}}
+  <p class="MsoNormal" style="text-indent: 0.5in;"><span style="font-size: 10pt; font-family: Verdana;">Họ và tên người chi:
+      {{ $phieuchi->nhanvien->hodem .' '. $phieuchi->nhanvien->ten}}
     </span></p>
 
-  <p class="MsoNormal" style="text-indent: 0.5in;"><span style="font-size: 10pt; font-family: Verdana;">Địa chỉ: {{ $phieuthu->hocphi->hocsinh->diachi}}</span></p>
-
-  <p class="MsoNormal" style="text-indent: 0.5in;"><span style="font-size: 10pt; font-family: Verdana;">Lý do nộp: Hoàn thành các khoản thu sau:
+  <p class="MsoNormal" style="text-indent: 0.5in;"><span style="font-size: 10pt; font-family: Verdana;">Lý do nộp: {{ $phieuchi->lydo }}
     </span></p>
-  <ul style="list-style-type: '- '; margin-left:30px">
-    @foreach($phieuthu->dschitiet as $chitiet)
-    <li style="line-height: 25px"> {{ $chitiet->khoanthu->tenkhoanthu  }} ({{ number_format($chitiet->khoanthu->sotien) }})</li>
-    @endforeach
 
-  </ul>
-
-  <p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Verdana;">Số tiền: {{ number_format($phieuthu->sotiendadong). ' VND' }}
-      (Viết bằng chữ): <i>{{ VndText($phieuthu->sotiendadong) }}</i></span></p>
+  <p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Verdana;">Số tiền: {{ number_format($phieuchi->sotien). ' VND' }}
+      (Viết bằng chữ): <i>{{ VndText($phieuchi->sotien) }}</i></span></p>
 
 
-  <p class="MsoNormal" style="text-align: right;" align="right"><em><span style="font-size: 10pt; font-family: Verdana;"> Ngày {{ date('d', strtotime($phieuthu->ngaydong)) }}
-        tháng {{ date('m', strtotime($phieuthu->ngaydong)) }}
-        năm {{ date('Y', strtotime($phieuthu->ngaydong)) }}</span></em></p>
+  <p class="MsoNormal" style="text-align: right;" align="right"><em><span style="font-size: 10pt; font-family: Verdana;"> Ngày {{ date('d', strtotime($phieuchi->ngaytao)) }}
+        tháng {{ date('m', strtotime($phieuchi->ngaytao)) }}
+        năm {{ date('Y', strtotime($phieuchi->ngaytao)) }}</span></em></p>
 
   <div>
     <table class="MsoTableGrid" style="width: 100%; border-collapse: collapse;" width="100%" cellspacing="0" cellpadding="0" border="0">
@@ -144,7 +136,7 @@ if($amount <=0) { return $textnumber="Tiền phải là số nguyên dương l�
 /* -------------------------------------------------------------------------- */ --}}
 
 <p style="page-break-before: always; padding-top:40px">
-  <td valign="top">
+  <td valign="top" style="page-break-before: always">
     <table class="MsoTableGrid" style="width: 100%; border-collapse: collapse;" width="100%" cellspacing="0" cellpadding="0" border="0">
       <tbody>
         <tr>
@@ -168,41 +160,37 @@ if($amount <=0) { return $textnumber="Tiền phải là số nguyên dương l�
             <p class="MsoNormal" style="text-align: center;" align="center">&nbsp;</p>
           </td>
           <td style="padding: 0in 5.4pt; width: 2.05in;" width="197" valign="top">
-            <p class="MsoNormal" style="text-align: center;" align="center"><strong><span style="font-size: 10pt; font-family: Verdana;">PHIẾU THU</span></strong><em> </em></p>
+            <p class="MsoNormal" style="text-align: center;" align="center"><strong><span style="font-size: 10pt; font-family: Verdana;">PHIẾU CHI</span></strong><em> </em></p>
             <p class="MsoNormal" style="text-align: center;" align="center"><em><span style="font-size: 10pt; font-family: Verdana;">
-                  Ngày {{ date('d', strtotime($phieuthu->ngaydong)) }}
-                  tháng {{ date('m', strtotime($phieuthu->ngaydong)) }}
-                  năm {{ date('Y', strtotime($phieuthu->ngaydong)) }}</span></span></em><strong> </strong></p>
+                  Ngày {{ date('d', strtotime($phieuchi->ngaytao)) }}
+                  tháng {{ date('m', strtotime($phieuchi->ngaytao)) }}
+                  năm {{ date('Y', strtotime($phieuchi->ngaytao)) }}</span></span></em><strong> </strong></p>
 
           </td>
           <td style="padding: 0in 5.4pt; width: 2.05in;" width="197" valign="top">
-
+            {{-- <p class="MsoNormal" style="text-align: center;" align="center"><em><span style="font-size: 10pt; font-family: Verdana;"> </span></em></p>
+          <p class="MsoNormal"><span style="font-size: 10pt; font-family: Verdana;">Quyển số: ...........</span></p>
+          <p class="MsoNormal"><span style="font-size: 10pt; font-family: Verdana;">Số: .........................</span></p>
+          <p class="MsoNormal"><span style="font-size: 10pt; font-family: Verdana;">Nợ: .........................</span></p>
+          <p class="MsoNormal"><span style="font-size: 10pt; font-family: Verdana;">Có: .........................</span></p> --}}
           </td>
         </tr>
       </tbody>
     </table>
-    <p class="MsoNormal" style="text-indent: 0.5in;"><span style="font-size: 10pt; font-family: Verdana;">Họ và tên người nôp tiền:
-        {{ $phieuthu->hocphi->hocsinh->hodem .' '. $phieuthu->hocphi->hocsinh->ten}}
+    <p class="MsoNormal" style="text-indent: 0.5in;"><span style="font-size: 10pt; font-family: Verdana;">Họ và tên người chi:
+        {{ $phieuchi->nhanvien->hodem .' '. $phieuchi->nhanvien->ten}}
       </span></p>
 
-    <p class="MsoNormal" style="text-indent: 0.5in;"><span style="font-size: 10pt; font-family: Verdana;">Địa chỉ: {{ $phieuthu->hocphi->hocsinh->diachi}}</span></p>
-
-    <p class="MsoNormal" style="text-indent: 0.5in;"><span style="font-size: 10pt; font-family: Verdana;">Lý do nộp: Hoàn thành các khoản thu sau:
+    <p class="MsoNormal" style="text-indent: 0.5in;"><span style="font-size: 10pt; font-family: Verdana;">Lý do nộp: {{ $phieuchi->lydo }}
       </span></p>
-    <ul style="list-style-type: '- '; margin-left:30px">
-      @foreach($phieuthu->dschitiet as $chitiet)
-      <li style="line-height: 25px"> {{ $chitiet->khoanthu->tenkhoanthu  }} ({{ number_format($chitiet->khoanthu->sotien) }})</li>
-      @endforeach
 
-    </ul>
-
-    <p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Verdana;">Số tiền: {{ number_format($phieuthu->sotiendadong). ' VND' }}
-        (Viết bằng chữ): <i>{{ VndText($phieuthu->sotiendadong) }}</i></span></p>
+    <p class="MsoNormal" style="margin-left: 0.5in;"><span style="font-size: 10pt; font-family: Verdana;">Số tiền: {{ number_format($phieuchi->sotien). ' VND' }}
+        (Viết bằng chữ): <i>{{ VndText($phieuchi->sotien) }}</i></span></p>
 
 
-    <p class="MsoNormal" style="text-align: right;" align="right"><em><span style="font-size: 10pt; font-family: Verdana;"> Ngày {{ date('d', strtotime($phieuthu->ngaydong)) }}
-          tháng {{ date('m', strtotime($phieuthu->ngaydong)) }}
-          năm {{ date('Y', strtotime($phieuthu->ngaydong)) }}</span></em></p>
+    <p class="MsoNormal" style="text-align: right;" align="right"><em><span style="font-size: 10pt; font-family: Verdana;"> Ngày {{ date('d', strtotime($phieuchi->ngaytao)) }}
+          tháng {{ date('m', strtotime($phieuchi->ngaytao)) }}
+          năm {{ date('Y', strtotime($phieuchi->ngaytao)) }}</span></em></p>
 
     <div>
       <table class="MsoTableGrid" style="width: 100%; border-collapse: collapse;" width="100%" cellspacing="0" cellpadding="0" border="0">
@@ -237,10 +225,10 @@ if($amount <=0) { return $textnumber="Tiền phải là số nguyên dương l�
 
   </td>
 
+
 </p>
 <script>
   document.addEventListener("DOMContentLoaded", function(event) {
-
     window.print();
   });
 

@@ -132,12 +132,7 @@
   </div>
 </div>
 
-<script src="{{ asset('assets/js/inputmask.js') }}" type="text/javascript"></script>
-<script src="{{ asset('assets/js/jquery.inputmask.js') }}" type="text/javascript"></script>
 
-<script src="{{ asset('assets/js/autonumeric.js') }}">
-</script>
-<script src="{{ asset('assets/js/form-mask.js') }}" type="text/javascript"></script>
 
 
 <script>

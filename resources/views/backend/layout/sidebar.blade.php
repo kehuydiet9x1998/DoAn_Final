@@ -60,12 +60,7 @@ if ($phanquyen == 'contact') {
         //   "icon" => "fa fa-braille",
         //   "text" => "Phân lớp",
         // ],
-        [
-          "type" => "link",
-          "icon" => "fa fa-dollar",
-          "link" => "/contacts/hocphis",
-          "text" => "Học phí",
-        ],
+
         [
           "type" => "link",
           "icon" => "fa fa-history",
@@ -77,6 +72,31 @@ if ($phanquyen == 'contact') {
         //   "icon" => "feather icon-home",
         //   "link" => "/contacts/feedbacks",
         //   "text" => "Nhận xét",
+        // ],
+      ],
+    ],
+
+    [
+      "title" => "Quản Lý Đào Tạo",
+      "items" => [
+        [
+          "type" => "link",
+          "icon" => "fa fa-dollar",
+          "link" => "/contacts/hocphis",
+          "text" => "Học phí",
+        ],
+        [
+          "type" => "link",
+          "icon" => "fa fa-list-alt",
+          "link" => "/contacts/phieuchi",
+          "text" => "Phiếu chi",
+        ],
+
+        // [
+        // "link" => "/contacts/move-class",
+        // "type" => "link",
+        // "icon" => "fa fa-mortar-board",
+        // "text" => "Chuyển lớp",
         // ],
       ],
     ],
