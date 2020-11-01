@@ -16,7 +16,8 @@
               <div class="card-block tab-icon">
                 <div class="row">
                   <div class="col-lg-12">
-                    <ul class="nav nav-tabs md-tabs " role="tablist">
+                    <ul class="nav nav-tabs md-tabs " id="myTab" role="tablist">
+
                       <li class="nav-item">
                         <a class="nav-link active show" data-toggle="tab" href="#home7" role="tab" aria-selected="true" style="font-size: 14px; font-weight: bold;">
                           <i class="fa fa-info-circle"></i>Chi tiết lớp học</a>
@@ -302,6 +303,7 @@
 </div>
 @endsection
 @section('script')
+@parent
 <script>
   $(document).ready(function() {
 
@@ -310,6 +312,18 @@
       $('#buoihoc').load('/teachers/lessons/' + $(this).data('id'));
     });
     $('.buoihoc')[0].click();
+    console.log('ok')
+
+    $('a[data-toggle="tab"]').on('click', function(e) {
+      console.log(e.target.href);
+      localStorage.setItem('activeTab', $(e.target).attr('href'));
+
+    });
+    var activeTab = localStorage.getItem('activeTab');
+    if (activeTab) {
+      $('#myTab a[href="' + activeTab + '"]').tab('show');
+    }
+
   });
 
 </script>

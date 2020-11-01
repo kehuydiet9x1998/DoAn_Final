@@ -108,6 +108,9 @@ $menu = true;
 </div>
 @endsection
 @section('script')
+@parent
+
+
 <script src="{{ asset('assets/js/bootstrap-select.min.js') }}"></script>
 
 <script>
@@ -120,6 +123,8 @@ $menu = true;
       $('body').addClass('modal-open');
       $('.modal-backdrop').show();
     });
+
+
   });
 
 </script>

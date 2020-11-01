@@ -5,5 +5,6 @@
 
 
 @section('script')
+@parent
 <script src="{{asset('assets/js/bootstrap-select.min.js')}}"></script>
 @endsection
