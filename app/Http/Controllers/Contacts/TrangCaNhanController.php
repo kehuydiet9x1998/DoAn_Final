@@ -16,10 +16,6 @@ class TrangCaNhanController extends Controller
    */
   public function index()
   {
-    $data = auth()->user();
-    // $nhanvien = $data->nhanvien->get();
-    // return $data;
-    return view('backend.contact.trangcanhan.trangcanhan', ['user' => $data]);
   }
 
   /**

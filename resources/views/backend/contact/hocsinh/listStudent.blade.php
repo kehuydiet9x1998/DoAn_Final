@@ -131,11 +131,12 @@
                       <thead>
                         <tr>
                           <th>STT</th>
-                          <th>HỌ VÀ TÊN</th>
-                          <th>GIỚI TÍNH</th>
-                          <th>NGÀY SINH</th>
+                          <th>HỌC SINH</th>
+                          <th>PHỤ HUYNH</th>
+                          <th>KHÓA HỌC</th>
+                          {{-- <th>HỌC THỬ</th> --}}
                           <th>TRẠNG THÁI</th>
-                          <th>QUÊ QUÁN</th>
+                          <th>TƯ VẤN</th>
                           <th class="noVis">ACTIONS</th>
                         </tr>
                       </thead>
@@ -143,14 +144,46 @@
                         @foreach($students as $st)
                         <tr>
                           <td>{{$st->id}}</td>
-                          <td>{{$st->hodem. ' ' .$st->ten}}</td>
-                          <td style="text-indent:10px">{{$st->gioitinh}}</td>
-                          <td>{{$st->ngaysinh}}</td>
                           <td>
-                            <p style="margin-top:15px" class="badge badge-pill badge-{{$st->trangthai == 'Học thử'? 'warning' : 'primary'}}">
+                            <div class="d-inline-block align-middle">
+                              <div class="d-inline-block">
+                                <a href="{{route('trangcanhan', $st->user->id)}}">
+                                  <h6 class="name_link_green">{{$st->hodem .' '. $st->ten}}</h6>
+                                </a>
+                                <p class=" m-t-0 text-muted" style="margin-bottom: 5px"><i class="fa fa-calendar"></i> Ngày sinh: {{$st->ngaysinh}}</p>
+                                <p class=" m-b-0 text-muted"><i class="fa fa-location-arrow"></i> Địa chỉ: {{$st->diachi}}</p>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-inline-block align-middle">
+                              <div class="d-inline-block">
+                                <h6> {{$st->hotenchame}} </h6>
+                                <p class=" m-t-0 text-muted" style="margin-bottom: 5px"><i class="fa fa-phone"></i> SĐT: {{$st->sodienthoai}}</p>
+                                <p class=" m-b-0 text-muted"> <i class="fa fa-envelope-o"></i> Email: {{$st->email}}</p>
+                              </div>
+                            </div>
+                          </td>
+                          <td>{{ $st->dslophoc->count() }} khóa học</td>
+                          {{-- <td>
+                            <p class="badge badge-success p-2">Có 1 lớp <br>học thử</p>
+                          </td> --}}
+                          <td>
+                            <p style="margin-top:15px" class="badge p-1 badge-pill badge-{{$st->trangthai == 'Học thử'? 'primary' : 'success'}}">
                               {{$st->trangthai}}</p>
                           </td>
-                          <td>{{$st->diachi}}</td>
+
+                          <td style="width:30px">
+                            {{-- <div class="progress">
+                              <div class="progress-bar bg-c-green" style="width:20%"></div>
+                            </div> --}}
+                            <p style="width:170px; word-break:keep-all; white-space:normal" class="p-t-10 text-muted"><i class="fa fa-history"></i> Đã gọi điện vào lúc 20:00h ngày 03/10/2020
+                              <br><span class="text-c-lite-green"> <i class="fa fa-info-circle"></i> Kết quả: Đồng ý test</span>
+                            </p>
+
+                            {{-- <p style="width:170px; word-break:keep-all; white-space:normal"></p> --}}
+
+                          </td>
                           <td style="display: flex;">
                             <div>
                               <div class="modal fade show" id="show-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">

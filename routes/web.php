@@ -3,6 +3,7 @@
 use App\Http\Controllers\Administrators\PhanLopController;
 use App\Http\Controllers\ChatsController;
 use App\Http\Controllers\Contacts\HocPhiController;
+use App\Http\Controllers\TrangCaNhanController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PrintController;
 use App\Http\Controllers\Teachers\BaiTapController;
@@ -49,7 +50,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('danhsachbaitap', 'Lessons\DanhSachBaiTapController');
     Route::resource('calendar', 'Teachers\LichController');
     Route::resource('nhanxethocsinh', 'Teachers\NhanXetHocSinhController');
-    Route::resource('trangcanhan', 'Teachers\TrangCaNhanController');
+    // Route::resource('trangcanhan', 'Teachers\TrangCaNhanController');
     Route::resource('sanphamcuoikhoa', 'Teachers\SanPhamCuoiKhoaController');
 
     // Route::get('/nhanxetmodal/{hocsinhid}/{buoihocid}/{lophocid}/{khoahocid}', function ($hocsinhid, $buoihocid, $lophocid, $khoahocid) {
@@ -100,7 +101,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
     Route::resource('list-teachers', "Contacts\GiangVienController");
     Route::resource('phanlop', 'Administrators\PhanLopController');
-    Route::resource('trangcanhan', 'Contacts\TrangCaNhanController');
+    // Route::resource('trangcanhan', 'Contacts\TrangCaNhanController');
     Route::get('checkin-teachers', function () {
       return view('backend.contact.checkIn');
     });
@@ -123,7 +124,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('my-comment', 'Students\NhanXetGiaoVienController');
     Route::resource('review-khoahoc', 'Students\NhanXetKhoahocController');
     Route::resource('review-giaovien', 'Students\NhanXetGiaoVienController');
-    Route::resource('trangcanhan', 'Students\TrangCaNhanController');
+    // Route::resource('trangcanhan', 'Students\TrangCaNhanController');
     Route::get('review', function () {
       return view('backend.students.review');
     });
@@ -157,3 +158,7 @@ Route::get('/pro-class', function () {
 Route::get('test', function () {
   return view('test');
 });
+
+Route::get('/trangcanhan/{id?}', [TrangCaNhanController::class, 'show'])->name(
+  'trangcanhan'
+);

@@ -15,12 +15,6 @@ class TrangCaNhanController extends Controller
    */
   public function index()
   {
-    $dslophoc = auth()
-      ->user()
-      ->giaoVien->dslophoc;
-    // return $dslophoc;
-    $data = auth()->user();
-    return view('backend.teachers.trangcanhan.trangcanhan', ['user' => $data, 'lophocs' => $dslophoc]);
   }
 
   /**

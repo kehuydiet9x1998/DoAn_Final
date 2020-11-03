@@ -24,8 +24,7 @@
                       <tr>
                         <th>Mã HĐ</th>
                         <th>Học sinh</th>
-                        <th>Số tiền thu</th>
-                        <th>Số tiền đã đóng</th>
+
                         <th>Số tiền nợ</th>
                         <th style="text-align: center">Trạng thái</th>
                         <th style="text-align: center">Cập nhật</th>
@@ -50,8 +49,7 @@
 
                         </td>
 
-                        <td>{{number_format($hp->canthu). ' đ'}}</td>
-                        <td>{{number_format($hp->dadong). ' đ'}}</td>
+
                         <td>{{number_format($hp->conno). ' đ'}}</td>
 
                         <td style="text-align: center"><label class="badge badge-default">{{$hp->trangthai}}</label></td>
