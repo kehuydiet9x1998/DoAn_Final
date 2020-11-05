@@ -1,7 +1,7 @@
 <div class="modal-dialog modal-lg" role="document">
   <div class="modal-content">
     <div class="modal-header">
-      <h4 class="modal-title">Chi tiết học phí của học sinh</h4>
+      <h4 class="modal-title">Chi tiết lịch trải nghiệm của học sinh</h4>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="myReset()">
         <span aria-hidden="true">×</span>
       </button>
@@ -14,46 +14,50 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Họ tên học sinh</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" name="hodem" id="hodem" value="{{$hocsinh->hocSinh->hodem .' '.$hocsinh->hocSinh->ten}}">
+              <input type="text" class="form-control" readonly value="{{$lichtrainghiem->hocSinh->hodem .' '.$lichtrainghiem->hocSinh->ten}}">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Họ tên phụ huynh</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" name="ten" value="{{$hocsinh->hocSinh->hotenchame}}">
+              <input type="text" class="form-control" readonly name="ten" value="{{$lichtrainghiem->hocSinh->hotenchame}}">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Số điện thoại</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" name="cmnd" value="{{$hocsinh->hocSinh->sodienthoai}}">
+              <input type="text" class="form-control" readonly value="{{$lichtrainghiem->hocSinh->sodienthoai}}">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Trạng thái</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="" name="" value="{{$hocsinh->trangthai}}">
+              <select name="trangthai" class="form-control form-control-inverse">
+                <option value="Chưa xử lý">Chưa xử lý</option>
+                <option value="Đã xử lý" selected>Đã xử lý</option>
+                <option value="Hủy bỏ">Hủy bỏ</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Ngày hẹn</label>
+            <div class="col-sm-9">
+              <input type="datetime-local" class="form-control" id="thoigian" name="thoigian" value="{{str_replace(' ', 'T',$lichtrainghiem->thoigian)}}">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-3 col-form-label">Ngày học</label>
+            <label class="col-sm-3 col-form-label">Kết quả</label>
             <div class="col-sm-9">
-              <input type="date" class="ngaysinh" id="ngaysinh" name="ngaysinh" value="{{substr($hocsinh->thoigian,0 ,10)}}">
-              <span class="messages"></span>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-sm-3 col-form-label">Ghi chí</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" id="tinhtrang" name="tinhtrang" placeholder="Trạng thái" value="{{$hocsinh->ghichu}}">
+              <input type="text" class="form-control" id="ketqua" name="ketqua" placeholder="Kết quả" value="{{$lichtrainghiem->ketqua}}">
               <span class="messages"></span>
             </div>
           </div>
         </div>
+
         <div class="modal-footer">
           <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Đóng</button>
         </div>

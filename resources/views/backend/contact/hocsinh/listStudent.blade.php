@@ -34,22 +34,25 @@
                                   {{ csrf_field() }}
                                   <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Họ đệm</label>
-                                    <div class="col-sm-9">
+                                    <div class="col-sm-4">
                                       <input type="text" class="form-control" name="hodem" id="hodem" placeholder="Nhập vào họ đệm">
                                       <span class="messages"></span>
                                     </div>
-                                  </div>
-                                  <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Tên</label>
-                                    <div class="col-sm-9">
+
+                                    <label class="col-sm-1 col-form-label">Tên</label>
+                                    <div class="col-sm-4">
                                       <input type="text" class="form-control" name="ten" placeholder="Nhập vào tên">
                                       <span class="messages"></span>
                                     </div>
+
                                   </div>
+                                  {{-- <div class="form-group row">
+
+                                  </div> --}}
                                   <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Ngày sinh</label>
                                     <div class="col-sm-9">
-                                      <input type="date" class="ngaysinh" id="ngaysinh" name="ngaysinh" placeholder="">
+                                      <input type="date" class="form-control" id="ngaysinh" name="ngaysinh" placeholder="">
                                       <span class="messages"></span>
                                     </div>
                                   </div>
@@ -72,8 +75,12 @@
                                   <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Trạng thái</label>
                                     <div class="col-sm-9">
-                                      <input type="text" class="form-control" id="trangthai" name="trangthai" placeholder="Trạng thái">
-                                      <span class="messages"></span>
+                                      <select class="form-control" id="trangthai" name="trangthai" placeholder="Trạng thái">
+                                        <option value="">-- Chọn trạng thái --</option>
+                                        <option value="Đang tư vấn">Đang tư vấn</option>
+                                        <option value="Chính thức">Chính thức</option>
+                                        <span class="messages"></span>
+                                      </select>
                                     </div>
                                   </div>
                                   <div class="form-group row">
@@ -134,7 +141,6 @@
                           <th>HỌC SINH</th>
                           <th>PHỤ HUYNH</th>
                           <th>KHÓA HỌC</th>
-                          {{-- <th>HỌC THỬ</th> --}}
                           <th>TRẠNG THÁI</th>
                           <th>TƯ VẤN</th>
                           <th class="noVis">ACTIONS</th>
@@ -151,7 +157,7 @@
                                   <h6 class="name_link_green">{{$st->hodem .' '. $st->ten}}</h6>
                                 </a>
                                 <p class=" m-t-0 text-muted" style="margin-bottom: 5px"><i class="fa fa-calendar"></i> Ngày sinh: {{$st->ngaysinh}}</p>
-                                <p class=" m-b-0 text-muted"><i class="fa fa-location-arrow"></i> Địa chỉ: {{$st->diachi}}</p>
+                                <p class=" m-b-0 text-muted"><i class="fas fa-map-marker-alt"></i> Địa chỉ: {{$st->diachi}}</p>
                               </div>
                             </div>
                           </td>
@@ -165,21 +171,30 @@
                             </div>
                           </td>
                           <td>{{ $st->dslophoc->count() }} khóa học</td>
-                          {{-- <td>
-                            <p class="badge badge-success p-2">Có 1 lớp <br>học thử</p>
-                          </td> --}}
+
                           <td>
                             <p style="margin-top:15px" class="badge p-1 badge-pill badge-{{$st->trangthai == 'Học thử'? 'primary' : 'success'}}">
                               {{$st->trangthai}}</p>
                           </td>
 
                           <td style="width:30px">
-                            {{-- <div class="progress">
-                              <div class="progress-bar bg-c-green" style="width:20%"></div>
-                            </div> --}}
-                            <p style="width:170px; word-break:keep-all; white-space:normal" class="p-t-10 text-muted"><i class="fa fa-history"></i> Đã gọi điện vào lúc 20:00h ngày 03/10/2020
-                              <br><span class="text-c-lite-green"> <i class="fa fa-info-circle"></i> Kết quả: Đồng ý test</span>
+                            @if($st->dslichtrainghiem->count()==0)
+                            <p style="width:170px; word-break:keep-all; white-space:normal" class="p-t-10 text-muted">
+                              <i>Chưa có lịch hẹn</i>
+
                             </p>
+
+                            @else
+                            <p style="width:170px; word-break:keep-all; white-space:normal" class="p-t-10 text-muted"><i class="fa fa-history"></i> {{ $st->dslichtrainghiem->first()->noidung }}
+                              <br> <i class="fa fa-clock-o"></i>
+                              {{ $st->dslichtrainghiem->first()->thoigian }}
+                              @if( $st->dslichtrainghiem->first()->ketqua != '' )
+
+                              <br><span class="text-c-lite-green"> <i class="fa fa-info-circle"></i> Kết quả: {{ $st->dslichtrainghiem->first()->ketqua }}</span>
+                              @endif
+                            </p>
+
+                            @endif
 
                             {{-- <p style="width:170px; word-break:keep-all; white-space:normal"></p> --}}
 
@@ -193,8 +208,7 @@
                               <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green" style="margin-right: 3px"></i>
                             </button>
                             <!-- Modal Sua -->
-                            <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
-                            </div>
+
                             <form action="{{route('students.destroy', $st->id)}}" method="post">
                               @method('DELETE')
                               @csrf
@@ -208,7 +222,8 @@
                         @endforeach
                       </tbody>
                     </table>
-
+                    <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
+                    </div>
                     <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog">
                     </div>
                     <div class="modal fade show" id="show-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">

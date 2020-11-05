@@ -29,7 +29,7 @@
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Ngày sinh</label>
               <div class="col-sm-9">
-                <input type="date" class="ngaysinh" id="ngaysinh" name="ngaysinh" placeholder="">
+                <input type="date" class="form-control" id="ngaysinh" name="ngaysinh" placeholder="">
                 <span class="messages"></span>
               </div>
             </div>

@@ -1,7 +1,7 @@
 <div class="modal-dialog modal-lg" role="document">
   <div class="modal-content">
     <div class="modal-header">
-      <h4 class="modal-title">Chi tiết nhân viên</h4>
+      <h4 class="modal-title">Cập nhật giáo viên</h4>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="myReset()">
         <span aria-hidden="true">×</span>
       </button>
@@ -29,7 +29,8 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Ngày sinh</label>
             <div class="col-sm-9">
-              <input type="date" class="ngaysinh" id="ngaysinh" name="ngaysinh" value="{{substr($teachers->ngaysinh ,0 ,10)}}">
+              <input type="date" class="form-control" id="ngaysinh" name="ngaysinh" value="{{substr($teachers->getRawOriginal('ngaysinh') ,0 ,10)}}">
+
               <span class="messages"></span>
             </div>
           </div>

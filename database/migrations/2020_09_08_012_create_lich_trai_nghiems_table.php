@@ -17,7 +17,8 @@ class CreateLichTraiNghiemsTable extends Migration
       $table->id();
       $table->dateTime('thoigian');
       $table->string('trangthai');
-      $table->string('ghichu')->default('');
+      $table->string('noidung');
+      $table->string('ketqua')->default('');
       $table->unsignedBigInteger('hoc_sinh_id');
       $table
         ->foreign('hoc_sinh_id')

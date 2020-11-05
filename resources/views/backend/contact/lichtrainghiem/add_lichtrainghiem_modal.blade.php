@@ -21,36 +21,30 @@
                     <option value="">{{'Chọn học sinh'}}</option>
                     @foreach ($allhocsinhs as $hocsinh)
                     <option value="{{$hocsinh->id}}">
-                      {{$hocsinh->hodem.' '.$hocsinh->ten.' / '.$hocsinh->sodienthoai .' / '. substr($hocsinh->ngaysinh,0,10).' / '.$hocsinh->trangthai }}
+                      {{ $hocsinh->id.' - '.$hocsinh->hodem.' '.$hocsinh->ten.' - '.$hocsinh->trangthai }}
                     </option>
                     @endforeach
                   </select>
                 </div>
               </div>
+
               <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Ngày học</label>
+                <label class="col-sm-3 col-form-label">Nội dung</label>
                 <div class="col-sm-9">
-                  <input type="date" class="ngaysinh" id="thoigian" name="thoigian">
+                  <input type="text" class="form-control" id="noidung" name="noidung">
                   <span class="messages"></span>
                 </div>
               </div>
+
               <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Trạng thái</label>
+                <label class="col-sm-3 col-form-label">Thời gian</label>
                 <div class="col-sm-9">
-                  <select name="trangthai" class="form-control form-control-inverse">
-                    <option value="chờ học">Chờ học</option>
-                    <option value="Đã học">Đã học</option>
-                    <option value="Không học">Không học</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Ghi chú</label>
-                <div class="col-sm-9">
-                  <input type="text" class="form-control" id="ghichu" name="ghichu" placeholder="Nhập vào ghi chú">
+                  <input type="datetime-local" class="form-control" id="thoigian" name="thoigian">
                   <span class="messages"></span>
                 </div>
               </div>
+
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Đóng</button>
@@ -62,3 +56,18 @@
     </div>
   </div>
 </div>
+
+@section('script')
+@parent
+
+<script>
+  <!--
+  if (!Modernizr.inputtypes['datetime-local']) {
+    $('input[type=datetime-local]').datetimepicker();
+  }
+
+  -->
+</script>
+
+
+@endsection

@@ -38,7 +38,7 @@
                         <td>
                           <div class="d-inline-block align-middle">
                             <div class="d-inline-block">
-                              <a href="{{route('students.show', $hp->hoc_sinh_id)}}">
+                              <a href="{{route('trangcanhan', $hp->hocsinh->user->id)}}">
                                 <h6 class="name_link_green">{{$hp->hocsinh->hodem .' '. $hp->hocsinh->ten}}</h6>
                               </a>
                               <p class=" m-t-0 text-muted" style="margin-bottom: 5px">Phụ huynh: {{$hp->hocsinh->hotenchame}}</p>

@@ -65,7 +65,7 @@ if ($phanquyen == 'contact') {
           "type" => "link",
           "icon" => "fa fa-history",
           "link" => "/contacts/lichtrainghiem",
-          "text" => "Lịch trải nghiệm",
+          "text" => "Lịch hẹn",
         ],
         // [
         //   "type" => "link",
@@ -292,7 +292,7 @@ if ($phanquyen == 'administrator') {
           "text" => "Nhân viên",
         ],
         [
-          "link" => "/administrators/teachers",
+          "link" => "contacts/list-teachers",
           "type" => "link",
           "icon" => "fa fa-users",
           "text" => "Giáo viên",

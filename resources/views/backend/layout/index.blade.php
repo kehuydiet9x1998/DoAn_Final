@@ -23,7 +23,10 @@
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/daterangepicker.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/datedropper.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome-n.min.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/fontawesome.min.css')}}">
+
+
+
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/themify-icons.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/icofont.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/chartist.css')}}">
@@ -35,6 +38,12 @@
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/select.datatables.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/responsive.bootstrap4.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap-datetimepicker.css')}}">
+
+
+
+
+
 
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -64,8 +73,6 @@
   <div id="pcoded" class="pcoded">
     <div class="pcoded-overlay-box"></div>
     @include('backend.layout.navbar')
-    {{-- @include('backend.layout.listchat') --}}
-    {{-- @include('backend.layout.messsagedetail') --}}
     <div class="pcoded-container navbar-wrapper">
       <div class="pcoded-main-container">
         <div class="pcoded-wrapper">
@@ -104,7 +111,9 @@
     <script type="text/javascript" src="{{asset('assets/js/css-scrollbars.js')}}">
     </script>
     <script type="text/javascript" src="{{asset('assets/js/classie.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/js/moment.min-2.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/moment-with-locales.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/bootstrap-datetimepicker.min.js')}}"></script>
+
 
 
     <script type="text/javascript" src="{{asset('assets/js/jquery.dataTables.min-2.js')}}"></script>
