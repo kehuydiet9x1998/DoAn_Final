@@ -1120,9 +1120,9 @@ a.bg-danger:hover {
 
 @-moz-document url-prefix() {
   select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background: #fff url(../png/select-arrow.png) no-repeat 95% center;
+    /*! -webkit-appearance: none; */
+    /*! -moz-appearance: none; */
+    /*! background: #fff url(../png/select-arrow.png) no-repeat 95% center; */
   }
 }
 
@@ -11324,7 +11324,7 @@ select.form-control:hover {
   /*! /*! border-right:0; */
   /*! *\/border-left:0; */
   /*! -webkit-box-shadow:none; */
-  /*! box-shadow:none */
+  /*! box-shadow:none; */
 }
 
 .md-input-file input[type=file] {

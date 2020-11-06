@@ -14,10 +14,13 @@
                     <a href="{{ route('tinhhocphi') }}" class="btn btn-primary btn-round float-right m-r-5">Làm mới</a>
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-6">
+
                   </div>
                 </div>
               </div>
               <div class="card-block">
+                {{-- <div class="dt-buttons"><a class="btn buttons-collection btn-info btn-round btn-sm" tabindex="0" aria-controls="datatable" href="#"><span><i class="fa fa-caret-down" aria-hidden="true"></i> Chức năng khác</span></a></div> --}}
+
                 <div class="table-responsive">
                   <table class="table table-hover m-b-0" id="datatable">
                     <thead>

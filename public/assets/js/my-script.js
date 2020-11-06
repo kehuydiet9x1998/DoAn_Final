@@ -1,22 +1,17 @@
 $(document).ready(function() {
-  $("#datatable").DataTable({
+  var table = $("#datatable").DataTable({
     dom: "Bfrtip",
     stateSave: true,
-    // select: true,
-    // lengthMenu: [
-    //   [10, 25, 50, -1],
-    //   [10, 25, 50, "All"]
-    // ],
-    buttons: [
-      {
-        extend: "copy",
-        text: '<i class="fa fa-copy" aria-hidden="true"></i> Sao chép',
 
-        // className: "btn-default",
-        exportOptions: {
-          columns: ":not(.noVis)"
-        }
-      },
+    buttons: [
+      // {
+      //   extend: "copy",
+      //   text: '<i class="fa fa-copy" aria-hidden="true"></i> Sao chép',
+      //   // className: "btn-default",
+      //   exportOptions: {
+      //     columns: ":not(.noVis)"
+      //   }
+      // },
       {
         extend: "excel",
         text: '<i class="fa fa-file-excel" aria-hidden="true"></i> Xuất Excel',
@@ -25,13 +20,13 @@ $(document).ready(function() {
           columns: ":not(.noVis)"
         }
       },
-      // {
-      //   extend: "pdf",
-      //   text: '<i class="fa fa-file-pdf" aria-hidden="true"></i> Xuất PDF',
-      //   exportOptions: {
-      //     columns: ":not(.noVis)"
-      //   }
-      // },
+      {
+        extend: "pdf",
+        text: '<i class="fa fa-file-pdf" aria-hidden="true"></i> Xuất PDF',
+        exportOptions: {
+          columns: ":not(.noVis)"
+        }
+      },
 
       {
         extend: "print",
@@ -71,5 +66,15 @@ $(document).ready(function() {
         // className: "btn btn-default",
       }
     ]
+  });
+
+  $("#datatable-filter-button").click(function() {
+    $(".datatable-filter").on("change", function() {
+      var column = $(this).data("column");
+      table
+        .columns(column)
+        .search(this.value)
+        .draw();
+    });
   });
 });

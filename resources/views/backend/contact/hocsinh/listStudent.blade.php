@@ -3,6 +3,13 @@
 
 @section('content')
 
+<style>
+  {
+    table-layout: auto/fixed;
+  }
+
+</style>
+
 <div class="pcoded-inner-content">
   <div class="main-body">
     <div class="page-wrapper">
@@ -17,6 +24,7 @@
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-6">
                     <div id="dom-table_filter" class="dataTables_filter">
+
                       <button class="btn btn-success btn-round waves-effect waves-light" data-toggle="modal" data-target="#large-Modal" style="height: 35px;line-height: 13px;float: right; margin-right: 30px; ">Thêm mới</button>
                       <div class="modal fade show" id="large-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
                         <div class="modal-dialog modal-lg" role="document">
@@ -133,8 +141,51 @@
                   </div>
                 </div>
                 <div class="card-block" style="">
+                  <div class="mt-2">
+                    <div class="row align-items-center">
+                      <div class="col-md-2">
+                        <div class="form-group"><label>Nhà cung cấp</label> <select class="form-control">
+                            <option>Acecook</option>
+                            <option>Vifon</option>
+                            <option>Orion</option>
+                            <option>Masan</option>
+                            <option>Vinamilk</option>
+                          </select></div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group"><label>Từ ngày</label> <input type="date" placeholder="Nhập ngày lập hoá đơn" class="form-control"></div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group"><label>Đến ngày</label> <input type="date" placeholder="Nhập ngày lập hoá đơn" class="form-control"></div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group"><label>Trạng thái</label> <select class="form-control">
+                            <option>Đã xác nhận</option>
+                            <option>Chưa xác nhận</option>
+                          </select></div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                          <div class="col-md-6"><a href="#" class="btn btn-primary btn-sm btn-round font-weight-bold w-auto">
+                              Tìm kiếm
+                            </a></div>
+                          <div class="col-md-6">
+                            <button class="btn btn-secondary btn-sm btn-round menu-toggle">
+                              Chức năng khác <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-menu show" id="menu">
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row align-items-center"></div>
+                  </div>
+
+
                   <div class="table-responsive">
-                    <table class="table table-hover m-b-0 " id="datatable">
+                    <table class="table table-hover m-b-0 " id="datatable2">
                       <thead>
                         <tr>
                           <th>STT</th>
@@ -156,6 +207,7 @@
                                 <a href="{{route('trangcanhan', $st->user->id)}}">
                                   <h6 class="name_link_green">{{$st->hodem .' '. $st->ten}}</h6>
                                 </a>
+
                                 <p class=" m-t-0 text-muted" style="margin-bottom: 5px"><i class="fa fa-calendar"></i> Ngày sinh: {{$st->ngaysinh}}</p>
                                 <p class=" m-b-0 text-muted"><i class="fas fa-map-marker-alt"></i> Địa chỉ: {{$st->diachi}}</p>
                               </div>
@@ -243,6 +295,7 @@
   @endsection
   @section('script')
 
+  <script src="{{ asset('assets/js/my-script-2.js') }}"></script>
   <script>
     function myReset() {
       document.getElementById('main').reset();
