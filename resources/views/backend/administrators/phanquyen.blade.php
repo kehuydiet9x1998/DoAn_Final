@@ -120,7 +120,6 @@
                 <div class="card-footer" style="padding-top: 0">
                   <input type="submit" class="btn btn-primary waves-effect waves-light" style="float: right; margin: 0 10px" value="Thêm" />
                   <button type="button" class="btn btn-default waves-effect" style="float: right">Đóng</button>
-
                 </div>
               </div>
             </div>
