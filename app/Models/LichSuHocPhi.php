@@ -8,38 +8,44 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class LichSuHocPhi extends Model
 {
-    use HasFactory;
-    use SoftDeletes;
-    protected $table = 'lich_su_hoc_phi';
-    protected $dates =['delete_at'];
-    protected $fillable = [
-      'sotiencandong',
-      'sotiendadong',
-      'sotienconthieu',
-      'ngaydong',
-      'hoc_phi_id',
-      'nhan_vien_id',
-    ];
-    public function hocPhi(){
-      return $this->belongsTo(HocPhi::class);
-    }
-    public function nhanVien(){
-      return $this->belongsTo(NhanVien::class);
-    }
+  use HasFactory;
+  use SoftDeletes;
+  protected $table = 'lich_su_hoc_phi';
+  protected $dates = ['delete_at'];
+  protected $fillable = [
+    'sotiendadong',
+    'ngaydong',
+    'hoc_phi_id',
+    'nhan_vien_id',
+  ];
+  public function hocPhi()
+  {
+    return $this->belongsTo(HocPhi::class);
+  }
+  public function nhanVien()
+  {
+    return $this->belongsTo(NhanVien::class);
+  }
 
-//    public function getSotienconthieuAttribute($value){
-//      return number_format($value). ' VNĐ';
-//    }
-//
-//  public function getSotiendadongAttribute($value){
-//    return number_format($value). ' VNĐ';
-//  }
-//
-//  public function getSotiencandongAttribute($value){
-//    return number_format($value). ' VNĐ';
-//  }
-//
-//  public function getNgaydongAttribute($value){
-//    return date('d-m-Y', strtotime($value));
-//  }
+  public function dsChiTiet()
+  {
+    return $this->hasMany(ChiTietHocPhi::class);
+  }
+
+  //    public function getSotienconthieuAttribute($value){
+  //      return number_format($value). ' VNĐ';
+  //    }
+  //
+  //  public function getSotiendadongAttribute($value){
+  //    return number_format($value). ' VNĐ';
+  //  }
+  //
+  //  public function getSotiencandongAttribute($value){
+  //    return number_format($value). ' VNĐ';
+  //  }
+  //
+  public function getNgaydongAttribute($value)
+  {
+    return date('d-m-Y', strtotime($value));
+  }
 }

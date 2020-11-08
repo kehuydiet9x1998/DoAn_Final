@@ -79,5 +79,6 @@ return [
     public_path('hinhanhkhoahoc') => storage_path('app/public/hinhanhkhoahoc'),
     public_path('hinhanhbaitap') => storage_path('app/public/hinhanhbaitap'),
     public_path('baigiang') => storage_path('app/public/baigiang'),
+    public_path('anhdaidien') => storage_path('app/public/anhdaidien'),
   ],
 ];

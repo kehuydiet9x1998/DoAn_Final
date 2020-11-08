@@ -8,17 +8,17 @@ class DashboardController extends Controller
 {
   public function index()
   {
-    switch (auth()->user()->vaitro) {
-      case 'teacher':
+    switch (auth()->user()->role_id) {
+      case '3':
         return view('backend.teachers.dashboard-teacher');
-      case 'student':
+      case '2':
         return view('backend.students.dashboard-student');
-      case 'administrator':
+      case '1':
         return view('backend.dashboard');
-      case 'contact':
+      case '4':
         return view('backend.contact.dashboard-contact');
       default:
-        return auth()->user()->vaitro;
+        return auth()->user()->role_id;
     }
   }
 }

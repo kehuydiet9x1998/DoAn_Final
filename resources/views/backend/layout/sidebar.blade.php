@@ -1,5 +1,6 @@
 <?php
-$phanquyen = Auth::user()->vaitro;
+$phanquyen = Auth::user()->role->ten;
+// dd($phanquyen);
 
 /* -------------------------------------------------------------------------- */
 /* Contact */
@@ -28,7 +29,6 @@ if ($phanquyen == 'contact') {
           "icon" => "fa fa-bell",
           "type" => "link",
         ],
-
       ],
     ],
   ];
@@ -37,17 +37,49 @@ if ($phanquyen == 'contact') {
       "title" => "Chăm Sóc Khách Hàng",
       "items" => [
         [
+          "link" => "/administrators/courses",
+          "type" => "link",
+          "icon" => " fa fa-institution",
+          "text" => "Khóa học",
+        ],
+
+        [
+          "link" => "/administrators/allclass",
+          "type" => "link",
+          "icon" => " fa fa-list-alt",
+          "text" => "Lớp học",
+        ],
+        [
           "type" => "link",
           "icon" => "fa fa-user",
           "link" => "/contacts/students",
           "text" => "Học sinh",
         ],
+        // [
+        //   "link" => "/contacts/phanlop",
+        //   "type" => "link",
+        //   "icon" => "fa fa-braille",
+        //   "text" => "Phân lớp",
+        // ],
+
         [
-          "link" => "/contacts/phanlop",
           "type" => "link",
-          "icon" => "fa fa-braille",
-          "text" => "Phân lớp",
+          "icon" => "fa fa-history",
+          "link" => "/contacts/lichtrainghiem",
+          "text" => "Lịch hẹn",
         ],
+        // [
+        //   "type" => "link",
+        //   "icon" => "feather icon-home",
+        //   "link" => "/contacts/feedbacks",
+        //   "text" => "Nhận xét",
+        // ],
+      ],
+    ],
+
+    [
+      "title" => "Quản Lý Tài Chính",
+      "items" => [
         [
           "type" => "link",
           "icon" => "fa fa-dollar",
@@ -56,16 +88,17 @@ if ($phanquyen == 'contact') {
         ],
         [
           "type" => "link",
-          "icon" => "fa fa-history",
-          "link" => "/contacts/lichtrainghiem",
-          "text" => "Lịch trải nghiệm",
+          "icon" => "fa fa-list-alt",
+          "link" => "/contacts/phieuchi",
+          "text" => "Phiếu chi",
         ],
-        [
-          "type" => "link",
-          "icon" => "feather icon-home",
-          "link" => "/contacts/feedbacks",
-          "text" => "Nhận xét",
-        ],
+
+        // [
+        // "link" => "/contacts/move-class",
+        // "type" => "link",
+        // "icon" => "fa fa-mortar-board",
+        // "text" => "Chuyển lớp",
+        // ],
       ],
     ],
 
@@ -73,21 +106,7 @@ if ($phanquyen == 'contact') {
       "title" => "Quản Lý Đào Tạo",
       "items" => [
         [
-          "link" => "/administrators/allcourse",
-          "type" => "link",
-          "icon" => " fa fa-institution",
-          "text" => "Khóa học",
-        ],
-
-        [
-          "link" => "/administrators/allcourse",
-          "type" => "link",
-          "icon" => " fa fa-list-alt",
-          "text" => "Lớp học",
-        ],
-
-        [
-          "link" => "/admin/thoi-khoa-bieu",
+          "link" => "/administrators/calendar",
           "type" => "link",
           "icon" => "fa fa-calendar",
           "text" => "Lịch giảng dậy",
@@ -176,7 +195,7 @@ if ($phanquyen == "teacher") {
           "text" => "Nhận xét học sinh",
         ],
         [
-          "link" => "/teachers/items",
+          "link" => "/teachers/sanphamcuoikhoa",
           "type" => "link",
           "icon" => "fa fa-product-hunt",
           "text" => "Sản phẩm cuối khóa",
@@ -226,7 +245,7 @@ if ($phanquyen == 'administrator') {
           "type" => "dropdown",
           "items" => [
             ["text" => "Cài đặt", "link" => "/baocao"],
-            ["text" => "Danh sách người dùng", "link" => "/baocao"],
+            ["text" => "Danh sách người dùng", "link" => "/administrators/users"],
             ["text" => "Phân quyền", "link" => "/baocao"],
             ["text" => "Sao lưu / Phục hồi", "link" => "/baocao"],
           ],
@@ -262,8 +281,6 @@ if ($phanquyen == 'administrator') {
           "link" => "/contacts/hocphis",
           "text" => "Khoản thu",
         ],
-
-
       ],
     ],
     [
@@ -276,7 +293,7 @@ if ($phanquyen == 'administrator') {
           "text" => "Nhân viên",
         ],
         [
-          "link" => "/administrators/teachers",
+          "link" => "contacts/list-teachers",
           "type" => "link",
           "icon" => "fa fa-users",
           "text" => "Giáo viên",
@@ -301,6 +318,32 @@ if ($phanquyen == 'administrator') {
         ],
       ],
     ],
+
+    [
+      "title" => "Quản Lý Tài Chính",
+      "items" => [
+        [
+          "type" => "link",
+          "icon" => "fa fa-dollar",
+          "link" => "/contacts/hocphis",
+          "text" => "Học phí",
+        ],
+        [
+          "type" => "link",
+          "icon" => "fa fa-list-alt",
+          "link" => "/contacts/phieuchi",
+          "text" => "Phiếu chi",
+        ],
+
+        // [
+        // "link" => "/contacts/move-class",
+        // "type" => "link",
+        // "icon" => "fa fa-mortar-board",
+        // "text" => "Chuyển lớp",
+        // ],
+      ],
+    ],
+
     [
       "title" => "Báo Cáo Thống Kê",
       "items" => [

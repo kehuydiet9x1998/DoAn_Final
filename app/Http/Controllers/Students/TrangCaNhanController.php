@@ -15,24 +15,6 @@ class TrangCaNhanController extends Controller
    */
   public function index()
   {
-    $dslophoc = auth()
-      ->user()
-      ->hocSinh->dsLopHoc()
-      ->with('lophoc')
-      ->get()
-      ->pluck('lophoc');
-    $data = auth()->user();
-    return view('backend.students.trangcanhan.trangcanhan', ['user' => $data, 'lophocs' => $dslophoc]);
-  }
-
-  /**
-   * Show the form for creating a new resource.
-   *
-   * @return \Illuminate\Http\Response
-   */
-  public function create()
-  {
-    //
   }
 
   /**
@@ -54,7 +36,6 @@ class TrangCaNhanController extends Controller
    */
   public function show(User $user)
   {
-    //
   }
 
   /**

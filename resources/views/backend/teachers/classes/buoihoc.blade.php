@@ -125,6 +125,9 @@
      $('.nhanxet').click(function() {
        $('#mail-Modal').load('/teachers/nhanxet/' + $(this).data('id'))
        $('#mail-Modal').modal().show();
+       $('body').addClass('modal-open');
+
+
        //  $('.modal-backdrop').show();
      });
    });

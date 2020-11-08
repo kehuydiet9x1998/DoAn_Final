@@ -15,7 +15,7 @@ class CreateSanPhamCuoiKhoasTable extends Migration
   {
     Schema::create('san_pham_cuoi_khoa', function (Blueprint $table) {
       $table->id();
-      $table->string('mota');
+      $table->text('mota');
       $table->text('noidung');
       $table->text('fileslide')->nullable();
       $table->unsignedBigInteger('hoc_sinh_id');

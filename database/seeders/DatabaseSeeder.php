@@ -34,6 +34,7 @@ class DatabaseSeeder extends SpreadsheetSeeder
       '/database/seeders/_khoa_hoc_seeder.xlsx',
       '/database/seeders/_lop_hoc_seeder.xlsx',
       '/database/seeders/_buoi_hoc_seeder.xlsx',
+      '/database/seeders/_hoc_phi_seeder.xlsx',
     ];
     $this->truncate = false;
     parent::run();

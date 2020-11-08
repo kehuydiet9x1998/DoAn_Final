@@ -7,7 +7,7 @@
       </button>
     </div>
     <div class="modal-body">
-      <form id="editform" method="post" action="{{route('lichtrainghiem.update', $hocsinh->id)}}" novalidate="">
+      <form id="editform" method="post" action="{{route('lichtrainghiem.update', $lichtrainghiem->id)}}" novalidate="">
         @method('PUT')
         <div class="modal-body">
           <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -15,21 +15,21 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Họ tên học sinh</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" value="{{$hocsinh->hocSinh->hodem .' '.$hocsinh->hocSinh->ten}}">
+              <input type="text" class="form-control" readonly value="{{$lichtrainghiem->hocSinh->hodem .' '.$lichtrainghiem->hocSinh->ten}}">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Họ tên phụ huynh</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" name="ten" value="{{$hocsinh->hocSinh->hotenchame}}">
+              <input type="text" class="form-control" readonly name="ten" value="{{$lichtrainghiem->hocSinh->hotenchame}}">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Số điện thoại</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" value="{{$hocsinh->hocSinh->sodienthoai}}">
+              <input type="text" class="form-control" readonly value="{{$lichtrainghiem->hocSinh->sodienthoai}}">
               <span class="messages"></span>
             </div>
           </div>
@@ -37,24 +37,23 @@
             <label class="col-sm-3 col-form-label">Trạng thái</label>
             <div class="col-sm-9">
               <select name="trangthai" class="form-control form-control-inverse">
-                <option>{{$hocsinh->trangthai}}</option>
-                <option value="chờ học">Chờ học</option>
-                <option value="Đã học">Đã học</option>
-                <option value="Không học">Không học</option>
+                <option value="Chưa xử lý">Chưa xử lý</option>
+                <option value="Đã xử lý" selected>Đã xử lý</option>
+                <option value="Hủy bỏ">Hủy bỏ</option>
               </select>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-3 col-form-label">Ngày học</label>
+            <label class="col-sm-3 col-form-label">Ngày hẹn</label>
             <div class="col-sm-9">
-              <input type="date" class="ngaysinh" id="thoigian" name="thoigian" value="{{substr($hocsinh->thoigian,0 ,10)}}">
+              <input type="datetime-local" class="form-control" id="thoigian" name="thoigian" value="{{str_replace(' ', 'T',$lichtrainghiem->thoigian)}}">
               <span class="messages"></span>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-3 col-form-label">Ghi chú</label>
+            <label class="col-sm-3 col-form-label">Kết quả</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="ghichu" name="ghichu" placeholder="Trạng thái" value="{{$hocsinh->ghichu}}">
+              <input type="text" class="form-control" id="ketqua" name="ketqua" placeholder="Kết quả" value="{{$lichtrainghiem->ketqua}}">
               <span class="messages"></span>
             </div>
           </div>

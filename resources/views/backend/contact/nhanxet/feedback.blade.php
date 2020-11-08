@@ -62,6 +62,9 @@
   ready(function() {
     $('.btn.btn-primary').click(function(e) {
       $('.modal').show();
+      $('body').addClass('modal-open');
+
+
       $('.modal-backdrop').show();
 
       id = $(this).data('id');

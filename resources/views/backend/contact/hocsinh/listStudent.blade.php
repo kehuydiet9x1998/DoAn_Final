@@ -3,6 +3,13 @@
 
 @section('content')
 
+<style>
+  {
+    table-layout: auto/fixed;
+  }
+
+</style>
+
 <div class="pcoded-inner-content">
   <div class="main-body">
     <div class="page-wrapper">
@@ -17,6 +24,7 @@
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-6">
                     <div id="dom-table_filter" class="dataTables_filter">
+
                       <button class="btn btn-success btn-round waves-effect waves-light" data-toggle="modal" data-target="#large-Modal" style="height: 35px;line-height: 13px;float: right; margin-right: 30px; ">Thêm mới</button>
                       <div class="modal fade show" id="large-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
                         <div class="modal-dialog modal-lg" role="document">
@@ -34,22 +42,25 @@
                                   {{ csrf_field() }}
                                   <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Họ đệm</label>
-                                    <div class="col-sm-9">
+                                    <div class="col-sm-4">
                                       <input type="text" class="form-control" name="hodem" id="hodem" placeholder="Nhập vào họ đệm">
                                       <span class="messages"></span>
                                     </div>
-                                  </div>
-                                  <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Tên</label>
-                                    <div class="col-sm-9">
+
+                                    <label class="col-sm-1 col-form-label">Tên</label>
+                                    <div class="col-sm-4">
                                       <input type="text" class="form-control" name="ten" placeholder="Nhập vào tên">
                                       <span class="messages"></span>
                                     </div>
+
                                   </div>
+                                  {{-- <div class="form-group row">
+
+                                  </div> --}}
                                   <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Ngày sinh</label>
                                     <div class="col-sm-9">
-                                      <input type="date" class="ngaysinh" id="ngaysinh" name="ngaysinh" placeholder="">
+                                      <input type="date" class="form-control" id="ngaysinh" name="ngaysinh" placeholder="">
                                       <span class="messages"></span>
                                     </div>
                                   </div>
@@ -72,8 +83,12 @@
                                   <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Trạng thái</label>
                                     <div class="col-sm-9">
-                                      <input type="text" class="form-control" id="trangthai" name="trangthai" placeholder="Trạng thái">
-                                      <span class="messages"></span>
+                                      <select class="form-control" id="trangthai" name="trangthai" placeholder="Trạng thái">
+                                        <option value="">-- Chọn trạng thái --</option>
+                                        <option value="Đang tư vấn">Đang tư vấn</option>
+                                        <option value="Chính thức">Chính thức</option>
+                                        <span class="messages"></span>
+                                      </select>
                                     </div>
                                   </div>
                                   <div class="form-group row">
@@ -126,16 +141,59 @@
                   </div>
                 </div>
                 <div class="card-block" style="">
+                  <div class="mt-2">
+                    <div class="row align-items-center">
+                      <div class="col-md-2">
+                        <div class="form-group"><label>Nhà cung cấp</label> <select class="form-control">
+                            <option>Acecook</option>
+                            <option>Vifon</option>
+                            <option>Orion</option>
+                            <option>Masan</option>
+                            <option>Vinamilk</option>
+                          </select></div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group"><label>Từ ngày</label> <input type="date" placeholder="Nhập ngày lập hoá đơn" class="form-control"></div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group"><label>Đến ngày</label> <input type="date" placeholder="Nhập ngày lập hoá đơn" class="form-control"></div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group"><label>Trạng thái</label> <select class="form-control">
+                            <option>Đã xác nhận</option>
+                            <option>Chưa xác nhận</option>
+                          </select></div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="row">
+                          <div class="col-md-6"><a href="#" class="btn btn-primary btn-sm btn-round font-weight-bold w-auto">
+                              Tìm kiếm
+                            </a></div>
+                          <div class="col-md-6">
+                            <button class="btn btn-secondary btn-sm btn-round menu-toggle">
+                              Chức năng khác <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-menu show" id="menu">
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row align-items-center"></div>
+                  </div>
+
+
                   <div class="table-responsive">
-                    <table class="table table-hover m-b-0 " id="datatable">
+                    <table class="table table-hover m-b-0 " id="datatable2">
                       <thead>
                         <tr>
                           <th>STT</th>
-                          <th>HỌ VÀ TÊN</th>
-                          <th>GIỚI TÍNH</th>
-                          <th>NGÀY SINH</th>
+                          <th>HỌC SINH</th>
+                          <th>PHỤ HUYNH</th>
+                          <th>KHÓA HỌC</th>
                           <th>TRẠNG THÁI</th>
-                          <th>QUÊ QUÁN</th>
+                          <th>TƯ VẤN</th>
                           <th class="noVis">ACTIONS</th>
                         </tr>
                       </thead>
@@ -143,28 +201,66 @@
                         @foreach($students as $st)
                         <tr>
                           <td>{{$st->id}}</td>
-                          <td>{{$st->hodem. ' ' .$st->ten}}</td>
-                          <td style="text-indent:10px">{{$st->gioitinh}}</td>
-                          <td>{{$st->ngaysinh}}</td>
                           <td>
-                            <p style="margin-top:15px" class="badge badge-pill badge-{{$st->trangthai == 'Học thử'? 'warning' : 'primary'}}">
-                              {{$st->trangthai}}</p>
-                          </td>
-                          <td>{{$st->diachi}}</td>
-                          <td style="display: flex;">
-                            <div>
-                              <div class="modal fade show" id="show-Modal" tabindex="-1" role="dialog"
-                                style="z-index: 1050;display: none; padding-right: 17px;">
+                            <div class="d-inline-block align-middle">
+                              <div class="d-inline-block">
+                                <a href="{{route('trangcanhan', $st->user->id)}}">
+                                  <h6 class="name_link_green">{{$st->hodem .' '. $st->ten}}</h6>
+                                </a>
+
+                                <p class=" m-t-0 text-muted" style="margin-bottom: 5px"><i class="fa fa-calendar"></i> Ngày sinh: {{$st->ngaysinh}}</p>
+                                <p class=" m-b-0 text-muted"><i class="fas fa-map-marker-alt"></i> Địa chỉ: {{$st->diachi}}</p>
                               </div>
                             </div>
-                            <button class="my_edit" data-id="{{$st->id}}" data-toggle="modal" data-target="#edit-Modal"
-                              style="background-color: white; border: none">
-                              <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"
-                                style="margin-right: 3px"></i>
+                          </td>
+                          <td>
+                            <div class="d-inline-block align-middle">
+                              <div class="d-inline-block">
+                                <h6> {{$st->hotenchame}} </h6>
+                                <p class=" m-t-0 text-muted" style="margin-bottom: 5px"><i class="fa fa-phone"></i> SĐT: {{$st->sodienthoai}}</p>
+                                <p class=" m-b-0 text-muted"> <i class="fa fa-envelope-o"></i> Email: {{$st->email}}</p>
+                              </div>
+                            </div>
+                          </td>
+                          <td>{{ $st->dslophoc->count() }} khóa học</td>
+
+                          <td>
+                            <p style="margin-top:15px" class="badge p-1 badge-pill badge-{{$st->trangthai == 'Học thử'? 'primary' : 'success'}}">
+                              {{$st->trangthai}}</p>
+                          </td>
+
+                          <td style="width:30px">
+                            @if($st->dslichtrainghiem->count()==0)
+                            <p style="width:170px; word-break:keep-all; white-space:normal" class="p-t-10 text-muted">
+                              <i>Chưa có lịch hẹn</i>
+
+                            </p>
+
+                            @else
+                            <p style="width:170px; word-break:keep-all; white-space:normal" class="p-t-10 text-muted"><i class="fa fa-history"></i> {{ $st->dslichtrainghiem->first()->noidung }}
+                              <br> <i class="fa fa-clock-o"></i>
+                              {{ $st->dslichtrainghiem->first()->thoigian }}
+                              @if( $st->dslichtrainghiem->first()->ketqua != '' )
+
+                              <br><span class="text-c-lite-green"> <i class="fa fa-info-circle"></i> Kết quả: {{ $st->dslichtrainghiem->first()->ketqua }}</span>
+                              @endif
+                            </p>
+
+                            @endif
+
+                            {{-- <p style="width:170px; word-break:keep-all; white-space:normal"></p> --}}
+
+                          </td>
+                          <td style="display: flex;">
+                            <div>
+                              <div class="modal fade show" id="show-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
+                              </div>
+                            </div>
+                            <button class="my_edit" data-id="{{$st->id}}" data-toggle="modal" data-target="#edit-Modal" style="background-color: white; border: none">
+                              <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green" style="margin-right: 3px"></i>
                             </button>
                             <!-- Modal Sua -->
-                            <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
-                            </div>
+
                             <form action="{{route('students.destroy', $st->id)}}" method="post">
                               @method('DELETE')
                               @csrf
@@ -178,7 +274,8 @@
                         @endforeach
                       </tbody>
                     </table>
-
+                    <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
+                    </div>
                     <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog">
                     </div>
                     <div class="modal fade show" id="show-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
@@ -198,6 +295,7 @@
   @endsection
   @section('script')
 
+  <script src="{{ asset('assets/js/my-script-2.js') }}"></script>
   <script>
     function myReset() {
       document.getElementById('main').reset();
@@ -212,12 +310,18 @@
         id = $(this).data('id');
         $('#show-Modal').load("/contacts/students/" + id);
         $('#show-Modal').show();
+        $('body').addClass('modal-open');
+
+
         $('.modal-backdrop').show();
       });
       $('.my_edit').click(function(e) {
         id = $(this).data('id')
         $('#edit-Modal').load("/contacts/students/" + id + '/edit');
         $('#edit-Modal').show();
+        $('body').addClass('modal-open');
+
+
         $('.modal-backdrop').show();
       });
     });

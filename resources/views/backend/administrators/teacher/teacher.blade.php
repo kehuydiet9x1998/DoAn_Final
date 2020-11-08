@@ -45,23 +45,18 @@
                         <td style="display: flex; width: 64px;">
                           <div>
                             {{-- Xem chi tiết nhân viên --}}
-                            <button data-id="{{$teacher->id}}" type="button" class="btn btn-primary waves-effect"
-                              data-toggle="modal" data-target="#show-Modal"
-                              style="background-color: white; border: none; padding: 0;">
+                            <button data-id="{{$teacher->id}}" type="button" class="btn btn-primary waves-effect" data-toggle="modal" data-target="#show-Modal" style="background-color: white; border: none; padding: 0;">
                               <i class="fa fa-eye f-w-600 f-16 m-r-15 text-c-green"></i>
                             </button>
-                            <div class="modal fade show" id="show-Modal" tabindex="-1" role="dialog"
-                              style="z-index: 1050;display: none; padding-right: 17px;">
+                            <div class="modal fade show" id="show-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
                             </div>
                           </div>
                           <!-- Modal Sua -->
                           <div>
-                            <button class="my_edit" data-id="{{$teacher->id}}" data-toggle="modal"
-                              data-target="#edit-Modal" style="border: none; background-color: transparent">
+                            <button class="my_edit" data-id="{{$teacher->id}}" data-toggle="modal" data-target="#edit-Modal" style="border: none; background-color: transparent">
                               <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i>
                             </button>
-                            <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog"
-                              style="z-index: 1050;display: none; padding-right: 17px;">
+                            <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
                             </div>
                           </div>
                           {{-- Xóa giáo viên --}}
@@ -69,8 +64,7 @@
                             <form action="{{route('teachers.destroy', $teacher->id)}}" method="post">
                               @method('DELETE')
                               @csrf
-                              <button style="border: none; padding:0px; margin: -1px 0px 0px -15px; background-color: transparent"
-                                onclick="return confirm ('Bạn có muốn xóa không')">
+                              <button style="border: none; padding:0px; margin: -1px 0px 0px -15px; background-color: transparent" onclick="return confirm ('Bạn có muốn xóa không')">
                                 <i class="feather icon-trash-2 f-w-600 f-16 m-r-15 text-c-red" style="margin:0;">
                                 </i>
                               </button>
@@ -96,25 +90,33 @@
   function myReset() {
     document.getElementById('main').reset();
   };
+
 </script>
 
 <script>
   $(document).
-  ready(function () {
-    $('.btn.btn-primary').click(function (e) {
+  ready(function() {
+    $('.btn.btn-primary').click(function(e) {
       id = $(this).data('id');
       $('#show-Modal').load("/administrators/teachers/" + id);
       $('#show-Modal').show();
+      $('body').addClass('modal-open');
+
+
       $('.modal-backdrop').show();
     });
-    $('.my_edit').click(function (e) {
+    $('.my_edit').click(function(e) {
       id = $(this).data('id')
       $('#edit-Modal').load("/administrators/teachers/" + id + '/edit');
       $('#edit-Modal').show();
+      $('body').addClass('modal-open');
+
+
       $('.modal-backdrop').show();
 
     })
   });
+
 </script>
 
 @endsection

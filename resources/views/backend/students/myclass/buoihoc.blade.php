@@ -18,9 +18,7 @@
             </button>
           </li>
           <li style="margin: 0px 10px 5px 0px; float: left">
-            <button type="button" class="btn waves-effect waves-light btn-round xemnhanxet" data-toggle="modal"
-              data-target="#mail-Modal" style="font-size: 14px; font-weight: bold"
-              data-id="{{$buoihoc->id}}/{{$buoihoc->lophoc->id}}/{{$buoihoc->lophoc->khoahoc->id}}">
+            <button type="button" class="btn waves-effect waves-light btn-round xemnhanxet" data-toggle="modal" data-target="#mail-Modal" style="font-size: 14px; font-weight: bold" data-id="{{$buoihoc->id}}/{{$buoihoc->lophoc->id}}/{{$buoihoc->lophoc->khoahoc->id}}">
               XEM NHẬN XÉT
             </button>
 
@@ -38,16 +36,18 @@
     </div>
   </div>
 </div>
-<div class="modal fade show" id="mail-Modal" tabindex="-1" role="dialog"
-  style="z-index: 1050;display: none; padding-right: 17px;"></div>
+<div class="modal fade show" id="mail-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;"></div>
 
 <script>
-  $(document).ready(function () {
-    $('.xemnhanxet').click(function () {
+  $(document).ready(function() {
+    $('.xemnhanxet').click(function() {
       //alert('/student/xemnhanxet/' + $(this).data('id'))
       // alert('ok')
       $('#mail-Modal').load('/student/xemnhanxet/' + $(this).data('id'))
       $('#mail-Modal').show();
+      // $('body').addClass('modal-open');
+
+
       // $('.modal-backdrop').show();
     });
   });

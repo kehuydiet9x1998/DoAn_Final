@@ -24,16 +24,16 @@ class HomeController extends Controller
   public function index()
   {
     $user = null;
-    switch (auth()->user()->vaitro) {
-      case 'student':
+    switch (auth()->user()->role_id) {
+      case '2':
         $user = auth()->user()->hocsinh;
         return view('backend.myhome', ['user' => $user]);
         break;
-      case 'teacher':
+      case '3':
         $user = auth()->user()->giaovien;
         return view('backend.myhome', ['user' => $user]);
         break;
-      case 'nhanvien':
+      case '4':
         $user = auth()->user()->nhanvien;
         break;
     }

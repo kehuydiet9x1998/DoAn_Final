@@ -14,9 +14,7 @@
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-6">
                     <div id="dom-table_filter" class="dataTables_filter">
-                      <label style="display: flex">Tìm kiếm:<input type="search" id="search"
-                          class="form-control input-sm" placeholder="" aria-controls="dom-table"
-                          style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;">
+                      <label style="display: flex">Tìm kiếm:<input type="search" id="search" class="form-control input-sm" placeholder="" aria-controls="dom-table" style="width: 250px; height: 25px;margin-top: 0px;margin-left: 10px;">
                       </label>
                     </div>
                   </div>
@@ -28,7 +26,7 @@
                     <thead>
                       <tr>
                         <th>ID</th>
-                        <th>Tên giáo viên</th>
+                        <th>Giáo viên</th>
                         <th>Số điện thoại</th>
                         <th>Tên khóa học</th>
                         <th>Ngày vào học</th>
@@ -48,7 +46,6 @@
                               <div class="d-inline-block">
                                 <h6 class="name_link_green">{{
                                   $phanlop->lophoc->khoahoc->tenkhoahoc }}</h6>
-                                <p class="text-muted m-b-0"></p>
                               </div>
                             </a>
                           </div>
@@ -58,8 +55,7 @@
                         <td>
                           <div class="col-sm-12" style="text-align: center; margin-top: 5px">
                             <button style="border: none; padding: 2px 0px; margin-top: -1px; background-color: white">
-                              <a class="fa fa-commenting-o" aria-hidden="true" style="margin:0; background-color: white"
-                                href="{{route('review-giaovien.show',$phanlop->id)}}">
+                              <a class="fa fa-commenting-o" aria-hidden="true" style="margin:0; background-color: white" href="{{route('review-giaovien.show',$phanlop->id)}}">
                               </a>
                             </button>
                           </div>

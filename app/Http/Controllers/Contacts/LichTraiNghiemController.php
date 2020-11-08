@@ -18,16 +18,11 @@ class LichTraiNghiemController extends Controller
   protected $validationRules = [
     'hoc_sinh_id' => 'required',
     'thoigian' => 'required|date',
-    'trangthai' => 'required',
-    'ghichu' => 'string'
   ];
   protected $attributes = [
     'hoc_sinh_id' => 'Học sinh',
     'thoigian' => 'Ngày học',
-    'trangthai' => 'Trạng thái',
-    'ghichu' => 'Ghi chú',
   ];
-  // nó đổi tên request, à nó bung ra chữ học sinh k được để ctroong àừm đúng r còn template chỉ cần thêm 2 dòng
 
   public function __construct()
   {
@@ -40,23 +35,12 @@ class LichTraiNghiemController extends Controller
 
   public function index()
   {
-    $allhocsinhs = HocSinh::all()->sortByDesc('id');
-    $data = LichTraiNghiem::all();
-    return view(
-      'backend.contact.lichtrainghiem.listlichtrainghiem',
-      ['hocsinhs' => $data, 'allhocsinhs' => $allhocsinhs]
-    )
-      ->with(['jsValidator' => $this->jsValidator]);
-  }
-
-  /**
-   * Show the form for creating a new resource.
-   *
-   * @return \Illuminate\Http\Response
-   */
-  public function create()
-  {
-    //
+    $allhocsinhs = HocSinh::all();
+    $data = LichTraiNghiem::orderBy('thoigian', 'desc')->get();
+    return view('backend.contact.lichtrainghiem.listlichtrainghiem', [
+      'lichtrainghiems' => $data,
+      'allhocsinhs' => $allhocsinhs,
+    ])->with(['jsValidator' => $this->jsValidator]);
   }
 
   /**
@@ -68,6 +52,8 @@ class LichTraiNghiemController extends Controller
   public function store(Request $request)
   {
     $data = $request->all();
+    $data['trangthai'] = 'Chưa xử lý';
+    $data['ketqua'] = '';
     LichTraiNghiem::create($data);
     return redirect(route('lichtrainghiem.index'));
   }
@@ -81,7 +67,9 @@ class LichTraiNghiemController extends Controller
   public function show($id)
   {
     $data = LichTraiNghiem::find($id);
-    return view('backend.contact.lichtrainghiem.show_lichtrainghiem_modal', ['hocsinh' => $data]);
+    return view('backend.contact.lichtrainghiem.show_lichtrainghiem_modal', [
+      'lichtrainghiem' => $data,
+    ]);
   }
 
   /**
@@ -93,8 +81,9 @@ class LichTraiNghiemController extends Controller
   public function edit($id)
   {
     $data = LichTraiNghiem::find($id);
-    return view('backend.contact.lichtrainghiem.edit_lichtrainghiem_modal', ['hocsinh' => $data])
-      ->with(['jsValidator' => $this->jsValidator]);
+    return view('backend.contact.lichtrainghiem.edit_lichtrainghiem_modal', [
+      'lichtrainghiem' => $data,
+    ])->with(['jsValidator' => $this->jsValidator]);
   }
 
   /**

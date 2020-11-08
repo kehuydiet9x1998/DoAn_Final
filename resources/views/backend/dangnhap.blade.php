@@ -34,6 +34,8 @@
     }
 
   </style>
+
+
 </head>
 
 <body>
@@ -122,7 +124,23 @@
 
   </section>
 
+
+
   <script type="text/javascript" src="{{asset('assets/js/jquery.min.js')}}"></script>
+  <script>
+    function focus() {
+      $.each($('input'), function() {
+        if ($(this).val() != "")
+          $(this).addClass('fill');
+      });
+    }
+
+    $('input').on('change', focus);
+    focus();
+
+  </script>
+
+
   <script type="text/javascript" src="{{asset('assets/js/jquery-ui.min.js')}}"></script>
   <script type="text/javascript" src="{{asset('assets/js/popper.min.js')}}"></script>
   <script type="text/javascript" src="{{asset('assets/js/bootstrap.min.js')}}"></script>
@@ -131,6 +149,10 @@
   <script type="text/javascript" src="{{asset('assets/js/jquery.flot.js')}}"></script>
   <script type="text/javascript" src="{{asset('assets/js/jquery.flot.categories.js')}}"></script>
   {{-- <script type="text/javascript" src="{{asset('assets/js/curvedlines.js')}}"></script> --}}
+
+
+
+
   <script type="text/javascript" src="{{asset('assets/js/jquery.flot.tooltip.min.js')}}"></script>
   {{-- <script type="text/javascript" src="{{asset('assets/js/chartist.js')}}"></script> --}}
   {{-- <script type="text/javascript" src="{{asset('assets/js/amcharts.js')}}"></script> --}}
@@ -146,6 +168,8 @@
 
   <script src="{{asset('assets/js/rocket-loader.min.js')}}" data-cf-settings="d2d1d6e2f87cbebdf4013b26-|49" defer="">
   </script>
+
+
 
 </body>
 

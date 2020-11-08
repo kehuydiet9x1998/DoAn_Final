@@ -13,6 +13,7 @@ class BuoiHoc extends Model
   protected $table = 'buoi_hoc';
   protected $dates = ['deleted_at'];
   protected $fillable = [
+    'id',
     'ngayhoc',
     'noidungbuoihoc',
     'trangthai',
