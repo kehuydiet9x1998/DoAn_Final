@@ -33,7 +33,7 @@ class LopHoc extends Model
   public function getNgaybatdauAttribute($value)
   {
     $date = strtotime($value);
-    return date('d-m-Y', $date);
+    return date('d/m/Y', $date);
   }
 
   public function getNgayketthucAttribute($value)

@@ -41,13 +41,25 @@
                       <tr>
                         <td>{{$teacher->id}}</td>
                         <td>
-                          <div class="d-inline-block align-middle">
-                            <div class="d-inline-block">
-                              <a href="{{route('trangcanhan', $teacher->user->id)}}">
-                                <h6 class="name_link_green">{{$teacher->hodem .' '. $teacher->ten}}</h6>
-                              </a>
+                          <div class="row">
+                            <div class="col-md-3">
+                              <img src="{{asset($teacher->user->anhdaidien)}}" class="img-fluid rounded-circle " style="width: 40px" alt="">
                             </div>
+
+                            <div class="col-md-8">
+                              <div class="d-inline-block align-middle">
+                                <div class="d-inline-block">
+                                  <a href="{{route('trangcanhan', $teacher->user->id)}}">
+                                    <h6 class="name_link_green">{{$teacher->hodem . ' '. $teacher->ten}}</h6>
+                                  </a>
+                                  <p class=" m-b-0 text-muted">User: {{strtoupper($teacher->user->name)}}</p>
+                                </div>
+                              </div>
+                            </div>
+
+
                           </div>
+
                         </td>
 
                         <td>{{$teacher->gioitinh}}</td>
@@ -55,7 +67,7 @@
                         <td>{{$teacher->sodienthoai}}</td>
                         {{-- <td>{{$teacher->email}}</td> --}}
                         <td>{{$teacher->diachi}}</td>
-                        <td>{{$teacher->tinhtrang}}</td>
+                        <td><label for="" class="badge badge-success">{{$teacher->tinhtrang}}</label></td>
                         <td style="display: flex; width: 64px;">
                           {{-- <button data-id="{{$teacher->id}}" type="button" class="btn btn-primary waves-effect" data-toggle="modal" data-target="#show-Modal" style="background-color: white; border: none; padding: 0" id="">
                           <i class="fa fa-eye f-w-600 f-16 m-r-15 text-c-green"></i>

@@ -293,7 +293,7 @@ if ($phanquyen == 'administrator') {
           "text" => "Nhân viên",
         ],
         [
-          "link" => "contacts/list-teachers",
+          "link" => "/contacts/list-teachers",
           "type" => "link",
           "icon" => "fa fa-users",
           "text" => "Giáo viên",

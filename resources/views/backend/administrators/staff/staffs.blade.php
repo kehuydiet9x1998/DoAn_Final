@@ -27,7 +27,7 @@
                         <th>Họ và tên</th>
                         <th>Giới tính</th>
                         <th>SĐT</th>
-                        <th>Email</th>
+                        {{-- <th>Email</th> --}}
                         <th>Tình trạng</th>
                         <th>Chức vụ</th>
                         <th>Action</th>
@@ -37,22 +37,34 @@
                       @foreach ($staffs as $staff)
                       <tr>
                         <td>{{$staff->id}}</td>
-                        <td>{{$staff->hodem .' '.$staff->ten}}</td>
+                        <td>
+                          <div class="row">
+                            <div class="col-md-3">
+                              <img src="{{asset($staff->user->anhdaidien)}}" class="img-fluid rounded-circle" width="40px" alt="">
+                            </div>
+
+                            <div class="col-md-8">
+                              <div class="d-inline-block align-middle">
+                                <div class="d-inline-block">
+                                  <a href="{{route('trangcanhan', $staff->user->id)}}">
+                                    <h6 class="name_link_green">{{$staff->hodem . ' '. $staff->ten}}</h6>
+                                  </a>
+                                  <p class=" m-b-0 text-muted">User: {{strtoupper($staff->user->name)}}</p>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+
+                        </td>
+                        {{-- <td>{{$staff->hodem .' '.$staff->ten}}</td> --}}
                         <td>{{$staff->gioitinh}}</td>
                         <td>{{$staff->sodienthoai}}</td>
-                        <td>{{$staff->email}}</td>
-                        <td>{{$staff->tinhtrang}}</td>
-                        <td>{{$staff->chucvu->ten}}</td>
+                        {{-- <td>{{$staff->email}}</td> --}}
+                        <td><label for="" class="badge badge-success">{{$staff->tinhtrang}}</label></td>
+                        <td><label for="" class="badge badge-secondary">{{$staff->chucvu->ten}}</label></td>
                         <td style="display: flex; width: 64px;">
-                          <div>
-                            {{-- Xem chi tiết nhân viên --}}
-                            <button data-id="{{$staff->id}}" type="button" class="btn btn-primary waves-effect" data-toggle="modal" data-target="#show-Modal" style="background-color: white; border: none; padding: 0" id="">
-                              <i class="fa fa-eye f-w-600 f-16 m-r-15 text-c-green"></i>
-                            </button>
-                            <div class="modal fade show" id="show-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
-                            </div>
-                          </div>
-                          <!-- Modal Sua -->
+
                           <div>
                             <button class="my_edit" data-id="{{$staff->id}}" data-toggle="modal" data-target="#edit-Modal" style="background-color: transparent; border: none; padding: 0 0 0 7px">
                               <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i>
@@ -60,7 +72,6 @@
                             <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
                             </div>
                           </div>
-                          {{-- Xóa nhân viên --}}
                           <div>
                             <form action="{{route('staffs.destroy', $staff->id)}}" method="post">
                               @method('DELETE')

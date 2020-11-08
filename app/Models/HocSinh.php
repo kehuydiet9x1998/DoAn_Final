@@ -28,7 +28,7 @@ class HocSinh extends Model
 
   public function getNgaysinhAttribute($value)
   {
-    return date('d-m-Y', strtotime($value));
+    return date('d/m/Y', strtotime($value));
   }
 
   public function dsLichTraiNghiem()

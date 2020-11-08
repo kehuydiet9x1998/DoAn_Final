@@ -33,7 +33,7 @@ class BuoiHoc extends Model
 
   public function getNgayhocAttribute($value)
   {
-    return date('d-m-Y', strtotime($value));
+    return date('d/m/Y', strtotime($value));
   }
 
   public static function sobaitap($hoc_sinh_id, $buoi_hoc_id)

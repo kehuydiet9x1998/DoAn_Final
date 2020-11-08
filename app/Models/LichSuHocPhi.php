@@ -46,6 +46,6 @@ class LichSuHocPhi extends Model
   //
   public function getNgaydongAttribute($value)
   {
-    return date('d-m-Y', strtotime($value));
+    return date('d/m/Y', strtotime($value));
   }
 }
