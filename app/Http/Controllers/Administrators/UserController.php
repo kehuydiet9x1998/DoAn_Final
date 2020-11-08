@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Students;
+namespace App\Http\Controllers\Administrators;
 
 use App\Http\Controllers\Controller;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class TrangCaNhanController extends Controller
+class UserController extends Controller
 {
   /**
    * Display a listing of the resource.
@@ -15,6 +16,12 @@ class TrangCaNhanController extends Controller
    */
   public function index()
   {
+    $users = User::all();
+    $roles = Role::all();
+    return view(
+      'backend.administrators.users.list_user',
+      compact('users', 'roles')
+    );
   }
 
   /**
@@ -25,7 +32,11 @@ class TrangCaNhanController extends Controller
    */
   public function store(Request $request)
   {
-    //
+    $data = $request->except('password-confirmation', 'anhdaidien');
+    $data['anhdaidien'] = $request->file('anhdaidien')->save('anhdaidien');
+    $data['password'] = bcrypt($request->password);
+    User::create($data);
+    return back();
   }
 
   /**
@@ -36,6 +47,7 @@ class TrangCaNhanController extends Controller
    */
   public function show(User $user)
   {
+    //
   }
 
   /**
@@ -46,7 +58,11 @@ class TrangCaNhanController extends Controller
    */
   public function edit(User $user)
   {
-    //
+    $roles = Role::all();
+    return view(
+      'backend.administrators.users.edit_user',
+      compact('user', 'roles')
+    );
   }
 
   /**
@@ -58,7 +74,14 @@ class TrangCaNhanController extends Controller
    */
   public function update(Request $request, User $user)
   {
-    //
+    $data = $request->except('password-confirmation', 'anhdaidien');
+    if ($request->has('anhdaidien')) {
+      $data['anhdaidien'] = $request->file('anhdaidien')->store('anhdaidien');
+    }
+    $data['password'] = bcrypt($request->password);
+    $user->fill($data);
+    $user->save();
+    return back();
   }
 
   /**
@@ -69,6 +92,7 @@ class TrangCaNhanController extends Controller
    */
   public function destroy(User $user)
   {
-    //
+    $user->delete();
+    return back();
   }
 }

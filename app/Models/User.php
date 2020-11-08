@@ -18,7 +18,7 @@ class User extends Authenticatable
     'anhdaidien',
     'name',
     'password',
-    'vaitro',
+    'role_id',
     'trangthai',
   ];
   protected $hidden = ['password'];
@@ -39,9 +39,9 @@ class User extends Authenticatable
     return $this->hasOne(NhanVien::class);
   }
 
-  public function roles()
+  public function role()
   {
-    return $this->belongsToMany(Role::class);
+    return $this->belongsTo(Role::class);
   }
 
   public static function taoUser($table)
@@ -50,15 +50,15 @@ class User extends Authenticatable
     $next_id = $id[0]->Auto_increment;
 
     $vaitro = [
-      'hoc_sinh' => 'student',
-      'giao_vien' => 'teacher',
-      'nhan_vien' => 'contact',
+      'hoc_sinh' => '2',
+      'giao_vien' => '3',
+      'nhan_vien' => '4',
     ];
 
     $user = User::create([
-      'name' => $vaitro[$table] . sprintf("%04d", $next_id),
+      'name' => str_replace('_', '', $table) . sprintf("%04d", $next_id),
       'password' => bcrypt('123456'),
-      'vaitro' => $vaitro[$table],
+      'role_id' => $vaitro[$table],
       'trangthai' => 'Hoạt động',
       'anhdaidien' =>
         "https://robohash.org/" .

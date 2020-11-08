@@ -1,5 +1,6 @@
 <?php
-$phanquyen = Auth::user()->vaitro;
+$phanquyen = Auth::user()->role->ten;
+// dd($phanquyen);
 
 /* -------------------------------------------------------------------------- */
 /* Contact */
@@ -77,7 +78,7 @@ if ($phanquyen == 'contact') {
     ],
 
     [
-      "title" => "Quản Lý Đào Tạo",
+      "title" => "Quản Lý Tài Chính",
       "items" => [
         [
           "type" => "link",
@@ -244,7 +245,7 @@ if ($phanquyen == 'administrator') {
           "type" => "dropdown",
           "items" => [
             ["text" => "Cài đặt", "link" => "/baocao"],
-            ["text" => "Danh sách người dùng", "link" => "/baocao"],
+            ["text" => "Danh sách người dùng", "link" => "/administrators/users"],
             ["text" => "Phân quyền", "link" => "/baocao"],
             ["text" => "Sao lưu / Phục hồi", "link" => "/baocao"],
           ],
@@ -317,6 +318,32 @@ if ($phanquyen == 'administrator') {
         ],
       ],
     ],
+
+    [
+      "title" => "Quản Lý Tài Chính",
+      "items" => [
+        [
+          "type" => "link",
+          "icon" => "fa fa-dollar",
+          "link" => "/contacts/hocphis",
+          "text" => "Học phí",
+        ],
+        [
+          "type" => "link",
+          "icon" => "fa fa-list-alt",
+          "link" => "/contacts/phieuchi",
+          "text" => "Phiếu chi",
+        ],
+
+        // [
+        // "link" => "/contacts/move-class",
+        // "type" => "link",
+        // "icon" => "fa fa-mortar-board",
+        // "text" => "Chuyển lớp",
+        // ],
+      ],
+    ],
+
     [
       "title" => "Báo Cáo Thống Kê",
       "items" => [

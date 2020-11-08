@@ -14,8 +14,13 @@ class TrangCaNhanController extends Controller
     } else {
       $user = User::find($id);
     }
-    switch ($user->vaitro) {
-      case 'student':
+    switch ($user->role_id) {
+      case '1':
+        $data = $user;
+        return view('backend.administrators.trangcanhan', [
+          'user' => $data,
+        ]);
+      case '2':
         $dslophoc = $user->hocSinh
           ->dsLopHoc()
           ->with('lophoc')
@@ -26,16 +31,15 @@ class TrangCaNhanController extends Controller
           'user' => $data,
           'lophocs' => $dslophoc,
         ]);
-      case 'teacher':
+      case '3':
         $dslophoc = $user->giaoVien->dslophoc;
         $data = $user;
         return view('backend.teachers.trangcanhan.trangcanhan', [
           'user' => $data,
           'lophocs' => $dslophoc,
         ]);
-      case 'contact':
+      case '4':
         $data = $user;
-
         return view('backend.contact.trangcanhan.trangcanhan', [
           'user' => $data,
         ]);

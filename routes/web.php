@@ -10,7 +10,6 @@ use App\Http\Controllers\Teachers\BaiTapController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\students\XemNhanXetController;
 use App\Http\Controllers\Teachers\NhanXetHocSinhController;
-use App\Models\LichSuHocPhi;
 
 Route::get('/', function () {
   return view('frontend.trangchu');
@@ -19,6 +18,7 @@ Route::get('/', function () {
 Route::middleware(['auth', 'web'])->group(function () {
   Route::get('/dashboard', [DashboardController::class, 'index']);
   Route::prefix('/administrators')->group(function () {
+    Route::resource('users', 'Administrators\UserController');
     Route::resource('courses', "Administrators\KhoaHocController");
     Route::resource('staffs', "Administrators\NhanVienController");
     Route::resource('teachers', "Administrators\TeacherController");
@@ -50,12 +50,8 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('danhsachbaitap', 'Lessons\DanhSachBaiTapController');
     Route::resource('calendar', 'Teachers\LichController');
     Route::resource('nhanxethocsinh', 'Teachers\NhanXetHocSinhController');
-    // Route::resource('trangcanhan', 'Teachers\TrangCaNhanController');
     Route::resource('sanphamcuoikhoa', 'Teachers\SanPhamCuoiKhoaController');
 
-    // Route::get('/nhanxetmodal/{hocsinhid}/{buoihocid}/{lophocid}/{khoahocid}', function ($hocsinhid, $buoihocid, $lophocid, $khoahocid) {
-    //   return view('backend.teachers.classes.nhanxet-modal', ['hocsinhid' => $hocsinhid, 'buoihocid' => $buoihocid, 'lophocid' => $lophocid, 'khoahocid' => $khoahocid]);
-    // });
     Route::get('/nhanxet/{hocsinhid}/{buoihocid}/{lophocid}/{khoahocid}', [
       NhanXetHocSinhController::class,
       'NhanXet',
@@ -101,7 +97,6 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
     Route::resource('list-teachers', "Contacts\GiangVienController");
     Route::resource('phanlop', 'Administrators\PhanLopController');
-    // Route::resource('trangcanhan', 'Contacts\TrangCaNhanController');
     Route::get('checkin-teachers', function () {
       return view('backend.contact.checkIn');
     });
@@ -124,7 +119,6 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('my-comment', 'Students\NhanXetGiaoVienController');
     Route::resource('review-khoahoc', 'Students\NhanXetKhoahocController');
     Route::resource('review-giaovien', 'Students\NhanXetGiaoVienController');
-    // Route::resource('trangcanhan', 'Students\TrangCaNhanController');
     Route::get('review', function () {
       return view('backend.students.review');
     });
@@ -134,9 +128,6 @@ Route::middleware(['auth', 'web'])->group(function () {
     ]);
     Route::get('review', function () {
       return view('backend.students.review');
-    });
-    Route::get('/notifications', function () {
-      return view('backend.notification');
     });
   });
 });
@@ -151,14 +142,15 @@ Route::get('/messages/{id}', [ChatsController::class, 'getMessage'])->name(
   'messages'
 );
 Route::post('/messages', [ChatsController::class, 'sendMessage']);
+
 Route::get('/pro-class', function () {
   return view('proclass-detail');
-});
-
-Route::get('test', function () {
-  return view('test');
 });
 
 Route::get('/trangcanhan/{id?}', [TrangCaNhanController::class, 'show'])->name(
   'trangcanhan'
 );
+
+Route::get('/notifications', function () {
+  return view('backend.notification');
+});
