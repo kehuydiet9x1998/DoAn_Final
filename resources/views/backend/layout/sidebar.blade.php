@@ -286,12 +286,6 @@ if ($phanquyen == 'administrator') {
           "icon" => "fa fa-calendar-check-o",
           "text" => "Thời khóa biểu ",
         ],
-        [
-          "type" => "link",
-          "icon" => "fa fa-list",
-          "link" => "/contacts/khoanthu",
-          "text" => "Khoản thu",
-        ],
       ],
     ],
     [
@@ -333,6 +327,13 @@ if ($phanquyen == 'administrator') {
     [
       "title" => "Quản Lý Tài Chính",
       "items" => [
+        [
+          "type" => "link",
+          "icon" => "fa fa-list",
+          "link" => "/contacts/khoanthu",
+          "text" => "Khoản thu",
+        ],
+
         [
           "type" => "link",
           "icon" => "fa fa-dollar",

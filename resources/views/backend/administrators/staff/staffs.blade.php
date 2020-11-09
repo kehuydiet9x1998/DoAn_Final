@@ -27,7 +27,6 @@
                         <th>Họ và tên</th>
                         <th>Giới tính</th>
                         <th>SĐT</th>
-                        {{-- <th>Email</th> --}}
                         <th>Tình trạng</th>
                         <th>Chức vụ</th>
                         <th>Action</th>
@@ -57,10 +56,8 @@
                           </div>
 
                         </td>
-                        {{-- <td>{{$staff->hodem .' '.$staff->ten}}</td> --}}
                         <td>{{$staff->gioitinh}}</td>
                         <td>{{$staff->sodienthoai}}</td>
-                        {{-- <td>{{$staff->email}}</td> --}}
                         <td><label for="" class="badge badge-success">{{$staff->tinhtrang}}</label></td>
                         <td><label for="" class="badge badge-secondary">{{$staff->chucvu->ten}}</label></td>
                         <td style="display: flex; width: 64px;">

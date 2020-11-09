@@ -72,11 +72,13 @@
                               <td style="white-space: normal; background-color: #{{str_pad(dechex(mt_rand(0xAA  , 0xFF)), 2, '0', STR_PAD_LEFT).
                             str_pad(dechex(mt_rand(0xAA  , 0xFF)), 2, '0', STR_PAD_LEFT).
                             str_pad(dechex(mt_rand(0xAA  , 0xFF)), 2, '0', STR_PAD_LEFT)}}; font-weight: 600">
-                                {{$item->tenlop}}
-                                <p class=" m-b-0 text-muted">Thời gian: {{$item->lichhoc[0]->caHoc->thoigianbatdau}} - {{$item->lichhoc[0]->caHoc->thoigianketthuc}} </p>
-                                <p class=" m-b-0 text-muted">Khóa học: {{$item->khoaHoc->tenkhoahoc}}</p>
-                                <p class=" m-b-0 text-muted">Bài học : {{$item->sobuoidahoc}}/{{$item->sobuoi}}</p>
-                                <p class=" m-b-0 text-muted">Phòng học: {{$item->lichhoc[0]->phonghoc->tenphong}}</p>
+                                <a href="{{ route('allclass.show', $item->id) }}">
+                                  {{$item->tenlop}}
+                                  <p class=" m-b-0 text-muted">Thời gian: {{$item->lichhoc[0]->caHoc->thoigianbatdau}} - {{$item->lichhoc[0]->caHoc->thoigianketthuc}} </p>
+                                  <p class=" m-b-0 text-muted">Khóa học: {{$item->khoaHoc->tenkhoahoc}}</p>
+                                  <p class=" m-b-0 text-muted">Bài học : {{$item->sobuoidahoc}}/{{$item->sobuoi}}</p>
+                                  <p class=" m-b-0 text-muted">Phòng học: {{$item->lichhoc[0]->phonghoc->tenphong}}</p>
+                                </a>
                               </td>
                             </tr>
                             @endforeach
@@ -99,4 +101,32 @@
     </div>
   </div>
 </div>
+@endsection
+
+
+@section('script')
+<script>
+  $(document).ready(function() {
+    $('.event').on("dragstart", function(event) {
+      var dt = event.originalEvent.dataTransfer;
+      dt.setData('Text', $(this).attr('id'));
+    });
+    $('#our_table td').on("dragenter dragover drop", function(event) {
+      event.preventDefault();
+      if (event.type === 'drop') {
+        var data = event.originalEvent.dataTransfer.getData('Text', $(this).attr('id'));
+
+        de = $('#' + data).detach();
+        if (event.originalEvent.target.tagName === "DIV") {
+          de.insertBefore($(event.originalEvent.target));
+        } else {
+          de.appendTo($(this));
+        }
+      };
+    });
+  });
+
+</script>
+
+
 @endsection
