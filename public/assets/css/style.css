@@ -12827,3 +12827,14 @@ table.dataTable.display tbody tr.child {
 table.dataTable.display tbody tr table tr:hover {
   background: none;
 }
+
+
+.bootstrap-select .dropdown-menu {
+  max-width: 200px;
+}
+
+.bootstrap-select .dropdown-menu span.text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

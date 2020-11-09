@@ -40,7 +40,7 @@
                               <div class="d-inline-block">
                                 <div class="row">
                                   <div class="col-md-3">
-                                    <img src="{{asset($user->anhdaidien)}}" class="img-fluid rounded-circle" width="40px" alt="">
+                                    <img src="{{asset($user->anhdaidien)}}" class="img-fluid rounded-circle" width="80px" alt="">
 
 
                                   </div>

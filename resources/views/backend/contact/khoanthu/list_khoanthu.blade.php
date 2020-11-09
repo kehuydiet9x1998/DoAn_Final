@@ -58,7 +58,7 @@
                           @endphp
 
                           <h5 class="mb-0">
-                            <button class="btn btn-secondary btn-sm bnt-round" data-toggle="collapse" data-target="#collapse{{ $khoanthu->tenkhoanthu }}" aria-expanded="true" aria-controls="collapseOne">
+                            <button class="btn btn-secondary btn-sm " data-toggle="collapse" data-target="#collapse{{ $khoanthu->tenkhoanthu }}" aria-expanded="true" aria-controls="collapseOne">
                               {{ $hocsinhchuadong->count() }} học sinh chưa đóng <i class="fa fa-caret-down"></i>
                             </button>
                           </h5>
@@ -86,12 +86,12 @@
                             <div class="modal fade show" id="show-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
                             </div>
                           </div>
-                          <button class="my_edit" data-id="{{$khoanthu->tenkhoanthu}}" data-toggle="modal" data-target="#edit-Modal" style="background-color: white; border: none">
+                          <button class="my_edit" data-id="{{urlencode( $khoanthu->tenkhoanthu)}}" data-toggle="modal" data-target="#edit-Modal" style="background-color: white; border: none">
                             <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green" style="margin-right: 3px"></i>
                           </button>
                           <!-- Modal Sua -->
 
-                          <form action="{{route('students.destroy', $khoanthu->tenkhoanthu)}}" method="post">
+                          <form action="{{route('khoanthu.destroy', $khoanthu->tenkhoanthu)}}" method="post">
                             @method('DELETE')
                             @csrf
                             <button style="border: none; padding: 2px 0px; margin-top: -1px; background-color: white" onclick="return confirm ('Bạn có muốn xóa không')">
@@ -140,10 +140,13 @@
     // });
     $('.my_edit').click(function(e) {
       id = $(this).data('id')
-      $('#edit-Modal').load("/administrators/teachers/" + id + '/edit');
+      $('#edit-Modal').load('').load("/contacts/khoanthu/" + id + '/edit', function() {
+        $('#edit-hp').selectpicker('refresh');
+      });
       $('#edit-Modal').show();
       $('body').addClass('modal-open');
       $('.modal-backdrop').show();
+
 
     })
   });
@@ -151,6 +154,37 @@
 </script>
 
 <script src="{{asset('assets/js/bootstrap-select.min.js')}}"></script>
+<script>
+  var $select = $('select');
+
+  $select.selectpicker();
+
+  $select.data('selectpicker').$menu.find('li a').each(function() {
+    var $link = $(this)
+      , $text = $link.find('span.text');
+
+    $link.on('mouseenter', function() {
+      var $clone = $text.clone().appendTo('body')
+        , diff = ($clone.width() - $text.width());
+
+      $clone.remove();
+
+      if (diff > 0) {
+        $text.stop(true).delay(250).animate({
+          textIndent: '-' + diff + 'px'
+        });
+      }
+    });
+
+    $link.on('mouseleave', function() {
+      $text.stop(true).delay(250).animate({
+        textIndent: 0
+      });
+    });
+  });
+
+</script>
+
 
 
 @endsection

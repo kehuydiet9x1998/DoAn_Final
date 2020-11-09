@@ -55,6 +55,7 @@ if ($phanquyen == 'contact') {
           "link" => "/contacts/students",
           "text" => "Học sinh",
         ],
+
         // [
         //   "link" => "/contacts/phanlop",
         //   "type" => "link",
@@ -80,6 +81,13 @@ if ($phanquyen == 'contact') {
     [
       "title" => "Quản Lý Tài Chính",
       "items" => [
+        [
+          "type" => "link",
+          "icon" => "fa fa-list",
+          "link" => "/contacts/khoanthu",
+          "text" => "Khoản thu",
+        ],
+
         [
           "type" => "link",
           "icon" => "fa fa-dollar",
@@ -245,7 +253,10 @@ if ($phanquyen == 'administrator') {
           "type" => "dropdown",
           "items" => [
             ["text" => "Cài đặt", "link" => "/baocao"],
-            ["text" => "Danh sách người dùng", "link" => "/administrators/users"],
+            [
+              "text" => "Danh sách người dùng",
+              "link" => "/administrators/users",
+            ],
             ["text" => "Phân quyền", "link" => "/baocao"],
             ["text" => "Sao lưu / Phục hồi", "link" => "/baocao"],
           ],

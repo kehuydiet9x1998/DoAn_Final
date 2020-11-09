@@ -49,7 +49,24 @@ class KhoanThuController extends Controller
    */
   public function store(Request $request)
   {
-    //
+    if (sizeof($request->hoc_phi_id) > 0) {
+      foreach ($request->hoc_phi_id as $hoc_phi_id) {
+        KhoanThu::updateOrInsert(
+          [
+            'hoc_phi_id' => $hoc_phi_id,
+            'tenkhoanthu' => $request->tenkhoanthu,
+            'sotien' => str_replace(',', '', $request->sotien),
+          ],
+          [
+            'ngaybatdau' => $request->ngaybatdau,
+            'ngayketthuc' => $request->ngayketthuc,
+            'trangthai' => 'Chưa đóng',
+          ]
+        );
+      }
+    }
+
+    return back();
   }
 
   /**
@@ -69,9 +86,19 @@ class KhoanThuController extends Controller
    * @param  \App\Models\KhoanThu  $khoanthu
    * @return \Illuminate\Http\Response
    */
-  public function edit(KhoanThu $khoanthu)
+  public function edit($tenkhoanthu)
   {
-    //
+    $tenkhoanthu = urldecode($tenkhoanthu);
+    $khoanthu = KhoanThu::firstWhere('tenkhoanthu', 'like', $tenkhoanthu);
+    $hocphis = HocPhi::all();
+    $khoanthu_hocphi = KhoanThu::where('tenkhoanthu', 'like', $tenkhoanthu)
+      ->with('hocphi')
+      ->get()
+      ->pluck('hocphi');
+    return view(
+      'backend.contact.khoanthu.edit_khoanthu',
+      compact('khoanthu', 'hocphis', 'khoanthu_hocphi')
+    );
   }
 
   /**
@@ -81,9 +108,28 @@ class KhoanThuController extends Controller
    * @param  \App\Models\KhoanThu  $khoanthu
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, KhoanThu $khoanthu)
+  public function update(Request $request, $tenkhoanthu)
   {
-    //
+    if (sizeof($request->hoc_phi_id) > 0) {
+      KhoanThu::where('tenkhoanthu', $tenkhoanthu)->forceDelete();
+
+      foreach ($request->hoc_phi_id as $hoc_phi_id) {
+        KhoanThu::updateOrInsert(
+          [
+            'hoc_phi_id' => $hoc_phi_id,
+            'tenkhoanthu' => $request->tenkhoanthu,
+            'sotien' => str_replace(',', '', $request->sotien),
+          ],
+          [
+            'ngaybatdau' => $request->ngaybatdau,
+            'ngayketthuc' => $request->ngayketthuc,
+            'trangthai' => 'Chưa đóng',
+          ]
+        );
+      }
+    }
+
+    return back();
   }
 
   /**
@@ -92,8 +138,8 @@ class KhoanThuController extends Controller
    * @param  \App\Models\KhoanThu  $khoanthu
    * @return \Illuminate\Http\Response
    */
-  public function destroy(KhoanThu $khoanthu)
+  public function destroy($tenkhoanthu)
   {
-    //
+    KhoanThu::where('tenkhoanthu', $tenkhoanthu)->delete();
   }
 }

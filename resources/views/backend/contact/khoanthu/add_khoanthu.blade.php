@@ -11,7 +11,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form method="post" action="{{route('students.store')}}" novalidate="">
+          <form method="post" action="{{route('khoanthu.store')}}" novalidate="">
             <div class="modal-body">
               <input type="hidden" name="_token" value="{{csrf_token()}}">
               {{ csrf_field() }}
@@ -48,7 +48,7 @@
               <div class="form-group row">
                 <label class="col-sm-3 col-form-label">Chọn đối tượng</label>
                 <div class="col-sm-9">
-                  <select name="hoc_phi_id" class="selectpicker form-control form-control-primary fill" data-live-search="true" data-actions-box="true" title="-- Chọn học sinh --" multiple>
+                  <select name="hoc_phi_id[]" class="selectpicker form-control form-control-primary fill" data-live-search="true" data-actions-box="true" title="-- Chọn học sinh --" multiple>
                     @foreach($hocphis as $hocphi)
                     <option value="{{ $hocphi->id }}">{{ $hocphi->hocsinh->id. ' - '. $hocphi->hocsinh->hodem . ' ' . $hocphi->hocsinh->ten
                     }}</option>
