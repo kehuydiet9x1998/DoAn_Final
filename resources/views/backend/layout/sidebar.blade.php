@@ -278,7 +278,7 @@ if ($phanquyen == 'administrator') {
         [
           "type" => "link",
           "icon" => "fa fa-list",
-          "link" => "/contacts/hocphis",
+          "link" => "/contacts/khoanthu",
           "text" => "Khoản thu",
         ],
       ],

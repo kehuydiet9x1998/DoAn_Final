@@ -108,6 +108,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::get('print/{id}', [PrintController::class, 'printPhieuThu']);
     Route::get('printphieuchi/{id}', [PrintController::class, 'printPhieuChi']);
     Route::resource('phieuchi', 'Contacts\PhieuChiController');
+    Route::resource('khoanthu', 'Contacts\KhoanThuController');
   });
 
   Route::prefix('/student')->group(function () {
