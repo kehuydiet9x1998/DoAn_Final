@@ -40,7 +40,8 @@
                               <div class="d-inline-block">
                                 <div class="row">
                                   <div class="col-md-3">
-                                    <img src="{{asset($user->anhdaidien)}}" class="img-fluid rounded-circle" width="80px" alt="">
+                                    <img src="{{asset($user->anhdaidien)}}" class="img-fluid rounded-circle"
+                                      width="80px" alt="">
 
 
                                   </div>
@@ -84,17 +85,21 @@
                         <td style="display: flex; width: 64px;">
 
                           <div>
-                            <button class="my_edit" data-id="{{$user->id}}" data-toggle="modal" data-target="#edit-Modal" style="border: none; background-color: transparent">
+                            <button class="my_edit" data-id="{{$user->id}}" data-toggle="modal"
+                              data-target="#edit-Modal" style="border: none; background-color: transparent">
                               <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i>
                             </button>
-                            <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
+                            <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog"
+                              style="z-index: 1050;display: none; padding-right: 17px;">
                             </div>
                           </div>
                           <div>
                             <form action="{{route('users.destroy', $user->id)}}" method="post">
                               @method('DELETE')
                               @csrf
-                              <button style="border: none; padding:0px; margin: -1px 0px 0px -15px; background-color: transparent" onclick="return confirm ('Bạn có muốn xóa không')">
+                              <button
+                                style="border: none; padding:0px; margin: -1px 0px 0px -15px; background-color: transparent"
+                                onclick="return confirm ('Bạn có muốn xóa không')">
                                 <i class="feather icon-trash-2 f-w-600 f-16 m-r-15 text-c-red" style="margin:0;">
                                 </i>
                               </button>
@@ -125,8 +130,8 @@
 
 <script>
   $(document).
-  ready(function() {
-    $('.btn.btn-primary').click(function(e) {
+  ready(function () {
+    $('.btn.btn-primary').click(function (e) {
       id = $(this).data('id');
       $('#show-Modal').load("/administrators/users/" + id);
       $('#show-Modal').show();
@@ -135,7 +140,7 @@
 
       $('.modal-backdrop').show();
     });
-    $('.my_edit').click(function(e) {
+    $('.my_edit').click(function (e) {
       id = $(this).data('id')
       $('#edit-Modal').load("/administrators/users/" + id + '/edit');
       $('#edit-Modal').show();

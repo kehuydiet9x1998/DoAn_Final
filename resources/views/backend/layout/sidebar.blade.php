@@ -69,12 +69,12 @@ if ($phanquyen == 'contact') {
           "link" => "/contacts/lichtrainghiem",
           "text" => "Lịch hẹn",
         ],
-        // [
-        //   "type" => "link",
-        //   "icon" => "feather icon-home",
-        //   "link" => "/contacts/feedbacks",
-        //   "text" => "Nhận xét",
-        // ],
+        [
+          "type" => "link",
+          "icon" => "feather icon-home",
+          "link" => "/contacts/feedbacks",
+          "text" => "Phản hồi",
+        ],
       ],
     ],
 

@@ -53,7 +53,7 @@ class HocPhiController extends Controller
 
     $hocphi = HocPhi::find($request['hoc_phi_id']);
     $hocphi->updateHocPhi();
-    return Redirect::to('/contacts/print/' . $hocphi->id);
+    return Redirect::to('/contacts/print/' . $lichsu->id);
   }
 
   /**
