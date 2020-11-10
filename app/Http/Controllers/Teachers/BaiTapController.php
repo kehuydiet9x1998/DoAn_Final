@@ -24,7 +24,6 @@ class BaiTapController extends Controller
       ->get()
       ->pluck('dsbuoihoc')
       ->collapse();
-    // return $dsbuoihoc;
     return view('backend.teachers.chambai', compact('dsbuoihoc'));
   }
 

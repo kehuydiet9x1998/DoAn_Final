@@ -17,7 +17,7 @@ class LopHocController extends Controller
    */
   public function index()
   {
-    $classes = LopHoc::paginate(10);
+    $classes = auth()->user()->giaovien->dslophoc()->get();
     return view('backend.teachers.classes.classes', compact('classes'));
   }
 
