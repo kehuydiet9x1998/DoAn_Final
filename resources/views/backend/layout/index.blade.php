@@ -115,7 +115,6 @@
     <script type="text/javascript" src="{{asset('assets/js/bootstrap-datetimepicker.min.js')}}"></script>
 
 
-
     <script type="text/javascript" src="{{asset('assets/js/jquery.dataTables.min-2.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/datatables.bootstrap4.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/datatables.buttons.min-2.js')}}"></script>
