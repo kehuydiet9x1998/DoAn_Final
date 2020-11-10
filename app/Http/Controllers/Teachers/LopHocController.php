@@ -1,7 +1,9 @@
-  <?php namespace App\Http\Controllers\Teachers;
+<?php
+
+  // prettier-ignore
+  namespace App\Http\Controllers\Teachers;
 
   use App\Http\Controllers\Controller;
-  use App\Models\KhoaHoc;
   use App\Models\LopHoc;
   use App\Models\NhanXetHocSinh;
   use Illuminate\Http\Request;
@@ -99,3 +101,5 @@
       //
     }
   }
+
+  ?>

@@ -43,20 +43,20 @@ class CheckInController extends Controller
   /**
    * Display the specified resource.
    *
-   * @param  \App\Models\CheckIn  $checkIn
+   * @param  \App\Models\CheckIn  $attendance
    * @return \Illuminate\Http\Response
    */
-  public function show(CheckIn $checkIn)
+  public function show(CheckIn $attendance)
   {
   }
 
   /**
    * Show the form for editing the specified resource.
    *
-   * @param  \App\Models\CheckIn  $checkIn
+   * @param  \App\Models\CheckIn  $attendance
    * @return \Illuminate\Http\Response
    */
-  public function edit(CheckIn $checkIn)
+  public function edit(CheckIn $attendance)
   {
     //
   }
@@ -65,10 +65,10 @@ class CheckInController extends Controller
    * Update the specified resource in storage.
    *
    * @param  \Illuminate\Http\Request  $request
-   * @param  \App\Models\CheckIn  $checkIn
+   * @param  \App\Models\CheckIn  $attendance
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, CheckIn $checkIn)
+  public function update(Request $request, CheckIn $attendance)
   {
     //
   }
@@ -76,11 +76,12 @@ class CheckInController extends Controller
   /**
    * Remove the specified resource from storage.
    *
-   * @param  \App\Models\CheckIn  $checkIn
+   * @param  \App\Models\CheckIn  $attendance
    * @return \Illuminate\Http\Response
    */
-  public function destroy(CheckIn $checkIn)
+  public function destroy(CheckIn $attendance)
   {
-    //
+    $attendance->delete();
+    return back();
   }
 }

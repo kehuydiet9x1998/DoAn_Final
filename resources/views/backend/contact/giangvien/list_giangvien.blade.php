@@ -45,7 +45,6 @@
                             <div class="col-md-3">
                               <img src="{{asset($teacher->user->anhdaidien)}}" class="img-fluid rounded-circle " style="width: 40px" alt="">
                             </div>
-
                             <div class="col-md-8">
                               <div class="d-inline-block align-middle">
                                 <div class="d-inline-block">
@@ -56,8 +55,6 @@
                                 </div>
                               </div>
                             </div>
-
-
                           </div>
 
                         </td>

@@ -141,8 +141,8 @@
                                     <span>---</span>
                                     <div class="sub-text">{{$buoiHoc->ngayhoc}}</div>
                                     <div class="sub-title">
-                                      {{$buoiHoc->checkin->giocheckin}}-
-                                      {{$buoiHoc->checkin->giocheckout}}</div>
+                                      {!! $buoiHoc->checkin->giocheckin!!}-
+                                      {!! $buoiHoc->checkin->giocheckout!!}</div>
                                   </li>
                                   @endforeach
                                 </ul>

@@ -18,7 +18,8 @@ class CreateCheckInsTable extends Migration
       $table->time('giocheckin')->nullable();
       $table->time('giocheckout')->nullable();
       $table->integer('ketqua')->nullable();
-      $table->text('ghichu');
+      $table->text('ghichu')->nullable();
+      $table->string('trangthai')->default('Chưa xác nhận');
       $table->unsignedBigInteger('buoi_hoc_id');
       $table
         ->foreign('buoi_hoc_id')

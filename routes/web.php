@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Administrators\ChamCongController;
 use App\Http\Controllers\Administrators\PhanLopController;
 use App\Http\Controllers\ChatsController;
 use App\Http\Controllers\Contacts\HocPhiController;
@@ -27,10 +28,14 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('baitap', "Administrators\BaiTapController");
     Route::resource('phanlop', 'Administrators\PhanLopController');
     Route::resource('calendar', 'Administrators\LichController');
-
-    Route::get('contracts', function () {
-      return view('backend.administrators.contracts');
-    });
+    Route::resource('attendance', 'Administrators\ChamCongController');
+    Route::get('attendance/filter/{doituong}/{ngaycham}', [
+      ChamCongController::class,
+      'filter',
+    ]);
+    // Route::get('contracts', function () {
+    //   return view('backend.administrators.contracts');
+    // });
     Route::get('payroll', function () {
       return view('backend.administrators.payroll');
     });
