@@ -25,6 +25,7 @@
               </tr>
             </thead>
             <tbody>
+              @if($checkins->count()>0)
               @foreach($checkins as $checkin)
               @php
               $class = $checkin->buoihoc->lophoc;
@@ -53,34 +54,42 @@
                 </td>
                 <td>{!! $checkin->giocheckin !!}</td>
                 <td>{!! $checkin->giocheckout !!}</td>
-                <td><label class="badge badge-inverse-primary">Chưa xác nhận</label></td>
+                <td><label class="badge badge-inverse-{{  $checkin->trangthai == 'Chưa xác nhận' ? 'warning' : ($checkin->trangthai == 'Không hợp lệ' ? 'danger' : 'success')}}">{{ $checkin->trangthai }}</label></td>
                 <td>
                   <ul style="display: flex">
                     <li>
-                      <button type="button" class="btn btn-primary waves-effect" style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent">
-                        <i class="fa fa-check m-r-15 text-c-blue"></i>
+                      <button type="button" class="btn btn-primary waves-effect confirm" data-id={{ $checkin->id }} onclick="confirm()" style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent">
+                        <i class="fa fa-check m-r-15 text-c-green"></i>
+                      </button>
+                      <button type="button" class="btn btn-danger waves-effect cancel" data-id={{ $checkin->id }} onclick="cancel()" style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent">
+                        <i class="fa fa-times f-w-600 f-16 m-r-15 text-c-red"></i>
                       </button>
                     </li>
-                    <li>
-                      <button style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent" data-toggle="modal" data-target="#edit-Modal" data-id="{{$class->id}}" class="my_edit">
-                        <i class="fa fa-edit f-w-600 f-16 m-r-15 text-c-green" style="margin:0; font-size: 20px"></i></button>
-                      <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;"></div>
-                    </li>
-                    <li>
-                      <form action="{{route('allclass.destroy', $class->id)}}" method="post">
-                        @method('DELETE')
-                        @csrf
-                        <button style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent" onclick="return confirm ('Bạn có muốn xóa không')">
-                          <i class="fa fa-trash-o f-w-600 f-16 m-r-15 text-c-red" style="margin:0; font-size: 20px"></i></button>
-                      </form>
-                    </li>
+                    {{-- <li>
+                      <button style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent" data-toggle="modal" data-target="#edit-Modal" data-id="{{$checkin->id}}" class="my_edit">
+                    <i class="fa fa-edit f-w-600 f-16 m-r-15 text-c-green" style="margin:0; font-size: 20px"></i></button>
+                    <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;"></div>
+                    </li> --}}
+                    {{-- <li>
+                      <form action="{{route('attendance.destroy', $checkin->id)}}" method="post">
+                    @method('DELETE')
+                    @csrf
+                    <button style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent" onclick="return confirm ('Bạn có muốn xóa không')">
+                      <i class="fa fa-trash-o f-w-600 f-16 m-r-15 text-c-red" style="margin:0; font-size: 20px"></i></button>
+                    </form>
+                    </li> --}}
                   </ul>
                 </td>
               </tr>
 
               @endforeach
 
-
+              @else
+              <tr>
+                <td colspan="12">
+                  <i style="text-align:center">Chưa có dữ liệu checkin!</i></td>
+              </tr>
+              @endif
             </tbody>
           </table>
         </div>
@@ -92,3 +101,11 @@
     </div>
   </div>
 </div>
+<script>
+  $(document).ready(function() {
+    $('.my_edit').click(function() {
+      $('edit-Modal').load()
+    })
+  });
+
+</script>

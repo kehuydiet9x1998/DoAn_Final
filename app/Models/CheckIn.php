@@ -19,6 +19,11 @@ class CheckIn extends Model
     return $this->belongsTo(BuoiHoc::class);
   }
 
+  public function nhanVien()
+  {
+    return $this->belongsTo(NhanVien::class);
+  }
+
   public function getGiocheckinAttribute($value)
   {
     if ($value == null) {

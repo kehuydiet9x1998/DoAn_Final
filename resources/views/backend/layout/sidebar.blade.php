@@ -315,6 +315,14 @@ if ($phanquyen == 'administrator') {
           "icon" => "fa fa-check-square-o",
           "text" => "Chấm công",
         ],
+
+        [
+          "link" => "/administrators/attendance/report",
+          "type" => "link",
+          "icon" => "fa fa-book",
+          "text" => "Báo cáo chấm công",
+        ],
+
         [
           "link" => "/administrators/payroll",
           "type" => "link",

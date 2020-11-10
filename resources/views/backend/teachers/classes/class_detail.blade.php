@@ -122,9 +122,13 @@
                                     <button class="btn waves-effect waves-light buoihoc" style="border-radius: 50%; padding: 5px 10px" data-id="{{$buoiHoc->id}}">{{$key+1}}</button>
                                     <span>---</span>
                                     <div class="sub-text">{{$buoiHoc->ngayhoc}}</div>
+                                    @if($buoiHoc->checkin)
                                     <div class="sub-title">
                                       {!! $buoiHoc->checkin->giocheckin !!}-
                                       {!! $buoiHoc->checkin->giocheckout !!}</div>
+                                    @else
+                                    ... - ...
+                                    @endif
                                   </li>
                                   @endforeach
                                 </ul>

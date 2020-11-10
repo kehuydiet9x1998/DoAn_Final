@@ -30,11 +30,27 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('baitap', "Administrators\BaiTapController");
     Route::resource('phanlop', 'Administrators\PhanLopController');
     Route::resource('calendar', 'Administrators\LichController');
+
+    Route::get('attendance/report', [ChamCongController::class, 'report']);
+    Route::get('attendance/showreport/{doituong}/{thang}', [
+      ChamCongController::class,
+      'showreport',
+    ]);
     Route::resource('attendance', 'Administrators\ChamCongController');
     Route::get('attendance/filter/{doituong}/{ngaycham}', [
       ChamCongController::class,
       'filter',
     ]);
+
+    Route::get('attendance/confirm/{attendance}', [
+      ChamCongController::class,
+      'confirm',
+    ])->name('confirm');
+    Route::get('attendance/cancel/{attendance}', [
+      ChamCongController::class,
+      'cancel',
+    ])->name('cancel');
+
     // Route::get('contracts', function () {
     //   return view('backend.administrators.contracts');
     // });
@@ -104,7 +120,10 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
     Route::resource('list-teachers', "Contacts\GiangVienController");
     Route::resource('phanlop', 'Administrators\PhanLopController');
-    Route::get('nhanxetgiaovien/{id}', [FeedBackController::class, 'nhanxetgiaovien']);
+    Route::get('nhanxetgiaovien/{id}', [
+      FeedBackController::class,
+      'nhanxetgiaovien',
+    ]);
     Route::get('checkin-teachers', function () {
       return view('backend.contact.checkIn');
     });

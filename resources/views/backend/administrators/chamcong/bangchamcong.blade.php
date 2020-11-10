@@ -34,9 +34,9 @@
 
                   <div class="col-md-5">
                     <div class="form-group row">
-                      <label class="col-sm-4 col-form-label">Chọn ngày</label>
+                      <label class="col-sm-4 col-form-label">Chọn tháng</label>
                       <div class="col-sm-8">
-                        <input type="date" class="form-control" id="ngaycham">
+                        <input type="month" class="form-control" id="ngaycham">
                         <span class="messages"></span>
                       </div>
                     </div>
@@ -69,13 +69,13 @@
 
   $(document).ready(function() {
     $('#filter').click(function() {
-      $('#bangchamcong').load('/administrators/attendance/filter/' + $('#doituong').val() + '/' + $('#ngaycham').val());
+      $('#bangchamcong').load('/administrators/attendance/showreport/' + $('#doituong').val() + '/' + $('#ngaycham').val());
     })
   });
 
 </script>
 
-<script>
+{{-- <script>
   function confirm() {
     id = $(event.target).parent().data('id');
     $.get('attendance/confirm/' + id, function() {
@@ -91,7 +91,7 @@
 
   }
 
-</script>
+</script> --}}
 
 
 

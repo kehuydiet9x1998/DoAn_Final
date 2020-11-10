@@ -5,8 +5,7 @@
        <div class="card-header">
          <div class="card-header-left">
            <h6>{{$class->khoaHoc->tenkhoahoc}} - BUỔI HỌC: {{$class->sobuoidahoc}}/{{$class->sobuoi}}</h6>
-           <div>{!! $lesson->checkin->giocheckin !!} - {!!$lesson->checkin->giocheckout!!} | {{$lesson->ngayhoc}} </div>
-
+           @if($lesson->checkin)<div>{!! $lesson->checkin->giocheckin !!} - {!!$lesson->checkin->giocheckout!!} | {{$lesson->ngayhoc}} </div>@endif
          </div>
        </div>
        <div class="card-block">
