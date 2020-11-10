@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Administrators\PhanLopController;
 use App\Http\Controllers\ChatsController;
+use App\Http\Controllers\Contacts\FeedBackController;
 use App\Http\Controllers\Contacts\HocPhiController;
 use App\Http\Controllers\TrangCaNhanController;
 use App\Http\Controllers\DashboardController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\Teachers\BaiTapController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\students\XemNhanXetController;
 use App\Http\Controllers\Teachers\NhanXetHocSinhController;
+use App\Models\NhanXetGiaoVien;
 
 Route::get('/', function () {
   return view('frontend.trangchu');
@@ -97,6 +99,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
     Route::resource('list-teachers', "Contacts\GiangVienController");
     Route::resource('phanlop', 'Administrators\PhanLopController');
+    Route::get('nhanxetgiaovien/{id}', [FeedBackController::class, 'nhanxetgiaovien']);
     Route::get('checkin-teachers', function () {
       return view('backend.contact.checkIn');
     });
@@ -108,6 +111,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::get('print/{id}', [PrintController::class, 'printPhieuThu']);
     Route::get('printphieuchi/{id}', [PrintController::class, 'printPhieuChi']);
     Route::resource('phieuchi', 'Contacts\PhieuChiController');
+    Route::resource('khoanthu', 'Contacts\KhoanThuController');
   });
 
   Route::prefix('/student')->group(function () {

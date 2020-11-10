@@ -10,6 +10,23 @@
               <div class="card-header">
                 <div class="row">
                   <div class="col-xs-12 col-sm-12 col-md-6">
+                    <h5>Chọn tiêu chí</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="card-block">
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card table-card">
+              <div class="card-header">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-6">
                     <h5>Danh sách nhân viên</h5>
                   </div>
 
@@ -89,6 +106,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>

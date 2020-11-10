@@ -55,6 +55,7 @@ if ($phanquyen == 'contact') {
           "link" => "/contacts/students",
           "text" => "Học sinh",
         ],
+
         // [
         //   "link" => "/contacts/phanlop",
         //   "type" => "link",
@@ -68,18 +69,25 @@ if ($phanquyen == 'contact') {
           "link" => "/contacts/lichtrainghiem",
           "text" => "Lịch hẹn",
         ],
-        // [
-        //   "type" => "link",
-        //   "icon" => "feather icon-home",
-        //   "link" => "/contacts/feedbacks",
-        //   "text" => "Nhận xét",
-        // ],
+        [
+          "type" => "link",
+          "icon" => "feather icon-home",
+          "link" => "/contacts/feedbacks",
+          "text" => "Phản hồi",
+        ],
       ],
     ],
 
     [
       "title" => "Quản Lý Tài Chính",
       "items" => [
+        [
+          "type" => "link",
+          "icon" => "fa fa-list",
+          "link" => "/contacts/khoanthu",
+          "text" => "Khoản thu",
+        ],
+
         [
           "type" => "link",
           "icon" => "fa fa-dollar",
@@ -245,7 +253,10 @@ if ($phanquyen == 'administrator') {
           "type" => "dropdown",
           "items" => [
             ["text" => "Cài đặt", "link" => "/baocao"],
-            ["text" => "Danh sách người dùng", "link" => "/administrators/users"],
+            [
+              "text" => "Danh sách người dùng",
+              "link" => "/administrators/users",
+            ],
             ["text" => "Phân quyền", "link" => "/baocao"],
             ["text" => "Sao lưu / Phục hồi", "link" => "/baocao"],
           ],
@@ -274,12 +285,6 @@ if ($phanquyen == 'administrator') {
           "type" => "link",
           "icon" => "fa fa-calendar-check-o",
           "text" => "Thời khóa biểu ",
-        ],
-        [
-          "type" => "link",
-          "icon" => "fa fa-list",
-          "link" => "/contacts/hocphis",
-          "text" => "Khoản thu",
         ],
       ],
     ],
@@ -322,6 +327,13 @@ if ($phanquyen == 'administrator') {
     [
       "title" => "Quản Lý Tài Chính",
       "items" => [
+        [
+          "type" => "link",
+          "icon" => "fa fa-list",
+          "link" => "/contacts/khoanthu",
+          "text" => "Khoản thu",
+        ],
+
         [
           "type" => "link",
           "icon" => "fa fa-dollar",

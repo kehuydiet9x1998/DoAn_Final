@@ -17,6 +17,8 @@ class CreateCheckInsTable extends Migration
       $table->id();
       $table->time('giocheckin')->nullable();
       $table->time('giocheckout')->nullable();
+      $table->integer('ketqua')->nullable();
+      $table->text('ghichu');
       $table->unsignedBigInteger('buoi_hoc_id');
       $table
         ->foreign('buoi_hoc_id')

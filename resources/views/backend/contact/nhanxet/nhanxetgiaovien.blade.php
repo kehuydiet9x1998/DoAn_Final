@@ -21,7 +21,8 @@
            <div class="form-group row">
              <label class="col-sm-2 col-form-label">khóa học</label>
              <div class="col-sm-10">
-               <input type="text" class="form-control" value="{{$nhanXet->khoahoc->tenkhoahoc}}">
+               <input type="text" class="form-control"
+                 value="{{$nhanXet->giaovien->hodem.' '.$nhanXet->giaovien->ten}}">
                <span class="messages"></span>
              </div>
            </div>
