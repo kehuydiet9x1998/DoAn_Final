@@ -39,7 +39,7 @@
                       </div>
                     </div>
                   </td>
-                  <td>{{$checkin->nhanvien->chucvu->ten}}</td>
+                  <td><label for="" class="badge badge-inverse-primary">{{$checkin->nhanvien->chucvu->ten}}</label></td>
                   <td>
                     <div class="form-check form-check-inline">
                       <label class="form-check-label">
@@ -54,6 +54,11 @@
                     <div class="form-check form-check-inline ">
                       <label class="form-check-label">
                         <input class="form-check-input" type="radio" @if($checkin->ketqua == 'Nửa ngày') checked @endif name="ketqua[{{ $checkin->nhanvien->id }}]" id="ketqua" value="Nửa ngày"> Nửa ngày
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline ">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="radio" @if($checkin->ketqua == 'Muộn') checked @endif name="ketqua[{{ $checkin->nhanvien->id }}]" id="ketqua" value="Muộn"> Muộn
                       </label>
                     </div>
 

@@ -34,6 +34,11 @@ class GiaoVien extends Model
     return date('d/m/Y', strtotime($value));
   }
 
+  public function layBangChamCongThang($thang)
+  {
+    $result = ['ten' => $this->hodem . ' ' . $this->ten, 'id' => $this->id];
+  }
+
   public function user()
   {
     return $this->belongsTo(User::class);

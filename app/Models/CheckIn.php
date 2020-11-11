@@ -12,7 +12,12 @@ class CheckIn extends Model
   use SoftDeletes;
   protected $table = 'check_in';
   protected $dates = ['deleted_at'];
-  protected $fillable = ['giocheckin', 'giocheckout', 'buoi_hoc_id'];
+  protected $fillable = [
+    'giocheckin',
+    'giocheckout',
+    'buoi_hoc_id',
+    'giao_vien_id',
+  ];
 
   public function buoiHoc()
   {
@@ -22,6 +27,11 @@ class CheckIn extends Model
   public function nhanVien()
   {
     return $this->belongsTo(NhanVien::class);
+  }
+
+  public function giaoVien()
+  {
+    return $this->belongsTo(GiaoVien::class);
   }
 
   public function getGiocheckinAttribute($value)

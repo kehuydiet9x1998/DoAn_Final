@@ -27,27 +27,45 @@ class CheckInController extends Controller
    */
   public function store(Request $request)
   {
-    $date = Carbon::now('Asia/Ho_Chi_Minh');
-    $data = [
-      'giocheckin' => $date->toTimeString(),
-    ];
-    if ($request->has('giocheckout')) {
+    if (auth()->user()->role->ten == 'teacher') {
+      $date = Carbon::now('Asia/Ho_Chi_Minh');
+      $giao_vien_id = auth()->user()->giaoVien->id;
       $data = [
-        'giocheckout' => $date->toTimeString(),
+        'giocheckin' => $date->toDateTimeString(),
+        'giao_vien_id' => $giao_vien_id,
       ];
-      $checkin = CheckIn::updateOrCreate(['buoi_hoc_id' => request('buoi_hoc_id')], $data);
-      $checkin->buoiHoc->trangthai = 'Đã kết thúc';
-      $checkin->buoiHoc->save();
-      $checkin->buoiHoc->lopHoc->sobuoidahoc += 1;
-      $checkin->buoiHoc->lopHoc->save();
-    }else{
-      $checkin = CheckIn::updateOrCreate(['buoi_hoc_id' => request('buoi_hoc_id')], $data);
-      $checkin->buoiHoc->trangthai = 'Đang diễn ra';
-      $checkin->buoiHoc->save();
+      if ($request->has('giocheckout')) {
+        $data = [
+          'giocheckout' => $date->toDateTimeString(),
+          'giao_vien_id' => $giao_vien_id,
+        ];
+        $checkin = CheckIn::updateOrCreate(
+          [
+            'buoi_hoc_id' => request('buoi_hoc_id'),
+          ],
+          $data
+        );
+
+        $checkin->buoiHoc->trangthai = 'Đã kết thúc';
+        $checkin->buoiHoc->save();
+        $checkin->buoiHoc->lopHoc->sobuoidahoc += 1;
+        $checkin->buoiHoc->lopHoc->save();
+      } else {
+        $checkin = CheckIn::updateOrCreate(
+          [
+            'buoi_hoc_id' => request('buoi_hoc_id'),
+          ],
+          $data
+        );
+        $checkin->buoiHoc->trangthai = 'Đang diễn ra';
+        $checkin->buoiHoc->save();
+      }
+      $checkin->giao_vien_id = $giao_vien_id;
+      $checkin->save();
+    } else {
+      return '<script>alert("Bạn không được phép checkin")</script>';
     }
-
     return back();
-
   }
 
   /**

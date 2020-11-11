@@ -47,8 +47,8 @@
                 <td>
                   <div class="d-inline-block align-middle">
                     <div class="d-inline-block">
-                      <a style="font-size: inherit" href="{{route('trangcanhan', $class->giaovien->user->id)}}">
-                        {{$class->giaovien->hodem . ' '. $class->giaovien->ten}}
+                      <a style="font-size: inherit" href="{{route('trangcanhan', $checkin->giaovien->user->id)}}">
+                        {{$checkin->giaovien->hodem . ' '. $checkin->giaovien->ten}}
                       </a>
                     </div>
                 </td>

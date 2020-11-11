@@ -245,7 +245,7 @@ if($amount <=0) { return $textnumber="Tiền phải là số nguyên dương l�
   });
 
   window.onafterprint = function() {
-    window.close();
+    window.history.back();
   }
 
 </script>
