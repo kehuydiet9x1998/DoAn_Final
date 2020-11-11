@@ -56,13 +56,6 @@ if ($phanquyen == 'contact') {
           "text" => "Học sinh",
         ],
 
-        // [
-        //   "link" => "/contacts/phanlop",
-        //   "type" => "link",
-        //   "icon" => "fa fa-braille",
-        //   "text" => "Phân lớp",
-        // ],
-
         [
           "type" => "link",
           "icon" => "fa fa-history",
@@ -101,12 +94,6 @@ if ($phanquyen == 'contact') {
           "text" => "Phiếu chi",
         ],
 
-        // [
-        // "link" => "/contacts/move-class",
-        // "type" => "link",
-        // "icon" => "fa fa-mortar-board",
-        // "text" => "Chuyển lớp",
-        // ],
       ],
     ],
 
@@ -114,31 +101,11 @@ if ($phanquyen == 'contact') {
       "title" => "Quản Lý Đào Tạo",
       "items" => [
         [
-          "link" => "/administrators/calendar",
-          "type" => "link",
-          "icon" => "fa fa-calendar",
-          "text" => "Lịch giảng dậy",
-        ],
-
-        [
           "link" => "/contacts/list-teachers",
           "type" => "link",
           "icon" => "fa fa-slideshare",
           "text" => "Giáo viên",
         ],
-        [
-          "link" => "/contacts/checkin-teachers",
-          "type" => "link",
-          "icon" => "fa fa-hourglass-start",
-          "text" => "Checkin",
-        ],
-
-        // [
-        //   "link" => "/contacts/move-class",
-        //   "type" => "link",
-        //   "icon" => "fa fa-mortar-board",
-        //   "text" => "Chuyển lớp",
-        // ],
       ],
     ],
   ];
