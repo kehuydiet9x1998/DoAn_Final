@@ -182,3 +182,7 @@ Route::get('/trangcanhan/{id?}', [TrangCaNhanController::class, 'show'])->name(
 Route::get('/notifications', function () {
   return view('backend.notification');
 });
+
+Route::get('/test', function () {
+  return view('backend.test');
+});
