@@ -29,7 +29,7 @@
                         <th>Học sinh</th>
 
                         <th>Số tiền nợ</th>
-                        <th style="text-align: center">Trạng thái</th>
+                        {{-- <th style="text-align: center">Trạng thái</th> --}}
                         <th style="text-align: center">Cập nhật</th>
                       </tr>
                     </thead>
@@ -55,7 +55,7 @@
 
                         <td>{{number_format($hp->conno). ' đ'}}</td>
 
-                        <td style="text-align: center"><label class="badge badge-default">{{$hp->trangthai}}</label></td>
+                        {{-- <td style="text-align: center"><label class="badge badge-default">{{$hp->trangthai}}</label></td> --}}
                         <td>
                           <div>
                             <button data-id="{{$hp->id}}" class="btn waves-effect waves-light btn-round my_edit" data-toggle="modal" data-target="#edit-Modal" style="border: none; background-color: transparent;width:5px">

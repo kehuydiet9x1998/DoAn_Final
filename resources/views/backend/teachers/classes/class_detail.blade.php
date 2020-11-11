@@ -38,20 +38,20 @@
                                     <div class="card-sub">
                                       <div class="card-block" style="margin-top: -25px">
                                         <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-code"></i>Mã lớp học :</h5>
-                                        <h5 class="card-title">
-                                          <b>{{$class->tenlop}}</b></h5>
+                                        <h6 class="card-title">
+                                          <b>{{$class->tenlop}}</b></h6>
                                       </div>
                                       <div class="card-block" style="margin-top: -40px">
                                         <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-calendar"></i>Thời gian học :</h5>
-                                        <h5 class="card-title">
-                                          <b>{{$class->ngaybatdau}} đến {{$class->ngayketthuc}}</b></h5>
+                                        <h6 class="card-title">
+                                          <b>{{$class->ngaybatdau}} đến {{$class->ngayketthuc}}</b></h6>
                                       </div>
                                       @php
                                       $lichhoc = $class->lichHoc[0];
                                       @endphp
                                       <div class="card-block" style="margin-top: -40px">
                                         <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-clock-o"></i>Lịch học :</h5>
-                                        <h5 class="card-title">
+                                        <h6 class="card-title">
                                           <b>{{$lichhoc->caHoc->thoigianbatdau}}-{{$lichhoc->caHoc->thoigianketthuc}}
                                             @foreach($class->lichHoc as $key=> $lichhoc)
                                             @if($lichhoc->thu == 8)
@@ -60,16 +60,14 @@
                                             Thứ {{ $lichhoc->thu }}
                                             @endif
                                             @if($key != count($class->lichhoc)-1)
-                                            ,@endif
+                                            @endif
                                             @endforeach
-                                          </b></h5>
-
-
+                                          </b></h6>
                                       </div>
                                       <div class="card-block" style="margin-top: -40px">
                                         <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-graduation-cap"></i>Giảng viên :</h5>
-                                        <h5 class="card-title"><b>
-                                            {{$class->giaoVien->hodem. ' ' . $class->giaoVien->ten}}</b></h5>
+                                        <h6 class="card-title"><b>
+                                            {{$class->giaoVien->hodem. ' ' . $class->giaoVien->ten}}</b></h6>
                                       </div>
                                     </div>
                                   </div>
@@ -77,22 +75,22 @@
                                     <div class="card-sub">
                                       <div class="card-block" style="margin-top: -25px">
                                         <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-bars"></i>Khóa học: </h5>
-                                        <h5 class="card-title">
-                                          <b>{{$class->khoaHoc->tenkhoahoc}}</b></h5>
+                                        <h6 class="card-title">
+                                          <b>{{$class->khoaHoc->tenkhoahoc}}</b></h6>
                                       </div>
                                       <div class="card-block" style="margin-top: -40px">
                                         <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-book"></i>Bài học :</h5>
-                                        <h5 class="card-title">
-                                          <b>{{$class->sobuoidahoc}}/{{$class->sobuoi}}</b></h5>
+                                        <h6 class="card-title">
+                                          <b>{{$class->sobuoidahoc}}/{{$class->sobuoi}}</b></h6>
                                       </div>
                                       <div class="card-block" style="margin-top: -40px">
                                         <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-bank"></i>Loại lớp học :</h5>
-                                        <h5 class="card-title"><b>Group
-                                            Class</b></h5>
+                                        <h6 class="card-title"><b>Group
+                                            Class</b></h6>
                                       </div>
                                       <div class="card-block" style="margin-top: -40px">
                                         <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-building-o"></i>Trung tâm :</h5>
-                                        <h5 class="card-title"> TEKY - Center: 104 Lương Khánh Thiện - HP</h5>
+                                        <h6 class="card-title"> TEKY - Center: 104 Lương Khánh Thiện - HP</h6>
                                       </div>
                                     </div>
                                   </div>
@@ -119,12 +117,16 @@
                                   @foreach($dsBuoiHoc as $key=>$buoiHoc )
                                   <li style="text-align: center; margin-left: 18px; float: left">
                                     <span>---</span>
-                                    <button class="btn waves-effect waves-light buoihoc" style="border-radius: 50%; padding: 5px 10px" data-id="{{$buoiHoc->id}}">{{$key+1}}</button>
+                                    <button class="btn waves-effect waves-light buoihoc @if($buoiHoc->trangthai == 'Đã kết thúc') btn-success @else @if($buoiHoc->trangthai == 'Đang diễn ra' ) btn-warning @endif  @endif"  style="border-radius: 50%; padding: 5px 10px" data-id="{{$buoiHoc->id}}">{{$key+1}}</button>
                                     <span>---</span>
                                     <div class="sub-text">{{$buoiHoc->ngayhoc}}</div>
+                                    @if($buoiHoc->checkin)
                                     <div class="sub-title">
-                                      {{$buoiHoc->checkin->giocheckin}}-
-                                      {{$buoiHoc->checkin->giocheckout}}</div>
+                                      {!! $buoiHoc->checkin->giocheckin !!}-
+                                      {!! $buoiHoc->checkin->giocheckout !!}</div>
+                                    @else
+                                    ... - ...
+                                    @endif
                                   </li>
                                   @endforeach
                                 </ul>

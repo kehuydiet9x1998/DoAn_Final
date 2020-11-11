@@ -88,8 +88,8 @@
                       <thead>
                         <tr>
                           <th>STT</th>
-                          <th>Ngày tạo</th>
-                          <th>Người tạo</th>
+                          <th>Người chi</th>
+                          <th>Ngày chi</th>
                           <th>Lý do</th>
                           <th>Số tiền</th>
                           <th>Ghi chú</th>
@@ -102,8 +102,19 @@
                         @foreach($phieuchis as $phieuchi)
                         <tr>
                           <td>{{$phieuchi->id}}</td>
-                          <td><i class="fa fa-calendar-check"></i> {{ date('d-m-Y', strtotime($phieuchi->ngaytao)) }}</td>
-                          <td>{{$phieuchi->nhanvien->hodem. ' ' .$phieuchi->nhanvien->ten}}</td>
+                          <td>
+                            <div class="d-inline-block align-middle">
+                              <div class="d-inline-block">
+                                <a href="{{route('trangcanhan', $phieuchi->nhanvien->user->id)}}">
+                                  <h6 class="name_link_green">{{$phieuchi->nhanvien->hodem . ' '. $phieuchi->nhanvien->ten}}</h6>
+                                </a>
+                                {{-- <p class=" m-b-0 text-muted">User: {{strtoupper($phieuchi->nhanvien->user->name)}}</p> --}}
+                              </div>
+                            </div>
+                          </td>
+                          <td><i class="fa fa-calendar-check"></i> {{ date('d/m/Y', strtotime($phieuchi->ngaytao)) }}</td>
+
+
                           <td>{{$phieuchi->lydo}}</td>
                           <td>{{number_format($phieuchi->sotien)}}</td>
                           <td>

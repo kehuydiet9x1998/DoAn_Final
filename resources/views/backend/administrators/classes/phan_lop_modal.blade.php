@@ -24,6 +24,7 @@
         <form method="post" action="{{route('phanlop.store')}}" novalidate="">
           <div class="modal-body">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
+            <input type="hidden" name="lop_hoc_id" value="{{ $class->id }}">
             {{ csrf_field() }}
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Học sinh</label>

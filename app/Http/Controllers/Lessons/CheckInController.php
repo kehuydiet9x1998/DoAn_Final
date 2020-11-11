@@ -35,9 +35,19 @@ class CheckInController extends Controller
       $data = [
         'giocheckout' => $date->toTimeString(),
       ];
+      $checkin = CheckIn::updateOrCreate(['buoi_hoc_id' => request('buoi_hoc_id')], $data);
+      $checkin->buoiHoc->trangthai = 'Đã kết thúc';
+      $checkin->buoiHoc->save();
+      $checkin->buoiHoc->lopHoc->sobuoidahoc += 1;
+      $checkin->buoiHoc->lopHoc->save();
+    }else{
+      $checkin = CheckIn::updateOrCreate(['buoi_hoc_id' => request('buoi_hoc_id')], $data);
+      $checkin->buoiHoc->trangthai = 'Đang diễn ra';
+      $checkin->buoiHoc->save();
     }
-    CheckIn::updateOrCreate(['buoi_hoc_id' => request('buoi_hoc_id')], $data);
+
     return back();
+
   }
 
   /**
