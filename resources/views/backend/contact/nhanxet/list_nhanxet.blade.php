@@ -35,7 +35,7 @@
                     </ul>
                     {{-- khối chứa thông nhận xét khóa học--}}
                     <div class="tab-content">
-                      <div class="tab-pane" id="khoahoc" role="tabpanel">
+                      <div class="tab-pane active show" id="khoahoc" role="tabpanel">
                         <div class="row">
                           <div class="col-sm-12">
                             {{-- Khối chứa thông tin  --}}

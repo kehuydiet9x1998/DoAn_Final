@@ -121,55 +121,46 @@
                     <tbody>
                       @foreach ($sanphamcuoikhoas as $sp)
                       <tr>
-                        {{-- <td>
-                          <div class="d-inline-block align-middle">
-                            <div class="d-inline-block">
-                              <h6>{{$sp->id}}</h6>
-                </div>
-              </div>
-              </td> --}}
-              <td>{{$sp->hocSinh->hodem.' '.$sp->hocSinh->ten}}</td>
-              <td>{{$sp->lopHoc->tenlop}}</td>
-              <td>{{$sp->lopHoc->khoahoc->tenkhoahoc}}</td>
-              <td>{{Str::substr($sp->noidung, 1, 10) }}</td>
-              <td>{{Str::substr($sp->fileslide, 1, 10) }}</td>
+                        <td>{{$sp->hocSinh->hodem.' '.$sp->hocSinh->ten}}</td>
+                        <td>{{$sp->lopHoc->tenlop}}</td>
+                        <td>{{$sp->lopHoc->khoahoc->tenkhoahoc}}</td>
+                        <td>{{Str::substr($sp->noidung, 1, 10) }}</td>
+                        <td>{{Str::substr($sp->fileslide, 1, 10) }}</td>
               {{-- <td>{{$sp->mota}}</td> --}}
-              <td style="display: flex;">
-                <div>
-                  {{-- Xem chi tiết sản phẩm--}}
-                  <button data-id="{{$sp->id}}" type="button" class="btn btn-primary waves-effect show-modal"
-                    data-toggle="modal" data-target="#show-Modal"
-                    style="background-color: white; border: none; padding: 0;">
-                    <i class="fa fa-eye f-w-600 f-16 m-r-15 text-c-green"></i>
-                  </button>
-                  <div class="modal fade show" id="show-Modal" tabindex="-1" role="dialog"
-                    style="z-index: 1050;display: none; padding-right: 17px;">
-                  </div>
-                </div>
-                <div>
-                  <button class="my_edit" data-id="{{$sp->id}}" data-toggle="modal" data-target="#edit-Modal"
-                    style="background-color: white; border: none">
-                    <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></button>
-                  <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog"
-                    style="z-index: 1050;display: none; padding-right: 17px;">
-                  </div>
-                </div>
-                <div>
-                  <form action="{{route('sanphamcuoikhoa.destroy', $sp->id)}}" method="post">
-                    @method('DELETE')
-                    @csrf
-                    <button style="border: none; padding: 2px 0px; margin-top: -1px; background-color: white"
-                      onclick="return confirm ('Bạn có muốn xóa không')">
-                      <i class="feather icon-trash-2 f-w-600 f-16 m-r-15 text-c-red" style="margin:0;">
-                      </i>
-                    </button>
-                  </form>
-                </div>
-              </td>
-              </tr>
-
-              @endforeach
-
+                        <td style="display: flex;">
+                          <div>
+                            {{-- Xem chi tiết sản phẩm--}}
+                            <button data-id="{{$sp->id}}" type="button" class="btn btn-primary waves-effect show-modal"
+                              data-toggle="modal" data-target="#show-Modal"
+                              style="background-color: white; border: none; padding: 0;">
+                              <i class="fa fa-eye f-w-600 f-16 m-r-15 text-c-green"></i>
+                            </button>
+                            <div class="modal fade show" id="show-Modal" tabindex="-1" role="dialog"
+                              style="z-index: 1050;display: none; padding-right: 17px;">
+                            </div>
+                          </div>
+                          <div>
+                            <button class="my_edit" data-id="{{$sp->id}}" data-toggle="modal" data-target="#edit-Modal"
+                              style="background-color: white; border: none">
+                              <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></button>
+                            <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog"
+                              style="z-index: 1050;display: none; padding-right: 17px;">
+                            </div>
+                          </div>
+                          <div>
+                            <form action="{{route('sanphamcuoikhoa.destroy', $sp->id)}}" method="post">
+                              @method('DELETE')
+                              @csrf
+                              <button style="border: none; padding: 2px 0px; margin-top: -1px; background-color: white"
+                                onclick="return confirm ('Bạn có muốn xóa không')">
+                                <i class="feather icon-trash-2 f-w-600 f-16 m-r-15 text-c-red" style="margin:0;">
+                                </i>
+                              </button>
+                            </form>
+                          </div>
+                        </td>
+                      </tr>
+                    @endforeach
               </tbody>
               </table>
             </div>

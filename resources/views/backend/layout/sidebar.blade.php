@@ -56,13 +56,6 @@ if ($phanquyen == 'contact') {
           "text" => "Học sinh",
         ],
 
-        // [
-        //   "link" => "/contacts/phanlop",
-        //   "type" => "link",
-        //   "icon" => "fa fa-braille",
-        //   "text" => "Phân lớp",
-        // ],
-
         [
           "type" => "link",
           "icon" => "fa fa-history",
@@ -101,12 +94,6 @@ if ($phanquyen == 'contact') {
           "text" => "Phiếu chi",
         ],
 
-        // [
-        // "link" => "/contacts/move-class",
-        // "type" => "link",
-        // "icon" => "fa fa-mortar-board",
-        // "text" => "Chuyển lớp",
-        // ],
       ],
     ],
 
@@ -114,31 +101,11 @@ if ($phanquyen == 'contact') {
       "title" => "Quản Lý Đào Tạo",
       "items" => [
         [
-          "link" => "/administrators/calendar",
-          "type" => "link",
-          "icon" => "fa fa-calendar",
-          "text" => "Lịch giảng dậy",
-        ],
-
-        [
           "link" => "/contacts/list-teachers",
           "type" => "link",
           "icon" => "fa fa-slideshare",
           "text" => "Giáo viên",
         ],
-        [
-          "link" => "/contacts/checkin-teachers",
-          "type" => "link",
-          "icon" => "fa fa-hourglass-start",
-          "text" => "Checkin",
-        ],
-
-        // [
-        //   "link" => "/contacts/move-class",
-        //   "type" => "link",
-        //   "icon" => "fa fa-mortar-board",
-        //   "text" => "Chuyển lớp",
-        // ],
       ],
     ],
   ];
@@ -269,6 +236,12 @@ if ($phanquyen == 'administrator') {
       "title" => "Lớp học",
       "items" => [
         [
+          "link" => "/administrators/loaikhoahoc",
+          "type" => "link",
+          "icon" => "fa fa-object-group",
+          "text" => "Loại khóa học",
+        ],
+        [
           "link" => "/administrators/courses",
           "type" => "link",
           "icon" => "fa fa-institution",
@@ -285,6 +258,12 @@ if ($phanquyen == 'administrator') {
           "type" => "link",
           "icon" => "fa fa-calendar-check-o",
           "text" => "Thời khóa biểu ",
+        ],
+        [
+          "link" => "/administrators/classroom",
+          "type" => "link",
+          "icon" => "fa fa-fort-awesome",
+          "text" => "Phòng học ",
         ],
       ],
     ],
@@ -303,12 +282,12 @@ if ($phanquyen == 'administrator') {
           "icon" => "fa fa-users",
           "text" => "Giáo viên",
         ],
-        // [
-        //   "link" => "/administrators/contracts",
-        //   "type" => "link",
-        //   "icon" => "fa fa-file-text-o",
-        //   "text" => "Hợp đồng",
-        // ],
+         [
+           "link" => "/administrators/admin-chucvu",
+           "type" => "link",
+           "icon" => "fa fa-optin-monster",
+           "text" => "Chức vụ",
+         ],
         [
           "link" => "/administrators/attendance",
           "type" => "link",
