@@ -7,9 +7,10 @@
   <component name="ChangeListManager">
     <list default="true" id="dfeacd01-f2c3-4401-a83c-21a86b8aa657" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/nhanxet/list_nhanxet.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/nhanxet/list_nhanxet.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Contacts/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contacts/StudentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/classes/classes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/classes/classes.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layout/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/sanphamcuoikhoa/items.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/teachers/sanphamcuoikhoa/items.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,18 +171,19 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../LaravelDemo" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\DoAn\resources\views\backend\students" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\DoAn\resources\views\backend\administrators" />
       <recent name="D:\xampp\htdocs\DoAn\resources\views\backend" />
       <recent name="D:\xampp\htdocs\DoAn\app\Http\Controllers\Administrators" />
       <recent name="D:\xampp\htdocs\DoAn\resources\views\backend\teachers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\DoAn\resources\views\backend\students" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.vendor">
@@ -298,7 +300,8 @@
       <workItem from="1605063803941" duration="2927000" />
       <workItem from="1605071351841" duration="90000" />
       <workItem from="1605082842034" duration="2139000" />
-      <workItem from="1605096350189" duration="759000" />
+      <workItem from="1605096350189" duration="8692000" />
+      <workItem from="1605105621649" duration="4008000" />
     </task>
     <servers />
   </component>
@@ -334,10 +337,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1603420494775" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1604842116916">
+    <state x="430" y="208" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1605097799340">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1604842116916" />
+    <state x="430" y="208" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1605097799340" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1605103967367">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1605103967367" />
     <state x="259" y="10" key="SettingsEditor" timestamp="1602058592838">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -346,14 +353,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="126" y="84" width="1055" height="456" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1603182028522" />
+    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1605102436482">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1605102436482" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1603248126567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1603248126567" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1603112299351">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1605099283047">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1603112299351" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1605099283047" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -30,6 +30,9 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('baitap', "Administrators\BaiTapController");
     Route::resource('phanlop', 'Administrators\PhanLopController');
     Route::resource('calendar', 'Administrators\LichController');
+    Route::resource('classroom', 'Administrators\PhongHocController');
+    Route::resource('admin-chucvu', 'Administrators\ChucVuController');
+    Route::resource('loaikhoahoc', 'Administrators\LoaiKhoaHocController');
 
     Route::get('attendance/report', [ChamCongController::class, 'report']);
     Route::get('attendance/showreport/{doituong}/{thang}', [

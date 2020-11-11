@@ -24,7 +24,6 @@ class StudentController extends Controller
       $this->attributes
     );
   }
-  // t ví dụ m validate thằng
   /**
    * Display a listing of the resource.
    *
