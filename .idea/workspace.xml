@@ -6,14 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfeacd01-f2c3-4401-a83c-21a86b8aa657" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Administrators/KhoaHocController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Administrators/KhoaHocController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/HocCu.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/HocCu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_12_141453_create_hoc_cus_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_12_141453_create_hoc_cus_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/_khoa_hoc_seeder.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_khoa_hoc_seeder.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/_khoa_hoc_seeder/hoc_cu.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_khoa_hoc_seeder/hoc_cu.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/hoccu/listhoccu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/hoccu/listhoccu.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -308,7 +301,7 @@
       <workItem from="1605139259666" duration="2389000" />
       <workItem from="1605166935504" duration="6742000" />
       <workItem from="1605182713211" duration="6276000" />
-      <workItem from="1605189101726" duration="5858000" />
+      <workItem from="1605189101726" duration="6223000" />
     </task>
     <servers />
   </component>

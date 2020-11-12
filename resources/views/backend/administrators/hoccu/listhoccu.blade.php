@@ -18,7 +18,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-6">
                       <button type="button" class="btn btn-success btn-round waves-effect" data-toggle="modal" data-target="#large-Modal" style="float: right; margin-right:20px">Thêm học cụ</button>
                       @include('backend.administrators.hoccu.add-hoccu')
-                      <button type="button" class="btn btn-primary waves-effect" data-toggle="modal" data-target="#div-Modal" style="float: right; margin-right:20px">Phia chia học cụ</button>
+                      <button type="button" class="btn btn-primary waves-effect " data-toggle="modal" data-target="#div-Modal" style="float: right; margin-right:20px">Phia chia học cụ</button>
                       @include('backend.administrators.hoccu.div_hoccu')
                     </div>
                   </div>
