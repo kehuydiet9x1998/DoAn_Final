@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Checkin;
 use App\Models\CheckIn as ModelsCheckIn;
 use App\Models\ChucVu;
+use App\Models\GiaoVien;
 use App\Models\NhanVien;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ChamCongController extends Controller
@@ -30,7 +32,7 @@ class ChamCongController extends Controller
   {
     if ($doituong == 'giaovien') {
       $checkins = Checkin::all()->filter(function ($query) use ($ngaycham) {
-        $temp = date('Y-m-d', strtotime($query->giocheckin));
+        $temp = date('Y-m-d', strtotime($query->getRawOriginal('giocheckout')));
         return $temp == $ngaycham;
       });
 
@@ -71,9 +73,20 @@ class ChamCongController extends Controller
   {
     if ($doituong == 'giaovien') {
       $checkins = Checkin::all()->filter(function ($query) use ($thang) {
-        $temp = date('Y-m', strtotime($query->giocheckin));
+        $temp = date('Y-m', strtotime($query->giocheckout));
         return $temp == $thang;
       });
+
+      // Carbon::setLocale('vi');
+      // $ngaydauthang = Carbon::createFromFormat('Y-m', $thang)->startOfMonth();
+      // $ngaycuoithang = Carbon::createFromFormat('Y-m', $thang)->endOfMonth();
+      // $timesheets = [];
+      // foreach (GiaoVien::all() as $giaovien) {
+      //   //prettier-ignore
+      //   for($date = $ngaydauthang; $date->lt($ngaycuoithang); $date->addDays(1)){
+      //     $timesheets[$giaovien->id][$date->format('d')] =  ;
+      //   }
+      // }
 
       return view(
         'backend.administrators.chamcong.ket_qua_cham_cong_giao_vien',

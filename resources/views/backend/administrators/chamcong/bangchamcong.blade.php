@@ -1,5 +1,13 @@
 @extends('backend.layout.index')
 @section('content')
+
+<style>
+  th {
+    vertical-align: middle
+  }
+
+</style>
+
 <div class="pcoded-inner-content">
   <div class="main-body">
     <div class="page-wrapper">

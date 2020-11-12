@@ -15,8 +15,8 @@ class CreateCheckInsTable extends Migration
   {
     Schema::create('check_in', function (Blueprint $table) {
       $table->id();
-      $table->time('giocheckin')->nullable();
-      $table->time('giocheckout')->nullable();
+      $table->dateTime('giocheckin')->nullable();
+      $table->dateTime('giocheckout')->nullable();
       $table->string('ketqua')->nullable();
       $table->text('ghichu')->nullable();
       $table->unsignedBigInteger('nhan_vien_id')->nullable();
@@ -24,6 +24,11 @@ class CreateCheckInsTable extends Migration
         ->foreign('nhan_vien_id')
         ->references('id')
         ->on('nhan_vien');
+      $table->unsignedBigInteger('giao_vien_id')->nullable();
+      // $table
+      //   ->foreign('giao_vien_id')
+      //   ->references('id')
+      //   ->on('giao_vien');
       $table->date('ngaycham')->nullable();
       $table->string('trangthai')->default('Chưa xác nhận');
       $table->unsignedBigInteger('buoi_hoc_id')->nullable();

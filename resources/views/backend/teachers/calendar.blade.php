@@ -103,7 +103,7 @@
 </div>
 @endsection
 
-
+@if(auth()->user()->role_id == 1)
 @section('script')
 <script>
   $(document).ready(function() {
@@ -128,5 +128,6 @@
 
 </script>
 
-
 @endsection
+
+@endif

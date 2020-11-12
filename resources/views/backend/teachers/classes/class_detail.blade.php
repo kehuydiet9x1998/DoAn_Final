@@ -29,20 +29,20 @@
                           <div class="col-sm-12">
                             <div class="card">
                               <div class="card-header">
-                                <h5 style="color: #2ce00c; font-size: 14px; font-weight: bold" ;>Lớp học:
-                                  {{$class->khoaHoc->tenkhoahoc}}</h5>
+                                <h6 style="color: #2ce00c; font-size: 14px; font-weight: bold" ;>Lớp học:
+                                  {{$class->khoaHoc->tenkhoahoc}}</h6>
                               </div>
                               <div class="card-block">
                                 <div class="row ui-sortable" id="draggablePanelList">
                                   <div class="col-lg-12 col-xl-6 ui-sortable-handle">
                                     <div class="card-sub">
                                       <div class="card-block" style="margin-top: -25px">
-                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-code"></i>Mã lớp học :</h5>
+                                        <h6 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-code"></i>Mã lớp học :</h6>
                                         <h6 class="card-title">
                                           <b>{{$class->tenlop}}</b></h6>
                                       </div>
                                       <div class="card-block" style="margin-top: -40px">
-                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-calendar"></i>Thời gian học :</h5>
+                                        <h6 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-calendar"></i>Thời gian học :</h6>
                                         <h6 class="card-title">
                                           <b>{{$class->ngaybatdau}} đến {{$class->ngayketthuc}}</b></h6>
                                       </div>
@@ -50,7 +50,7 @@
                                       $lichhoc = $class->lichHoc[0];
                                       @endphp
                                       <div class="card-block" style="margin-top: -40px">
-                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-clock-o"></i>Lịch học :</h5>
+                                        <h6 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-clock-o"></i>Lịch học :</h6>
                                         <h6 class="card-title">
                                           <b>{{$lichhoc->caHoc->thoigianbatdau}}-{{$lichhoc->caHoc->thoigianketthuc}}
                                             @foreach($class->lichHoc as $key=> $lichhoc)
@@ -65,7 +65,7 @@
                                           </b></h6>
                                       </div>
                                       <div class="card-block" style="margin-top: -40px">
-                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-graduation-cap"></i>Giảng viên :</h5>
+                                        <h6 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-graduation-cap"></i>Giảng viên :</h6>
                                         <h6 class="card-title"><b>
                                             {{$class->giaoVien->hodem. ' ' . $class->giaoVien->ten}}</b></h6>
                                       </div>
@@ -74,22 +74,22 @@
                                   <div class="col-lg-12 col-xl-6 ui-sortable-handle">
                                     <div class="card-sub">
                                       <div class="card-block" style="margin-top: -25px">
-                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-bars"></i>Khóa học: </h5>
+                                        <h6 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-bars"></i>Khóa học: </h6>
                                         <h6 class="card-title">
                                           <b>{{$class->khoaHoc->tenkhoahoc}}</b></h6>
                                       </div>
                                       <div class="card-block" style="margin-top: -40px">
-                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-book"></i>Bài học :</h5>
+                                        <h6 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-book"></i>Bài học :</h6>
                                         <h6 class="card-title">
                                           <b>{{$class->sobuoidahoc}}/{{$class->sobuoi}}</b></h6>
                                       </div>
                                       <div class="card-block" style="margin-top: -40px">
-                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-bank"></i>Loại lớp học :</h5>
+                                        <h6 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-bank"></i>Loại lớp học :</h6>
                                         <h6 class="card-title"><b>Group
                                             Class</b></h6>
                                       </div>
                                       <div class="card-block" style="margin-top: -40px">
-                                        <h5 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-building-o"></i>Trung tâm :</h5>
+                                        <h6 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0"><i class="fa fa-building-o"></i>Trung tâm :</h6>
                                         <h6 class="card-title"> TEKY - Center: 104 Lương Khánh Thiện - HP</h6>
                                       </div>
                                     </div>
@@ -105,7 +105,7 @@
                             <div class="card">
                               <div class="card-header">
                                 <div class="card-header-left">
-                                  <h5>Lộ trình khóa học : {{$class->khoaHoc->tenkhoahoc}}</h5>
+                                  <h6>Lộ trình khóa học : {{$class->khoaHoc->tenkhoahoc}}</h6>
                                 </div>
                               </div>
 
@@ -114,10 +114,19 @@
                               @endphp
                               <div class="card-block">
                                 <ul>
-                                  @foreach($dsBuoiHoc as $key=>$buoiHoc )
+                                  @php $select_id = optional($dsBuoiHoc->firstWhere('trangthai', '!=', 'Đã kết thúc'))->id @endphp
+                                  @foreach($dsBuoiHoc as $key=>$buoiHoc)
                                   <li style="text-align: center; margin-left: 18px; float: left">
                                     <span>---</span>
-                                    <button class="btn waves-effect waves-light buoihoc @if($buoiHoc->trangthai == 'Đã kết thúc') btn-success @else @if($buoiHoc->trangthai == 'Đang diễn ra' ) btn-warning @endif  @endif"  style="border-radius: 50%; padding: 5px 10px" data-id="{{$buoiHoc->id}}">{{$key+1}}</button>
+                                    <button class="btn waves-effect waves-light buoihoc
+                                    @if($buoiHoc->trangthai == 'Đã kết thúc') btn-success
+                                    @else
+                                      @if($buoiHoc->trangthai == 'Đang diễn ra' ) btn-warning
+                                      @endif
+                                      @endif" style="border-radius: 50%; padding: 5px 10px" @if($buoiHoc->trangthai == 'Chưa kết thúc' && $buoiHoc->id != $select_id)
+                                      disabled
+                                      @endif data-id="{{$buoiHoc->id}}" id="buoihoc{{$buoiHoc->id}}">{{$key+1}}</button>
+
                                     <span>---</span>
                                     <div class="sub-text">{{$buoiHoc->ngayhoc}}</div>
                                     @if($buoiHoc->checkin)
@@ -147,7 +156,7 @@
                               <div class="card-header">
                                 <div class="row">
                                   <div class="col-xs-12 col-sm-12 col-md-6">
-                                    <h5>Danh sách theo dõi quá trình làm bài tập về nhà</h5>
+                                    <h6>Danh sách theo dõi quá trình làm bài tập về nhà</h6>
                                   </div>
                                 </div>
                               </div>
@@ -210,11 +219,13 @@
 <script>
   $(document).ready(function() {
 
-    // load buổi học theo id
     $('.buoihoc').click(function() {
       $('#buoihoc').load('/teachers/lessons/' + $(this).data('id'));
     });
-    $('.buoihoc')[0].click();
+    $("#buoihoc{{ $select_id }}").click();
+    $("#buoihoc{{ $select_id }}").focus();
+
+
   });
 
 </script>
