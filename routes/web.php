@@ -33,7 +33,8 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('classroom', 'Administrators\PhongHocController');
     Route::resource('admin-chucvu', 'Administrators\ChucVuController');
     Route::resource('loaikhoahoc', 'Administrators\LoaiKhoaHocController');
-
+    Route::resource('admin-hoccu', 'Administrators\HocCuController');
+    Route::resource('admin-hoccu-plus', 'Administrators\PlusHocCuController');
     Route::get('attendance/report', [ChamCongController::class, 'report']);
     Route::get('attendance/showreport/{doituong}/{thang}', [
       ChamCongController::class,
@@ -44,7 +45,6 @@ Route::middleware(['auth', 'web'])->group(function () {
       ChamCongController::class,
       'filter',
     ]);
-
     Route::get('attendance/confirm/{attendance}', [
       ChamCongController::class,
       'confirm',
@@ -67,7 +67,6 @@ Route::middleware(['auth', 'web'])->group(function () {
       return view('backend.administrators.phanquyen');
     });
   });
-
   Route::prefix('teachers')->group(function () {
     Route::resource('classes', 'Teachers\LopHocController');
     Route::resource('lessons', 'Teachers\BuoiHocController');
@@ -97,7 +96,6 @@ Route::middleware(['auth', 'web'])->group(function () {
         ]);
       }
     );
-
     Route::resource('check-test', 'Teachers\BaiTapController');
 
     Route::get('/xembaitap/{hocsinhid}/{buoihocid}', [

@@ -18,10 +18,15 @@ class HocCu extends Model
     'soluong',
     'trangthai',
     'lop_hoc_id',
+    'kho_hoc_cu_id',
   ];
 
   public function lopHoc()
   {
     return $this->belongsTo(LopHoc::class);
+  }
+  public function khohoccu()
+  {
+    return $this->belongsTo(KhoHocCu::class);
   }
 }
