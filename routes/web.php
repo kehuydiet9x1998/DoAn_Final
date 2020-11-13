@@ -39,6 +39,8 @@ Route::middleware(['auth', 'web'])->group(function () {
       ChamCongController::class,
       'showreport',
     ]);
+    Route::get('attendance/giaovien', [ChamCongController::class, 'giaovien']);
+    Route::get('attendance/nhanvien', [ChamCongController::class, 'nhanvien']);
     Route::resource('attendance', 'Administrators\ChamCongController');
     Route::get('attendance/filter/{doituong}/{ngaycham}', [
       ChamCongController::class,

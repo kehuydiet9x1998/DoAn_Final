@@ -15,9 +15,12 @@
             <thead>
               <tr>
                 <th style="vertical-align: middle">ID</th>
-                <th style="vertical-align: middle">Giáo viên</th>
+                <th style="vertical-align: middle">Nhân viên</th>
 
-                <th style="vertical-align: middle">Tổng số giờ</th>
+                <th style="vertical-align: middle">Có mặt</th>
+                <th style="vertical-align: middle">Vắng mặt</th>
+                <th style="vertical-align: middle">Nửa ngày</th>
+
                 @php Carbon\Carbon::setLocale('vi');
                 $ngaydauthang = Carbon\Carbon::createFromFormat('Y-m', $thang)->startOfMonth();
                 $ngaycuoithang = Carbon\Carbon::createFromFormat('Y-m', $thang)->endOfMonth();

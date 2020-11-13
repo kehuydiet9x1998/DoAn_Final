@@ -136,6 +136,24 @@
     <script src="{{asset('assets/js/rocket-loader.min.js')}}" data-cf-settings="d2d1d6e2f87cbebdf4013b26-|49" defer="">
     </script>
 
+    <script>
+      $(document).ready(function() {
+        let sidebar = document.querySelector(".main-menu");
+
+        let top = localStorage.getItem("sidebar-scroll");
+        if (top !== null) {
+          sidebar.scrollTop = parseInt(top, 10);
+        }
+        window.addEventListener("beforeunload", () => {
+          alert('change');
+          localStorage.setItem("sidebar-scroll", sidebar.scrollTop);
+        });
+
+
+      });
+
+    </script>
+
     @yield('script')
 </body>
 

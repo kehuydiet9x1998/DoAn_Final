@@ -6,7 +6,6 @@
           <div class="col-xs-12 col-sm-12 col-md-6">
             <h5>Chấm công nhân viên</h5>
           </div>
-
         </div>
       </div>
       <form action="{{ route('attendance.store') }}" id="chamcong" name="chamcong" method="post" onsubmit="send()">
@@ -14,7 +13,6 @@
         <input type="hidden" name="ngaycham" value="{{ $ngaycham }}">
         <div class="card-block">
           <div class="table-responsive">
-
             <table class="table table-hover m-b-0" id="table">
               <thead>
                 <tr>

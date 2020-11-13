@@ -18,14 +18,18 @@ class ChamCongController extends Controller
    *
    * @return \Illuminate\Http\Response
    */
+  public function giaovien()
+  {
+    return view('backend.administrators.chamcong.list_cham_cong_giao_vien');
+  }
+
+  public function nhanvien()
+  {
+    return view('backend.administrators.chamcong.list_cham_cong_nhan_vien');
+  }
+
   public function index()
   {
-    $chucvus = ChucVu::all();
-
-    return view(
-      'backend.administrators.chamcong.list_cham_cong',
-      compact('chucvus')
-    );
   }
 
   public function filter($doituong, $ngaycham)
@@ -77,17 +81,6 @@ class ChamCongController extends Controller
         return $temp == $thang;
       });
 
-      // Carbon::setLocale('vi');
-      // $ngaydauthang = Carbon::createFromFormat('Y-m', $thang)->startOfMonth();
-      // $ngaycuoithang = Carbon::createFromFormat('Y-m', $thang)->endOfMonth();
-      // $timesheets = [];
-      // foreach (GiaoVien::all() as $giaovien) {
-      //   //prettier-ignore
-      //   for($date = $ngaydauthang; $date->lt($ngaycuoithang); $date->addDays(1)){
-      //     $timesheets[$giaovien->id][$date->format('d')] =  ;
-      //   }
-      // }
-
       return view(
         'backend.administrators.chamcong.ket_qua_cham_cong_giao_vien',
         compact('checkins', 'thang')
@@ -123,6 +116,7 @@ class ChamCongController extends Controller
           'ghichu' => $request->ghichu[$nhan_vien_id],
         ]);
     }
+    session()->flash('ngaycham', $request->ngaycham);
     return back();
   }
 
