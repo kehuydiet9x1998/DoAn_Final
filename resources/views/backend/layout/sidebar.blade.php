@@ -264,6 +264,12 @@ if ($phanquyen == 'administrator') {
           "icon" => "fa fa-fort-awesome",
           "text" => "Phòng học ",
         ],
+        [
+          "link" => "/administrators/admin-hoccu",
+          "type" => "link",
+          "icon" => "fa fa-ioxhost",
+          "text" => "Dụng cụ học tập",
+        ],
       ],
     ],
 
