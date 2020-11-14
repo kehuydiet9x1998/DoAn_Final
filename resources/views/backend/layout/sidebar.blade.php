@@ -414,7 +414,7 @@ if ($phanquyen == "student") {
       "items" => [
         [
           "text" => "Trang chủ",
-          "link" => "/dashboard",
+          "link" => "/student/dashboard",
           "icon" => "feather icon-home",
           "type" => "link",
         ],
