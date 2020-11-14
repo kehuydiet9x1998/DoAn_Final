@@ -17,6 +17,7 @@ class CreatePermissionsTable extends Migration
       $table->id();
       $table->string('ten');
       $table->string('mota');
+      $table->unsignedBigInteger('permission_group_id');
       $table->timestamps();
     });
   }

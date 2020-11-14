@@ -37,6 +37,11 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('loaikhoahoc', 'Administrators\LoaiKhoaHocController');
     Route::resource('admin-hoccu', 'Administrators\HocCuController');
     Route::resource('admin-hoccu-plus', 'Administrators\PlusHocCuController');
+
+    Route::get('phanquyen', function () {
+      return view('backend.administrators.phanquyen');
+    });
+
     Route::resource('admin-chuyenlop', 'Administrators\ChuyenLopController');
     /* -------------------------------------------------------------------------- */
     /*                                  Chấm công                                 */
@@ -197,4 +202,8 @@ Route::get('/notifications', function () {
 
 Route::get('/test', function () {
   return view('backend.test');
+});
+
+Route::post('/test', function () {
+  return request()->all();
 });
