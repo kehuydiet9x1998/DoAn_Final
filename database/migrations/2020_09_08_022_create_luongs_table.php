@@ -15,18 +15,13 @@ class CreateLuongsTable extends Migration
   {
     Schema::create('luong', function (Blueprint $table) {
       $table->id();
-      $table->dateTime('thang');
-      $table->bigInteger('luonggoc')->unsigned();
-      $table->bigInteger('phat')->unsigned();
-      $table->bigInteger('thuong')->unsigned();
+      $table->date('thang');
       $table->bigInteger('thuclinh');
       $table->string('trangthai');
       $table->string('ghichu')->default('');
-      $table->unsignedBigInteger('nhan_vien_id');
-      $table
-        ->foreign('nhan_vien_id')
-        ->references('id')
-        ->on('nhan_vien');
+      $table->unsignedBigInteger('nhan_vien_id')->nullable();
+      $table->unsignedBigInteger('giao_vien_id')->nullable();
+      $table->string('doituong');
       $table->timestamps();
       $table->softDeletes();
     });

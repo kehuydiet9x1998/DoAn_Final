@@ -76,25 +76,15 @@ class ChamCongController extends Controller
   public function showreport($doituong, $thang)
   {
     if ($doituong == 'giaovien') {
-      $checkins = Checkin::all()->filter(function ($query) use ($thang) {
-        $temp = date('Y-m', strtotime($query->giocheckout));
-        return $temp == $thang;
-      });
-
       return view(
         'backend.administrators.chamcong.ket_qua_cham_cong_giao_vien',
-        compact('checkins', 'thang')
+        compact('thang')
       );
     }
     if ($doituong == 'nhanvien') {
-      $checkins = Checkin::all()->filter(function ($query) use ($thang) {
-        $temp = date('Y-m', strtotime($query->getRawOriginal('ngaycham')));
-        return $temp == $thang;
-      });
-
       return view(
-        'backend.administrators.chamcong.cham_cong_nhan_vien',
-        compact('checkins', 'thang')
+        'backend.administrators.chamcong.ket_qua_cham_cong_nhan_vien',
+        compact('thang')
       );
     }
   }

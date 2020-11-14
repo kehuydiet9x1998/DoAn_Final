@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Administrators\ChamCongController;
 use App\Http\Controllers\Administrators\PhanLopController;
+use App\Http\Controllers\Administrators\TinhLuongController as AdministratorsTinhLuongController;
 use App\Http\Controllers\ChatsController;
 use App\Http\Controllers\Contacts\FeedBackController;
 use App\Http\Controllers\Contacts\HocPhiController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\Teachers\BaiTapController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\students\XemNhanXetController;
 use App\Http\Controllers\Teachers\NhanXetHocSinhController;
+use App\Http\Controllers\TinhLuongController;
 use App\Models\NhanXetGiaoVien;
 
 Route::get('/', function () {
@@ -35,6 +37,11 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('loaikhoahoc', 'Administrators\LoaiKhoaHocController');
     Route::resource('admin-hoccu', 'Administrators\HocCuController');
     Route::resource('admin-hoccu-plus', 'Administrators\PlusHocCuController');
+
+    /* -------------------------------------------------------------------------- */
+    /*                                  Chấm công                                 */
+    /* -------------------------------------------------------------------------- */
+
     Route::get('attendance/report', [ChamCongController::class, 'report']);
     Route::get('attendance/showreport/{doituong}/{thang}', [
       ChamCongController::class,
@@ -42,7 +49,6 @@ Route::middleware(['auth', 'web'])->group(function () {
     ]);
     Route::get('attendance/giaovien', [ChamCongController::class, 'giaovien']);
     Route::get('attendance/nhanvien', [ChamCongController::class, 'nhanvien']);
-    Route::resource('attendance', 'Administrators\ChamCongController');
     Route::get('attendance/filter/{doituong}/{ngaycham}', [
       ChamCongController::class,
       'filter',
@@ -56,18 +62,21 @@ Route::middleware(['auth', 'web'])->group(function () {
       'cancel',
     ])->name('cancel');
 
-    // Route::get('contracts', function () {
-    //   return view('backend.administrators.contracts');
-    // });
-    Route::get('payroll', function () {
-      return view('backend.administrators.payroll');
-    });
-    Route::get('timesheets', function () {
-      return view('backend.administrators.timesheets');
-    });
-    Route::get('phanquyen', function () {
-      return view('backend.administrators.phanquyen');
-    });
+    Route::resource('attendance', 'Administrators\ChamCongController');
+
+    /* -------------------------------------------------------------------------- */
+    /*                                 Tính lương                                 */
+    /* -------------------------------------------------------------------------- */
+
+    Route::get('payroll/thanhtoan/{id}', [
+      AdministratorsTinhLuongController::class,
+      'thanhtoan',
+    ]);
+    Route::get('payroll/filter/{doituong}/{thang}', [
+      AdministratorsTinhLuongController::class,
+      'filter',
+    ]);
+    Route::resource('payroll', 'Administrators\TinhLuongController');
   });
   Route::prefix('teachers')->group(function () {
     Route::resource('classes', 'Teachers\LopHocController');

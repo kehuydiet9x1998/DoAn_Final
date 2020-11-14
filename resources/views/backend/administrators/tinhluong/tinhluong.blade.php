@@ -17,27 +17,27 @@
               <div class="card-block">
                 <div class="row">
 
-                  {{-- <div class="col-md-5">
+                  <div class="col-md-5">
                     <div class="form-group row">
                       <label class="col-sm-4 col-form-label">Chọn đối tượng</label>
                       <div class="col-sm-8">
+                        @if(session()->has('doituong') && session()->get('doituong') == 'giaovien') @php $doituong = 2 @endphp @else @php $doituong = 1 @endphp @endif
                         <select name="" id="doituong" class="form-control">
-
+                          <h1>{{ $doituong }}</h1>
                           <option value=""> -- Chọn đối tượng --</option>
-                          <option value="nhanvien">Nhân viên</option>
-                          <option value="giaovien">Giáo viên</option>
+                          <option value="nhanvien" @if(($doituong)==1 ) selected @endif>Nhân viên</option>
+                          <option value="giaovien" @if(($doituong)==2 ) selected @endif>Giáo viên</option>
                         </select>
                         <span class="messages"></span>
                       </div>
                     </div>
-                  </div> --}}
-
+                  </div>
 
                   <div class="col-md-5">
                     <div class="form-group row">
-                      <label class="col-sm-4 col-form-label">Chọn ngày</label>
+                      <label class="col-sm-4 col-form-label">Chọn tháng</label>
                       <div class="col-sm-8">
-                        <input type="date" class="form-control" id="ngaycham" @if(session()->has('ngaycham')) value="{{ session()->get('ngaycham') }}" @endif>
+                        <input type="month" class="form-control" id="thang" @if(session()->has('thang')) value="{{ substr(session()->get('thang') ,0, 7)}}" @endif>
                         <span class="messages"></span>
                       </div>
                     </div>
@@ -55,7 +55,7 @@
           </div>
         </div>
 
-        <div id="bangchamcong"></div>
+        <div id="danhsachluong"></div>
       </div>
     </div>
   </div>
@@ -69,20 +69,18 @@
 
   $(document).ready(function() {
     $('#filter').click(function() {
-      $('#bangchamcong').load('/administrators/attendance/filter/nhanvien/' + $('#ngaycham').val());
+      $('#danhsachluong').load('/administrators/payroll/filter/' + $('#doituong').val() + '/' + $('#thang').val());
     });
+    if (!$('#thang').val())
+      $('#thang').val(new Date().toISOString().slice(0, 7))
+    $('#danhsachluong').load('/administrators/payroll/filter/' + $('#doituong').val() + '/' + $('#thang').val());
 
-    if (!$('#ngaycham').val())
-      $('#ngaycham').val(new Date().toISOString().slice(0, 10))
-    $('#bangchamcong').load('/administrators/attendance/filter/nhanvien/' + $('#ngaycham').val());
+    // if (!$('#thang').val())
+    //   $('#thang').val(new Date().toISOString().slice(0, 10))
+    // $('#danhsachluong').load('/administrators/attendance/filter/nhanvien/' + $('#thang').val());
 
   });
 
 </script>
-
-
-
-
-
 
 @endsection

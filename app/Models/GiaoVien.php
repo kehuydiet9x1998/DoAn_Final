@@ -61,6 +61,15 @@ class GiaoVien extends Model
     return $this->hasMany(NhanXetGiaoVien::class);
   }
 
+  public function layLuongThang($thang)
+  {
+    $luong = Luong::all()->filter(function ($query) use ($thang) {
+      $temp = date('Y-m', strtotime($query->thang));
+      return $temp == $thang && $query->giao_vien_id == $this->id;
+    });
+    return $luong->first();
+  }
+
   public function tongGioLam($thang)
   {
     $checkins = Checkin::all()->filter(function ($query) use ($thang) {
@@ -86,15 +95,15 @@ class GiaoVien extends Model
       return $giocheckout->diffInMinutes($giocheckin);
     });
 
-    return $sum;
+    return round($sum, 1);
   }
 
   public function tongGioLamTheoNgay($date)
   {
     $checkins = Checkin::all();
     $checkin_record = $checkins->filter(function ($query) use ($date) {
-      return date('d', strtotime($query->getRawOriginal('giocheckin'))) ==
-        $date->format('d') &&
+      return date('d-m-Y', strtotime($query->getRawOriginal('giocheckin'))) ==
+        $date->format('d-m-Y') &&
         $query->giao_vien_id == $this->id &&
         $query->trangthai == 'Đã xác nhận';
     });
