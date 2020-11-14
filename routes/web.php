@@ -37,7 +37,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('loaikhoahoc', 'Administrators\LoaiKhoaHocController');
     Route::resource('admin-hoccu', 'Administrators\HocCuController');
     Route::resource('admin-hoccu-plus', 'Administrators\PlusHocCuController');
-
+    Route::resource('admin-chuyenlop', 'Administrators\ChuyenLopController');
     /* -------------------------------------------------------------------------- */
     /*                                  Chấm công                                 */
     /* -------------------------------------------------------------------------- */

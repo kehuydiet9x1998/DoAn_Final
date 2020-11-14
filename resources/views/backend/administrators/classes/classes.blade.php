@@ -123,8 +123,6 @@ $menu = true;
       $('body').addClass('modal-open');
       $('.modal-backdrop').show();
     });
-
-
   });
 
 </script>
