@@ -7,8 +7,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dfeacd01-f2c3-4401-a83c-21a86b8aa657" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Administrators/PhanLopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Administrators/PhanLopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/classes/chuyen_lop_modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/classes/chuyen_lop_modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Administrators/ChuyenlopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Administrators/ChuyenlopController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -309,7 +308,7 @@
       <workItem from="1605323084885" duration="2779000" />
       <workItem from="1605339840221" duration="4365000" />
       <workItem from="1605349207653" duration="7188000" />
-      <workItem from="1605358262331" duration="3735000" />
+      <workItem from="1605358262331" duration="5555000" />
     </task>
     <servers />
   </component>
