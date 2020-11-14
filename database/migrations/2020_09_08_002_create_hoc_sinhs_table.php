@@ -18,7 +18,7 @@ class CreateHocSinhsTable extends Migration
 
       $table->string('hodem');
       $table->string('ten');
-      $table->dateTime('ngaysinh');
+      $table->date('ngaysinh');
       $table->string('gioitinh');
       $table->string('trangthai');
       $table->string('cmnd');

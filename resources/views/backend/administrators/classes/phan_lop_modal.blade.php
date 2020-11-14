@@ -1,5 +1,5 @@
 @section('css')
-<link rel="stylesheet" href="{{asset('assets/css/bootstrap-select.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap-select.min.css')}}">
 @endsection
 
 <script>
@@ -10,7 +10,6 @@
   }
 
 </script>
-
 <div class="modal fade show" id="phanlop-Modal{{ isset($menu) ? $class->id : '' }}" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">

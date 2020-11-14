@@ -42,6 +42,7 @@ Route::middleware(['auth', 'web'])->group(function () {
       return view('backend.administrators.phanquyen');
     });
 
+    Route::resource('admin-chuyenlop', 'Administrators\ChuyenLopController');
     /* -------------------------------------------------------------------------- */
     /*                                  Chấm công                                 */
     /* -------------------------------------------------------------------------- */

@@ -32,7 +32,7 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Ngày sinh</label>
             <div class="col-sm-9">
-              <input type="date" class="form-control" id="ngaysinh" name="ngaysinh" value="{{(substr($hocsinh->ngaysinh, 0, 10))}}" placeholder="">
+              <input type="date" class="form-control" id="ngaysinh" name="ngaysinh"  value="{{$hocsinh->ngaysinh}}" placeholder="">
               <span class="messages"></span>
             </div>
           </div>
@@ -107,10 +107,12 @@
     function myReset() {
       $('.modal').hide();
       $('body').removeClass('modal-open');
-
-
       $('.modal-backdrop').hide();
     };
-
+    </script>
+  <script>
+    var dateControl = document.querySelector('input[type="date"]');
+    console.log(dateControl.value);
+    console.log(dateControl.valueAsNumber);
   </script>
   {!! $jsValidator->selector('#editform') !!}

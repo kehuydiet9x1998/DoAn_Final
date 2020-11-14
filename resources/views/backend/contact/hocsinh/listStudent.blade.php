@@ -5,9 +5,8 @@
 
 <style>
   {
-    table-layout: auto/fixed;
+    table-layout: fixed;
   }
-
 </style>
 
 <div class="pcoded-inner-content">
@@ -52,11 +51,7 @@
                                       <input type="text" class="form-control" name="ten" placeholder="Nhập vào tên">
                                       <span class="messages"></span>
                                     </div>
-
                                   </div>
-                                  {{-- <div class="form-group row">
-
-                                  </div> --}}
                                   <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Ngày sinh</label>
                                     <div class="col-sm-9">
@@ -140,61 +135,17 @@
                     </div>
                   </div>
                 </div>
-                <div class="card-block" style="">
-                  <div class="mt-2">
-                    <div class="row align-items-center">
-                      <div class="col-md-2">
-                        <div class="form-group"><label>Nhà cung cấp</label> <select class="form-control">
-                            <option>Acecook</option>
-                            <option>Vifon</option>
-                            <option>Orion</option>
-                            <option>Masan</option>
-                            <option>Vinamilk</option>
-                          </select></div>
-                      </div>
-                      <div class="col-md-2">
-                        <div class="form-group"><label>Từ ngày</label> <input type="date" placeholder="Nhập ngày lập hoá đơn" class="form-control"></div>
-                      </div>
-                      <div class="col-md-2">
-                        <div class="form-group"><label>Đến ngày</label> <input type="date" placeholder="Nhập ngày lập hoá đơn" class="form-control"></div>
-                      </div>
-                      <div class="col-md-2">
-                        <div class="form-group"><label>Trạng thái</label> <select class="form-control">
-                            <option>Đã xác nhận</option>
-                            <option>Chưa xác nhận</option>
-                          </select></div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="row">
-                          <div class="col-md-6"><a href="#" class="btn btn-primary btn-sm btn-round font-weight-bold w-auto">
-                              Tìm kiếm
-                            </a></div>
-                          <div class="col-md-6">
-                            <button class="btn btn-secondary btn-sm btn-round menu-toggle">
-                              Chức năng khác <i class="fa fa-caret-down"></i>
-                            </button>
-                            <div class="dropdown-menu show" id="menu">
-                            </div>
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row align-items-center"></div>
-                  </div>
-
-
+                <div class="card-block">
                   <div class="table-responsive">
-                    <table class="table table-hover m-b-0 " id="datatable2">
+                    <table class="table table-hover m-b-0 " id="datatable">
                       <thead>
                         <tr>
                           <th>STT</th>
                           <th>HỌC SINH</th>
                           <th>PHỤ HUYNH</th>
-                          <th>KHÓA HỌC</th>
                           <th>TRẠNG THÁI</th>
                           <th>TƯ VẤN</th>
-                          <th class="noVis">ACTIONS</th>
+                          <th>ACTIONS</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -207,8 +158,7 @@
                                 <a href="{{route('trangcanhan', $st->user->id)}}">
                                   <h6 class="name_link_green">{{$st->hodem .' '. $st->ten}}</h6>
                                 </a>
-
-                                <p class=" m-t-0 text-muted" style="margin-bottom: 5px"><i class="fa fa-calendar"></i> Ngày sinh: {{$st->ngaysinh}}</p>
+                                <p class=" m-t-0 text-muted" style="margin-bottom: 5px"><i class="fa fa-calendar"></i> Ngày sinh: {{date('d/m/Y', strtotime($st->ngaysinh))}}</p>
                                 <p class=" m-b-0 text-muted"><i class="fas fa-map-marker-alt"></i> Địa chỉ: {{$st->diachi}}</p>
                               </div>
                             </div>
@@ -222,13 +172,10 @@
                               </div>
                             </div>
                           </td>
-                          <td>{{ $st->dslophoc->count() }} khóa học</td>
-
                           <td>
                             <p style="margin-top:15px" class="badge p-1 badge-pill badge-{{$st->trangthai == 'Học thử'? 'primary' : 'success'}}">
                               {{$st->trangthai}}</p>
                           </td>
-
                           <td style="width:30px">
                             @if($st->dslichtrainghiem->count()==0)
                             <p style="width:170px; word-break:keep-all; white-space:normal" class="p-t-10 text-muted">
@@ -241,23 +188,19 @@
                               <br> <i class="fa fa-clock-o"></i>
                               {{ $st->dslichtrainghiem->first()->thoigian }}
                               @if( $st->dslichtrainghiem->first()->ketqua != '' )
-
                               <br><span class="text-c-lite-green"> <i class="fa fa-info-circle"></i> Kết quả: {{ $st->dslichtrainghiem->first()->ketqua }}</span>
                               @endif
                             </p>
-
                             @endif
-
-                            {{-- <p style="width:170px; word-break:keep-all; white-space:normal"></p> --}}
-
                           </td>
-                          <td style="display: flex;">
+                          <td>
                             <div>
                               <div class="modal fade show" id="show-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
                               </div>
                             </div>
-                            <button class="my_edit" data-id="{{$st->id}}" data-toggle="modal" data-target="#edit-Modal" style="background-color: white; border: none">
-                              <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green" style="margin-right: 3px"></i>
+                            <button class="my_edit" data-id="{{$st->id}}" data-toggle="modal" data-target="#edit-Modal"
+                                    style="background-color: white; border: none; float: left;">
+                              <i class="fa fa-edit f-w-600 f-16 m-r-15 text-c-green" style="margin-right: 3px;font-size: 25px"></i>
                             </button>
                             <!-- Modal Sua -->
 
@@ -265,7 +208,7 @@
                               @method('DELETE')
                               @csrf
                               <button style="border: none; padding: 2px 0px; margin-top: -1px; background-color: white" onclick="return confirm ('Bạn có muốn xóa không')">
-                                <i class="feather icon-trash-2 f-w-600 f-16 m-r-15 text-c-red" style="margin:0;">
+                                <i class="feather icon-trash-2 f-w-600 f-16 m-r-15 text-c-red" style="margin:0;font-size: 23px">
                                 </i>
                               </button>
                             </form>

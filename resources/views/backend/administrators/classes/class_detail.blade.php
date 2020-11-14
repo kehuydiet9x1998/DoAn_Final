@@ -13,11 +13,18 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="card">
+              @if(session()->has('success-message'))
+                <div class="alert alert-success">
+                  {{session('success-message')}}
+                </div>
+              @elseif(session()->has('error-message'))
+                <div class="alert alert-danger">
+                  {{session('error-message')}}</div>
+              @endif
               <div class="card-block tab-icon">
                 <div class="row">
                   <div class="col-lg-12">
                     <ul class="nav nav-tabs md-tabs " id="myTab" role="tablist">
-
                       <li class="nav-item">
                         <a class="nav-link active show" data-toggle="tab" href="#home7" role="tab" aria-selected="true" style="font-size: 14px; font-weight: bold;">
                           <i class="fa fa-info-circle"></i>Chi tiết lớp học</a>
@@ -180,7 +187,10 @@
                             <div class="card-header">
                               <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-6">
-                                  <h6>Danh sách học sinh</h6>
+                                  <h6 class="name_link_green">{{$class->tenlop }}</h6>
+                                  <p class="text-muted m-b-0">
+                                    Khóa học: {{$class->khoaHoc->tenkhoahoc}}
+                                  </p>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-12 col-md-6">
@@ -191,8 +201,8 @@
                             </div>
                             {{-- Khối chứa thông tin  --}}
                             <div class="card-block">
-                              <div class="table-responsive">
-                                <table class="table table-hover m-b-0">
+                              <div class="table-responsive" >
+                                <table class="table table-hover m-b-0" id="datatable">
                                   <thead>
                                     <tr>
                                       <th>ID</th>
@@ -212,24 +222,28 @@
                                       <td>{{ substr($phanlop->ngayvaolop, 0 ,10) }}</td>
                                       <td><label for="" class="badge badge-primary">Đang học</label></td>
                                       <td style="display: flex">
-                                        <div>
-                                          <button class="chuyenlop" data-id="{{$phanlop->id}}" data-toggle="modal" data-target="#chuyenlop-Modal" style="background-color: transparent; border: none; padding: 0 0 0 7px">
-                                            <i class="fa fa-refresh f-w-600 f-16 m-r-15 text-c-green"></i>
-                                          </button>
-                                        </div>
-                                        <div>
+                                        <ul>
+                                          <li style="float: left">
+                                            <button style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent" data-toggle="modal" data-target="#edit-Modal" data-id="{{$phanlop->id}}" class="chuyen_lop">
+                                              <i class="fa fa-refresh f-w-600 f-16 m-r-15 text-c-green" style="margin:0; font-size: 20px"></i></button>
+                                            <div class="modal fade show" id="chuyen_lop" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;"></div>
+                                        </li>
+                                          <li style="float: left">
+                                            <div>
                                           <button class="baoluu" data-id="{{$phanlop->id}}" data-toggle="modal" data-target="#baoluu-Modal" style="background-color: transparent; border: none; padding: 0 0 0 7px">
                                             <i class="fa fa-pause-circle f-w-600 f-16 m-r-15 text-c-green"></i>
                                           </button>
                                         </div>
-
-
-                                        <form action="{{route('phanlop.destroy', $phanlop->id)}}" method="post">
-                                          @method('DELETE')
-                                          @csrf
-                                          <button style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent" onclick="return confirm ('Bạn có muốn xóa không')">
-                                            <i class="feather icon-trash-2 f-w-600 f-16 m-r-15 text-c-red" style="margin:0; font-size: 20px"></i></button>
-                                        </form>
+                                          </li>
+                                        <li style="float: left">
+                                          <form action="{{route('phanlop.destroy', $phanlop->id)}}" method="post">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent" onclick="return confirm ('Bạn có muốn xóa không')">
+                                          <i class="feather icon-trash-2 f-w-600 f-16 m-r-15 text-c-red" style="margin:0; font-size: 20px"></i></button>
+                                      </form>
+                                        </li>
+                                        </ul>
                                       </td>
                                     </tr>
                                     @endforeach
@@ -321,18 +335,15 @@
 @parent
 <script>
   $(document).ready(function() {
-
     // load buổi học theo id
     $('.buoihoc').click(function() {
       $('#buoihoc').load('/teachers/lessons/' + $(this).data('id'));
     });
     $('.buoihoc')[0].click();
     console.log('ok')
-
     $('a[data-toggle="tab"]').on('click', function(e) {
       console.log(e.target.href);
       localStorage.setItem('activeTab', $(e.target).attr('href'));
-
     });
     var activeTab = localStorage.getItem('activeTab');
     if (activeTab) {
@@ -340,6 +351,15 @@
     }
 
   });
-
+  $(document).
+  ready(function() {
+    $('.chuyen_lop').click(function(e) {
+      id = $(this).data('id')
+      $('#chuyen_lop').load("/administrators/admin-chuyenlop/" + id + '/edit');
+      $('#chuyen_lop').show();
+      $('body').addClass('modal-open');
+      $('.modal-backdrop').show();
+    });
+  });
 </script>
 @endsection

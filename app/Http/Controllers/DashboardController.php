@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\KhoaHoc;
+use App\Models\LopHoc;
 class DashboardController extends Controller
 {
   public function index()
@@ -16,7 +17,9 @@ class DashboardController extends Controller
       case '1':
         return view('backend.dashboard');
       case '4':
-        return view('backend.contact.dashboard-contact');
+        $khoahocs = KhoaHoc::all();
+        $lophocs = LopHoc::all();
+        return view('backend.contact.dashboard-contact', compact('khoahocs','lophocs'));
       default:
         return auth()->user()->role_id;
     }
