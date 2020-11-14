@@ -52,6 +52,18 @@ class PhanLopController extends Controller
     $lophoc = LopHoc::find($lop_hoc_id);
     $lophoc->siso = PhanLop::where('lop_hoc_id', $lop_hoc_id)->count();
     $lophoc->save();
+    foreach ($request->hoc_sinh_id as $hoc_sinh_id) {
+      $hocsinh = HocSinh::find($hoc_sinh_id)
+        ->hocPhi->dsKhoanThu()
+        ->create([
+          'tenkhoanthu' => 'Học phí lớp ' . $lophoc->tenlop,
+          'sotien' => $lophoc->khoaHoc->hocphi,
+          'ngaybatdau' => now(),
+          'ngayketthuc' => now()->addDays(30),
+          'lop_hoc_id' => $lop_hoc_id,
+          'trangthai' => 'Chưa đóng',
+        ]);
+    }
     return Redirect::back();
   }
 

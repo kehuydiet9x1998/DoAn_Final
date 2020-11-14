@@ -12839,7 +12839,3 @@ table.dataTable.display tbody tr table tr:hover {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-ul li ul {
-  margin-left: 20px;
-}

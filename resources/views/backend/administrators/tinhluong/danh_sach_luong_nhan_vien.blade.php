@@ -68,9 +68,9 @@
                                     <div class="col-lg-12 col-xl-6 ui-sortable-handle">
                                       <div class="card-sub">
                                         <div class="card-block" style="margin-top: -20px">
-                                          <h6 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0">CMND</h6>
+                                          <h6 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0">Họ tên</h6>
                                           <h6 class="card-title">
-                                            <b> {{$nhanvien->cmnd}}</b></h6>
+                                            <b> {{$nhanvien->hodem .' '. $nhanvien->ten}}</b></h6>
                                         </div>
                                         <div class="card-block" style="margin-top: -40px">
                                           <h6 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0">
