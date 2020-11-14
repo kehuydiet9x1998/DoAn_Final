@@ -104,7 +104,8 @@
 <script>
   $(document).ready(function() {
     $('.my_edit').click(function() {
-      $('edit-Modal').load()
+      $('edit-Modal').load();
+
     })
   });
 

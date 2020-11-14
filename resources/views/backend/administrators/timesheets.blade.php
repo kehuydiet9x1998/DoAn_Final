@@ -18,12 +18,12 @@
                 <div class="table-responsive">
                   <table class="table table-hover m-b-0" id="datatable">
                     <thead>
-                    <th>STT</th>
-                    <th>TÊN NHÂN VIÊN</th>
-                    <th>CHỨC VỤ</th>
-                    <th>GIỚI TÍNH</th>
-                    <th>SỐ ĐT</th>
-                    <th>CHI TIẾT</th>
+                      <th>STT</th>
+                      <th>TÊN NHÂN VIÊN</th>
+                      <th>CHỨC VỤ</th>
+                      <th>GIỚI TÍNH</th>
+                      <th>SỐ ĐT</th>
+                      <th>CHI TIẾT</th>
                     </thead>
                     <tbody>
                       <tr>
@@ -39,8 +39,7 @@
                         <td>Nam</td>
                         <td>0363915150</td>
                         <td>
-                          <button type="button" class="btn btn-primary waves-effect"
-                                  data-toggle="modal" data-target="#large-Modal" style="background-color: transparent; border: none; font-size: 30px">
+                          <button type="button" class="btn btn-primary waves-effect" data-toggle="modal" data-target="#large-Modal" style="background-color: transparent; border: none; font-size: 30px">
                             <i class="fa fa-wpforms text-c-purple"></i>
                           </button>
                         </td>

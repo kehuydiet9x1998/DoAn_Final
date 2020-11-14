@@ -20,6 +20,8 @@ class Luong extends Model
     'trangthai',
     'ghichu',
     'nhan_vien_id',
+    'giao_vien_id',
+    'doituong',
   ];
   protected $dates = ['deleted_at'];
 

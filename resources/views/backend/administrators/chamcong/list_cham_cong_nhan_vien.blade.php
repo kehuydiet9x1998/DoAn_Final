@@ -17,7 +17,7 @@
               <div class="card-block">
                 <div class="row">
 
-                  <div class="col-md-5">
+                  {{-- <div class="col-md-5">
                     <div class="form-group row">
                       <label class="col-sm-4 col-form-label">Chọn đối tượng</label>
                       <div class="col-sm-8">
@@ -30,13 +30,14 @@
                         <span class="messages"></span>
                       </div>
                     </div>
-                  </div>
+                  </div> --}}
+
 
                   <div class="col-md-5">
                     <div class="form-group row">
                       <label class="col-sm-4 col-form-label">Chọn ngày</label>
                       <div class="col-sm-8">
-                        <input type="date" class="form-control" id="ngaycham">
+                        <input type="date" class="form-control" id="ngaycham" @if(session()->has('ngaycham')) value="{{ session()->get('ngaycham') }}" @endif>
                         <span class="messages"></span>
                       </div>
                     </div>
@@ -55,7 +56,6 @@
         </div>
 
         <div id="bangchamcong"></div>
-
       </div>
     </div>
   </div>
@@ -69,29 +69,18 @@
 
   $(document).ready(function() {
     $('#filter').click(function() {
-      $('#bangchamcong').load('/administrators/attendance/filter/' + $('#doituong').val() + '/' + $('#ngaycham').val());
-    })
+      $('#bangchamcong').load('/administrators/attendance/filter/nhanvien/' + $('#ngaycham').val());
+    });
+
+    if (!$('#ngaycham').val())
+      $('#ngaycham').val(new Date().toISOString().slice(0, 10))
+    $('#bangchamcong').load('/administrators/attendance/filter/nhanvien/' + $('#ngaycham').val());
+
   });
 
 </script>
 
-<script>
-  function confirm() {
-    id = $(event.target).parent().data('id');
-    $.get('attendance/confirm/' + id, function() {
-      $('#filter').click();
-    });
-  }
 
-  function cancel() {
-    id = $(event.target).parent().data('id');
-    $.get('attendance/cancel/' + id, function() {
-      $('#filter').click();
-    });
-
-  }
-
-</script>
 
 
 

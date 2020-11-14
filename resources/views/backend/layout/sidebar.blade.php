@@ -93,7 +93,6 @@ if ($phanquyen == 'contact') {
           "link" => "/contacts/phieuchi",
           "text" => "Phiếu chi",
         ],
-
       ],
     ],
 
@@ -273,6 +272,7 @@ if ($phanquyen == 'administrator') {
         ],
       ],
     ],
+
     [
       "title" => "Quản Lý Nhân Sự",
       "items" => [
@@ -288,24 +288,36 @@ if ($phanquyen == 'administrator') {
           "icon" => "fa fa-users",
           "text" => "Giáo viên",
         ],
-         [
-           "link" => "/administrators/admin-chucvu",
-           "type" => "link",
-           "icon" => "fa fa-optin-monster",
-           "text" => "Chức vụ",
-         ],
         [
-          "link" => "/administrators/attendance",
+          "link" => "/administrators/admin-chucvu",
           "type" => "link",
-          "icon" => "fa fa-check-square-o",
-          "text" => "Chấm công",
+          "icon" => "fa fa-optin-monster",
+          "text" => "Chức vụ",
         ],
 
         [
-          "link" => "/administrators/attendance/report",
-          "type" => "link",
-          "icon" => "fa fa-book",
-          "text" => "Báo cáo chấm công",
+          "text" => "Chấm công",
+          "icon" => "fa fa-check-square-o",
+          "type" => "dropdown",
+          "items" => [
+            [
+              "text" => "Chấm công nhân viên",
+              "link" => "/administrators/attendance/nhanvien",
+            ],
+            [
+              "text" => "Chấm công giáo viên",
+              "link" => "/administrators/attendance/giaovien",
+            ],
+
+            [
+              "text" => "Bảng công",
+              "link" => "/administrators/attendance/report",
+            ],
+            // [
+            //   "text" => "Bảng công giáo viên",
+            //   "link" => "/administrators/attendance/report",
+            // ],
+          ],
         ],
 
         [

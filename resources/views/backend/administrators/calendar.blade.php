@@ -25,35 +25,36 @@
   jQuery(document).ready(function($) {
     $('#calendar').fullCalendar({
       header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'month,basicWeek,basicDay'
-      },
-      navLinks: false,
-      editable: false,
-      eventLimit: false,
+        left: 'prev,next today'
+        , center: 'title'
+        , right: 'month,basicWeek,basicDay'
+      }
+      , navLinks: false
+      , editable: false
+      , eventLimit: false,
       //đổ dữ liệu ra event
       events: [{
-        title:  'My Event',
-        start:  '2020-10-10T14:30:00',
-        allDay: false
-      },
-        {
-          title:  'My Event2',
-          color: 'yellow',
-          start:  '2020-10-10T17:30:00',
-          allDay: false
-        },
-        {
-          title:  'My Event2',
-          color: 'yellow',
-          start:  '2020-10-10T17:30:00',
-          allDay: false
-        },
-      ],
-      timezone: 'Asia/Ho_Chi_Minh',
-      timeFormat: 'H(:mm)'
+          title: 'My Event'
+          , start: '2020-10-10T14:30:00'
+          , allDay: false
+        }
+        , {
+          title: 'My Event2'
+          , color: 'yellow'
+          , start: '2020-10-10T17:30:00'
+          , allDay: false
+        }
+        , {
+          title: 'My Event2'
+          , color: 'yellow'
+          , start: '2020-10-10T17:30:00'
+          , allDay: false
+        }
+      , ]
+      , timezone: 'Asia/Ho_Chi_Minh'
+      , timeFormat: 'H(:mm)'
     });
   });
+
 </script>
 @endsection
