@@ -60,7 +60,7 @@
                               @csrf
                               <div class="card table-card">
                                 <div class="card-header">
-                                  <h5>Nhân viên</h5>
+                                  <h5>Giáo viên</h5>
                                 </div>
 
                                 <div class="card-block">
@@ -68,9 +68,9 @@
                                     <div class="col-lg-12 col-xl-6 ui-sortable-handle">
                                       <div class="card-sub">
                                         <div class="card-block" style="margin-top: -20px">
-                                          <h6 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0">CMND</h6>
+                                          <h6 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0">Họ tên</h6>
                                           <h6 class="card-title">
-                                            <b> {{$giaovien->cmnd}}</b></h6>
+                                            <b> {{$giaovien->hodem .' '.$giaovien->ten}}</b></h6>
                                         </div>
                                         <div class="card-block" style="margin-top: -40px">
                                           <h6 class="card-title col-sm-auto" style="float: left; margin:0px 10px 0px 0px; padding: 0">
@@ -132,6 +132,7 @@
                                         </tr>
                                       </thead>
                                       <tbody>
+                                        @if($giaovien->tongGioLam($thang) > 0)
                                         <tr>
                                           <td style="text-indent: 10px">{{round( $giaovien->tongGioLam($thang)/60 ,1)}}</td>
                                           <td style="text-indent: 10px">100,000 đ</td>
@@ -141,20 +142,12 @@
                                           <input type="hidden" name="doituong" value="giaovien">
                                           <input type="hidden" name="trangthai" value="Chưa thanh toán">
                                         </tr>
-                                        {{-- <tr>
-                                          <td class="border-top-0"></td>
-                                          <td class="border-top-0"></td>
-                                          <td class="border-top-0"></td>
-                                        </tr>
-                                        <tr>
-                                          <td class="border-top-0"></td>
-                                          <td class="border-top-0"></td>
-                                          <td class="border-top-0"></td>
-                                        </tr> --}}
 
-                                        {{-- <tr>
+                                        @else
+                                        <tr>
                                           <td colspan="5" class="font-italic">Chưa có dữ liệu chấm công</td>
-                                        </tr> --}}
+                                        </tr>
+                                        @endif
                                       </tbody>
 
                                     </table>

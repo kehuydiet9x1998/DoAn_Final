@@ -36,9 +36,9 @@ class HocSinh extends Model
     return $this->hasMany(LichTraiNghiem::class);
   }
 
-  public function dsHocPhi()
+  public function hocPhi()
   {
-    return $this->hasMany(HocPhi::class);
+    return $this->hasOne(HocPhi::class);
   }
 
   public function dsDiem()

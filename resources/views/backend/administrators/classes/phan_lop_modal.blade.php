@@ -1,5 +1,5 @@
 @section('css')
-<link rel="stylesheet" href="{{asset('assets/css/bootstrap-select.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap-select.min.css')}}">
 @endsection
 
 <script>
@@ -10,7 +10,6 @@
   }
 
 </script>
-
 <div class="modal fade show" id="phanlop-Modal{{ isset($menu) ? $class->id : '' }}" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
@@ -30,7 +29,10 @@
               <label class="col-sm-3 col-form-label">Học sinh</label>
               <div class="col-sm-9">
                 <select name="hoc_sinh_id[]" class="selectpicker form-control form-control-primary fill" data-live-search="true" data-actions-box="true" data-max-options="{{ $class->khoahoc->sisotoida - $class->siso }}" title="-- Chọn học sinh --" multiple>
-                  @foreach($hocsinhs as $hocsinh)
+                  @foreach($hocsinhs->filter(function($item) use($class){
+                  return !$class->dsLopHoc->pluck('hoc_sinh_id')->contains($item->id);
+
+                  }) as $hocsinh)
                   <option value="{{ $hocsinh->id }}">{{ $hocsinh->id. ' - '. $hocsinh->hodem . ' ' . $hocsinh->ten
                     }}</option>
                   @endforeach

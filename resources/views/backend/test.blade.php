@@ -1,106 +1,165 @@
-<?php
+@extends('backend.layout.index')
+@section('content')
 
-function build_calendar($month,$year,$dateArray) {
+@section('css')
+<style>
+  /* .expand_caret {
+    transform: scale(1.6);
+    margin-left: 8px;
+    margin-top: -4px;
+  }
 
-     // Create array containing abbreviations of days of week.
-     $daysOfWeek = array('S','M','T','W','T','F','S');
+  a[aria-expanded='false']>.expand_caret {
+    transform: scale(1.6) rotate(-90deg);
+  } */
 
-     // What is the first day of the month in question?
-     $firstDayOfMonth = mktime(0,0,0,$month,1,$year);
+</style>
 
-     // How many days does this month contain?
-     $numberDays = date('t',$firstDayOfMonth);
+@endsection
 
-     // Retrieve some information about the first day of the
-     // month in question.
-     $dateComponents = getdate($firstDayOfMonth);
+<div class="pcoded-inner-content">
+  <div class="main-body">
+    <div class="page-wrapper">
+      <div class="page-body">
+        <div class="row">
+          <div class="col-sm-12">
+            <form action="/test" method="post">
+              @csrf
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-header-text">Phân quyền</h5>
+                </div>
+                <div class="card-block accordion-block">
 
-     // What is the name of the month in question?
-     $monthName = $dateComponents['month'];
+                  {{-- <div class="container"> --}}
 
-     // What is the index value (0-6) of the first day of the
-     // month in question.
-     $dayOfWeek = $dateComponents['wday'];
-
-     // Create the table tag opener and day headers
-
-     $calendar = "<table class='calendar'>";
-     $calendar .= "<caption>$monthName $year</caption>";
-     $calendar .= "<tr>";
-
-     // Create the calendar headers
-
-     foreach($daysOfWeek as $day) {
-          $calendar .= "<th class='header'>$day</th>";
-     }
-
-     // Create the rest of the calendar
-
-     // Initiate the day counter, starting with the 1st.
-
-     $currentDay = 1;
-
-     $calendar .= "</tr><tr>";
-
-     // The variable $dayOfWeek is used to
-     // ensure that the calendar
-     // display consists of exactly 7 columns.
-
-     if ($dayOfWeek > 0) {
-          $calendar .= "<td colspan='$dayOfWeek'>&nbsp;</td>";
-     }
-
-     $month = str_pad($month, 2, "0", STR_PAD_LEFT);
-
-     while ($currentDay <= $numberDays) {
-
-          // Seventh column (Saturday) reached. Start a new row.
-
-          if ($dayOfWeek == 7) {
-
-               $dayOfWeek = 0;
-               $calendar .= "</tr><tr>";
-
-          }
-
-          $currentDayRel = str_pad($currentDay, 2, "0", STR_PAD_LEFT);
-
-          $date = "$year-$month-$currentDayRel";
-
-          $calendar .= "<td class='day' rel='$date'>$currentDay</td>";
-
-          // Increment counters
-
-          $currentDay++;
-          $dayOfWeek++;
-
-     }
+                  <div class="row">
+                    <div class="col-md-2 mb-3">
+                      <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- /.col-md-4 -->
+                    <div class="col-md-10">
+                      <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <h5>Quản lý hệ thống</h5>
+                              @foreach(\App\Models\PermissionGroup::where('column' , 1 )->get() as $key => $pg)
+                              <ul class="p-t-10">
+                                <li>
+                                  <a data-toggle="collapse" data-target="#collapseExampleArea{{ $key }}" href="#collapseExampleArea" aria-expanded="false">
+                                    <i style="font-size: 13px" class="fa fa-caret-right mr-1"></i>
+                                  </a>
+                                  <input type="checkbox" class="main-check">
+                                  <label for="short">{{ $pg->name }}</label>
+                                  <ul id="collapseExampleArea{{ $key }}" class="collapse">
+                                    @foreach($pg->permissions as $permission)
+                                    <li>
+                                      <input type="checkbox" name="{{ $permission->ten }}" id="{{ $permission->ten }}">
+                                      <label for="{{ $permission->ten }}"> {{ $permission->mota }}</label>
+                                    </li>
+                                    @endforeach
+                                  </ul>
+                                </li>
+                              </ul>
+                              @endforeach
 
 
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        </div>
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 
-     // Complete the row of the last week in month, if necessary
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <hr>
+                  <button class="btn btn-primary float-right m-r-10 m-b-15">Cập nhật</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-     if ($dayOfWeek != 7) {
-
-          $remainingDays = 7 - $dayOfWeek;
-          $calendar .= "<td colspan='$remainingDays'>&nbsp;</td>";
-
-     }
-
-     $calendar .= "</tr>";
-
-     $calendar .= "</table>";
-
-     return $calendar;
-
-}
 
 
-  $dateComponents = getdate();
+@endsection
 
-  $month = $dateComponents['mon'];
-  $year = $dateComponents['year'];
+@section('script')
+<script>
+  $('input[type="checkbox"]').change(function(e) {
 
-  echo build_calendar($month,$year,[]);
+    var checked = $(this).prop("checked")
+      , container = $(this).parent()
+      , siblings = container.siblings();
 
-?>
+    container.find('input[type="checkbox"]').prop({
+      indeterminate: false
+      , checked: checked
+    });
+
+    function checkSiblings(el) {
+
+      var parent = el.parent().parent()
+        , all = true;
+
+      el.siblings().each(function() {
+        let returnValue = all = ($(this).children('input[type="checkbox"]').prop("checked") === checked);
+        return returnValue;
+      });
+
+      if (all && checked) {
+
+        parent.children('input[type="checkbox"]').prop({
+          indeterminate: false
+          , checked: checked
+        });
+
+        checkSiblings(parent);
+
+      } else if (all && !checked) {
+
+        parent.children('input[type="checkbox"]').prop("checked", checked);
+        parent.children('input[type="checkbox"]').prop("indeterminate", (parent.find('input[type="checkbox"]:checked').length > 0));
+        checkSiblings(parent);
+
+      } else {
+
+        el.parents("li").children('input[type="checkbox"]').prop({
+          indeterminate: true
+          , checked: false
+        });
+
+      }
+
+    }
+
+    checkSiblings(container);
+  });
+
+
+  $('input[type="checkbox"]:not(.main-check)').click();
+  $('input[type="checkbox"]:not(.main-check)').click();
+
+</script>
+
+@endsection

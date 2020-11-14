@@ -12,7 +12,13 @@ class KhoanThu extends Model
   use SoftDeletes;
   protected $table = 'khoan_thu';
   protected $dates = ['deleted_at'];
-  protected $fillable = ['tenkhoanthu', 'sotien', 'trangthai'];
+  protected $fillable = [
+    'tenkhoanthu',
+    'sotien',
+    'trangthai',
+    'ngaybatdau',
+    'ngayketthuc',
+  ];
 
   public function hocPhi()
   {

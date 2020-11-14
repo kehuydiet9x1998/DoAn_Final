@@ -7,15 +7,11 @@
   <component name="ChangeListManager">
     <list default="true" id="dfeacd01-f2c3-4401-a83c-21a86b8aa657" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Administrators/PhanLopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Administrators/PhanLopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/HocSinh.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/HocSinh.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_08_002_create_hoc_sinhs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_08_002_create_hoc_sinhs_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/dashboard-contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/dashboard-contact.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/edit_student_modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/edit_student_modal.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/listStudent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/listStudent.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/listlichtrainghiem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/listlichtrainghiem.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/nhanxet/list_nhanxet.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/nhanxet/list_nhanxet.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Administrators/ChuyenlopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Administrators/ChuyenlopController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/classes/class_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/classes/class_detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/classes/classes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/classes/classes.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/classes/phan_lop_modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/classes/phan_lop_modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,21 +170,21 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LaravelDemo" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\DoAn\resources\views\backend\students" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\DoAn\resources\views\backend\administrators" />
       <recent name="D:\xampp\htdocs\DoAn\resources\views\backend" />
       <recent name="D:\xampp\htdocs\DoAn\app\Http\Controllers\Administrators" />
       <recent name="D:\xampp\htdocs\DoAn\resources\views\backend\teachers" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\DoAn\resources\views\backend\students" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.vendor">
@@ -314,6 +310,8 @@
       <workItem from="1605274283330" duration="8570000" />
       <workItem from="1605316612391" duration="3386000" />
       <workItem from="1605323084885" duration="2779000" />
+      <workItem from="1605339840221" duration="4365000" />
+      <workItem from="1605349207653" duration="7188000" />
     </task>
     <servers />
   </component>
@@ -353,10 +351,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="430" y="208" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1605097799340" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1605194385453">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1605343221606">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1605194385453" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1605343221606" />
     <state x="259" y="10" key="SettingsEditor" timestamp="1602058592838">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -373,10 +371,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1603248126567" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1605099283047">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1605355237857">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1605099283047" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1605355237857" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
