@@ -48,6 +48,9 @@ class PhanLopController extends Controller
         ['hoc_sinh_id' => $hoc_sinh_id, 'lop_hoc_id' => $lop_hoc_id],
         ['ngayvaolop' => $ngayvaolop]
       );
+      $hocsinh = HocSinh::find($hoc_sinh_id);
+      $hocsinh->trangthai = 'Chính thức';
+      $hocsinh->save();
     }
     $lophoc = LopHoc::find($lop_hoc_id);
     $lophoc->siso = PhanLop::where('lop_hoc_id', $lop_hoc_id)->count();

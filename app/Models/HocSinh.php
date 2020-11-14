@@ -26,10 +26,10 @@ class HocSinh extends Model
     'user_id',
   ];
 
-  public function getNgaysinhAttribute($value)
-  {
-    return date('d/m/Y', strtotime($value));
-  }
+//  public function getNgaysinhAttribute($value)
+//  {
+//    return date('d/m/Y', strtotime($value));
+//  }
 
   public function dsLichTraiNghiem()
   {

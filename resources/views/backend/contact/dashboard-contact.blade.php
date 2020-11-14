@@ -11,7 +11,7 @@
                   <div class="row align-items-center m-b-30">
                     <div class="col">
                       <h6 class="m-b-5 text-white">Tổng tiền học phí đã thu tháng 10</h6>
-                      <h3 class="m-b-0 f-w-700 text-white">5267 VNĐ</h3>
+                      <h3 class="m-b-0 f-w-700 text-white"> VNĐ</h3>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-money-bill-alt text-c-red f-18"></i>
@@ -87,21 +87,29 @@
                 <table class="table table-bordered">
                   <thead>
                   <tr>
-                    <th>MÃ KHÓA HỌC</th>
+                    <th>STT</th>
                     <th>TÊN KHÓA HỌC</th>
+                    <th>ĐỘ TUỔI</th>
                     <th>SỐ LƯỢNG LỚP HỌC</th>
                     <th>SỐ LƯỢNG HỌC SINH</th>
                     <th>SỐ LƯỢNG GIẢNG VIÊN</th>
                   </tr>
                   </thead>
                   <tbody>
+                  @foreach($khoahocs as $kh)
                   <tr>
-                    <th scope="row">KH - 001</th>
-                    <td>Lập trình WEb vs Python</td>
-                    <td style="text-align: center">10</td>
-                    <td style="text-align: center">70</td>
-                    <td style="text-align: center">7</td>
+                    <th scope="row" style="text-align: center">{{$kh->id}}</th>
+                    <td style="white-space: normal">{{$kh->tenkhoahoc}}</td>
+                    <td>{{$kh->dotuoi}}</td>
+                    <td style="text-align: center">{{$kh->dsLopHoc->count()}}</td>
+                    @php
+                      $sohocsinh = $kh->dsLopHoc()->with('dslophoc')->get()->pluck('dslophoc')->collapse()->count();
+                      $sogiaovien = $kh->dsLopHoc()->with('giaovien')->get()->count();
+                      @endphp
+                    <td style="text-align: center">{{$sohocsinh}}</td>
+                    <td style="text-align: center">{{$sogiaovien}}</td>
                   </tr>
+                  @endforeach
                   </tbody>
                 </table>
               </div>
