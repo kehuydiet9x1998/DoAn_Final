@@ -36,6 +36,8 @@ class BaiGiangController extends Controller
    */
   public function store(Request $request)
   {
+    $this->authorize('them_baigiang');
+
     $tenfile = $request->file('filebaigiang')->store('baigiang');
     $data = $request->all();
     $data['filebaigiang'] = $tenfile;
@@ -77,6 +79,8 @@ class BaiGiangController extends Controller
    */
   public function update(Request $request, BaiGiang $baigiang)
   {
+    $this->authorize('sua_baigiang');
+
     $baigiang->fill($request->except('filebaigiang'));
     if ($request->has('filebaigiang')) {
       $baigiang->filebaigiang = $request
@@ -95,6 +99,8 @@ class BaiGiangController extends Controller
    */
   public function destroy(BaiGiang $baigiang)
   {
+    $this->authorize('xoa_baigiang');
+
     $baigiang->delete();
     return back();
   }

@@ -18,6 +18,8 @@ class UserController extends Controller
   {
     $users = User::all();
     $roles = Role::all();
+    $this->authorize('tv_nguoidung');
+
     return view(
       'backend.administrators.users.list_user',
       compact('users', 'roles')
@@ -32,6 +34,8 @@ class UserController extends Controller
    */
   public function store(Request $request)
   {
+    $this->authorize('them_nguoidung');
+
     $data = $request->except('password-confirmation', 'anhdaidien');
     $data['anhdaidien'] = $request->file('anhdaidien')->save('anhdaidien');
     $data['password'] = bcrypt($request->password);
@@ -74,6 +78,8 @@ class UserController extends Controller
    */
   public function update(Request $request, User $user)
   {
+    $this->authorize('sua_nguoidung');
+
     $data = $request->except('password-confirmation', 'anhdaidien');
     if ($request->has('anhdaidien')) {
       $data['anhdaidien'] = $request->file('anhdaidien')->store('anhdaidien');
@@ -92,6 +98,8 @@ class UserController extends Controller
    */
   public function destroy(User $user)
   {
+    $this->authorize('xoa_nguoidung');
+
     $user->delete();
     return back();
   }

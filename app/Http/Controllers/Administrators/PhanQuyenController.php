@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Contacts;
+namespace App\Http\Controllers\Administrators;
 
 use App\Http\Controllers\Controller;
-use App\Models\NhanVien;
-use App\Models\User;
+use App\Models\Role;
 use Illuminate\Http\Request;
 
-class TrangCaNhanController extends Controller
+class PhanQuyenController extends Controller
 {
   /**
    * Display a listing of the resource.
@@ -16,6 +15,17 @@ class TrangCaNhanController extends Controller
    */
   public function index()
   {
+    return view('backend.phanquyen');
+  }
+
+  /**
+   * Show the form for creating a new resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function create()
+  {
+    //
   }
 
   /**
@@ -26,16 +36,22 @@ class TrangCaNhanController extends Controller
    */
   public function store(Request $request)
   {
-    //
+    $role = Role::findOrFail($request->role_id);
+
+    $arr = array_keys($request->except(['_token', 'role_id']));
+    $role->permissions()->sync($arr);
+
+    session()->flash('success-message', 'Cập nhật thành công');
+    return back();
   }
 
   /**
    * Display the specified resource.
    *
-   * @param  \App\Models\User  $user
+   * @param  \App\Models\Role  $role
    * @return \Illuminate\Http\Response
    */
-  public function show(User $user)
+  public function show(Role $role)
   {
     //
   }
@@ -43,10 +59,10 @@ class TrangCaNhanController extends Controller
   /**
    * Show the form for editing the specified resource.
    *
-   * @param  \App\Models\User  $user
+   * @param  \App\Models\Role  $role
    * @return \Illuminate\Http\Response
    */
-  public function edit(User $user)
+  public function edit(Role $role)
   {
     //
   }
@@ -55,10 +71,10 @@ class TrangCaNhanController extends Controller
    * Update the specified resource in storage.
    *
    * @param  \Illuminate\Http\Request  $request
-   * @param  \App\Models\User  $user
+   * @param  \App\Models\Role  $role
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, User $user)
+  public function update(Request $request, Role $role)
   {
     //
   }
@@ -66,10 +82,10 @@ class TrangCaNhanController extends Controller
   /**
    * Remove the specified resource from storage.
    *
-   * @param  \App\Models\User  $user
+   * @param  \App\Models\Role  $role
    * @return \Illuminate\Http\Response
    */
-  public function destroy(User $user)
+  public function destroy(Role $role)
   {
     //
   }

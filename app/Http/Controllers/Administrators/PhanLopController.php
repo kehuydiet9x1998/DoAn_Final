@@ -19,6 +19,8 @@ class PhanLopController extends Controller
    */
   public function index()
   {
+    $this->authorize('tv_phanlop');
+
     $classes = LopHoc::all();
     $hocsinhs = HocSinh::all();
     return view('backend.contact.phanlop', compact('classes', 'hocsinhs'));
@@ -41,6 +43,8 @@ class PhanLopController extends Controller
    */
   public function store(Request $request)
   {
+    $this->authorize('them_phanlop');
+
     $lop_hoc_id = $request['lop_hoc_id'];
     $ngayvaolop = Carbon::now('Asia/Ho_Chi_Minh');
     foreach ($request['hoc_sinh_id'] as $hoc_sinh_id) {
@@ -118,6 +122,8 @@ class PhanLopController extends Controller
    */
   public function destroy(PhanLop $phanlop)
   {
+    $this->authorize('xoa_phanlop');
+
     $phanlop->delete();
     return back();
   }

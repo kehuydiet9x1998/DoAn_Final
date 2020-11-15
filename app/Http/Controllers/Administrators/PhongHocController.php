@@ -9,13 +9,21 @@ use JsValidator;
 
 class PhongHocController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-  protected $validationRules = ['tenphong' => 'required','mota'=>'required','trangthai'=>'required'];
-  protected $attributes = ['tenphong' => 'Tên Phòng','mota'=>'Mô tả', 'trangthai'=>'Trạng thái phòng học'];
+  /**
+   * Display a listing of the resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  protected $validationRules = [
+    'tenphong' => 'required',
+    'mota' => 'required',
+    'trangthai' => 'required',
+  ];
+  protected $attributes = [
+    'tenphong' => 'Tên Phòng',
+    'mota' => 'Mô tả',
+    'trangthai' => 'Trạng thái phòng học',
+  ];
 
   public function __construct()
   {
@@ -25,88 +33,98 @@ class PhongHocController extends Controller
       $this->attributes
     );
   }
-    public function index()
-    {
-        $phonghoc = PhongHoc::all();
-        return view('backend.administrators.room.classroom',
-          compact('phonghoc'))->with(['jsValidator' => $this->jsValidator]);
-    }
+  public function index()
+  {
+    $this->authorize('tv_danhmuc');
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    $phonghoc = PhongHoc::all();
+    return view(
+      'backend.administrators.room.classroom',
+      compact('phonghoc')
+    )->with(['jsValidator' => $this->jsValidator]);
+  }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-      $data = $request->all();
-      PhongHoc::create($data);
-      return redirect(route('classroom.index'));
-    }
+  /**
+   * Show the form for creating a new resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function create()
+  {
+    //
+  }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-      $phonghoc = PhongHoc::findOrFail($id);
-      return view('backend.administrators.room.show_room_modal', [
-        'phonghoc' => $phonghoc,
-      ]);
-    }
+  /**
+   * Store a newly created resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Illuminate\Http\Response
+   */
+  public function store(Request $request)
+  {
+    $this->authorize('them_danhmuc');
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-      $room = PhongHoc::find($id);
-      return view('backend.administrators.room.edit_room_modal', [
-        'room' => $room,
-      ])->with(['jsValidator' => $this->jsValidator]);
-    }
+    $data = $request->all();
+    PhongHoc::create($data);
+    return redirect(route('classroom.index'));
+  }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-      $room = PhongHoc::findOrFail($id);
-      $room->fill($request->all());
-      $room->save();
-      return redirect(route('classroom.index'));
-    }
+  /**
+   * Display the specified resource.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function show($id)
+  {
+    $phonghoc = PhongHoc::findOrFail($id);
+    return view('backend.administrators.room.show_room_modal', [
+      'phonghoc' => $phonghoc,
+    ]);
+  }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-      PhongHoc::where('id', '=', $id)->delete();
-      return redirect(route('classroom.index'));
-    }
+  /**
+   * Show the form for editing the specified resource.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function edit($id)
+  {
+    $room = PhongHoc::find($id);
+    return view('backend.administrators.room.edit_room_modal', [
+      'room' => $room,
+    ])->with(['jsValidator' => $this->jsValidator]);
+  }
+
+  /**
+   * Update the specified resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function update(Request $request, $id)
+  {
+    $this->authorize('sua_danhmuc');
+
+    $room = PhongHoc::findOrFail($id);
+    $room->fill($request->all());
+    $room->save();
+    return redirect(route('classroom.index'));
+  }
+
+  /**
+   * Remove the specified resource from storage.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function destroy($id)
+  {
+    $this->authorize('xoa_danhmuc');
+
+    PhongHoc::where('id', '=', $id)->delete();
+    return redirect(route('classroom.index'));
+  }
 }
