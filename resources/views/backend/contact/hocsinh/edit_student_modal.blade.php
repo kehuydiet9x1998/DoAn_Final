@@ -32,7 +32,7 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Ngày sinh</label>
             <div class="col-sm-9">
-              <input type="date" class="form-control" id="ngaysinh" name="ngaysinh"  value="{{$hocsinh->ngaysinh}}" placeholder="">
+              <input type="date" class="form-control" id="ngaysinh" name="ngaysinh" value="{{$hocsinh->ngaysinh}}" placeholder="">
               <span class="messages"></span>
             </div>
           </div>
@@ -56,6 +56,12 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Trạng thái</label>
             <div class="col-sm-9">
+              <select name="trangthai" id="" class="form-control">
+                <option value=""> -- Chọn trạng thái -- </option>
+                <option @if($hocsinh->trangthai == 'Đang tư vấn') selected @endif value="Đang tư vấn">Đang tư vấn</option>
+                <option @if($hocsinh->trangthai == 'Học thử') selected @endif value="Học thử">Học thử</option>
+                <option @if($hocsinh->trangthai == 'Chính thức') selected @endif value="Chính thức">Chính thức</option>
+              </select>
               <input type="text" class="form-control" value="{{$hocsinh->trangthai}}" id="trangthai" name="trangthai" placeholder="Trạng thái">
               <span class="messages"></span>
             </div>
@@ -109,10 +115,12 @@
       $('body').removeClass('modal-open');
       $('.modal-backdrop').hide();
     };
-    </script>
+
+  </script>
   <script>
     var dateControl = document.querySelector('input[type="date"]');
     console.log(dateControl.value);
     console.log(dateControl.valueAsNumber);
+
   </script>
   {!! $jsValidator->selector('#editform') !!}
