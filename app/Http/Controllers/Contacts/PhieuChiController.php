@@ -15,6 +15,8 @@ class PhieuChiController extends Controller
    */
   public function index()
   {
+    $this->authorize('tv_phieuchi');
+
     $phieuchis = PhieuChi::all();
     return view(
       'backend.contact.phieuchi.list-phieu-chi',
@@ -30,6 +32,8 @@ class PhieuChiController extends Controller
    */
   public function store(Request $request)
   {
+    $this->authorize('them_phieuchi');
+
     $data = $request->all();
     $data['ngaytao'] = date('Y/m/d');
     $data['sotien'] = str_replace(',', '', $request['sotien']);

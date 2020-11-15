@@ -4,6 +4,7 @@ namespace App\Http\Controllers\administrators;
 
 use App\Http\Controllers\Controller;
 use App\Models\GiaoVien;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class TeacherController extends Controller
@@ -15,6 +16,8 @@ class TeacherController extends Controller
    */
   public function index()
   {
+    $this->authorize('tv_giaovien');
+
     // $teacher = GiaoVien::orderBy('ten','ASC') ->paginate(10);
     $teacher = GiaoVien::all();
     return view('backend.administrators.teacher.teacher', [
@@ -30,7 +33,10 @@ class TeacherController extends Controller
    */
   public function store(Request $request)
   {
+    $this->authorize('them_giaovien');
+
     $data = $request->all();
+    $data['user_id'] = User::taoUser('hoc_sinh');
     GiaoVien::create($data);
     return redirect(route('teachers.index'));
   }
@@ -72,6 +78,8 @@ class TeacherController extends Controller
    */
   public function update(Request $request, $id)
   {
+    $this->authorize('sua_giaovien');
+
     $data = GiaoVien::find($id);
     $data->fill($request->all());
     $data->save();
@@ -86,6 +94,8 @@ class TeacherController extends Controller
    */
   public function destroy($id)
   {
+    $this->authorize('xoa_giaovien');
+
     GiaoVien::where('id', '=', $id)->delete();
     return redirect(route('teachers.index'));
   }

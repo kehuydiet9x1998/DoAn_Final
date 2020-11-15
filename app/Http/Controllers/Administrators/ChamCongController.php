@@ -126,12 +126,16 @@ class ChamCongController extends Controller
 
   public function confirm(Checkin $attendance)
   {
+    $this->authorize('sua_chamconggiaovien');
+
     $attendance->trangthai = 'Đã xác nhận';
     $attendance->save();
   }
 
   public function cancel(Checkin $attendance)
   {
+    $this->authorize('sua_chamconggiaovien');
+
     $attendance->trangthai = 'Không hợp lệ';
     $attendance->save();
   }
@@ -168,6 +172,7 @@ class ChamCongController extends Controller
   public function destroy(Checkin $attendance)
   {
     // return $attendance;
+
     $attendance->delete();
     return back();
   }

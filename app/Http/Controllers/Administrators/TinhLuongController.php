@@ -15,6 +15,7 @@ class TinhLuongController extends Controller
    */
   public function index()
   {
+    $this->authorize('tv_bangluong');
     return view('backend.administrators.tinhluong.tinhluong');
   }
 
@@ -46,6 +47,8 @@ class TinhLuongController extends Controller
 
   public function thanhtoan($id)
   {
+    $this->authorize('sua_bangluong');
+
     $luong = Luong::find($id);
     $luong->update(['trangthai' => 'Đã thanh toán']);
     session()->flash('doituong', $luong->doituong);
@@ -60,6 +63,8 @@ class TinhLuongController extends Controller
    */
   public function store(Request $request)
   {
+    $this->authorize('sua_bangluong');
+
     Luong::create($request->all());
     session()->flash('doituong', $request->doituong);
     session()->flash('thang', $request->thang);

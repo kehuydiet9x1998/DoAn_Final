@@ -20,6 +20,12 @@ class HocPhiController extends Controller
    */
   public function index()
   {
+    $this->authorize('tv_hocphi');
+
+    foreach (HocPhi::all() as $hocphi) {
+      $hocphi->updateHocPhi();
+    }
+
     $hocphi = HocPhi::orderBy('trangthai')->get();
     $khoanthu = KhoanThu::all();
     return view(
@@ -36,6 +42,8 @@ class HocPhiController extends Controller
    */
   public function store(Request $request)
   {
+    $this->authorize('them_hocphi');
+
     $data = $request->only(['nhan_vien_id', 'hoc_phi_id']);
     $data['ngaydong'] = date('Y/m/d');
     $data['sotiendadong'] = str_replace(',', '', $request['sotiendadong']);
@@ -105,6 +113,8 @@ class HocPhiController extends Controller
    */
   public function update(Request $request, $id)
   {
+    $this->authorize('sua_hocphi');
+
     $hocphi = HocPhi::find($id);
   }
 
@@ -116,6 +126,8 @@ class HocPhiController extends Controller
    */
   public function destroy($id)
   {
+    $this->authorize('xoa_hocphi');
+
     HocPhi::Where('id', '=', $id)->delete();
     return redirect(route('hocphis.index'));
   }
@@ -125,7 +137,6 @@ class HocPhiController extends Controller
     foreach (HocPhi::all() as $hocphi) {
       $hocphi->updateHocPhi();
     }
-
     return back();
   }
 }

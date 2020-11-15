@@ -9,13 +9,21 @@ use App\Models\ChucVu;
 
 class ChucVuController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-  protected $validationRules = ['ten' => 'required','mota'=>'required','hesoluong'=>'required'];
-  protected $attributes = ['ten' => 'Tên chức vụ','mota'=>'Mô tả', 'hesoluong'=>'Hệ số lương'];
+  /**
+   * Display a listing of the resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  protected $validationRules = [
+    'ten' => 'required',
+    'mota' => 'required',
+    'hesoluong' => 'required',
+  ];
+  protected $attributes = [
+    'ten' => 'Tên chức vụ',
+    'mota' => 'Mô tả',
+    'hesoluong' => 'Hệ số lương',
+  ];
 
   public function __construct()
   {
@@ -25,84 +33,96 @@ class ChucVuController extends Controller
       $this->attributes
     );
   }
-    public function index()
-    {
-        $chucvus = ChucVu::all();
-        return view('backend.administrators.chucvu.chucvu',
-          compact('chucvus'))->with(['jsValidator' => $this->jsValidator]);
-    }
+  public function index()
+  {
+    $this->authorize('tv_danhmuc');
+    return 'cuondz';
+    $chucvus = ChucVu::all();
+    return view(
+      'backend.administrators.chucvu.chucvu',
+      compact('chucvus')
+    )->with(['jsValidator' => $this->jsValidator]);
+  }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+  /**
+   * Show the form for creating a new resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function create()
+  {
+    //
+  }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-      $data = $request->all();
-      ChucVu::create($data);
-      return redirect(route('admin-chucvu.index'));
-    }
+  /**
+   * Store a newly created resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Illuminate\Http\Response
+   */
+  public function store(Request $request)
+  {
+    $this->authorize('them_danhmuc');
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+    $data = $request->all();
+    ChucVu::create($data);
+    return redirect(route('admin-chucvu.index'));
+  }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-      $chucvu = ChucVu::find($id);
-      return view('backend.administrators.chucvu.edit_chucvu__modal',
-        compact('chucvu'))->with(['jsValidator' => $this->jsValidator]);
-    }
+  /**
+   * Display the specified resource.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function show($id)
+  {
+    //
+  }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-      $chucvu = ChucVu::findOrFail($id);
-      $chucvu->fill($request->all());
-      $chucvu->save();
-      return redirect(route('admin-chucvu.index'));
-    }
+  /**
+   * Show the form for editing the specified resource.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function edit($id)
+  {
+    $chucvu = ChucVu::find($id);
+    return view(
+      'backend.administrators.chucvu.edit_chucvu__modal',
+      compact('chucvu')
+    )->with(['jsValidator' => $this->jsValidator]);
+  }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-      ChucVu::where('id', '=', $id)->delete();
-      return redirect(route('admin-chucvu.index'));
-    }
+  /**
+   * Update the specified resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function update(Request $request, $id)
+  {
+    $this->authorize('sua_danhmuc');
+
+    $chucvu = ChucVu::findOrFail($id);
+    $chucvu->fill($request->all());
+    $chucvu->save();
+    return redirect(route('admin-chucvu.index'));
+  }
+
+  /**
+   * Remove the specified resource from storage.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function destroy($id)
+  {
+    $this->authorize('xoa_danhmuc');
+
+    ChucVu::where('id', '=', $id)->delete();
+    return redirect(route('admin-chucvu.index'));
+  }
 }

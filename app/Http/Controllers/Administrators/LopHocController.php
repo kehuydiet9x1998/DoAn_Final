@@ -41,6 +41,8 @@ class LopHocController extends Controller
 
   public function index()
   {
+    $this->authorize('tv_lophoc');
+
     $lophocs = LopHoc::all();
     $khoahocs = KhoaHoc::all();
     $giangviens = GiaoVien::all();
@@ -77,6 +79,8 @@ class LopHocController extends Controller
    */
   public function store(Request $request)
   {
+    $this->authorize('them_lophoc');
+
     $data = $request->all();
 
     $data['trangthai'] = 'Chưa diễn ra';
@@ -140,6 +144,8 @@ class LopHocController extends Controller
    */
   public function update(Request $request, $id)
   {
+    $this->authorize('sua_lophoc');
+
     // return $request->all();
     $lophoc = LopHoc::find($id);
     $lophoc->fill($request->except('thu'));
@@ -165,6 +171,8 @@ class LopHocController extends Controller
    */
   public function destroy($id)
   {
+    $this->authorize('xoa_lophoc');
+
     LopHoc::where('id', '=', $id)->delete();
     return redirect(route('allclass.index'));
   }

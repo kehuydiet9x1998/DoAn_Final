@@ -24,6 +24,13 @@ class User extends Authenticatable
   protected $hidden = ['password'];
   protected $dates = ['deleted_at'];
 
+  public function hasPermission(Permission $permission)
+  {
+    return !!optional(optional($this->role)->permissions)->contains(
+      $permission
+    );
+  }
+
   public function giaoVien()
   {
     return $this->hasOne(GiaoVien::class);
