@@ -75,11 +75,7 @@
                 <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;"></div>
                 <div class="modal fade show" id="history-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;"></div>
                 <div class="modal md-effect-1 md-show" id="phieuthu-Modal" data-backdrop="false" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
-
-
                 </div>
-
-
               </div>
             </div>
           </div>

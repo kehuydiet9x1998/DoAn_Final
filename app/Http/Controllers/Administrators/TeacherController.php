@@ -36,9 +36,9 @@ class TeacherController extends Controller
     $this->authorize('them_giaovien');
 
     $data = $request->all();
-    $data['user_id'] = User::taoUser('hoc_sinh');
+    $data['user_id'] = User::taoUser('giao_vien');
     GiaoVien::create($data);
-    return redirect(route('teachers.index'));
+    return back();
   }
 
   /**
