@@ -54,7 +54,7 @@
               <div class="form-group row">
                 <label class="col-sm-3 col-form-label">Số CMND</label>
                 <div class="col-sm-9">
-                  <input type="text" class="form-control" name="cmnd" placeholder="Nhập vào tên">
+                  <input type="text" class="form-control" name="cmnd" placeholder="Nhập vào CMND">
                   <span class="messages"></span>
                 </div>
               </div>

@@ -187,6 +187,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('my-comment', 'Students\NhanXetGiaoVienController');
     Route::resource('review-khoahoc', 'Students\NhanXetKhoahocController');
     Route::resource('review-giaovien', 'Students\NhanXetGiaoVienController');
+    Route::resource('dashboard', "Students\DashboardController");
     Route::get('review', function () {
       return view('backend.students.review');
     });

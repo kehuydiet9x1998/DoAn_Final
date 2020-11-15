@@ -41,7 +41,7 @@
                             {{-- Khối chứa thông tin  --}}
                             <div class="card-block">
                               <div class="table-responsive">
-                                <table class="table table-hover m-b-0" id="datatable">
+                                <table class="table table-hover m-b-0">
                                   <thead>
                                     <tr>
                                       <th>ID</th>
