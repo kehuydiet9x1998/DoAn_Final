@@ -16,7 +16,7 @@
             <label class="col-sm-3 col-form-label">Tên học sinh</label>
             <div class="col-sm-9">
               <input type="hidden" class="form-control" name="hoc_sinh_id" id="hoc_sinh_id" value="{{$lophoc->hoc_sinh_id}}">
-              <input type="text" class="form-control" name="tenlop" id="hodem" value="{{$lophoc->hocsinh->ten}}" readonly>
+              <input type="text" class="form-control" name="tenlop" id="hodem" value="{{$lophoc->hocsinh->hodem.' '.$lophoc->hocsinh->ten}}" readonly>
               <span class="messages"></span>
             </div>
           </div>

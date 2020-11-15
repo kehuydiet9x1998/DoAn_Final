@@ -40,6 +40,50 @@ class ChuyenlopController extends Controller
   public function store(Request $request)
   {
     $this->authorize('sua_phanlop');
+    $data = $request->except('lop_hoc_id-cu');
+    $hocsinh = HocSinh::find($request['hoc_sinh_id']);
+    $class = LopHoc::find($request['lop_hoc_id']);
+    $khoahoc = KhoaHoc::find($class->khoa_hoc_id);
+    if ($class->siso < $khoahoc->sisotoida) {
+      PhanLop::create($data);
+      $class->siso = PhanLop::where(
+        'lop_hoc_id',
+        $request['lop_hoc_id']
+      )->count();
+      $class->save();
+      $lophoc = PhanLop::find($request['lop_hoc_id-cu']);
+      $oldclass = LopHoc::find($lophoc->lop_hoc_id);
+      $lophoc->delete();
+      $oldclass->siso = PhanLop::where(
+        'lop_hoc_id',
+        $lophoc->lop_hoc_id
+      )->count();
+      $oldclass->save();
+
+      $sotien = $class->khoaHoc->hocphi - $oldclass->khoaHoc->hocphi;
+      $temp = 'Đóng thêm học phí lớp' . $class->tenlop;
+      if ($sotien < 0) {
+        $temp = 'Hoàn trả học phí lớp ' . $class->tenlop;
+      }
+
+      $hocsinh->hocPhi->dsKhoanThu()->create([
+        'sotien' => abs($sotien),
+        'tenkhoanthu' => $temp,
+        'ngaybatdau' => now(),
+        'ngayketthuc' => now()->addDays(30),
+        'lop_hoc_id' => $request['lop_hoc_id'],
+        'trangthai' => 'Chưa đóng',
+      ]);
+
+      session()->flash(
+        'success-message',
+        "Đã chuyển $hocsinh->hodem $hocsinh->ten từ lớp $oldclass->tenlop sang $class->tenlop"
+      );
+    } else {
+      session()->flash('error-message', 'Quá sĩ số tối đa..!');
+    }
+
+    return back();
 
     $data = $request->except('lop_hoc_id-cu');
     $hocsinh = HocSinh::find($request['hoc_sinh_id']);

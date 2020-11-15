@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Administrators;
 
 use App\Http\Controllers\Controller;
+use App\Models\HocPhi;
 use App\Models\HocSinh;
 use App\Models\LopHoc;
 use App\Models\PhanLop;
