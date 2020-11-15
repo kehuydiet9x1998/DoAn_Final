@@ -17,6 +17,8 @@ class KhoanThuController extends Controller
    */
   public function index()
   {
+    $this->authorize('tv_khoanthu');
+
     $khoanthus = DB::select(
       "select tenkhoanthu, sotien,
       sum(if( trangthai like N'Đã hoàn thành' , 1 , 0 )) as sohocsinhdadong,
@@ -49,6 +51,8 @@ class KhoanThuController extends Controller
    */
   public function store(Request $request)
   {
+    $this->authorize('them_khoanthu');
+
     if (sizeof($request->hoc_phi_id) > 0) {
       foreach ($request->hoc_phi_id as $hoc_phi_id) {
         KhoanThu::updateOrInsert(
@@ -110,6 +114,8 @@ class KhoanThuController extends Controller
    */
   public function update(Request $request, $tenkhoanthu)
   {
+    $this->authorize('sua_khoanthu');
+
     if (sizeof($request->hoc_phi_id) > 0) {
       KhoanThu::where('tenkhoanthu', $tenkhoanthu)->forceDelete();
 
@@ -140,6 +146,8 @@ class KhoanThuController extends Controller
    */
   public function destroy($tenkhoanthu)
   {
+    $this->authorize('xoa_khoanthu');
+
     KhoanThu::where('tenkhoanthu', $tenkhoanthu)->delete();
   }
 }

@@ -13,8 +13,6 @@ use App\Http\Controllers\Teachers\BaiTapController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\students\XemNhanXetController;
 use App\Http\Controllers\Teachers\NhanXetHocSinhController;
-use App\Http\Controllers\TinhLuongController;
-use App\Models\NhanXetGiaoVien;
 
 Route::get('/', function () {
   return view('frontend.trangchu');
@@ -37,11 +35,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('loaikhoahoc', 'Administrators\LoaiKhoaHocController');
     Route::resource('admin-hoccu', 'Administrators\HocCuController');
     Route::resource('admin-hoccu-plus', 'Administrators\PlusHocCuController');
-
-    Route::get('phanquyen', function () {
-      return view('backend.administrators.phanquyen');
-    });
-
+    Route::resource('role', 'Administrators\PhanQuyenController');
     Route::resource('admin-chuyenlop', 'Administrators\ChuyenLopController');
     /* -------------------------------------------------------------------------- */
     /*                                  Chấm công                                 */
@@ -83,6 +77,11 @@ Route::middleware(['auth', 'web'])->group(function () {
     ]);
     Route::resource('payroll', 'Administrators\TinhLuongController');
   });
+
+  /* -------------------------------------------------------------------------- */
+  /*                                  Giao vien                                 */
+  /* -------------------------------------------------------------------------- */
+
   Route::prefix('teachers')->group(function () {
     Route::resource('classes', 'Teachers\LopHocController');
     Route::resource('lessons', 'Teachers\BuoiHocController');
@@ -130,6 +129,10 @@ Route::middleware(['auth', 'web'])->group(function () {
     return view('backend.bantin');
   });
 
+  /* -------------------------------------------------------------------------- */
+  /*                                   Contact                                  */
+  /* -------------------------------------------------------------------------- */
+
   Route::prefix('/contacts')->group(function () {
     Route::resource('students', "Contacts\StudentController");
     Route::resource('hocphis', "Contacts\HocPhiController");
@@ -155,6 +158,10 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('khoanthu', 'Contacts\KhoanThuController');
   });
 
+  /* -------------------------------------------------------------------------- */
+  /*                                  Hoc sinh                                  */
+  /* -------------------------------------------------------------------------- */
+
   Route::prefix('/student')->group(function () {
     Route::resource('class', "Students\MyClassController");
     Route::resource('allcourses', 'Students\KhoaHocController');
@@ -177,29 +184,28 @@ Route::middleware(['auth', 'web'])->group(function () {
     });
   });
 });
-Route::get('/myhome', function () {
-  return view('backend.myhome');
-});
 
-Auth::routes();
+/* -------------------------------------------------------------------------- */
+/*                    Dang nhap + tin nhan + trang ca nhan                    */
+/* -------------------------------------------------------------------------- */
 
 Route::get('/chat', [ChatsController::class, 'index']);
 Route::get('/messages/{id}', [ChatsController::class, 'getMessage'])->name(
   'messages'
 );
 Route::post('/messages', [ChatsController::class, 'sendMessage']);
-
-Route::get('/pro-class', function () {
-  return view('proclass-detail');
-});
-
 Route::get('/trangcanhan/{id?}', [TrangCaNhanController::class, 'show'])->name(
   'trangcanhan'
 );
-
 Route::get('/notifications', function () {
   return view('backend.notification');
 });
+
+Auth::routes();
+
+/* -------------------------------------------------------------------------- */
+/*                                    Test                                    */
+/* -------------------------------------------------------------------------- */
 
 Route::get('/test', function () {
   return view('backend.test');
@@ -207,4 +213,7 @@ Route::get('/test', function () {
 
 Route::post('/test', function () {
   return request()->all();
+});
+Route::get('/error', function () {
+  return view('backend.error');
 });

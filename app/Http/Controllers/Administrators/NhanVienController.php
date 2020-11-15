@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\ChucVu;
 use App\Models\HocSinh;
 use App\Models\NhanVien;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class NhanVienController extends Controller
@@ -19,7 +20,10 @@ class NhanVienController extends Controller
   {
     $staffs = NhanVien::orderBy('ten', 'ASC')->paginate(10);
     $chucvu = ChucVu::all();
-    return view('backend.administrators.staff.staffs', ['staffs' => $staffs, 'chucvu' => $chucvu]);
+    return view('backend.administrators.staff.staffs', [
+      'staffs' => $staffs,
+      'chucvu' => $chucvu,
+    ]);
   }
 
   /**
@@ -41,6 +45,7 @@ class NhanVienController extends Controller
   public function store(Request $request)
   {
     $data = $request->all();
+    $data['user_id'] = User::taoUser('nhan_vien');
     NhanVien::create($data);
     return redirect(route('staffs.index'));
   }
@@ -54,7 +59,9 @@ class NhanVienController extends Controller
   public function show($id)
   {
     $staffs = NhanVien::findorFail($id);
-    return view('backend.administrators.staff.show_staffs', ['staffs' => $staffs]);
+    return view('backend.administrators.staff.show_staffs', [
+      'staffs' => $staffs,
+    ]);
   }
 
   /**
@@ -67,7 +74,10 @@ class NhanVienController extends Controller
   {
     $data = NhanVien::find($id);
     $chucvu = ChucVu::all();
-    return view('backend.administrators.staff.edit_staffs', ['staffs' => $data, 'chucvu' => $chucvu]);
+    return view('backend.administrators.staff.edit_staffs', [
+      'staffs' => $data,
+      'chucvu' => $chucvu,
+    ]);
   }
 
   /**

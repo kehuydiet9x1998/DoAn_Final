@@ -11,115 +11,155 @@ use Illuminate\Http\Request;
 
 class ChuyenlopController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+  /**
+   * Display a listing of the resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function index()
+  {
+    //
+  }
+
+  /**
+   * Show the form for creating a new resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function create()
+  {
+    //
+  }
+
+  /**
+   * Store a newly created resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Illuminate\Http\Response
+   */
+  public function store(Request $request)
+  {
+    $this->authorize('sua_phanlop');
+    $data = $request->except('lop_hoc_id-cu');
+    $hocsinh = HocSinh::find($request['hoc_sinh_id']);
+    $class = LopHoc::find($request['lop_hoc_id']);
+    $khoahoc = KhoaHoc::find($class->khoa_hoc_id);
+    if ($class->siso < $khoahoc->sisotoida) {
+      PhanLop::create($data);
+      $class->siso = PhanLop::where(
+        'lop_hoc_id',
+        $request['lop_hoc_id']
+      )->count();
+      $class->save();
+      $lophoc = PhanLop::find($request['lop_hoc_id-cu']);
+      $oldclass = LopHoc::find($lophoc->lop_hoc_id);
+      $lophoc->delete();
+      $oldclass->siso = PhanLop::where(
+        'lop_hoc_id',
+        $lophoc->lop_hoc_id
+      )->count();
+      $oldclass->save();
+
+      $sotien = $class->khoaHoc->hocphi - $oldclass->khoaHoc->hocphi;
+      $temp = 'Đóng thêm học phí lớp' . $class->tenlop;
+      if ($sotien < 0) {
+        $temp = 'Hoàn trả học phí lớp ' . $class->tenlop;
+      }
+
+      $hocsinh->hocPhi->dsKhoanThu()->create([
+        'sotien' => abs($sotien),
+        'tenkhoanthu' => $temp,
+        'ngaybatdau' => now(),
+        'ngayketthuc' => now()->addDays(30),
+        'lop_hoc_id' => $request['lop_hoc_id'],
+        'trangthai' => 'Chưa đóng',
+      ]);
+
+      session()->flash(
+        'success-message',
+        "Đã chuyển $hocsinh->hodem $hocsinh->ten từ lớp $oldclass->tenlop sang $class->tenlop"
+      );
+    } else {
+      session()->flash('error-message', 'Quá sĩ số tối đa..!');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    return back();
+
+    $data = $request->except('lop_hoc_id-cu');
+    $hocsinh = HocSinh::find($request['hoc_sinh_id']);
+    $class = LopHoc::find($request['lop_hoc_id']);
+    $khoahoc = KhoaHoc::find($class->khoa_hoc_id);
+    if ($class->siso < $khoahoc->sisotoida) {
+      PhanLop::create($data);
+      $class->siso = PhanLop::where(
+        'lop_hoc_id',
+        $request['lop_hoc_id']
+      )->count();
+      $class->save();
+      $lophoc = PhanLop::find($request['lop_hoc_id-cu']);
+      $oldclass = LopHoc::find($lophoc->lop_hoc_id);
+      $lophoc->delete();
+      $oldclass->siso = PhanLop::where(
+        'lop_hoc_id',
+        $lophoc->lop_hoc_id
+      )->count();
+      $oldclass->save();
+      session()->flash(
+        'success-message',
+        "Đã chuyển $hocsinh->hodem $hocsinh->ten từ lớp $oldclass->tenlop sang $class->tenlop"
+      );
+    } else {
+      session()->flash('error-message', 'Quá sĩ số tối đa..!');
     }
+    return back();
+  }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $data = $request->except('lop_hoc_id-cu');
-        $hocsinh = HocSinh::find($request['hoc_sinh_id']);
-        $class = LopHoc::find($request['lop_hoc_id']);
-        $khoahoc = KhoaHoc::find($class->khoa_hoc_id);
-        if($class->siso < $khoahoc->sisotoida) {
-          PhanLop::create($data);
-          $class->siso = PhanLop::where('lop_hoc_id', $request['lop_hoc_id'])->count();
-          $class->save();
-          $lophoc = PhanLop::find($request['lop_hoc_id-cu']);
-          $oldclass = LopHoc::find($lophoc->lop_hoc_id);
-          $lophoc->delete();
-          $oldclass->siso = PhanLop::where('lop_hoc_id', $lophoc->lop_hoc_id)->count();
-          $oldclass->save();
+  /**
+   * Display the specified resource.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function show($id)
+  {
+    //
+  }
 
-          $sotien = $class->khoaHoc->hocphi - $oldclass->khoaHoc->hocphi;
-          $temp = 'Đóng thêm học phí lớp' . $class->tenlop;
-          if($sotien < 0)
-            $temp = 'Hoàn trả học phí lớp ' . $class->tenlop;
+  /**
+   * Show the form for editing the specified resource.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function edit($id)
+  {
+    $lophoc = PhanLop::find($id);
+    $listclass = LopHoc::all();
+    return view(
+      'backend.administrators.classes.chuyen_lop_modal',
+      compact('lophoc', 'listclass')
+    );
+  }
 
-          $hocsinh->hocPhi->dsKhoanThu()->create([
-            'sotien' => abs($sotien),
-            'tenkhoanthu' => $temp,
-            'ngaybatdau' => now(),
-            'ngayketthuc' => now()->addDays(30),
-            'lop_hoc_id' => $request['lop_hoc_id'],
-            'trangthai' => 'Chưa đóng',
-          ]);
+  /**
+   * Update the specified resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function update(Request $request, $id)
+  {
+  }
 
-          session()->flash('success-message', "Đã chuyển $hocsinh->hodem $hocsinh->ten từ lớp $oldclass->tenlop sang $class->tenlop");
-        }
-        else
-          session()->flash('error-message', 'Quá sĩ số tối đa..!');
-
-        return back();
-
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        $lophoc = PhanLop::find($id);
-        $listclass = LopHoc::all();
-        return view('backend.administrators.classes.chuyen_lop_modal',compact('lophoc','listclass'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+  /**
+   * Remove the specified resource from storage.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function destroy($id)
+  {
+    //
+  }
 }

@@ -22,6 +22,8 @@ class KhoaHocController extends Controller
    */
   public function index()
   {
+    $this->authorize('tv_khoahoc');
+
     $khoahocs = KhoaHoc::all();
     $loaikhoahocs = LoaiKhoaHoc::all();
     $levels = Level::all();
@@ -53,6 +55,8 @@ class KhoaHocController extends Controller
    */
   public function store(Request $request)
   {
+    $this->authorize('them_khoahoc');
+
     // return $request->all();
     $data = $request->except('hinhanhkhoahoc');
     $course = KhoaHoc::create($data);
@@ -106,6 +110,8 @@ class KhoaHocController extends Controller
    */
   public function update(Request $request, KhoaHoc $course)
   {
+    $this->authorize('sua_khoahoc');
+
     // return $request->all();
     $course->fill($request->except('hinhanhkhoahoc'));
     if ($request->has('hinhanhkhoahoc')) {
@@ -128,6 +134,8 @@ class KhoaHocController extends Controller
    */
   public function destroy($id)
   {
+    $this->authorize('xoa_khoahoc');
+
     KhoaHoc::where('id', '=', $id)->delete();
     return redirect(route('courses.index'));
   }

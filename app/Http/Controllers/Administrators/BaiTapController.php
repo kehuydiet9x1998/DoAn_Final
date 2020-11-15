@@ -37,6 +37,8 @@ class BaiTapController extends Controller
    */
   public function store(Request $request)
   {
+    $this->authorize('them_baitap');
+
     if ($request->hasFile('hinhanhbaitap')) {
       // return $request;
       $path = $request->file('hinhanhbaitap')->store('hinhanhbaitap');
@@ -89,6 +91,8 @@ class BaiTapController extends Controller
    */
   public function update(Request $request, $id)
   {
+    $this->authorize('sua_baitap');
+
     $baitap = BaiTap::findOrFail($id);
     if ($request->hasFile('hinhanhbaitap')) {
       $path = $request->file('hinhanhbaitap')->store('hinhanhbaitap');
@@ -110,6 +114,8 @@ class BaiTapController extends Controller
    */
   public function destroy($id)
   {
+    $this->authorize('xoa_baitap');
+
     BaiTap::where('id', $id)->delete();
     return back();
   }

@@ -15,6 +15,8 @@ class LichController extends Controller
    */
   public function index()
   {
+    $this->authorize('tv_lichhoc');
+
     $dsLopHoc = LopHoc::all();
     return view('backend.teachers.calendar', compact('dsLopHoc'));
   }
