@@ -52,10 +52,26 @@ class ChuyenlopController extends Controller
           $lophoc->delete();
           $oldclass->siso = PhanLop::where('lop_hoc_id', $lophoc->lop_hoc_id)->count();
           $oldclass->save();
+
+          $sotien = $class->khoaHoc->hocphi - $oldclass->khoaHoc->hocphi;
+          $temp = 'Đóng thêm học phí lớp' . $class->tenlop;
+          if($sotien < 0)
+            $temp = 'Hoàn trả học phí lớp ' . $class->tenlop;
+
+          $hocsinh->hocPhi->dsKhoanThu()->create([
+            'sotien' => abs($sotien),
+            'tenkhoanthu' => $temp,
+            'ngaybatdau' => now(),
+            'ngayketthuc' => now()->addDays(30),
+            'lop_hoc_id' => $request['lop_hoc_id'],
+            'trangthai' => 'Chưa đóng',
+          ]);
+
           session()->flash('success-message', "Đã chuyển $hocsinh->hodem $hocsinh->ten từ lớp $oldclass->tenlop sang $class->tenlop");
         }
         else
           session()->flash('error-message', 'Quá sĩ số tối đa..!');
+
         return back();
 
     }
