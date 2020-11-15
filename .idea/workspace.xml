@@ -7,6 +7,12 @@
   <component name="ChangeListManager">
     <list default="true" id="dfeacd01-f2c3-4401-a83c-21a86b8aa657" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/giao_vien.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/giao_vien.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/nhan_vien.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/nhan_vien.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/permission_group.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/permission_group.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/permissions.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/permissions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/role_permission.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/role_permission.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/users.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/users.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -310,6 +316,7 @@
       <workItem from="1605349207653" duration="7188000" />
       <workItem from="1605358262331" duration="6168000" />
       <workItem from="1605427070496" duration="1098000" />
+      <workItem from="1605428624416" duration="1887000" />
     </task>
     <servers />
   </component>

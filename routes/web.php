@@ -213,3 +213,6 @@ Route::get('/test', function () {
 Route::post('/test', function () {
   return request()->all();
 });
+Route::get('/error', function () {
+  return view('backend.error');
+});
