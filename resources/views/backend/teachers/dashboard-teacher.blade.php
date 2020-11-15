@@ -39,6 +39,7 @@
               </div>
             </div>
           </div>
+
           <div class="col-xl-3 col-md-6">
             <div class="card prod-p-card card-yellow">
               <div class="card-body">
@@ -119,11 +120,10 @@
   </div>
 </div>
 </div>
-
 @endsection
 @section('script')
 <script type="text/javascript" src="{{asset('assets/js/chart.js')}}"></script>
-{{--  line chart--}}
+{{--  line chart nhức não vl hinh nhu 2 cai bieu do no nam duoi day--}}
 <script>
   new Chart(document.getElementById("line-chart"), {
     type: 'line',
@@ -149,7 +149,6 @@
   });
 
 </script>
-{{--  pie chart--}}
 <script>
   new Chart(document.getElementById("pie-chart"), {
     type: 'pie',
