@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\Administrators\ChamCongController;
 use App\Http\Controllers\Administrators\PhanLopController;
+use App\Http\Controllers\Administrators\ThongKeCheckInController;
+use App\Http\Controllers\Administrators\ThongKeCongNoController;
+use App\Http\Controllers\Administrators\ThongKeDoanhThuController;
+use App\Http\Controllers\Administrators\ThongKeNhanVienController;
 use App\Http\Controllers\Administrators\TinhLuongController as AdministratorsTinhLuongController;
 use App\Http\Controllers\ChatsController;
 use App\Http\Controllers\Contacts\FeedBackController;
@@ -76,12 +80,24 @@ Route::middleware(['auth', 'web'])->group(function () {
       'filter',
     ]);
     Route::resource('payroll', 'Administrators\TinhLuongController');
+
+    /* -------------------------------------------------------------------------- */
+    /*                              Bao cao thong ke                              */
+    /* -------------------------------------------------------------------------- */
+
+    Route::get('thongkenhansu', [ThongKeNhanVienController::class, 'index']);
+    Route::get('thongkenhansu/content/{bophan}/{gioitinh}', [
+      ThongKeNhanVienController::class,
+      'content',
+    ]);
+    Route::get('thongkecheckin', [ThongKeCheckInController::class, 'index']);
+    Route::get('thongkethuchi', [ThongKeDoanhThuController::class, 'index']);
+    Route::get('thongkecongno', [ThongKeCongNoController::class, 'index']);
+
+    /* -------------------------------------------------------------------------- */
+    /*                                  Giao vien                                 */
+    /* -------------------------------------------------------------------------- */
   });
-
-  /* -------------------------------------------------------------------------- */
-  /*                                  Giao vien                                 */
-  /* -------------------------------------------------------------------------- */
-
   Route::prefix('teachers')->group(function () {
     Route::resource('classes', 'Teachers\LopHocController');
     Route::resource('lessons', 'Teachers\BuoiHocController');

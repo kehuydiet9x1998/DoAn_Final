@@ -51,6 +51,115 @@ class User extends Authenticatable
     return $this->belongsTo(Role::class);
   }
 
+  public function thongKeDiemDanh($thang)
+  {
+    $diemdanh = DiemDanh::whereYear('updated_at', '=', $thang->year)
+      ->whereMonth('updated_at', '=', $thang->month)
+      ->get();
+
+    return [
+      'Vắng' => $diemdanh
+        ->filter(function ($item) {
+          return $item->ketqua == -1;
+        })
+        ->count(),
+      'Có mặt' => $diemdanh
+        ->filter(function ($item) {
+          return $item->ketqua == 1;
+        })
+        ->count(),
+    ];
+  }
+
+  public function thongKeLuong()
+  {
+    $luong = [];
+    $ngaydaunam = now()->startOfYear();
+    $ngaycuoinam = now()->endOfYear();
+    for (
+      $date = $ngaydaunam->copy();
+      $date->lt($ngaycuoinam);
+      $date->addMonth(1)
+    ) {
+      array_push($luong, Luong::whereMonth('thang', $date->month)->thuclinh);
+    }
+    return $luong;
+  }
+
+  public function thongKeHocSinh()
+  {
+    $dangtuvan = [];
+    $chinhthuc = [];
+    $hocthu = [];
+    $ngaydaunam = now()->startOfYear();
+    $ngaycuoinam = now()->endOfYear();
+    for (
+      $date = $ngaydaunam->copy();
+      $date->lt($ngaycuoinam);
+      $date->addMonth(1)
+    ) {
+      array_push(
+        $dangtuvan,
+        HocSinh::where('trangthai', 'Đang tư vấn')
+          ->whereMonth('updated_at', $date->month)
+          ->count()
+      );
+      array_push(
+        $hocthu,
+        HocSinh::where('trangthai', 'Học thử')
+          ->whereMonth('updated_at', $date->month)
+          ->count()
+      );
+      array_push(
+        $chinhthuc,
+        HocSinh::where('trangthai', 'Chính thức')
+          ->whereMonth('updated_at', $date->month)
+          ->count()
+      );
+    }
+    return [
+      'dangtuvan' => $dangtuvan,
+      'hocthu' => $hocthu,
+      'chinhthuc' => $chinhthuc,
+    ];
+  }
+
+  public function thongKeChiTieuNam($time)
+  {
+    $thu = [];
+    $chi = [];
+    $ngaydaunam = $time->copy()->startOfYear();
+    $ngaycuoinam = $time->copy()->endOfYear();
+    for (
+      $date = $ngaydaunam->copy();
+      $date->lt($ngaycuoinam);
+      $date->addMonth(1)
+    ) {
+      $tongthu = $this->tongThuThang($date);
+      $tongchi = $this->tongChiThang($date);
+      array_push($thu, $tongthu);
+      array_push($chi, $tongchi);
+    }
+    return ['thu' => $thu, 'chi' => $chi];
+  }
+
+  public function tongThuThang($thang)
+  {
+    return KhoanThu::whereYear('updated_at', '=', $thang->year)
+      ->whereMonth('updated_at', '=', $thang->month)
+      ->where('trangthai', 'Đã hoàn thành')
+      ->get()
+      ->sum('sotien');
+  }
+
+  public function tongChiThang($thang)
+  {
+    return PhieuChi::whereYear('updated_at', '=', $thang->year)
+      ->whereMonth('updated_at', '=', $thang->month)
+      ->get()
+      ->sum('sotien');
+  }
+
   public static function taoUser($table)
   {
     $id = DB::select("SHOW TABLE STATUS LIKE '$table'");
