@@ -134,10 +134,11 @@ class ChuyenlopController extends Controller
   public function edit($id)
   {
     $lophoc = PhanLop::find($id);
+    $listlophoc = PhanLop::where('hoc_sinh_id','=',$lophoc->hoc_sinh_id)->get();
     $listclass = LopHoc::all();
     return view(
       'backend.administrators.classes.chuyen_lop_modal',
-      compact('lophoc', 'listclass')
+      compact('lophoc', 'listclass','listlophoc')
     );
   }
 

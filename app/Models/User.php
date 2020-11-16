@@ -31,6 +31,17 @@ class User extends Authenticatable
     );
   }
 
+  public function thongKeDiemDanhTheoHocSinh($hoc_sinh_id){
+    $sobuoivang = DiemDanh::where('hoc_sinh_id', $hoc_sinh_id)
+      ->where('ketqua' ,'=',  -1)
+      ->whereMonth('updated_at', now()->month)->get()->count();
+
+    $sobuoicomat = DiemDanh::where('hoc_sinh_id', $hoc_sinh_id)
+      ->where('ketqua' ,'=',  1)
+      ->whereMonth('updated_at', now()->month)->get()->count();
+    return [ $sobuoicomat,  $sobuoivang];
+  }
+
   public function giaoVien()
   {
     return $this->hasOne(GiaoVien::class);

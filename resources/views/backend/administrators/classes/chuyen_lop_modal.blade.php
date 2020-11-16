@@ -33,7 +33,9 @@
               <input type="hidden" class="form-control" name="lop_hoc_id-cu" value="{{$lophoc->id}}" readonly>
               <select name="lop_hoc_id" class="selectpicker form-control form-control-primary fill" data-live-search="true" title="-- Chọn lớp học --" >
                 @foreach($listclass as $lc)
-                  <option value="{{ $lc->id }}" @if($lc->id == $lophoc->lop_hoc_id) {{"disabled"}} @endif >{{$lc->tenlop}}</option>
+                  <option value="{{ $lc->id }}" @foreach($listlophoc as $lh)
+                  @if($lc->id == $lh->lop_hoc_id) {{"disabled"}} @endif @endforeach
+                  >{{$lc->tenlop}}</option>
                 @endforeach
               </select>
             </div>
