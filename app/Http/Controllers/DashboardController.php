@@ -50,6 +50,8 @@ class DashboardController extends Controller
         }
         return view('backend.teachers.dashboard-teacher', compact('tienluong', 'dunggio', 'muongio', 'kcheckin'));
       case '2':
+        $phanlops = auth()->user()->hocsinh->dslophoc;
+        return view('backend.students.dashboard-student', compact('phanlops'));
         return view('backend.students.dashboard-student');
       case '1':
         return view('backend.dashboard');

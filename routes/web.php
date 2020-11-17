@@ -201,6 +201,8 @@ Route::get('/notifications', function () {
   return view('backend.notification');
 });
 
+Route::post('/doimatkhau', [TrangCaNhanController::class, 'doimatkhau'])->name('doimatkhau');
+
 Auth::routes();
 
 /* -------------------------------------------------------------------------- */
