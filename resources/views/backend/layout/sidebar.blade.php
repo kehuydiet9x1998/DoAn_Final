@@ -313,10 +313,7 @@ if ($phanquyen == 'administrator') {
               "text" => "Bảng công",
               "link" => "/administrators/attendance/report",
             ],
-            // [
-            //   "text" => "Bảng công giáo viên",
-            //   "link" => "/administrators/attendance/report",
-            // ],
+
           ],
         ],
 
@@ -352,54 +349,48 @@ if ($phanquyen == 'administrator') {
           "text" => "Phiếu chi",
         ],
 
-        // [
-        // "link" => "/contacts/move-class",
-        // "type" => "link",
-        // "icon" => "fa fa-mortar-board",
-        // "text" => "Chuyển lớp",
-        // ],
       ],
     ],
 
-    [
-      "title" => "Báo Cáo Thống Kê",
-      "items" => [
-        [
-          "link" => "/khoa-hoc",
-          "type" => "link",
-          "icon" => "fa fa-pie-chart",
-          "text" => "Thống kê nhân sự",
-        ],
-        [
-          "link" => "/lop-hoc",
-          "type" => "link",
-          "icon" => "fa fa-signal",
-          "text" => "Báo cáo thu - chi",
-        ],
-        [
-          "link" => "/lop-hoc",
-          "type" => "link",
-          "icon" => "fa fa-area-chart",
-          "text" => "Báo cáo công nợ KH",
-        ],
-        [
-          "link" => "/admin/khoa-hoc",
-          "type" => "link",
-          "icon" => "fa fa-line-chart",
-          "text" => "Báo cáo tài chính",
-        ],
-        [
-          "link" => "/khoa-hoc",
-          "type" => "dropdown",
-          "icon" => "fa fa-calendar-check-o",
-          "text" => "Báo cáo trong ngày",
-          "items" => [
-            ["text" => "Điểm danh / Check-in", "link" => "/baocao"],
-            ["text" => "Phiếu thu phát sinh", "link" => "/baocao"],
-          ],
-        ],
-      ],
-    ],
+    // [
+    //   "title" => "Báo Cáo Thống Kê",
+    //   "items" => [
+    //     [
+    //       "link" => "/administrators/thongkenhansu",
+    //       "type" => "link",
+    //       "icon" => "fa fa-pie-chart",
+    //       "text" => "Thống kê nhân sự",
+    //     ],
+    //     [
+    //       "link" => "/lop-hoc",
+    //       "type" => "link",
+    //       "icon" => "fa fa-signal",
+    //       "text" => "Báo cáo thu - chi",
+    //     ],
+    //     [
+    //       "link" => "/lop-hoc",
+    //       "type" => "link",
+    //       "icon" => "fa fa-area-chart",
+    //       "text" => "Báo cáo công nợ KH",
+    //     ],
+    //     [
+    //       "link" => "/admin/khoa-hoc",
+    //       "type" => "link",
+    //       "icon" => "fa fa-line-chart",
+    //       "text" => "Báo cáo tài chính",
+    //     ],
+    //     [
+    //       "link" => "/khoa-hoc",
+    //       "type" => "dropdown",
+    //       "icon" => "fa fa-calendar-check-o",
+    //       "text" => "Báo cáo trong ngày",
+    //       "items" => [
+    //         ["text" => "Điểm danh / Check-in", "link" => "/baocao"],
+    //         ["text" => "Phiếu thu phát sinh", "link" => "/baocao"],
+    //       ],
+    //     ],
+    //   ],
+    // ],
   ];
 }
 

@@ -18,4 +18,9 @@ class ChucVu extends Model
   {
     return $this->hasMany(NhanVien::class);
   }
+
+  public function soNhanVien()
+  {
+    return $this->dsNhanVien->count();
+  }
 }

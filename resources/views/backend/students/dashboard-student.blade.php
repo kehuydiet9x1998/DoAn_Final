@@ -120,8 +120,7 @@
                 <h5>Biểu đồ đi học</h5>
               </div>
               <div class="card-block">
-                <iframe class="chartjs-hidden-iframe" tabindex="-1"
-                  style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+
                 <canvas id="dihoc-chart" width="284" height="284"
                   style="display: block; width: 284px; height: 284px;"></canvas>
               </div>
@@ -134,9 +133,7 @@
                 <h5>Biểu đồ điểm trong khóa học</h5>
               </div>
               <div class="card-block">
-                <iframe class="chartjs-hidden-iframe" tabindex="-1"
-                  style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;">
-                </iframe>
+
                 <canvas id="pie-chart" width="284" height="284" style="display: block; width: 284px; height: 284px;">
                 </canvas>
               </div>
@@ -149,18 +146,23 @@
 </div>
 </div>
 
+  @php
+  $diemdanhthang = auth()->user()->thongKeDiemDanhTheoHocSinh(auth()->user()->hocsinh->id);
+
+    @endphp
 @endsection
 @section('script')
 <script type="text/javascript" src="{{asset('assets/js/chart.js')}}"></script>
 <script>
+  {{--console.log({{$diemdanhthang['sobuoicomat']}})--}}
   new Chart(document.getElementById("dihoc-chart"), {
     type: 'pie',
     data: {
-      labels: ["Đi học đúng giờ", "Đi học muộn", "Nghỉ học"],
+      labels: ["Có mặt", "Vắng",],
       datasets: [{
-        label: "Population (millions)",
+        label: "Tỷ lệ điểm danh trong tháng",
         backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f"],
-        data: [10, 2, 2]
+        data: @json($diemdanhthang)
       }]
     },
     options: {
