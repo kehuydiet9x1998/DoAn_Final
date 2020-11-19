@@ -16,17 +16,20 @@ class CreateHocSinhsTable extends Migration
     Schema::create('hoc_sinh', function (Blueprint $table) {
       $table->id();
 
-      $table->string('hodem');
-      $table->string('ten');
-      $table->date('ngaysinh');
-      $table->string('gioitinh');
-      $table->string('trangthai');
-      $table->string('cmnd');
-      $table->string('hotenchame');
-      $table->string('email');
-      $table->string('sodienthoai');
-      $table->string('diachi');
-      $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+      $table->string('hodem')->nullable();
+      $table->string('ten')->nullable();
+      $table->date('ngaysinh')->nullable();
+      $table->string('gioitinh')->nullable();
+      $table->string('trangthai')->nullable();
+      $table->string('cmnd')->nullable();
+      $table->string('hotenchame')->nullable();
+      $table->string('email')->nullable();
+      $table->string('sodienthoai')->nullable();
+      $table->string('diachi')->nullable();
+      $table
+        ->foreignId('user_id')
+        ->constrained()
+        ->cascadeOnDelete();
       $table->timestamps();
       $table->softDeletes();
     });

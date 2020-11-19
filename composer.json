@@ -9,11 +9,13 @@
   "license": "MIT",
   "require": {
     "php": "^7.3",
+    "barryvdh/laravel-debugbar": "^3.5",
     "bfinlay/laravel-excel-seeder": "^2.1",
     "fideloper/proxy": "^4.2",
     "fruitcake/laravel-cors": "^2.0",
     "guzzlehttp/guzzle": "^7.0.1",
     "laravel/framework": "^8.0",
+    "laravel/socialite": "^5.1",
     "laravel/tinker": "^2.0",
     "laravel/ui": "^3.0",
     "laraveldaily/laravel-invoices": "2.0",

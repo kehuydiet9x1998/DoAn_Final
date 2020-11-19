@@ -20,7 +20,10 @@ class User extends Authenticatable
     'password',
     'role_id',
     'trangthai',
+    'provider',
+    'provider_id',
   ];
+
   protected $hidden = ['password'];
   protected $dates = ['deleted_at'];
 
@@ -31,15 +34,20 @@ class User extends Authenticatable
     );
   }
 
-  public function thongKeDiemDanhTheoHocSinh($hoc_sinh_id){
+  public function thongKeDiemDanhTheoHocSinh($hoc_sinh_id)
+  {
     $sobuoivang = DiemDanh::where('hoc_sinh_id', $hoc_sinh_id)
-      ->where('ketqua' ,'=',  -1)
-      ->whereMonth('updated_at', now()->month)->get()->count();
+      ->where('ketqua', '=', -1)
+      ->whereMonth('updated_at', now()->month)
+      ->get()
+      ->count();
 
     $sobuoicomat = DiemDanh::where('hoc_sinh_id', $hoc_sinh_id)
-      ->where('ketqua' ,'=',  1)
-      ->whereMonth('updated_at', now()->month)->get()->count();
-    return [ $sobuoicomat,  $sobuoivang];
+      ->where('ketqua', '=', 1)
+      ->whereMonth('updated_at', now()->month)
+      ->get()
+      ->count();
+    return [$sobuoicomat, $sobuoivang];
   }
 
   public function giaoVien()
@@ -60,6 +68,26 @@ class User extends Authenticatable
   public function role()
   {
     return $this->belongsTo(Role::class);
+  }
+
+  public static function getUserWithEmail($email)
+  {
+    return User::all()
+      ->filter(function ($query) use ($email) {
+        $obj = null;
+        if ($query->hocsinh) {
+          $obj = $query->hocsinh;
+        }
+
+        if ($query->giaovien) {
+          $obj = $query->giaovien;
+        }
+        if ($query->nhanvien) {
+          $obj = $query->nhanvien;
+        }
+        return optional($obj)->email == $email;
+      })
+      ->first();
   }
 
   public function thongKeDiemDanh($thang)

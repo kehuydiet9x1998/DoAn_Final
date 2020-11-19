@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel, to provide autocomplete information to your IDE
- * Generated for Laravel 8.9.0.
+ * Generated for Laravel 8.11.2.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -2704,7 +2704,7 @@
                     /**
          * Create a new batch of queueable jobs.
          *
-         * @param \Illuminate\Support\Collection|array $jobs
+         * @param \Illuminate\Support\Collection|array|mixed $jobs
          * @return \Illuminate\Bus\PendingBatch 
          * @static 
          */ 
@@ -3380,6 +3380,17 @@
         {
                         /** @var \Illuminate\Cache\Repository $instance */
                         return $instance->tags($names);
+        }
+                    /**
+         * Determine if the current store supports tags.
+         *
+         * @return bool 
+         * @static 
+         */ 
+        public static function supportsTags()
+        {
+                        /** @var \Illuminate\Cache\Repository $instance */
+                        return $instance->supportsTags();
         }
                     /**
          * Get the default cache time.
@@ -11299,6 +11310,17 @@
                         $instance->setCompiledRoutes($routes);
         }
                     /**
+         * Remove any duplicate middleware from the given array.
+         *
+         * @param array $middleware
+         * @return array 
+         * @static 
+         */ 
+        public static function uniqueMiddleware($middleware)
+        {
+                        return \Illuminate\Routing\Router::uniqueMiddleware($middleware);
+        }
+                    /**
          * Register a custom macro.
          *
          * @param string $name
@@ -11581,6 +11603,19 @@
         {            //Method inherited from \Illuminate\Database\Schema\Builder         
                         /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
                         $instance->dropIfExists($table);
+        }
+                    /**
+         * Drop columns from a table schema.
+         *
+         * @param string $table
+         * @param string|array $columns
+         * @return void 
+         * @static 
+         */ 
+        public static function dropColumns($table, $columns)
+        {            //Method inherited from \Illuminate\Database\Schema\Builder         
+                        /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+                        $instance->dropColumns($table, $columns);
         }
                     /**
          * Drop all types from the database.
@@ -14392,7 +14427,284 @@
      
 }
 
-        namespace Facade\Ignition\Facades { 
+        namespace Pusher { 
+            /**
+     * 
+     *
+     */ 
+        class Pusher {
+         
+    }
+     
+}
+
+    namespace Laravel\Socialite\Facades { 
+            /**
+     * 
+     *
+     * @see \Laravel\Socialite\SocialiteManager
+     */ 
+        class Socialite {
+                    /**
+         * Get a driver instance.
+         *
+         * @param string $driver
+         * @return mixed 
+         * @static 
+         */ 
+        public static function with($driver)
+        {
+                        /** @var \Laravel\Socialite\SocialiteManager $instance */
+                        return $instance->with($driver);
+        }
+                    /**
+         * Build an OAuth 2 provider instance.
+         *
+         * @param string $provider
+         * @param array $config
+         * @return \Laravel\Socialite\Two\AbstractProvider 
+         * @static 
+         */ 
+        public static function buildProvider($provider, $config)
+        {
+                        /** @var \Laravel\Socialite\SocialiteManager $instance */
+                        return $instance->buildProvider($provider, $config);
+        }
+                    /**
+         * Format the server configuration.
+         *
+         * @param array $config
+         * @return array 
+         * @static 
+         */ 
+        public static function formatConfig($config)
+        {
+                        /** @var \Laravel\Socialite\SocialiteManager $instance */
+                        return $instance->formatConfig($config);
+        }
+                    /**
+         * Get the default driver name.
+         *
+         * @return string 
+         * @throws \InvalidArgumentException
+         * @static 
+         */ 
+        public static function getDefaultDriver()
+        {
+                        /** @var \Laravel\Socialite\SocialiteManager $instance */
+                        return $instance->getDefaultDriver();
+        }
+                    /**
+         * Get a driver instance.
+         *
+         * @param string|null $driver
+         * @return mixed 
+         * @throws \InvalidArgumentException
+         * @static 
+         */ 
+        public static function driver($driver = null)
+        {            //Method inherited from \Illuminate\Support\Manager         
+                        /** @var \Laravel\Socialite\SocialiteManager $instance */
+                        return $instance->driver($driver);
+        }
+                    /**
+         * Register a custom driver creator Closure.
+         *
+         * @param string $driver
+         * @param \Closure $callback
+         * @return \Laravel\Socialite\SocialiteManager 
+         * @static 
+         */ 
+        public static function extend($driver, $callback)
+        {            //Method inherited from \Illuminate\Support\Manager         
+                        /** @var \Laravel\Socialite\SocialiteManager $instance */
+                        return $instance->extend($driver, $callback);
+        }
+                    /**
+         * Get all of the created "drivers".
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getDrivers()
+        {            //Method inherited from \Illuminate\Support\Manager         
+                        /** @var \Laravel\Socialite\SocialiteManager $instance */
+                        return $instance->getDrivers();
+        }
+         
+    }
+     
+}
+
+    namespace Barryvdh\DomPDF { 
+            /**
+     * 
+     *
+     */ 
+        class Facade {
+                    /**
+         * Get the DomPDF instance
+         *
+         * @return \Barryvdh\DomPDF\Dompdf 
+         * @static 
+         */ 
+        public static function getDomPDF()
+        {
+                        /** @var \Barryvdh\DomPDF\PDF $instance */
+                        return $instance->getDomPDF();
+        }
+                    /**
+         * Set the paper size (default A4)
+         *
+         * @param string $paper
+         * @param string $orientation
+         * @return \Barryvdh\DomPDF\PDF 
+         * @static 
+         */ 
+        public static function setPaper($paper, $orientation = 'portrait')
+        {
+                        /** @var \Barryvdh\DomPDF\PDF $instance */
+                        return $instance->setPaper($paper, $orientation);
+        }
+                    /**
+         * Show or hide warnings
+         *
+         * @param bool $warnings
+         * @return \Barryvdh\DomPDF\PDF 
+         * @static 
+         */ 
+        public static function setWarnings($warnings)
+        {
+                        /** @var \Barryvdh\DomPDF\PDF $instance */
+                        return $instance->setWarnings($warnings);
+        }
+                    /**
+         * Load a HTML string
+         *
+         * @param string $string
+         * @param string $encoding Not used yet
+         * @return static 
+         * @static 
+         */ 
+        public static function loadHTML($string, $encoding = null)
+        {
+                        /** @var \Barryvdh\DomPDF\PDF $instance */
+                        return $instance->loadHTML($string, $encoding);
+        }
+                    /**
+         * Load a HTML file
+         *
+         * @param string $file
+         * @return static 
+         * @static 
+         */ 
+        public static function loadFile($file)
+        {
+                        /** @var \Barryvdh\DomPDF\PDF $instance */
+                        return $instance->loadFile($file);
+        }
+                    /**
+         * Add metadata info
+         *
+         * @param array $info
+         * @return static 
+         * @static 
+         */ 
+        public static function addInfo($info)
+        {
+                        /** @var \Barryvdh\DomPDF\PDF $instance */
+                        return $instance->addInfo($info);
+        }
+                    /**
+         * Load a View and convert to HTML
+         *
+         * @param string $view
+         * @param array $data
+         * @param array $mergeData
+         * @param string $encoding Not used yet
+         * @return static 
+         * @static 
+         */ 
+        public static function loadView($view, $data = [], $mergeData = [], $encoding = null)
+        {
+                        /** @var \Barryvdh\DomPDF\PDF $instance */
+                        return $instance->loadView($view, $data, $mergeData, $encoding);
+        }
+                    /**
+         * Set/Change an option in DomPdf
+         *
+         * @param array $options
+         * @return static 
+         * @static 
+         */ 
+        public static function setOptions($options)
+        {
+                        /** @var \Barryvdh\DomPDF\PDF $instance */
+                        return $instance->setOptions($options);
+        }
+                    /**
+         * Output the PDF as a string.
+         *
+         * @return string The rendered PDF as string
+         * @static 
+         */ 
+        public static function output()
+        {
+                        /** @var \Barryvdh\DomPDF\PDF $instance */
+                        return $instance->output();
+        }
+                    /**
+         * Save the PDF to a file
+         *
+         * @param $filename
+         * @return static 
+         * @static 
+         */ 
+        public static function save($filename)
+        {
+                        /** @var \Barryvdh\DomPDF\PDF $instance */
+                        return $instance->save($filename);
+        }
+                    /**
+         * Make the PDF downloadable by the user
+         *
+         * @param string $filename
+         * @return \Illuminate\Http\Response 
+         * @static 
+         */ 
+        public static function download($filename = 'document.pdf')
+        {
+                        /** @var \Barryvdh\DomPDF\PDF $instance */
+                        return $instance->download($filename);
+        }
+                    /**
+         * Return a response with the PDF to show in the browser
+         *
+         * @param string $filename
+         * @return \Illuminate\Http\Response 
+         * @static 
+         */ 
+        public static function stream($filename = 'document.pdf')
+        {
+                        /** @var \Barryvdh\DomPDF\PDF $instance */
+                        return $instance->stream($filename);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function setEncryption($password)
+        {
+                        /** @var \Barryvdh\DomPDF\PDF $instance */
+                        return $instance->setEncryption($password);
+        }
+         
+    }
+     
+}
+
+    namespace Facade\Ignition\Facades { 
             /**
      * Class Flare.
      *
@@ -14627,6 +14939,669 @@
         {
                         /** @var \Facade\FlareClient\Flare $instance */
                         return $instance->group($groupName, $properties);
+        }
+         
+    }
+     
+}
+
+    namespace LaravelDaily\Invoices\Facades { 
+            /**
+     * Class Invoice
+     *
+     * @package LaravelDaily\Invoices\Facades
+     */ 
+        class Invoice {
+                    /**
+         * 
+         *
+         * @param string $name
+         * @return \Invoice 
+         * @throws \Illuminate\Contracts\Container\BindingResolutionException
+         * @static 
+         */ 
+        public static function make($name = 'Invoice')
+        {
+                        return \LaravelDaily\Invoices\Invoice::make($name);
+        }
+                    /**
+         * 
+         *
+         * @param array $attributes
+         * @return \LaravelDaily\Invoices\Party 
+         * @static 
+         */ 
+        public static function makeParty($attributes = [])
+        {
+                        return \LaravelDaily\Invoices\Invoice::makeParty($attributes);
+        }
+                    /**
+         * 
+         *
+         * @param string $title
+         * @return \LaravelDaily\Invoices\InvoiceItem 
+         * @static 
+         */ 
+        public static function makeItem($title = '')
+        {
+                        return \LaravelDaily\Invoices\Invoice::makeItem($title);
+        }
+                    /**
+         * 
+         *
+         * @param \LaravelDaily\Invoices\InvoiceItem $item
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function addItem($item)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->addItem($item);
+        }
+                    /**
+         * 
+         *
+         * @param $items
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function addItems($items)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->addItems($items);
+        }
+                    /**
+         * 
+         *
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @throws Exception
+         * @static 
+         */ 
+        public static function render()
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->render();
+        }
+                    /**
+         * 
+         *
+         * @return \Response 
+         * @throws Exception
+         * @static 
+         */ 
+        public static function stream()
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->stream();
+        }
+                    /**
+         * 
+         *
+         * @return \Response 
+         * @throws Exception
+         * @static 
+         */ 
+        public static function download()
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->download();
+        }
+                    /**
+         * 
+         *
+         * @param string $code
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function currencyCode($code)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->currencyCode($code);
+        }
+                    /**
+         * 
+         *
+         * @param string $name
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function currencyFraction($name)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->currencyFraction($name);
+        }
+                    /**
+         * 
+         *
+         * @param string $symbol
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function currencySymbol($symbol)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->currencySymbol($symbol);
+        }
+                    /**
+         * 
+         *
+         * @param int $decimals
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function currencyDecimals($decimals)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->currencyDecimals($decimals);
+        }
+                    /**
+         * 
+         *
+         * @param string $decimal_point
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function currencyDecimalPoint($decimal_point)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->currencyDecimalPoint($decimal_point);
+        }
+                    /**
+         * 
+         *
+         * @param string $thousands_separator
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function currencyThousandsSeparator($thousands_separator)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->currencyThousandsSeparator($thousands_separator);
+        }
+                    /**
+         * 
+         *
+         * @param string $format
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function currencyFormat($format)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->currencyFormat($format);
+        }
+                    /**
+         * 
+         *
+         * @param float $amount
+         * @return string 
+         * @static 
+         */ 
+        public static function formatCurrency($amount)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->formatCurrency($amount);
+        }
+                    /**
+         * 
+         *
+         * @param float $amount
+         * @return string 
+         * @static 
+         */ 
+        public static function getAmountInWords($amount)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->getAmountInWords($amount);
+        }
+                    /**
+         * 
+         *
+         * @param \LaravelDaily\Invoices\Carbon $date
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function date($date)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->date($date);
+        }
+                    /**
+         * 
+         *
+         * @param string $format
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function dateFormat($format)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->dateFormat($format);
+        }
+                    /**
+         * 
+         *
+         * @param int $days
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function payUntilDays($days)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->payUntilDays($days);
+        }
+                    /**
+         * 
+         *
+         * @return mixed 
+         * @static 
+         */ 
+        public static function getDate()
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->getDate();
+        }
+                    /**
+         * 
+         *
+         * @return mixed 
+         * @static 
+         */ 
+        public static function getPayUntilDate()
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->getPayUntilDate();
+        }
+                    /**
+         * 
+         *
+         * @param string $name
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function name($name)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->name($name);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function notes($notes)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->notes($notes);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function logo($logo)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->logo($logo);
+        }
+                    /**
+         * 
+         *
+         * @param float $amount
+         * @param bool $byPercent
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @throws Exception
+         * @static 
+         */ 
+        public static function totalTaxes($amount, $byPercent = false)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->totalTaxes($amount, $byPercent);
+        }
+                    /**
+         * 
+         *
+         * @param float $amount
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function shipping($amount)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->shipping($amount);
+        }
+                    /**
+         * 
+         *
+         * @param float $amount
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @throws Exception
+         * @static 
+         */ 
+        public static function taxRate($amount)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->taxRate($amount);
+        }
+                    /**
+         * 
+         *
+         * @param float $taxable_amount
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function taxableAmount($taxable_amount)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->taxableAmount($taxable_amount);
+        }
+                    /**
+         * 
+         *
+         * @param float $total_discount
+         * @param bool $byPercent
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @throws Exception
+         * @static 
+         */ 
+        public static function totalDiscount($total_discount, $byPercent = false)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->totalDiscount($total_discount, $byPercent);
+        }
+                    /**
+         * 
+         *
+         * @param float $discount
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @throws Exception
+         * @static 
+         */ 
+        public static function discountByPercent($discount)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->discountByPercent($discount);
+        }
+                    /**
+         * 
+         *
+         * @param float $total_amount
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function totalAmount($total_amount)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->totalAmount($total_amount);
+        }
+                    /**
+         * 
+         *
+         * @param \LaravelDaily\Invoices\PartyContract $seller
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function seller($seller)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->seller($seller);
+        }
+                    /**
+         * 
+         *
+         * @param \LaravelDaily\Invoices\PartyContract $buyer
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function buyer($buyer)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->buyer($buyer);
+        }
+                    /**
+         * 
+         *
+         * @param string $template
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function template($template = 'default')
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->template($template);
+        }
+                    /**
+         * 
+         *
+         * @param string $filename
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function filename($filename)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->filename($filename);
+        }
+                    /**
+         * 
+         *
+         * @return mixed 
+         * @static 
+         */ 
+        public static function getTotalAmountInWords()
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->getTotalAmountInWords();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getLogo()
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->getLogo();
+        }
+                    /**
+         * 
+         *
+         * @return bool 
+         * @static 
+         */ 
+        public static function hasTax()
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->hasTax();
+        }
+                    /**
+         * 
+         *
+         * @return bool 
+         * @static 
+         */ 
+        public static function hasDiscount()
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->hasDiscount();
+        }
+                    /**
+         * 
+         *
+         * @return bool 
+         * @static 
+         */ 
+        public static function hasShipping()
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->hasShipping();
+        }
+                    /**
+         * 
+         *
+         * @return bool 
+         * @static 
+         */ 
+        public static function hasTotalAmount()
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->hasTotalAmount();
+        }
+                    /**
+         * 
+         *
+         * @return bool 
+         * @static 
+         */ 
+        public static function hasItemOrInvoiceTax()
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->hasItemOrInvoiceTax();
+        }
+                    /**
+         * 
+         *
+         * @return bool 
+         * @static 
+         */ 
+        public static function hasItemOrInvoiceDiscount()
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->hasItemOrInvoiceDiscount();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function applyColspan()
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->applyColspan();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function calculateDiscount()
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->calculateDiscount();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function calculateTax()
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->calculateTax();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function calculateShipping()
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->calculateShipping();
+        }
+                    /**
+         * 
+         *
+         * @param string $disk
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function save($disk = '')
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->save($disk);
+        }
+                    /**
+         * 
+         *
+         * @return mixed 
+         * @static 
+         */ 
+        public static function url()
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->url();
+        }
+                    /**
+         * 
+         *
+         * @param string $series
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function series($series)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->series($series);
+        }
+                    /**
+         * 
+         *
+         * @param int $sequence
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function sequence($sequence)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->sequence($sequence);
+        }
+                    /**
+         * 
+         *
+         * @param string $delimiter
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function delimiter($delimiter)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->delimiter($delimiter);
+        }
+                    /**
+         * 
+         *
+         * @param int $value
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function sequencePadding($value)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->sequencePadding($value);
+        }
+                    /**
+         * 
+         *
+         * @param string $format
+         * @return \LaravelDaily\Invoices\Invoice 
+         * @static 
+         */ 
+        public static function serialNumberFormat($format)
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->serialNumberFormat($format);
+        }
+                    /**
+         * 
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getSerialNumber()
+        {
+                        /** @var \LaravelDaily\Invoices\Invoice $instance */
+                        return $instance->getSerialNumber();
         }
          
     }
@@ -14897,7 +15872,7 @@ namespace  {
                 /**
              * Add a basic where clause to the query.
              *
-             * @param \Closure|string|array $column
+             * @param \Closure|string|array|\Illuminate\Database\Query\Expression $column
              * @param mixed $operator
              * @param mixed $value
              * @param string $boolean
@@ -14913,7 +15888,7 @@ namespace  {
                 /**
              * Add a basic where clause to the query, and return the first result.
              *
-             * @param \Closure|string|array $column
+             * @param \Closure|string|array|\Illuminate\Database\Query\Expression $column
              * @param mixed $operator
              * @param mixed $value
              * @param string $boolean
@@ -14929,7 +15904,7 @@ namespace  {
                 /**
              * Add an "or where" clause to the query.
              *
-             * @param \Closure|array|string $column
+             * @param \Closure|array|string|\Illuminate\Database\Query\Expression $column
              * @param mixed $operator
              * @param mixed $value
              * @return \Illuminate\Database\Eloquent\Builder|static 
@@ -14944,7 +15919,7 @@ namespace  {
                 /**
              * Add an "order by" clause for a timestamp to the query.
              *
-             * @param string $column
+             * @param string|\Illuminate\Database\Query\Expression $column
              * @return \Illuminate\Database\Eloquent\Builder|static 
              * @static 
              */ 
@@ -14957,7 +15932,7 @@ namespace  {
                 /**
              * Add an "order by" clause for a timestamp to the query.
              *
-             * @param string $column
+             * @param string|\Illuminate\Database\Query\Expression $column
              * @return \Illuminate\Database\Eloquent\Builder|static 
              * @static 
              */ 
@@ -15124,7 +16099,7 @@ namespace  {
                 /**
              * Get a single column's value from the first result of a query.
              *
-             * @param string $column
+             * @param string|\Illuminate\Database\Query\Expression $column
              * @return mixed 
              * @static 
              */ 
@@ -15188,7 +16163,7 @@ namespace  {
                 /**
              * Get an array with the values of a given column.
              *
-             * @param string $column
+             * @param string|\Illuminate\Database\Query\Expression $column
              * @param string|null $key
              * @return \Illuminate\Support\Collection 
              * @static 
@@ -15256,6 +16231,21 @@ namespace  {
             {
                                 /** @var \Illuminate\Database\Eloquent\Builder $instance */
                                 return $instance->forceCreate($attributes);
+            }
+             
+                /**
+             * Insert new records or update the existing ones.
+             *
+             * @param array $values
+             * @param array|string $uniqueBy
+             * @param array|null $update
+             * @return int 
+             * @static 
+             */ 
+            public static function upsert($values, $uniqueBy, $update = null)
+            {
+                                /** @var \Illuminate\Database\Eloquent\Builder $instance */
+                                return $instance->upsert($values, $uniqueBy, $update);
             }
              
                 /**
@@ -17676,6 +18666,18 @@ namespace  {
             }
              
                 /**
+             * Clone the query.
+             *
+             * @return static 
+             * @static 
+             */ 
+            public static function clone()
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->clone();
+            }
+             
+                /**
              * Clone the query without the given properties.
              *
              * @param array $properties
@@ -17789,7 +18791,11 @@ namespace  {
             class URL extends \Illuminate\Support\Facades\URL {}
             class Validator extends \Illuminate\Support\Facades\Validator {}
             class View extends \Illuminate\Support\Facades\View {}
+            class Pusher extends \Pusher\Pusher {}
+            class Socialite extends \Laravel\Socialite\Facades\Socialite {}
+            class PDF extends \Barryvdh\DomPDF\Facade {}
             class Flare extends \Facade\Ignition\Facades\Flare {}
+            class Invoice extends \LaravelDaily\Invoices\Facades\Invoice {}
             class JsValidator extends \Proengsoft\JsValidation\Facades\JsValidatorFacade {}
      
 }

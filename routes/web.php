@@ -217,9 +217,14 @@ Route::get('/notifications', function () {
   return view('backend.notification');
 });
 
-Route::post('/doimatkhau', [TrangCaNhanController::class, 'doimatkhau'])->name('doimatkhau');
+Route::post('/doimatkhau', [TrangCaNhanController::class, 'doimatkhau'])->name(
+  'doimatkhau'
+);
 
 Auth::routes();
+
+Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
+Route::get('/callback/{provider}', 'SocialController@callback');
 
 /* -------------------------------------------------------------------------- */
 /*                                    Test                                    */

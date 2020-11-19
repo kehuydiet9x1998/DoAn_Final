@@ -106,6 +106,20 @@
                   <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">ĐĂNG NHẬP</button>
                 </div>
 
+                {{-- <div class="text-center">
+                  <label for="" class="btn btn-round btn-outline-primary"></label>
+                </div> --}}
+                <div class="row">
+                  <div class="col-md-6 p-0">
+                    <a href="{{ url('/auth/redirect/facebook') }}" class="btn btn-primary"><i class="fa fa-facebook"></i>Đăng nhập với Facebook</a>
+                  </div>
+                  <div class="col-md-6 p-0">
+                    <a href="{{ url('/auth/redirect/google') }}" class="btn btn-danger"><i class="fa fa-google"></i>Đăng nhập với Google</a>
+                  </div>
+
+                </div>
+
+
               </div>
               <p style="text-align: center">
                 Hotline lãnh đạo: <b>+84 948-666-183</b>
