@@ -15,7 +15,8 @@
                   <div class="col-xs-12 col-sm-12 col-md-6">
                     <div id="dom-table_filter" class="dataTables_filter">
                       <button class="btn btn-success btn-round waves-effect waves-light" data-toggle="modal"
-                        data-target="#large-Modal" style="float: right; margin-right:30px">Thêm khóa học</button>
+                        data-target="#large-Modal" style="float: right; margin-right:30px">Thêm khóa học
+                      </button>
                       <div class="modal fade show" id="large-Modal" tabindex="-1" role="dialog"
                         style="z-index: 1050;display: none; padding-right: 17px;">
                         <div class="modal-dialog modal-lg" role="document">

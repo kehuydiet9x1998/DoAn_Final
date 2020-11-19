@@ -16,7 +16,13 @@ use App\Http\Controllers\PrintController;
 use App\Http\Controllers\Teachers\BaiTapController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\students\XemNhanXetController;
+use App\Http\Controllers\Teachers\BaoCaoController;
+use App\Http\Controllers\Teachers\BaoCaoLopHocController;
+use App\Http\Controllers\Teachers\BaoCaoLopHocControllerc;
 use App\Http\Controllers\Teachers\NhanXetHocSinhController;
+use PhpOffice\PhpSpreadsheet\RichText\Run;
+use App\Models\LopHoc;
+
 
 Route::get('/', function () {
   return view('frontend.trangchu');
@@ -107,7 +113,19 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('calendar', 'Teachers\LichController');
     Route::resource('nhanxethocsinh', 'Teachers\NhanXetHocSinhController');
     Route::resource('sanphamcuoikhoa', 'Teachers\SanPhamCuoiKhoaController');
+    Route::resource('baocao', 'Teachers\BaoCaoController');
+    // Route::get('/xuatbaocao/pdf', function () {
+    //   // $data = LopHoc::all();
 
+    //   // share data to view
+    //   // view()->share('lophocs', $data);
+    //   $pdf = PDF::loadView('backend.teachers.baocao.pdf_view');
+
+    //   // download PDF file with download method
+    //   return $pdf->download('pdf_file.pdf');
+    // });
+    Route::get('/xuatbaocao/pdf', [BaoCaoController::class, 'createPDF']);
+    // Run:get('xembaocao',[BaoCaoController::class,'viết hàm vào'])
     Route::get('/nhanxet/{hocsinhid}/{buoihocid}/{lophocid}/{khoahocid}', [
       NhanXetHocSinhController::class,
       'NhanXet',
@@ -235,3 +253,6 @@ Route::post('/test', function () {
 Route::get('/error', function () {
   return view('backend.error');
 });
+
+Route::get('/abc', [BaoCaoLopHocController::class, 'LopHoc']);
+Route::get('/inbaocao/pdf', [BaoCaoLopHocController::class, 'createPDF']);
