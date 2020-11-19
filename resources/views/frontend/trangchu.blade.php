@@ -1132,8 +1132,7 @@
                       <div class="featured_image" style="background: rgba(0, 0, 0, 0) url(&quot;/assets/sliders/slider_1.jpg&quot;) repeat scroll 0% 0% / 100% 100%; height: 100vh;">
                         <div class="featured_action">
                           <div class="tag title">Giảng viên chất lượng</div>
-                          <div class="tag low_title">Đội ngũ giáo viên
-                            chuyên môn và tâm huyết</div>
+                          <div class="tag low_title">Đội ngũ giáo viên <br>chuyên môn và tâm huyết</div>
                           <div><button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary" tabindex="0" type="button" style="background-color: rgba(0, 0, 0, 0); font-family: Montserrat; outline: currentcolor none medium; box-shadow: none; line-height: 44px; letter-spacing: 0px; font-weight: 700; font-size: 15px; border-color: rgb(255, 255, 255); border-style: solid; border-width: 1px; margin: 20px; border-radius: 30px; padding: 0px 39px; color: rgb(255, 255, 255); text-decoration: none; white-space: nowrap; width: auto; height: auto; opacity: 1; transform: translate3d(0px, 0px, 0px); transform-origin: 50% 50% 0px;"><span class="MuiButton-label">Đăng ký học thử miễn phí</span><span class="MuiTouchRipple-root"></span></button></div>
                         </div>
                       </div>
