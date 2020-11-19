@@ -26,6 +26,15 @@
                     </ul>
                     <div class="tab-content card-block">
                       <div class="tab-pane active show" id="home7" role="tabpanel">
+                        @if(session()->has('success-message'))
+                        <div class="alert alert-success">
+                          {{session('success-message')}}
+                        </div>
+                        @elseif(session()->has('error-message'))
+                        <div class="alert alert-danger">
+                          {{session('error-message')}}
+                        </div>
+                        @endif
                         <div class="row">
                           <div class="col-sm-12">
                             <div>
@@ -142,6 +151,7 @@
                         </div> --}}
                       </div>
                       <div class="tab-pane" id="account" role="tabpanel">
+
                         <div class="row">
                           <div class="col-sm-12">
                             <div>
@@ -154,12 +164,13 @@
                                 <h6 class="sub-title"></h6>
                               </div>
                               <div class="card-block">
-                                <form id="main" method="post" action="https://colorlib.com/" novalidate="">
+                                <form id="main" method="post" action="{{route('doimatkhau')}}" novalidate="">
+                                  @csrf
                                   <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Username</label>
                                     <div class="col-sm-10">
                                       <input type="text" class="form-control" name="name" id="name" readonly
-                                        value="{{$user->name}}">
+                                        value="linhnv">
                                       <span class="messages"></span>
                                     </div>
                                   </div>
@@ -167,14 +178,14 @@
                                     <label class="col-sm-2 col-form-label">Mật khẩu hiện tại</label>
                                     <div class="col-sm-10">
                                       <input type="password" class="form-control" id="password" name="password"
-                                        placeholder="Mật khẩu hiện tại" value="{{$user->password}}">
+                                        placeholder="Nhập mật khẩu hiện tại">
                                       <span class="messages"></span>
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Mật khẩu mới</label>
                                     <div class="col-sm-10">
-                                      <input type="password" class="form-control" id="password" name="password"
+                                      <input type="password_new" class="form-control" id="password" name="new_password"
                                         placeholder="Nhập mật khẩu mới">
                                       <span class="messages"></span>
                                     </div>
@@ -182,15 +193,15 @@
                                   <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Nhập lại mật khẩu</label>
                                     <div class="col-sm-10">
-                                      <input type="password" class="form-control" id="repeat-password"
-                                        name="repeat-password" placeholder="Nhập lại mật khẩu mới">
+                                      <input type="password_new1" class="form-control" id="repeat-password"
+                                        name="password_confirmation" placeholder="Nhập lại mật khẩu mới">
                                       <span class="messages"></span>
                                     </div>
                                   </div>
                                   <div class="form-group row">
                                     <label class="col-sm-2"></label>
                                     <div class="col-sm-10">
-                                      <button type="submit" class="btn btn-primary m-b-0">Update</button>
+                                      <button type="submit" class="btn btn-primary m-b-0">Cập nhật</button>
                                     </div>
                                   </div>
                                 </form>

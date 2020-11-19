@@ -143,7 +143,6 @@
                           </div>
                         </div>
                         <div id="buoihoc"></div>
-
                       </div>
                     </div>
                   </div>
@@ -160,13 +159,11 @@
   @section('script')
   <script>
     $(document).ready(function () {
-
       $('.buoihoc').click(function () {
         $('#buoihoc').load('/student/lessons/' + $(this).data('id'));
       });
       $('.buoihoc')[0].click();
       // $('.buoihoc')[0].show();
-
     });
 
   </script>
