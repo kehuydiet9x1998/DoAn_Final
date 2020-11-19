@@ -9,11 +9,13 @@
             <div class="card table-card">
               <div class="card-header">
                 <div class="row">
-                  <div class="col-xs-12 col-sm-12 col-md-6">
+                  <div class="col-xs-12 col-sm-12 col-md-3">
                     <h5><i class="fa fa-clock"></i> Lịch trải nghiệm</h5>
                   </div>
-                  <div class="col-xs-12 col-sm-12 col-md-6">
+                  <div class="col-xs-12 col-sm-12 col-md-9">
                     @include('backend.contact.lichtrainghiem.add_lichtrainghiem_modal')
+                    <input type="week" value="{{\Carbon\Carbon::now()->weekOfYear}}" id="nowWeek" style="float: right; margin-right: 15px">
+                    <input type="date" id="nowDay" style="float: right; margin-right: 15px">
                   </div>
                 </div>
               </div>
@@ -33,7 +35,6 @@
                       @foreach ($lichtrainghiems as $key => $lichtrainghiem)
                       <tr>
                         <td>{{$key+1}}</td>
-
                         <td>
                           <div class="d-inline-block align-middle">
                             <div class="d-inline-block">
@@ -45,9 +46,7 @@
                             </div>
                           </div>
                         </td>
-
                         <td>
-
                           @php
                           Carbon\Carbon::setLocale('vi');
                           $time = new Carbon\Carbon($lichtrainghiem->thoigian)
@@ -57,11 +56,9 @@
                           <p style="margin:7px 0 ">Nội dung: {{ $lichtrainghiem->noidung }}</p>
                           @if($lichtrainghiem->ketqua!="")
                           <p>Kết quả: &nbsp {{ $lichtrainghiem->ketqua }}</p>
-
                           @endif
                         </td>
                         <td><label for="" class="badge badge-{{ $lichtrainghiem->trangthai == 'Đã xử lý' ? 'success' : ($lichtrainghiem->trangthai == 'Chưa xử lý' ? 'warning' : 'danger')  }}">{{ $lichtrainghiem->trangthai }}</label></td>
-
                         <td style="display: flex; width: 64px;">
                           <div>
                             {{-- Xem chi tiết nhân viên --}}
@@ -112,7 +109,6 @@
   };
 
 </script>
-
 <script>
   $(document).
   ready(function() {
@@ -138,9 +134,28 @@
   });
 
 </script>
-
+<script>
+  $(document).ready(function (){
+    $("#nowWeek").change(function (){
+      var nowWeek = $(this).val();
+      var week = nowWeek.slice(6,8);
+      $.get("/contacts/week/"+ week,function (data){
+        $("#datatable").html(data);
+      });
+    })
+  })
+</script>
+<script>
+  $(document).ready(function (){
+    $("#nowDay").change(function (){
+      var nowDay = $(this).val();
+      $.get("/contacts/day/"+ nowDay,function (data){
+        $("#datatable").html(data);
+      });
+    })
+  })
+</script>
 <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
 {!! $jsValidator->selector('#addform') !!}
-
-
 @endsection
+

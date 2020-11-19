@@ -90,19 +90,28 @@
                                       </div>
                                       <div class="card-block" style="margin-top: -40px">
                                         <h5 class="card-title col-sm-auto"
-                                          style="float: left; margin:0px 10px 0px 0px; padding: 0"><i
-                                            class="fa fa-building"></i>Trung
-                                          tâm :</h5>
-                                        <h5 class="card-title"><b>104 -
-                                            Lương Khánh Thiện</b></h5>
+                                            style="float: left; margin:0px 10px 0px 0px; padding: 0"><i
+                                            class="fa fa-bank"></i>Giao vien day khoa:</h5>
+                                        @foreach ($khoahoc->dslophoc as $lp)
+                                          <h5 class="card-title"><b>{{$lp->giaovien->hodem.' '.$lp->giaovien->ten}}</b></h5>
+                                        @endforeach
                                       </div>
+                                      <br>
+{{--                                      <div class="card-block" style="margin-top: -40px">--}}
+{{--                                        <h5 class="card-title col-sm-auto"--}}
+{{--                                          style="float: left; margin:0px 10px 0px 0px; padding: 0"><i--}}
+{{--                                            class="fa fa-building"></i>Trung--}}
+{{--                                          tâm :</h5>--}}
+{{--                                        <h5 class="card-title"><b>104 ---}}
+{{--                                            Lương Khánh Thiện</b></h5>--}}
+{{--                                      </div>--}}
                                     </div>
                                   </div>
-                                  <div class="col-lg-12" style="text-align: center">
-                                    <iframe class="col-sm-auto" src="https://www.youtube.com/embed/tgbNymZ7vqY"
-                                      allowfullscreen>
-                                    </iframe>
-                                  </div>
+{{--                                  <div class="col-lg-12" style="text-align: center">--}}
+{{--                                    <iframe class="col-sm-auto" src="https://www.youtube.com/embed/tgbNymZ7vqY"--}}
+{{--                                      allowfullscreen>--}}
+{{--                                    </iframe>--}}
+{{--                                  </div>--}}
                                   <div class="col-sm-12" style="text-align: center; margin-top: 5px">
                                     <button data-id="1" class="btn waves-effect waves-light btn-round">
                                       <a style="font-size: 14px; font-weight: 700;"

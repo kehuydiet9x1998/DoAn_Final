@@ -128,6 +128,8 @@
 
                         </div>
                       </div>
+                      <a href="pdf/preview"><button class="btn btn-google-plus btn-round waves-effect waves-light"
+                         style="float: right; margin-right:15px"><i class="fa fa-print"></i>In báo cáo</button></a>
                     </div>
                   </div>
 

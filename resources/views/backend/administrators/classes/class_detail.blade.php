@@ -228,13 +228,13 @@
                                               <i class="fa fa-refresh f-w-600 f-16 m-r-15 text-c-green" style="margin:0; font-size: 20px"></i></button>
                                             <div class="modal fade show" id="chuyen_lop" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;"></div>
                                         </li>
-                                          <li style="float: left">
-                                            <div>
-                                          <button class="baoluu" data-id="{{$phanlop->id}}" data-toggle="modal" data-target="#baoluu-Modal" style="background-color: transparent; border: none; padding: 0 0 0 7px">
-                                            <i class="fa fa-pause-circle f-w-600 f-16 m-r-15 text-c-green"></i>
-                                          </button>
-                                        </div>
-                                          </li>
+{{--                                          <li style="float: left">--}}
+{{--                                            <div>--}}
+{{--                                          <button class="baoluu" data-id="{{$phanlop->id}}" data-toggle="modal" data-target="#baoluu-Modal" style="background-color: transparent; border: none; padding: 0 0 0 7px">--}}
+{{--                                            <i class="fa fa-pause-circle f-w-600 f-16 m-r-15 text-c-green"></i>--}}
+{{--                                          </button>--}}
+{{--                                        </div>--}}
+{{--                                          </li>--}}
                                         <li style="float: left">
                                           <form action="{{route('phanlop.destroy', $phanlop->id)}}" method="post">
                                         @method('DELETE')

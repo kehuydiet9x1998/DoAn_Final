@@ -131,10 +131,6 @@
     </div>
   </div>
 </div>
-
-
-
-
 <script>
   function myReset() {
     $('.modal').hide();

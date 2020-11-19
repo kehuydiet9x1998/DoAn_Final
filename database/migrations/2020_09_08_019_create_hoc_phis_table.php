@@ -33,7 +33,7 @@ class CreateHocPhisTable extends Migration
         ->foreign('hoc_sinh_id')
         ->references('id')
         ->on('hoc_sinh');
-
+      $table->datetime('deadline')->default(\Carbon\Carbon::now()->addDays(30));
       $table->timestamps();
       $table->softDeletes();
     });
