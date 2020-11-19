@@ -10,6 +10,7 @@ use App\Http\Controllers\Administrators\TinhLuongController as AdministratorsTin
 use App\Http\Controllers\ChatsController;
 use App\Http\Controllers\Contacts\FeedBackController;
 use App\Http\Controllers\Contacts\HocPhiController;
+use App\Http\Controllers\Contacts\PDFController;
 use App\Http\Controllers\TrangCaNhanController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PrintController;
@@ -17,7 +18,7 @@ use App\Http\Controllers\Teachers\BaiTapController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\students\XemNhanXetController;
 use App\Http\Controllers\Teachers\NhanXetHocSinhController;
-
+use App\Http\Controllers\Contacts\AjaxController;
 Route::get('/', function () {
   return view('frontend.trangchu');
 });
@@ -41,6 +42,8 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('admin-hoccu-plus', 'Administrators\PlusHocCuController');
     Route::resource('role', 'Administrators\PhanQuyenController');
     Route::resource('admin-chuyenlop', 'Administrators\ChuyenLopController');
+    Route::get('pdf/preview', [PDFController::class, 'preview'])->name('pdf.preview');
+    Route::get('pdf/generate', [PDFController::class, 'generatePDF'])->name('pdf.generate');
     /* -------------------------------------------------------------------------- */
     /*                                  Chấm công                                 */
     /* -------------------------------------------------------------------------- */
@@ -172,6 +175,11 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::get('printphieuchi/{id}', [PrintController::class, 'printPhieuChi']);
     Route::resource('phieuchi', 'Contacts\PhieuChiController');
     Route::resource('khoanthu', 'Contacts\KhoanThuController');
+    Route::get('/week/{numberweek}',[AjaxController::class,'getTuanSau']);
+    Route::get('/day/{day}',[AjaxController::class,'getNgay']);
+    Route::get('/hocphi/{nowdate}',[AjaxController::class,'getHocPhi']);
+    Route::get('/date/{date}',[AjaxController::class,'getDeadline']);
+
   });
 
   /* -------------------------------------------------------------------------- */

@@ -12,7 +12,6 @@ use App\Models\LoaiKhoaHoc;
 use App\Models\PhongHoc;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Request as FacadesRequest;
-
 class KhoaHocController extends Controller
 {
   /**

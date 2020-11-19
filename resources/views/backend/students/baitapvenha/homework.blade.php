@@ -13,32 +13,32 @@
                     <h5>Danh sách bài tập về nhà</h5>
                   </div>
                 </div>
-                <div class="row" style="display:flex; align-items:center">
-                  <div class="col-sm-12 col-xl-3 m-b-30">
-                    <select name="select" class="form-control form-control-inverse fill">
-                      <option value="opt1">Lọc theo</option>
-                      <option value="opt1">Tất cả</option>
-                      <option value="opt2">Đã làm BTVN</option>
-                      <option value="opt3">Chưa làm BTVN</option>
-                    </select>
-                  </div>
-                  <div class="col-sm-12 col-xl-3 m-b-30">
-                    <select name="select" class="form-control form-control-inverse fill">
-                      <option value="opt1">Lọc theo tên lớp</option>
-                      <option value="opt1">Tất cả</option>
-                      <option value="opt2">Xưởng lắp ráp ROBOT</option>
-                      <option value="opt3">Thiết kế và lập trình web</option>
-                    </select>
-                  </div>
-                  <div class="col-sm-12 col-xl-6 m-b-30">
-                    <button class="btn btn-primary btn-round waves-effect waves-light">
-                      <i class="fa fa-filter"></i>
-                      Lọc</button>
-                    <button data-id="1" class="btn waves-effect waves-light btn-round" style="margin-left: 20px">
-                      <a style="font-size: 14px;" href="home-work/1">LÀM BÀI TẬP HÔM NAY</a>
-                    </button>
-                  </div>
-                </div>
+{{--                <div class="row" style="display:flex; align-items:center">--}}
+{{--                  <div class="col-sm-12 col-xl-3 m-b-30">--}}
+{{--                    <select name="select" class="form-control form-control-inverse fill">--}}
+{{--                      <option value="opt1">Lọc theo</option>--}}
+{{--                      <option value="opt1">Tất cả</option>--}}
+{{--                      <option value="opt2">Đã làm BTVN</option>--}}
+{{--                      <option value="opt3">Chưa làm BTVN</option>--}}
+{{--                    </select>--}}
+{{--                  </div>--}}
+{{--                  <div class="col-sm-12 col-xl-3 m-b-30">--}}
+{{--                    <select name="select" class="form-control form-control-inverse fill">--}}
+{{--                      <option value="opt1">Lọc theo tên lớp</option>--}}
+{{--                      <option value="opt1">Tất cả</option>--}}
+{{--                      <option value="opt2">Xưởng lắp ráp ROBOT</option>--}}
+{{--                      <option value="opt3">Thiết kế và lập trình web</option>--}}
+{{--                    </select>--}}
+{{--                  </div>--}}
+{{--                  <div class="col-sm-12 col-xl-6 m-b-30">--}}
+{{--                    <button class="btn btn-primary btn-round waves-effect waves-light">--}}
+{{--                      <i class="fa fa-filter"></i>--}}
+{{--                      Lọc</button>--}}
+{{--                    <button data-id="1" class="btn waves-effect waves-light btn-round" style="margin-left: 20px">--}}
+{{--                      <a style="font-size: 14px;" href="home-work/1">LÀM BÀI TẬP HÔM NAY</a>--}}
+{{--                    </button>--}}
+{{--                  </div>--}}
+{{--                </div>--}}
               </div>
               <div class="card-block">
                 <div class="table-responsive">

@@ -189,7 +189,7 @@
                             {{-- Khối chứa thông tin  --}}
                             <div class="card-block">
                               <div class="table-responsive">
-                                <table class="table table-hover m-b-0">
+                                <table class="table table-hover m-b-0" id="datatable">
                                   <thead>
                                     <tr>
                                       <th>ID</th>
@@ -212,7 +212,7 @@
                                       </td>
                                       <td>{{Str::limit($baigiang->noidung, 40)}}</td>
                                       <td>
-                                        <button class="baigiang" data-id="{{$baigiang->id}}" data-toggle="modal" data-target="#baigiang-Modal" class="jstree-anchor" tabindex="-1" id="j1_14_anchor" style="background: transparent; outline:none; border:none; color:in">
+                                        <button class="baigiang" data-id="{{$baigiang->id}}" data-toggle="modal" data-target="#baigiang-Modal" class="jstree-anchor" tabindex="-1" id="j1_14_anchor" style="background: transparent; outline:none; border:none; color: inherit">
                                           <i class="fa fa-file-pdf-o f-w-600 f-16 m-r-15 text-c-red"></i>
                                           bai_giang_{{ $baigiang->id }}.pdf
                                         </button>
@@ -367,7 +367,7 @@
                             {{-- Khối chứa thông tin  --}}
                             <div class="card-block">
                               <div class="table-responsive">
-                                <table class="table table-hover m-b-0">
+                                <table class="table table-hover m-b-0" id="datatable">
                                   <thead>
                                     <tr>
                                       <th>ID</th>
@@ -433,11 +433,8 @@
                               </table>
                               <div class="modal fade show" id="edit-Modal_Baitap" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
                               </div>
-
                               <div class="modal fade show" id="baitap-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
                               </div>
-
-
                             </div>
                           </div>
 
