@@ -186,10 +186,10 @@ if ($phanquyen == "teacher") {
      "title" => "Chức năng thêm",
      "items" => [
      [
-     "link" => "/teachers/baocao",
+     "link" => "/teachers/dulieulophoc",
      "type" => "link",
      "icon" => "fa fa-slideshare",
-     "text" => "Báo cáo lơp học",
+     "text" => "Báo cáo lớp học",
      ],
      ],
      ],

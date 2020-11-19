@@ -35,7 +35,7 @@
               <button class="btn btn-success btn-round waves-effect waves-light" data-toggle="modal"
                 data-target="#large-Modal" style="float: right; margin-right:30px; width: 170px;
                 margin-left: auto;">
-                <a href="{{route('baocao.create')}}">In báo cáo</a>
+                <a href="{{URL::to('/teachers/baocaolophoc')}}">In báo cáo</a>
               </button>
               <div class="card-block table-border-style">
                 <div class="table-responsive">
@@ -59,7 +59,7 @@
                       <tr>
                         {{-- <td>{{$dem}}</td> --}}
                         <td>{{$lophoc->id}}</td>
-                        <td>{{$lophoc->tenlop}}</td>
+                        <td>{{$lophoc->tenlophoc}}</td>
                         {{-- <>{{ $khoanthu->sohocsinh - $khoanthu->sohocsinhdadong }}</> --}}
                         <td>{{$lophoc->khoahoc->tenkhoahoc}}</td>
                         <td>{{$lophoc->ngaybatdau}}</td>

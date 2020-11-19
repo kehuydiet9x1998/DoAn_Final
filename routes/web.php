@@ -119,18 +119,8 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('nhanxethocsinh', 'Teachers\NhanXetHocSinhController');
     Route::resource('sanphamcuoikhoa', 'Teachers\SanPhamCuoiKhoaController');
     Route::resource('baocao', 'Teachers\BaoCaoController');
-    // Route::get('/xuatbaocao/pdf', function () {
-    //   // $data = LopHoc::all();
-
-    //   // share data to view
-    //   // view()->share('lophocs', $data);
-    //   $pdf = PDF::loadView('backend.teachers.baocao.pdf_view');
-
-    //   // download PDF file with download method
-    //   return $pdf->download('pdf_file.pdf');
-    // });
-    Route::get('/xuatbaocao/pdf', [BaoCaoController::class, 'createPDF']);
-    // Run:get('xembaocao',[BaoCaoController::class,'viết hàm vào'])
+    Route::get('/baocaolophoc', [BaoCaoLopHocController::class, 'BaoCaoLopHoc'])->name('baocaolophoc');
+    Route::get('/dulieulophoc', [BaoCaoLopHocController::class, 'LopHoc']);
     Route::get('/nhanxet/{hocsinhid}/{buoihocid}/{lophocid}/{khoahocid}', [
       NhanXetHocSinhController::class,
       'NhanXet',
