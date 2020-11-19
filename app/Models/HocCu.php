@@ -27,6 +27,6 @@ class HocCu extends Model
   }
   public function khohoccu()
   {
-    return $this->belongsTo(KhoHocCu::class);
+    return $this->belongsTo(KhoHocCu::class, 'kho_hoc_cu_id', 'id');
   }
 }

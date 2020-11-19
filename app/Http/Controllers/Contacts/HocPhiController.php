@@ -25,7 +25,6 @@ class HocPhiController extends Controller
     foreach (HocPhi::all() as $hocphi) {
       $hocphi->updateHocPhi();
     }
-
     $hocphi = HocPhi::orderBy('trangthai')->get();
     $khoanthu = KhoanThu::all();
     return view(

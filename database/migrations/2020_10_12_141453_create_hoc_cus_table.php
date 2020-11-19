@@ -15,8 +15,8 @@ class CreateHocCusTable extends Migration
   {
     Schema::create('hoc_cu', function (Blueprint $table) {
       $table->id();
-//      $table->string('hinhanhthietbi')->nullable();
-//      $table->string('tenthietbi');
+      $table->string('hinhanhthietbi')->nullable();
+      $table->string('tenthietbi');
 
       $table->unsignedBigInteger('lop_hoc_id');
       $table

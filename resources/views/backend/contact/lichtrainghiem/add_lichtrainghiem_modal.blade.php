@@ -44,7 +44,6 @@
                 </div>
               </div>
 
-
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Đóng</button>

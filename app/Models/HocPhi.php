@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -17,6 +18,7 @@ class HocPhi extends Model
     'dadong',
     'conno',
     'trangthai',
+    'deadline',
     'hoc_sinh_id',
   ];
   public function hocSinh()
@@ -59,6 +61,9 @@ class HocPhi extends Model
     } else {
       $this->trangthai = 'Còn nợ';
     }
+   $time = new Carbon($this->deadline);
+    if($time->isPast()==true)
+      $this->trangthai = 'Đã quá hạn';
     $this->save();
   }
 }

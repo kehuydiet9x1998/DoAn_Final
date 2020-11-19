@@ -19,4 +19,8 @@ class KhoHocCu extends Model
       'capphat',
 
     ];
+
+    public function dshoccu(){
+      return $this->hasMany(HocCu::class, 'kho_hoc_cu_id', 'id');
+    }
 }

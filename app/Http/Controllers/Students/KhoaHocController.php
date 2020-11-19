@@ -28,8 +28,8 @@ class KhoaHocController extends Controller
     //   ->with('lophoc.khoahoc')
     //   ->get()
     //   ->pluck('lophoc.khoahoc');
-
-    //$data = KhoaHoc::paginate(7);
+    //    $dslophoc = KhoaHoc::
+    $data = KhoaHoc::paginate(7);
     // return $data;
 
     // $data = DB::table('loai_khoa_hoc')
