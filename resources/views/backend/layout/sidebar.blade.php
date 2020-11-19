@@ -182,6 +182,17 @@ if ($phanquyen == "teacher") {
         ],
       ],
     ],
+     [
+     "title" => "Chức năng thêm",
+     "items" => [
+     [
+     "link" => "/teachers/baocao",
+     "type" => "link",
+     "icon" => "fa fa-slideshare",
+     "text" => "Báo cáo lơp học",
+     ],
+     ],
+     ],
   ];
 }
 
