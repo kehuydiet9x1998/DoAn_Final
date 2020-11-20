@@ -16,8 +16,8 @@ class KhoanThu extends Model
     'tenkhoanthu',
     'sotien',
     'trangthai',
-    'ngaybatdau',
-    'ngayketthuc',
+    // 'ngaybatdau',
+    // 'ngayketthuc',
   ];
 
   public function hocPhi()

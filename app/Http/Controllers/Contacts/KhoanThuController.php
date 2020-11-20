@@ -22,9 +22,8 @@ class KhoanThuController extends Controller
     $khoanthus = DB::select(
       "select tenkhoanthu, sotien,
       sum(if( trangthai like N'Đã hoàn thành' , 1 , 0 )) as sohocsinhdadong,
-      count(*) as sohocsinh,
-      ngaybatdau, ngayketthuc
-      from khoan_thu group by tenkhoanthu, sotien, ngaybatdau, ngayketthuc"
+      count(*) as sohocsinh
+      from khoan_thu group by tenkhoanthu, sotien"
     );
     $hocphis = HocPhi::all();
     return view(
@@ -62,8 +61,8 @@ class KhoanThuController extends Controller
             'sotien' => str_replace(',', '', $request->sotien),
           ],
           [
-            'ngaybatdau' => $request->ngaybatdau,
-            'ngayketthuc' => $request->ngayketthuc,
+            // 'ngaybatdau' => $request->ngaybatdau,
+            // 'ngayketthuc' => $request->ngayketthuc,
             'trangthai' => 'Chưa đóng',
           ]
         );
@@ -127,8 +126,8 @@ class KhoanThuController extends Controller
             'sotien' => str_replace(',', '', $request->sotien),
           ],
           [
-            'ngaybatdau' => $request->ngaybatdau,
-            'ngayketthuc' => $request->ngayketthuc,
+            // 'ngaybatdau' => $request->ngaybatdau,
+            // 'ngayketthuc' => $request->ngayketthuc,
             'trangthai' => 'Chưa đóng',
           ]
         );

@@ -32,7 +32,7 @@
                         <th>STT</th>
                         <th>Tên khoản thu</th>
                         <th>Số tiền</th>
-                        <th>Từ ngày-Đến ngày</th>
+                        {{-- <th>Từ ngày-Đến ngày</th> --}}
                         <th>Đã hoàn thành</th>
                         <th>Học sinh chưa đóng</th>
                         <th class="noVis">Action</th>
@@ -44,12 +44,12 @@
                         <td>{{ $key+1}}</td>
                         <td>{{ $khoanthu->tenkhoanthu}}</td>
                         <td>{{number_format( $khoanthu->sotien ).' đ'}}</td>
-                        <td>
+                        {{-- <td>
                           <i class="fa fa-calendar-plus"></i> {{ $khoanthu->ngaybatdau }}
                           <br>
                           <i class="fa fa-calendar-minus"></i> {{ $khoanthu->ngayketthuc }}
 
-                        </td>
+                        </td> --}}
 
                         <td><label class="badge badge-inverse-success">{{ round($khoanthu->sohocsinhdadong / $khoanthu->sohocsinh * 100,2)}}%</label></td>
                         <td>

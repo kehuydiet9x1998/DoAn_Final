@@ -125,9 +125,8 @@
               @php $khoanthus = DB::select(
               "select tenkhoanthu, sotien,
               sum(if( trangthai like N'Đã hoàn thành' , 1 , 0 )) as sohocsinhdadong,
-              count(*) as sohocsinh,
-              ngaybatdau, ngayketthuc
-              from khoan_thu group by tenkhoanthu, sotien, ngaybatdau, ngayketthuc"
+              count(*) as sohocsinh
+              from khoan_thu group by tenkhoanthu, sotien"
               ); @endphp
 
               <div class="card-block table-border-style">
@@ -144,7 +143,8 @@
                     <tbody>
                       @foreach($khoanthus as $key => $khoanthu)
                       @php
-                      $hocsinhchuadong = \App\Models\KhoanThu::where('tenkhoanthu', $khoanthu->tenkhoanthu)->where('trangthai', 'Chưa đóng')->get()
+                      $hocsinhchuadong = \App\Models\KhoanThu::where('tenkhoanthu',
+                      $khoanthu->tenkhoanthu)->where('trangthai', 'Chưa đóng')->get()
                       @endphp
 
                       <tr>
@@ -154,19 +154,23 @@
                         {{-- <td>{{ $khoanthu->sohocsinh - $khoanthu->sohocsinhdadong }}</td> --}}
                         <td>
                           <h5 class="mb-0">
-                            <button class="btn btn-secondary btn-sm " data-toggle="collapse" data-target="#collapse{{ $khoanthu->tenkhoanthu }}" aria-expanded="true" aria-controls="collapseOne">
+                            <button class="btn btn-secondary btn-sm " data-toggle="collapse"
+                              data-target="#collapse{{ $khoanthu->tenkhoanthu }}" aria-expanded="true"
+                              aria-controls="collapseOne">
                               {{ $hocsinhchuadong->count() }} học sinh chưa đóng <i class="fa fa-caret-down"></i>
                             </button>
                           </h5>
 
-                          <div id="collapse{{ $khoanthu->tenkhoanthu }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                          <div id="collapse{{ $khoanthu->tenkhoanthu }}" class="collapse" aria-labelledby="headingOne"
+                            data-parent="#accordion">
 
                             <div style="width: 400px; display:flex; flex-wrap: wrap; padding-top:10px">
 
                               @if($hocsinhchuadong->count()>0)
                               @foreach( $hocsinhchuadong
                               as $item)
-                              <label for="" class="badge badge-inverse-info m-r-10">{{$item->hocPhi->hoc_sinh_id.' - '. $item->hocPhi->hocsinh->hodem.' '. $item->hocPhi->hocsinh->ten }}</label>
+                              <label for=""
+                                class="badge badge-inverse-info m-r-10">{{$item->hocPhi->hoc_sinh_id.' - '. $item->hocPhi->hocsinh->hodem.' '. $item->hocPhi->hocsinh->ten }}</label>
                               @endforeach
                               @else
                               <i>Không có học sinh nào chưa đóng</i>
@@ -199,30 +203,28 @@
 
 <script>
   var data1 = {
-    labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-    , datasets: [{
-        label: "Tổng thu"
-        , data: @json($thuchi['thu'])
-      }
-      , {
-        label: "Tổng chi"
-        , data: @json($thuchi['chi'])
+    labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    datasets: [{
+      label: "Tổng thu",
+      data: @json($thuchi['thu'])
+    }, {
+      label: "Tổng chi",
+      data: @json($thuchi['chi'])
 
-      }
-    ]
+    }]
   };
   var bar = document.getElementById("chart1").getContext("2d");
   var myBarChart = new Chart(bar, {
-    type: "bar"
-    , data: data1
-    , options: {
-      barValueSpacing: 20
-      , plugins: {
+    type: "bar",
+    data: data1,
+    options: {
+      barValueSpacing: 20,
+      plugins: {
         colorschemes: {
           scheme: 'brewer.DarkTwo5'
         }
-      }
-      , scales: {
+      },
+      scales: {
         yAxes: [{
           ticks: {
             beginAtZero: true
@@ -235,15 +237,15 @@
 
   var pieElem = document.getElementById("chart2");
   var data4 = {
-    labels: @json(array_keys($ketquadiemdanh))
-    , datasets: [{
+    labels: @json(array_keys($ketquadiemdanh)),
+    datasets: [{
       data: @json(array_values($ketquadiemdanh))
     }]
   };
   var myPieChart = new Chart(pieElem, {
-    type: "pie"
-    , data: data4
-    , options: {
+    type: "pie",
+    data: data4,
+    options: {
       plugins: {
         colorschemes: {
           scheme: 'tableau.Tableau20'

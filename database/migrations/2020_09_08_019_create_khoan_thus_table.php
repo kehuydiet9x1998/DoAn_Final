@@ -17,8 +17,8 @@ class CreateKhoanThusTable extends Migration
       $table->id();
       $table->string('tenkhoanthu');
       $table->bigInteger('sotien');
-      $table->date('ngaybatdau');
-      $table->date('ngayketthuc');
+      // $table->date('ngaybatdau');
+      // $table->date('ngayketthuc');
       $table->foreignId('hoc_phi_id')->nullable();
       $table->foreignId('lop_hoc_id')->nullable();
       $table->string('trangthai');
