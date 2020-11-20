@@ -126,21 +126,28 @@
                                     <table class="table table-hover m-b-0">
                                       <thead>
                                         <tr>
-                                          <th>Tổng số giờ làm</th>
-                                          <th style="text-indent: 10px">Số tiền 1 giờ</th>
-                                          <th style="text-indent: 10px">Thực lĩnh</th>
+                                          <th>Tổng giờ làm</th>
+                                          <th>Số tiền 1 giờ</th>
+                                          <th>Tổng tiền dạy</th>
+                                          <th>Tổng phụ cấp</th>
+                                          <th>Tổng lương</th>
                                         </tr>
                                       </thead>
                                       <tbody>
-                                        @if($giaovien->tongGioLam($thang) > 0)
+                                        @php
+                                        $sogio = $giaovien->tongGioLam($thang);
+                                        $sotienmotgio = $giaovien->loaigiaovien->sotienmotgio;
+                                        $tongphucap = $giaovien->dsphucap->sum('sotien');
+                                        $tongtienday = $sogio/60 * $sotienmotgio;
+                                        $tongluong = $tongtienday + $tongphucap;
+                                        @endphp
+                                        @if($sogio > 0)
                                         <tr>
-                                          <td style="text-indent: 10px">{{round( $giaovien->tongGioLam($thang)/60 ,1)}}</td>
-                                          <td style="text-indent: 10px">100,000 đ</td>
-                                          <td style="text-indent: 10px">{{ number_format($giaovien->tongGioLam($thang)/60 * 100000). ' đ' }}</td>
-                                          <input type="hidden" name="thuclinh" value="{{( $giaovien->tongGioLam($thang)/60 * 100000) }}">
-                                          <input type="hidden" name="giao_vien_id" value="{{ $giaovien->id }}">
-                                          <input type="hidden" name="doituong" value="giaovien">
-                                          <input type="hidden" name="trangthai" value="Chưa thanh toán">
+                                          <td>{{round( $sogio/60 ,1)}}</td>
+                                          <td>{{ number_format($sotienmotgio) }}</td>
+                                          <td>{{ number_format($tongtienday) }}</td>
+                                          <td>{{ number_format($tongphucap) }}</td>
+                                          <td>{{ number_format($tongluong) }}</td>
                                         </tr>
 
                                         @else
@@ -155,6 +162,53 @@
                                 </div>
                               </div>
 
+                              <div class="card table-card">
+                                <div class="card-header">
+                                  <h5>Các khoản khấu trừ</h5>
+                                </div>
+                                <div class="card-block pt-0">
+                                  <div class="table-responsive pt-0">
+                                    <input type="hidden" value="{{ $thang }}-1" name="thang">
+                                    <table class="table table-hover m-b-0">
+                                      @php
+                                      $bhxh = App\Models\CauHinhLuong::layGiaTri('bhxh');
+                                      $bhyt = App\Models\CauHinhLuong::layGiaTri('bhyt');
+                                      $tienbhyt = round($tongluong * $bhyt / 100, -3);
+                                      $tienbhxh = round($tongluong * $bhxh / 100, -3);
+                                      @endphp
+                                      <thead>
+                                        <tr>
+                                          <th>BHXH ({{ $bhxh }}%)</th>
+                                          <th>BHYT ({{ $bhyt }}%)</th>
+                                          <th>Tổng khấu trừ</th>
+                                          <th>Thực lĩnh</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <td>{{ number_format($tienbhxh) }}</td>
+                                          <td>{{ number_format($tienbhyt) }}</td>
+                                          <td>{{ number_format($tienbhyt + $tienbhxh )}}</td>
+                                          <td><b>{{ number_format($tongluong - $tienbhxh - $tienbhyt) }}</b></td>
+                                        </tr>
+                                      </tbody>
+
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>
+
+
+                              <input type="hidden" name="cong" value="{{ $sogio }}">
+                              <input type="hidden" name="tongluong" value="{{ $tongluong }}">
+                              <input type="hidden" name="tongphucap" value="{{ $tongphucap }}">
+                              <input type="hidden" name="bhxh" value="{{ $tienbhxh }}">
+                              <input type="hidden" name="bhyt" value="{{ $tienbhyt }}">
+                              <input type="hidden" name="tongkhautru" value="{{ $tienbhyt + $tienbhxh }}">
+                              <input type="hidden" name="thuclinh" value="{{ $tongluong - $tienbhyt - $tienbhxh }}">
+                              <input type="hidden" name="giao_vien_id" value="{{ $giaovien->id }}">
+                              <input type="hidden" name="doituong" value="giaovien">
+                              <input type="hidden" name="trangthai" value="Chưa thanh toán">
 
                             </div>
                             <div class="modal-footer">
@@ -162,8 +216,9 @@
                               @if(!isset($luong))
                               <input type="submit" class="btn btn-primary waves-effect waves-light" value="Tạo" />
                               @elseif($luong->trangthai == 'Chưa thanh toán')
-
                               <a class="btn btn-success" href="/administrators/payroll/thanhtoan/{{ $luong->id }}">Thanh toán</a>
+                              @elseif($luong->trangthai == 'Đã thanh toán')
+                              <a class="btn btn-success" href="/administrators/payroll/print/{{ $luong->id }}">In phiếu lương</a>
                               @endif
                             </div>
                           </form>

@@ -3,17 +3,12 @@
 namespace App\Http\Controllers\Administrators;
 
 use App\Http\Controllers\Controller;
+use App\Models\LoaiGiaoVien;
 use Illuminate\Http\Request;
 use JsValidator;
-use App\Models\ChucVu;
 
-class ChucVuController extends Controller
+class LoaiGiaoVienController extends Controller
 {
-  /**
-   * Display a listing of the resource.
-   *
-   * @return \Illuminate\Http\Response
-   */
   protected $validationRules = [
     'ten' => 'required',
     'mota' => 'required',
@@ -36,10 +31,10 @@ class ChucVuController extends Controller
   public function index()
   {
     $this->authorize('tv_danhmuc');
-    $chucvus = ChucVu::all();
+    $loaigiaoviens = LoaiGiaoVien::all();
     return view(
-      'backend.administrators.chucvu.chucvu',
-      compact('chucvus')
+      'backend.administrators.loaigiaovien.loaigiaovien',
+      compact('loaigiaoviens')
     )->with(['jsValidator' => $this->jsValidator]);
   }
 
@@ -64,8 +59,8 @@ class ChucVuController extends Controller
     $this->authorize('them_danhmuc');
 
     $data = $request->all();
-    ChucVu::create($data);
-    return redirect(route('admin-chucvu.index'));
+    LoaiGiaoVien::create($data);
+    return redirect(route('admin-loaigiaovien.index'));
   }
 
   /**
@@ -87,10 +82,10 @@ class ChucVuController extends Controller
    */
   public function edit($id)
   {
-    $chucvu = ChucVu::find($id);
+    $loaigiaovien = LoaiGiaoVien::find($id);
     return view(
-      'backend.administrators.chucvu.edit_chucvu__modal',
-      compact('chucvu')
+      'backend.administrators.loaigiaovien.edit_loaigiaovien__modal',
+      compact('loaigiaovien')
     )->with(['jsValidator' => $this->jsValidator]);
   }
 
@@ -105,10 +100,10 @@ class ChucVuController extends Controller
   {
     $this->authorize('sua_danhmuc');
 
-    $chucvu = ChucVu::findOrFail($id);
-    $chucvu->fill($request->all());
-    $chucvu->save();
-    return redirect(route('admin-chucvu.index'));
+    $loaigiaovien = LoaiGiaoVien::findOrFail($id);
+    $loaigiaovien->fill($request->all());
+    $loaigiaovien->save();
+    return redirect(route('admin-loaigiaovien.index'));
   }
 
   /**
@@ -121,7 +116,7 @@ class ChucVuController extends Controller
   {
     $this->authorize('xoa_danhmuc');
 
-    ChucVu::where('id', '=', $id)->delete();
-    return redirect(route('admin-chucvu.index'));
+    LoaiGiaoVien::where('id', '=', $id)->delete();
+    return redirect(route('admin-loaigiaovien.index'));
   }
 }

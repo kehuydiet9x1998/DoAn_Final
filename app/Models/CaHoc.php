@@ -22,11 +22,11 @@ class CaHoc extends Model
   public function getThoigianbatdauAttribute($value)
   {
     $time = strtotime($value);
-    return date('h:m', $time);
+    return date('h:i', $time);
   }
   public function getThoigianketthucAttribute($value)
   {
     $time = strtotime($value);
-    return date('h:m', $time);
+    return date('h:i', $time);
   }
 }

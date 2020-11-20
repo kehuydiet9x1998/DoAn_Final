@@ -79,10 +79,27 @@
                   <span class="messages"></span>
                 </div>
               </div>
+
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Loại giáo viên</label>
+                <div class="col-sm-9">
+                  <select name="loai_giao_vien_id" class="form-control" id="">
+                    @foreach(\App\Models\LoaiGiaoVien::all() as $loaigiaovien)
+                    <option value="{{ $loaigiaovien->id }}">{{ $loaigiaovien->tenloaigiaovien }}</option>
+                    @endforeach
+                  </select>
+                  <span class="messages"></span>
+                </div>
+              </div>
+
               <div class="form-group row">
                 <label class="col-sm-3 col-form-label">Tình trạng</label>
                 <div class="col-sm-9">
-                  <input type="text" class="form-control" id="tinhtrang" name="tinhtrang" placeholder="Trạng thái">
+                  <select name="trangthai" class="form-control" id="">
+                    <option value="Đang hoạt động">Đang hoạt động</option>
+                    <option value="Đang nghỉ chế độ">Đang nghỉ chế độ</option>
+                    <option value="Đã nghỉ việc">Đã nghỉ việc</option>
+                  </select>
                   <span class="messages"></span>
                 </div>
               </div>

@@ -109,8 +109,8 @@
                 {{-- <div class="text-center">
                   <label for="" class="btn btn-round btn-outline-primary"></label>
                 </div> --}}
-                <div class="row">
-                  <div class="col-md-6 p-0">
+                <div class="row" style="justify-content: space-beetween">
+                  <div class="col-md-6 p-0 ">
                     <a href="{{ url('/auth/redirect/facebook') }}" class="btn btn-primary"><i class="fa fa-facebook"></i>Đăng nhập với Facebook</a>
                   </div>
                   <div class="col-md-6 p-0">

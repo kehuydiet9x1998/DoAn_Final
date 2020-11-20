@@ -6,21 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ChucVu extends Model
+class PhuCap extends Model
 {
   use HasFactory;
   use SoftDeletes;
-  protected $table = 'chuc_vu';
+  protected $table = 'phu_cap';
   protected $dates = ['deleted_at'];
   protected $guarded = ['proengsoft_jsvalidation'];
 
-  public function dsNhanVien()
+  public function nhanVien()
   {
-    return $this->hasMany(NhanVien::class);
-  }
-
-  public function soNhanVien()
-  {
-    return $this->dsNhanVien->count();
+    return $this->belongsTo(NhanVien::class);
   }
 }

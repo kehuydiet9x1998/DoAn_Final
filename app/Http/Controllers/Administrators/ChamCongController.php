@@ -37,7 +37,7 @@ class ChamCongController extends Controller
     if ($doituong == 'giaovien') {
       $checkins = Checkin::all()->filter(function ($query) use ($ngaycham) {
         $temp = date('Y-m-d', strtotime($query->getRawOriginal('giocheckout')));
-        return $temp == $ngaycham;
+        return $temp == $ngaycham && $query->giao_vien_id;
       });
 
       return view(

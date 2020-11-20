@@ -10,7 +10,7 @@ class NhanXetHocSinh extends Model
 {
   use HasFactory;
   // use SoftDeletes;
-  //protected $guarded = [];
+  //protected $guarded = ['proengsoft_jsvalidation'];
   protected $table = 'nhan_xet_hoc_sinh';
   // protected $dates = ['deleted_at'];
   protected $fillable = [
@@ -25,7 +25,7 @@ class NhanXetHocSinh extends Model
     'hoc_sinh_id',
     'buoi_hoc_id',
     'lop_hoc_id',
-    'khoa_hoc_id'
+    'khoa_hoc_id',
   ];
 
   public function buoiHoc()

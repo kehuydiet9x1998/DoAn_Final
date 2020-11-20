@@ -30,6 +30,7 @@ class DatabaseSeeder extends SpreadsheetSeeder
     }
 
     $this->file = [
+      '/database/seeders/_nhan_vien_va_giao_vien_seeder.xlsx',
       '/database/seeders/_danh_muc_seeder.xlsx',
       '/database/seeders/_khoa_hoc_seeder.xlsx',
       '/database/seeders/_lop_hoc_seeder.xlsx',

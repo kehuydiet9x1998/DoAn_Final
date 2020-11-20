@@ -9,7 +9,7 @@ class Permission extends Model
 {
   use HasFactory;
 
-  protected $guarded = [];
+  protected $guarded = ['proengsoft_jsvalidation'];
 
   public function roles()
   {
