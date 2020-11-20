@@ -9,7 +9,7 @@ class PhieuChi extends Model
 {
   use HasFactory;
 
-  protected $guarded = [];
+  protected $guarded = ['proengsoft_jsvalidation'];
 
   protected $table = 'phieu_chi';
 

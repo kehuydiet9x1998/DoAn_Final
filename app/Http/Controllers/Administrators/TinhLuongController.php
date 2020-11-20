@@ -52,7 +52,7 @@ class TinhLuongController extends Controller
     $luong = Luong::find($id);
     $luong->update(['trangthai' => 'Đã thanh toán']);
     session()->flash('doituong', $luong->doituong);
-    return back();
+    return redirect()->route('print_luong', $luong->id);
   }
 
   /**
@@ -69,6 +69,22 @@ class TinhLuongController extends Controller
     session()->flash('doituong', $request->doituong);
     session()->flash('thang', $request->thang);
     return back();
+  }
+
+  public function print($idluong)
+  {
+    $luong = Luong::findOrFail($idluong);
+    if ($luong->doituong == 'nhanvien') {
+      return view(
+        'backend.administrators.tinhluong.print_bang_luong_nhan_vien',
+        compact('luong')
+      );
+    } else {
+      return view(
+        'backend.administrators.tinhluong.print_bang_luong_giao_vien',
+        compact('luong')
+      );
+    }
   }
 
   /**

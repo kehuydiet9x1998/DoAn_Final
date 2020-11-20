@@ -16,12 +16,26 @@ class CreateLuongsTable extends Migration
     Schema::create('luong', function (Blueprint $table) {
       $table->id();
       $table->date('thang');
+      $table->unsignedBigInteger('cong');
+      $table->unsignedBigInteger('tongphucap')->nullable();
+      $table->unsignedBigInteger('tongluong')->nullable();
+      $table->unsignedBigInteger('bhxh')->nullable();
+      $table->unsignedBigInteger('bhyt')->nullable();
+      $table->unsignedBigInteger('tongkhautru')->nullable();
       $table->bigInteger('thuclinh');
       $table->string('trangthai');
-      $table->string('ghichu')->default('');
       $table->unsignedBigInteger('nhan_vien_id')->nullable();
       $table->unsignedBigInteger('giao_vien_id')->nullable();
       $table->string('doituong');
+      $table->timestamps();
+      $table->softDeletes();
+    });
+
+    Schema::create('cau_hinh_luong', function (Blueprint $table) {
+      $table->id();
+      $table->string('ten');
+      $table->string('mota');
+      $table->float('giatri');
       $table->timestamps();
       $table->softDeletes();
     });
@@ -35,5 +49,6 @@ class CreateLuongsTable extends Migration
   public function down()
   {
     Schema::dropIfExists('luong');
+    Schema::dropIfExists('cau_hinh_luong');
   }
 }

@@ -28,6 +28,7 @@ class CreateGiaoVien extends Migration
         ->foreignId('user_id')
         ->constrained()
         ->cascadeOnDelete();
+      $table->unsignedBigInteger('loai_giao_vien_id');
       $table->timestamps();
       $table->softDeletes();
     });

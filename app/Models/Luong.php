@@ -11,22 +11,16 @@ class Luong extends Model
   use HasFactory;
   use SoftDeletes;
   protected $table = 'luong';
-  protected $fillable = [
-    'thang',
-    'luonggoc',
-    'thuong',
-    'phat',
-    'thuclinh',
-    'trangthai',
-    'ghichu',
-    'nhan_vien_id',
-    'giao_vien_id',
-    'doituong',
-  ];
+  protected $guarded = ['proengsoft_jsvalidation'];
   protected $dates = ['deleted_at'];
 
   public function nhanVien()
   {
     return $this->belongsTo(NhanVien::class);
+  }
+
+  public function giaoVien()
+  {
+    return $this->belongsTo(GiaoVien::class);
   }
 }

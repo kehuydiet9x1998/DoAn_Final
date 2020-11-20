@@ -6,21 +6,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ChucVu extends Model
+class CauHinhLuong extends Model
 {
   use HasFactory;
+
   use SoftDeletes;
-  protected $table = 'chuc_vu';
+  protected $table = 'cau_hinh_luong';
   protected $dates = ['deleted_at'];
   protected $guarded = ['proengsoft_jsvalidation'];
 
-  public function dsNhanVien()
+  public static function layGiaTri($tencauhinh)
   {
-    return $this->hasMany(NhanVien::class);
-  }
-
-  public function soNhanVien()
-  {
-    return $this->dsNhanVien->count();
+    return CauHinhLuong::where('ten', $tencauhinh)->first()->giatri;
   }
 }

@@ -47,10 +47,10 @@ class NhanVien extends Model
     return $this->hasMany(HocPhi::class);
   }
 
-  public function hopDong()
-  {
-    return $this->hasOne(HopDong::class);
-  }
+  // public function hopDong()
+  // {
+  //   return $this->hasOne(HopDong::class);
+  // }
 
   public function dsLuong()
   {
@@ -60,6 +60,11 @@ class NhanVien extends Model
   public function dsKhenThuongKyLuat()
   {
     return $this->hasMany(KhenThuongKyLuat::class);
+  }
+
+  public function dsPhuCap()
+  {
+    return $this->hasMany(PhuCap::class);
   }
 
   public function dsPhieuChi()
@@ -131,13 +136,13 @@ class NhanVien extends Model
 
       switch ($checkin_record->first()->ketqua) {
         case "Vắng":
-          return "A";
+          return "0";
         case "Có mặt":
-          return "P";
+          return "1";
         case "Nửa ngày":
-          return "H";
+          return "0.5";
         case "Muộn":
-          return "L";
+          return "0.75";
       }
     }
     return null;

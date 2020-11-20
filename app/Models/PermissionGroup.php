@@ -9,7 +9,7 @@ class PermissionGroup extends Model
 {
   use HasFactory;
   protected $table = 'permission_group';
-  protected $guarded = [];
+  protected $guarded = ['proengsoft_jsvalidation'];
 
   public function permissions()
   {

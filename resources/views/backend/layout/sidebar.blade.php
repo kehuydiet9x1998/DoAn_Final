@@ -182,17 +182,17 @@ if ($phanquyen == "teacher") {
         ],
       ],
     ],
-     [
-     "title" => "Chức năng thêm",
-     "items" => [
-     [
-     "link" => "/teachers/dulieulophoc",
-     "type" => "link",
-     "icon" => "fa fa-slideshare",
-     "text" => "Báo cáo lớp học",
-     ],
-     ],
-     ],
+    [
+      "title" => "Chức năng thêm",
+      "items" => [
+        [
+          "link" => "/teachers/dulieulophoc",
+          "type" => "link",
+          "icon" => "fa fa-slideshare",
+          "text" => "Báo cáo lớp học",
+        ],
+      ],
+    ],
   ];
 }
 
@@ -246,12 +246,6 @@ if ($phanquyen == 'administrator') {
       "title" => "Lớp học",
       "items" => [
         [
-          "link" => "/administrators/loaikhoahoc",
-          "type" => "link",
-          "icon" => "fa fa-object-group",
-          "text" => "Loại khóa học",
-        ],
-        [
           "link" => "/administrators/courses",
           "type" => "link",
           "icon" => "fa fa-institution",
@@ -268,18 +262,6 @@ if ($phanquyen == 'administrator') {
           "type" => "link",
           "icon" => "fa fa-calendar-check-o",
           "text" => "Thời khóa biểu ",
-        ],
-        [
-          "link" => "/administrators/classroom",
-          "type" => "link",
-          "icon" => "fa fa-fort-awesome",
-          "text" => "Phòng học ",
-        ],
-        [
-          "link" => "/administrators/admin-hoccu",
-          "type" => "link",
-          "icon" => "fa fa-ioxhost",
-          "text" => "Dụng cụ học tập",
         ],
       ],
     ],
@@ -298,12 +280,6 @@ if ($phanquyen == 'administrator') {
           "type" => "link",
           "icon" => "fa fa-users",
           "text" => "Giáo viên",
-        ],
-        [
-          "link" => "/administrators/admin-chucvu",
-          "type" => "link",
-          "icon" => "fa fa-optin-monster",
-          "text" => "Chức vụ",
         ],
 
         [
@@ -324,7 +300,6 @@ if ($phanquyen == 'administrator') {
               "text" => "Bảng công",
               "link" => "/administrators/attendance/report",
             ],
-
           ],
         ],
 
@@ -359,7 +334,45 @@ if ($phanquyen == 'administrator') {
           "link" => "/contacts/phieuchi",
           "text" => "Phiếu chi",
         ],
+      ],
+    ],
 
+    [
+      "title" => "Danh mục chung",
+      "items" => [
+        [
+          "link" => "/administrators/loaikhoahoc",
+          "type" => "link",
+          "icon" => "fa fa-object-group",
+          "text" => "Loại khóa học",
+        ],
+
+        [
+          "link" => "/administrators/classroom",
+          "type" => "link",
+          "icon" => "fa fa-fort-awesome",
+          "text" => "Phòng học ",
+        ],
+        [
+          "link" => "/administrators/admin-hoccu",
+          "type" => "link",
+          "icon" => "fa fa-ioxhost",
+          "text" => "Dụng cụ học tập",
+        ],
+
+        [
+          "link" => "/administrators/admin-chucvu",
+          "type" => "link",
+          "icon" => "fa fa-optin-monster",
+          "text" => "Chức vụ",
+        ],
+
+        [
+          "link" => "/administrators/admin-loaigiaovien",
+          "type" => "link",
+          "icon" => "fa fa-list-alt",
+          "text" => "Loại giáo viên",
+        ],
       ],
     ],
 

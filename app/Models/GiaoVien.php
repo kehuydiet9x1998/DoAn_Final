@@ -17,18 +17,12 @@ class GiaoVien extends Model
 
   protected $table = 'giao_vien';
   //protected $dates = ['deleted_at'];
-  protected $fillable = [
-    'cmnd',
-    'hodem',
-    'ten',
-    'ngaysinh',
-    'gioitinh',
-    'sodienthoai',
-    'email',
-    'diachi',
-    'tinhtrang',
-    'user_id',
-  ];
+  protected $guarded = ['proengsoft_jsvalidation'];
+
+  public function loaiGiaoVien()
+  {
+    return $this->belongsTo(LoaiGiaoVien::class);
+  }
 
   public function getNgaysinhAttribute($value)
   {
@@ -38,6 +32,11 @@ class GiaoVien extends Model
   public function user()
   {
     return $this->belongsTo(User::class);
+  }
+
+  public function dsphucap()
+  {
+    return $this->hasMany(PhuCap::class);
   }
 
   public function dsLopHoc()

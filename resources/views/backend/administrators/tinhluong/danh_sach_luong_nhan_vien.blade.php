@@ -31,7 +31,7 @@
                 @php
                 $luong = $nhanvien->layLuongThang($thang);
                 @endphp
-                <td>{{ isset($luong) ? number_format($luong->thuclinh).' đ' : '0' }}</td>
+                <td>{{ isset($luong) ? number_format($luong->thuclinh) : '0' }}</td>
                 <td>{!! !isset($luong) ? '<label for="" class="badge badge-warning">Chưa tạo</label>'
                   : ($luong->trangthai == 'Chưa thanh toán'
                   ? '<label for="" class="badge badge-primary">Chưa thanh toán</label>'
@@ -58,12 +58,12 @@
 
                             <div class="modal-body">
                               @csrf
-                              <div class="card table-card">
+                              <div class="card table-card" style="margin-bottom: 15px">
                                 <div class="card-header">
                                   <h5>Nhân viên</h5>
                                 </div>
 
-                                <div class="card-block">
+                                <div class="card-block pt-0 ">
                                   <div class="row ui-sortable" id="draggablePanelList">
                                     <div class="col-lg-12 col-xl-6 ui-sortable-handle">
                                       <div class="card-sub">
@@ -114,25 +114,24 @@
 
                               </div>
 
-                              <div class="card table-card">
+                              <div class="card table-card" style="margin-bottom: 15px">
                                 <div class="card-header">
-                                  <h5>Phiếu lương</h5>
+                                  <h5>Tổng lương thực tế</h5>
                                 </div>
-
                                 <div class="card-block pt-0">
                                   <div class="table-responsive pt-0">
-
                                     <input type="hidden" value="{{ $thang }}-1" name="thang">
-                                    <table class="table table-hover m-b-0">
+                                    <table class="table table-hover" style="margin-bottom: 15px">
                                       <thead>
                                         <tr>
-                                          <th>Có mặt</th>
-                                          <th>Vắng</th>
-                                          <th>Muộn</th>
-                                          <th>Nửa ngày</th>
-                                          <th>Tổng số</th>
-                                          <th style="text-indent: 10px">Số tiền 1 ngày</th>
-                                          <th style="text-indent: 10px">Thực lĩnh</th>
+                                          <th>Lương cơ bản</th>
+                                          <th>Tổng số công</th>
+                                          <th>Phụ cấp chức vụ</th>
+                                          {{-- @foreach($nhanvien->dsphucap as $phucap)
+                                          <th>{{ $phucap->tenphucap }}</th>
+                                          @endforeach --}}
+                                          <th>Tổng phụ cấp</th>
+                                          <th>Tổng lương</th>
                                         </tr>
                                       </thead>
                                       <tbody>
@@ -141,80 +140,120 @@
                                         @endphp
                                         @if($cong['tong'] != 0)
                                         <tr>
-                                          <td style="text-indent: 10px">{{ $cong['comat'] }}</td>
-                                          <td style="text-indent: 10px">{{ $cong['vangmat'] }}</td>
-                                          <td style="text-indent: 10px">{{ $cong['muon'] }}</td>
-                                          <td style="text-indent: 10px">{{ $cong['nuangay'] }}</td>
-                                          <td style="text-indent: 10px">{{ $cong['tong'] }}</td>
-                                          <td style="text-indent: 10px">300,000 đ</td>
-                                          <td style="text-indent: 10px">{{ number_format($cong['tong'] * 300000). ' đ' }}</td>
-                                          <input type="hidden" name="thuclinh" value="{{($cong['tong'] * 300000) }}">
-                                          <input type="hidden" name="nhan_vien_id" value="{{ $nhanvien->id }}">
-                                          <input type="hidden" name="doituong" value="nhanvien">
-                                          <input type="hidden" name="trangthai" value="Chưa thanh toán">
-                                        </tr>
-                                        {{-- <tr>
-                                          <td class="border-top-0"></td>
-                                          <td class="border-top-0"></td>
-                                          <td class="border-top-0"></td>
-                                        </tr>
-                                        <tr>
-                                          <td class="border-top-0"></td>
-                                          <td class="border-top-0"></td>
-                                          <td class="border-top-0"></td>
-                                        </tr> --}}
-
-                                        @else
-                                        <tr>
-                                          <td colspan="5" class="font-italic">Chưa có dữ liệu chấm công</td>
-                                        </tr>
-                                        @endif
-                                      </tbody>
-
-                                    </table>
-                                  </div>
-                                </div>
-                              </div>
-
-
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Đóng</button>
-                              @if(!isset($luong))
-                              <input type="submit" class="btn btn-primary waves-effect waves-light" value="Tạo" />
-                              @elseif($luong->trangthai == 'Chưa thanh toán')
-
-                              <a class="btn btn-success" href="/administrators/payroll/thanhtoan/{{ $luong->id }}">Thanh toán</a>
-                              @endif
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-
-
+                                          @php
+                                          $luongchinh = $nhanvien->chucvu->luongchinh;
+                                          $phucapchucvu = $nhanvien->chucvu->phucap;
+                                          $tongphucap = $phucapchucvu + $nhanvien->dsphucap->sum('sotien');
+                                          $tongluong = round($cong['tong'] / 26 * $luongchinh + $tongphucap, -3);
+                                          @endphp
+                                          <td class="py-1">{{ number_format($luongchinh) }}</td>
+                                          <td class="py-1">{{ $cong['tong'] }}</td>
+                                          <td class="py-1">{{ number_format($phucapchucvu) }}</td>
+                                          {{-- @foreach($nhanvien->dsphucap as $phucap)
+                                          <td class="py-1">{{ number_format($phucap->sotien ) }}
                 </td>
+                @endforeach --}}
+                <td class="py-1"> {{ number_format($tongphucap)  }} </td>
+                <td class="py-1">{{ number_format($tongluong) }}</td>
               </tr>
-              @endforeach
+              @else
+              <tr>
+                <td colspan="5" class="font-italic">Chưa có dữ liệu chấm công</td>
+              </tr>
+              @endif
             </tbody>
+
           </table>
         </div>
+      </div>
+    </div>
 
-        {{-- /* -------------------------------------------------------------------------- */
+    <div class="card table-card">
+      <div class="card-header">
+        <h5>Các khoản khấu trừ</h5>
+      </div>
+      <div class="card-block pt-0">
+        <div class="table-responsive pt-0">
+          <input type="hidden" value="{{ $thang }}-1" name="thang">
+          <table class="table table-hover m-b-0">
+            @php
+            $bhxh = App\Models\CauHinhLuong::layGiaTri('bhxh');
+            $bhyt = App\Models\CauHinhLuong::layGiaTri('bhyt');
+            $tienbhyt = round($tongluong * $bhyt / 100, -3);
+            $tienbhxh = round($tongluong * $bhxh / 100, -3);
+            @endphp
+            <thead>
+              <tr>
+                <th>BHXH ({{ $bhxh }}%)</th>
+                <th>BHYT ({{ $bhyt }}%)</th>
+                <th>Tổng khấu trừ</th>
+                <th>Thực lĩnh</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ number_format($tienbhxh) }}</td>
+                <td>{{ number_format($tienbhyt) }}</td>
+                <td>{{ number_format($tienbhyt + $tienbhxh )}}</td>
+                <td><b>{{ number_format($tongluong - $tienbhxh - $tienbhyt) }}</b></td>
+              </tr>
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <input type="hidden" name="cong" value="{{ $cong['tong'] }}">
+    <input type="hidden" name="tongluong" value="{{ $tongluong }}">
+    <input type="hidden" name="tongphucap" value="{{ $tongphucap }}">
+    <input type="hidden" name="bhxh" value="{{ $tienbhxh }}">
+    <input type="hidden" name="bhyt" value="{{ $tienbhyt }}">
+    <input type="hidden" name="tongkhautru" value="{{ $tienbhyt + $tienbhxh }}">
+    <input type="hidden" name="thuclinh" value="{{ $tongluong - $tienbhyt - $tienbhxh }}">
+    <input type="hidden" name="nhan_vien_id" value="{{ $nhanvien->id }}">
+    <input type="hidden" name="doituong" value="nhanvien">
+    <input type="hidden" name="trangthai" value="Chưa thanh toán">
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Đóng</button>
+    @if(!isset($luong))
+    <input type="submit" class="btn btn-primary waves-effect waves-light" value="Tạo" />
+    @elseif($luong->trangthai == 'Chưa thanh toán')
+    <a class="btn btn-success" href="/administrators/payroll/thanhtoan/{{ $luong->id }}">Thanh toán</a>
+    @elseif($luong->trangthai == 'Đã thanh toán')
+    <a class="btn btn-success" href="/administrators/payroll/print/{{ $luong->id }}">In phiếu lương</a>
+    @endif
+  </div>
+  </form>
+</div>
+</div>
+
+</div>
+</div>
+
+
+</td>
+</tr>
+@endforeach
+</tbody>
+</table>
+</div>
+
+{{-- /* -------------------------------------------------------------------------- */
 /*                              Modal them luong                              */
 /* -------------------------------------------------------------------------- */ --}}
 
 
-      </div>
-    </div>
-    <script>
-      // $(document).ready(function() {
-      //   $('#thang').change(function() {
-      //     $('.thang-copy').val($('#thang').val());
-      //   });
-      //   $('.thang-copy').val($('#thang').val());
-      // });
+</div>
+</div>
+<script>
+  // $(document).ready(function() {
+  //   $('#thang').change(function() {
+  //     $('.thang-copy').val($('#thang').val());
+  //   });
+  //   $('.thang-copy').val($('#thang').val());
+  // });
 
-    </script>
+</script>

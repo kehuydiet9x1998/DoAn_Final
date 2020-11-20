@@ -37,13 +37,14 @@ class BaoCaoLopHocController extends Controller
   // }
   public function LopHoc()
   {
-    $lophocs = LopHoc::where('trangthai', 'Đã kết thúc')->get(); // t k bieeets tragj thas. r oke
+    // cais nayf laf si snah khacs ddungs k.um dung r.z
+    $lophocs = LopHoc::where('trangthai', '<>', 'Đã kết thúc')->get(); // t k bieeets tragj thas. r oke
     return view('backend.teachers.baocao.baocao', compact('lophocs'));
   }
 
   public function BaoCaoLopHoc()
   {
-    $lophocs = LopHoc::all();
+    $lophocs = LopHoc::where('trangthai', '<>', 'Đã kết thúc')->get();
     return view('backend.teachers.baocao.printf', compact('lophocs'));
   }
 
