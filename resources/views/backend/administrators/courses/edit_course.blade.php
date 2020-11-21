@@ -2,7 +2,7 @@
   <div class="modal-content">
     <div class="modal-header">
       <h4 class="modal-title">Sửa khóa học</h4>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="myReset()">
         <span aria-hidden="true">×</span>
       </button>
     </div>
@@ -118,5 +118,13 @@
     event.preventDefault();
     $(this).ekkoLightbox();
   });
+
+  function myReset() {
+    $('.modal').hide();
+    $('body').removeClass('modal-open');
+
+
+    $('.modal-backdrop').hide();
+  };
 
 </script>
