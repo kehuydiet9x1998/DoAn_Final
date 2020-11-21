@@ -32,47 +32,70 @@
               <div class="card-header">
                 <h5>DANH SÁCH LỚP HỌC</h5>
               </div>
+              {{-- hus hs nghe máy t bảo. ok t bật --}}
+              <!--  -->
+              <form action="{{URL::to('/teachers/baocaolophoc/timkiem')}}" method="POST">
+                @csrf
+                @method('POST')
+                <div style="height: 45px; display: flex">
+                  <div class="col-sm-12 col-xl-3 m-b-30">
+                    <select name="select" class="form-control form-control-inverse fill">
+                      <option value="">Tất cả khóa học</option>
+                      @foreach ($khoahocs as $khoahoc)
+                      <option value="{{$khoahoc->tenkhoahoc}}">{{$khoahoc->tenkhoahoc}}</option>
+                      @endforeach
+                    </select>
+                  </div>
+                  <input type="submit" value="Lọc theo khóa học" name="loc"
+                    class="btn btn-success btn-round waves-effect waves-light" data-toggle="modal"
+                    data-target="#large-Modal" style="float: right; margin-left:30px; width: 170px;
+                margin-right: auto;">
+              </form>
               <button class="btn btn-success btn-round waves-effect waves-light" data-toggle="modal"
                 data-target="#large-Modal" style="float: right; margin-right:30px; width: 170px;
                 margin-left: auto;">
-                <a href="{{URL::to('/teachers/baocaolophoc')}}">In báo cáo</a>
+
+                <a @if (isset($khoa_hoc_id)!=1) href="{{URL::to('/teachers/baocaolophoc/0')}}" @else
+                  href="{{URL::to("/teachers/baocaolophoc/$khoa_hoc_id")}}" @endif>
+                  In báo cáo
+                </a>
               </button>
-              <div class="card-block table-border-style">
-                <div class="table-responsive">
-                  <table class="table table-bordered" id="datatable">
-                    <thead>
-                      <tr>
-                        {{-- <th>TT</th> --}}
-                        <th>ID Lớp học</th>
-                        <th>Tên lớp học</th>
-                        <th>Khóa học</th>
-                        <th>Ngày bắt đầu</th>
-                        <th>Ngày kết thúc</th>
-                        <th>Giáo viên dạy</th>
-                      </tr>
-                    </thead>
+            </div>
+            <div class="card-block table-border-style">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="datatable">
+                  <thead>
+                    <tr>
+                      {{-- <th>TT</th> --}}
+                      <th>ID Lớp học</th>
+                      <th>Tên lớp học</th>
+                      <th>Khóa học</th>
+                      <th>Ngày bắt đầu</th>
+                      <th>Ngày kết thúc</th>
+                      <th>Giáo viên dạy</th>
+                    </tr>
+                  </thead>
+                  @php
+                  $dem = 1;
+                  @endphp
+                  <tbody>
+                    @foreach ($lophocs as $lophoc)
+                    <tr>
+                      {{-- <td>{{$dem}}</td> --}}
+                      <td>{{$lophoc->id}}</td>
+                      <td>{{$lophoc->tenlop}}</td>
+                      {{-- <>{{ $khoanthu->sohocsinh - $khoanthu->sohocsinhdadong }}</> --}}
+                      <td>{{$lophoc->khoahoc->tenkhoahoc}}</td>
+                      <td>{{$lophoc->ngaybatdau}}</td>
+                      <td>{{$lophoc->ngayketthuc}}</td>
+                      <td>{{$lophoc->giaovien->hodem.' '.$lophoc->giaovien->ten}}</td>
+                    </tr>
                     @php
-                    $dem = 1;
+                    $dem++;
                     @endphp
-                    <tbody>
-                      @foreach ($lophocs as $lophoc)
-                      <tr>
-                        {{-- <td>{{$dem}}</td> --}}
-                        <td>{{$lophoc->id}}</td>
-                        <td>{{$lophoc->tenlop}}</td>
-                        {{-- <>{{ $khoanthu->sohocsinh - $khoanthu->sohocsinhdadong }}</> --}}
-                        <td>{{$lophoc->khoahoc->tenkhoahoc}}</td>
-                        <td>{{$lophoc->ngaybatdau}}</td>
-                        <td>{{$lophoc->ngayketthuc}}</td>
-                        <td>{{$lophoc->giaovien->hodem.' '.$lophoc->giaovien->ten}}</td>
-                      </tr>
-                      @php
-                      $dem++;
-                      @endphp
-                      @endforeach
-                    </tbody>
-                  </table>
-                </div>
+                    @endforeach
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
@@ -80,5 +103,6 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 @endsection

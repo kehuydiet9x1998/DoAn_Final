@@ -48,7 +48,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('calendar', 'Administrators\LichController');
     Route::resource('classroom', 'Administrators\PhongHocController');
     Route::resource('admin-chucvu', 'Administrators\ChucVuController');
-    Route::resource('admin-loaigiaovien','Administrators\LoaiGiaoVienController');
+    Route::resource('admin-loaigiaovien', 'Administrators\LoaiGiaoVienController');
     Route::resource('loaikhoahoc', 'Administrators\LoaiKhoaHocController');
     Route::resource('admin-hoccu', 'Administrators\HocCuController');
     Route::resource('admin-hoccu-plus', 'Administrators\PlusHocCuController');
@@ -61,12 +61,12 @@ Route::middleware(['auth', 'web'])->group(function () {
     /* -------------------------------------------------------------------------- */
 
     Route::get('attendance/report', [ChamCongController::class, 'report']);
-    Route::get('attendance/showreport/{doituong}/{thang}', [ChamCongController::class,'showreport']);
+    Route::get('attendance/showreport/{doituong}/{thang}', [ChamCongController::class, 'showreport']);
     Route::get('attendance/giaovien', [ChamCongController::class, 'giaovien']);
     Route::get('attendance/nhanvien', [ChamCongController::class, 'nhanvien']);
-    Route::get('attendance/filter/{doituong}/{ngaycham}', [ChamCongController::class,'filter']);
-    Route::get('attendance/confirm/{attendance}', [ChamCongController::class,'confirm'])->name('confirm');
-    Route::get('attendance/cancel/{attendance}', [ChamCongController::class,'cancel'])->name('cancel');
+    Route::get('attendance/filter/{doituong}/{ngaycham}', [ChamCongController::class, 'filter']);
+    Route::get('attendance/confirm/{attendance}', [ChamCongController::class, 'confirm'])->name('confirm');
+    Route::get('attendance/cancel/{attendance}', [ChamCongController::class, 'cancel'])->name('cancel');
     Route::resource('attendance', 'Administrators\ChamCongController');
 
     /* -------------------------------------------------------------------------- */
@@ -74,8 +74,8 @@ Route::middleware(['auth', 'web'])->group(function () {
     /* -------------------------------------------------------------------------- */
 
     Route::get('payroll/print/{id}', [AdministratorsTinhLuongController::class, 'print'])->name('print_luong');
-    Route::get('payroll/thanhtoan/{id}', [AdministratorsTinhLuongController::class,'thanhtoan']);
-    Route::get('payroll/filter/{doituong}/{thang}', [AdministratorsTinhLuongController::class,'filter']);
+    Route::get('payroll/thanhtoan/{id}', [AdministratorsTinhLuongController::class, 'thanhtoan']);
+    Route::get('payroll/filter/{doituong}/{thang}', [AdministratorsTinhLuongController::class, 'filter']);
     Route::resource('payroll', 'Administrators\TinhLuongController');
 
     /* -------------------------------------------------------------------------- */
@@ -83,7 +83,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     /* -------------------------------------------------------------------------- */
 
     Route::get('thongkenhansu', [ThongKeNhanVienController::class, 'index']);
-    Route::get('thongkenhansu/content/{bophan}/{gioitinh}', [ThongKeNhanVienController::class,'content']);
+    Route::get('thongkenhansu/content/{bophan}/{gioitinh}', [ThongKeNhanVienController::class, 'content']);
     Route::get('thongkecheckin', [ThongKeCheckInController::class, 'index']);
     Route::get('thongkethuchi', [ThongKeDoanhThuController::class, 'index']);
     Route::get('thongkecongno', [ThongKeCongNoController::class, 'index']);
@@ -102,10 +102,11 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('nhanxethocsinh', 'Teachers\NhanXetHocSinhController');
     Route::resource('sanphamcuoikhoa', 'Teachers\SanPhamCuoiKhoaController');
     Route::resource('baocao', 'Teachers\BaoCaoController');
-    Route::get('/baocaolophoc', [BaoCaoLopHocController::class,'BaoCaoLopHoc'])->name('baocaolophoc');
+    Route::get('/baocaolophoc/{idkhoahoc}', [BaoCaoLopHocController::class, 'BaoCaoLopHoc'])->name('baocaolophoc');
     Route::get('/dulieulophoc', [BaoCaoLopHocController::class, 'LopHoc']);
-    Route::get('/nhanxet/{hocsinhid}/{buoihocid}/{lophocid}/{khoahocid}', [NhanXetHocSinhController::class,'NhanXet']);
-    Route::get('/xemnhanxet/{hocsinhid}/{buoihocid}/{lophocid}/{khoahocid}', [NhanXetHocSinhController::class,'XemNhanXet']);
+    Route::post('/baocaolophoc/timkiem', [BaoCaoLopHocController::class, 'TimKiem']);
+    Route::get('/nhanxet/{hocsinhid}/{buoihocid}/{lophocid}/{khoahocid}', [NhanXetHocSinhController::class, 'NhanXet']);
+    Route::get('/xemnhanxet/{hocsinhid}/{buoihocid}/{lophocid}/{khoahocid}', [NhanXetHocSinhController::class, 'XemNhanXet']);
     Route::get(
       '/nhanxetmodal/{hocsinhid}/{buoihocid}/{lophocid}/{khoahocid}',
       function ($hocsinhid, $buoihocid, $lophocid, $khoahocid) {
@@ -118,7 +119,7 @@ Route::middleware(['auth', 'web'])->group(function () {
       }
     );
     Route::resource('check-test', 'Teachers\BaiTapController');
-    Route::get('/xembaitap/{hocsinhid}/{buoihocid}', [BaiTapController::class,'xembaitap']);
+    Route::get('/xembaitap/{hocsinhid}/{buoihocid}', [BaiTapController::class, 'xembaitap']);
     Route::get('comment', [NhanXetHocSinhController::class, 'index']);
     // Route::get('items', function () {
     //   return view('backend.teachers.items');
@@ -140,7 +141,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('lichtrainghiem', "Contacts\LichTraiNghiemController");
     Route::resource('list-teachers', "Contacts\GiangVienController");
     Route::resource('phanlop', 'Administrators\PhanLopController');
-    Route::get('nhanxetgiaovien/{id}', [FeedBackController::class,'nhanxetgiaovien']);
+    Route::get('nhanxetgiaovien/{id}', [FeedBackController::class, 'nhanxetgiaovien']);
     Route::get('checkin-teachers', function () {
       return view('backend.contact.checkIn');
     });
@@ -174,7 +175,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::get('review', function () {
       return view('backend.students.review');
     });
-    Route::get('/xemnhanxet/{idbuoihoc}/{idlophoc}/{idkhoahoc}', [XemNhanXetController::class,'showNhanXet']);
+    Route::get('/xemnhanxet/{idbuoihoc}/{idlophoc}/{idkhoahoc}', [XemNhanXetController::class, 'showNhanXet']);
     Route::get('review', function () {
       return view('backend.students.review');
     });

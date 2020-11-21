@@ -49,7 +49,7 @@
         <table class="table table-bordered text-center">
           <thead>
             <tr>
-              <th>STT</th>
+              <th>ID LỚP HỌC</th>
               <th>TÊN KHÓA HỌC</th>
               <th>TÊN LỚP HỌC</th>
               <th>TÊN GIÁO VIÊN</th>
