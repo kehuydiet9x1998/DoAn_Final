@@ -59,7 +59,7 @@
                       <tr>
                         {{-- <td>{{$dem}}</td> --}}
                         <td>{{$lophoc->id}}</td>
-                        <td>{{$lophoc->tenlophoc}}</td>
+                        <td>{{$lophoc->tenlop}}</td>
                         {{-- <>{{ $khoanthu->sohocsinh - $khoanthu->sohocsinhdadong }}</> --}}
                         <td>{{$lophoc->khoahoc->tenkhoahoc}}</td>
                         <td>{{$lophoc->ngaybatdau}}</td>

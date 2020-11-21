@@ -16,7 +16,8 @@ $menu = true;
                     <h5>Danh sách lớp học</h5>
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-6">
-                    <button type="button" class="btn btn-success btn-round waves-effect" data-toggle="modal" data-target="#large-Modal" style="float: right; margin-right:20px">Thêm lớp học</button>
+                    <button type="button" class="btn btn-success btn-round waves-effect" data-toggle="modal"
+                      data-target="#large-Modal" style="float: right; margin-right:20px">Thêm lớp học</button>
                     @include('backend.administrators.classes.add-class')
                   </div>
                 </div>
@@ -63,7 +64,7 @@ $menu = true;
                         <td>{{$class->siso}}</td>
                         @php
                         $sobuoi = $class->sobuoi;
-                        $sobuoidahoc = $class->soBuoiDaHoc();
+                        $sobuoidahoc = $class->sobuoidahoc;
                         @endphp
                         <td>{{$sobuoidahoc.'/'.$sobuoi }}</td>
 
@@ -71,7 +72,9 @@ $menu = true;
                         <td>
                           <ul style="display: flex">
                             <div id="dom-table_filter" class="dataTables_filter">
-                              <button type="button" class="btn edit btn-primary waves-effect phanlop" data-toggle="modal" data-target="#phanlop-Modal{{ $class->id }}" data-id="1" style="background-color: white; border: none; padding: 0">
+                              <button type="button" class="btn edit btn-primary waves-effect phanlop"
+                                data-toggle="modal" data-target="#phanlop-Modal{{ $class->id }}" data-id="1"
+                                style="background-color: white; border: none; padding: 0">
                                 <i class="fa fa-user-plus m-r-15 text-c-blue">
                                 </i>
                               </button>
@@ -79,16 +82,23 @@ $menu = true;
                             </div>
 
                             <li>
-                              <button style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent" data-toggle="modal" data-target="#edit-Modal" data-id="{{$class->id}}" class="my_edit">
-                                <i class="fa fa-edit f-w-600 f-16 m-r-15 text-c-green" style="margin:0; font-size: 20px"></i></button>
-                              <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;"></div>
+                              <button
+                                style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent"
+                                data-toggle="modal" data-target="#edit-Modal" data-id="{{$class->id}}" class="my_edit">
+                                <i class="fa fa-edit f-w-600 f-16 m-r-15 text-c-green"
+                                  style="margin:0; font-size: 20px"></i></button>
+                              <div class="modal fade show" id="edit-Modal" tabindex="-1" role="dialog"
+                                style="z-index: 1050;display: none; padding-right: 17px;"></div>
                             </li>
                             <li>
                               <form action="{{route('allclass.destroy', $class->id)}}" method="post">
                                 @method('DELETE')
                                 @csrf
-                                <button style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent" onclick="return confirm ('Bạn có muốn xóa không')">
-                                  <i class="fa fa-trash-o f-w-600 f-16 m-r-15 text-c-red" style="margin:0; font-size: 20px"></i></button>
+                                <button
+                                  style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent"
+                                  onclick="return confirm ('Bạn có muốn xóa không')">
+                                  <i class="fa fa-trash-o f-w-600 f-16 m-r-15 text-c-red"
+                                    style="margin:0; font-size: 20px"></i></button>
                               </form>
                             </li>
                           </ul>
@@ -115,8 +125,8 @@ $menu = true;
 
 <script>
   $(document).
-  ready(function() {
-    $('.my_edit').click(function(e) {
+  ready(function () {
+    $('.my_edit').click(function (e) {
       id = $(this).data('id')
       $('#edit-Modal').load("/administrators/allclass/" + id + '/edit');
       $('#edit-Modal').show();
