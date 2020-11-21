@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Contacts;
 use App\Http\Controllers\Controller;
 use App\Models\HocPhi;
 use App\Models\KhoanThu;
+use Carbon\Carbon;
 use DB;
 use Illuminate\Http\Request;
 
@@ -66,6 +67,9 @@ class KhoanThuController extends Controller
             'trangthai' => 'Chưa đóng',
           ]
         );
+        $hocphi = HocPhi::find($hoc_phi_id);
+        $hocphi->deadline = now()->addDays(7);
+        $hocphi->save();
       }
     }
 
@@ -131,6 +135,9 @@ class KhoanThuController extends Controller
             'trangthai' => 'Chưa đóng',
           ]
         );
+        $hocphi = HocPhi::find($hoc_phi_id);
+        $hocphi->deadline = now()->addDays(7);
+        $hocphi->save();
       }
     }
 
