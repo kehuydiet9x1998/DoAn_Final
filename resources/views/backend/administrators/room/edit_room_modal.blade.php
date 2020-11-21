@@ -1,7 +1,7 @@
 <div class="modal-dialog modal-lg" role="document">
   <div class="modal-content">
     <div class="modal-header">
-      <h4 class="modal-title">Sửa thông tin phòng học</h4>
+      <h4 class="modal-title">Cập nhật phòng học</h4>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="myReset()">
         <span aria-hidden="true">×</span>
       </button>
@@ -57,4 +57,4 @@
     };
 
   </script>
-{!! $jsValidator->selector('#editform') !!}
+  {!! $jsValidator->selector('#editform') !!}
