@@ -88,7 +88,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Đóng</button>
-          <input type="submit" class="btn btn-primary waves-effect waves-light" value="Sửa thông tin" />
+          <input type="submit" class="btn btn-primary waves-effect waves-light" value="Cập nhật" />
         </div>
       </form>
     </div>

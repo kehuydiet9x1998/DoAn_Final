@@ -1,7 +1,7 @@
 <div class="modal-dialog modal-lg" role="document">
   <div class="modal-content">
     <div class="modal-header">
-      <h4 class="modal-title">Sửa thông tin sản phẩm cuối khóa</h4>
+      <h4 class="modal-title">Cập nhật sản phẩm cuối khóa</h4>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true" onclick="myReset()">×</span>
       </button>
@@ -20,8 +20,7 @@
                 </div>
 
                 <div class="modal-body">
-                  <form method="post" action="{{route('sanphamcuoikhoa.update',$sanphamcuoikhoa->id)}}" novalidate=""
-                    id="addform">
+                  <form method="post" action="{{route('sanphamcuoikhoa.update',$sanphamcuoikhoa->id)}}" novalidate="" id="addform">
                     @method('PUT')
                     <div class="modal-body">
                       <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -64,16 +63,14 @@
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Nội dung</label>
                         <div class="col-sm-9">
-                          <textarea class="form-control form-control-primary fill" name="noidung" id="" cols="30"
-                            rows="5" placeholder="Nhập vào nội dung">{{$sanphamcuoikhoa->noidung}}</textarea>
+                          <textarea class="form-control form-control-primary fill" name="noidung" id="" cols="30" rows="5" placeholder="Nhập vào nội dung">{{$sanphamcuoikhoa->noidung}}</textarea>
                           <span class="messages"></span>
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Mô tả</label>
                         <div class="col-sm-9">
-                          <textarea class="form-control form-control-primary fill" name="mota" id="" cols="30" rows="7"
-                            placeholder="Nhập vào mô tả">{{$sanphamcuoikhoa->mota}}</textarea>
+                          <textarea class="form-control form-control-primary fill" name="mota" id="" cols="30" rows="7" placeholder="Nhập vào mô tả">{{$sanphamcuoikhoa->mota}}</textarea>
                           <span class="messages"></span>
                         </div>
                       </div>
@@ -81,18 +78,15 @@
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">link</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control form-control-primary fill" id="hotenchame"
-                            name="fileslide" placeholder="Nhập vào đườg dẫn" value="{{$sanphamcuoikhoa->fileslide}}">
+                          <input type="text" class="form-control form-control-primary fill" id="hotenchame" name="fileslide" placeholder="Nhập vào đườg dẫn" value="{{$sanphamcuoikhoa->fileslide}}">
                           <span class="messages"></span>
                         </div>
                       </div>
 
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-default waves-effect " data-dismiss="modal"
-                        onclick="myReset()">Đóng</button>
-                      <input type="submit" class="btn btn-primary waves-effect waves-light"
-                        value="Cập nhật thông tin" />
+                      <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Đóng</button>
+                      <input type="submit" class="btn btn-primary waves-effect waves-light" value="Cập nhật thông tin" />
                     </div>
                   </form>
                 </div>

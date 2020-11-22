@@ -18,4 +18,9 @@ class PhuCap extends Model
   {
     return $this->belongsTo(NhanVien::class);
   }
+
+  public function giaoVien()
+  {
+    return $this->belongsTo(GiaoVien::class);
+  }
 }

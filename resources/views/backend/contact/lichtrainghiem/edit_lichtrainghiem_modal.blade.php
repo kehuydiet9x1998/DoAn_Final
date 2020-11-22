@@ -1,7 +1,7 @@
 <div class="modal-dialog modal-lg" role="document">
   <div class="modal-content">
     <div class="modal-header">
-      <h4 class="modal-title">Sửa thông tin lịch trải nghiệm</h4>
+      <h4 class="modal-title">Cập nhật lịch trải nghiệm</h4>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="myReset()">
         <span aria-hidden="true">×</span>
       </button>
@@ -60,7 +60,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Đóng</button>
-          <input type="submit" class="btn btn-primary waves-effect waves-light" value="Sửa thông tin" />
+          <input type="submit" class="btn btn-primary waves-effect waves-light" value="Cập nhật" />
         </div>
       </form>
     </div>

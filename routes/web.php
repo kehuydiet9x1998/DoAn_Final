@@ -180,6 +180,8 @@ Route::middleware(['auth', 'web'])->group(function () {
       return view('backend.students.review');
     });
   });
+
+  Route::resource('phucap', 'PhuCapController');
 });
 
 /* -------------------------------------------------------------------------- */
