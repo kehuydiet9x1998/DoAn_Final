@@ -117,7 +117,7 @@
                                           style="float: left; margin:0px 10px 0px 0px; padding: 0"><i
                                             class="fa fa-bank"></i>Giáo viên dạy khóa hoc:</h5>
                                         @foreach ($tengiaovien as $giaovien)
-                                        <h5 class="card-title"><b>{{$giaovien->hodem.' '.$giaovien->ten}}</b></h5>
+                                        <h5 class="card-title"><b>{{$giaovien->hodem.' '.$giaovien->ten.'.'}}</b></h5>
                                         @endforeach
                                       </div>
 
