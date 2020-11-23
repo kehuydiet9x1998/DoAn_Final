@@ -3,8 +3,8 @@ giao_vien
 
 |    cmnd    |     hodem      |   ten    |  ngaysinh  | gioitinh | sodienthoai |         email          |    diachi    |   tinhtrang    | user_id | loai_giao_vien_id |
 |------------|----------------|----------|------------|----------|-------------|------------------------|--------------|----------------|---------|-------------------|
-| 0432423489 | Nguyễn Văn  | Hoan     | 1980/12/25 | Nam      | 03666959560 | linhnv.teky@gmail.com  | Hải Phòng | Hoạt động | 3       | 1                 |
-| 0123456789 | Nguyễn Văn  | Hòa     | 1980/12/26 | Nam      | 03666959561 | vanhoan98.hp@gmail.com | Hải Phòng | Hoạt động | 8       | 2                 |
+| 0432423489 | Nguyễn Văn  | Hoan     | 1980/12/25 | Nam      | 03666959560 | vanhoan98.hp@gmail.com | Hải Phòng | Hoạt động | 3       | 1                 |
+| 0123456789 | Nguyễn Văn  | Hòa     | 1980/12/26 | Nam      | 03666959561 | test@gmail.com         | Hải Phòng | Hoạt động | 8       | 2                 |
 | 0185509911 | Nguyễn Văn  | Toàn    | 1980/12/27 | Nam      | 03666959562 | test@gmail.com         | Hải Phòng | Hoạt động | 36      | 1                 |
 | 0494476611 | Phạm Văn    | Toản   | 1980/12/28 | Nữ     | 03666959563 | test@gmail.com         | Hải Phòng | Hoạt động | 37      | 1                 |
 | 0803443311 | Hoàng Thi     | Thảo   | 1980/12/29 | Nam      | 03666959564 | test@gmail.com         | Hải Phòng | Hoạt động | 38      | 2                 |

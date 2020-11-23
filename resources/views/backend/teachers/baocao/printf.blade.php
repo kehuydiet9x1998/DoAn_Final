@@ -77,7 +77,7 @@
     </div>
     <div class="row" style="margin-top: 20px">
       <div class="col-sm-6">
-        <p class="text-center" style="font-size: 16px; font-weight: bold">Quản lý chi nhanh xác nhận</p>
+        <p class="text-center" style="font-size: 16px; font-weight: bold">Quản lý chi nhánh xác nhận</p>
         <p class="text-center" style="font-size: 16px; font-style: italic; margin-top: -10px">(Ký và ghi rõ họ tên)</p>
       </div>
       <div class="col-sm-6">
