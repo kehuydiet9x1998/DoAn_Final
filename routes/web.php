@@ -27,6 +27,7 @@ use App\Models\LopHoc;
 use App\Http\Controllers\Contacts\AjaxController;
 
 Route::get('/', function () {
+  return redirect()->route('login');
   return view('frontend.trangchu');
 });
 
