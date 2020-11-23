@@ -111,7 +111,6 @@
                                       ->where('khoa_hoc.id','=',$khoahoc->id)
                                       ->get();
                                       @endphp
-
                                       <div class="card-block" style="margin-top: -40px">
                                         <h5 class="card-title col-sm-auto"
                                           style="float: left; margin:0px 10px 0px 0px; padding: 0"><i

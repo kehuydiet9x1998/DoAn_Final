@@ -15,7 +15,8 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Tên lớp</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" name="tenlop" id="hodem" value="{{$lophoc->tenlop}}" placeholder="Nhập vào tên lớp">
+              <input type="text" class="form-control" name="tenlop" id="hodem" value="{{$lophoc->tenlop}}"
+                placeholder="Nhập vào tên lớp">
               <span class="messages"></span>
             </div>
           </div>
@@ -23,7 +24,8 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Ngày bắt đầu</label>
             <div class="col-sm-9">
-              <input type="date" class="form-control" name="ngaybatdau" placeholder="Chọn ngày bắt đầu" value={{ substr($lophoc->getRawOriginal('ngaybatdau'), 0, 10) }}>
+              <input type="date" class="form-control" name="ngaybatdau" placeholder="Chọn ngày bắt đầu"
+                value={{ substr($lophoc->getRawOriginal('ngaybatdau'), 0, 10) }}>
               <span class="messages"></span>
             </div>
           </div>
@@ -34,7 +36,8 @@
               <select name="ca_hoc_id" class="form-control" id="">
                 <option value="">-- Chọn ca học --</option>
                 @foreach($cahocs as $cahoc)
-                <option @if($lophoc->lichhoc[0]->cahoc->id == $cahoc->id) selected @endif value="{{ $cahoc->id }}">{{ $cahoc->thoigianbatdau . ' đến ' .$cahoc->thoigianketthuc }}</option>
+                <option @if(optional($lophoc->lichhoc[0])->cahoc->id == $cahoc->id) selected @endif
+                  value="{{ $cahoc->id }}">{{ $cahoc->thoigianbatdau . ' đến ' .$cahoc->thoigianketthuc }}</option>
                 @endforeach
               </select>
               <span class="messages"></span>
@@ -46,7 +49,8 @@
             <div class="col-sm-9">
               <div class="checkbox-zoom zoom-success" style="text-align: center">
                 <label>
-                  <input type="checkbox" name="thu[]" value="2" @foreach($lophoc->lichhoc as $lich) @if($lich->thu == 2) checked @endif @endforeach>
+                  <input type="checkbox" name="thu[]" value="2" @foreach($lophoc->lichhoc as $lich) @if($lich->thu == 2)
+                  checked @endif @endforeach>
                   <span class="cr">
                     <i class="cr-icon icofont icofont-ui-check txt-success"></i>
                   </span>
@@ -55,7 +59,8 @@
               </div>
               <div class="checkbox-zoom zoom-success" style="text-align: center">
                 <label>
-                  <input type="checkbox" name="thu[]" value="3" @foreach($lophoc->lichhoc as $lich) @if($lich->thu == 3) checked @endif @endforeach>
+                  <input type="checkbox" name="thu[]" value="3" @foreach($lophoc->lichhoc as $lich) @if($lich->thu == 3)
+                  checked @endif @endforeach>
                   <span class="cr">
                     <i class="cr-icon icofont icofont-ui-check txt-success"></i>
                   </span>
@@ -64,7 +69,8 @@
               </div>
               <div class="checkbox-zoom zoom-success" style="text-align: center">
                 <label>
-                  <input type="checkbox" name="thu[]" value="4" @foreach($lophoc->lichhoc as $lich) @if($lich->thu == 4) checked @endif @endforeach>
+                  <input type="checkbox" name="thu[]" value="4" @foreach($lophoc->lichhoc as $lich) @if($lich->thu == 4)
+                  checked @endif @endforeach>
                   <span class="cr">
                     <i class="cr-icon icofont icofont-ui-check txt-success"></i>
                   </span>
@@ -73,7 +79,8 @@
               </div>
               <div class="checkbox-zoom zoom-success" style="text-align: center">
                 <label>
-                  <input type="checkbox" name="thu[]" value="5" @foreach($lophoc->lichhoc as $lich) @if($lich->thu == 5) checked @endif @endforeach>
+                  <input type="checkbox" name="thu[]" value="5" @foreach($lophoc->lichhoc as $lich) @if($lich->thu == 5)
+                  checked @endif @endforeach>
                   <span class="cr">
                     <i class="cr-icon icofont icofont-ui-check txt-success"></i>
                   </span>
@@ -82,7 +89,8 @@
               </div>
               <div class="checkbox-zoom zoom-success" style="text-align: center">
                 <label>
-                  <input type="checkbox" name="thu[]" value="6" @foreach($lophoc->lichhoc as $lich) @if($lich->thu == 6) checked @endif @endforeach>
+                  <input type="checkbox" name="thu[]" value="6" @foreach($lophoc->lichhoc as $lich) @if($lich->thu == 6)
+                  checked @endif @endforeach>
                   <span class="cr">
                     <i class="cr-icon icofont icofont-ui-check txt-success"></i>
                   </span>
@@ -91,7 +99,8 @@
               </div>
               <div class="checkbox-zoom zoom-success" style="text-align: center">
                 <label>
-                  <input type="checkbox" name="thu[]" value="7" @foreach($lophoc->lichhoc as $lich) @if($lich->thu == 7) checked @endif @endforeach>
+                  <input type="checkbox" name="thu[]" value="7" @foreach($lophoc->lichhoc as $lich) @if($lich->thu == 7)
+                  checked @endif @endforeach>
                   <span class="cr">
                     <i class="cr-icon icofont icofont-ui-check txt-success"></i>
                   </span>
@@ -100,7 +109,8 @@
               </div>
               <div class="checkbox-zoom zoom-success" style="text-align: center">
                 <label>
-                  <input type="checkbox" name="thu[]" value="8" @foreach($lophoc->lichhoc as $lich) @if($lich->thu == 8) checked @endif @endforeach>
+                  <input type="checkbox" name="thu[]" value="8" @foreach($lophoc->lichhoc as $lich) @if($lich->thu == 8)
+                  checked @endif @endforeach>
                   <span class="cr">
                     <i class="cr-icon icofont icofont-ui-check txt-success"></i>
                   </span>
@@ -116,7 +126,8 @@
               <select name="phong_hoc_id" class="form-control" id="">
                 <option value="">-- Chọn phòng học --</option>
                 @foreach($phonghocs as $phonghoc)
-                <option @if($lophoc->lichhoc[0]->phonghoc->id == $phonghoc->id) selected @endif value="{{ $phonghoc->id }}">{{ $phonghoc->tenphong }}</option>
+                <option @if(optional($lophoc->lichhoc[0])->phonghoc->id == $phonghoc->id) selected @endif
+                  value="{{ $phonghoc->id }}">{{ $phonghoc->tenphong }}</option>
 
 
                 @endforeach
@@ -149,7 +160,8 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Đóng</button>
+          <button type="button" class="btn btn-default waves-effect " data-dismiss="modal"
+            onclick="myReset()">Đóng</button>
           <input type="submit" class="btn btn-primary waves-effect waves-light" value="Cập nhật" />
         </div>
       </form>
@@ -157,7 +169,7 @@
   </div>
 </div>
 <script>
-  $(function() {
+  $(function () {
     $('select').selectpicker();
   });
 

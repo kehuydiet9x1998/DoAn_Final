@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\HocSinh;
@@ -18,7 +19,7 @@ class SocialController extends Controller
 
   public function callback($provider)
   {
-    $getInfo = Socialite::driver($provider)->user();
+    $getInfo = Socialite::driver($provider)->stateless()->user();
     // echo '<pre>';
     // var_dump($getInfo);
     // echo '</pre>';
