@@ -58,8 +58,10 @@ class ChamCongController extends Controller
 
       $checkins = Checkin::all()->filter(function ($query) use ($ngaycham) {
         $temp = date('Y-m-d', strtotime($query->getRawOriginal('ngaycham')));
-        return $temp == $ngaycham;
+        return $temp == $ngaycham && $query->nhan_vien_id;
       });
+
+      // return $checkins;
 
       return view(
         'backend.administrators.chamcong.cham_cong_nhan_vien',

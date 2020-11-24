@@ -361,8 +361,6 @@
       $('#edit-Modal').load("/phucap/" + id + '/edit');
       $('#edit-Modal').show();
       $('body').addClass('modal-open');
-
-
       $('.modal-backdrop').show();
     });
   });

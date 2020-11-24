@@ -12,5 +12,5 @@ class BackUp extends Model
   use SoftDeletes;
   protected $table = 'back_up';
   protected $dates = ['deleted_at'];
-  protected $fillable = ['tenfile', 'ngaytao', 'duongdan', 'ketqua'];
+  protected $fillable = ['tenfile', 'ngaytao', 'dungluong'];
 }
