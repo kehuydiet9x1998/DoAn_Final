@@ -191,12 +191,12 @@ if ($phanquyen == "teacher") {
           "icon" => "fa fa-slideshare",
           "text" => "Báo cáo lớp học",
         ],
-         [
-         "link" => "/teachers/canhbao",
-         "type" => "link",
-         "icon" => "fa fa-slideshare",
-         "text" => "Cảnh báo",
-         ],
+        [
+          "link" => "/teachers/canhbao",
+          "type" => "link",
+          "icon" => "fa fa-slideshare",
+          "text" => "Cảnh báo",
+        ],
       ],
     ],
   ];
@@ -240,7 +240,10 @@ if ($phanquyen == 'administrator') {
               "link" => "/administrators/users",
             ],
             ["text" => "Phân quyền", "link" => "/administrators/role"],
-            ["text" => "Sao lưu / Phục hồi", "link" => "/administrators/backup"],
+            [
+              "text" => "Sao lưu / Phục hồi",
+              "link" => "/administrators/backup",
+            ],
           ],
         ],
       ],
@@ -307,12 +310,17 @@ if ($phanquyen == 'administrator') {
             ],
           ],
         ],
-
         [
           "link" => "/administrators/payroll",
           "type" => "link",
           "icon" => "fa fa-usd",
-          "text" => "Tính lương",
+          "text" => "Trả lương",
+        ],
+        [
+          "link" => "/administrators/bangluong",
+          "type" => "link",
+          "icon" => "fa fa-list-alt",
+          "text" => "Bảng lương",
         ],
       ],
     ],

@@ -478,7 +478,7 @@ line-height:150%">&nbsp;</span>
       window.print();
     });
     window.onafterprint = function() {
-      alert('close');
+
       window.history.back();
     }
 
