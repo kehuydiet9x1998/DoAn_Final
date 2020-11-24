@@ -1,5 +1,7 @@
 @extends('backend.layout.index')
 @section('content')
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/fullcalendar.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/fullcalendar.print.css')}}" media='print'>
 <div class="pcoded-inner-content">
   <div class="main-body">
     <div class="page-wrapper">
@@ -14,12 +16,26 @@
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-9">
                     @include('backend.contact.lichtrainghiem.add_lichtrainghiem_modal')
-                    <input type="week" value="{{\Carbon\Carbon::now()->weekOfYear}}" id="nowWeek" style="float: right; margin-right: 15px">
-                    <input type="date" id="nowDay" style="float: right; margin-right: 15px">
+                    @include('backend.contact.lichtrainghiem.calendar-lichtrainghiem')
+                  </div>
+                </div>
+                <div class="row" style="margin-top: 15px">
+                  <div class="col-sm-12">
+                  <input type="week" value="{{\Carbon\Carbon::now()->weekOfYear}}" id="nowWeek" style="float: right; margin-right: 15px">
+                  <input type="date" id="nowDay" style="float: right; margin-right: 15px">
+                  <div class="form-group row" style="float: right; margin-right: 10px;">
+                    <div class="col-sm-auto">
+                      <select name="trangthai" class="form-control form-control-inverse" style="padding: 3px 10px" id="status">
+                        <option value="Chưa xử lý" selected>Chưa xử lý</option>
+                        <option value="Đã xử lý">Đã xử lý</option>
+                        <option value="Hủy bỏ">Hủy bỏ</option>
+                      </select>
+                    </div>
+                  </div>
                   </div>
                 </div>
               </div>
-              <div class="card-block">
+              <div class="card-block" style="margin-top: -20px">
                 <div class="table-responsive">
                   <table class="table table-hover m-b-0" id="datatable">
                     <thead>
@@ -27,12 +43,18 @@
                         <th>ID</th>
                         <th>Học sinh</th>
                         <th>Nội dung</th>
+                        <th>Ngày hẹn</th>
                         <th>Trạng thái</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       @foreach ($lichtrainghiems as $key => $lichtrainghiem)
+                        @php
+                          Carbon\Carbon::setLocale('vi');
+                          $time = new Carbon\Carbon($lichtrainghiem->thoigian)
+                        @endphp
+                        @if($lichtrainghiem->trangthai == 'Chưa xử lý')
                       <tr>
                         <td>{{$key+1}}</td>
                         <td>
@@ -47,10 +69,6 @@
                           </div>
                         </td>
                         <td>
-                          @php
-                          Carbon\Carbon::setLocale('vi');
-                          $time = new Carbon\Carbon($lichtrainghiem->thoigian)
-                          @endphp
                           <p style="margin-bottom: 7px">Thời gian:
                             <span class="badge badge-default p-1 f-12">{{ $time->diffForHumans()}}</span></p>
                           <p style="margin:7px 0 ">Nội dung: {{ $lichtrainghiem->noidung }}</p>
@@ -58,6 +76,7 @@
                           <p>Kết quả: &nbsp {{ $lichtrainghiem->ketqua }}</p>
                           @endif
                         </td>
+                        <td><label for="" class="badge badge-{{ $lichtrainghiem->trangthai == 'Đã xử lý' ? 'success' : ($time->isPast() == 'Chưa xử lý' ? 'warning' : 'danger')  }}">{{ $time->format('d/m/Y H:i:s' ) }}</label></td>
                         <td><label for="" class="badge badge-{{ $lichtrainghiem->trangthai == 'Đã xử lý' ? 'success' : ($lichtrainghiem->trangthai == 'Chưa xử lý' ? 'warning' : 'danger')  }}">{{ $lichtrainghiem->trangthai }}</label></td>
                         <td style="display: flex; width: 64px;">
                           <div>
@@ -89,6 +108,7 @@
                           </div>
                         </td>
                       </tr>
+                        @endif
                       @endforeach
                     </tbody>
                   </table>
@@ -107,7 +127,6 @@
   function myReset() {
     document.getElementById('main').reset();
   };
-
 </script>
 <script>
   $(document).
@@ -126,13 +145,9 @@
       $('#edit-Modal').load("/contacts/lichtrainghiem/" + id + '/edit');
       $('#edit-Modal').show();
       $('body').addClass('modal-open');
-
-
       $('.modal-backdrop').show();
-
     })
   });
-
 </script>
 <script>
   $(document).ready(function (){
@@ -155,7 +170,41 @@
     })
   })
 </script>
+<script>
+  $(document).ready(function (){
+    $("#status").change(function (){
+      var status = $(this).val();
+      $.get("/contacts/trangthai/"+ status,function (data){
+        $("#datatable").html(data);
+      });
+    })
+  })
+</script>
 <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/js/fullcalendar.min.js')}}"></script>
+<script>
+  jQuery(document).ready(function ($){
+    events = {!!json_encode($events)!!};
+    $('#calendar').fullCalendar({
+      selectable : false,
+      height: 'auto',
+      html:true,
+      editable: false,
+      defaultView: 'month',
+      header:{
+        left: 'prev,next today'
+        , center: 'title'
+        , right: 'month,basicWeek,basicDay'
+      },
+      events: events,
+      timezone: 'Asia/Ho_Chi_Minh',
+      timeFormat: 'h:mm a',
+      eventColor: '#f1e4f1',
+      eventTextColor: '#380645',
+
+    })
+  })
+</script>
 {!! $jsValidator->selector('#addform') !!}
 @endsection
 

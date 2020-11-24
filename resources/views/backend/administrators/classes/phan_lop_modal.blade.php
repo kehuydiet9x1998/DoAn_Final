@@ -8,7 +8,6 @@
     $('body').removeClass('modal-open');
     $('.modal-backdrop').hide();
   }
-
 </script>
 <div class="modal fade show" id="phanlop-Modal{{ isset($menu) ? $class->id : '' }}" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
   <div class="modal-dialog modal-lg" role="document">
@@ -24,6 +23,11 @@
           <div class="modal-body">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <input type="hidden" name="lop_hoc_id" value="{{ $class->id }}">
+            <div class="form-group row">
+              <input type="checkbox" id="linhvuc" onclick="getLinhVuc()" value="{{$class->khoahoc->loaikhoahoc->id}}"
+                     style="width: 20px; height: 30px; margin-top: -4px; margin-left: 14px">
+              <h6 class="name_link_green" style="margin-left: 15px">{{$class->khoahoc->loaikhoahoc->tenloaikhoahoc}}</h6>
+            </div>
             {{ csrf_field() }}
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Học sinh</label>
@@ -71,3 +75,4 @@
 </div>
 
 {{-- <script src="{{asset('assets/js/bootstrap-select.min.js')}}"></script> --}}
+

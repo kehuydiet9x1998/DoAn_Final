@@ -56,6 +56,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('admin-chuyenlop', 'Administrators\ChuyenLopController');
     Route::get('pdf/preview', [PDFController::class, 'preview'])->name('pdf.preview');
     Route::get('pdf/generate', [PDFController::class, 'generatePDF'])->name('pdf.generate');
+    Route::get('/linhvuc/{loaikhoahoc}', [AjaxController::class, 'getLinhVuc']);
     /* -------------------------------------------------------------------------- */
     /*                                  Chấm công                                 */
     /* -------------------------------------------------------------------------- */
@@ -156,6 +157,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::get('/day/{day}', [AjaxController::class, 'getNgay']);
     Route::get('/hocphi/{nowdate}', [AjaxController::class, 'getHocPhi']);
     Route::get('/date/{date}', [AjaxController::class, 'getDeadline']);
+    Route::get('/trangthai/{trangthai}', [AjaxController::class, 'getTrangThai']);
   });
 
   /* -------------------------------------------------------------------------- */
