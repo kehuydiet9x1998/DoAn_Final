@@ -191,6 +191,12 @@ if ($phanquyen == "teacher") {
           "icon" => "fa fa-slideshare",
           "text" => "Báo cáo lớp học",
         ],
+         [
+         "link" => "/teachers/canhbao",
+         "type" => "link",
+         "icon" => "fa fa-slideshare",
+         "text" => "Cảnh báo",
+         ],
       ],
     ],
   ];
