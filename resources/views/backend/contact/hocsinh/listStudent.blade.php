@@ -7,6 +7,7 @@
   {
     table-layout: fixed;
   }
+
 </style>
 
 <div class="pcoded-inner-content">
@@ -155,9 +156,13 @@
                           <td>
                             <div class="d-inline-block align-middle">
                               <div class="d-inline-block">
+                                @if($st->user)
                                 <a href="{{route('trangcanhan', $st->user->id)}}">
                                   <h6 class="name_link_green">{{$st->hodem .' '. $st->ten}}</h6>
                                 </a>
+                                @else
+                                <h6>{{$st->hodem .' '. $st->ten}}</h6>
+                                @endif
                                 <p class=" m-t-0 text-muted" style="margin-bottom: 5px"><i class="fa fa-calendar"></i> Ngày sinh: {{date('d/m/Y', strtotime($st->ngaysinh))}}</p>
                                 <p class=" m-b-0 text-muted"><i class="fas fa-map-marker-alt"></i> Địa chỉ: {{$st->diachi}}</p>
                               </div>
@@ -198,8 +203,7 @@
                               <div class="modal fade show" id="show-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
                               </div>
                             </div>
-                            <button class="my_edit" data-id="{{$st->id}}" data-toggle="modal" data-target="#edit-Modal"
-                                    style="background-color: white; border: none; float: left;">
+                            <button class="my_edit" data-id="{{$st->id}}" data-toggle="modal" data-target="#edit-Modal" style="background-color: white; border: none; float: left;">
                               <i class="fa fa-edit f-w-600 f-16 m-r-15 text-c-green" style="margin-right: 3px;font-size: 25px"></i>
                             </button>
                             <!-- Modal Sua -->

@@ -21,13 +21,13 @@
                           <i class="fa fa-key"></i>TÀI KHOẢN CỦA TÔI</a>
                         <div class="slide"></div>
                       </li>
-
-
+                      @if(auth()->user()->role_id ==1)
                       <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#phucap" role="tab" aria-selected="true" style="font-size: 14px; font-weight: bold;">
                           <i class="fa fa-list-alt"></i>PHỤ CẤP</a>
                         <div class="slide"></div>
                       </li>
+                      @endif
 
                     </ul>
                     <div class="tab-content card-block">
@@ -361,8 +361,6 @@
       $('#edit-Modal').load("/phucap/" + id + '/edit');
       $('#edit-Modal').show();
       $('body').addClass('modal-open');
-
-
       $('.modal-backdrop').show();
     });
   });

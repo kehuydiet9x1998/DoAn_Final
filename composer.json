@@ -19,6 +19,7 @@
     "laravel/tinker": "^2.0",
     "laravel/ui": "^3.0",
     "laraveldaily/laravel-invoices": "2.0",
+    "maatwebsite/excel": "^3.1",
     "proengsoft/laravel-jsvalidation": "^4.4",
     "pusher/pusher-php-server": "~4.0",
     "snapappointments/bootstrap-select": "^1.13"

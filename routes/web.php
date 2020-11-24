@@ -25,8 +25,10 @@ use PhpOffice\PhpSpreadsheet\RichText\Run;
 use App\Models\LopHoc;
 
 use App\Http\Controllers\Contacts\AjaxController;
+use App\Http\Controllers\RestoreController;
 
 Route::get('/', function () {
+  return redirect()->route('login');
   return view('frontend.trangchu');
 });
 
@@ -37,6 +39,8 @@ Route::get('/', function () {
 Route::middleware(['auth', 'web'])->group(function () {
   Route::get('/dashboard', [DashboardController::class, 'index']);
   Route::prefix('/administrators')->group(function () {
+    Route::post('users/import', 'Administrators\UserController@import')->name('user_import');
+    Route::get('users/export/', 'Administrators\UserController@export')->name('user_export');
     Route::resource('users', 'Administrators\UserController');
     Route::resource('courses', "Administrators\KhoaHocController");
     Route::resource('staffs', "Administrators\NhanVienController");
@@ -56,6 +60,10 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('admin-chuyenlop', 'Administrators\ChuyenLopController');
     Route::get('pdf/preview', [PDFController::class, 'preview'])->name('pdf.preview');
     Route::get('pdf/generate', [PDFController::class, 'generatePDF'])->name('pdf.generate');
+    Route::resource('backup', 'BackUpController');
+    Route::get('restore/{filename}', [RestoreController::class, 'restore']);
+    Route::post('restore-from-file', [RestoreController::class, 'restoreFromFile'])->name('restore-from-file');
+
     /* -------------------------------------------------------------------------- */
     /*                                  Chấm công                                 */
     /* -------------------------------------------------------------------------- */

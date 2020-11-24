@@ -1,5 +1,7 @@
 <div id="dom-table_filter" class="dataTables_filter" style="margin-left: -145px;">
-  <button class="btn btn-success btn-round waves-effect waves-light" data-toggle="modal" data-target="#large-Modal" style="margin-top: -6px;height: 35px;line-height: 13px; float: right">Thêm tài khoản</button>
+  <button class="btn btn-success btn-round waves-effect btn-sm waves-light float-right mx-2" data-toggle="modal" data-target="#large-Modal">Thêm tài khoản</button>
+  <a href="" class="btn btn-secondary btn-round waves-effect btn-sm waves-light float-right" data-toggle="modal" data-target="#import-Modal"><i class="fa fa-upload"></i> Import</a>
+
   <div class="modal fade show" id="large-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
@@ -73,6 +75,42 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Đóng</button>
               <input type="submit" class="btn btn-primary waves-effect waves-light" value="Thêm" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    </li>
+    </label>
+  </div>
+
+
+  <div class="modal fade show" id="import-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Thêm người dùng từ file</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form method="post" action="{{route('user_import')}}" novalidate="" enctype="multipart/form-data">
+            <div class="modal-body">
+              <input type="hidden" name="_token" value="{{csrf_token()}}">
+              {{ csrf_field() }}
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Chọn file</label>
+                <div class="col-sm-9">
+                  <input type="file" class="form-control" name="user_file" id="user_file">
+                  <span class="messages"></span>
+                </div>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Đóng</button>
+              <input type="submit" class="btn btn-primary waves-effect waves-light" value="Import" />
             </div>
           </form>
         </div>
