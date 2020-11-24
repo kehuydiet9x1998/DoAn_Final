@@ -58,6 +58,9 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('admin-hoccu-plus', 'Administrators\PlusHocCuController');
     Route::resource('role', 'Administrators\PhanQuyenController');
     Route::resource('admin-chuyenlop', 'Administrators\ChuyenLopController');
+     Route::resource('backup', 'BackUpController');
+    Route::get('restore/{filename}', [RestoreController::class, 'restore']);
+    Route::post('restore-from-file', [RestoreController::class, 'restoreFromFile'])->name('restore-from-file');
     Route::get('pdf/preview', [PDFController::class, 'preview'])->name('pdf.preview');
     Route::get('pdf/generate', [PDFController::class, 'generatePDF'])->name('pdf.generate');
     Route::get('/linhvuc/{loaikhoahoc}', [AjaxController::class, 'getLinhVuc']);
