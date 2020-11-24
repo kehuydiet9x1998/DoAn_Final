@@ -28,6 +28,7 @@
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-6">
                     <div id="dom-table_filter" class="dataTables_filter">
+
                       <button class="btn btn-primary btn-sm waves-effect waves-light" data-toggle="modal" data-target="#large-Modal" style="float: right; margin-right: 30px; "><i class="fa fa-save"></i> Sao lưu</button>
                       <button class="btn btn-secondary btn-sm waves-effect waves-light" data-toggle="modal" data-target="#phuchoi-Modal" style="float: right; margin-right: 10px; "><i class="fa fa-history"></i> Phục hồi từ tệp</button>
 
@@ -106,6 +107,15 @@
                   </div>
                 </div>
                 <div class="card-block">
+                  @if(session()->has('success-message'))
+                  <div class='alert alert-success'>
+                    {{session('success-message')}}
+                  </div>
+                  @elseif(session()->has('error-message'))
+                  <div class='alert alert-danger'>
+                    {{session('error-message')}}
+                  </div>
+                  @endif
                   <div class="table-responsive">
                     <table class="table table-hover m-b-0 " id="datatable">
                       <thead>

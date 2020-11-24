@@ -229,13 +229,12 @@ if ($phanquyen == 'administrator') {
           "icon" => "fa fa-cog",
           "type" => "dropdown",
           "items" => [
-            // ["text" => "Cài đặt", "link" => "/baocao"],
             [
               "text" => "Danh sách người dùng",
               "link" => "/administrators/users",
             ],
             ["text" => "Phân quyền", "link" => "/administrators/role"],
-            // ["text" => "Sao lưu / Phục hồi", "link" => "/baocao"],
+            ["text" => "Sao lưu / Phục hồi", "link" => "/administrators/backup"],
           ],
         ],
       ],

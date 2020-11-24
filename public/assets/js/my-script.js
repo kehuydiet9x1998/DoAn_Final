@@ -6,7 +6,7 @@ $(document).ready(function() {
     buttons: {
       dom: {
         button: {
-          className: "btn btn-outline-secondary dt-button mr-1 btn-sm pb-2"
+          className: "btn btn-outline-info dt-button mr-1 btn-sm pb-2"
         }
       },
       buttons: [

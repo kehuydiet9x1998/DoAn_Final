@@ -36,7 +36,7 @@ class Restore extends Command
 
     $ts = time();
 
-    // $path = database_path() . $ds . 'backups' . $ds;
+    $path = database_path() . $ds . 'backups' . $ds;
 
     // $file = date('Y-m-d-His', $ts) . '-backup-' . $database . '.sql';
 
