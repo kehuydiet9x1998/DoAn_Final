@@ -7,6 +7,11 @@ use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+use App\Exports\UserExport;
+use App\Exports\UsersExport;
+use App\Imports\UsersImport;
+use Maatwebsite\Excel\Facades\Excel;
+
 class UserController extends Controller
 {
   /**
@@ -102,5 +107,21 @@ class UserController extends Controller
 
     $user->delete();
     return back();
+  }
+
+  public function export()
+  {
+    return Excel::download(new UsersExport(), 'users.xlsx');
+  }
+
+  public function import()
+  {
+    $excelImport = new UsersImport();
+    $import = Excel::import($excelImport, request()->file('user_file'));
+    session()->flash(
+      'success-message',
+      "Đã thêm thành công {$excelImport->count} user."
+    );
+    return redirect()->back();
   }
 }

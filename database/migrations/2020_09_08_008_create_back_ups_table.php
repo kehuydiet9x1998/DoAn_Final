@@ -16,9 +16,7 @@ class CreateBackUpsTable extends Migration
     Schema::create('back_up', function (Blueprint $table) {
       $table->id();
       $table->string('tenfile');
-      $table->dateTime('ngaytao');
-      $table->string('duongdan');
-      $table->string('ketqua');
+      $table->string('dungluong');
       $table->timestamps();
       $table->softDeletes();
     });

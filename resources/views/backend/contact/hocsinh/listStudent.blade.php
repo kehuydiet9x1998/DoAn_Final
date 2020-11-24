@@ -6,9 +6,7 @@
   }
 </style>
 @section('css')
-  {{-- <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}"> --}}
   <link rel="stylesheet" href="{{asset('assets/css/bootstrap-select.min.css')}}">
-
 @endsection
 <div class="pcoded-inner-content">
   <div class="main-body">
@@ -213,8 +211,7 @@
                               <div class="modal fade show" id="show-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
                               </div>
                             </div>
-                            <button class="my_edit" data-id="{{$st->id}}" data-toggle="modal" data-target="#edit-Modal"
-                                    style="background-color: white; border: none; float: left;">
+                            <button class="my_edit" data-id="{{$st->id}}" data-toggle="modal" data-target="#edit-Modal" style="background-color: white; border: none; float: left;">
                               <i class="fa fa-edit f-w-600 f-16 m-r-15 text-c-green" style="margin-right: 3px;font-size: 25px"></i>
                             </button>
                             <!-- Modal Sua -->

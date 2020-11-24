@@ -83,7 +83,7 @@ class TeacherController extends Controller
     $data = GiaoVien::find($id);
     $data->fill($request->all());
     $data->save();
-    return redirect(route('teachers.index'));
+    return back();
   }
 
   /**
@@ -97,6 +97,6 @@ class TeacherController extends Controller
     $this->authorize('xoa_giaovien');
 
     GiaoVien::where('id', '=', $id)->delete();
-    return redirect(route('teachers.index'));
+    return back();
   }
 }

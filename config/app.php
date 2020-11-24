@@ -174,6 +174,7 @@ return [
     App\Providers\RouteServiceProvider::class,
     Laravel\Socialite\SocialiteServiceProvider::class,
     Barryvdh\DomPDF\ServiceProvider::class,
+    Maatwebsite\Excel\ExcelServiceProvider::class,
   ],
 
   /*
@@ -227,5 +228,6 @@ return [
     'View' => Illuminate\Support\Facades\View::class,
     'Pusher' => Pusher\Pusher::class,
     'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+    'Excel' => Maatwebsite\Excel\Facades\Excel::class,
   ],
 ];

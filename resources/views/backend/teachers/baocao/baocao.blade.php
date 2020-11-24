@@ -45,6 +45,10 @@
                       <option value="{{$khoahoc->tenkhoahoc}}">{{$khoahoc->tenkhoahoc}}</option>
                       @endforeach
                     </select>
+                    <div style="margin-top: 10px; margin-left: auto; margin-right: auto; margin-bottom: 10px">
+                      <label for="">Chọn ngày: </label>
+                      <input name="denngay" style="padding: 2px" type="date">
+                    </div>
                   </div>
                   <input type="submit" value="Lọc theo khóa học" name="loc"
                     class="btn btn-success btn-round waves-effect waves-light" data-toggle="modal"
@@ -54,14 +58,16 @@
               <button class="btn btn-success btn-round waves-effect waves-light" data-toggle="modal"
                 data-target="#large-Modal" style="float: right; margin-right:30px; width: 170px;
                 margin-left: auto;">
-
-                <a @if (isset($khoa_hoc_id)!=1) href="{{URL::to('/teachers/baocaolophoc/0')}}" @else
-                  href="{{URL::to("/teachers/baocaolophoc/$khoa_hoc_id")}}" @endif>
+                @php
+                $new_date = date_format($new_date,'d-m-Y');
+                @endphp
+                <a @if (isset($khoa_hoc_id)!=1) href="{{URL::to("/teachers/baocaolophoc/0/$new_date")}}" @else
+                  href="{{URL::to("/teachers/baocaolophoc/$khoa_hoc_id/$new_date")}}" @endif>
                   In báo cáo
                 </a>
               </button>
             </div>
-            <div class="card-block table-border-style">
+            <div class="card-block table-border-style" style="margin-top: 20px">
               <div class="table-responsive">
                 <table class="table table-bordered" id="datatable">
                   <thead>

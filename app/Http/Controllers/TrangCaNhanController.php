@@ -21,11 +21,15 @@ class TrangCaNhanController extends Controller
           'user' => $data,
         ]);
       case '2':
-        $dslophoc = $user->hocSinh
-          ->dsLopHoc()
-          ->with('lophoc')
-          ->get()
-          ->pluck('lophoc');
+        if ($user->hocsinh) {
+          $dslophoc = $user->hocSinh
+            ->dsLopHoc()
+            ->with('lophoc')
+            ->get()
+            ->pluck('lophoc');
+        } else {
+          $dslophoc = null;
+        }
         $data = $user;
         return view('backend.students.trangcanhan.trangcanhan', [
           'user' => $data,

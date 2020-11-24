@@ -25,8 +25,10 @@ use PhpOffice\PhpSpreadsheet\RichText\Run;
 use App\Models\LopHoc;
 
 use App\Http\Controllers\Contacts\AjaxController;
+use App\Http\Controllers\RestoreController;
 
 Route::get('/', function () {
+  return redirect()->route('login');
   return view('frontend.trangchu');
 });
 
@@ -37,6 +39,8 @@ Route::get('/', function () {
 Route::middleware(['auth', 'web'])->group(function () {
   Route::get('/dashboard', [DashboardController::class, 'index']);
   Route::prefix('/administrators')->group(function () {
+    Route::post('users/import', 'Administrators\UserController@import')->name('user_import');
+    Route::get('users/export/', 'Administrators\UserController@export')->name('user_export');
     Route::resource('users', 'Administrators\UserController');
     Route::resource('courses', "Administrators\KhoaHocController");
     Route::resource('staffs', "Administrators\NhanVienController");
@@ -103,7 +107,8 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('nhanxethocsinh', 'Teachers\NhanXetHocSinhController');
     Route::resource('sanphamcuoikhoa', 'Teachers\SanPhamCuoiKhoaController');
     Route::resource('baocao', 'Teachers\BaoCaoController');
-    Route::get('/baocaolophoc/{idkhoahoc}', [BaoCaoLopHocController::class, 'BaoCaoLopHoc'])->name('baocaolophoc');
+    Route::resource('canhbao', 'Teachers\CanhBaoController');
+    Route::get('/baocaolophoc/{idkhoahoc}/{ngay?}', [BaoCaoLopHocController::class, 'BaoCaoLopHoc'])->name('baocaolophoc');
     Route::get('/dulieulophoc', [BaoCaoLopHocController::class, 'LopHoc']);
     Route::post('/baocaolophoc/timkiem', [BaoCaoLopHocController::class, 'TimKiem']);
     Route::get('/nhanxet/{hocsinhid}/{buoihocid}/{lophocid}/{khoahocid}', [NhanXetHocSinhController::class, 'NhanXet']);
