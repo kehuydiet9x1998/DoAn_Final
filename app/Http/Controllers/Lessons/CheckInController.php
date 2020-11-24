@@ -50,6 +50,10 @@ class CheckInController extends Controller
         $checkin->buoiHoc->save();
         $checkin->buoiHoc->lopHoc->sobuoidahoc += 1;
         $checkin->buoiHoc->lopHoc->save();
+        if ($checkin->buoiHoc->lopHoc->sobuoidahoc == 10) {
+          $checkin->buoiHoc->lopHoc->trangthai = 'Đã kết thúc';
+          $checkin->buoiHoc->lopHoc->save();
+        }
       } else {
         $checkin = CheckIn::updateOrCreate(
           [
