@@ -1,15 +1,13 @@
 @extends('backend.layout.index')
-
-
 @section('content')
-
 <style>
   {
     table-layout: fixed;
   }
-
 </style>
-
+@section('css')
+  <link rel="stylesheet" href="{{asset('assets/css/bootstrap-select.min.css')}}">
+@endsection
 <div class="pcoded-inner-content">
   <div class="main-body">
     <div class="page-wrapper">
@@ -88,6 +86,16 @@
                                     </div>
                                   </div>
                                   <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Lĩnh vực quan tâm</label>
+                                    <div class="col-sm-9">
+                                      <select name="loai_khoa_hoc_id[]" class="selectpicker form-control form-control-primary fill" data-live-search="true" data-actions-box="true" title="-- Chọn lĩnh vực quan tâm --" multiple>
+                                        @foreach($loaikhoahoc as $lkh)
+                                          <option value="{{ $lkh->id }}">{{$lkh->tenloaikhoahoc}}</option>
+                                        @endforeach
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Họ tên phụ huynh</label>
                                     <div class="col-sm-9">
                                       <input type="text" class="form-control" id="hotenchame" name="hotenchame" placeholder="Nhập vào họ tên cha mẹ">
@@ -161,14 +169,14 @@
                                   <h6 class="name_link_green">{{$st->hodem .' '. $st->ten}}</h6>
                                 </a>
                                 @else
-                                <h6>{{$st->hodem .' '. $st->ten}}</h6>
+                                  <i>Chưa cấp tài khoản</i>
                                 @endif
                                 <p class=" m-t-0 text-muted" style="margin-bottom: 5px"><i class="fa fa-calendar"></i> Ngày sinh: {{date('d/m/Y', strtotime($st->ngaysinh))}}</p>
                                 <p class=" m-b-0 text-muted"><i class="fas fa-map-marker-alt"></i> Địa chỉ: {{$st->diachi}}</p>
                               </div>
                             </div>
                           </td>
-                          <td>
+                          <td style="white-space: normal">
                             <div class="d-inline-block align-middle">
                               <div class="d-inline-block">
                                 <h6> {{$st->hotenchame}} </h6>
@@ -241,7 +249,7 @@
   </div>
   @endsection
   @section('script')
-
+    <script src="{{asset('assets/js/bootstrap-select.min.js')}}"></script>
   <script src="{{ asset('assets/js/my-script-2.js') }}"></script>
   <script>
     function myReset() {
@@ -274,11 +282,6 @@
     });
 
   </script>
-
-
-  <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
-  {!! $jsValidator->selector('#addform') !!}
-
-
-
+<script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+{!! $jsValidator->selector('#addform') !!}
   @endsection

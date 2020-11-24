@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Contacts;
 
 use App\Http\Controllers\Controller;
-use App\Models\DiemDanh;
 use App\Models\HocPhi;
 use App\Models\KhoanThu;
 use App\Models\LichTraiNghiem;
+use App\Models\LinhVuc;
 use Carbon\Carbon;
+
 class AjaxController extends Controller
 {
     public function getTuanSau($numberweek){
@@ -31,7 +32,17 @@ class AjaxController extends Controller
       );
       return view('backend.contact.lichtrainghiem.week', compact('lichtrainghiems'));
     }
-      public function getHocPhi($deadline){
+    public function getTrangThai($trangthai)
+  {
+    $data = LichTraiNghiem::all();
+    $lichtrainghiems = $data->filter(
+      function ($item) use ($trangthai) {
+        return $item->trangthai == $trangthai;
+      }
+    );
+    return view('backend.contact.lichtrainghiem.week', compact('lichtrainghiems'));
+  }
+    public function getHocPhi($deadline){
         foreach (HocPhi::all() as $hocphi) {
           $hocphi->updateHocPhi();
         }
@@ -48,7 +59,7 @@ class AjaxController extends Controller
           compact('khoanthu', 'hocphi')
         );
       }
-      public function getDeadline($date){
+    public function getDeadline($date){
         foreach (HocPhi::all() as $hocphi) {
           $hocphi->updateHocPhi();
         }
@@ -64,5 +75,16 @@ class AjaxController extends Controller
           'backend.contact.hocphi.fillter',
           compact('khoanthu', 'hocphi')
         );
+    }
+    public function getLinhVuc($loaikhoahoc){
+      $data = LinhVuc::all();
+      $linhvuc = $data->filter(
+        function($item) use($loaikhoahoc){
+          return $item->loai_khoa_hoc_id == $loaikhoahoc;
+        }
+      );
+      foreach ($linhvuc as $lv){
+        echo "<option value='".$lv->hocsinh->id."'>".$lv->hocsinh->hodem.' '.$lv->hocsinh->ten."</option>";
+      }
     }
 }

@@ -36,10 +36,10 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($hocphi as $hp)
-
+                      @foreach($hocphi as $key => $hp)
+                        @if($hp->conno != 0)
                       <tr>
-                        <td>{{$hp->id}}</td>
+                        <td>{{$key + 1}}</td>
                         <td>
                           <div class="d-inline-block align-middle">
                             <div class="d-inline-block">
@@ -74,6 +74,7 @@
                           </div>
                         </td>
                       </tr>
+                      @endif
                       @endforeach
                     </tbody>
                   </table>

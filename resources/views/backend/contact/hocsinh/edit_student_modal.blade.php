@@ -62,7 +62,6 @@
                 <option @if($hocsinh->trangthai == 'Học thử') selected @endif value="Học thử">Học thử</option>
                 <option @if($hocsinh->trangthai == 'Chính thức') selected @endif value="Chính thức">Chính thức</option>
               </select>
-              <input type="text" class="form-control" value="{{$hocsinh->trangthai}}" id="trangthai" name="trangthai" placeholder="Trạng thái">
               <span class="messages"></span>
             </div>
           </div>
@@ -104,7 +103,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default waves-effect " data-dismiss="modal" onclick="myReset()">Đóng</button>
-          <input type="submit" class="btn btn-primary waves-effect waves-light" value="Cập nhậtnhật" />
+          <input type="submit" class="btn btn-primary waves-effect waves-light" value="Cập nhật" />
         </div>
       </form>
     </div>

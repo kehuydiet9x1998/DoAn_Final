@@ -3,6 +3,7 @@
   <th>ID</th>
   <th>Học sinh</th>
   <th>Nội dung</th>
+  <th>Ngày hẹn</th>
   <th>Trạng thái</th>
   <th>Action</th>
 </tr>
@@ -32,9 +33,9 @@
       <p style="margin:7px 0 ">Nội dung: {{ $lichtrainghiem->noidung }}</p>
       @if($lichtrainghiem->ketqua!="")
         <p>Kết quả: &nbsp {{ $lichtrainghiem->ketqua }}</p>
-
       @endif
     </td>
+    <td><label for="" class="badge badge-{{ $lichtrainghiem->trangthai == 'Đã xử lý' ? 'success' : ($time->isPast() == 'Chưa xử lý' ? 'warning' : 'danger')  }}">{{ $time->format('d/m/Y H:i:s') }}</label></td>
     <td><label for="" class="badge badge-{{ $lichtrainghiem->trangthai == 'Đã xử lý' ? 'success' : ($lichtrainghiem->trangthai == 'Chưa xử lý' ? 'warning' : 'danger')  }}">{{ $lichtrainghiem->trangthai }}</label></td>
 
     <td style="display: flex; width: 64px;">

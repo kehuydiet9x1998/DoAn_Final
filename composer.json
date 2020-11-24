@@ -22,6 +22,7 @@
     "maatwebsite/excel": "^3.1",
     "proengsoft/laravel-jsvalidation": "^4.4",
     "pusher/pusher-php-server": "~4.0",
+    "qlick/laravel-full-calendar": "^1.1",
     "snapappointments/bootstrap-select": "^1.13"
   },
   "require-dev": {

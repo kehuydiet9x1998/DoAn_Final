@@ -1,3 +1,4 @@
+
 @extends('backend.layout.index')
 @section('content')
 <div class="page-header card">

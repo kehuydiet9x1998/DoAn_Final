@@ -1,5 +1,6 @@
 <div id="dom-table_filter" class="dataTables_filter" style="margin-left: -145px;">
-  <button class="btn btn-success btn-round waves-effect waves-light" data-toggle="modal" data-target="#large-Modal" style="margin-top: -6px;height: 35px;line-height: 13px; float: right">Thêm mới</button>
+  <button class="btn btn-success btn-round waves-effect waves-light" id="btn-click"
+          data-toggle="modal" data-target="#large-Modal" style="margin-top: -6px;margin-right: 15px;height: 35px;line-height: 13px; float: right">Thêm mới</button>
   <div class="modal fade show" id="large-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
