@@ -102,7 +102,8 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('nhanxethocsinh', 'Teachers\NhanXetHocSinhController');
     Route::resource('sanphamcuoikhoa', 'Teachers\SanPhamCuoiKhoaController');
     Route::resource('baocao', 'Teachers\BaoCaoController');
-    Route::get('/baocaolophoc/{idkhoahoc}', [BaoCaoLopHocController::class, 'BaoCaoLopHoc'])->name('baocaolophoc');
+    Route::resource('canhbao', 'Teachers\CanhBaoController');
+    Route::get('/baocaolophoc/{idkhoahoc}/{ngay?}', [BaoCaoLopHocController::class, 'BaoCaoLopHoc'])->name('baocaolophoc');
     Route::get('/dulieulophoc', [BaoCaoLopHocController::class, 'LopHoc']);
     Route::post('/baocaolophoc/timkiem', [BaoCaoLopHocController::class, 'TimKiem']);
     Route::get('/nhanxet/{hocsinhid}/{buoihocid}/{lophocid}/{khoahocid}', [NhanXetHocSinhController::class, 'NhanXet']);
