@@ -119,10 +119,7 @@ $menu = true;
 @endsection
 @section('script')
 @parent
-
-
 <script src="{{ asset('assets/js/bootstrap-select.min.js') }}"></script>
-
 <script>
   $(document).
   ready(function () {
@@ -134,7 +131,6 @@ $menu = true;
       $('.modal-backdrop').show();
     });
   });
-
 </script>
 <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
 {!! $jsValidator->selector('#addform') !!}

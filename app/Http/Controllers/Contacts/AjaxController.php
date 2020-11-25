@@ -76,6 +76,20 @@ class AjaxController extends Controller
           compact('khoanthu', 'hocphi')
         );
     }
+    public function getNo($trangthai){
+      foreach (HocPhi::all() as $hocphi) {
+        $hocphi->updateHocPhi();
+      }
+      $data = HocPhi::all();
+      $khoanthu = KhoanThu::all();
+      $hocphi = $data->filter(function ($item) use ($trangthai){
+          return $item->trangthai == $trangthai;
+      });
+      return view(
+        'backend.contact.hocphi.fillter',
+        compact('khoanthu', 'hocphi')
+      );
+    }
     public function getLinhVuc($loaikhoahoc){
       $data = LinhVuc::all();
       $linhvuc = $data->filter(

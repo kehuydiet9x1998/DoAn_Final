@@ -5,7 +5,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dfeacd01-f2c3-4401-a83c-21a86b8aa657" name="Default Changelist" comment="" />
+    <list default="true" id="dfeacd01-f2c3-4401-a83c-21a86b8aa657" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/DoAn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DoAn.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Administrators/PhanLopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Administrators/PhanLopController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Contacts/AjaxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contacts/AjaxController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_lop_hoc_seeder/lop_hoc.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_lop_hoc_seeder/lop_hoc.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/classes/classes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/classes/classes.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/classes/phan_lop_modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/classes/phan_lop_modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/ListHocPhi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/ListHocPhi.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/fillter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/fillter.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -160,6 +172,7 @@
       <path value="$PROJECT_DIR$/vendor/league/oauth1-client" />
       <path value="$PROJECT_DIR$/vendor/laravel/helpers" />
       <path value="$PROJECT_DIR$/vendor/qlick/laravel-full-calendar" />
+      <path value="$PROJECT_DIR$/vendor/maatwebsite/excel" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iEUQwpw56exuy7CiRTsW0pzYKV" />
@@ -339,7 +352,8 @@
       <workItem from="1606128807788" duration="19791000" />
       <workItem from="1606176981411" duration="6057000" />
       <workItem from="1606203597677" duration="8512000" />
-      <workItem from="1606219149740" duration="13762000" />
+      <workItem from="1606219149740" duration="16772000" />
+      <workItem from="1606261905190" duration="3383000" />
     </task>
     <servers />
   </component>
@@ -407,10 +421,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="259" y="10" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1602058592838" />
-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605754262123">
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606234291968">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1605754262123" />
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1606234291968" />
     <state x="126" y="84" width="1055" height="456" key="dock-window-1" timestamp="1603182028522">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -423,10 +437,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1605792870163" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1606219373632">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1606263020213">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1606219373632" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1606263020213" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -29,9 +29,14 @@
 
 
     <td>{{number_format($hp->conno). ' đ'}}</td>
-
-    <td style="text-align: center"><label class="badge badge-default">{{$hp->deadline}}</label></td>
-    <td>
+    @if($hp->trangthai == "Đã quá hạn")
+    <td style="text-align: center"><label class="badge badge-danger">{{$hp->deadline}}</label></td>
+    @elseif($hp->trangthai == "Còn nợ")
+      <td style="text-align: center"><label class="badge badge-warning">{{$hp->deadline}}</label></td>
+    @else
+      <td style="text-align: center"><label class="badge badge-success">{{$hp->deadline}}</label></td>
+    @endif
+      <td>
       <div>
         <button data-id="{{$hp->id}}" class="btn waves-effect waves-light btn-round my_edit" data-toggle="modal"
           data-target="#edit-Modal" style="border: none; background-color: transparent;width:5px">

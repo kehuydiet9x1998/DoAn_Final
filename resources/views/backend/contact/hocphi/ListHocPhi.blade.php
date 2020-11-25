@@ -18,6 +18,16 @@
                       style="margin-right: 15px; float: right" id="deadline-btn">Deadline</button>
                     <input type="text" value="{{\Carbon\Carbon::now()->toDateString()}}" hidden id="deadline">
                     <input type="date" id="nowDay" style="float: right; margin-right: 15px; margin-top: 10px">
+                    <div class="form-group row" style="float: right; margin-right: 10px;margin-top: 10px">
+                      <div class="col-sm-auto">
+                        <select name="trangthai" class="form-control form-control-inverse" style="padding: 3px 10px" id="status">
+                          <option value="Còn nợ" selected>Còn nợ</option>
+                          <option value="Đã hoàn thành">Đã hoàn thành</option>
+                          <option value="Đã quá hạn">Đã quá hạn</option>
+                        </select>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
               </div>
@@ -37,7 +47,7 @@
                     </thead>
                     <tbody>
                       @foreach($hocphi as $key => $hp)
-                        @if($hp->conno != 0)
+                        @if($hp->conno != 0 and $hp->trangthai == 'Còn nợ')
                       <tr>
                         <td>{{$key + 1}}</td>
                         <td>
@@ -52,12 +62,8 @@
                               {{-- <p class="m-t-2 m-b-0 text-muted">Giáo viên: Học viện TEKY</p> --}}
                             </div>
                           </div>
-
                         </td>
-
-
                         <td>{{number_format($hp->conno). ' đ'}}</td>
-
                         <td style="text-align: center"><label class="badge badge-warning">{{$hp->deadline}}</label></td>
                         <td>
                           <div>
@@ -145,4 +151,15 @@
   })
 
 </script>
+<script>
+  $(document).ready(function (){
+    $("#status").change(function (){
+      var status = $(this).val();
+      $.get("/contacts/hocphi/status/"+ status,function (data){
+        $("#datatable").html(data);
+      });
+    })
+  })
+</script>
+
 @endsection

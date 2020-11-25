@@ -163,6 +163,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::get('/hocphi/{nowdate}', [AjaxController::class, 'getHocPhi']);
     Route::get('/date/{date}', [AjaxController::class, 'getDeadline']);
     Route::get('/trangthai/{trangthai}', [AjaxController::class, 'getTrangThai']);
+    Route::get('/hocphi/status/{trangthai}', [AjaxController::class, 'getNo']);
   });
 
   /* -------------------------------------------------------------------------- */

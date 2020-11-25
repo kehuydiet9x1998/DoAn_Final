@@ -44,6 +44,7 @@ class PhanLopController extends Controller
    */
   public function store(Request $request)
   {
+    return $request->all();
     $this->authorize('them_phanlop');
 
     $lop_hoc_id = $request['lop_hoc_id'];
