@@ -58,6 +58,9 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('admin-hoccu-plus', 'Administrators\PlusHocCuController');
     Route::resource('role', 'Administrators\PhanQuyenController');
     Route::resource('admin-chuyenlop', 'Administrators\ChuyenLopController');
+     Route::resource('backup', 'BackUpController');
+    Route::get('restore/{filename}', [RestoreController::class, 'restore']);
+    Route::post('restore-from-file', [RestoreController::class, 'restoreFromFile'])->name('restore-from-file');
     Route::get('pdf/preview', [PDFController::class, 'preview'])->name('pdf.preview');
     Route::get('pdf/generate', [PDFController::class, 'generatePDF'])->name('pdf.generate');
     Route::get('/linhvuc/{loaikhoahoc}', [AjaxController::class, 'getLinhVuc']);
@@ -77,7 +80,12 @@ Route::middleware(['auth', 'web'])->group(function () {
     /* -------------------------------------------------------------------------- */
     /*                                 Tính lương                                 */
     /* -------------------------------------------------------------------------- */
+    Route::get('/bangluong', function(){
+      return view('backend.administrators.tongluong.tongluong');
+    });
 
+    Route::get('payroll/tongluong/nhanvien/print/{thang}', [AdministratorsTinhLuongController::class, 'printluongnhanvien']);
+    Route::get('payroll/tongluong/{doituong}/{thang}', [AdministratorsTinhLuongController::class, 'tongluong']);
     Route::get('payroll/print/{id}', [AdministratorsTinhLuongController::class, 'print'])->name('print_luong');
     Route::get('payroll/thanhtoan/{id}', [AdministratorsTinhLuongController::class, 'thanhtoan']);
     Route::get('payroll/filter/{doituong}/{thang}', [AdministratorsTinhLuongController::class, 'filter']);
