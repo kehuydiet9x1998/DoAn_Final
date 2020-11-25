@@ -25,11 +25,19 @@ class Luong extends Model
     return $this->belongsTo(GiaoVien::class);
   }
 
-  public static function layLuongThang($thang)
+  public static function layLuongThangNhanVien($thang)
   {
     return Luong::all()->filter(function ($query) use ($thang) {
       $date = new Carbon($query->thang);
-      return $date->month == $thang->month;
+      return $date->month == $thang->month && $query->nhanvien;
+    });
+  }
+
+  public static function layLuongThangGiaoVien($thang)
+  {
+    return Luong::all()->filter(function ($query) use ($thang) {
+      $date = new Carbon($query->thang);
+      return $date->month == $thang->month && $query->giaovien;
     });
   }
 }
