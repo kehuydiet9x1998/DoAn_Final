@@ -18,4 +18,7 @@ class LoaiKhoaHoc extends Model
   {
     return $this->hasMany(KhoaHoc::class);
   }
+  public function linhVuc(){
+    return $this->hasMany(LinhVuc::class);
+  }
 }

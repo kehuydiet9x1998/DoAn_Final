@@ -6,34 +6,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfeacd01-f2c3-4401-a83c-21a86b8aa657" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/DoAn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DoAn.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Administrators/KhoaHocController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Administrators/KhoaHocController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Contacts/HocPhiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contacts/HocPhiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Students/KhoaHocController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Students/KhoaHocController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TrangCaNhanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TrangCaNhanController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/HocCu.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/HocCu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/HocPhi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/HocPhi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/KhoHocCu.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/KhoHocCu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_08_019_create_hoc_phis_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_08_019_create_hoc_phis_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_12_141453_create_hoc_cus_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_12_141453_create_hoc_cus_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/nhan_vien.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/nhan_vien.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/users.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_danh_muc_seeder/users.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/classes/class_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/classes/class_detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/courses/courses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/courses/courses.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/courses/show_course.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/courses/show_course.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/trangcanhan.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/trangcanhan.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/Edit_HocPhi_Modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/Edit_HocPhi_Modal.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/ListHocPhi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/ListHocPhi.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/add_lichtrainghiem_modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/add_lichtrainghiem_modal.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/listlichtrainghiem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/lichtrainghiem/listlichtrainghiem.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/students/baitapvenha/homework.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/students/baitapvenha/homework.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/students/khoahoc/courses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/students/khoahoc/courses.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/classes/hoccu-modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/teachers/classes/hoccu-modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/MySqlDump.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/MySqlDump.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Administrators/PhanLopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Administrators/PhanLopController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Contacts/AjaxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contacts/AjaxController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Contacts/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contacts/StudentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Teachers/BaoCaoLopHocController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Teachers/BaoCaoLopHocController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_lop_hoc_seeder.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_lop_hoc_seeder.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_lop_hoc_seeder/lop_hoc.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_lop_hoc_seeder/lop_hoc.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/classes/classes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/classes/classes.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/classes/phan_lop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/classes/phan_lop.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/classes/phan_lop_modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/classes/phan_lop_modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/edit_student_modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/edit_student_modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/listStudent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/listStudent.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/baocao/baocao.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/teachers/baocao/baocao.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/baocao/printf.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/teachers/baocao/printf.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -186,6 +173,11 @@
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf" />
       <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
       <path value="$PROJECT_DIR$/vendor/laraveldaily/laravel-invoices" />
+      <path value="$PROJECT_DIR$/vendor/laravel/socialite" />
+      <path value="$PROJECT_DIR$/vendor/league/oauth1-client" />
+      <path value="$PROJECT_DIR$/vendor/laravel/helpers" />
+      <path value="$PROJECT_DIR$/vendor/qlick/laravel-full-calendar" />
+      <path value="$PROJECT_DIR$/vendor/maatwebsite/excel" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iEUQwpw56exuy7CiRTsW0pzYKV" />
@@ -360,6 +352,22 @@
       <workItem from="1605744917132" duration="15048000" />
       <workItem from="1605769888581" duration="11018000" />
       <workItem from="1605787434319" duration="7261000" />
+      <workItem from="1606112262877" duration="4495000" />
+      <workItem from="1606120389993" duration="2245000" />
+      <workItem from="1606128807788" duration="19791000" />
+      <workItem from="1606176981411" duration="6057000" />
+      <workItem from="1606203597677" duration="8512000" />
+      <workItem from="1606219149740" duration="16772000" />
+      <workItem from="1606261905190" duration="5323000" />
+      <workItem from="1606267967707" duration="1910000" />
+      <workItem from="1606278033634" duration="1691000" />
+      <workItem from="1606283793856" duration="947000" />
+      <workItem from="1606289506456" duration="3124000" />
+      <workItem from="1606306078209" duration="7615000" />
+      <workItem from="1606354843122" duration="1345000" />
+      <workItem from="1606374885931" duration="4427000" />
+      <workItem from="1606393368751" duration="2932000" />
+      <workItem from="1606440201370" duration="597000" />
     </task>
     <servers />
   </component>
@@ -391,26 +399,46 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="363" y="100" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1603115540417" />
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605190148315">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606220083658">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1605190148315" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1606220083658" />
     <state x="430" y="208" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1605097799340">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="430" y="208" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1605097799340" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1605528570280">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1606279175201">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1605528570280" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606279175201" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1606221415174">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606221415174" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1606221415174">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606221415174" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1606221415174">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606221415174" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1606221415174">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606221415174" />
+    <state x="444" y="87" key="NewPhpClassDialog" timestamp="1606114832213">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="444" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1606114832213" />
     <state x="259" y="10" key="SettingsEditor" timestamp="1602058592838">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="259" y="10" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1602058592838" />
-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605754262123">
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606358879873">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1605754262123" />
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1606358879873" />
     <state x="126" y="84" width="1055" height="456" key="dock-window-1" timestamp="1603182028522">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -423,10 +451,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1605792870163" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1605711891229">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1606395160209">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1605711891229" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1606395160209" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

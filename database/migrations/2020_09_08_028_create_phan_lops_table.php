@@ -17,7 +17,6 @@ class CreatePhanLopsTable extends Migration
       $table->id();
       $table
         ->dateTime('ngayvaolop')
-
         ->default()
         ->default(DB::raw('CURRENT_TIMESTAMP'));
       $table->unsignedBigInteger('hoc_sinh_id');

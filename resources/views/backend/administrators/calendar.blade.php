@@ -1,6 +1,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/fullcalendar.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/fullcalendar.print.css')}}" media='print'>
-<div class="modal fade" id="large-Modal" tabindex="-1" role="dialog" style="z-index: 1050; display: none;" aria-hidden="true">
+<button type="button" class="btn btn-primary waves-effect" data-toggle="modal" data-target="#calendar-Modal">Large</button>
+<div class="modal fade" id="calendar-Modal" tabindex="-1" role="dialog" style="z-index: 1050; display: none;" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">

@@ -67,6 +67,15 @@ class NhanVien extends Model
     return $this->hasMany(PhuCap::class);
   }
 
+  public function layPhuCap($ten)
+  {
+    return $this->dsPhuCap
+      ->filter(function ($query) use ($ten) {
+        return $query->tenphucap == $ten;
+      })
+      ->first()->sotien;
+  }
+
   public function dsPhieuChi()
   {
     return $this->hasMany(PhieuChi::class);

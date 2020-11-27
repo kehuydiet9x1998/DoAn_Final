@@ -70,4 +70,7 @@ class HocSinh extends Model
   {
     return $this->belongsTo(User::class);
   }
+  public function linhVuc(){
+    return $this->hasMany(LinhVuc::class);
+  }
 }

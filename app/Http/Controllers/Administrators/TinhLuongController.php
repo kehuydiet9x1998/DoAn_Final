@@ -87,6 +87,32 @@ class TinhLuongController extends Controller
     }
   }
 
+  public function printluongnhanvien($thang)
+  {
+    return view(
+      'backend.administrators.tongluong.print_tong_luong_nhan_vien',
+      compact('thang')
+    );
+  }
+
+  public function tongluong($doituong, $thang)
+  {
+    $this->authorize('tv_bangluong');
+
+    if ($doituong == 'giaovien') {
+      return view(
+        'backend.administrators.tongluong.tong_luong_giao_vien',
+        compact('thang')
+      );
+    }
+    if ($doituong == 'nhanvien') {
+      return view(
+        'backend.administrators.tongluong.tong_luong_nhan_vien',
+        compact('thang')
+      );
+    }
+  }
+
   /**
    * Display the specified resource.
    *

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Contacts;
 
 use App\Http\Controllers\Controller;
+use App\Models\LinhVuc;
+use App\Models\LoaiKhoaHoc;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\PhuHuynh;
@@ -32,9 +34,10 @@ class StudentController extends Controller
   public function index()
   {
     $students = HocSinh::orderBy('ten', 'ASC')->get();
+    $loaikhoahoc = LoaiKhoaHoc::all();
     return view(
       'backend.contact.hocsinh.listStudent',
-      compact('students')
+      compact('students','loaikhoahoc')
     )->with(['jsValidator' => $this->jsValidator]);
   }
 
@@ -55,9 +58,12 @@ class StudentController extends Controller
    */
   public function store(Request $request)
   {
-    $data = $request->all();
+    $data = $request->except('loai_khoa_hoc_id');
     $data['user_id'] = User::taoUser('hoc_sinh');
     HocSinh::create($data);
+    foreach ($request['loai_khoa_hoc_id'] as $lkh){
+      LinhVuc::updateOrInsert(['hoc_sinh_id'=>HocSinh::latest()->first()->id,'loai_khoa_hoc_id'=>$lkh]);
+    }
     return redirect(route('students.index'));
   }
 
@@ -70,8 +76,12 @@ class StudentController extends Controller
   public function show($id)
   {
     $hocsinh = HocSinh::findOrFail($id);
+    $loaikhoahoc = LoaiKhoaHoc::all();
+    $linhvuc = $hocsinh->linhVuc()->pluck('id');
     return view('backend.contact.hocsinh.show_student_modal', [
       'hocsinh' => $hocsinh,
+      'loaikhoahoc'=>$loaikhoahoc,
+      'linhvuc'=>$linhvuc,
     ]);
   }
 

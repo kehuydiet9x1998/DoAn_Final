@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Contacts;
 use App\Http\Controllers\Controller;
 use App\Models\HocSinh;
 use App\Models\LichTraiNghiem;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use JsValidator;
+use LaravelFullCalendar\Facades\Calendar;
 
 class LichTraiNghiemController extends Controller
 {
@@ -35,11 +37,34 @@ class LichTraiNghiemController extends Controller
 
   public function index()
   {
+    foreach (LichTraiNghiem::all() as $ltn){
+      $time = new Carbon($ltn->thoigian);
+      $now = Carbon::now();
+      if($time->isPast() and $time->diffInDays($now) > 1 and $ltn->trangthai == 'Chưa xử lý'){
+        $ltn->trangthai = 'Hủy bỏ';
+        $ltn->ketqua = 'Không đạt';
+        $ltn->save();
+      }
+    }
     $allhocsinhs = HocSinh::all();
     $data = LichTraiNghiem::orderBy('thoigian', 'desc')->get();
+    $events = [];
+    foreach ($data as $dt){
+      $time = new Carbon($dt->thoigian);
+      if ($dt->ketqua == "Đạt")
+        $events[] = ['title' => 'Họ tên: '.$dt->hocsinh->hodem.' '.$dt->hocsinh->ten.' -> '.$dt->ketqua,
+          'start'=>$time->toDateString().'T'.$time->toTimeString(),'color'=>'#35DD07'];
+      elseif ($dt->ketqua == "Không đạt")
+        $events[] = ['title' => 'Họ tên: '.$dt->hocsinh->hodem.' '.$dt->hocsinh->ten.' -> '.$dt->ketqua,
+          'start'=>$time->toDateString().'T'.$time->toTimeString(),'color'=>'#E99C0C'];
+      else
+        $events[] = ['title' => 'Họ tên: '.$dt->hocsinh->hodem.' '.$dt->hocsinh->ten. ' - SĐT: '. $dt->hocsinh->sodienthoai. ' - Nội dung: '.$dt->noidung,
+          'start'=>$time->toDateString().'T'.$time->toTimeString()];
+    }
     return view('backend.contact.lichtrainghiem.listlichtrainghiem', [
       'lichtrainghiems' => $data,
       'allhocsinhs' => $allhocsinhs,
+      'events'=>$events,
     ])->with(['jsValidator' => $this->jsValidator]);
   }
 
