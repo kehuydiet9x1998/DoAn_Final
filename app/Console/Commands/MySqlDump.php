@@ -58,5 +58,16 @@ class MySqlDump extends Command
     }
 
     exec($command);
+
+//    BackUp::create([
+//      'tenfile' => $filename,
+//      'dungluong' => $size . ' MB',
+//    ]);
+//
+//    $size = DB::select(
+//      DB::raw(
+//        "SELECT SUM(data_length)/POWER(1024,2) size FROM information_schema.tables WHERE table_schema ='teky'"
+//      )
+//    )[0]->size;
   }
 }

@@ -71,16 +71,6 @@ $menu = true;
                         <td><label class="badge badge-success">{{$class->trangthai}}</label></td>
                         <td>
                           <ul style="display: flex">
-                            <div id="dom-table_filter" class="dataTables_filter">
-                              <button type="button" class="btn edit btn-primary waves-effect phanlop"
-                                data-toggle="modal" data-target="#phanlop-Modal{{ $class->id }}" data-id="1"
-                                style="background-color: white; border: none; padding: 0">
-                                <i class="fa fa-user-plus m-r-15 text-c-blue">
-                                </i>
-                              </button>
-                              @include('backend.administrators.classes.phan_lop_modal')
-                            </div>
-
                             <li>
                               <button
                                 style="border: none; padding: 2px 0px; margin-top: -1px; margin-left: 5px;background-color: transparent"

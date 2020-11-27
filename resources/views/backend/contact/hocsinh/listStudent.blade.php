@@ -235,10 +235,7 @@
                     </div>
                     <div class="modal fade show" id="show-Modal" tabindex="-1" role="dialog" style="z-index: 1050;display: none; padding-right: 17px;">
                     </div>
-
-
                   </div>
-
                 </div>
               </div>
             </div>
@@ -249,15 +246,13 @@
   </div>
   @endsection
   @section('script')
-    <script src="{{asset('assets/js/bootstrap-select.min.js')}}"></script>
+  <script src="{{asset('assets/js/bootstrap-select.min.js')}}"></script>
   <script src="{{ asset('assets/js/my-script-2.js') }}"></script>
   <script>
     function myReset() {
       document.getElementById('main').reset();
     };
-
   </script>
-
   <script>
     $(document).
     ready(function() {
@@ -266,8 +261,6 @@
         $('#show-Modal').load("/contacts/students/" + id);
         $('#show-Modal').show();
         $('body').addClass('modal-open');
-
-
         $('.modal-backdrop').show();
       });
       $('.my_edit').click(function(e) {
@@ -275,12 +268,9 @@
         $('#edit-Modal').load("/contacts/students/" + id + '/edit');
         $('#edit-Modal').show();
         $('body').addClass('modal-open');
-
-
         $('.modal-backdrop').show();
       });
     });
-
   </script>
 <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
 {!! $jsValidator->selector('#addform') !!}

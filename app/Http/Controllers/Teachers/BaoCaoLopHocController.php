@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Teachers;
 use App\Http\Controllers\Controller;
 use App\Models\KhoaHoc;
 use App\Models\LopHoc;
+use Carbon\Carbon;
 use DateTime;
 use Illuminate\Http\Request;
 use PDF;
@@ -23,7 +24,8 @@ class BaoCaoLopHocController extends Controller
   public function BaoCaoLopHoc($idkhoahoc, $date)
   {
     $ngaymacdinh = new DateTime('01/01/1970');
-    $new_date = new DateTime($date);
+    $new_date = new Carbon($date);
+    $string = $new_date->toDateString();
     if ($idkhoahoc == 0) {
       if ($new_date == $ngaymacdinh) {
         $lophocs = LopHoc::where('trangthai', '<>', 'Đã kết thúc')->get();
@@ -38,7 +40,7 @@ class BaoCaoLopHocController extends Controller
         return view('backend.teachers.baocao.printf', compact('lophocs'));
       } else {
         $lophocs = LopHoc::where('khoa_hoc_id', '=', "$idkhoahoc")->where('trangthai', '<>', 'Đã kết thúc')->where('ngayketthuc', '<', $new_date)->get();
-        return view('backend.teachers.baocao.printf', compact('lophocs'));
+        return view('backend.teachers.baocao.printf', compact('lophocs','string'));
       }
     }
   }

@@ -42,6 +42,7 @@
     <div class="row">
       <div class="col-sm-12">
         <p class="text-center" style="font-size: 24px; font-weight: bold">DANH SÁCH LỚP HỌC CHƯA KẾT THÚC</p>
+        <h4 class="text-center" style="font-style: italic" >(Tính đến ngày {{$string}})</h4>
       </div>
     </div>
     <div class="row" style="margin-top: 30px">

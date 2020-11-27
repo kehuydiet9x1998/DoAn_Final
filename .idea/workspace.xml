@@ -6,16 +6,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfeacd01-f2c3-4401-a83c-21a86b8aa657" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/DoAn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DoAn.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/MySqlDump.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/MySqlDump.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Administrators/PhanLopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Administrators/PhanLopController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Contacts/AjaxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contacts/AjaxController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Contacts/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contacts/StudentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Teachers/BaoCaoLopHocController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Teachers/BaoCaoLopHocController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/_lop_hoc_seeder.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_lop_hoc_seeder.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeders/_lop_hoc_seeder/lop_hoc.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/_lop_hoc_seeder/lop_hoc.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/classes/classes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/classes/classes.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/classes/phan_lop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/classes/phan_lop.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/administrators/classes/phan_lop_modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/administrators/classes/phan_lop_modal.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/ListHocPhi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/ListHocPhi.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/fillter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocphi/fillter.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/edit_student_modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/edit_student_modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/listStudent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/contact/hocsinh/listStudent.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/baocao/baocao.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/teachers/baocao/baocao.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/baocao/printf.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/teachers/baocao/printf.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -194,14 +199,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\DoAn\resources\views\backend\students" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\DoAn\resources\views\backend\administrators" />
       <recent name="D:\xampp\htdocs\DoAn\resources\views\backend" />
       <recent name="D:\xampp\htdocs\DoAn\app\Http\Controllers\Administrators" />
       <recent name="D:\xampp\htdocs\DoAn\resources\views\backend\teachers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\DoAn\resources\views\backend\students" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.vendor">
@@ -353,7 +358,16 @@
       <workItem from="1606176981411" duration="6057000" />
       <workItem from="1606203597677" duration="8512000" />
       <workItem from="1606219149740" duration="16772000" />
-      <workItem from="1606261905190" duration="3383000" />
+      <workItem from="1606261905190" duration="5323000" />
+      <workItem from="1606267967707" duration="1910000" />
+      <workItem from="1606278033634" duration="1691000" />
+      <workItem from="1606283793856" duration="947000" />
+      <workItem from="1606289506456" duration="3124000" />
+      <workItem from="1606306078209" duration="7615000" />
+      <workItem from="1606354843122" duration="1345000" />
+      <workItem from="1606374885931" duration="4427000" />
+      <workItem from="1606393368751" duration="2932000" />
+      <workItem from="1606440201370" duration="597000" />
     </task>
     <servers />
   </component>
@@ -393,10 +407,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="430" y="208" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1605097799340" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1606225908345">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1606279175201">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606225908345" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606279175201" />
     <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1606221415174">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -421,10 +435,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="259" y="10" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1602058592838" />
-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606234291968">
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606358879873">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1606234291968" />
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1606358879873" />
     <state x="126" y="84" width="1055" height="456" key="dock-window-1" timestamp="1603182028522">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -437,10 +451,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1605792870163" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1606263020213">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1606395160209">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1606263020213" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1606395160209" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

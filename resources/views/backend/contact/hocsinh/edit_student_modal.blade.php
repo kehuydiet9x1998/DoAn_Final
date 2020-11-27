@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{asset('assets/css/bootstrap-select.min.css')}}">
 <div class="modal-dialog modal-lg" role="document">
   <div class="modal-content">
     <div class="modal-header">
@@ -7,7 +8,6 @@
       </button>
     </div>
     <div class="modal-body">
-      {{-- dat id cho form nay --}}
       <form id="editform" method="post" action="{{route('students.update', $hocsinh->id)}}" novalidate="">
         @method('PUT')
         <div class="modal-body">
@@ -65,6 +65,17 @@
               <span class="messages"></span>
             </div>
           </div>
+{{--          <div class="form-group row">--}}
+{{--            <label class="col-sm-3 col-form-label">Lĩnh vực quan tâm</label>--}}
+{{--            <div class="col-sm-9">--}}
+{{--              <select name="loai_khoa_hoc_id[]" class="my-select form-control form-control-primary fill" data-live-search="true" data-actions-box="true"--}}
+{{--                      title="-- Chọn lĩnh vực quan tâm --" multiple>--}}
+{{--                @foreach($loaikhoahoc as $lkh)--}}
+{{--                  <option value="{{ $lkh->id }}" @if($linhvuc->contains($lkh->id)) {{"selected"}} @endif>{{$lkh->tenloaikhoahoc}}</option>--}}
+{{--                @endforeach--}}
+{{--              </select>--}}
+{{--            </div>--}}
+{{--          </div>--}}
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Họ tên phụ huynh</label>
             <div class="col-sm-9">
@@ -120,6 +131,6 @@
     var dateControl = document.querySelector('input[type="date"]');
     console.log(dateControl.value);
     console.log(dateControl.valueAsNumber);
-
+    $('.my-select').selectpicker();
   </script>
   {!! $jsValidator->selector('#editform') !!}

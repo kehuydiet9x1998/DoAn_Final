@@ -67,7 +67,7 @@
                 </a>
               </button>
             </div>
-            <div class="card-block table-border-style" style="margin-top: 20px">
+            <div class="card-block table-border-style" style="margin-top: 60px">
               <div class="table-responsive">
                 <table class="table table-bordered" id="datatable">
                   <thead>

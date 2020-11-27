@@ -77,9 +77,11 @@ class StudentController extends Controller
   {
     $hocsinh = HocSinh::findOrFail($id);
     $loaikhoahoc = LoaiKhoaHoc::all();
+    $linhvuc = $hocsinh->linhVuc()->pluck('id');
     return view('backend.contact.hocsinh.show_student_modal', [
       'hocsinh' => $hocsinh,
       'loaikhoahoc'=>$loaikhoahoc,
+      'linhvuc'=>$linhvuc,
     ]);
   }
 

@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Contacts;
 
 use App\Http\Controllers\Controller;
 use App\Models\HocPhi;
+use App\Models\HocSinh;
 use App\Models\KhoanThu;
 use App\Models\LichTraiNghiem;
 use App\Models\LinhVuc;
+use App\Models\LopHoc;
+use App\Models\PhanLop;
 use Carbon\Carbon;
 
 class AjaxController extends Controller
@@ -90,15 +93,26 @@ class AjaxController extends Controller
         compact('khoanthu', 'hocphi')
       );
     }
-    public function getLinhVuc($loaikhoahoc){
-      $data = LinhVuc::all();
-      $linhvuc = $data->filter(
+    public function getLinhVuc($loaikhoahoc, $classid){
+      $dslinhvuc = LinhVuc::all();
+      $class = LopHoc::find($classid)->dsLopHoc->pluck('hoc_sinh_id');
+      $data = $dslinhvuc->filter(
         function($item) use($loaikhoahoc){
           return $item->loai_khoa_hoc_id == $loaikhoahoc;
         }
-      );
-      foreach ($linhvuc as $lv){
-        echo "<option value='".$lv->hocsinh->id."'>".$lv->hocsinh->hodem.' '.$lv->hocsinh->ten."</option>";
-      }
+      )->unique('hoc_sinh_id')->values();
+      $linhvuc = $data->filter( function ($item) use ($class){
+       return !$class->contains($item->hoc_sinh_id);
+      });
+      return view('backend.administrators.classes.linhvuc',compact('linhvuc'));
     }
+  public function getLinhVucAll($classid){
+
+    $dslinhvuc = LinhVuc::all();
+    $class = LopHoc::find($classid)->dsLopHoc->pluck('hoc_sinh_id');
+    $linhvuc = $dslinhvuc->filter(function ($item) use ($class){
+      return !$class->contains($item->hoc_sinh_id);
+    })->unique('hoc_sinh_id')->values();
+    return view('backend.administrators.classes.linhvuc',compact('linhvuc'));
+  }
 }

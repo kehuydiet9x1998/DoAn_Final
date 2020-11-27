@@ -44,8 +44,9 @@ class PhanLopController extends Controller
    */
   public function store(Request $request)
   {
-    return $request->all();
     $this->authorize('them_phanlop');
+
+//    return $request->all();
 
     $lop_hoc_id = $request['lop_hoc_id'];
     $ngayvaolop = Carbon::now('Asia/Ho_Chi_Minh');
@@ -125,8 +126,7 @@ class PhanLopController extends Controller
   public function destroy(PhanLop $phanlop)
   {
     $this->authorize('xoa_phanlop');
-
-    $phanlop->delete();
+    $phanlop->forceDelete();
     return back();
   }
 }

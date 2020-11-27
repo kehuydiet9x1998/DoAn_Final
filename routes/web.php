@@ -63,7 +63,9 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::post('restore-from-file', [RestoreController::class, 'restoreFromFile'])->name('restore-from-file');
     Route::get('pdf/preview', [PDFController::class, 'preview'])->name('pdf.preview');
     Route::get('pdf/generate', [PDFController::class, 'generatePDF'])->name('pdf.generate');
-    Route::get('/linhvuc/{loaikhoahoc}', [AjaxController::class, 'getLinhVuc']);
+    Route::get('allclass/linhvuc/all/{classid}', [AjaxController::class, 'getLinhVucAll']);
+    Route::get('allclass/linhvuc/{loaikhoahoc}/{classid}', [AjaxController::class, 'getLinhVuc']);
+
     /* -------------------------------------------------------------------------- */
     /*                                  Chấm công                                 */
     /* -------------------------------------------------------------------------- */
