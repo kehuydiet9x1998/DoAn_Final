@@ -135,7 +135,7 @@
 <body lang=EN-US style='tab-interval:36.0pt'>
 
   <div class=WordSection1>
-
+    @php $thang = new \Carbon\Carbon($thang) @endphp
     <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=0 style='width:650.0pt;border-collapse:collapse;mso-yfti-tbllook:1184;
  mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
       <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:15.75pt'>
@@ -306,7 +306,7 @@
           <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
   text-align:center;line-height:normal'><b><span style='font-size:16.0pt;
   font-family:"Times New Roman",serif;mso-fareast-font-family:"Times New Roman";
-  color:red;mso-ansi-language:EN-US'>Tháng {{ now()->month }} n&#259;m {{ now()->year }}<o:p></o:p></span></b>
+  color:red;mso-ansi-language:EN-US'>Tháng {{ $thang->month }} n&#259;m {{ $thang->year }}<o:p></o:p></span></b>
           </p>
         </td>
         <td width=64 nowrap style='width:47.8pt;padding:0cm 5.4pt 0cm 5.4pt;
@@ -649,7 +649,7 @@
       </tr>
 
 
-      @php $luongs = \App\Models\Luong::layLuongThang(now()) @endphp
+      @php $luongs = \App\Models\Luong::layLuongThangNhanVien($thang) @endphp
 
       @foreach($luongs as $luong)
       @php $nhanvien = $luong->nhanvien; @endphp

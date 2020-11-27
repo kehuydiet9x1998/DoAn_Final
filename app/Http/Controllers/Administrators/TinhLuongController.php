@@ -101,7 +101,7 @@ class TinhLuongController extends Controller
 
     if ($doituong == 'giaovien') {
       return view(
-        'backend.administrators.tinhluong.danh_sach_luong_giao_vien',
+        'backend.administrators.tongluong.tong_luong_giao_vien',
         compact('thang')
       );
     }
