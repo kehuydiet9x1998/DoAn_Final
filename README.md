@@ -9,3 +9,19 @@
 "@php artisan ide-helper:meta",
 "@php artisan ide-helper:models --nowrite"
 ]
+
+Tài khoản ADMIM
+cuong1998pro
+123456
+
+Tài Khoản GIÁO VIÊN
+hoannv
+123456
+
+Tài khoản nhân viên TƯ 
+linhnv
+123456
+
+Tài khoản HỌC VIÊN
+hocsinh01
+123456
